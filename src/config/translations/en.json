@@ -1,0 +1,3 @@
+{
+  "demo:message": "This is an internationalization <highlight>test</highlight>. Year: {year}"
+}
