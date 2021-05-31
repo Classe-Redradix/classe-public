@@ -1,13 +1,19 @@
 .mainWrapper {
   display: block;
   position: relative;
+  margin: $distance-small;
   width: 100%;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
+  box-sizing: border-box;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 
   &.is-lock {
     overflow-y: hidden;
+  }
+
+  @include mq(md) {
+    margin: $distance-big;
   }
 }
