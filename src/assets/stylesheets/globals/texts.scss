@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700&display=swap');
+
+// font-face
+// @include font-face('Gotham', 'GothaHTFLig', 200);
+@mixin font-face-modern(
+  $font-family,
+  $font-filename,
+  $font-weight: normal,
+  $font-style: normal,
+  $font-stretch: normal
+) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('../fonts/#{$font-filename}.woff') format('woff'), url('../fonts/#{$font-filename}.woff2') format('woff2');
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+  }
+}
+@include font-face-modern('TTCommons-Black', 'TTCommons-Black', 900);
+
+$roboto: 'Roboto', sans-serif;
+$roboto-mono: 'Roboto Mono', monospace;
+$ttcommons-black: 'TTCommons-Black';
+
+$font-families: (
+  roboto: $roboto,
+  roboto-mono: $roboto-mono,
+  ttcommons-black: $ttcommons-black,
+);
+
+$typography: (
+  body: (
+    format: (
+      xs: (
+        ff: roboto,
+        fz: 16px,
+        lh: normal,
+      ),
+    ),
+    tags: (
+      'body',
+    ),
+  ),
+  title: (
+    format: (
+      xs: (
+        ff: ttcommons-black,
+        fz: 20px,
+        fw: $bold,
+        lh: 1.3em,
+      ),
+      sm: (
+        fz: 24px,
+      ),
+      md: (
+        fz: 28px,
+      ),
+      lg: (
+        fz: 32px,
+      ),
+    ),
+  ),
+  subtitle: (
+    format: (
+      xs: (
+        fz: 18px,
+        fw: $medium,
+        lh: 1.2em,
+      ),
+      sm: (
+        fz: 20px,
+      ),
+      md: (
+        fz: 24px,
+      ),
+      lg: (
+        fz: 28px,
+      ),
+    ),
+  ),
+  caption: (
+    format: (
+      xs: (
+        ff: roboto-mono,
+        fz: 0.625rem,
+        fw: $regular,
+        lh: 1.2,
+      ),
+    ),
+  ),
+);
