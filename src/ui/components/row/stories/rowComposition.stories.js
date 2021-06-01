@@ -1,24 +1,13 @@
 import React from 'react'
-import MainWrapper from '../wrappers/MainWrapper'
-import Row from './Row'
-import Cell from '../cell/Cell'
+import MainWrapper from '../../wrappers/MainWrapper'
+import Row from '../Row'
+import Cell from '../../cell/Cell'
 
 export default {
   title: 'Components/Row',
+  component: Row,
+  argTypes: null
 }
-
-export const row = () => (
-  <MainWrapper>
-    <Row type="full">
-      <Cell>
-        <p>Demo cell 01</p>
-      </Cell>
-      <Cell>
-        <p>Demo cell 02</p>
-      </Cell>
-    </Row>
-  </MainWrapper>
-)
 
 export const rowComposition = () => (
   <MainWrapper>

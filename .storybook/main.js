@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   stories: ['../src/**/*.stories.js'],
-  addons: ['@storybook/addon-essentials'],
+  addons: ['@storybook/addon-controls'],
   webpackFinal: async (config, { configType }) => {
     config.module.rules.push({
       test: /\.scss$/,

@@ -16,7 +16,7 @@
     "react-intl": "^5.18.1"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-controls": "^6.2.9",
     "@storybook/addon-knobs": "^6.2.9",
     "@storybook/react": "^6.2.9",
     "css-loader": "^5.2.6",
