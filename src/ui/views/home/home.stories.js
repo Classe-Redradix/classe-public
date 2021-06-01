@@ -1,5 +1,5 @@
 import React from 'react'
-import MainWrapper from '../../components/layout/MainWrapper'
+import MainWrapper from '../../components/wrappers/MainWrapper'
 
 export default {
   title: 'Views'
