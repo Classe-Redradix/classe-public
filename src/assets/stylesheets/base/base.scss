@@ -66,3 +66,74 @@ a {
     outline: none;
   }
 }
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.notes,
+.button {
+  display: block;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.h1 {
+  @include typo-rwd(h1);
+}
+
+.h2 {
+  @include typo-rwd(h2);
+}
+
+.h3 {
+  @include typo-rwd(h3);
+}
+
+.h4 {
+  @include typo-rwd(h4);
+}
+
+.h5 {
+  @include typo-rwd(h5);
+}
+
+.p {
+  display: block;
+  position: relative;
+  @include typo-rwd(p);
+}
+
+.menu {
+  display: block;
+  position: relative;
+  @include typo-rwd(menu);
+}
+
+.notes {
+  @include typo-rwd(notes);
+}
+
+.button {
+  @include typo-rwd(button);
+}
+
+.tiny {
+  display: block;
+  position: relative;
+  @include typo-rwd(tiny);
+}
+
+@include mq(md) {
+  .h1,
+  .h2,
+  .h3,
+  .notes {
+    letter-spacing: -0.02rem;
+  }
+
+  .h4 {
+    text-transform: none;
+  }
+}

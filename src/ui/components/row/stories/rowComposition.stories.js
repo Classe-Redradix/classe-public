@@ -13,31 +13,32 @@ export const rowComposition = () => (
   <MainWrapper>
     <Row type="full">
       <Cell>
-        <p>Demo cell 01</p>
+        <p className="h1">Demo cell with h1</p>
       </Cell>
     </Row>
     <Row type="half">
       <Cell>
-        <p>Demo cell 02</p>
+        <p className="h2">Demo cell with h2</p>
       </Cell>
       <Cell>
-        <p>Demo cell 03</p>
+        <p className="h3">Demo cell with h3</p>
       </Cell>
     </Row>
     <Row type="third">
       <Cell>
-        <p>Demo cell 04</p>
+        <p className="h4">Demo cell with h4</p>
       </Cell>
       <Cell>
-        <p>Demo cell 05</p>
+        <p className="h5">Demo cell with h5</p>
+        <p className="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est.</p>
       </Cell>
     </Row>
     <Row type="quarter">
       <Cell>
-        <p>Demo cell 06</p>
+        <p className="notes">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est.</p>
       </Cell>
       <Cell>
-        <p>Demo cell 07</p>
+        <p className="tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut.</p>
       </Cell>
     </Row>
   </MainWrapper>

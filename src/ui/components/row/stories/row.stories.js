@@ -22,10 +22,10 @@ export const row = ({ ...args }) => (
   <MainWrapper>
     <Row {...args}>
       <Cell>
-        <p>Demo cell 01</p>
+        <p className="h2">Demo cell 01</p>
       </Cell>
       <Cell>
-        <p>Demo cell 02</p>
+        <p className="h2">Demo cell 02</p>
       </Cell>
     </Row>
   </MainWrapper>

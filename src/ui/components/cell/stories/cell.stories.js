@@ -11,7 +11,7 @@ export const cell = () => (
   <MainWrapper>
     <Row type="full">
       <Cell>
-        <p>Demo cell 01</p>
+        <p className="h1">Demo cell 01</p>
       </Cell>
     </Row>
   </MainWrapper>
