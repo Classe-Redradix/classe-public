@@ -1,10 +1,11 @@
 import React from 'react'
 import MainWrapper from '../../wrappers/MainWrapper'
+import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../Row'
 import Cell from '../../cell/Cell'
 
 export default {
-  title: 'Components/Row',
+  title: 'Components/Row/Row',
   component: Row,
   argTypes: {
     type: {
@@ -20,13 +21,15 @@ export default {
 
 export const row = ({ ...args }) => (
   <MainWrapper>
-    <Row {...args}>
-      <Cell>
-        <p className="h2">Demo cell 01</p>
-      </Cell>
-      <Cell>
-        <p className="h2">Demo cell 02</p>
-      </Cell>
-    </Row>
+    <SectionWrapper>
+      <Row {...args}>
+        <Cell>
+          <p className="h2">Demo cell 01</p>
+        </Cell>
+        <Cell>
+          <p className="h2">Demo cell 02</p>
+        </Cell>
+      </Row>
+    </SectionWrapper>
   </MainWrapper>
 )

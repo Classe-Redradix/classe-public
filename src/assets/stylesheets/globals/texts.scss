@@ -37,6 +37,7 @@ $typography: (
       xs: (
         ff: monument-grotesk,
         fz: 16px,
+        fw: $regular,
         lh: normal,
       ),
     ),
@@ -46,6 +47,7 @@ $typography: (
       xs: (
         ff: monument-grotesk-mono,
         fz: 0.75rem,
+        fw: $regular,
         lh: 0.75rem,
       ),
     ),
@@ -55,9 +57,18 @@ $typography: (
       xs: (
         ff: monument-grotesk,
         fz: 2.25rem,
+        fw: $regular,
         lh: 2.125rem,
       ),
       md: (
+        fz: 3.25rem,
+        lh: 2.75rem,
+      ),
+      xl: (
+        fz: 6rem,
+        lh: 5.25rem,
+      ),
+      xxl: (
         fz: 6.25rem,
         lh: 5.5rem,
       ),
@@ -68,6 +79,7 @@ $typography: (
       xs: (
         ff: monument-grotesk,
         fz: 2rem,
+        fw: $regular,
         lh: 1.75rem,
       ),
       md: (
@@ -81,9 +93,14 @@ $typography: (
       xs: (
         ff: monument-grotesk,
         fz: 1.5rem,
+        fw: $regular,
         lh: 1.375rem,
       ),
       md: (
+        fz: 2rem,
+        lh: 1.75rem,
+      ),
+      xl: (
         fz: 3.25rem,
         lh: 3rem,
       ),
@@ -94,6 +111,7 @@ $typography: (
       xs: (
         ff: monument-grotesk,
         fz: 1rem,
+        fw: $regular,
         lh: 1.25rem,
       ),
       md: (
@@ -107,6 +125,7 @@ $typography: (
       xs: (
         ff: monument-grotesk,
         fz: 1.5rem,
+        fw: $regular,
         lh: 1.75rem,
       ),
     ),
@@ -116,6 +135,7 @@ $typography: (
       xs: (
         ff: monument-grotesk,
         fz: 1rem,
+        fw: $regular,
         lh: 1.25rem,
       ),
     ),
@@ -125,6 +145,7 @@ $typography: (
       xs: (
         ff: monument-grotesk-mono,
         fz: 0.75rem,
+        fw: $regular,
         lh: 0.75rem,
       ),
       md: (
@@ -138,10 +159,12 @@ $typography: (
       xs: (
         ff: monument-grotesk-mono,
         fz: 0.75rem,
+        fw: $regular,
         lh: 1rem,
       ),
       md: (
         fz: 0.875rem,
+        fw: $regular,
         lh: 1.125rem,
       ),
     ),
@@ -151,6 +174,7 @@ $typography: (
       xs: (
         ff: monument-grotesk-mono,
         fz: 0.5625rem,
+        fw: $regular,
         lh: 0.5625rem,
       ),
     ),

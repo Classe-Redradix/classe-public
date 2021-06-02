@@ -1,0 +1,24 @@
+.sectionWrapper {
+  display: block;
+  position: relative;
+  padding: 0 $distance-small;
+  box-sizing: border-box;
+
+  &.is-black {
+    background-color: $black;
+  }
+
+  &.is-fluor {
+    background-color: $fluor;
+  }
+
+  &.manifest {
+    .p {
+      margin-top: 96px;
+    }
+  }
+
+  @include mq(md) {
+    padding: 0 $distance-big;
+  }
+}

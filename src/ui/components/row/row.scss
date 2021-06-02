@@ -21,6 +21,17 @@
     }
   }
 
+  .cell.is-column {
+    .cell {
+      width: 100%;
+    }
+
+    .cell + .cell {
+      margin-top: 1px;
+      margin-left: 0;
+    }
+  }
+
   @include mq(md) {
     display: flex;
     align-items: stretch;

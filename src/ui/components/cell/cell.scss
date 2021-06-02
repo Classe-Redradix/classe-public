@@ -4,6 +4,18 @@
   padding: 16px;
   box-sizing: border-box;
 
+  &.has-gap {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  &.is-column {
+    padding: 0;
+  }
+
   &-corner {
     display: block;
     position: absolute;
