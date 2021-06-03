@@ -16,15 +16,15 @@
     font-stretch: $font-stretch;
   }
 }
-@include font-face-modern('MonumentGrotesk', 'MonumentGrotesk-Regular', 400);
+@include font-face-modern('Monument Grotesk', 'MonumentGrotesk-Regular', 400);
 @include font-face-modern(
-  'MonumentGroteskMono',
+  'Monument Grotesk Mono',
   'MonumentGrotesk-Semi-Mono',
   400
 );
 
-$monument-grotesk: 'MonumentGrotesk', sans-serif;
-$monument-grotesk-mono: 'MonumentGroteskMono', monospace;
+$monument-grotesk: 'Monument Grotesk';
+$monument-grotesk-mono: 'Monument Grotesk Mono';
 
 $font-families: (
   monument-grotesk: $monument-grotesk,
@@ -173,8 +173,12 @@ $typography: (
     format: (
       xs: (
         ff: monument-grotesk-mono,
-        fz: 0.5625rem,
+        fz: 0.5rem,
         fw: $regular,
+        lh: 0.5rem,
+      ),
+      md: (
+        fz: 0.5625rem,
         lh: 0.5625rem,
       ),
     ),

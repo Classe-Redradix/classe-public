@@ -74,7 +74,8 @@ a {
 .h4,
 .h5,
 .notes,
-.button {
+.button,
+.tiny {
   display: block;
   position: relative;
   text-transform: uppercase;
@@ -121,8 +122,6 @@ a {
 }
 
 .tiny {
-  display: block;
-  position: relative;
   @include typo-rwd(tiny);
 }
 

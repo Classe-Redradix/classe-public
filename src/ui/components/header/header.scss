@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0 $distance-small;
+
+  & + .sectionWrapper {
+    margin-top: 24px;
+  }
+
+  & + .sectionWrapper.is-black,
+  & + .sectionWrapper.is-fluor {
+    margin-top: 8px;
+  }
+
+  @include mq(md) {
+    padding: 0 $distance-big;
+
+    & + .sectionWrapper {
+      margin-top: 32px;
+    }
+
+    & + .sectionWrapper.is-black,
+    & + .sectionWrapper.is-fluor {
+      margin-top: 16px;
+    }
+  }
+}

@@ -5,7 +5,7 @@ import Row from '../../row/Row'
 import Cell from '../Cell'
 
 export default {
-  title: 'Components',
+  title: 'Components/Cell',
 }
 
 export const cell = () => (
