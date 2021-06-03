@@ -13,12 +13,16 @@ const Courses = () => {
       <Row type="quarter">
         <Cell isColumn>
           <Cell>
-            <h3 className="h2">
-              {t('courses:claim', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
-              })}
-            </h3>
+            <div className="scrambleTextWrapper">
+              <h3 className="h2 scrambleText">
+                {t('courses:claim', {
+                  line: (text) => <span className="line">{text}</span>,
+                  lineTab: (text) => (
+                    <span className="line has-tab">{text}</span>
+                  ),
+                })}
+              </h3>
+            </div>
           </Cell>
           <Cell>
             <img src={demoImage} alt="" />

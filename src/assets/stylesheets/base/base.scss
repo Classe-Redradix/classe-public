@@ -136,6 +136,28 @@ a {
   }
 }
 
+.scrambleTextWrapper {
+  display: block;
+  position: relative;
+}
+
+.scrambleText {
+  pointer-events: none;
+
+  .line {
+    opacity: 0;
+    white-space: nowrap;
+  }
+
+  &.is-cloned {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: all;
+  }
+}
+
 @include mq(md) {
   .h1,
   .h2,

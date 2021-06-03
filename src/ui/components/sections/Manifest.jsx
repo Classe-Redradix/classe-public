@@ -13,12 +13,16 @@ const Manifest = () => {
       <Row type="half">
         <Cell isColumn>
           <Cell>
-            <h3 className="h3">
-              {t('manifest:claim', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
-              })}
-            </h3>
+            <div className="scrambleTextWrapper">
+              <h3 className="h3 scrambleText">
+                {t('manifest:claim', {
+                  line: (text) => <span className="line">{text}</span>,
+                  lineTab: (text) => (
+                    <span className="line has-tab">{text}</span>
+                  ),
+                })}
+              </h3>
+            </div>
           </Cell>
           <Cell>
             <img src={demoImage} alt="" />
