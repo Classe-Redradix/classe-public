@@ -1,0 +1,9 @@
+.sectionWrapper.manifest .p {
+  margin-top: 96px;
+}
+
+@include mq(md) {
+  .sectionWrapper.manifest .p {
+    margin-top: 0;
+  }
+}

@@ -4,6 +4,7 @@
   "manifest:title": "<line>Aquí</line><lineTab>nuestro</lineTab><line>manifiesto</line>",
   "manifest:description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut.",
   "courses:header": "Cursos",
+  "courses:claim": "<line>Formación para</line><lineTab>[pro]gramdores</lineTab><lineTab>con pro skills</lineTab>",
   "custom:header": "Personaliza",
   "featured:header": "Curso destacado",
   "facts:header": "Facts",

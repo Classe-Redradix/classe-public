@@ -23,7 +23,7 @@
 
   .cell.is-column {
     .cell {
-      width: 100%;
+      min-width: 100%;
     }
 
     .cell + .cell {
@@ -70,13 +70,13 @@
   }
 
   @include mq(xl) {
-    &.is-quarter {
+    &.is-third {
       .cell:first-child {
-        width: 25%;
+        width: 42.5%;
       }
 
       .cell:last-child {
-        width: 75%;
+        width: 57.5%;
       }
     }
   }
