@@ -1,10 +1,10 @@
 {
   "manifest:header": "Manifiesto",
-  "manifest:claim": "<line>Años de experiencia</line><lineTab>formando</lineTab><lineTab>(pro)fesionales</lineTab>",
+  "manifest:claim": "<line>Más de 10 años</line><lineTab>formando</lineTab><lineTab>(pro)fesionales</lineTab>",
   "manifest:title": "<line>Aquí</line><lineTab>nuestro</lineTab><line>manifiesto</line>",
   "manifest:description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut.",
   "courses:header": "Cursos",
-  "courses:claim": "<line>Formación para</line><lineTab>perfiles</lineTab><lineTab>con [pro] skills</lineTab>",
+  "courses:claim": "<line>Formación</line><lineTab>para</lineTab><lineTab>perfiles con</lineTab><line>[pro] skills</line>",
   "custom:header": "Personaliza",
   "featured:header": "Curso destacado",
   "facts:header": "Facts",

@@ -10,7 +10,7 @@ const Courses = () => {
 
   return (
     <SectionWrapper isBlack extraClass="courses">
-      <Row type="quarter">
+      <Row type="third">
         <Cell isColumn>
           <Cell>
             <div className="scrambleTextWrapper">

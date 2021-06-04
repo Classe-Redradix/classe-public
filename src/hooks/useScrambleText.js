@@ -1,17 +1,46 @@
 import React, { useEffect } from 'react'
 import gsap from 'gsap'
+import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const useScrambleText = () => (
+const useScrambleText = () => {
+  gsap.registerPlugin(ScrambleTextPlugin)
+  gsap.registerPlugin(ScrollTrigger)
+
   useEffect(() => {
-    const texts = gsap.utils.toArray('.h3')
-    gsap.to(texts, {
-      duration: 4,
-      scrambleText: {
-        text: "or use only numbers,",
-        chars: "0123456789"
-      }
+    const textWrappers = document.querySelectorAll('.scrambleTextWrapper')
+    textWrappers.forEach(wrapper => {
+      const text = wrapper.querySelector('.scrambleText')
+      const cloned = text.cloneNode(true)
+      cloned.classList.add('is-cloned')
+      wrapper.appendChild(cloned)
+
+      const lines = cloned.querySelectorAll('.line')
+      lines.forEach(line => gsap.to(line, {
+        duration: 1.2,
+        scrambleText: {
+          text: line.innerHTML,
+          chars: '1234567890'
+        },
+        scrollTrigger: {
+          scroller: '.mainWrapper',
+          trigger: wrapper,
+          start: 'top 75%'
+        }
+      }))
+
+      gsap.to(lines, {
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.2,
+        scrollTrigger: {
+          scroller: '.mainWrapper',
+          trigger: wrapper,
+          start: 'top 75%'
+        }
+      })
     })
   }, [])
-)
+}
 
 export default useScrambleText
