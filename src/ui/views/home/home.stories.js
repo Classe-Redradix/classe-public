@@ -1,11 +1,13 @@
 import React from 'react'
 import MainWrapper from '../../components/wrappers/MainWrapper'
+import Menu from '../../components/menu/Menu'
 import Header from '../../components/header/Header'
 import Manifest from '../../components/sections/Manifest'
 import Courses from '../../components/sections/Courses'
 import Featured from '../../components/sections/Featured'
 import useTranslations from '../../../hooks/useTranslations'
 import useScrambleText from '../../../hooks/useScrambleText'
+import useViewportHeight from '../../../hooks/useViewportHeight'
 
 export default {
   title: 'Views/Home'
@@ -14,9 +16,11 @@ export default {
 export const home = () => {
   const t = useTranslations()
   useScrambleText()
+  useViewportHeight()
 
   return (
     <MainWrapper>
+      <Menu />
       <Header title={t('manifest:header')} number={1} />
       <Manifest />
       <Header isClose title={t('manifest:header')} />

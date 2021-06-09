@@ -1,4 +1,7 @@
 {
+  "menu:claim": "CLASS(E) no bullshit",
+  "menu:courses": "Cursos",
+  "menu:contact": "Contacta",
   "manifest:header": "Manifiesto",
   "manifest:claim": "<line>Más de 10 años</line><lineTab>formando</lineTab><lineTab>(pro)fesionales</lineTab>",
   "manifest:title": "<line>Aquí</line><lineTab>nuestro</lineTab><line>manifiesto</line>",
