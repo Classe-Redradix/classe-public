@@ -1,11 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import useWindowSize from '../../../hooks/useWindowSize'
 import MenuDesktop from './MenuDesktop'
 
 const Menu = () => {
   const size = useWindowSize()
+  const menuRef = useRef(null)
+  const [isBlack, setIsBlack] = useState(false)
+  const [isFluor, setIsFluor] = useState(false)
 
-  return size.width >= 768 ? <MenuDesktop courses={7} /> : <p>Menu mobile</p>
+  const changeColor = () => {
+    const sectionsBlack = document.querySelectorAll('.sectionWrapper.is-black')
+    const sectionsFluor = document.querySelectorAll('.sectionWrapper.is-fluor')
+    const reference = menuRef.current.getBoundingClientRect().bottom
+
+    sectionsBlack.forEach((section) => {
+      const top = section.getBoundingClientRect().top
+      const bottom = section.getBoundingClientRect().bottom
+
+      reference > top && reference < bottom
+        ? setIsBlack(true)
+        : setIsBlack(false)
+    })
+
+    sectionsFluor.forEach((section) => {
+      const top = section.getBoundingClientRect().top
+      const bottom = section.getBoundingClientRect().bottom
+
+      reference > top && reference < bottom
+        ? setIsFluor(true)
+        : setIsFluor(false)
+    })
+  }
+
+  useEffect(() => {
+    const mainWrapper = document.querySelector('.mainWrapper')
+    mainWrapper.addEventListener('scroll', () => changeColor())
+    return mainWrapper.removeEventListener('scroll', () => changeColor())
+  }, [])
+
+  return size.width >= 768 ? (
+    <MenuDesktop
+      isBlack={isBlack}
+      isFluor={isFluor}
+      courses={7}
+      ref={menuRef}
+    />
+  ) : (
+    <p ref={menuRef}>Menu mobile</p>
+  )
 }
 
 export default Menu

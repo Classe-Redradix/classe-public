@@ -54,6 +54,7 @@
     bottom: 0;
     left: -$distance-big;
     background-color: $white;
+    transition: background-color $fade-simple;
   }
 
   .cell {
