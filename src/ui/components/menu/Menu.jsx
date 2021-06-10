@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import useWindowSize from '../../../hooks/useWindowSize'
 import MenuDesktop from './MenuDesktop'
+import MenuMobile from './MenuMobile'
 
 const Menu = () => {
   const size = useWindowSize()
@@ -46,7 +47,7 @@ const Menu = () => {
       ref={menuRef}
     />
   ) : (
-    <p ref={menuRef}>Menu mobile</p>
+    <MenuMobile isBlack={isBlack} isFluor={isFluor} ref={menuRef} />
   )
 }
 

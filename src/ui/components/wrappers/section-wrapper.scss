@@ -37,6 +37,7 @@
   }
 
   &.is-fluor {
+    padding: $distance-small;
     background-color: $fluor;
 
     & + .header {
