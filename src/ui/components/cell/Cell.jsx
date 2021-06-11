@@ -2,9 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-const Cell = ({ hasGap, isColumn, isNegative, children }) => {
+const Cell = ({
+  hasGap,
+  hasLinesHidden,
+  isAnimated,
+  isColumn,
+  isNegative,
+  children,
+}) => {
   const classes = cx('cell', {
     'has-gap': hasGap,
+    'has-linesHidden': hasLinesHidden,
     'is-column': isColumn,
     'is-negative': isNegative,
   })
@@ -18,6 +26,14 @@ const Cell = ({ hasGap, isColumn, isNegative, children }) => {
           <div className="cell-corner is-bottomLeft"></div>
         </>
       ) : null}
+      {isAnimated ? (
+        <>
+          <div className="cell-line is-top"></div>
+          <div className="cell-line is-right"></div>
+          <div className="cell-line is-bottom"></div>
+          <div className="cell-line is-left"></div>
+        </>
+      ) : null}
       {children}
     </div>
   )
@@ -25,6 +41,8 @@ const Cell = ({ hasGap, isColumn, isNegative, children }) => {
 
 Cell.propTypes = {
   hasGap: PropTypes.bool,
+  hasLinesHidden: PropTypes.bool,
+  isAnimated: PropTypes.bool,
   isColumn: PropTypes.bool,
   isNegative: PropTypes.bool,
   children: PropTypes.node.isRequired,

@@ -6,13 +6,30 @@ import Cell from '../Cell'
 
 export default {
   title: 'Components/Cell',
+  component: Cell,
+  argTypes: {
+    isAnimated: {
+      name: 'isAnimated',
+      defaultValue: false,
+      control: {
+        type: 'boolean'
+      },
+    },
+    hasLinesHidden: {
+      name: 'hasLinesHidden',
+      defaultValue: false,
+      control: {
+        type: 'boolean'
+      },
+    },
+  }
 }
 
-export const cell = () => (
+export const cell = ({ ...args }) => (
   <MainWrapper>
     <SectionWrapper>
       <Row type="full">
-        <Cell>
+        <Cell {...args}>
           <p className="h1">Demo cell 01</p>
         </Cell>
       </Row>
