@@ -11,8 +11,8 @@ const Courses = () => {
   return (
     <SectionWrapper isBlack extraClass="courses">
       <Row type="third">
-        <Cell isColumn>
-          <Cell>
+        <Cell isColumn isNegative>
+          <Cell isNegative>
             <div className="scrambleTextWrapper">
               <h3 className="h2 scrambleText">
                 {t('courses:claim', {
@@ -24,11 +24,11 @@ const Courses = () => {
               </h3>
             </div>
           </Cell>
-          <Cell>
+          <Cell isNegative>
             <img src={demoImage} alt="" />
           </Cell>
         </Cell>
-        <Cell>
+        <Cell isNegative>
           <p className="p">Lorem ipsum</p>
         </Cell>
       </Row>

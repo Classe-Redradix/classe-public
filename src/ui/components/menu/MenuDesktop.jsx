@@ -13,7 +13,7 @@ const MenuDesktop = (props, ref) => {
 
   return (
     <header className={classes} ref={ref}>
-      <Cell>
+      <Cell isNegative={props.isBlack}>
         <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
         <button
           className="menuDesktop-button menu"

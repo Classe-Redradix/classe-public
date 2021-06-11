@@ -13,7 +13,7 @@ const MenuMobile = (props, ref) => {
 
   return (
     <header className={classes} ref={ref}>
-      <Cell>
+      <Cell isNegative={props.isBlack}>
         <span className="menuMobile-claim h3">{t('menu:claimSmall')}</span>
         <button
           className="menuMobile-button menu"

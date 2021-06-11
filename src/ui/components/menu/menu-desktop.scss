@@ -17,28 +17,6 @@
     &::before {
       background-color: $black;
     }
-
-    .cell-corner {
-      &.is-topLeft {
-        border-top: 1px solid $white;
-        border-left: 1px solid $white;
-      }
-
-      &.is-topRight {
-        border-top: 1px solid $white;
-        border-right: 1px solid $white;
-      }
-
-      &.is-bottomRight {
-        border-right: 1px solid $white;
-        border-bottom: 1px solid $white;
-      }
-
-      &.is-bottomLeft {
-        border-bottom: 1px solid $white;
-        border-left: 1px solid $white;
-      }
-    }
   }
 
   &.is-fluor::before {

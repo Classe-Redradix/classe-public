@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import useWindowSize from '../../../hooks/useWindowSize'
 import cx from 'classnames'
+import useWindowSize from '../../../hooks/useWindowSize'
 import useTranslations from '../../../hooks/useTranslations'
+import Row from '../row/Row'
+import Cell from '../cell/Cell'
 
 const MenuLayer = ({ isOpen, handleClose }) => {
   const t = useTranslations()
@@ -18,6 +20,12 @@ const MenuLayer = ({ isOpen, handleClose }) => {
             onClick={handleClose}>
             [ {t('menu:close')} ]
           </button>
+        </div>
+        <div className="menuLayer-content">
+          <Row type="quarter">
+            <Cell isNegative></Cell>
+            <Cell isNegative></Cell>
+          </Row>
         </div>
       </div>
     </div>

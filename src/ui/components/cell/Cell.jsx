@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-const Cell = ({ hasGap, isColumn, children }) => {
+const Cell = ({ hasGap, isColumn, isNegative, children }) => {
   const classes = cx('cell', {
     'has-gap': hasGap,
     'is-column': isColumn,
+    'is-negative': isNegative,
   })
   return (
     <div className={classes}>
@@ -25,7 +26,8 @@ const Cell = ({ hasGap, isColumn, children }) => {
 Cell.propTypes = {
   hasGap: PropTypes.bool,
   isColumn: PropTypes.bool,
-  children: PropTypes.node,
+  isNegative: PropTypes.bool,
+  children: PropTypes.node.isRequired,
 }
 
 export default Cell
