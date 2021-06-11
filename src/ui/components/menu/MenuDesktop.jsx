@@ -17,6 +17,7 @@ const MenuDesktop = (props, ref) => {
         <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
         <button
           className="menuDesktop-button menu"
+          onClick={props.handleOpen}
           aria-label={t('menu:courses')}>
           {props.courses < 10
             ? `[0${props.courses}] ${t('menu:courses')}`
@@ -35,6 +36,7 @@ const MenuDesktop = (props, ref) => {
 MenuDesktop.props = {
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
+  handleOpen: PropTypes.func.isRequired,
   courses: PropTypes.number.isRequired,
 }
 

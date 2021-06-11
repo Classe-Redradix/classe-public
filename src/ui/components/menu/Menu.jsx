@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import useWindowSize from '../../../hooks/useWindowSize'
+import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 
@@ -8,6 +9,7 @@ const Menu = () => {
   const menuRef = useRef(null)
   const [isBlack, setIsBlack] = useState(false)
   const [isFluor, setIsFluor] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   const changeColor = () => {
     const sectionsBlack = document.querySelectorAll('.sectionWrapper.is-black')
@@ -33,21 +35,35 @@ const Menu = () => {
     })
   }
 
+  const handleOpen = () => setIsOpen(true)
+  const handleClose = () => setIsOpen(false)
+
   useEffect(() => {
     const mainWrapper = document.querySelector('.mainWrapper')
     mainWrapper.addEventListener('scroll', () => changeColor())
     return mainWrapper.removeEventListener('scroll', () => changeColor())
   }, [])
 
-  return size.width >= 768 ? (
-    <MenuDesktop
-      isBlack={isBlack}
-      isFluor={isFluor}
-      courses={7}
-      ref={menuRef}
-    />
-  ) : (
-    <MenuMobile isBlack={isBlack} isFluor={isFluor} ref={menuRef} />
+  return (
+    <>
+      <MenuLayer isOpen={isOpen} handleClose={handleClose} />
+      {size.width >= 768 ? (
+        <MenuDesktop
+          isBlack={isBlack}
+          isFluor={isFluor}
+          handleOpen={handleOpen}
+          courses={7}
+          ref={menuRef}
+        />
+      ) : (
+        <MenuMobile
+          isBlack={isBlack}
+          isFluor={isFluor}
+          handleOpen={handleOpen}
+          ref={menuRef}
+        />
+      )}
+    </>
   )
 }
 

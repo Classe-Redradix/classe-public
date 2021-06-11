@@ -15,7 +15,10 @@ const MenuMobile = (props, ref) => {
     <header className={classes} ref={ref}>
       <Cell>
         <span className="menuMobile-claim h3">{t('menu:claimSmall')}</span>
-        <button className="menuMobile-button menu" aria-label={t('menu:open')}>
+        <button
+          className="menuMobile-button menu"
+          onClick={props.handleOpen}
+          aria-label={t('menu:open')}>
           [{t('menu:open')}]
         </button>
       </Cell>
@@ -26,6 +29,7 @@ const MenuMobile = (props, ref) => {
 MenuMobile.props = {
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
+  handleOpen: PropTypes.func.isRequired,
   courses: PropTypes.number.isRequired,
 }
 
