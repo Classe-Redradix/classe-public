@@ -9,7 +9,7 @@ const Menu = () => {
   const menuRef = useRef(null)
   const [isBlack, setIsBlack] = useState(false)
   const [isFluor, setIsFluor] = useState(false)
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   const changeColor = () => {
     const sectionsBlack = document.querySelectorAll('.sectionWrapper.is-black')

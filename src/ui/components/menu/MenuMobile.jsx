@@ -2,7 +2,6 @@ import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import useTranslations from '../../../hooks/useTranslations'
-import Cell from '../cell/Cell'
 
 const MenuMobile = (props, ref) => {
   const t = useTranslations()
@@ -14,15 +13,13 @@ const MenuMobile = (props, ref) => {
 
   return (
     <header className={classes} ref={ref}>
-      <Cell isNegative={props.isBlack || props.isOpen}>
-        <span className="menuMobile-claim h3">{t('menu:claimSmall')}</span>
-        <button
-          className="menuMobile-button menu"
-          onClick={props.isOpen ? props.handleClose : props.handleOpen}
-          aria-label={props.isOpen ? t('menu:close') : t('menu:open')}>
-          [{props.isOpen ? t('menu:close') : t('menu:open')}]
-        </button>
-      </Cell>
+      <span className="menuMobile-claim h3">{t('menu:claimSmall')}</span>
+      <button
+        className="menuMobile-button menu"
+        onClick={props.isOpen ? props.handleClose : props.handleOpen}
+        aria-label={props.isOpen ? t('menu:close') : t('menu:open')}>
+        [{props.isOpen ? t('menu:close') : t('menu:open')}]
+      </button>
     </header>
   )
 }
