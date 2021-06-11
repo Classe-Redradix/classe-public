@@ -19,12 +19,11 @@ const MenuDesktop = (props, ref) => {
           className="menuDesktop-button menu"
           onClick={props.handleOpen}
           aria-label={t('menu:courses')}>
-          {props.courses < 10
-            ? `[0${props.courses}] ${t('menu:courses')}`
-            : `${t('menu:courses')}`}
+          [{props.courses < 10 ? `0${props.courses}` : props.courses}]{' '}
+          {t('menu:courses')}
         </button>
         <button
-          className="menuDesktop-button menu"
+          className="menuDesktop-link menu"
           aria-label={t('menu:contact')}>
           {t('menu:contact')}
         </button>

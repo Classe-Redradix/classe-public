@@ -9,17 +9,18 @@ const MenuMobile = (props, ref) => {
   const classes = cx('menuMobile', {
     'is-black': props.isBlack,
     'is-fluor': props.isFluor,
+    'is-open': props.isOpen,
   })
 
   return (
     <header className={classes} ref={ref}>
-      <Cell isNegative={props.isBlack}>
+      <Cell isNegative={props.isBlack || props.isOpen}>
         <span className="menuMobile-claim h3">{t('menu:claimSmall')}</span>
         <button
           className="menuMobile-button menu"
-          onClick={props.handleOpen}
-          aria-label={t('menu:open')}>
-          [{t('menu:open')}]
+          onClick={props.isOpen ? props.handleClose : props.handleOpen}
+          aria-label={props.isOpen ? t('menu:close') : t('menu:open')}>
+          [{props.isOpen ? t('menu:close') : t('menu:open')}]
         </button>
       </Cell>
     </header>
@@ -29,6 +30,7 @@ const MenuMobile = (props, ref) => {
 MenuMobile.props = {
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
+  isOpen: PropTypes.bool,
   handleOpen: PropTypes.func.isRequired,
   courses: PropTypes.number.isRequired,
 }

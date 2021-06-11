@@ -6,13 +6,15 @@
   width: 100%;
   height: auto;
   color: $black;
-  z-index: $index-menu;
+  z-index: $index-menu-mobile;
 
   & + .header {
     margin-top: 32px;
   }
 
-  &.is-black {
+  &.is-black,
+  &.is-open,
+  &.is-fluor.is-open {
     color: $white;
 
     &::before {

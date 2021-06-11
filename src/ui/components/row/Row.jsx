@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-const Row = ({ children, type }) => {
-  const classes = cx('row', {
+const Row = ({ children, extraClass, type }) => {
+  const classes = cx('row', `${extraClass ? extraClass : ''}`, {
     'is-full': type === 'full',
     'is-half': type === 'half',
     'is-third': type === 'third',
@@ -14,6 +14,7 @@ const Row = ({ children, type }) => {
 
 Row.propTypes = {
   children: PropTypes.node,
+  extraClass: PropTypes.string,
   type: PropTypes.oneOf(['full', 'half', 'third', 'quarter']).isRequired,
 }
 

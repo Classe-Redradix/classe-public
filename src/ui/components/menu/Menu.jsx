@@ -46,7 +46,7 @@ const Menu = () => {
 
   return (
     <>
-      <MenuLayer isOpen={isOpen} handleClose={handleClose} />
+      <MenuLayer courses={[{}, {}]} isOpen={isOpen} handleClose={handleClose} />
       {size.width >= 768 ? (
         <MenuDesktop
           isBlack={isBlack}
@@ -59,7 +59,9 @@ const Menu = () => {
         <MenuMobile
           isBlack={isBlack}
           isFluor={isFluor}
+          isOpen={isOpen}
           handleOpen={handleOpen}
+          handleClose={handleClose}
           ref={menuRef}
         />
       )}
