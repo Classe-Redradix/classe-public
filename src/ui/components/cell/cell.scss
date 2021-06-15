@@ -95,7 +95,12 @@
     display: block;
     position: absolute;
     background-color: $black;
-    transition: transform 0.3s;
+
+    @for $i from 1 through 100 {
+      &:nth-child(#{$i}) {
+        transition: transform $transform-long $i * 0.1s;
+      }
+    }
 
     &.is-top {
       top: -1px;

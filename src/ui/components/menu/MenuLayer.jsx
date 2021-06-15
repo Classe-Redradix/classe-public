@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import useWindowSize from '../../../hooks/useWindowSize'
@@ -9,8 +9,13 @@ import Cell from '../cell/Cell'
 const MenuLayer = ({ courses, isOpen, handleClose }) => {
   const t = useTranslations()
   const size = useWindowSize()
+  const [linesHidden, setLinesHidden] = useState(false)
   const classes = cx('menuLayer', { 'is-open': isOpen })
   const isDesktop = size.width >= 768
+
+  useEffect(() => {
+    isOpen ? setLinesHidden(true) : setLinesHidden(false)
+  }, [isOpen])
 
   return (
     <div className={classes}>
@@ -27,24 +32,24 @@ const MenuLayer = ({ courses, isOpen, handleClose }) => {
         <div className="menuLayer-content">
           {!isDesktop ? (
             <Row type="half" extraClass="menuLayer-mobileHeader">
-              <Cell isNegative>
+              <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
                 <p>[Light Mode]</p>
               </Cell>
-              <Cell isNegative>
+              <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
                 <p>[Dark Mode]</p>
               </Cell>
             </Row>
           ) : null}
           <Row type="quarter" extraClass="menuLayer-courses">
-            <Cell isNegative>
+            <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
               <p>image</p>
             </Cell>
-            <Cell isNegative>
+            <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
               <p>courses</p>
             </Cell>
           </Row>
           <Row type="full" extraClass="menuLayer-menu">
-            <Cell isNegative>
+            <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
               <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
               <span
                 className="menuDesktop-button menu"

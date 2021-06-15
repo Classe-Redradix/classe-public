@@ -5,9 +5,11 @@
   margin: 0 1px;
   padding: 0 $distance-big;
   color: $black;
+  filter: blur(0px);
+  transition: filter $fade-short $fade-short;
   z-index: $index-menu;
 
-  & + .header {
+  & + .blurableWrapper {
     margin-top: 32px;
   }
 

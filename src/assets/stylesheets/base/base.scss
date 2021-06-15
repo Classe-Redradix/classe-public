@@ -145,6 +145,13 @@ button {
   }
 }
 
+.blurableWrapper {
+  display: block;
+  position: relative;
+  filter: blur(0px);
+  transition: filter $fade-short $fade-short;
+}
+
 .scrambleTextWrapper {
   display: block;
   position: relative;
