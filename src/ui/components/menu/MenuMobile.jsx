@@ -13,7 +13,7 @@ const MenuMobile = (props, ref) => {
 
   return (
     <header className={classes} ref={ref}>
-      <span className="menuMobile-claim h3">{t('menu:claimSmall')}</span>
+      <span className="menuMobile-claim h2">{t('menu:claimSmall')}</span>
       <button
         className="menuMobile-button menu"
         onClick={props.isOpen ? props.handleClose : props.handleOpen}

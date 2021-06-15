@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react'
+import PropTypes from 'prop-types'
 import useWindowSize from '../../../hooks/useWindowSize'
 import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 
-const Menu = () => {
+const Menu = ({ courses }) => {
   const size = useWindowSize()
   const menuRef = useRef(null)
   const [isBlack, setIsBlack] = useState(false)
@@ -46,13 +47,13 @@ const Menu = () => {
 
   return (
     <>
-      <MenuLayer courses={[{}, {}]} isOpen={isOpen} handleClose={handleClose} />
+      <MenuLayer courses={courses} isOpen={isOpen} handleClose={handleClose} />
       {size.width >= 768 ? (
         <MenuDesktop
           isBlack={isBlack}
           isFluor={isFluor}
           handleOpen={handleOpen}
-          courses={7}
+          courses={courses.length}
           ref={menuRef}
         />
       ) : (
@@ -67,6 +68,15 @@ const Menu = () => {
       )}
     </>
   )
+}
+
+Menu.propTypes = {
+  courses: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 }
 
 export default Menu

@@ -5,6 +5,7 @@ import useWindowSize from '../../../hooks/useWindowSize'
 import useTranslations from '../../../hooks/useTranslations'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
+import CoursesList from './CoursesList'
 
 const MenuLayer = ({ courses, isOpen, handleClose }) => {
   const t = useTranslations()
@@ -45,7 +46,7 @@ const MenuLayer = ({ courses, isOpen, handleClose }) => {
               <p>image</p>
             </Cell>
             <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-              <p>courses</p>
+              <CoursesList courses={courses} />
             </Cell>
           </Row>
           <Row type="full" extraClass="menuLayer-menu">
@@ -58,7 +59,7 @@ const MenuLayer = ({ courses, isOpen, handleClose }) => {
                 {t('menu:courses')}
               </span>
               <button
-                className="menuDesktop-link menu"
+                className="menuDesktop-link"
                 aria-label={t('menu:contact')}>
                 {t('menu:contact')}
               </button>
@@ -71,6 +72,12 @@ const MenuLayer = ({ courses, isOpen, handleClose }) => {
 }
 
 MenuLayer.propTypes = {
+  courses: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
   isOpen: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
 }

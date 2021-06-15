@@ -5,6 +5,7 @@ import Header from '../../components/header/Header'
 import Manifest from '../../components/sections/Manifest'
 import Courses from '../../components/sections/Courses'
 import Featured from '../../components/sections/Featured'
+import useDetectMobile from '../../../hooks/useDetectMobile'
 import useTranslations from '../../../hooks/useTranslations'
 import useScrambleText from '../../../hooks/useScrambleText'
 import useViewportHeight from '../../../hooks/useViewportHeight'
@@ -15,12 +16,27 @@ export default {
 
 export const home = () => {
   const t = useTranslations()
+  useDetectMobile()
   useScrambleText()
   useViewportHeight()
 
   return (
     <MainWrapper>
-      <Menu />
+      <Menu courses={[
+        {
+          title: 'Js pro',
+          href: '/'
+        }, {
+          title: 'React',
+          href: '/'
+        }, {
+          title: 'Redux',
+          href: '/'
+        }, {
+          title: 'Data',
+          href: '/'
+        }
+      ]} />
       <div className="blurableWrapper">
         <Header title={t('manifest:header')} number={1} />
         <Manifest />

@@ -9,6 +9,20 @@ export default {
 
 export const menu = ({ ...args }) => (
   <MainWrapper>
-    <Menu {...args} />
+    <Menu courses={[
+      {
+        title: 'Js pro',
+        href: '/'
+      }, {
+        title: 'React',
+        href: '/'
+      }, {
+        title: 'Redux',
+        href: '/'
+      }, {
+        title: 'Data',
+        href: '/'
+      }
+    ]} {...args} />
   </MainWrapper>
 )
