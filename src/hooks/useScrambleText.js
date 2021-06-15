@@ -20,7 +20,7 @@ const useScrambleText = () => {
         duration: 1.2,
         scrambleText: {
           text: line.innerHTML,
-          chars: '1234567890'
+          chars: '!@#$%&/=*'
         },
         scrollTrigger: {
           scroller: '.mainWrapper',
