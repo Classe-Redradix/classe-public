@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
+import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
-import useTranslations from '../../../hooks/useTranslations'
+import Button from '../button/Button'
 import demoImage from '../../../assets/images/demo-small-black.png'
 import Tab from '../../../assets/icons/tab-icon.svg'
 
 const Courses = ({ courses }) => {
+  const router = useRouter()
   const t = useTranslations()
 
   const handleClick = (e) => {
@@ -35,6 +37,7 @@ const Courses = ({ courses }) => {
           <Cell isNegative>
             <img src={demoImage} alt="" />
             <p className="p">{t('courses:description')}</p>
+            <Button isLink isNegative href="/" text={t('courses:button')} />
           </Cell>
         </Cell>
         <Cell isNegative>
