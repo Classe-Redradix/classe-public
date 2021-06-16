@@ -17,6 +17,29 @@
   }
 }
 
+.sectionWrapper.custom {
+  svg {
+    display: block;
+    position: relative;
+    left: 100%;
+    width: auto;
+    height: 32px;
+    transform: translateX(-100%);
+  }
+
+  .p {
+    margin-top: 104px;
+  }
+
+  .mainButton {
+    margin-top: 104px;
+  }
+}
+
+.sectionWrapper.featured .mainButton {
+  margin-top: 232px;
+}
+
 .sectionWrapper.featured .mainButton {
   margin-top: 232px;
 }
@@ -44,5 +67,24 @@
       margin-top: 0;
       height: 100%;
     }
+  }
+
+  .sectionWrapper.custom {
+    svg {
+      height: 48px;
+    }
+
+    .p {
+      margin-top: 0;
+    }
+    .mainButton {
+      margin-top: 208px;
+    }
+  }
+}
+
+@include mq(xl) {
+  .sectionWrapper.custom svg {
+    height: 80px;
   }
 }

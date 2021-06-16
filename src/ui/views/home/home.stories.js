@@ -4,6 +4,7 @@ import Menu from '../../components/menu/Menu'
 import Header from '../../components/header/Header'
 import Manifest from '../../components/sections/Manifest'
 import Courses from '../../components/sections/Courses'
+import Custom from '../../components/sections/Custom'
 import Featured from '../../components/sections/Featured'
 import useDetectMobile from '../../../hooks/useDetectMobile'
 import useTranslations from '../../../hooks/useTranslations'
@@ -47,6 +48,7 @@ export const home = () => {
         <Courses courses={courses} />
         <Header isClose title={t('courses:header')} />
         <Header title={t('custom:header')} number={3} />
+        <Custom />
         <Header isClose title={t('custom:header')} />
         <Header title={t('featured:header')} number={4} />
         <Featured />
