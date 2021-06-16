@@ -20,29 +20,31 @@ export const home = () => {
   useScrambleText()
   useViewportHeight()
 
+  const courses = [
+    {
+      title: 'Js pro',
+      href: '/'
+    }, {
+      title: 'React',
+      href: '/'
+    }, {
+      title: 'Redux',
+      href: '/'
+    }, {
+      title: 'Data',
+      href: '/'
+    }
+  ]
+
   return (
     <MainWrapper>
-      <Menu courses={[
-        {
-          title: 'Js pro',
-          href: '/'
-        }, {
-          title: 'React',
-          href: '/'
-        }, {
-          title: 'Redux',
-          href: '/'
-        }, {
-          title: 'Data',
-          href: '/'
-        }
-      ]} />
+      <Menu courses={courses} />
       <div className="blurableWrapper">
         <Header title={t('manifest:header')} number={1} />
         <Manifest />
         <Header isClose title={t('manifest:header')} />
         <Header title={t('courses:header')} number={2} />
-        <Courses />
+        <Courses courses={courses} />
         <Header isClose title={t('courses:header')} />
         <Header title={t('custom:header')} number={3} />
         <Header isClose title={t('custom:header')} />

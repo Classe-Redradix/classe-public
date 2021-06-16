@@ -1,12 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import useTranslations from '../../../hooks/useTranslations'
-import demoImage from '../../../assets/images/demo.png'
+import demoImage from '../../../assets/images/demo-small-black.png'
+import Tab from '../../../assets/icons/tab-icon.svg'
 
-const Courses = () => {
+const Courses = ({ courses }) => {
   const t = useTranslations()
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    router.push(href)
+  }
 
   return (
     <SectionWrapper isBlack extraClass="courses">
@@ -26,14 +34,41 @@ const Courses = () => {
           </Cell>
           <Cell isNegative>
             <img src={demoImage} alt="" />
+            <p className="p">{t('courses:description')}</p>
           </Cell>
         </Cell>
         <Cell isNegative>
-          <p className="p">Lorem ipsum</p>
+          <ol className="coursesList-list">
+            {courses.map((course, index) => (
+              <li key={course.title}>
+                <a
+                  className="coursesList-link h1"
+                  href={course.href}
+                  onClick={handleClick}>
+                  <span className="coursesList-linkNumber">
+                    {index < 10 ? `0${index + 1}` : index + 1}
+                  </span>
+                  <span className="coursesList-linkTextWrapper">
+                    <Tab viewBox="0 0 90 72" />
+                    <span className="coursesList-linkText">{course.title}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ol>
         </Cell>
       </Row>
     </SectionWrapper>
   )
+}
+
+Courses.propTypes = {
+  courses: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 }
 
 export default Courses

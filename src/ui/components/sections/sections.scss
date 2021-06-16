@@ -2,8 +2,31 @@
   margin-top: 96px;
 }
 
+.sectionWrapper.courses {
+  .p {
+    margin-top: 16px;
+    max-width: 380px;
+  }
+
+  .coursesList-list {
+    margin-top: 120px;
+  }
+}
+
 @include mq(md) {
   .sectionWrapper.manifest .p {
     margin-top: 0;
+  }
+
+  .sectionWrapper.courses {
+    .p {
+      margin-top: 32px;
+    }
+
+    .coursesList-list {
+      justify-content: flex-end;
+      margin-top: 0;
+      height: 100%;
+    }
   }
 }

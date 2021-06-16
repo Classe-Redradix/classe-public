@@ -11,6 +11,7 @@
   "manifest:description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut.",
   "courses:header": "Cursos",
   "courses:claim": "<line>Formación</line><lineTab>para</lineTab><lineTab>perfiles con</lineTab><line>[pro] skills</line>",
+  "courses:description": "Sabes programar pero todavía no eres un experto. Éste es el impulso que tu carrera necesita para alcanzar el trabajo que te mereces.",
   "custom:header": "Personaliza",
   "featured:header": "Curso destacado",
   "facts:header": "Facts",
