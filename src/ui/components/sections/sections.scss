@@ -17,8 +17,16 @@
   }
 }
 
+.sectionWrapper.featured .mainButton {
+  margin-top: 232px;
+}
+
 @include mq(md) {
   .sectionWrapper.manifest .p {
+    margin-top: 0;
+  }
+
+  .sectionWrapper.featured .mainButton {
     margin-top: 0;
   }
 

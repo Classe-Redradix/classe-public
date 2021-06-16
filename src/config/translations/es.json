@@ -15,6 +15,8 @@
   "courses:button": "Consúltanos",
   "custom:header": "Personaliza",
   "featured:header": "Curso destacado",
+  "featured:title": "<line>Full stack</line><line>Program</line><lineTab>(2021, 2022);</lineTab>",
+  "featured:button": "¿Quieres saber más? mira el dossier",
   "facts:header": "Facts",
   "calendar:header": "Calendario",
   "companies:header": "Empresas",
