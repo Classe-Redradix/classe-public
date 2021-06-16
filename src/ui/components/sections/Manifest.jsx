@@ -13,28 +13,26 @@ const Manifest = () => {
       <Row type="half">
         <Cell isColumn>
           <Cell>
-            <div className="scrambleTextWrapper">
-              <h3 className="h3 scrambleText">
-                {t('manifest:claim', {
-                  line: (text) => <span className="line">{text}</span>,
-                  lineTab: (text) => (
-                    <span className="line has-tab">{text}</span>
-                  ),
-                })}
-              </h3>
-            </div>
+            <h3 className="h3">
+              {t('manifest:claim', {
+                line: (text) => <span className="line">{text}</span>,
+                lineTab: (text) => <span className="line has-tab">{text}</span>,
+              })}
+            </h3>
           </Cell>
           <Cell>
             <img src={demoImage} alt="" />
           </Cell>
         </Cell>
         <Cell hasGap>
-          <h4 className="h1">
-            {t('manifest:title', {
-              line: (text) => <span className="line">{text}</span>,
-              lineTab: (text) => <span className="line has-tab">{text}</span>,
-            })}
-          </h4>
+          <div className="scrambleTextWrapper">
+            <h4 className="h1 scrambleText">
+              {t('manifest:title', {
+                line: (text) => <span className="line">{text}</span>,
+                lineTab: (text) => <span className="line has-tab">{text}</span>,
+              })}
+            </h4>
+          </div>
           <p className="p">{t('manifest:description')}</p>
         </Cell>
       </Row>
