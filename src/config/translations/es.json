@@ -28,5 +28,9 @@
   "companies:button": "¿Quieres ser una de ellas? contáctanos",
   "faqs:header": "Faq's",
   "find:header": "Encuéntranos",
+  "find:title": "<line>Estamos</line><lineTab>en la</lineTab><lineTab>Latina</lineTab>",
+  "find:description": "Nuestras oficinas están situadas en pleno centro de Madrid, en Calatrava 27 al lado del Metro de La Latina.",
+  "find:description2": "INFO[at]classe.com",
+  "find:claim": "<line>Y detrás</line><lineTab>de la</lineTab><lineTab>pantalla</lineTab>",
   "footer:header": "Bye bye"
 }

@@ -7,6 +7,7 @@ import Courses from '../../components/sections/Courses'
 import Custom from '../../components/sections/Custom'
 import Featured from '../../components/sections/Featured'
 import Companies from '../../components/sections/Companies'
+import Find from '../../components/sections/Find'
 import useDetectMobile from '../../../hooks/useDetectMobile'
 import useTranslations from '../../../hooks/useTranslations'
 import useScrambleText from '../../../hooks/useScrambleText'
@@ -68,6 +69,7 @@ export const home = () => {
         <Header title={t('faqs:header')} number={8} />
         <Header isClose title={t('faqs:header')} />
         <Header title={t('find:header')} number={9} />
+        <Find />
         <Header isClose title={t('find:header')} />
         <Header title={t('footer:header')} number={10} />
         <Header isClose title={t('footer:header')} />

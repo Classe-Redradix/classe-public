@@ -17,7 +17,8 @@
   }
 }
 
-.sectionWrapper.custom {
+.sectionWrapper.custom,
+.sectionWrapper.find {
   svg {
     display: block;
     position: relative;
@@ -27,7 +28,8 @@
     transform: translateX(-100%);
   }
 
-  .p {
+  .p,
+  .notes {
     margin-top: 104px;
   }
 
@@ -108,7 +110,8 @@
     }
   }
 
-  .sectionWrapper.custom {
+  .sectionWrapper.custom,
+  .sectionWrapper.find {
     svg {
       height: 48px;
     }
@@ -128,8 +131,13 @@
 }
 
 @include mq(xl) {
-  .sectionWrapper.custom svg {
+  .sectionWrapper.custom svg,
+  .sectionWrapper.find svg {
     height: 80px;
+  }
+
+  .sectionWrapper.find .notes {
+    margin-top: 220px;
   }
 
   .sectionWrapper.companies .cell:last-child {
