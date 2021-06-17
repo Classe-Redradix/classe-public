@@ -6,10 +6,12 @@ import Manifest from '../../components/sections/Manifest'
 import Courses from '../../components/sections/Courses'
 import Custom from '../../components/sections/Custom'
 import Featured from '../../components/sections/Featured'
+import Companies from '../../components/sections/Companies'
 import useDetectMobile from '../../../hooks/useDetectMobile'
 import useTranslations from '../../../hooks/useTranslations'
 import useScrambleText from '../../../hooks/useScrambleText'
 import useViewportHeight from '../../../hooks/useViewportHeight'
+import CompanyLogo from '../../../assets/images/demo-company.svg'
 
 export default {
   title: 'Views/Home'
@@ -37,6 +39,9 @@ export const home = () => {
     }
   ]
 
+  const fakeArray = new Array(15).fill(null)
+  const logos = fakeArray.map(() => <CompanyLogo viewBox="0 0 125 45" />)
+
   return (
     <MainWrapper>
       <Menu courses={courses} />
@@ -58,6 +63,7 @@ export const home = () => {
         <Header title={t('calendar:header')} number={6} />
         <Header isClose title={t('calendar:header')} />
         <Header title={t('companies:header')} number={7} />
+        <Companies logos={logos} />
         <Header isClose title={t('companies:header')} />
         <Header title={t('faqs:header')} number={8} />
         <Header isClose title={t('faqs:header')} />

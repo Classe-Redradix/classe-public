@@ -24,6 +24,8 @@
   "facts:header": "Facts",
   "calendar:header": "Calendario",
   "companies:header": "Empresas",
+  "companies:title": "<line>#</line><lineTab>Empresas</lineTab><lineTab>que han</lineTab><lineTab>vuelto a</lineTab><lineTab>Class;e</lineTab><line>#</line>",
+  "companies:button": "¿Quieres ser una de ellas? contáctanos",
   "faqs:header": "Faq's",
   "find:header": "Encuéntranos",
   "footer:header": "Bye bye"
