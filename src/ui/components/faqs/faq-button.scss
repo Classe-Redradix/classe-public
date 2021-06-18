@@ -1,0 +1,53 @@
+.faqButton {
+  display: block;
+  position: relative;
+
+  &.is-open .faqButton-content {
+    height: auto;
+  }
+
+  & + .faqButton {
+    margin-top: 24px;
+  }
+
+  &-button {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  &-buttonText {
+    display: block;
+    position: relative;
+    text-align: left;
+  }
+
+  &-content {
+    display: block;
+    position: relative;
+    height: 1px;
+    border-bottom: 1px dashed $black;
+    overflow: hidden;
+  }
+
+  &-description {
+    display: block;
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  @include mq(md) {
+    & + .faqButton {
+      margin-top: 32px;
+    }
+
+    &-button,
+    &-content {
+      margin-bottom: 32px;
+    }
+  }
+}

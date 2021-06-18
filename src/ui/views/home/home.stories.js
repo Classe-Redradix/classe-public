@@ -7,6 +7,7 @@ import Courses from '../../components/sections/Courses'
 import Custom from '../../components/sections/Custom'
 import Featured from '../../components/sections/Featured'
 import Companies from '../../components/sections/Companies'
+import Faqs from '../../components/sections/Faqs'
 import Find from '../../components/sections/Find'
 import useDetectMobile from '../../../hooks/useDetectMobile'
 import useTranslations from '../../../hooks/useTranslations'
@@ -40,8 +41,14 @@ export const home = () => {
     }
   ]
 
-  const fakeArray = new Array(15).fill(null)
-  const logos = fakeArray.map(() => <CompanyLogo viewBox="0 0 125 45" />)
+  const fakeLogosArray = new Array(15).fill(null)
+  const logos = fakeLogosArray.map(() => <CompanyLogo viewBox="0 0 125 45" />)
+
+  const fakeFaqsArray = new Array(7).fill(null)
+  const faqsList = fakeFaqsArray.map(() => ({
+    title: '¿Lorem ipsum dolor sit amet, consectetur adipiscing eli?',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur nulla sed libero dui. Ac molestie diam egestas magnis auctor vitae. Magna scelerisque blandit sed vulputate accumsan pulvinar enim scelerisque. Malesuada.'
+  }))
 
   return (
     <MainWrapper>
@@ -67,6 +74,7 @@ export const home = () => {
         <Companies logos={logos} />
         <Header isClose title={t('companies:header')} />
         <Header title={t('faqs:header')} number={8} />
+        <Faqs list={faqsList} />
         <Header isClose title={t('faqs:header')} />
         <Header title={t('find:header')} number={9} />
         <Find />

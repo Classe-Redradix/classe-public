@@ -3,7 +3,6 @@ import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
-import Button from '../button/Button'
 import demoImage from '../../../assets/images/demo-small.png'
 import Glyph from '../../../assets/icons/glyph-2-icon.svg'
 
