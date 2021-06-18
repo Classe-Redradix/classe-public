@@ -35,12 +35,25 @@
       padding: $distance-big;
 
       & + .header {
-        margin-top: 8px;
+        margin-top: 16px;
       }
     }
 
     & + .header {
       margin-top: 32px;
+    }
+  }
+
+  @include mq(xxl) {
+    &.is-black,
+    &.is-fluor {
+      & + .header {
+        margin-top: 32px;
+      }
+    }
+
+    & + .header {
+      margin-top: 48px;
     }
   }
 }

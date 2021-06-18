@@ -27,4 +27,14 @@
       margin-top: 16px;
     }
   }
+  @include mq(xxl) {
+    & + .sectionWrapper {
+      margin-top: 48px;
+    }
+
+    & + .sectionWrapper.is-black,
+    & + .sectionWrapper.is-fluor {
+      margin-top: 32px;
+    }
+  }
 }

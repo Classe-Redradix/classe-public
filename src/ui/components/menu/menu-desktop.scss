@@ -44,4 +44,10 @@
     flex-wrap: nowrap;
     justify-content: space-between;
   }
+
+  @include mq(xxl) {
+    & + .blurableWrapper {
+      margin-top: 48px;
+    }
+  }
 }

@@ -151,4 +151,8 @@
   @include mq(lg) {
     padding: 32px;
   }
+
+  @include mq(xxl) {
+    padding: 40px;
+  }
 }
