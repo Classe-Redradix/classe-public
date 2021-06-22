@@ -6,6 +6,7 @@ import Manifest from '../../components/sections/Manifest'
 import Courses from '../../components/sections/Courses'
 import Custom from '../../components/sections/Custom'
 import Featured from '../../components/sections/Featured'
+import Calendar from '../../components/sections/Calendar'
 import Companies from '../../components/sections/Companies'
 import Faqs from '../../components/sections/Faqs'
 import Find from '../../components/sections/Find'
@@ -69,6 +70,7 @@ export const home = () => {
         <Header title={t('facts:header')} number={5} />
         <Header isClose title={t('facts:header')} />
         <Header title={t('calendar:header')} number={6} />
+        <Calendar />
         <Header isClose title={t('calendar:header')} />
         <Header title={t('companies:header')} number={7} />
         <Companies logos={logos} />

@@ -110,6 +110,10 @@
     }
   }
 
+  .sectionWrapper.calendar .cell.has-gap {
+    justify-content: flex-end;
+  }
+
   .sectionWrapper.custom,
   .sectionWrapper.find {
     svg {

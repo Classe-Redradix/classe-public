@@ -23,6 +23,8 @@
   "featured:button": "¿Quieres saber más? mira el dossier",
   "facts:header": "Facts",
   "calendar:header": "Calendario",
+  "calendar:title": "<line>Haz</line><line>hueco</line><lineTab>(en tu</lineTab><lineTab>agenda)</lineTab>",
+  "calendar:description": "Las clases se impartirán de Lunes a Viernes de 18:30h a 21:30h. Será en nuestras oficinas de la C/ Calatrava 27. Metro: La Latina, Puerta de Toledo o Tirso de Molina. También tenemos la opción de asistencia híbrida presencial y online.",
   "companies:header": "Empresas",
   "companies:title": "<line>#</line><lineTab>Empresas</lineTab><lineTab>que han</lineTab><lineTab>vuelto a</lineTab><lineTab>Class;e</lineTab><line>#</line>",
   "companies:button": "¿Quieres ser una de ellas? contáctanos",
