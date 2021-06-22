@@ -2,8 +2,15 @@
   display: block;
   position: relative;
 
-  &.is-open .faqButton-content {
-    height: auto;
+  &:not(.is-open) {
+    .faqButton-content {
+      height: 0 !important;
+    }
+
+    .faqButton-buttonIcon::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
   }
 
   & + .faqButton {
@@ -18,6 +25,7 @@
     justify-content: space-between;
     position: relative;
     margin-bottom: 24px;
+    width: 100%;
   }
 
   &-buttonText {
@@ -26,12 +34,44 @@
     text-align: left;
   }
 
+  &-buttonIcon {
+    display: block;
+    position: relative;
+    margin-left: 32px;
+    min-width: 32px;
+    height: 32px;
+    border: 1px solid $black;
+    border-radius: 100%;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 1px;
+      background-color: $black;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &::after {
+      width: 1px;
+      height: 20px;
+      opacity: 0;
+      transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+      transition: opacity $fade-short, transform $transform-short;
+    }
+  }
+
   &-content {
     display: block;
     position: relative;
     height: 1px;
     border-bottom: 1px dashed $black;
     overflow: hidden;
+    transition: height $transform-short;
   }
 
   &-description {
@@ -48,6 +88,20 @@
     &-button,
     &-content {
       margin-bottom: 32px;
+    }
+
+    &-buttonIcon {
+      margin-left: 40px;
+      min-width: 40px;
+      height: 40px;
+
+      &::before {
+        width: 24px;
+      }
+
+      &::after {
+        height: 24px;
+      }
     }
   }
 }
