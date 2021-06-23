@@ -51,6 +51,37 @@ export const home = () => {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur nulla sed libero dui. Ac molestie diam egestas magnis auctor vitae. Magna scelerisque blandit sed vulputate accumsan pulvinar enim scelerisque. Malesuada.'
   }))
 
+  const dates = [
+    {
+      day: '01',
+      month: 'Enero',
+      courses: [
+        {
+          title: 'Js Pro',
+          start: '16',
+          finish: '27',
+          to: '/'
+        }, {
+          title: 'Data',
+          start: '16',
+          finish: '27',
+          to: '/'
+        }
+      ]
+    }, {
+      day: '19',
+      month: 'Agosto',
+      courses: [
+        {
+          title: 'Redux',
+          start: '16',
+          finish: '27',
+          to: '/'
+        }
+      ]
+    }
+  ]
+
   return (
     <MainWrapper>
       <Menu courses={courses} />
@@ -70,7 +101,7 @@ export const home = () => {
         <Header title={t('facts:header')} number={5} />
         <Header isClose title={t('facts:header')} />
         <Header title={t('calendar:header')} number={6} />
-        <Calendar />
+        <Calendar dates={dates} />
         <Header isClose title={t('calendar:header')} />
         <Header title={t('companies:header')} number={7} />
         <Companies logos={logos} />

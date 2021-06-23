@@ -1,11 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
+import DatePicker from '../date-picker/DatePicker'
 import demoImage from '../../../assets/images/demo-small.png'
 
-const Calendar = () => {
+const Calendar = ({ dates }) => {
   const t = useTranslations()
 
   return (
@@ -29,12 +31,29 @@ const Calendar = () => {
         <Cell hasGap>
           <p className="p">{t('calendar:description')}</p>
         </Cell>
-        <Cell hasGap>
-          <p>Calendar</p>
+        <Cell>
+          <DatePicker dates={dates} />
         </Cell>
       </Row>
     </SectionWrapper>
   )
+}
+
+Calendar.propTypes = {
+  dates: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string,
+      month: PropTypes.string.isRequired,
+      courses: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          start: PropTypes.string.isRequired,
+          finish: PropTypes.string.isRequired,
+          to: PropTypes.string.isRequired,
+        })
+      ),
+    }).isRequired
+  ).isRequired,
 }
 
 export default Calendar
