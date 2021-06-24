@@ -19,8 +19,11 @@ const MenuDesktop = (props, ref) => {
           className="menuDesktop-button menu"
           onClick={props.handleOpen}
           aria-label={t('menu:courses')}>
-          [{props.courses < 10 ? `0${props.courses}` : props.courses}]{' '}
-          {t('menu:courses')}
+          [
+          <span className="braketHover">
+            {props.courses < 10 ? `0${props.courses}` : props.courses}
+          </span>
+          ] {t('menu:courses')}
         </button>
         <button
           className="menuDesktop-link menu"

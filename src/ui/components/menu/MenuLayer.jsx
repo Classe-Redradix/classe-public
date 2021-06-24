@@ -26,7 +26,7 @@ const MenuLayer = ({ courses, isOpen, handleClose }) => {
             <button
               className="menuLayer-desktopHeader-button button"
               onClick={handleClose}>
-              [ {t('menu:close')} ]
+              [ <span className="braketHover">{t('menu:close')}</span> ]
             </button>
           </div>
         ) : null}

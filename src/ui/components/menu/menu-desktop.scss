@@ -45,6 +45,12 @@
     justify-content: space-between;
   }
 
+  &-button {
+    html:not(.is-mobile) &:hover .braketHover {
+      padding: 0 4px;
+    }
+  }
+
   @include mq(xxl) {
     & + .blurableWrapper {
       margin-top: 48px;

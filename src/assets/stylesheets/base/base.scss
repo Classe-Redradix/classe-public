@@ -178,6 +178,13 @@ button {
   }
 }
 
+.braketHover {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  transition: padding $transform-short;
+}
+
 @include mq(md) {
   .h1,
   .h2,
