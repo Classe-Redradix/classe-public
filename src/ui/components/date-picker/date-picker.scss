@@ -3,6 +3,14 @@
   position: relative;
   width: 100%;
 
+  &.is-hidden {
+    .datePicker-carousel {
+      filter: blur(3px);
+      opacity: 0;
+      transition: filter $fade-simple, opacity $fade-short $fade-short;
+    }
+  }
+
   &-date {
     display: flex;
     align-items: center;
@@ -41,8 +49,11 @@
       width: 24px;
       height: auto;
 
+      &:first-child {
+        transform: rotate(-135deg);
+      }
       &:last-child {
-        transform: rotate(180deg);
+        transform: rotate(45deg);
       }
     }
   }
@@ -52,6 +63,9 @@
     position: relative;
     margin-top: 32px;
     width: 100%;
+    filter: blur(0);
+    opacity: 1;
+    transition: filter $fade-simple, opacity $fade-short;
   }
 
   &-courseWrapper {
@@ -87,6 +101,7 @@
 
     .notes {
       line-height: 0.75rem;
+      white-space: nowrap;
     }
   }
 
@@ -96,11 +111,17 @@
   }
 
   @include mq(md) {
+    &-courseDates .notes {
+      line-height: 1.25rem;
+    }
+  }
+
+  @include mq(xl) {
     &-date {
       display: block;
       padding: 0;
       padding-right: 40px;
-      min-height: 72px;
+      min-height: 88px;
     }
 
     &-dateText + .datePicker-dateText {
@@ -118,7 +139,7 @@
     &-arrows svg {
       display: block;
       position: relative;
-      width: 32px;
+      width: 40px;
 
       &:last-child {
         margin-top: 8px;
@@ -137,24 +158,20 @@
       flex: 1;
     }
 
-    &-courseDates .notes {
-      line-height: 1.25rem;
+    .mainButton {
+      margin-top: 0;
+      margin-left: 24px;
+      min-width: 120px;
+      width: auto;
     }
+  }
 
+  @include mq(xxl) {
     .mainButton {
       margin-top: 0;
       margin-left: 24px;
       min-width: 240px;
       width: auto;
-    }
-  }
-
-  @include mq(xl) {
-    &-date {
-      min-height: 88px;
-    }
-    &-arrows svg {
-      width: 40px;
     }
   }
 }

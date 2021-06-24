@@ -1,36 +1,81 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
+import gsap from 'gsap'
+import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
 import useTranslations from '../../../hooks/useTranslations'
 import Button from '../button/Button'
 import Arrow from '../../../assets/icons/arrow-icon.svg'
 
 const DatePicker = ({ dates }) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const currentDate = dates[currentIndex]
   const t = useTranslations()
+  gsap.registerPlugin(ScrambleTextPlugin)
+  const dayRef = useRef(null)
+  const monthRef = useRef(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isHidden, setIsHidden] = useState(false)
+  const currentDate = dates[currentIndex]
+  const classes = cx('datePicker', { 'is-hidden': isHidden })
 
-  const prevDate = useCallback(() => {
-    const newCurrentIndex =
-      currentIndex > 0 ? currentIndex - 1 : dates.length - 1
-    setCurrentIndex(newCurrentIndex)
-  }, [currentIndex])
+  const setDate = (currentIndex) => {
+    if (dayRef.current)
+      gsap.to(dayRef.current, {
+        duration: 1.2,
+        scrambleText: {
+          text: dates[currentIndex].day,
+          chars: '!@#$%&/=*',
+        },
+      })
+    gsap.to(monthRef.current, {
+      duration: 1.2,
+      scrambleText: {
+        text: dates[currentIndex].month,
+        chars: '!@#$%&/=*',
+      },
+    })
+  }
 
-  const nextDate = useCallback(() => {
-    const newCurrentIndex =
-      currentIndex < dates.length - 1 ? currentIndex + 1 : 0
-    setCurrentIndex(newCurrentIndex)
-  }, [currentIndex])
+  const chageDate = useCallback(
+    (isPrev) => {
+      const prevNewCurrentIndex =
+        currentIndex > 0 ? currentIndex - 1 : dates.length - 1
+      const NextNewCurrentIndex =
+        currentIndex < dates.length - 1 ? currentIndex + 1 : 0
+      setDate(isPrev ? prevNewCurrentIndex : NextNewCurrentIndex)
+      setIsHidden(true)
+      setTimeout(() => {
+        setCurrentIndex(isPrev ? prevNewCurrentIndex : NextNewCurrentIndex)
+        setIsHidden(false)
+      }, 600)
+    },
+    [currentIndex]
+  )
+
+  // const nextDate = useCallback(() => {
+  //   const newCurrentIndex =
+  //     currentIndex < dates.length - 1 ? currentIndex + 1 : 0
+  //   setDate(newCurrentIndex)
+  //   setIsHidden(true)
+  //   setTimeout(() => {
+  //     setCurrentIndex(newCurrentIndex)
+  //     setIsHidden(false)
+  //   }, 600)
+  // }, [currentIndex])
 
   return (
-    <div className="datePicker">
+    <div className={classes}>
       <div className="datePicker-date">
         {currentDate.day ? (
-          <span className="datePicker-dateText h3">{currentDate.day}</span>
+          <span className="datePicker-dateText h3" ref={dayRef}>
+            {currentDate.day}
+          </span>
         ) : null}
-        <span className="datePicker-dateText h3">{currentDate.month}</span>
+        <span className="datePicker-dateText h3" ref={monthRef}>
+          {currentDate.month}
+        </span>
         <div className="datePicker-arrows">
-          <Arrow viewBox="0 0 43 44" onClick={prevDate} />
-          <Arrow viewBox="0 0 43 44" onClick={nextDate} />
+          <Arrow viewBox="0 0 72 72" onClick={() => chageDate(true)} />
+          <Arrow viewBox="0 0 72 72" onClick={() => chageDate(false)} />
         </div>
       </div>
       <div className="datePicker-carousel">
