@@ -17,7 +17,7 @@ const Faqs = ({ list }) => {
           <div className="scrambleTextWrapper">
             <h3 className="h1 scrambleText">
               {t('faqs:title', {
-                line: (text) => <span className="line">{text}</span>,
+                line: (text) => <span className="line has-wrap">{text}</span>,
                 lineTab: (text) => <span className="line has-tab">{text}</span>,
               })}
             </h3>

@@ -25,7 +25,7 @@
   }
 
   &.is-full {
-    padding: 20px 24px;
+    padding: 20px 0px;
     height: 52px;
     min-width: 100%;
   }
@@ -44,5 +44,11 @@
 
   &-text {
     text-align: center;
+  }
+
+  @include mq(sm) {
+    &.is-full {
+      padding: 20px 24px;
+    }
   }
 }

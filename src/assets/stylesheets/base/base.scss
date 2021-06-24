@@ -165,6 +165,10 @@ button {
     white-space: nowrap;
   }
 
+  .line.has-wrap {
+    white-space: normal;
+  }
+
   &.is-cloned {
     position: absolute;
     top: 0;
