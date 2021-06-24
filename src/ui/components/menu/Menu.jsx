@@ -5,7 +5,7 @@ import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 
-const Menu = ({ courses }) => {
+const Menu = ({ courses, onToggle }) => {
   const size = useWindowSize()
   const menuRef = useRef(null)
   const [isBlack, setIsBlack] = useState(false)
@@ -36,8 +36,15 @@ const Menu = ({ courses }) => {
     })
   }
 
-  const handleOpen = () => setIsOpen(true)
-  const handleClose = () => setIsOpen(false)
+  const handleOpen = () => {
+    setIsOpen(true)
+    onToggle(true)
+  }
+
+  const handleClose = () => {
+    setIsOpen(false)
+    onToggle(false)
+  }
 
   useEffect(() => {
     const mainWrapper = document.querySelector('.mainWrapper')

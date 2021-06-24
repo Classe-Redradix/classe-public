@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MainWrapper from '../../components/wrappers/MainWrapper'
 import Menu from '../../components/menu/Menu'
 import Header from '../../components/header/Header'
@@ -22,6 +22,7 @@ export default {
 
 export const home = () => {
   const t = useTranslations()
+  const [isLock, setIsLock] = useState(false)
   useDetectMobile()
   useScrambleText()
   useViewportHeight()
@@ -83,8 +84,8 @@ export const home = () => {
   ]
 
   return (
-    <MainWrapper>
-      <Menu courses={courses} />
+    <MainWrapper isLock={isLock}>
+      <Menu courses={courses} onToggle={setIsLock} />
       <div className="blurableWrapper">
         <Header title={t('manifest:header')} number={1} />
         <Manifest />
