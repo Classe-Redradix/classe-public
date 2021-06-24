@@ -51,17 +51,6 @@ const DatePicker = ({ dates }) => {
     [currentIndex]
   )
 
-  // const nextDate = useCallback(() => {
-  //   const newCurrentIndex =
-  //     currentIndex < dates.length - 1 ? currentIndex + 1 : 0
-  //   setDate(newCurrentIndex)
-  //   setIsHidden(true)
-  //   setTimeout(() => {
-  //     setCurrentIndex(newCurrentIndex)
-  //     setIsHidden(false)
-  //   }, 600)
-  // }, [currentIndex])
-
   return (
     <div className={classes}>
       <div className="datePicker-date">
