@@ -52,7 +52,7 @@ const Courses = ({ courses }) => {
                     {index < 10 ? `0${index + 1}` : index + 1}
                   </span>
                   <span className="coursesList-linkTextWrapper">
-                    <Tab viewBox="0 0 90 72" />
+                    <Tab viewBox="0 0 85 73" />
                     <span className="coursesList-linkText">{course.title}</span>
                   </span>
                 </a>
