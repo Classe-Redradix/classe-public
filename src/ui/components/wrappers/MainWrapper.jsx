@@ -2,13 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-const MainWrapper = ({ isLock, children }) => {
-  const classes = cx('mainWrapper', { 'is-lock': isLock })
+const MainWrapper = ({ isBlack, isLock, children }) => {
+  const classes = cx('mainWrapper', {
+    'is-black': isBlack,
+    'is-lock': isLock,
+  })
   return <div className={classes}>{children}</div>
 }
 
 MainWrapper.propTypes = {
-  isLock: PropTypes.bool,
+  isBlack: PropTypes.bool.isRequired,
+  isLock: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
 }
 

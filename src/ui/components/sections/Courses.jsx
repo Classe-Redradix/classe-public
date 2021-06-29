@@ -9,7 +9,7 @@ import Button from '../button/Button'
 import demoImage from '../../../assets/images/demo-small-black.png'
 import Tab from '../../../assets/icons/tab-icon.svg'
 
-const Courses = ({ courses }) => {
+const Courses = ({ courses, isBlack }) => {
   const router = useRouter()
   const t = useTranslations()
 
@@ -19,10 +19,10 @@ const Courses = ({ courses }) => {
   }
 
   return (
-    <SectionWrapper isBlack extraClass="courses">
+    <SectionWrapper isBlack={isBlack} isBlackChanger extraClass="courses">
       <Row type="third">
-        <Cell isColumn isNegative>
-          <Cell isNegative>
+        <Cell isColumn isNegative={isBlack}>
+          <Cell isNegative={isBlack}>
             <div className="scrambleTextWrapper">
               <h3 className="h2 scrambleText">
                 {t('courses:claim', {
@@ -34,13 +34,18 @@ const Courses = ({ courses }) => {
               </h3>
             </div>
           </Cell>
-          <Cell isNegative>
+          <Cell isNegative={isBlack}>
             <img src={demoImage} alt="" />
             <p className="p">{t('courses:description')}</p>
-            <Button isLink isNegative href="/" text={t('courses:button')} />
+            <Button
+              isLink
+              isNegative={isBlack}
+              href="/"
+              text={t('courses:button')}
+            />
           </Cell>
         </Cell>
-        <Cell isNegative>
+        <Cell isNegative={isBlack}>
           <ol className="coursesList-list">
             {courses.map((course, index) => (
               <li key={course.title}>
@@ -72,6 +77,7 @@ Courses.propTypes = {
       href: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
+  isBlack: PropTypes.bool.isRequired,
 }
 
 export default Courses

@@ -5,14 +5,11 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   padding: 0 $distance-small;
+  color: $black;
+  transition: color $fade-simple;
 
   & + .sectionWrapper {
     margin-top: 16px;
-  }
-
-  & + .sectionWrapper.is-black,
-  & + .sectionWrapper.is-fluor {
-    margin-top: 8px;
   }
 
   @include mq(md) {
@@ -20,11 +17,6 @@
 
     & + .sectionWrapper {
       margin-top: 32px;
-    }
-
-    & + .sectionWrapper.is-black,
-    & + .sectionWrapper.is-fluor {
-      margin-top: 16px;
     }
   }
 }

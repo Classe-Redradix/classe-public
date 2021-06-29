@@ -2,25 +2,18 @@
   display: block;
   position: relative;
   padding: 0 $distance-small;
+  color: $black;
+  background-color: $white;
+  transition: color $fade-simple, background-color $fade-simple;
   box-sizing: border-box;
 
   &.is-black {
-    padding: $distance-small;
     color: $white;
     background-color: $black;
-
-    & + .header {
-      margin-top: 8px;
-    }
   }
 
   &.is-fluor {
-    padding: $distance-small;
     background-color: $fluor;
-
-    & + .header {
-      margin-top: 8px;
-    }
   }
 
   & + .header {
@@ -29,15 +22,6 @@
 
   @include mq(md) {
     padding: 0 $distance-big;
-
-    &.is-black,
-    &.is-fluor {
-      padding: $distance-big;
-
-      & + .header {
-        margin-top: 16px;
-      }
-    }
 
     & + .header {
       margin-top: 32px;

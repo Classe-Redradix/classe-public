@@ -19,6 +19,10 @@
 
 .sectionWrapper.custom,
 .sectionWrapper.find {
+  &.is-black svg path {
+    fill: $white;
+  }
+
   svg {
     display: block;
     position: relative;
@@ -26,6 +30,11 @@
     width: auto;
     height: 32px;
     transform: translateX(-100%);
+
+    path {
+      fill: $black;
+      transition: fill $fade-simple;
+    }
   }
 
   .p,

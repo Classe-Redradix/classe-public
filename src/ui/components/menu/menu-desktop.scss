@@ -7,7 +7,7 @@
   color: $black;
   filter: blur(0px);
   backdrop-filter: $blur-value;
-  transition: filter $fade-short $fade-short;
+  transition: color $fade-simple, filter $fade-short $fade-short;
   z-index: $index-menu;
 
   & + .blurableWrapper {
@@ -16,27 +16,7 @@
 
   &.is-black {
     color: $white;
-
-    &::before {
-      background-color: $black;
-    }
   }
-
-  &.is-fluor::before {
-    background-color: $fluor;
-  }
-
-  // &::before {
-  //   content: '';
-  //   display: block;
-  //   position: absolute;
-  //   top: -$distance-big;
-  //   right: -$distance-big;
-  //   bottom: 0;
-  //   left: -$distance-big;
-  //   background-color: $white;
-  //   transition: background-color $fade-simple;
-  // }
 
   .cell {
     display: flex;

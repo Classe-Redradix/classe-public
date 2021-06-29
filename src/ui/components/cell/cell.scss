@@ -61,6 +61,7 @@
     position: absolute;
     width: 12px;
     height: 12px;
+    transition: border $fade-simple;
 
     &.is-topLeft {
       top: -1px;
@@ -98,7 +99,8 @@
 
     @for $i from 1 through 100 {
       &:nth-child(#{$i}) {
-        transition: transform $transform-long $i * 0.1s;
+        transition: background-color $fade-simple,
+          transform $transform-long $i * 0.1s;
       }
     }
 

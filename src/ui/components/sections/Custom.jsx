@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
@@ -7,13 +8,13 @@ import Button from '../button/Button'
 import demoImage from '../../../assets/images/demo-small.png'
 import Glyph from '../../../assets/icons/glyph-icon.svg'
 
-const Custom = () => {
+const Custom = ({ isBlack }) => {
   const t = useTranslations()
 
   return (
-    <SectionWrapper extraClass="custom">
+    <SectionWrapper isBlack={isBlack} extraClass="custom">
       <Row type="half">
-        <Cell>
+        <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
             <h3 className="h1 scrambleText">
               {t('custom:title', {
@@ -23,16 +24,16 @@ const Custom = () => {
             </h3>
           </div>
         </Cell>
-        <Cell>
+        <Cell isNegative={isBlack}>
           <img src={demoImage} alt="" />
         </Cell>
       </Row>
       <Row type="half">
-        <Cell hasGap>
+        <Cell hasGap isNegative={isBlack}>
           <Glyph viewBox="0 0 76 80" />
           <p className="p">{t('custom:description')}</p>
         </Cell>
-        <Cell hasGap>
+        <Cell hasGap isNegative={isBlack}>
           <div className="scrambleTextWrapper">
             <h4 className="h1 scrambleText">
               {t('custom:claim', {
@@ -46,6 +47,10 @@ const Custom = () => {
       </Row>
     </SectionWrapper>
   )
+}
+
+Custom.propTypes = {
+  isBlack: PropTypes.bool.isRequired,
 }
 
 export default Custom

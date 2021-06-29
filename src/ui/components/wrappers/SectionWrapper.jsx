@@ -2,9 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-const SectionWrapper = ({ isBlack, isFluor, children, extraClass }) => {
+const SectionWrapper = ({
+  isBlack,
+  isBlackChanger,
+  isFluor,
+  children,
+  extraClass,
+}) => {
   const classes = cx('sectionWrapper', `${extraClass ? extraClass : ''}`, {
     'is-black': isBlack,
+    'is-blackChanger': isBlackChanger,
     'is-fluor': isFluor,
   })
   return <section className={classes}>{children}</section>

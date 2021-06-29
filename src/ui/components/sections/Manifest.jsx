@@ -1,18 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import useTranslations from '../../../hooks/useTranslations'
 import demoImage from '../../../assets/images/demo.png'
 
-const Manifest = () => {
+const Manifest = ({ isBlack }) => {
   const t = useTranslations()
 
   return (
-    <SectionWrapper extraClass="manifest">
+    <SectionWrapper isBlack={isBlack} extraClass="manifest">
       <Row type="half">
         <Cell isColumn>
-          <Cell>
+          <Cell isNegative={isBlack}>
             <h3 className="h3">
               {t('manifest:claim', {
                 line: (text) => <span className="line">{text}</span>,
@@ -20,11 +21,11 @@ const Manifest = () => {
               })}
             </h3>
           </Cell>
-          <Cell>
+          <Cell isNegative={isBlack}>
             <img src={demoImage} alt="" />
           </Cell>
         </Cell>
-        <Cell hasGap>
+        <Cell hasGap isNegative={isBlack}>
           <div className="scrambleTextWrapper">
             <h4 className="h1 scrambleText">
               {t('manifest:title', {
@@ -38,6 +39,10 @@ const Manifest = () => {
       </Row>
     </SectionWrapper>
   )
+}
+
+Manifest.propTypes = {
+  isBlack: PropTypes.bool.isRequired,
 }
 
 export default Manifest

@@ -13,6 +13,7 @@ import Find from '../../components/sections/Find'
 import useTranslations from '../../../hooks/useTranslations'
 import useViewportHeight from '../../../hooks/useViewportHeight'
 import useDetectMobile from '../../../hooks/useDetectMobile'
+import useBackgroundChange from '../../../hooks/useBackgroundChange'
 import useScrambleText from '../../../hooks/useScrambleText'
 import CompanyLogo from '../../../assets/images/demo-company.svg'
 
@@ -23,8 +24,10 @@ export default {
 export const home = () => {
   const t = useTranslations()
   const [isLock, setIsLock] = useState(false)
+  const [isBlack, setIsBlack] = useState(false)
   useViewportHeight()
   useDetectMobile()
+  useBackgroundChange(setIsBlack)
   useScrambleText()
 
   const courses = [
@@ -84,17 +87,17 @@ export const home = () => {
   ]
 
   return (
-    <MainWrapper isLock={isLock}>
-      <Menu courses={courses} onToggle={setIsLock} />
+    <MainWrapper isBlack={isBlack} isLock={isLock}>
+      <Menu isBlack={isBlack} courses={courses} onToggle={setIsLock} />
       <div className="blurableWrapper">
         <Header title={t('manifest:header')} number={1} />
-        <Manifest />
+        <Manifest isBlack={isBlack} />
         <Header isClose title={t('manifest:header')} />
         <Header title={t('courses:header')} number={2} />
-        <Courses courses={courses} />
+        <Courses courses={courses} isBlack={isBlack} />
         <Header isClose title={t('courses:header')} />
         <Header title={t('custom:header')} number={3} />
-        <Custom />
+        <Custom isBlack={isBlack} />
         <Header isClose title={t('custom:header')} />
         <Header title={t('featured:header')} number={4} />
         <Featured />
