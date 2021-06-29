@@ -1,24 +1,31 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import useTranslations from '../../../hooks/useTranslations'
 
-const MenuMobile = (props, ref) => {
+const MenuMobile = ({
+  isBlack,
+  isFluor,
+  isOpen,
+  handleClose,
+  handleOpen,
+  courses,
+}) => {
   const t = useTranslations()
   const classes = cx('menuMobile', {
-    'is-black': props.isBlack,
-    'is-fluor': props.isFluor,
-    'is-open': props.isOpen,
+    'is-black': isBlack,
+    'is-fluor': isFluor,
+    'is-open': isOpen,
   })
 
   return (
-    <header className={classes} ref={ref}>
+    <header className={classes}>
       <span className="menuMobile-claim h2">{t('menu:claimSmall')}</span>
       <button
         className="menuMobile-button menu"
-        onClick={props.isOpen ? props.handleClose : props.handleOpen}
-        aria-label={props.isOpen ? t('menu:close') : t('menu:open')}>
-        [{props.isOpen ? t('menu:close') : t('menu:open')}]
+        onClick={isOpen ? handleClose : handleOpen}
+        aria-label={isOpen ? t('menu:close') : t('menu:open')}>
+        [{isOpen ? t('menu:close') : t('menu:open')}]
       </button>
     </header>
   )
@@ -28,8 +35,9 @@ MenuMobile.props = {
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
   isOpen: PropTypes.bool,
+  handleClose: PropTypes.func.isRequired,
   handleOpen: PropTypes.func.isRequired,
   courses: PropTypes.number.isRequired,
 }
 
-export default forwardRef(MenuMobile)
+export default MenuMobile

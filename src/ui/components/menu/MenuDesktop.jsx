@@ -1,27 +1,27 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import useTranslations from '../../../hooks/useTranslations'
 import Cell from '../cell/Cell'
 
-const MenuDesktop = (props, ref) => {
+const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
   const t = useTranslations()
   const classes = cx('menuDesktop', {
-    'is-black': props.isBlack,
-    'is-fluor': props.isFluor,
+    'is-black': isBlack,
+    'is-fluor': isFluor,
   })
 
   return (
-    <header className={classes} ref={ref}>
-      <Cell isNegative={props.isBlack}>
+    <header className={classes}>
+      <Cell isNegative={isBlack}>
         <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
         <button
           className="menuDesktop-button menu"
-          onClick={props.handleOpen}
+          onClick={handleOpen}
           aria-label={t('menu:courses')}>
           [
           <span className="braketHover">
-            {props.courses < 10 ? `0${props.courses}` : props.courses}
+            {courses < 10 ? `0${courses}` : courses}
           </span>
           ] {t('menu:courses')}
         </button>
@@ -35,11 +35,11 @@ const MenuDesktop = (props, ref) => {
   )
 }
 
-MenuDesktop.props = {
+MenuDesktop.propTypes = {
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
   handleOpen: PropTypes.func.isRequired,
   courses: PropTypes.number.isRequired,
 }
 
-export default forwardRef(MenuDesktop)
+export default MenuDesktop

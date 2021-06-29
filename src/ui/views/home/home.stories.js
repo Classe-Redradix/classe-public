@@ -10,10 +10,10 @@ import Calendar from '../../components/sections/Calendar'
 import Companies from '../../components/sections/Companies'
 import Faqs from '../../components/sections/Faqs'
 import Find from '../../components/sections/Find'
-import useDetectMobile from '../../../hooks/useDetectMobile'
 import useTranslations from '../../../hooks/useTranslations'
-import useScrambleText from '../../../hooks/useScrambleText'
 import useViewportHeight from '../../../hooks/useViewportHeight'
+import useDetectMobile from '../../../hooks/useDetectMobile'
+import useScrambleText from '../../../hooks/useScrambleText'
 import CompanyLogo from '../../../assets/images/demo-company.svg'
 
 export default {
@@ -23,9 +23,9 @@ export default {
 export const home = () => {
   const t = useTranslations()
   const [isLock, setIsLock] = useState(false)
+  useViewportHeight()
   useDetectMobile()
   useScrambleText()
-  useViewportHeight()
 
   const courses = [
     {
