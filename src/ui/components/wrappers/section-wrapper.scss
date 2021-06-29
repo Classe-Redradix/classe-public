@@ -43,17 +43,4 @@
       margin-top: 32px;
     }
   }
-
-  @include mq(xxl) {
-    &.is-black,
-    &.is-fluor {
-      & + .header {
-        margin-top: 32px;
-      }
-    }
-
-    & + .header {
-      margin-top: 48px;
-    }
-  }
 }

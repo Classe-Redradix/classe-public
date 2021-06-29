@@ -51,9 +51,10 @@
     }
   }
 
-  @include mq(xxl) {
-    & + .blurableWrapper {
-      margin-top: 48px;
+  @include mq(lg) {
+    .cell {
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
   }
 }
