@@ -8,11 +8,11 @@ import Button from '../button/Button'
 import demoImage from '../../../assets/images/demo-small.png'
 import Glyph from '../../../assets/icons/glyph-icon.svg'
 
-const Custom = ({ isBlack }) => {
+const Custom = ({ isBlack, isFluor }) => {
   const t = useTranslations()
 
   return (
-    <SectionWrapper isBlack={isBlack} extraClass="custom">
+    <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="custom">
       <Row type="half">
         <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
@@ -42,7 +42,7 @@ const Custom = ({ isBlack }) => {
               })}
             </h4>
           </div>
-          <Button isLink href="/" text={t('custom:button')} />
+          <Button isLink isFluor={isFluor} href="/" text={t('custom:button')} />
         </Cell>
       </Row>
     </SectionWrapper>
@@ -51,6 +51,7 @@ const Custom = ({ isBlack }) => {
 
 Custom.propTypes = {
   isBlack: PropTypes.bool.isRequired,
+  isFluor: PropTypes.bool.isRequired,
 }
 
 export default Custom

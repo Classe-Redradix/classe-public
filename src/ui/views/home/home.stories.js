@@ -25,9 +25,10 @@ export const home = () => {
   const t = useTranslations()
   const [isLock, setIsLock] = useState(false)
   const [isBlack, setIsBlack] = useState(false)
+  const [isFluor, setIsFluor] = useState(false)
   useViewportHeight()
   useDetectMobile()
-  useBackgroundChange(setIsBlack)
+  useBackgroundChange(setIsBlack, setIsFluor)
   useScrambleText()
 
   const courses = [
@@ -87,7 +88,7 @@ export const home = () => {
   ]
 
   return (
-    <MainWrapper isBlack={isBlack} isLock={isLock}>
+    <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
       <Menu isBlack={isBlack} courses={courses} onToggle={setIsLock} />
       <div className="blurableWrapper">
         <Header title={t('manifest:header')} number={1} />
@@ -97,10 +98,10 @@ export const home = () => {
         <Courses courses={courses} isBlack={isBlack} />
         <Header isClose title={t('courses:header')} />
         <Header title={t('custom:header')} number={3} />
-        <Custom isBlack={isBlack} />
+        <Custom isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('custom:header')} />
         <Header title={t('featured:header')} number={4} />
-        <Featured />
+        <Featured isFluor={isFluor} />
         <Header isClose title={t('featured:header')} />
         <Header title={t('facts:header')} number={5} />
         <Header isClose title={t('facts:header')} />

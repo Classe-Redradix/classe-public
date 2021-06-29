@@ -26,6 +26,10 @@
     }
   }
 
+  &.is-fluor {
+    background-color: $fluor;
+  }
+
   &.is-lock {
     overflow-y: hidden;
   }
