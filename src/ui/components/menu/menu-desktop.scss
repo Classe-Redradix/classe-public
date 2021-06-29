@@ -3,9 +3,10 @@
   position: sticky;
   top: 0;
   margin: 0 1px;
-  padding: 0 $distance-big;
+  padding: $distance-big $distance-big 0 $distance-big;
   color: $black;
   filter: blur(0px);
+  backdrop-filter: $blur-value;
   transition: filter $fade-short $fade-short;
   z-index: $index-menu;
 
@@ -25,17 +26,17 @@
     background-color: $fluor;
   }
 
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -$distance-big;
-    right: -$distance-big;
-    bottom: 0;
-    left: -$distance-big;
-    background-color: $white;
-    transition: background-color $fade-simple;
-  }
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   top: -$distance-big;
+  //   right: -$distance-big;
+  //   bottom: 0;
+  //   left: -$distance-big;
+  //   background-color: $white;
+  //   transition: background-color $fade-simple;
+  // }
 
   .cell {
     display: flex;

@@ -6,11 +6,11 @@
   justify-content: space-between;
   position: sticky;
   padding: $distance-small;
-  padding-top: 0;
   top: 0;
   width: 100%;
   height: auto;
   color: $black;
+  backdrop-filter: $blur-value;
   z-index: $index-menu-mobile;
 
   &.is-black,
@@ -27,17 +27,17 @@
     background-color: $fluor;
   }
 
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -$distance-small;
-    right: -$distance-small;
-    bottom: 0;
-    left: -$distance-small;
-    background-color: $white;
-    transition: background-color $fade-simple;
-  }
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   top: -$distance-small;
+  //   right: -$distance-small;
+  //   bottom: 0;
+  //   left: -$distance-small;
+  //   background-color: $white;
+  //   transition: background-color $fade-simple;
+  // }
 
   &-button {
     font-size: 1.125rem;
