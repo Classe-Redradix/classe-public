@@ -15,7 +15,17 @@ const MenuLayer = ({ courses, isOpen, handleClose }) => {
   const isDesktop = size.width >= 768
 
   useEffect(() => {
-    isOpen ? setLinesHidden(true) : setLinesHidden(false)
+    // const lines = document.querySelectorAll('.menuLayer .cell-line')
+    if (isOpen) {
+      // lines.forEach(
+      //   (line, index) =>
+      //     (line.style.transition = `transform 0.6s cubic-bezier(0.65, 0.05, 0.36, 1) 0.${index}s`)
+      // )
+      setLinesHidden(true)
+    } else {
+      setLinesHidden(false)
+      // lines.forEach((line) => (line.style.transition = `transform 0s 0.6s`))
+    }
   }, [isOpen])
 
   return (
