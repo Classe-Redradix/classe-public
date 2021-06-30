@@ -10,6 +10,7 @@ import Calendar from '../../components/sections/Calendar'
 import Companies from '../../components/sections/Companies'
 import Faqs from '../../components/sections/Faqs'
 import Find from '../../components/sections/Find'
+import Footer from '../../components/sections/Footer'
 import useTranslations from '../../../hooks/useTranslations'
 import useViewportHeight from '../../../hooks/useViewportHeight'
 import useDetectMobile from '../../../hooks/useDetectMobile'
@@ -115,9 +116,10 @@ export const home = () => {
         <Faqs list={faqsList} />
         <Header isClose title={t('faqs:header')} />
         <Header title={t('find:header')} number={9} />
-        <Find />
+        <Find isBlack={isBlack} />
         <Header isClose title={t('find:header')} />
         <Header title={t('footer:header')} number={10} />
+        <Footer isBlack={isBlack} />
         <Header isClose title={t('footer:header')} />
       </div>
     </MainWrapper>

@@ -94,6 +94,12 @@
   }
 }
 
+.sectionWrapper.footer {
+  .row.is-half .cell:nth-child(3) {
+    display: none;
+  }
+}
+
 @include mq(md) {
   .sectionWrapper.manifest .p {
     margin-top: 0;
@@ -140,6 +146,23 @@
   .sectionWrapper.companies .cell:last-child {
     padding-top: 32px;
     padding-bottom: 32px;
+  }
+
+  .sectionWrapper.footer {
+    .row.is-half .cell {
+      width: 33.33%;
+    }
+  }
+}
+
+@include mq(lg) {
+  .sectionWrapper.footer {
+    .row.is-half .cell {
+      width: 25%;
+    }
+    .row.is-half .cell:nth-child(3) {
+      display: block;
+    }
   }
 }
 

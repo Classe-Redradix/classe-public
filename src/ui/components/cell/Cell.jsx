@@ -45,7 +45,7 @@ Cell.propTypes = {
   isAnimated: PropTypes.bool,
   isColumn: PropTypes.bool,
   isNegative: PropTypes.bool,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 }
 
 export default Cell

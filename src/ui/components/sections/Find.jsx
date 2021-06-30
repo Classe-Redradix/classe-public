@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
@@ -6,13 +7,13 @@ import Cell from '../cell/Cell'
 import demoImage from '../../../assets/images/demo-small.png'
 import Glyph from '../../../assets/icons/glyph-2-icon.svg'
 
-const Find = () => {
+const Find = ({ isBlack }) => {
   const t = useTranslations()
 
   return (
-    <SectionWrapper extraClass="find">
+    <SectionWrapper isBlack={isBlack} extraClass="find">
       <Row type="half">
-        <Cell>
+        <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
             <h3 className="h1 scrambleText">
               {t('find:title', {
@@ -22,16 +23,16 @@ const Find = () => {
             </h3>
           </div>
         </Cell>
-        <Cell>
+        <Cell isNegative={isBlack}>
           <img src={demoImage} alt="" />
         </Cell>
       </Row>
       <Row type="half">
-        <Cell hasGap>
+        <Cell hasGap isNegative={isBlack}>
           <Glyph viewBox="0 0 56 73" />
           <p className="p">{t('find:description')}</p>
         </Cell>
-        <Cell hasGap>
+        <Cell hasGap isNegative={isBlack}>
           <div className="scrambleTextWrapper">
             <h4 className="h1 scrambleText">
               {t('find:claim', {
@@ -45,6 +46,10 @@ const Find = () => {
       </Row>
     </SectionWrapper>
   )
+}
+
+Find.propTypes = {
+  isBlack: PropTypes.bool.isRequired,
 }
 
 export default Find
