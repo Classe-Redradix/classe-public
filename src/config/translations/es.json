@@ -38,5 +38,7 @@
   "find:description2": "INFO[at]classe.com",
   "find:claim": "<line>Y detrás</line><lineTab>de la</lineTab><lineTab>pantalla</lineTab>",
   "footer:header": "Bye bye",
-  "footer:title": "<line>Stay</line><lineTab>in the</lineTab><lineTab>know</lineTab>"
+  "footer:title": "<line>Stay</line><lineTab>in the</lineTab><lineTab>know</lineTab>",
+  "footer:social": "Social",
+  "footer:contact": "Contacto"
 }

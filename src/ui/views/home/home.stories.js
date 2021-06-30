@@ -119,7 +119,7 @@ export const home = () => {
         <Find isBlack={isBlack} />
         <Header isClose title={t('find:header')} />
         <Header title={t('footer:header')} number={10} />
-        <Footer isBlack={isBlack} />
+        <Footer courses={courses} isBlack={isBlack} />
         <Header isClose title={t('footer:header')} />
       </div>
     </MainWrapper>

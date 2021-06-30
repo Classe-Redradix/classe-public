@@ -6,9 +6,14 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 
-const Footer = ({ isBlack }) => {
+const Footer = ({ courses, isBlack }) => {
   const router = useRouter()
   const t = useTranslations()
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    router.push(href)
+  }
 
   return (
     <SectionWrapper isBlack={isBlack} isBlackChanger extraClass="footer">
@@ -29,14 +34,65 @@ const Footer = ({ isBlack }) => {
       </Row>
       <Row type="half">
         <Cell isNegative={isBlack}>
-          <p>Courses</p>
+          <span className="tiny">{t('courses:header')}</span>
+          <ul className="footer-list">
+            {courses.map((course) => (
+              <li key={course.title}>
+                <a className="h4" href={course.href} onClick={handleClick}>
+                  {course.title}
+                </a>
+              </li>
+            ))}
+          </ul>
         </Cell>
         <Cell isNegative={isBlack}>
-          <p>Social</p>
+          <span className="tiny">{t('footer:social')}</span>
+          <ul className="footer-list">
+            <li>
+              <a
+                className="h4"
+                href="https://www.linkedin.com/company/redradix"
+                target="_blank">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                className="h4"
+                href="https://twitter.com/redradix"
+                target="_blank">
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a
+                className="h4"
+                href="https://github.com/redradix"
+                target="_blank">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                className="h4"
+                href="https://www.behance.net/Redradix"
+                target="_blank">
+                Behance
+              </a>
+            </li>
+            <li>
+              <a
+                className="h4"
+                href="https://www.instagram.com/redradix_/"
+                target="_blank">
+                Instagram
+              </a>
+            </li>
+          </ul>
         </Cell>
         <Cell isNegative={isBlack} />
         <Cell isNegative={isBlack}>
-          <p>Contact</p>
+          <span className="tiny">{t('footer:contact')}</span>
         </Cell>
       </Row>
       <Row type="full">
@@ -49,6 +105,12 @@ const Footer = ({ isBlack }) => {
 }
 
 Footer.propTypes = {
+  courses: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
   isBlack: PropTypes.bool.isRequired,
 }
 
