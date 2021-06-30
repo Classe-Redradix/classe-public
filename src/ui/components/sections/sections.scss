@@ -125,12 +125,6 @@
   }
 
   .footer-list li {
-    transition: color $fade-short;
-
-    html:not(.is-mobile) &:hover {
-      color: $fluor;
-    }
-
     & + li {
       margin-top: 6px;
     }
@@ -138,6 +132,27 @@
     .h4 {
       text-transform: uppercase;
     }
+  }
+
+  a {
+    transition: color $fade-short;
+
+    html:not(.is-mobile) &:hover {
+      color: $fluor;
+    }
+  }
+
+  .button {
+    margin-top: 16px;
+  }
+
+  .logo {
+    display: block;
+    position: relative;
+    margin-top: 56px;
+    font-size: calc(59px + (560 - 59) * ((100vw - 320px) / (2560 - 320)));
+    line-height: 1;
+    text-transform: uppercase;
   }
 }
 
@@ -203,6 +218,10 @@
     .row.is-half .cell:nth-child(2) {
       width: 33.33%;
     }
+
+    .logo {
+      margin-top: 72px;
+    }
   }
 }
 
@@ -216,6 +235,10 @@
 
     .row.is-half .cell:nth-child(3) {
       display: block;
+    }
+
+    .logo {
+      margin-top: 148px;
     }
   }
 }
