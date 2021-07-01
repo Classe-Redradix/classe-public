@@ -6,6 +6,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Radio from '../forms/Radio'
+import Input from '../forms/Input'
 import Checkbox from '../forms/Checkbox'
 
 const Footer = ({ courses, isBlack }) => {
@@ -44,6 +45,17 @@ const Footer = ({ courses, isBlack }) => {
                 handleChange={() => {}}
                 label="footer:student"
                 name="student"
+                value=""
+              />
+            </div>
+            <div className="footer-formBlock">
+              <Input
+                handleBlur={() => {}}
+                handleChange={() => {}}
+                handleSubmit={() => {}}
+                name="email"
+                placeholder={t('general:placeholder')}
+                type="email"
                 value=""
               />
             </div>

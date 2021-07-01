@@ -1,0 +1,56 @@
+.input {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  &.has-submit .input-field {
+    padding: 16px 64px 16px 32px;
+    @include typo-rwd(notes);
+    text-transform: uppercase;
+    border: 1px solid $white;
+    border-radius: 60px;
+    outline: none;
+  }
+
+  &-field {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 16px 0;
+    width: 100%;
+    @include typo-rwd(p);
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px dotted $white;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  &-submit {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    width: 16px;
+    height: auto;
+    transform: rotate(45deg);
+
+    path {
+      fill: $white;
+    }
+  }
+
+  @include mq(md) {
+    &.has-submit .input-field {
+      padding: 16px 72px 16px 32px;
+    }
+
+    &-submit {
+      width: 24px;
+    }
+  }
+}

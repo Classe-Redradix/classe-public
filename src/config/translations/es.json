@@ -1,5 +1,6 @@
 {
   "general:conditions-check": "Acepto los términos y condiciones",
+  "general:placeholder": "Introduce tu email",
   "menu:claim": "CLASS(E) no bullshit",
   "menu:claimSmall": "CLASS(E)",
   "menu:courses": "Cursos",
