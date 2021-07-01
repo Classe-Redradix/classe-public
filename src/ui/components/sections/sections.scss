@@ -123,6 +123,10 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     position: relative;
+
+    & + .footer-formBlock {
+      margin-top: 24px;
+    }
   }
 
   .radio {
@@ -230,6 +234,10 @@
 
     .row.is-half .cell:nth-child(2) {
       width: 33.33%;
+    }
+
+    .footer-formBlock + .footer-formBlock {
+      margin-top: 40px;
     }
 
     .logo {

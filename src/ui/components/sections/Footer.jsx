@@ -6,6 +6,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Radio from '../forms/Radio'
+import Checkbox from '../forms/Checkbox'
 
 const Footer = ({ courses, isBlack }) => {
   const router = useRouter()
@@ -43,6 +44,15 @@ const Footer = ({ courses, isBlack }) => {
                 handleChange={() => {}}
                 label="footer:student"
                 name="student"
+                value=""
+              />
+            </div>
+            <div className="footer-formBlock">
+              <Checkbox
+                hasMessage
+                handleChange={() => {}}
+                label="general:conditions-check"
+                name="conditions"
                 value=""
               />
             </div>
