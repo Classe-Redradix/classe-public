@@ -5,6 +5,7 @@ import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
+import Radio from '../forms/Radio'
 
 const Footer = ({ courses, isBlack }) => {
   const router = useRouter()
@@ -29,7 +30,23 @@ const Footer = ({ courses, isBlack }) => {
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
-          <p>Form</p>
+          <form className="footer-form">
+            <div className="footer-formBlock">
+              <span className="notes">{t('footer:iam')}</span>
+              <Radio
+                handleChange={() => {}}
+                label="footer:company"
+                name="company"
+                value=""
+              />
+              <Radio
+                handleChange={() => {}}
+                label="footer:student"
+                name="student"
+                value=""
+              />
+            </div>
+          </form>
         </Cell>
       </Row>
       <Row type="half">

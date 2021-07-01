@@ -116,6 +116,19 @@
     }
   }
 
+  .footer-formBlock {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .radio {
+    margin-left: 24px;
+  }
+
   .footer-list {
     display: flex;
     align-items: flex-start;
