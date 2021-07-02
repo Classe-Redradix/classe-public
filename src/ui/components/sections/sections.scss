@@ -95,6 +95,21 @@
 }
 
 .sectionWrapper.footer {
+  &.is-black .input {
+    .input-field {
+      color: $white;
+      border: 1px solid $white;
+
+      &::placeholder {
+        color: $white;
+      }
+    }
+
+    .input-submit path {
+      fill: $white;
+    }
+  }
+
   .row.is-half {
     display: flex;
     align-items: stretch;
