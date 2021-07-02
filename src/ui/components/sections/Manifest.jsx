@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
+import ImageDots from '../image-dots/ImageDots'
 import useTranslations from '../../../hooks/useTranslations'
-import demoImage from '../../../assets/images/demo.png'
 
 const Manifest = ({ isBlack, isFluor }) => {
   const t = useTranslations()
@@ -22,7 +22,7 @@ const Manifest = ({ isBlack, isFluor }) => {
             </h3>
           </Cell>
           <Cell isNegative={isBlack}>
-            <img src={demoImage} alt="" />
+            <ImageDots />
           </Cell>
         </Cell>
         <Cell hasGap isNegative={isBlack}>

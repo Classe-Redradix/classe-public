@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
+    "gl-react": "^5.0.0",
+    "gl-react-dom": "^5.1.0",
     "gsap": "./gsap-bonus.tgz",
     "next": "10.2.2",
     "react": "17.0.2",
