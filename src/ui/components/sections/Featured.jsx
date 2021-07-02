@@ -7,11 +7,15 @@ import Cell from '../cell/Cell'
 import Button from '../button/Button'
 import demoImage from '../../../assets/images/demo.png'
 
-const Featured = ({ isFluor }) => {
+const Featured = ({ isBlack, isFluor }) => {
   const t = useTranslations()
 
   return (
-    <SectionWrapper isFluor={isFluor} isFluorChanger extraClass="featured">
+    <SectionWrapper
+      isFluorChanger
+      isBlack={isBlack}
+      isFluor={isFluor}
+      extraClass="featured">
       <Row type="half">
         <Cell hasGap>
           <div className="scrambleTextWrapper">
@@ -39,6 +43,7 @@ const Featured = ({ isFluor }) => {
 }
 
 Featured.propTypes = {
+  isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
 }
 

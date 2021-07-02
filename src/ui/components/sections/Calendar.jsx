@@ -7,11 +7,11 @@ import Cell from '../cell/Cell'
 import DatePicker from '../date-picker/DatePicker'
 import demoImage from '../../../assets/images/demo-small.png'
 
-const Calendar = ({ dates }) => {
+const Calendar = ({ dates, isBlack, isFluor }) => {
   const t = useTranslations()
 
   return (
-    <SectionWrapper extraClass="calendar">
+    <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="calendar">
       <Row type="half">
         <Cell>
           <div className="scrambleTextWrapper">
@@ -54,6 +54,8 @@ Calendar.propTypes = {
       ),
     }).isRequired
   ).isRequired,
+  isBlack: PropTypes.bool.isRequired,
+  isFluor: PropTypes.bool.isRequired,
 }
 
 export default Calendar

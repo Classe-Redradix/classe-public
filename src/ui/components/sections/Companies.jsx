@@ -9,7 +9,7 @@ import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
 
-const Companies = ({ logos }) => {
+const Companies = ({ logos, isBlack, isFluor }) => {
   // gsap.registerPlugin(ScrollTrigger)
   const t = useTranslations()
 
@@ -28,7 +28,7 @@ const Companies = ({ logos }) => {
   // }, [])
 
   return (
-    <SectionWrapper extraClass="companies">
+    <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="companies">
       <Row type="half">
         <Cell hasGap>
           <div className="scrambleTextWrapper">
@@ -55,6 +55,8 @@ const Companies = ({ logos }) => {
 
 Companies.propTypes = {
   logos: PropTypes.arrayOf(PropTypes.node).isRequired,
+  isBlack: PropTypes.bool.isRequired,
+  isFluor: PropTypes.bool.isRequired,
 }
 
 export default Companies

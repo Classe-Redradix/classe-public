@@ -6,11 +6,11 @@ import Cell from '../cell/Cell'
 import useTranslations from '../../../hooks/useTranslations'
 import demoImage from '../../../assets/images/demo.png'
 
-const Manifest = ({ isBlack }) => {
+const Manifest = ({ isBlack, isFluor }) => {
   const t = useTranslations()
 
   return (
-    <SectionWrapper isBlack={isBlack} extraClass="manifest">
+    <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="manifest">
       <Row type="half">
         <Cell isColumn>
           <Cell isNegative={isBlack}>
@@ -43,6 +43,7 @@ const Manifest = ({ isBlack }) => {
 
 Manifest.propTypes = {
   isBlack: PropTypes.bool.isRequired,
+  isFluor: PropTypes.bool.isRequired,
 }
 
 export default Manifest

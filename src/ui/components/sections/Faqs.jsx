@@ -7,11 +7,11 @@ import Cell from '../cell/Cell'
 import FaqsContainer from '../faqs/FaqsContainer'
 import demoImage from '../../../assets/images/demo.png'
 
-const Faqs = ({ list }) => {
+const Faqs = ({ list, isBlack, isFluor }) => {
   const t = useTranslations()
 
   return (
-    <SectionWrapper extraClass="faqs">
+    <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="faqs">
       <Row type="full">
         <Cell>
           <div className="scrambleTextWrapper">
@@ -43,6 +43,8 @@ Faqs.propTpes = {
       description: PropTypes.string.isRequired,
     })
   ).isRequired,
+  isBlack: PropTypes.bool.isRequired,
+  isFluor: PropTypes.bool.isRequired,
 }
 
 export default Faqs

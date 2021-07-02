@@ -9,7 +9,7 @@ import Button from '../button/Button'
 import demoImage from '../../../assets/images/demo-small-black.png'
 import Tab from '../../../assets/icons/tab-icon.svg'
 
-const Courses = ({ courses, isBlack }) => {
+const Courses = ({ courses, isBlack, isFluor }) => {
   const router = useRouter()
   const t = useTranslations()
 
@@ -19,7 +19,11 @@ const Courses = ({ courses, isBlack }) => {
   }
 
   return (
-    <SectionWrapper isBlack={isBlack} isBlackChanger extraClass="courses">
+    <SectionWrapper
+      isBlack={isBlack}
+      isFluor={isFluor}
+      isBlackChanger
+      extraClass="courses">
       <Row type="third">
         <Cell isColumn isNegative={isBlack}>
           <Cell isNegative={isBlack}>
@@ -78,6 +82,7 @@ Courses.propTypes = {
     }).isRequired
   ).isRequired,
   isBlack: PropTypes.bool.isRequired,
+  isFluor: PropTypes.bool.isRequired,
 }
 
 export default Courses

@@ -7,11 +7,11 @@ import Cell from '../cell/Cell'
 import demoImage from '../../../assets/images/demo-small.png'
 import Glyph from '../../../assets/icons/glyph-2-icon.svg'
 
-const Find = ({ isBlack }) => {
+const Find = ({ isBlack, isFluor }) => {
   const t = useTranslations()
 
   return (
-    <SectionWrapper isBlack={isBlack} extraClass="find">
+    <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="find">
       <Row type="half">
         <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
@@ -50,6 +50,7 @@ const Find = ({ isBlack }) => {
 
 Find.propTypes = {
   isBlack: PropTypes.bool.isRequired,
+  isFluor: PropTypes.bool.isRequired,
 }
 
 export default Find

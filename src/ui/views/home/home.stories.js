@@ -93,33 +93,33 @@ export const home = () => {
       <Menu isBlack={isBlack} courses={courses} onToggle={setIsLock} />
       <div className="blurableWrapper">
         <Header title={t('manifest:header')} number={1} />
-        <Manifest isBlack={isBlack} />
+        <Manifest isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('manifest:header')} />
         <Header title={t('courses:header')} number={2} />
-        <Courses courses={courses} isBlack={isBlack} />
+        <Courses courses={courses} isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('courses:header')} />
         <Header title={t('custom:header')} number={3} />
         <Custom isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('custom:header')} />
         <Header title={t('featured:header')} number={4} />
-        <Featured isFluor={isFluor} />
+        <Featured isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('featured:header')} />
         <Header title={t('facts:header')} number={5} />
         <Header isClose title={t('facts:header')} />
         <Header title={t('calendar:header')} number={6} />
-        <Calendar dates={dates} />
+        <Calendar dates={dates} isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('calendar:header')} />
         <Header title={t('companies:header')} number={7} />
-        <Companies logos={logos} />
+        <Companies logos={logos} isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('companies:header')} />
         <Header title={t('faqs:header')} number={8} />
-        <Faqs list={faqsList} />
+        <Faqs isBlack={isBlack} isFluor={isFluor} list={faqsList} />
         <Header isClose title={t('faqs:header')} />
         <Header title={t('find:header')} number={9} />
-        <Find isBlack={isBlack} />
+        <Find isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('find:header')} />
         <Header title={t('footer:header')} number={10} />
-        <Footer courses={courses} isBlack={isBlack} />
+        <Footer courses={courses} isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('footer:header')} />
       </div>
     </MainWrapper>

@@ -9,19 +9,29 @@ const useBackgroundChange = (setIsBlack, setIsFluor) => {
     sectionsBlack.forEach((section) => {
       const top = section.getBoundingClientRect().top
       const bottom = section.getBoundingClientRect().bottom
-
-      reference > top && reference < bottom
+      const toggle = () => reference > top && reference < bottom
         ? setIsBlack(true)
         : setIsBlack(false)
+
+      if (top < window.innerHeight && top > 0) {
+        toggle()
+      } else if (bottom < window.innerHeight && bottom > 0) {
+        toggle()
+      } else return false
     })
 
     sectionsFluor.forEach((section) => {
       const top = section.getBoundingClientRect().top
       const bottom = section.getBoundingClientRect().bottom
-
-      reference > top && reference < bottom
+      const toggle = () => reference > top && reference < bottom
         ? setIsFluor(true)
         : setIsFluor(false)
+
+      if (top < window.innerHeight && top > 0) {
+        toggle()
+      } else if (bottom < window.innerHeight && bottom > 0) {
+        toggle()
+      } else return false
     })
   }
 

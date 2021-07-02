@@ -9,7 +9,7 @@ import Radio from '../forms/Radio'
 import Input from '../forms/Input'
 import Checkbox from '../forms/Checkbox'
 
-const Footer = ({ courses, isBlack }) => {
+const Footer = ({ courses, isBlack, isFluor }) => {
   const router = useRouter()
   const t = useTranslations()
 
@@ -19,7 +19,11 @@ const Footer = ({ courses, isBlack }) => {
   }
 
   return (
-    <SectionWrapper isBlack={isBlack} isBlackChanger extraClass="footer">
+    <SectionWrapper
+      isBlackChanger
+      isBlack={isBlack}
+      isFluor={isFluor}
+      extraClass="footer">
       <Row type="quarter">
         <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
@@ -165,6 +169,7 @@ Footer.propTypes = {
     }).isRequired
   ).isRequired,
   isBlack: PropTypes.bool.isRequired,
+  isFluor: PropTypes.bool.isRequired,
 }
 
 export default Footer
