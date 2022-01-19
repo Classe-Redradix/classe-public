@@ -19,7 +19,7 @@ import useScrambleText from '../../../hooks/useScrambleText'
 import CompanyLogo from '../../../assets/images/demo-company.svg'
 
 export default {
-  title: 'Views/Home'
+  title: 'Views/Home',
 }
 
 export const home = () => {
@@ -35,17 +35,20 @@ export const home = () => {
   const courses = [
     {
       title: 'Js pro',
-      href: '/'
-    }, {
+      href: '/',
+    },
+    {
       title: 'React',
-      href: '/'
-    }, {
+      href: '/',
+    },
+    {
       title: 'Redux',
-      href: '/'
-    }, {
+      href: '/',
+    },
+    {
       title: 'Data',
-      href: '/'
-    }
+      href: '/',
+    },
   ]
 
   const fakeLogosArray = new Array(15).fill(null)
@@ -54,7 +57,8 @@ export const home = () => {
   const fakeFaqsArray = new Array(7).fill(null)
   const faqsList = fakeFaqsArray.map(() => ({
     title: '¿Lorem ipsum dolor sit amet, consectetur adipiscing eli?',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur nulla sed libero dui. Ac molestie diam egestas magnis auctor vitae. Magna scelerisque blandit sed vulputate accumsan pulvinar enim scelerisque. Malesuada.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur nulla sed libero dui. Ac molestie diam egestas magnis auctor vitae. Magna scelerisque blandit sed vulputate accumsan pulvinar enim scelerisque. Malesuada.',
   }))
 
   const dates = [
@@ -66,15 +70,17 @@ export const home = () => {
           title: 'Js Pro',
           start: '16',
           finish: '27',
-          to: '/'
-        }, {
+          to: '/',
+        },
+        {
           title: 'Data',
           start: '16',
           finish: '27',
-          to: '/'
-        }
-      ]
-    }, {
+          to: '/',
+        },
+      ],
+    },
+    {
       day: '19',
       month: 'Agosto',
       courses: [
@@ -82,10 +88,10 @@ export const home = () => {
           title: 'Redux',
           start: '16',
           finish: '27',
-          to: '/'
-        }
-      ]
-    }
+          to: '/',
+        },
+      ],
+    },
   ]
 
   return (

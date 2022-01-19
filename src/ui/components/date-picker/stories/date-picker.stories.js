@@ -2,7 +2,7 @@ import React from 'react'
 import DatePicker from '../DatePicker'
 
 export default {
-  title: 'Components/Date Picker',
+  title: 'Atoms/Date Picker',
   component: DatePicker,
 }
 
@@ -15,15 +15,17 @@ const dates = [
         title: 'Js Pro',
         start: '16',
         finish: '27',
-        to: '/'
-      }, {
+        to: '/',
+      },
+      {
         title: 'Data',
         start: '16',
         finish: '27',
-        to: '/'
-      }
-    ]
-  }, {
+        to: '/',
+      },
+    ],
+  },
+  {
     day: '19',
     month: 'Agosto',
     courses: [
@@ -31,10 +33,10 @@ const dates = [
         title: 'Redux',
         start: '16',
         finish: '27',
-        to: '/'
-      }
-    ]
-  }
+        to: '/',
+      },
+    ],
+  },
 ]
 
 export const datePicker = () => <DatePicker dates={dates} />

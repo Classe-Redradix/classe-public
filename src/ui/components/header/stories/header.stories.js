@@ -3,31 +3,31 @@ import MainWrapper from '../../wrappers/MainWrapper'
 import Header from '../Header'
 
 export default {
-  title: 'Components/Header',
+  title: 'Layout/Header',
   component: Header,
   argTypes: {
     isClose: {
       name: 'isClose',
       defaultValue: false,
       control: {
-        type: 'boolean'
+        type: 'boolean',
       },
     },
     number: {
       name: 'number',
       defaultValue: 1,
       control: {
-        type: 'number'
+        type: 'number',
       },
     },
     title: {
       name: 'title',
       defaultValue: 'Manifiesto',
       control: {
-        type: 'text'
+        type: 'text',
       },
-    }
-  }
+    },
+  },
 }
 
 export const header = ({ ...args }) => (
@@ -35,3 +35,9 @@ export const header = ({ ...args }) => (
     <Header {...args} />
   </MainWrapper>
 )
+
+header.parameters = {
+  options: {
+    showPanel: true,
+  },
+}

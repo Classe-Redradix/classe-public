@@ -5,9 +5,9 @@ import Row from '../Row'
 import Cell from '../../cell/Cell'
 
 export default {
-  title: 'Components/Row',
+  title: 'Layout/Row',
   component: Row,
-  argTypes: null
+  argTypes: null,
 }
 
 export const rowComposition = () => (
@@ -32,15 +32,32 @@ export const rowComposition = () => (
         </Cell>
         <Cell>
           <p className="h5">Demo cell with h5</p>
-          <p className="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est.</p>
+          <p className="p">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus
+            semper ultricies et quis nibh imperdiet lorem fermentum, tempor.
+            Ultrices mauris diam sapien est.
+          </p>
         </Cell>
       </Row>
       <Row type="quarter">
         <Cell>
-          <p className="notes">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est.</p>
+          <p className="notes">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus
+            semper ultricies et quis nibh imperdiet lorem fermentum, tempor.
+            Ultrices mauris diam sapien est.
+          </p>
         </Cell>
         <Cell>
-          <p className="tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut.</p>
+          <p className="tiny">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus
+            semper ultricies et quis nibh imperdiet lorem fermentum, tempor.
+            Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac.
+            Sollicitudin donec purus pretium nam ornare in ut. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Lacus semper ultricies et
+            quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam
+            sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec
+            purus pretium nam ornare in ut.
+          </p>
         </Cell>
       </Row>
     </SectionWrapper>

@@ -5,24 +5,24 @@ import Row from '../../row/Row'
 import Cell from '../Cell'
 
 export default {
-  title: 'Components/Cell',
+  title: 'Atoms/Cell',
   component: Cell,
   argTypes: {
     isAnimated: {
       name: 'isAnimated',
       defaultValue: false,
       control: {
-        type: 'boolean'
+        type: 'boolean',
       },
     },
     hasLinesHidden: {
       name: 'hasLinesHidden',
       defaultValue: false,
       control: {
-        type: 'boolean'
+        type: 'boolean',
       },
     },
-  }
+  },
 }
 
 export const cell = ({ ...args }) => (
@@ -36,3 +36,9 @@ export const cell = ({ ...args }) => (
     </SectionWrapper>
   </MainWrapper>
 )
+
+cell.parameters = {
+  options: {
+    showPanel: true,
+  },
+}

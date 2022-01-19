@@ -5,7 +5,7 @@ import Row from '../Row'
 import Cell from '../../cell/Cell'
 
 export default {
-  title: 'Components/Row/Row',
+  title: 'Layout/Row/Row',
   component: Row,
   argTypes: {
     type: {
@@ -16,7 +16,7 @@ export default {
         options: ['full', 'half', 'third', 'quarter'],
       },
     },
-  }
+  },
 }
 
 export const row = ({ ...args }) => (
@@ -33,3 +33,9 @@ export const row = ({ ...args }) => (
     </SectionWrapper>
   </MainWrapper>
 )
+
+row.parameters = {
+  options: {
+    showPanel: true,
+  },
+}
