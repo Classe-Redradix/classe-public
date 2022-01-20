@@ -7,7 +7,7 @@ import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import CoursesList from './CoursesList'
 
-const MenuLayer = ({ courses, isOpen, handleClose }) => {
+const MenuLayer = ({ courses, isOpen = true, handleClose }) => {
   const t = useTranslations()
   const size = useWindowSize()
   const [linesHidden, setLinesHidden] = useState(false)
@@ -35,7 +35,8 @@ const MenuLayer = ({ courses, isOpen, handleClose }) => {
           <div className="menuLayer-desktopHeader">
             <button
               className="menuLayer-desktopHeader-button button"
-              onClick={handleClose}>
+              onClick={handleClose}
+            >
               [ <span className="braketHover">{t('menu:close')}</span> ]
             </button>
           </div>
@@ -44,10 +45,10 @@ const MenuLayer = ({ courses, isOpen, handleClose }) => {
           {!isDesktop ? (
             <Row type="half" extraClass="menuLayer-mobileHeader">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <p>[Light Mode]</p>
+                <p>[ Light Mode ]</p>
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <p>[Dark Mode]</p>
+                <p>[ Dark Mode ]</p>
               </Cell>
             </Row>
           ) : null}
@@ -64,13 +65,15 @@ const MenuLayer = ({ courses, isOpen, handleClose }) => {
               <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
               <span
                 className="menuDesktop-button menu"
-                aria-label={t('menu:courses')}>
+                aria-label={t('menu:courses')}
+              >
                 [{courses.length < 10 ? `0${courses.length}` : courses.length}]{' '}
                 {t('menu:courses')}
               </span>
               <button
                 className="menuDesktop-link"
-                aria-label={t('menu:contact')}>
+                aria-label={t('menu:contact')}
+              >
                 {t('menu:contact')}
               </button>
             </Cell>
@@ -86,7 +89,7 @@ MenuLayer.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-    }).isRequired
+    }).isRequired,
   ).isRequired,
   isOpen: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,

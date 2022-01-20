@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
@@ -16,8 +15,8 @@ const Manifest = ({ isBlack, isFluor }) => {
           <Cell isNegative={isBlack}>
             <h3 className="h3">
               {t('manifest:claim', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h3>
           </Cell>
@@ -29,8 +28,8 @@ const Manifest = ({ isBlack, isFluor }) => {
           <div className="scrambleTextWrapper">
             <h4 className="h1 scrambleText">
               {t('manifest:title', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h4>
           </div>

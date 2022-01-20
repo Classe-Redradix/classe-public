@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
@@ -18,8 +17,8 @@ const Custom = ({ isBlack, isFluor }) => {
           <div className="scrambleTextWrapper">
             <h3 className="h1 scrambleText">
               {t('custom:title', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h3>
           </div>
@@ -37,8 +36,8 @@ const Custom = ({ isBlack, isFluor }) => {
           <div className="scrambleTextWrapper">
             <h4 className="h1 scrambleText">
               {t('custom:claim', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h4>
           </div>

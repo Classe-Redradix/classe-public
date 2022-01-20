@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import useTranslations from '../../../hooks/useTranslations'
@@ -18,7 +17,8 @@ const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
         <button
           className="menuDesktop-button menu"
           onClick={handleOpen}
-          aria-label={t('menu:courses')}>
+          aria-label={t('menu:courses')}
+        >
           [
           <span className="braketHover">
             {courses < 10 ? `0${courses}` : courses}
@@ -27,7 +27,8 @@ const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
         </button>
         <button
           className="menuDesktop-link menu"
-          aria-label={t('menu:contact')}>
+          aria-label={t('menu:contact')}
+        >
           {t('menu:contact')}
         </button>
       </Cell>

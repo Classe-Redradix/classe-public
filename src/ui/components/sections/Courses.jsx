@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import useTranslations from '../../../hooks/useTranslations'
@@ -13,7 +12,7 @@ const Courses = ({ courses, isBlack, isFluor }) => {
   const router = useRouter()
   const t = useTranslations()
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     e.preventDefault()
     router.push(href)
   }
@@ -23,17 +22,16 @@ const Courses = ({ courses, isBlack, isFluor }) => {
       isBlack={isBlack}
       isFluor={isFluor}
       isBlackChanger
-      extraClass="courses">
+      extraClass="courses"
+    >
       <Row type="third">
         <Cell isColumn isNegative={isBlack}>
           <Cell isNegative={isBlack}>
             <div className="scrambleTextWrapper">
               <h3 className="h2 scrambleText">
                 {t('courses:claim', {
-                  line: (text) => <span className="line">{text}</span>,
-                  lineTab: (text) => (
-                    <span className="line has-tab">{text}</span>
-                  ),
+                  line: text => <span className="line">{text}</span>,
+                  lineTab: text => <span className="line has-tab">{text}</span>,
                 })}
               </h3>
             </div>
@@ -56,7 +54,8 @@ const Courses = ({ courses, isBlack, isFluor }) => {
                 <a
                   className="coursesList-link h1"
                   href={course.href}
-                  onClick={handleClick}>
+                  onClick={handleClick}
+                >
                   <span className="coursesList-linkNumber">
                     {index < 10 ? `0${index + 1}` : index + 1}
                   </span>
@@ -79,7 +78,7 @@ Courses.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-    }).isRequired
+    }).isRequired,
   ).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,

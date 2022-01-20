@@ -1,16 +1,8 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import useTranslations from '../../../hooks/useTranslations'
 
-const MenuMobile = ({
-  isBlack,
-  isFluor,
-  isOpen,
-  handleClose,
-  handleOpen,
-  courses,
-}) => {
+const MenuMobile = ({ isBlack, isFluor, isOpen, handleClose, handleOpen }) => {
   const t = useTranslations()
   const classes = cx('menuMobile', {
     'is-black': isBlack,
@@ -24,7 +16,8 @@ const MenuMobile = ({
       <button
         className="menuMobile-button menu"
         onClick={isOpen ? handleClose : handleOpen}
-        aria-label={isOpen ? t('menu:close') : t('menu:open')}>
+        aria-label={isOpen ? t('menu:close') : t('menu:open')}
+      >
         [{isOpen ? t('menu:close') : t('menu:open')}]
       </button>
     </header>

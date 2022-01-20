@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
@@ -17,8 +16,8 @@ const Faqs = ({ list, isBlack, isFluor }) => {
           <div className="scrambleTextWrapper">
             <h3 className="h1 scrambleText">
               {t('faqs:title', {
-                line: (text) => <span className="line has-wrap">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line has-wrap">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h3>
           </div>
@@ -41,7 +40,7 @@ Faqs.propTpes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,

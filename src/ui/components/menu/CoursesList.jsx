@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import useTranslations from '../../../hooks/useTranslations'
@@ -8,7 +7,7 @@ const CoursesList = ({ courses }) => {
   const router = useRouter()
   const t = useTranslations()
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     e.preventDefault()
     router.push(href)
   }
@@ -25,7 +24,8 @@ const CoursesList = ({ courses }) => {
             <a
               className="coursesList-link h1"
               href={course.href}
-              onClick={handleClick}>
+              onClick={handleClick}
+            >
               <span className="coursesList-linkNumber">
                 {index < 10 ? `0${index + 1}` : index + 1}
               </span>
@@ -46,7 +46,7 @@ CoursesList.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-    }).isRequired
+    }).isRequired,
   ).isRequired,
 }
 
