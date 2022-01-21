@@ -1,0 +1,16 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(5 / 80 * 100vw);
+
+  &__heading {
+    font-size: max(3em, calc(16 / 80 * 100vw));
+    letter-spacing: -0.02em;
+  }
+
+  &__header {
+    outline: 1px solid red;
+  }
+}
