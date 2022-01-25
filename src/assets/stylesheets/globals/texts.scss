@@ -187,4 +187,18 @@ $typography: (
       ),
     ),
   ),
+  fact: (
+    format: (
+      xs: (
+        ff: monument-grotesk-mono,
+        fz: 0.75rem,
+        fw: $regular,
+        lh: 1rem,
+      ),
+      md: (
+        fz: 1.125rem,
+        lh: 1.25rem,
+      ),
+    ),
+  ),
 );

@@ -135,6 +135,10 @@ button {
   @include typo-rwd(tiny);
 }
 
+.fact-text {
+  @include typo-rwd(fact);
+}
+
 .line {
   display: block;
   position: relative;
