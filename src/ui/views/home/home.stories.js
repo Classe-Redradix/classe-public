@@ -6,11 +6,12 @@ import Manifest from '../../components/sections/Manifest'
 import Courses from '../../components/sections/Courses'
 import Custom from '../../components/sections/Custom'
 import Featured from '../../components/sections/Featured'
+import Facts from '../../components/sections/Facts'
 import Calendar from '../../components/sections/Calendar'
 import Companies from '../../components/sections/Companies'
 import Faqs from '../../components/sections/Faqs'
 import Find from '../../components/sections/Find'
-import Footer from '../../components/sections/Footer'
+import Footer from '../../components/footer/Footer'
 import useTranslations from '../../../hooks/useTranslations'
 import useViewportHeight from '../../../hooks/useViewportHeight'
 import useDetectMobile from '../../../hooks/useDetectMobile'
@@ -111,6 +112,7 @@ export const home = () => {
         <Featured isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('featured:header')} />
         <Header title={t('facts:header')} number={5} />
+        <Facts isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('facts:header')} />
         <Header title={t('calendar:header')} number={6} />
         <Calendar dates={dates} isBlack={isBlack} isFluor={isFluor} />

@@ -7,12 +7,6 @@ import './styles/styleguide.scss'
 
 export default { title: 'Style Guide' }
 
-export const colors = () => (
-  <PatternColorWrapper colors={config.colors} />
-)
-export const fonts = () => (
-  <PatternFontWrapper fonts={config.fonts} />
-)
-export const icons = () => (
-  <PatternIconWrapper icons={config.icons} />
-)
+export const colors = () => <PatternColorWrapper colors={config.colors} />
+export const fonts = () => <PatternFontWrapper fonts={config.fonts} />
+export const icons = () => <PatternIconWrapper icons={config.icons} />
