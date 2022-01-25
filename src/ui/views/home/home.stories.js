@@ -1,17 +1,5 @@
 import React, { useState } from 'react'
-import MainWrapper from '../../components/wrappers/MainWrapper'
-import Menu from '../../components/menu/Menu'
-import Header from '../../components/header/Header'
-import Manifest from '../../components/sections/Manifest'
-import Courses from '../../components/sections/Courses'
-import Custom from '../../components/sections/Custom'
-import Featured from '../../components/sections/Featured'
-import Facts from '../../components/sections/Facts'
-import Calendar from '../../components/sections/Calendar'
-import Companies from '../../components/sections/Companies'
-import Faqs from '../../components/sections/Faqs'
-import Find from '../../components/sections/Find'
-import Footer from '../../components/footer/Footer'
+import Home from './Home'
 import useTranslations from '../../../hooks/useTranslations'
 import useViewportHeight from '../../../hooks/useViewportHeight'
 import useDetectMobile from '../../../hooks/useDetectMobile'
@@ -21,6 +9,7 @@ import CompanyLogo from '../../../assets/images/demo-company.svg'
 
 export default {
   title: 'Views/Home',
+  component: Home,
 }
 
 export const home = () => {
@@ -96,40 +85,14 @@ export const home = () => {
   ]
 
   return (
-    <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
-      <Menu isBlack={isBlack} courses={courses} onToggle={setIsLock} />
-      <div className="blurableWrapper">
-        <Header title={t('manifest:header')} number={1} />
-        <Manifest isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('manifest:header')} />
-        <Header title={t('courses:header')} number={2} />
-        <Courses courses={courses} isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('courses:header')} />
-        <Header title={t('custom:header')} number={3} />
-        <Custom isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('custom:header')} />
-        <Header title={t('featured:header')} number={4} />
-        <Featured isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('featured:header')} />
-        <Header title={t('facts:header')} number={5} />
-        <Facts isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('facts:header')} />
-        <Header title={t('calendar:header')} number={6} />
-        <Calendar dates={dates} isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('calendar:header')} />
-        <Header title={t('companies:header')} number={7} />
-        <Companies logos={logos} isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('companies:header')} />
-        <Header title={t('faqs:header')} number={8} />
-        <Faqs isBlack={isBlack} isFluor={isFluor} list={faqsList} />
-        <Header isClose title={t('faqs:header')} />
-        <Header title={t('find:header')} number={9} />
-        <Find isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('find:header')} />
-        <Header title={t('footer:header')} number={10} />
-        <Footer courses={courses} isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('footer:header')} />
-      </div>
-    </MainWrapper>
+    <Home
+      isBlack={isBlack}
+      isFluor={isFluor}
+      isLock={isLock}
+      courses={courses}
+      dates={dates}
+      logos={logos}
+      faqsList={faqsList}
+    />
   )
 }
