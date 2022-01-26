@@ -7,7 +7,7 @@ import useTranslations from '../../../hooks/useTranslations'
 import Button from '../button/Button'
 import Arrow from '../../../assets/icons/arrow-icon.svg'
 
-const DatePicker = ({ dates }) => {
+const DatePicker = ({ dates, isCourse }) => {
   const t = useTranslations()
   gsap.registerPlugin(ScrambleTextPlugin)
   const dayRef = useRef(null)
@@ -17,7 +17,7 @@ const DatePicker = ({ dates }) => {
   const currentDate = dates[currentIndex]
   const classes = cx('datePicker', { 'is-hidden': isHidden })
 
-  const setDate = (currentIndex) => {
+  const setDate = currentIndex => {
     if (dayRef.current)
       gsap.to(dayRef.current, {
         duration: 1.2,
@@ -36,7 +36,7 @@ const DatePicker = ({ dates }) => {
   }
 
   const chageDate = useCallback(
-    (isPrev) => {
+    isPrev => {
       const prevNewCurrentIndex =
         currentIndex > 0 ? currentIndex - 1 : dates.length - 1
       const NextNewCurrentIndex =
@@ -48,27 +48,29 @@ const DatePicker = ({ dates }) => {
         setIsHidden(false)
       }, 600)
     },
-    [currentIndex]
+    [currentIndex],
   )
 
   return (
     <div className={classes}>
-      <div className="datePicker-date">
-        {currentDate.day ? (
-          <span className="datePicker-dateText h3" ref={dayRef}>
-            {currentDate.day}
+      {!isCourse ? (
+        <div className="datePicker-date">
+          {currentDate.day ? (
+            <span className="datePicker-dateText h3" ref={dayRef}>
+              {currentDate.day}
+            </span>
+          ) : null}
+          <span className="datePicker-dateText h3" ref={monthRef}>
+            {currentDate.month}
           </span>
-        ) : null}
-        <span className="datePicker-dateText h3" ref={monthRef}>
-          {currentDate.month}
-        </span>
-        <div className="datePicker-arrows">
-          <Arrow viewBox="0 0 72 72" onClick={() => chageDate(true)} />
-          <Arrow viewBox="0 0 72 72" onClick={() => chageDate(false)} />
+          <div className="datePicker-arrows">
+            <Arrow viewBox="0 0 72 72" onClick={() => chageDate(true)} />
+            <Arrow viewBox="0 0 72 72" onClick={() => chageDate(false)} />
+          </div>
         </div>
-      </div>
+      ) : null}
       <div className="datePicker-carousel">
-        {currentDate.courses.map((course) => (
+        {currentDate.courses.map(course => (
           <div className="datePicker-courseWrapper" key={course.title}>
             <div className="datePicker-course h3">
               {`{`}
@@ -83,7 +85,9 @@ const DatePicker = ({ dates }) => {
               </div>
               {`}`}
             </div>
-            <Button isLink href={course.to} text="Inscríbeme" />
+            {!isCourse ? (
+              <Button isLink href={course.to} text="Inscríbeme" />
+            ) : null}
           </div>
         ))}
       </div>
@@ -102,10 +106,11 @@ DatePicker.propTypes = {
           start: PropTypes.string.isRequired,
           finish: PropTypes.string.isRequired,
           to: PropTypes.string.isRequired,
-        })
+        }),
       ),
-    }).isRequired
+    }).isRequired,
   ).isRequired,
+  isCourse: PropTypes.bool,
 }
 
 export default DatePicker
