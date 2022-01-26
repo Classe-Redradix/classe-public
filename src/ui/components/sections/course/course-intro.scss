@@ -1,0 +1,15 @@
+.courseIntro {
+  $self: &;
+  display: flex;
+  flex-direction: column;
+
+  #{$self}-name {
+    order: -1;
+  }
+
+  @include mq(md) {
+    #{$self}-name {
+      order: 1;
+    }
+  }
+}
