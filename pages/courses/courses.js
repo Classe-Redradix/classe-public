@@ -1,7 +1,7 @@
 const COURSE_JS_PRO = {
   id: 'js-pro',
   information: {
-    name: 'JS PRO',
+    title: 'JS PRO',
     start: '1',
     finish: '9',
     description: "This is the best JavaScript course you'll ever find",
@@ -49,7 +49,7 @@ const COURSE_JS_PRO = {
 const COURSE_REACT = {
   id: 'react',
   information: {
-    name: 'React',
+    title: 'React',
     start: '10',
     finish: '15',
     description: "This is the best React course you'll ever find",
@@ -97,7 +97,7 @@ const COURSE_REACT = {
 const COURSE_REDUX = {
   id: 'redux',
   information: {
-    name: 'Redux',
+    title: 'Redux',
     start: '16',
     finish: '20',
     description: "This is the best Redux course you'll ever find",
@@ -145,7 +145,7 @@ const COURSE_REDUX = {
 const COURSE_DATA = {
   id: 'data',
   information: {
-    name: 'Data',
+    title: 'Data',
     start: '21',
     finish: '25',
     description: "This is the best Data course you'll ever find",
@@ -193,7 +193,7 @@ const COURSE_DATA = {
 const COURSE_FULL_STACK = {
   id: 'full-stack',
   information: {
-    name: 'Full stack',
+    title: 'Full stack',
     start: '26',
     finish: '30',
     description: "This is the best Full stack course you'll ever find",

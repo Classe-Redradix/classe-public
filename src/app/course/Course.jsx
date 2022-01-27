@@ -9,7 +9,7 @@ const Course = ({ course }) => {
         margin: 'auto',
       }}
     >
-      <h1>{information.name}</h1>
+      <h1>{information.title}</h1>
       <p>{information.description}</p>
       <p>Start: {information.start}</p>
       <p>Finish: {information.finish}</p>
