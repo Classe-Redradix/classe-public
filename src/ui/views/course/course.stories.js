@@ -1,5 +1,6 @@
 import React from 'react'
 import Course from './Course'
+import useScrambleText from '../../../hooks/useScrambleText'
 
 export default {
   title: 'Views/Course',
@@ -40,6 +41,16 @@ const dates = [
   },
 ]
 
-export const course = () => (
-  <Course isBlack courses={courses} dates={dates} name="JS PRO" />
-)
+export const course = () => {
+  useScrambleText()
+
+  return (
+    <Course
+      isBlack
+      courses={courses}
+      dates={dates}
+      name="JS PRO"
+      title="objetivos"
+    />
+  )
+}
