@@ -17,8 +17,8 @@ const Calendar = ({ dates, isBlack, isFluor }) => {
           <div className="scrambleTextWrapper">
             <h3 className="h1 scrambleText">
               {t('calendar:title', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h3>
           </div>
@@ -50,9 +50,9 @@ Calendar.propTypes = {
           start: PropTypes.string.isRequired,
           finish: PropTypes.string.isRequired,
           to: PropTypes.string.isRequired,
-        })
+        }),
       ),
-    }).isRequired
+    }).isRequired,
   ).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,

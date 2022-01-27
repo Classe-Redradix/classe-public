@@ -9,25 +9,22 @@ import DatePicker from '../../date-picker/DatePicker'
 import useFitText from 'use-fit-text'
 
 const Course = ({ dates, name }) => {
-  const onStart = useCallback(() => {
-    console.log('resizing started')
-  }, [])
-  const onFinish = useCallback(fontSize => {
-    console.log('resizing finished', fontSize)
-  }, [])
-  const { fontSize, ref } = useFitText({ maxFontSize: 5000, onStart, onFinish })
+  const onFinish = useCallback(fontSize => {}, [])
+  const { fontSize, ref } = useFitText({ maxFontSize: 5000, onFinish })
+
   return (
     <SectionWrapper isBlack extraClass="courseIntro">
       <Row type="full" extraClass="courseIntro-name">
         <Cell isNegative>
           <div
+            className="courseIntro-nameText"
             ref={ref}
             style={{
               fontSize,
-              'white-space': 'nowrap',
+              whiteSpace: 'nowrap',
             }}
           >
-            <Tab viewBox="0 0 85 73" style={{ color: 'white' }} />
+            <Tab viewBox="0 0 85 73" className="courseIntro-tab" />
             {name}
           </div>
         </Cell>
@@ -59,6 +56,22 @@ const Course = ({ dates, name }) => {
   )
 }
 
-Course.propTypes = {}
+Course.propTypes = {
+  dates: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string,
+      month: PropTypes.string.isRequired,
+      courses: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          start: PropTypes.string.isRequired,
+          finish: PropTypes.string.isRequired,
+          to: PropTypes.string.isRequired,
+        }),
+      ),
+    }).isRequired,
+  ).isRequired,
+  name: PropTypes.string.isRequired,
+}
 
 export default Course
