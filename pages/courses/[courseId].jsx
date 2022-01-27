@@ -1,5 +1,5 @@
 import CoursePage from '../../src/app/course/Course'
-import COURSES from './courses'
+import COURSES from './../data/courses'
 
 const Course = ({ course }) => <CoursePage course={course} />
 

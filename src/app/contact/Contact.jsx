@@ -1,5 +1,5 @@
 import useQueryParams from '../../hooks/useQueryParams'
-import COURSES from './../../../pages/courses/courses'
+import COURSES from '../../../pages/data/courses'
 
 const Contact = () => {
   const courseId = useQueryParams('course-id')
