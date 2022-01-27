@@ -11,7 +11,8 @@ const Course = ({ course }) => {
     >
       <h1>{information.name}</h1>
       <p>{information.description}</p>
-      <p>{information.nextCallDate}</p>
+      <p>Start: {information.start}</p>
+      <p>Finish: {information.finish}</p>
       <p>{information.price}$</p>
       <p>{information.hours} hours</p>
       <p>{information.places} student places</p>

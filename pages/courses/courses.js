@@ -2,7 +2,8 @@ const COURSE_JS_PRO = {
   id: 'js-pro',
   information: {
     name: 'JS PRO',
-    nextCallDate: '2022-06-01',
+    start: '1',
+    finish: '9',
     description: "This is the best JavaScript course you'll ever find",
     price: 900,
     hours: 20,
@@ -49,7 +50,8 @@ const COURSE_REACT = {
   id: 'react',
   information: {
     name: 'React',
-    nextCallDate: '2022-10-01',
+    start: '10',
+    finish: '15',
     description: "This is the best React course you'll ever find",
     price: 1400,
     hours: 25,
@@ -96,7 +98,8 @@ const COURSE_REDUX = {
   id: 'redux',
   information: {
     name: 'Redux',
-    nextCallDate: '2022-09-01',
+    start: '16',
+    finish: '20',
     description: "This is the best Redux course you'll ever find",
     price: 1300,
     hours: 25,
@@ -143,7 +146,8 @@ const COURSE_DATA = {
   id: 'data',
   information: {
     name: 'Data',
-    nextCallDate: '2022-08-01',
+    start: '21',
+    finish: '25',
     description: "This is the best Data course you'll ever find",
     price: 1200,
     hours: 30,
@@ -190,7 +194,8 @@ const COURSE_FULL_STACK = {
   id: 'full-stack',
   information: {
     name: 'Full stack',
-    nextCallDate: '2022-07-01',
+    start: '26',
+    finish: '30',
     description: "This is the best Full stack course you'll ever find",
     price: 1500,
     hours: 50,
