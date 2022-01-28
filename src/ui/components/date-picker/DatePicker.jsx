@@ -15,7 +15,11 @@ const DatePicker = ({ dates, isCourse }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isHidden, setIsHidden] = useState(false)
   const currentDate = dates[currentIndex]
-  const classes = cx('datePicker', { 'is-hidden': isHidden })
+  const classes = cx(
+    'datePicker',
+    { 'is-hidden': isHidden },
+    { 'datePicker--course': isCourse },
+  )
 
   const setDate = currentIndex => {
     if (dayRef.current)

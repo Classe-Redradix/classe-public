@@ -10,6 +10,7 @@
   &-nameText {
     display: flex;
     align-items: center;
+    white-space: nowrap;
   }
 
   &-tab {
@@ -20,9 +21,36 @@
     flex-shrink: 0;
   }
 
+  &-description {
+    .p + .p {
+      margin-top: 16px;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 82px;
+  }
+
   @include mq(md) {
-    #{$self}-name {
+    &-name {
       order: 1;
+    }
+
+    &-description {
+      .p {
+        max-width: 65%;
+
+        & + .p {
+          margin-top: 24px;
+        }
+      }
+    }
+
+    &-actions {
+      margin-top: 75px;
     }
   }
 }
@@ -31,7 +59,7 @@
   $self: &;
   width: 100%;
   height: 100%;
-  padding-right: 0;
+  padding: 0;
   text-transform: uppercase;
 
   &-name {
@@ -63,12 +91,13 @@
 
 .courseSections {
   margin-bottom: 500px;
-  padding-bottom: 20px;
+  padding: 0 $distance-small;
   @include mq(md) {
     display: flex;
     flex-wrap: nowrap;
     height: 100vh;
     overflow-x: scroll;
+    padding: 0 $distance-big;
 
     &::-webkit-scrollbar {
       height: 1px;

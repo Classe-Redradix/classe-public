@@ -9,14 +9,14 @@ import CourseSectionEmpty from '../../components/sections/course/CourseSectionEm
 import CourseObjectives from '../../components/sections/course/CourseObjectives'
 import useTranslations from '../../../hooks/useTranslations'
 
-const Course = ({ isBlack, isFluor, isLock, courses, dates, name, title }) => {
+const Course = ({ isBlack, isFluor, isLock, courses, dates, name }) => {
   const t = useTranslations()
   return (
     <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
       {/* <Menu isBlack={isBlack} courses={courses} /> */}
       <CourseIntro dates={dates} name={name} />
       <section className="courseSections">
-        <CourseTitle title={title} />
+        <CourseTitle title={t('course:index-title')} />
         <CourseSection
           number="01"
           text="Introducción y recursos. String templates. Desestructuración.
@@ -60,7 +60,7 @@ Declaración de variables. (2H)"
           text="Further study. Lecturas recomendadas. Recursos extra. (1H)"
           title={t('courses:closing')}
         />
-        <CourseTitle title={title} />
+        <CourseTitle title={t('course:objectives-title')} />
         <CourseObjectives
           learn={t('course:learn')}
           text="Congue fermentum fermentum justo, phasellus. Aliquam sapien scelerisque porttitor quam congue nibh. "
