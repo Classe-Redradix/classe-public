@@ -13,8 +13,8 @@ const Facts = ({ isBlack }) => {
     <SectionWrapper isBlack={isBlack} extraClass="facts">
       <Row type="full">
         <Cell>
-          <div className="-scrambleTextWrapper">
-            <h3 className="h1 -scrambleText">
+          <div className="scrambleTextWrapper">
+            <h3 className="h1 scrambleText">
               {t('facts:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
