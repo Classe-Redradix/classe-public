@@ -7,9 +7,23 @@ import CourseTitle from '../../components/sections/course/CourseTitle'
 import CourseSection from '../../components/sections/course/CourseSection'
 import CourseSectionEmpty from '../../components/sections/course/CourseSectionEmpty'
 import CourseObjectives from '../../components/sections/course/CourseObjectives'
+import CourseInfo from '../../components/sections/course/CourseInfo'
+import CourseContact from '../../components/sections/course/CourseContact'
 import useTranslations from '../../../hooks/useTranslations'
 
-const Course = ({ isBlack, isFluor, isLock, courses, dates, name }) => {
+const Course = ({
+  isBlack,
+  isFluor,
+  isLock,
+  courses,
+  dates,
+  name,
+  price,
+  hours,
+  places,
+  students,
+  successPercentage,
+}) => {
   const t = useTranslations()
   return (
     <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
@@ -66,6 +80,15 @@ Declaración de variables. (2H)"
           text="Congue fermentum fermentum justo, phasellus. Aliquam sapien scelerisque porttitor quam congue nibh. "
           objectives={t('course:objectives')}
         />
+        <CourseInfo
+          price={900}
+          hours={20}
+          places={30}
+          students={120}
+          successPercentage={94}
+        />
+        <CourseTitle title={t('course:contact')} />
+        <CourseContact />
       </section>
     </MainWrapper>
   )
