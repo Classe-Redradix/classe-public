@@ -58,7 +58,7 @@
 .courseTitle {
   $self: &;
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 0;
   text-transform: uppercase;
 
@@ -92,6 +92,7 @@
 .courseSections {
   margin-bottom: 500px;
   padding: 0 $distance-small;
+  height: 70vh;
   @include mq(md) {
     display: flex;
     flex-wrap: nowrap;
@@ -123,6 +124,7 @@
     .cell {
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
   }
 
@@ -145,9 +147,13 @@
   }
 
   @include mq($until: md) {
+    &--empty {
+      display: none;
+    }
+
     .line {
       display: inline;
-      margin-right: 0.5rem;
+      // margin-right: 0.5rem;
     }
   }
 
@@ -163,6 +169,29 @@
     &--objectives {
       width: 476px;
       min-width: 476px;
+    }
+
+    &--info {
+      width: 696px;
+      min-width: 696px;
+
+      .line--inline {
+        display: inline;
+      }
+
+      .scrambleTextWrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        .line {
+          display: inline-flex;
+        }
+      }
+    }
+
+    &--contact {
+      width: calc(100vw - 342px);
+      min-width: calc(100vw - 342px);
     }
   }
 }
