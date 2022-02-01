@@ -1,4 +1,5 @@
 .datePicker {
+  $self: &;
   display: block;
   position: relative;
   width: 100%;
@@ -90,6 +91,12 @@
     display: block;
     position: relative;
     margin-left: 8px;
+
+    #{$self}--course & {
+      max-width: 100px;
+      font-size: 12px;
+      line-height: 1;
+    }
   }
 
   &-courseDates {
@@ -113,6 +120,16 @@
   @include mq(md) {
     &-courseDates .notes {
       line-height: 1.25rem;
+    }
+  }
+
+  @include mq(lg) {
+    &-courseTitle {
+      #{$self}--course & {
+        max-width: 200px;
+        font-size: 20px;
+        line-height: 1.3;
+      }
     }
   }
 
@@ -156,6 +173,14 @@
 
     &-course {
       flex: 1;
+    }
+
+    &-courseTitle {
+      #{$self}--course & {
+        max-width: 200px;
+        font-size: 20px;
+        line-height: 1.3;
+      }
     }
 
     .mainButton {

@@ -90,6 +90,10 @@ button {
   text-transform: uppercase;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .h1 {
   @include typo-rwd(h1);
 }
