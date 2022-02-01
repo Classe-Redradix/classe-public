@@ -69,7 +69,10 @@ const CourseInfo = ({ price, hours, places, students, successPercentage }) => {
       </Row>
       <Row type="full" extraClass="courseSection-title">
         <Cell isNegative>
-          <Exclamation viewBox="0 0 111 88" />
+          <Exclamation
+            viewBox="0 0 111 88"
+            className="courseSection-glypBottom"
+          />
         </Cell>
       </Row>
     </SectionWrapper>
