@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-const MainWrapper = ({ isBlack, isFluor, isLock, children }) => {
-  const classes = cx('mainWrapper', {
+const MainWrapper = ({ extraClass, isBlack, isFluor, isLock, children }) => {
+  const classes = cx('mainWrapper', `${extraClass ? extraClass : ''}`, {
     'is-black': isBlack,
     'is-fluor': isFluor,
     'is-lock': isLock,
@@ -12,9 +12,10 @@ const MainWrapper = ({ isBlack, isFluor, isLock, children }) => {
 }
 
 MainWrapper.propTypes = {
+  extraClass: PropTypes.string,
   isBlack: PropTypes.bool.isRequired,
-  isFluor: PropTypes.bool.isRequired,
-  isLock: PropTypes.bool.isRequired,
+  isFluor: PropTypes.bool,
+  isLock: PropTypes.bool,
   children: PropTypes.node.isRequired,
 }
 
