@@ -3,8 +3,11 @@ const path = require('path')
 module.exports = {
   stories: ['../src/**/*.stories.js'],
   addons: ['@storybook/addon-controls'],
+  staticDirs: ['../public'],
   webpackFinal: async (config, { configType }) => {
-    const fileLoaderRule = config.module.rules.find(rule => rule.test && rule.test.test('.svg'))
+    const fileLoaderRule = config.module.rules.find(
+      rule => rule.test && rule.test.test('.svg'),
+    )
     fileLoaderRule.exclude = /\.svg$/
     config.module.rules.push({
       test: /\.svg$/,
@@ -18,5 +21,5 @@ module.exports = {
     })
 
     return config
-  }
+  },
 }
