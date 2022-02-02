@@ -5,7 +5,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import DatePicker from '../date-picker/DatePicker'
-import demoImage from '../../../assets/images/demo-small.png'
+import demoImage from '/public/images/demo-small.png'
 
 const Calendar = ({ dates, isBlack, isFluor }) => {
   const t = useTranslations()

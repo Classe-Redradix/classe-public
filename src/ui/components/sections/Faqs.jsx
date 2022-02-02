@@ -5,7 +5,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import FaqsContainer from '../faqs/FaqsContainer'
-import demoImage from '../../../assets/images/demo.png'
+import demoImage from '/public/images/demo.png'
 
 const Faqs = ({ list, isBlack, isFluor }) => {
   const t = useTranslations()
@@ -17,8 +17,8 @@ const Faqs = ({ list, isBlack, isFluor }) => {
           <div className="scrambleTextWrapper">
             <h3 className="h1 scrambleText">
               {t('faqs:title', {
-                line: (text) => <span className="line has-wrap">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line has-wrap">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h3>
           </div>
@@ -41,7 +41,7 @@ Faqs.propTpes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,

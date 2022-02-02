@@ -4,8 +4,8 @@ import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import useTranslations from '../../../../hooks/useTranslations'
-import demoImage from '../../../../assets/images/demo-small-black.png'
-import Glyph from '../../../../assets/icons/glyph-2-icon.svg'
+import demoImage from '/public/images/demo-small-black.png'
+import GlyphIcon from './../../../../assets/icons/GlyphIcon'
 
 const CourseContact = ({}) => {
   const t = useTranslations()
@@ -25,7 +25,7 @@ const CourseContact = ({}) => {
       </Row>
       <Row type="half" extraClass="courseSection-title">
         <Cell isNegative>
-          <Glyph viewBox="0 0 56 73" className="courseSection-glypTop" />
+          <GlyphIcon className="icon courseSection-glypTop" />
           <p className="h5">Madrid, Calatrava 27 [Metro La Latina]</p>
           <p className="h5">INFO[AT]CLASSE.COM</p>
           <p className="h5">+34 000 000 000</p>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import CompanyLogo from './../../assets/images/demo-company.svg'
+import CompanyLogo from '/public/images/demo-company.svg'
 import COURSES from './../../../pages/data/courses'
 
 import {
@@ -28,7 +28,7 @@ const Home = () => {
   }))
 
   const fakeLogosArray = new Array(15).fill(null)
-  const logos = fakeLogosArray.map(() => <CompanyLogo viewBox="0 0 125 45" />)
+  const logos = fakeLogosArray.map(() => <img src={CompanyLogo} />)
   const fakeFaqsArray = new Array(7).fill(null)
   const faqsList = fakeFaqsArray.map(() => ({
     title: '¿Lorem ipsum dolor sit amet, consectetur adipiscing eli?',

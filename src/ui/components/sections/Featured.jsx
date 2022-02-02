@@ -5,7 +5,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
-import demoImage from '../../../assets/images/demo.png'
+import demoImage from '/public/images/demo.png'
 
 const Featured = ({ isBlack, isFluor }) => {
   const t = useTranslations()
@@ -15,14 +15,15 @@ const Featured = ({ isBlack, isFluor }) => {
       isFluorChanger
       isBlack={isBlack}
       isFluor={isFluor}
-      extraClass="featured">
+      extraClass="featured"
+    >
       <Row type="half">
         <Cell hasGap>
           <div className="scrambleTextWrapper">
             <h3 className="h1 scrambleText">
               {t('featured:title', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h3>
           </div>

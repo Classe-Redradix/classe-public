@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Arrow from '../../../assets/icons/arrow-icon.svg'
+import ArrowIcon from './../../../assets/icons/ArrowIcon'
 
 const Input = ({
   handleBlur,
@@ -26,11 +26,7 @@ const Input = ({
         value={value}
       />
       {handleSubmit ? (
-        <Arrow
-          viewBox="0 0 72 72"
-          className="input-submit"
-          onClick={handleSubmit}
-        />
+        <ArrowIcon className="icon input-submit" onClick={handleSubmit} />
       ) : null}
     </div>
   )
