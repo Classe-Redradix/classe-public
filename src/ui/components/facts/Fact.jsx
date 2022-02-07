@@ -7,7 +7,7 @@ const Fact = ({ text }) => {
     <div className="fact">
       <div className="fact-content">
         <div className="fact-arrow">
-          <Arrow viewBox="0 0 72 72" />
+          <Arrow viewBox="0 0 80 80" />
         </div>
         <span className="fact-text">{text}</span>
       </div>
