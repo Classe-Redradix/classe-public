@@ -1,4 +1,5 @@
 .input {
+  $self: &;
   display: block;
   position: relative;
   width: 100%;
@@ -45,6 +46,17 @@
     path {
       fill: $black;
       transition: fill $fade-simple;
+    }
+  }
+
+  &.is-negative {
+    #{$self}-field {
+      color: $white;
+      border-bottom-color: $white;
+
+      &::placeholder {
+        color: $white;
+      }
     }
   }
 
