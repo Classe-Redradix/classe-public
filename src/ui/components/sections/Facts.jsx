@@ -44,8 +44,8 @@ const Facts = ({ isBlack }) => {
   }
 
   return (
-    <div onMouseMove={cursorFinderEvent}>
-      <SectionWrapper isBlack={isBlack} extraClass="facts">
+    <SectionWrapper isBlack={isBlack} extraClass="facts">
+      <div onMouseMove={cursorFinderEvent}>
         <Row type="full">
           <Cell>
             <div className="scrambleTextWrapper">
@@ -82,8 +82,8 @@ const Facts = ({ isBlack }) => {
             <Fact text={t('facts:fact6')} />
           </Cell>
         </Row>
-      </SectionWrapper>
-    </div>
+      </div>
+    </SectionWrapper>
   )
 }
 
