@@ -5,7 +5,7 @@ import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import useTranslations from '../../../../hooks/useTranslations'
 import demoImage from '/public/images/demo-small-black.png'
-import GlyphIcon from './../../../../assets/icons/GlyphIcon'
+import Glyph from '../../../../assets/icons/GlyphIcon'
 
 const CourseContact = ({}) => {
   const t = useTranslations()
