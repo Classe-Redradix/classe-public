@@ -5,41 +5,52 @@ import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 
-const Menu = ({ type, isBlack, isFluor, courses, onToggle }) => {
+const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
   const size = useWindowSize()
-  const [isOpen, setIsOpen] = useState(false)
+  const [isContactOpen, setIsContactOpen] = useState(false)
+  const [areCoursesOpen, setAreCoursesOpen] = useState(false)
 
-  const handleOpen = () => {
-    setIsOpen(true)
-    onToggle(true)
+  const handleCoursesOpen = () => {
+    setIsContactOpen(false)
+    setAreCoursesOpen(true)
+  }
+
+  const handleContactOpen = () => {
+    setAreCoursesOpen(false)
+    setIsContactOpen(true)
   }
 
   const handleClose = () => {
-    setIsOpen(false)
+    setIsContactOpen(false)
+    setAreCoursesOpen(false)
     onToggle(false)
   }
 
   return (
     <>
       <MenuLayer
-        type={type}
         courses={courses}
-        isOpen={isOpen}
+        handleContactOpen={handleContactOpen}
+        isContactOpen={isContactOpen}
+        areCoursesOpen={areCoursesOpen}
         handleClose={handleClose}
       />
       {size.width >= 768 ? (
         <MenuDesktop
           isBlack={isBlack}
           isFluor={isFluor}
-          handleOpen={handleOpen}
+          handleCoursesOpen={handleCoursesOpen}
+          handleContactOpen={handleContactOpen}
           courses={courses.length}
         />
       ) : (
         <MenuMobile
           isBlack={isBlack}
           isFluor={isFluor}
-          isOpen={isOpen}
-          handleOpen={handleOpen}
+          isContactOpen={isContactOpen}
+          areCoursesOpen={areCoursesOpen}
+          handleCoursesOpen={handleCoursesOpen}
+          handleContactOpen={handleContactOpen}
           handleClose={handleClose}
         />
       )}
@@ -54,7 +65,6 @@ Menu.propTypes = {
       href: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
-  type: PropTypes.string,
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
   onToggle: PropTypes.func.isRequired,

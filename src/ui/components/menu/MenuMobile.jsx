@@ -6,11 +6,15 @@ import useTranslations from '../../../hooks/useTranslations'
 const MenuMobile = ({
   isBlack,
   isFluor,
-  isOpen,
+  handleCoursesOpen,
+  handleContactOpen,
+  isContactOpen,
+  areCoursesOpen,
   handleClose,
   handleOpen,
   courses,
 }) => {
+  const isOpen = isContactOpen || areCoursesOpen
   const t = useTranslations()
   const classes = cx('menuMobile', {
     'is-black': isBlack,
@@ -23,8 +27,9 @@ const MenuMobile = ({
       <span className="menuMobile-claim h2">{t('menu:claimSmall')}</span>
       <button
         className="menuMobile-button menu"
-        onClick={isOpen ? handleClose : handleOpen}
-        aria-label={isOpen ? t('menu:close') : t('menu:open')}>
+        onClick={isOpen ? handleClose : handleCoursesOpen}
+        aria-label={isOpen ? t('menu:close') : t('menu:open')}
+      >
         [{isOpen ? t('menu:close') : t('menu:open')}]
       </button>
     </header>
