@@ -14,10 +14,7 @@ const CourseContact = ({}) => {
     <SectionWrapper isBlack extraClass="courseSection courseSection--contact">
       <Row type="half" extraClass="courseSection-number">
         <Cell isNegative>
-          <h3 className="h3">
-            ¿hechas algo en falta? puedes combinar todo el temario de todos
-            nuestros cursos como mejor se adapte a lo que BUSCAS
-          </h3>
+          <h3 className="h3">{t('course:contact')}</h3>
         </Cell>
         <Cell isNegative>
           <img src={demoImage} alt="" />
@@ -25,10 +22,14 @@ const CourseContact = ({}) => {
       </Row>
       <Row type="half" extraClass="courseSection-title">
         <Cell isNegative>
-          <GlyphIcon className="icon courseSection-glypTop" />
-          <p className="h5">Madrid, Calatrava 27 [Metro La Latina]</p>
-          <p className="h5">INFO[AT]CLASSE.COM</p>
-          <p className="h5">+34 000 000 000</p>
+          <Glyph viewBox="0 0 56 73" className="courseSection-glypTop" />
+          <div className="scrambleTextWrapper">
+            <h3 className="h5 scrambleText">
+              {t('contact:address', {
+                line: text => <span className="line">{text}</span>,
+              })}
+            </h3>
+          </div>
         </Cell>
         <Cell isNegative>4</Cell>
       </Row>

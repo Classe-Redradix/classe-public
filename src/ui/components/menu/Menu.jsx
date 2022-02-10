@@ -5,7 +5,7 @@ import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 
-const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
+const Menu = ({ type, isBlack, isFluor, courses, onToggle }) => {
   const size = useWindowSize()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -21,7 +21,12 @@ const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
 
   return (
     <>
-      <MenuLayer courses={courses} isOpen={isOpen} handleClose={handleClose} />
+      <MenuLayer
+        type={type}
+        courses={courses}
+        isOpen={isOpen}
+        handleClose={handleClose}
+      />
       {size.width >= 768 ? (
         <MenuDesktop
           isBlack={isBlack}
@@ -47,8 +52,9 @@ Menu.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-    }).isRequired
+    }).isRequired,
   ).isRequired,
+  type: PropTypes.string,
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
   onToggle: PropTypes.func.isRequired,
