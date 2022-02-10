@@ -22,7 +22,7 @@ const CourseContact = ({}) => {
       </Row>
       <Row type="half" extraClass="courseSection-title">
         <Cell isNegative>
-          <Glyph viewBox="0 0 56 73" className="courseSection-glypTop" />
+          <GlyphIcon viewBox="0 0 56 73" className="courseSection-glypTop" />
           <div className="scrambleTextWrapper">
             <h3 className="h5 scrambleText">
               {t('contact:address', {
