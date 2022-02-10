@@ -1,6 +1,9 @@
 {
   "general:conditions-check": "Acepto los términos y condiciones",
+  "general:newsletter-check": "Suscribirme a la newsletter",
   "general:placeholder": "Introduce tu email",
+  "general:name-surname-placeholder": "Nombre Apellido Apellido",
+  "general:send": "Enviar",
   "menu:claim": "CLASS(E) no bullshit",
   "menu:claimSmall": "CLASS(E)",
   "menu:courses": "Cursos",
@@ -20,7 +23,6 @@
   "course:button": "Inscribirme",
   "course:index-title": "Índice",
   "course:objectives-title": "Objetivos",
-  "course:contact": "Contacto",
   "course:fundamentals": "<line>Fundame</line><line>ntos</line>",
   "course:functional-programming": "<line>Program</line><line>ación\u00a0</line><line>funciona</line><line>l</line>",
   "course:object-oriented-programming": "<line>Program</line><line>ación\u00a0</line><line>orientad</line><line>a a</line><line>objetos</line>",
@@ -33,6 +35,7 @@
   "course:places": "<line>plazas</line>",
   "course:students": "<line>alumnos</line><line>inscritos</line>",
   "course:success": "<line>de éxito</line>",
+  "course:contact": "¿echas algo en falta? puedes combinar todo el temario de todos nuestros cursos como mejor se adapte a lo que BUSCAS",
 
   "custom:header": "Personaliza",
   "custom:title": "<line>Nuestros</line><lineTab>cursos=</lineTab><lineTab>a tu</lineTab><lineTab>medida</lineTab>",
@@ -65,6 +68,15 @@
   "find:description": "Nuestras oficinas están situadas en pleno centro de Madrid, en Calatrava 27 al lado del Metro de La Latina.",
   "find:description2": "INFO[at]classe.com",
   "find:claim": "<line>Y detrás</line><lineTab>de la</lineTab><lineTab>pantalla</lineTab>",
+
+  "contact:title": "<line>Ponte en</line><line>contacto</line><line>blabla</line>",
+  "contact:address1": "<line>Madrid, Calatrava 27</line><line>[Metro La Latina]</line>",
+  "contact:address2": "<line>info[at]classe.com</line>",
+  "contact:address3": "<line>+34 000 000 000</line>",
+  "contact:my-name-is": "<line>Ey! Me llamo</line>",
+  "contact:interested-in": "<line>Estoy interesado en</line>",
+  "contact:my-email": "<line>Y este es mi correo</line>",
+
   "footer:header": "Bye bye",
   "footer:title": "<line>Stay</line><lineTab>in the</lineTab><lineTab>know</lineTab>",
   "footer:iam": "Soy",

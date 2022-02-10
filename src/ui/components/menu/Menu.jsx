@@ -7,34 +7,50 @@ import MenuMobile from './MenuMobile'
 
 const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
   const size = useWindowSize()
-  const [isOpen, setIsOpen] = useState(false)
+  const [isContactOpen, setIsContactOpen] = useState(false)
+  const [areCoursesOpen, setAreCoursesOpen] = useState(false)
 
-  const handleOpen = () => {
-    setIsOpen(true)
-    onToggle(true)
+  const handleCoursesOpen = () => {
+    setIsContactOpen(false)
+    setAreCoursesOpen(true)
+  }
+
+  const handleContactOpen = () => {
+    setAreCoursesOpen(false)
+    setIsContactOpen(true)
   }
 
   const handleClose = () => {
-    setIsOpen(false)
+    setIsContactOpen(false)
+    setAreCoursesOpen(false)
     onToggle(false)
   }
 
   return (
     <>
-      <MenuLayer courses={courses} isOpen={isOpen} handleClose={handleClose} />
+      <MenuLayer
+        courses={courses}
+        handleContactOpen={handleContactOpen}
+        isContactOpen={isContactOpen}
+        areCoursesOpen={areCoursesOpen}
+        handleClose={handleClose}
+      />
       {size.width >= 768 ? (
         <MenuDesktop
           isBlack={isBlack}
           isFluor={isFluor}
-          handleOpen={handleOpen}
+          handleCoursesOpen={handleCoursesOpen}
+          handleContactOpen={handleContactOpen}
           courses={courses.length}
         />
       ) : (
         <MenuMobile
           isBlack={isBlack}
           isFluor={isFluor}
-          isOpen={isOpen}
-          handleOpen={handleOpen}
+          isContactOpen={isContactOpen}
+          areCoursesOpen={areCoursesOpen}
+          handleCoursesOpen={handleCoursesOpen}
+          handleContactOpen={handleContactOpen}
           handleClose={handleClose}
         />
       )}
@@ -47,7 +63,7 @@ Menu.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-    }).isRequired
+    }).isRequired,
   ).isRequired,
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,

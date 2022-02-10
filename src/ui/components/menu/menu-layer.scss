@@ -1,4 +1,5 @@
 .menuLayer {
+  $self: &;
   display: block;
   position: fixed;
   top: 0;
@@ -16,6 +17,14 @@
   &.is-open {
     opacity: 1;
     pointer-events: all;
+  }
+
+  &.is-free {
+    bottom: 0;
+    overflow-y: scroll;
+    height: auto;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
   }
 
   &:not(.is-open) .cell-line {
@@ -121,6 +130,59 @@
     }
   }
 
+  &-contact.row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .cell {
+      display: flex;
+      flex-direction: column;
+      min-height: 65vh;
+
+      #{$self}-contactAddress {
+        margin-top: auto;
+      }
+
+      #{$self}-contactAddressText {
+        margin-top: 24px;
+        @include typo-rwd(h4);
+      }
+    }
+
+    .cell:last-child {
+      flex: 1;
+    }
+
+    .contact-formBlock {
+      position: relative;
+
+      & + .contact-formBlock {
+        margin-top: 24px;
+      }
+
+      &--flex {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 16px;
+
+        & + .contact-formBlock {
+          margin-top: 24px;
+        }
+
+        .checkbox,
+        .radio {
+          margin-top: 12px;
+        }
+      }
+    }
+
+    .mainButton {
+      margin-top: 40px;
+    }
+  }
+
   @include mq(md) {
     &.is-open {
       transition: opacity $fade-simple $fade-short-delay;
@@ -130,6 +192,11 @@
         filter: $blur-value;
         transition: filter $fade-short;
       }
+    }
+
+    &.is-free {
+      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
     }
 
     &-wrapper {
@@ -150,6 +217,45 @@
 
       .cell:last-child {
         flex: none;
+      }
+    }
+
+    &-contact.row {
+      flex-direction: row;
+
+      .cell {
+        height: auto;
+
+        #{$self}-contactAddressText {
+          margin-top: 24px;
+          @include typo-rwd(h5);
+        }
+      }
+
+      .cell:last-child {
+        flex: none;
+      }
+
+      .contact-formBlock--flex {
+        flex-direction: row;
+        align-items: center;
+
+        .checkbox {
+          margin-top: 0;
+          &:not(:first-child) {
+            margin-top: 0;
+            margin-left: 24px;
+          }
+        }
+
+        .radio {
+          margin-top: 0;
+          margin-left: 24px;
+        }
+      }
+
+      .mainButton {
+        margin-top: auto;
       }
     }
 

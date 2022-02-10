@@ -4,7 +4,13 @@ import cx from 'classnames'
 import useTranslations from '../../../hooks/useTranslations'
 import Cell from '../cell/Cell'
 
-const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
+const MenuDesktop = ({
+  isBlack,
+  isFluor,
+  handleCoursesOpen,
+  handleContactOpen,
+  courses,
+}) => {
   const t = useTranslations()
   const classes = cx('menuDesktop', {
     'is-black': isBlack,
@@ -17,8 +23,9 @@ const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
         <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
         <button
           className="menuDesktop-button menu"
-          onClick={handleOpen}
-          aria-label={t('menu:courses')}>
+          onClick={handleCoursesOpen}
+          aria-label={t('menu:courses')}
+        >
           [
           <span className="braketHover">
             {courses < 10 ? `0${courses}` : courses}
@@ -26,8 +33,10 @@ const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
           ] {t('menu:courses')}
         </button>
         <button
+          onClick={handleContactOpen}
           className="menuDesktop-link menu"
-          aria-label={t('menu:contact')}>
+          aria-label={t('menu:contact')}
+        >
           {t('menu:contact')}
         </button>
       </Cell>
@@ -38,7 +47,8 @@ const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
 MenuDesktop.propTypes = {
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
-  handleOpen: PropTypes.func.isRequired,
+  handleCoursesOpen: PropTypes.func.isRequired,
+  handleContactOpen: PropTypes.func.isRequired,
   courses: PropTypes.number.isRequired,
 }
 

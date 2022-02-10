@@ -11,8 +11,12 @@ const Input = ({
   placeholder,
   type,
   value,
+  isNegative,
 }) => {
-  const classes = cx('input', { 'has-submit': handleSubmit })
+  const classes = cx('input', {
+    'has-submit': handleSubmit,
+    'is-negative': isNegative,
+  })
 
   return (
     <div className={classes}>
@@ -40,6 +44,7 @@ Input.propTypes = {
   placeholder: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['email', 'text']).isRequired,
   value: PropTypes.string.isRequired,
+  isNegative: PropTypes.bool,
 }
 
 export default Input
