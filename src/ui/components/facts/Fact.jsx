@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Arrow from '../../../assets/icons/arrow-fact.svg'
+import ArrowFact from '../../../assets/icons/ArrowFact'
 
 const Fact = ({ text }) => {
   return (
     <div className="fact">
       <div className="fact-content">
         <div className="fact-arrow">
-          <Arrow viewBox="0 0 80 80" />
+          <ArrowFact viewBox="0 0 80 80" />
         </div>
         <span className="fact-text">{text}</span>
       </div>
