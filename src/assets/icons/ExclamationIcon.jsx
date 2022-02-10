@@ -4,6 +4,7 @@ const ExclamationIcon = ({ color, ...props }) => (
   <svg
     width={111}
     height={88}
+    viewBox="0 0 111 88"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

@@ -26,7 +26,7 @@ const Course = ({ dates, name }) => {
               fontSize,
             }}
           >
-            <TabIcon className="icon courseIntro-tab" />
+            <TabIcon className="courseIntro-tab" />
             {name}
           </div>
         </Cell>
