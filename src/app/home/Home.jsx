@@ -1,56 +1,40 @@
-import React, { useState } from 'react'
-import Home from './Home'
-import useTranslations from '../../../hooks/useTranslations'
-import useViewportHeight from '../../../hooks/useViewportHeight'
-import useDetectMobile from '../../../hooks/useDetectMobile'
-import useBackgroundChange from '../../../hooks/useBackgroundChange'
-import useScrambleText from '../../../hooks/useScrambleText'
+import { useState } from 'react'
+
 import CompanyLogo from '/public/images/demo-company.svg'
+import COURSES from './../../../pages/data/courses'
 
-export default {
-  title: 'Views/Home',
-  component: Home,
-}
+import {
+  useViewportHeight,
+  useDetectMobile,
+  useBackgroundChange,
+  useScrambleText,
+} from './../../hooks'
 
-export const home = () => {
-  const t = useTranslations()
+import HomeUI from '../../ui/views/home/Home'
+
+const Home = () => {
   const [isLock, setIsLock] = useState(false)
   const [isBlack, setIsBlack] = useState(false)
   const [isFluor, setIsFluor] = useState(false)
+
   useViewportHeight()
   useDetectMobile()
   useBackgroundChange(setIsBlack, setIsFluor)
   useScrambleText()
 
-  const courses = [
-    {
-      title: 'Js pro',
-      href: '/',
-    },
-    {
-      title: 'React',
-      href: '/',
-    },
-    {
-      title: 'Redux',
-      href: '/',
-    },
-    {
-      title: 'Data',
-      href: '/',
-    },
-  ]
+  const courses = COURSES.map(course => ({
+    title: course.information.title,
+    href: `/courses/${course.id}`,
+  }))
 
   const fakeLogosArray = new Array(15).fill(null)
-  const logos = fakeLogosArray.map(() => <CompanyLogo viewBox="0 0 125 45" />)
-
+  const logos = fakeLogosArray.map(() => <img src={CompanyLogo} />)
   const fakeFaqsArray = new Array(7).fill(null)
   const faqsList = fakeFaqsArray.map(() => ({
     title: '¿Lorem ipsum dolor sit amet, consectetur adipiscing eli?',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur nulla sed libero dui. Ac molestie diam egestas magnis auctor vitae. Magna scelerisque blandit sed vulputate accumsan pulvinar enim scelerisque. Malesuada.',
   }))
-
   const dates = [
     {
       day: '01',
@@ -83,9 +67,8 @@ export const home = () => {
       ],
     },
   ]
-
   return (
-    <Home
+    <HomeUI
       isBlack={isBlack}
       isFluor={isFluor}
       isLock={isLock}
@@ -96,3 +79,5 @@ export const home = () => {
     />
   )
 }
+
+export default Home

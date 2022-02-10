@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import gsap from 'gsap'
+import { gsap } from 'gsap/dist/gsap'
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -16,18 +16,20 @@ const useScrambleText = () => {
       wrapper.appendChild(cloned)
 
       const lines = cloned.querySelectorAll('.line')
-      lines.forEach(line => gsap.to(line, {
-        duration: 1.2,
-        scrambleText: {
-          text: line.innerHTML,
-          chars: '!@#$%&/=*'
-        },
-        scrollTrigger: {
-          scroller: '.mainWrapper',
-          trigger: wrapper,
-          start: 'top 75%'
-        }
-      }))
+      lines.forEach(line =>
+        gsap.to(line, {
+          duration: 1.2,
+          scrambleText: {
+            text: line.innerHTML,
+            chars: '!@#$%&/=*',
+          },
+          scrollTrigger: {
+            scroller: '.mainWrapper',
+            trigger: wrapper,
+            start: 'top 75%',
+          },
+        }),
+      )
 
       gsap.to(lines, {
         opacity: 1,
@@ -36,8 +38,8 @@ const useScrambleText = () => {
         scrollTrigger: {
           scroller: '.mainWrapper',
           trigger: wrapper,
-          start: 'top 75%'
-        }
+          start: 'top 75%',
+        },
       })
     })
   }, [])

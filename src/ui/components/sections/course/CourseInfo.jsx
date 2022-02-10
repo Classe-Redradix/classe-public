@@ -4,7 +4,7 @@ import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import useTranslations from '../../../../hooks/useTranslations'
-import Exclamation from '../../../../assets/icons/exclamation.svg'
+import ExclamationIcon from './../../../../assets/icons/ExclamationIcon'
 
 const CourseInfo = ({ price, hours, places, students, successPercentage }) => {
   const t = useTranslations()
@@ -69,10 +69,7 @@ const CourseInfo = ({ price, hours, places, students, successPercentage }) => {
       </Row>
       <Row type="full" extraClass="courseSection-title">
         <Cell isNegative>
-          <Exclamation
-            viewBox="0 0 111 88"
-            className="courseSection-glypBottom"
-          />
+          <ExclamationIcon className="icon courseSection-glypBottom" />
         </Cell>
       </Row>
     </SectionWrapper>

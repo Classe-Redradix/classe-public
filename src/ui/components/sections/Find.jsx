@@ -4,8 +4,8 @@ import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
-import demoImage from '../../../assets/images/demo-small.png'
-import Glyph from '../../../assets/icons/glyph-2-icon.svg'
+import demoImage from '/public/images/demo-small.png'
+import GlyphIcon from './../../../assets/icons/Glyph2Icon'
 
 const Find = ({ isBlack, isFluor }) => {
   const t = useTranslations()
@@ -17,8 +17,8 @@ const Find = ({ isBlack, isFluor }) => {
           <div className="scrambleTextWrapper">
             <h3 className="h1 scrambleText">
               {t('find:title', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h3>
           </div>
@@ -29,15 +29,15 @@ const Find = ({ isBlack, isFluor }) => {
       </Row>
       <Row type="half">
         <Cell hasGap isNegative={isBlack}>
-          <Glyph viewBox="0 0 56 73" />
+          <GlyphIcon className="icon" />
           <p className="p">{t('find:description')}</p>
         </Cell>
         <Cell hasGap isNegative={isBlack}>
           <div className="scrambleTextWrapper">
             <h4 className="h1 scrambleText">
               {t('find:claim', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h4>
           </div>

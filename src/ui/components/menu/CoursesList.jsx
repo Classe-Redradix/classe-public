@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import useTranslations from '../../../hooks/useTranslations'
-import Tab from '../../../assets/icons/tab-icon.svg'
+import TabIcon from './../../../assets/icons/TabIcon'
 
 const CoursesList = ({ courses }) => {
   const router = useRouter()
   const t = useTranslations()
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     e.preventDefault()
     router.push(href)
   }
@@ -25,12 +25,13 @@ const CoursesList = ({ courses }) => {
             <a
               className="coursesList-link h1"
               href={course.href}
-              onClick={handleClick}>
+              onClick={handleClick}
+            >
               <span className="coursesList-linkNumber">
                 {index < 10 ? `0${index + 1}` : index + 1}
               </span>
               <span className="coursesList-linkTextWrapper">
-                <Tab viewBox="0 0 85 73" />
+                <TabIcon color="red" className="icon" />
                 <span className="coursesList-linkText">{course.title}</span>
               </span>
             </a>
@@ -46,7 +47,7 @@ CoursesList.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-    }).isRequired
+    }).isRequired,
   ).isRequired,
 }
 

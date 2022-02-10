@@ -27,7 +27,7 @@ const Course = ({
   const t = useTranslations()
   return (
     <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
-      {/* <Menu isBlack={isBlack} courses={courses} /> */}
+      <Menu isBlack={isBlack} courses={courses} />
       <CourseIntro dates={dates} name={name} />
       <section className="courseSections">
         <CourseTitle title={t('course:index-title')} />
@@ -87,7 +87,7 @@ Declaración de variables. (2H)"
           students={120}
           successPercentage={94}
         />
-        <CourseTitle title={t('course:contact')} />
+        <CourseTitle title={t('footer:contact')} />
         <CourseContact />
       </section>
     </MainWrapper>

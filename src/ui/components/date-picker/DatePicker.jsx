@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
 import useTranslations from '../../../hooks/useTranslations'
 import Button from '../button/Button'
-import Arrow from '../../../assets/icons/arrow-icon.svg'
+import ArrowIcon from './../../../assets/icons/ArrowIcon'
 
 const DatePicker = ({ dates, isCourse }) => {
   const t = useTranslations()
@@ -68,8 +68,8 @@ const DatePicker = ({ dates, isCourse }) => {
             {currentDate.month}
           </span>
           <div className="datePicker-arrows">
-            <Arrow viewBox="0 0 72 72" onClick={() => chageDate(true)} />
-            <Arrow viewBox="0 0 72 72" onClick={() => chageDate(false)} />
+            <ArrowIcon className="icon" onClick={() => chageDate(true)} />
+            <ArrowIcon className="icon" onClick={() => chageDate(false)} />
           </div>
         </div>
       ) : null}

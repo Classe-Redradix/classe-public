@@ -4,8 +4,8 @@ import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import useTranslations from '../../../../hooks/useTranslations'
-import demoImage from '../../../../assets/images/demo-small-black.png'
-import Glyph from '../../../../assets/icons/glyph-2-icon.svg'
+import demoImage from '/public/images/demo-small-black.png'
+import GlyphIcon from './../../../../assets/icons/GlyphIcon'
 
 const CourseContact = ({}) => {
   const t = useTranslations()

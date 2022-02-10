@@ -4,8 +4,8 @@ import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import Button from '../../button/Button'
-import demoImage from '../../../../assets/images/demo-small-black.png'
-import Tab from '../../../../assets/icons/tab-icon.svg'
+import demoImage from '/public/images/demo-small-black.png'
+import TabIcon from './../../../../assets/icons/TabIcon'
 import DatePicker from '../../date-picker/DatePicker'
 import useTranslations from '../../../../hooks/useTranslations'
 import useFitText from 'use-fit-text'
@@ -26,7 +26,7 @@ const Course = ({ dates, name }) => {
               fontSize,
             }}
           >
-            <Tab viewBox="0 0 85 73" className="courseIntro-tab" />
+            <TabIcon className="icon courseIntro-tab" />
             {name}
           </div>
         </Cell>
