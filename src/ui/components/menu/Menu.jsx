@@ -5,7 +5,7 @@ import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 
-const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
+const Menu = ({ isBlack, isFluor, courses }) => {
   const size = useWindowSize()
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [areCoursesOpen, setAreCoursesOpen] = useState(false)
@@ -67,7 +67,6 @@ Menu.propTypes = {
   ).isRequired,
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
-  onToggle: PropTypes.func.isRequired,
 }
 
 export default Menu
