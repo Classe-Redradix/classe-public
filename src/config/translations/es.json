@@ -2,7 +2,7 @@
   "general:conditions-check": "Acepto los términos y condiciones",
   "general:newsletter-check": "Suscribirme a la newsletter",
   "general:placeholder": "Introduce tu email",
-  "general:name-surname-placeholder": "Nombre Apellido Apellido",
+  "general:name-surname-placeholder": "Nombre Apellido",
   "general:send": "Enviar",
   "menu:claim": "CLASS(E) no bullshit",
   "menu:claimSmall": "CLASS(E)",
@@ -83,5 +83,9 @@
   "footer:company": "Empresa",
   "footer:student": "Alumno",
   "footer:social": "Social",
-  "footer:contact": "Contacto"
+  "footer:contact": "Contacto",
+
+  "error:page-not": "Page not",
+  "error:found": "found",
+  "error:back-to-homne": "Volver a la home"
 }
