@@ -125,13 +125,13 @@ const MenuContact = ({ linesHidden }) => {
             name="conditions"
             value=""
           />
-          <Checkbox
+          {/* <Checkbox
             hasMessage
             handleChange={() => {}}
             label="general:newsletter-check"
             name="newsletter"
             value=""
-          />
+          /> */}
         </div>
         <Button isNegative isFull isLink href="/" text={t('general:send')} />
       </Cell>
