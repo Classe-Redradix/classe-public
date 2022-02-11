@@ -103,11 +103,9 @@ MenuLayer.propTypes = {
     }).isRequired,
   ).isRequired,
   isOpen: PropTypes.bool,
-  type: PropTypes.string.isRequired,
   hasClose: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
   handleContactOpen: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired,
 }
 
 export default MenuLayer
