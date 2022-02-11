@@ -81,11 +81,11 @@ Declaración de variables. (2H)"
           objectives={t('course:objectives')}
         />
         <CourseInfo
-          price={900}
-          hours={20}
-          places={30}
-          students={120}
-          successPercentage={94}
+          price={price}
+          hours={hours}
+          places={places}
+          students={students}
+          successPercentage={successPercentage}
         />
         <CourseTitle title={t('footer:contact')} />
         <CourseContact />
