@@ -47,7 +47,7 @@ const MenuContact = ({ linesHidden }) => {
             </h3>
           </div>
           <Input
-            placeholder={t('general:name-surname-placeholder')}
+            placeholder={t('general:name-lastname-placeholder')}
             handleBlur={() => {}}
             handleChange={() => {}}
             name="email"
@@ -109,11 +109,12 @@ const MenuContact = ({ linesHidden }) => {
             </h3>
           </div>
           <Input
-            placeholder={t('general:name-surname-placeholder')}
+            placeholder={t('general:placeholder')}
             handleBlur={() => {}}
             handleChange={() => {}}
             name="email"
             type="email"
+            value=""
             isNegative
           />
         </div>
@@ -121,7 +122,7 @@ const MenuContact = ({ linesHidden }) => {
           <Checkbox
             hasMessage
             handleChange={() => {}}
-            label="general:conditions-check"
+            label={t('general:conditions-check')}
             name="conditions"
             value=""
           />
