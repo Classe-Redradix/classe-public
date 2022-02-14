@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import useTranslations from '../../../hooks/useTranslations'
 
 const Checkbox = ({ hasMessage, isChecked, handleChange, label, name }) => {
-  const t = useTranslations()
   const textClasses = cx('checkbox-label', {
     tiny: hasMessage,
     notes: !hasMessage,
@@ -24,7 +22,7 @@ const Checkbox = ({ hasMessage, isChecked, handleChange, label, name }) => {
       <span className="checkbox-icon notes">
         [<span className="checkbox-iconCheck">X</span>]
       </span>
-      <span className={textClasses}>{t(label)}</span>
+      <span className={textClasses}>{label}</span>
     </label>
   )
 }
