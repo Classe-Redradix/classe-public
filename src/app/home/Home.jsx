@@ -11,11 +11,20 @@ import {
 } from './../../hooks'
 
 import HomeUI from '../../ui/views/home/Home'
+import useContactForm from 'app/useContactForm'
 
 const Home = () => {
   const [isLock, setIsLock] = useState(false)
   const [isBlack, setIsBlack] = useState(false)
   const [isFluor, setIsFluor] = useState(false)
+
+  const {
+    email,
+    onEmailChange,
+    userType,
+    onUserTypeChange,
+    saveToFirebase: saveContactFormToFirebase,
+  } = useContactForm()
 
   useViewportHeight()
   useDetectMobile()
@@ -67,6 +76,26 @@ const Home = () => {
       ],
     },
   ]
+
+  const onContactFormSuccess = () => {
+    // TODO: handle success contact saving into Firebase
+  }
+
+  const handleContactFormSubmit = event => {
+    event.preventDefault()
+
+    try {
+      saveContactFormToFirebase({ onSuccess: onContactFormSuccess })
+    } catch (error) {}
+  }
+
+  const contactFormParams = {
+    email,
+    onEmailChange,
+    userType,
+    onUserTypeChange,
+  }
+
   return (
     <HomeUI
       isBlack={isBlack}
@@ -76,6 +105,8 @@ const Home = () => {
       dates={dates}
       logos={logos}
       faqsList={faqsList}
+      onContactFormSubmit={handleContactFormSubmit}
+      contactFormParams={contactFormParams}
     />
   )
 }

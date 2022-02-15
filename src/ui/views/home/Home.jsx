@@ -21,6 +21,8 @@ const Home = ({
   dates,
   logos,
   faqsList,
+  onContactFormSubmit,
+  contactFormParams,
 }) => {
   const t = useTranslations()
 
@@ -56,7 +58,13 @@ const Home = ({
         <Find isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('find:header')} />
         <Header title={t('footer:header')} number={10} />
-        <Footer courses={courses} isBlack={isBlack} isFluor={isFluor} />
+        <Footer
+          courses={courses}
+          isBlack={isBlack}
+          isFluor={isFluor}
+          onContactFormSubmit={onContactFormSubmit}
+          contactFormParams={contactFormParams}
+        />
         <Header isClose title={t('footer:header')} />
       </div>
     </MainWrapper>
