@@ -5,6 +5,8 @@ import useScrambleText from './useScrambleText'
 import useTranslations from './useTranslations'
 import useViewportHeight from './useViewportHeight'
 import useWindowSize from './useWindowSize'
+import useInput from './useInput'
+import useCheckbox from './useCheckbox'
 
 export {
   useBackgroundChange,
@@ -14,4 +16,6 @@ export {
   useTranslations,
   useViewportHeight,
   useWindowSize,
+  useInput,
+  useCheckbox,
 }

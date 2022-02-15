@@ -1,12 +1,66 @@
-import useQueryParams from '../../hooks/useQueryParams'
+import { useState } from 'react'
 import COURSES from '../../../pages/data/courses'
+import { useInput, useCheckbox } from 'hooks'
 
-const Contact = () => {
-  const courseId = useQueryParams('course-id')
+const Label = ({ children, htmlFor, ...props }) => (
+  <label
+    htmlFor={htmlFor}
+    {...props}
+    style={{
+      display: 'block',
+      fontWeight: 'bold',
+      fontSize: '.75rem',
+      marginBottom: '4px',
+    }}
+  >
+    {children}
+  </label>
+)
+
+const Contact = ({ onContactRequestSubmit, courseId }) => {
+  const [interestedInOptions, setInterestedInOptions] = useState(
+    COURSES.map(course => ({
+      checked: course.id === courseId,
+      id: course.id,
+      label: course.information.title,
+    })),
+  )
 
   const selectedCourseExists = !!courseId
     ? !!COURSES.find(course => course.id === courseId)
     : null
+
+  const [name, onNameChange] = useInput()
+  const [email, onEmailChange] = useInput()
+  const [subscribeToNewsletter, onSubscribeToNewsletterChange] = useCheckbox()
+
+  const handleContactRequestSubmit = e => {
+    e.preventDefault()
+
+    try {
+      onContactRequestSubmit({
+        name,
+        email,
+        subscribeToNewsletter,
+        interestedIn: interestedInOptions
+          .filter(option => option.checked)
+          .map(option => option.id),
+      })
+    } catch (error) {}
+  }
+
+  const handleInterestedInOptionChange = interestedInOption => {
+    setInterestedInOptions(interestedInOptions =>
+      interestedInOptions.map(option =>
+        Object.assign({}, option, {
+          checked:
+            option.id === interestedInOption.id
+              ? !option.checked
+              : option.checked,
+        }),
+      ),
+    )
+  }
 
   return (
     <section
@@ -23,6 +77,49 @@ const Contact = () => {
           <p>Selected course ({courseId}) doesn't exists</p>
         )
       ) : null}
+      <form onSubmit={handleContactRequestSubmit}>
+        <div>
+          <Label htmlFor="name">Name and surname</Label>
+          <input type="text" name="name" value={name} onChange={onNameChange} />
+        </div>
+        <div>
+          {interestedInOptions.map(interestedInOption => (
+            <div key={interestedInOption.id}>
+              <label htmlFor={interestedInOption.id}>
+                {interestedInOption.label}
+              </label>
+              <input
+                type="checkbox"
+                name={interestedInOption.id}
+                id={interestedInOption.id}
+                checked={interestedInOption.checked}
+                onChange={() =>
+                  handleInterestedInOptionChange(interestedInOption)
+                }
+              />
+            </div>
+          ))}
+        </div>
+        <div>
+          <Label htmlFor="email">Email</Label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={onEmailChange}
+          />
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="subscribeToNewsletter"
+            value={subscribeToNewsletter}
+            onChange={onSubscribeToNewsletterChange}
+          />
+          <label htmlFor="subscribeToNewsletter">Subscribe to newsletter</label>
+        </div>
+        <button>Send!</button>
+      </form>
     </section>
   )
 }
