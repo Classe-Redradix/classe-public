@@ -23,7 +23,6 @@ const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
   const handleClose = () => {
     setIsContactOpen(false)
     setAreCoursesOpen(false)
-    onToggle(false)
   }
 
   return (
