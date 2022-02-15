@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import COURSES from '../../../pages/data/courses'
 import { useInput, useCheckbox } from 'hooks'
+import useContactRequest from 'app/useContactRequest'
 
 const Label = ({ children, htmlFor, ...props }) => (
   <label
@@ -17,7 +18,9 @@ const Label = ({ children, htmlFor, ...props }) => (
   </label>
 )
 
-const Contact = ({ onContactRequestSubmit, courseId }) => {
+const Contact = ({ courseId }) => {
+  const { saveContactRequestToFirebase } = useContactRequest()
+
   const [interestedInOptions, setInterestedInOptions] = useState(
     COURSES.map(course => ({
       checked: course.id === courseId,
@@ -38,7 +41,7 @@ const Contact = ({ onContactRequestSubmit, courseId }) => {
     e.preventDefault()
 
     try {
-      onContactRequestSubmit({
+      saveContactRequestToFirebase({
         name,
         email,
         subscribeToNewsletter,
