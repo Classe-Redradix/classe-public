@@ -3,8 +3,13 @@ import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import TabIcon from './../../../assets/icons/TabIcon'
 
-const CoursesList = ({ courses }) => {
+const CoursesList = ({ courses, handleOpenCourse }) => {
   const t = useTranslations()
+
+  const handleCourseClick = (e, course) => {
+    e.preventDefault()
+    handleOpenCourse(course)
+  }
 
   return (
     <div className="coursesList">
@@ -15,7 +20,10 @@ const CoursesList = ({ courses }) => {
       <ol className="coursesList-list">
         {courses.map((course, index) => (
           <li key={course.title}>
-            <a className="coursesList-link h1" href={course.href}>
+            <a
+              className="coursesList-link h1"
+              onClick={e => handleCourseClick(e, course)}
+            >
               <span className="coursesList-linkNumber">
                 {index < 10 ? `0${index + 1}` : index + 1}
               </span>

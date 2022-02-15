@@ -9,12 +9,14 @@ import CoursesList from './CoursesList'
 import MenuContact from './MenuContact'
 
 const MenuLayer = ({
+  course,
   courses,
   isContactOpen,
   isCourseOpen,
   areCoursesOpen,
   handleClose,
   handleContactOpen,
+  handleOpenCourse,
   hasClose = true,
 }) => {
   const isOpen = isContactOpen || areCoursesOpen || isCourseOpen
@@ -62,14 +64,20 @@ const MenuLayer = ({
           {isContactOpen ? (
             <MenuContact linesHidden={linesHidden} />
           ) : isCourseOpen ? (
-            <div>course</div>
+            <>
+              <div>course</div>
+              <div>{JSON.stringify(course)}</div>
+            </>
           ) : (
             <Row type="quarter" extraClass="menuLayer-courses">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
                 <p>image</p>
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <CoursesList courses={courses} />
+                <CoursesList
+                  courses={courses}
+                  handleOpenCourse={handleOpenCourse}
+                />
               </Cell>
             </Row>
           )}
@@ -98,17 +106,19 @@ const MenuLayer = ({
   )
 }
 
+const CoursePropType = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+})
+
 MenuLayer.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  course: CoursePropType,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
   isOpen: PropTypes.bool,
   hasClose: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
   handleContactOpen: PropTypes.func.isRequired,
+  handleOpenCourse: PropTypes.func.isRequired,
 }
 
 export default MenuLayer

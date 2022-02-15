@@ -10,6 +10,7 @@ const Menu = ({ isBlack, isFluor, courses }) => {
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [areCoursesOpen, setAreCoursesOpen] = useState(false)
   const [isCourseOpen, setIsCourseOpen] = useState(false)
+  const [course, setCourse] = useState(null)
 
   const handleCoursesOpen = () => {
     setIsContactOpen(false)
@@ -35,6 +36,12 @@ const Menu = ({ isBlack, isFluor, courses }) => {
     setIsCourseOpen(false)
   }
 
+  const openCourse = course => {
+    setAreCoursesOpen(false)
+    setIsCourseOpen(true)
+    setCourse(course)
+  }
+
   return (
     <>
       <MenuLayer
@@ -42,6 +49,8 @@ const Menu = ({ isBlack, isFluor, courses }) => {
         handleContactOpen={handleContactOpen}
         isContactOpen={isContactOpen}
         isCourseOpen={isCourseOpen}
+        handleOpenCourse={openCourse}
+        course={course}
         areCoursesOpen={areCoursesOpen}
         handleClose={handleClose}
       />
