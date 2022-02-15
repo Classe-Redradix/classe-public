@@ -11,18 +11,19 @@ import MenuContact from './MenuContact'
 const MenuLayer = ({
   courses,
   isContactOpen,
+  isCourseOpen,
   areCoursesOpen,
   handleClose,
   handleContactOpen,
   hasClose = true,
 }) => {
-  const isOpen = isContactOpen || areCoursesOpen
+  const isOpen = isContactOpen || areCoursesOpen || isCourseOpen
   const t = useTranslations()
   const size = useWindowSize()
   const [linesHidden, setLinesHidden] = useState(false)
   const classes = cx('menuLayer', {
     'is-open': isOpen,
-    'is-free': isContactOpen,
+    'is-free': isContactOpen || isCourseOpen,
   })
   const isDesktop = size.width >= 768
 
@@ -60,6 +61,8 @@ const MenuLayer = ({
           ) : null}
           {isContactOpen ? (
             <MenuContact linesHidden={linesHidden} />
+          ) : isCourseOpen ? (
+            <div>course</div>
           ) : (
             <Row type="quarter" extraClass="menuLayer-courses">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
@@ -103,11 +106,9 @@ MenuLayer.propTypes = {
     }).isRequired,
   ).isRequired,
   isOpen: PropTypes.bool,
-  type: PropTypes.string.isRequired,
   hasClose: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
   handleContactOpen: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired,
 }
 
 export default MenuLayer

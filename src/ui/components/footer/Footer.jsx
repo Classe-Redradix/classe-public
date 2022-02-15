@@ -68,7 +68,7 @@ const Footer = ({ courses, isBlack, isFluor }) => {
               <Checkbox
                 hasMessage
                 handleChange={() => {}}
-                label="general:conditions-check"
+                label={t('general:conditions-check')}
                 name="conditions"
                 value=""
               />

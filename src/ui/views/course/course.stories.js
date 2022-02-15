@@ -51,6 +51,11 @@ export const course = () => {
       dates={dates}
       name="JS PRO"
       title="objetivos"
+      price={900}
+      hours={20}
+      places={30}
+      students={120}
+      successPercentage={94}
     />
   )
 }

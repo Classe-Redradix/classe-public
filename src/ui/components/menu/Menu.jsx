@@ -5,24 +5,34 @@ import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 
-const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
+const Menu = ({ isBlack, isFluor, courses }) => {
   const size = useWindowSize()
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [areCoursesOpen, setAreCoursesOpen] = useState(false)
+  const [isCourseOpen, setIsCourseOpen] = useState(false)
 
   const handleCoursesOpen = () => {
     setIsContactOpen(false)
+    setIsCourseOpen(false)
     setAreCoursesOpen(true)
   }
 
   const handleContactOpen = () => {
     setAreCoursesOpen(false)
+    setIsCourseOpen(false)
     setIsContactOpen(true)
+  }
+
+  const handleCourseOpen = () => {
+    setAreCoursesOpen(false)
+    setIsContactOpen(false)
+    setIsCourseOpen(true)
   }
 
   const handleClose = () => {
     setIsContactOpen(false)
     setAreCoursesOpen(false)
+    setIsCourseOpen(false)
   }
 
   return (
@@ -31,6 +41,7 @@ const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
         courses={courses}
         handleContactOpen={handleContactOpen}
         isContactOpen={isContactOpen}
+        isCourseOpen={isCourseOpen}
         areCoursesOpen={areCoursesOpen}
         handleClose={handleClose}
       />
@@ -40,6 +51,7 @@ const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
           isFluor={isFluor}
           handleCoursesOpen={handleCoursesOpen}
           handleContactOpen={handleContactOpen}
+          handleCourseOpen={handleCourseOpen}
           courses={courses.length}
         />
       ) : (
@@ -50,6 +62,7 @@ const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
           areCoursesOpen={areCoursesOpen}
           handleCoursesOpen={handleCoursesOpen}
           handleContactOpen={handleContactOpen}
+          handleCourseOpen={handleCourseOpen}
           handleClose={handleClose}
         />
       )}
@@ -66,7 +79,6 @@ Menu.propTypes = {
   ).isRequired,
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
-  onToggle: PropTypes.func.isRequired,
 }
 
 export default Menu
