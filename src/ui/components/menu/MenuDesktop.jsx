@@ -9,7 +9,6 @@ const MenuDesktop = ({
   isFluor,
   handleCoursesOpen,
   handleContactOpen,
-  handleCourseOpen,
   courses,
 }) => {
   const t = useTranslations()
@@ -21,9 +20,7 @@ const MenuDesktop = ({
   return (
     <header className={classes}>
       <Cell isNegative={isBlack}>
-        <span className="menuDesktop-claim menu" onClick={handleCourseOpen}>
-          {t('menu:claim')}
-        </span>
+        <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
         <button
           className="menuDesktop-button menu"
           onClick={handleCoursesOpen}
@@ -52,7 +49,6 @@ MenuDesktop.propTypes = {
   isFluor: PropTypes.bool,
   handleCoursesOpen: PropTypes.func.isRequired,
   handleContactOpen: PropTypes.func.isRequired,
-  handleCourseOpen: PropTypes.func.isRequired,
   courses: PropTypes.number.isRequired,
 }
 
