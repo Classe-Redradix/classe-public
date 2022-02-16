@@ -23,7 +23,7 @@ export default {
 }
 
 export const radio = ({ ...args }) => (
-  <Radio handleChange={() => {}} name="" value="" {...args} />
+  <Radio onChange={() => {}} name="" value="" id="" {...args} />
 )
 
 radio.parameters = {

@@ -9,7 +9,13 @@ import Radio from '../forms/Radio'
 import Input from '../forms/Input'
 import Checkbox from '../forms/Checkbox'
 
-const Footer = ({ courses, isBlack, isFluor }) => {
+const Footer = ({
+  courses,
+  isBlack,
+  isFluor,
+  onContactFormSubmit,
+  contactFormParams,
+}) => {
   const router = useRouter()
   const t = useTranslations()
 
@@ -37,31 +43,35 @@ const Footer = ({ courses, isBlack, isFluor }) => {
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
-          <form className="footer-form">
+          <form className="footer-form" onSubmit={onContactFormSubmit}>
             <div className="footer-formBlock">
               <span className="notes">{t('footer:iam')}</span>
               <Radio
-                handleChange={() => {}}
+                onChange={contactFormParams.onUserTypeChange}
                 label="footer:company"
-                name="company"
-                value=""
+                name="user-type"
+                id="user-type-company"
+                value="company"
+                isChecked={contactFormParams.userType === 'company'}
               />
               <Radio
-                handleChange={() => {}}
+                onChange={contactFormParams.onUserTypeChange}
                 label="footer:student"
-                name="student"
-                value=""
+                id="user-type-student"
+                name="user-type"
+                value="student"
+                isChecked={contactFormParams.userType === 'student'}
               />
             </div>
             <div className="footer-formBlock">
               <Input
                 handleBlur={() => {}}
-                handleChange={() => {}}
+                handleChange={contactFormParams.onEmailChange}
                 handleSubmit={() => {}}
                 name="email"
                 placeholder={t('general:placeholder')}
                 type="email"
-                value=""
+                value={contactFormParams.email}
               />
             </div>
             <div className="footer-formBlock">
@@ -177,6 +187,8 @@ Footer.propTypes = {
   ).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
+  onContactForm: PropTypes.object,
+  onContactFormSubmit: PropTypes.func,
 }
 
 export default Footer
