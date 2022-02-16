@@ -75,6 +75,10 @@
     .row {
       width: 100%;
     }
+
+    &.is-block {
+      display: block;
+    }
   }
 
   &-menu .cell {
@@ -195,6 +199,7 @@
     }
 
     &.is-free {
+      overflow-y: unset;
       height: 100vh;
       height: calc(var(--vh, 1vh) * 100);
     }
