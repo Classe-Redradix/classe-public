@@ -7,6 +7,7 @@ import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import CoursesList from './CoursesList'
 import MenuContact from './MenuContact'
+import MenuCourse from './MenuCourse'
 
 const MenuLayer = ({
   course,
@@ -50,7 +51,11 @@ const MenuLayer = ({
             </button>
           </div>
         ) : null}
-        <div className="menuLayer-content">
+        <div
+          className={cx('menuLayer-content', {
+            'is-block': isCourseOpen,
+          })}
+        >
           {!isDesktop ? (
             <Row type="half" extraClass="menuLayer-mobileHeader">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
@@ -64,10 +69,7 @@ const MenuLayer = ({
           {isContactOpen ? (
             <MenuContact linesHidden={linesHidden} />
           ) : isCourseOpen ? (
-            <>
-              <div>course</div>
-              <div>{JSON.stringify(course)}</div>
-            </>
+            <MenuCourse course={course} />
           ) : (
             <Row type="quarter" extraClass="menuLayer-courses">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
@@ -81,25 +83,29 @@ const MenuLayer = ({
               </Cell>
             </Row>
           )}
-          <Row type="full" extraClass="menuLayer-menu">
-            <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-              <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
-              <span
-                className="menuDesktop-button menu"
-                aria-label={t('menu:courses')}
-              >
-                [{courses.length < 10 ? `0${courses.length}` : courses.length}]{' '}
-                {t('menu:courses')}
-              </span>
-              <button
-                onClick={handleContactOpen}
-                className="menuDesktop-link"
-                aria-label={t('menu:contact')}
-              >
-                {t('menu:contact')}
-              </button>
-            </Cell>
-          </Row>
+          {!isCourseOpen ? (
+            <Row type="full" extraClass="menuLayer-menu">
+              <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
+                <span className="menuDesktop-claim menu">
+                  {t('menu:claim')}
+                </span>
+                <span
+                  className="menuDesktop-button menu"
+                  aria-label={t('menu:courses')}
+                >
+                  [{courses.length < 10 ? `0${courses.length}` : courses.length}
+                  ] {t('menu:courses')}
+                </span>
+                <button
+                  onClick={handleContactOpen}
+                  className="menuDesktop-link"
+                  aria-label={t('menu:contact')}
+                >
+                  {t('menu:contact')}
+                </button>
+              </Cell>
+            </Row>
+          ) : null}
         </div>
       </div>
     </div>
