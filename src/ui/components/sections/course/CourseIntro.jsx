@@ -31,7 +31,7 @@ const Course = ({ dates, name }) => {
           </div>
         </Cell>
       </Row>
-      <Row type="half">
+      <Row type="half" extraClass="courseIntro-data">
         <Cell isNegative>
           <img src={demoImage} alt="" />
         </Cell>
