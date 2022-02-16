@@ -91,9 +91,9 @@ const Footer = ({
           <span className="tiny">{t('courses:header')}</span>
           <ul className="footer-list">
             {courses.map(course => (
-              <li key={course.title}>
+              <li key={course.information.title}>
                 <a className="h4" href={course.href} onClick={handleClick}>
-                  {course.title}
+                  {course.information.title}
                 </a>
               </li>
             ))}

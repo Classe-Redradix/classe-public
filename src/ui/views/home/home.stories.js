@@ -6,6 +6,7 @@ import useDetectMobile from '../../../hooks/useDetectMobile'
 import useBackgroundChange from '../../../hooks/useBackgroundChange'
 import useScrambleText from '../../../hooks/useScrambleText'
 import CompanyLogo from '/public/images/demo-company.svg'
+import COURSES from '../../../../pages/data/courses'
 
 export default {
   title: 'Views/Home',
@@ -21,25 +22,6 @@ export const home = () => {
   useDetectMobile()
   useBackgroundChange(setIsBlack, setIsFluor)
   useScrambleText()
-
-  const courses = [
-    {
-      title: 'Js pro',
-      href: '/',
-    },
-    {
-      title: 'React',
-      href: '/',
-    },
-    {
-      title: 'Redux',
-      href: '/',
-    },
-    {
-      title: 'Data',
-      href: '/',
-    },
-  ]
 
   const fakeLogosArray = new Array(15).fill(null)
   const logos = fakeLogosArray.map(() => <CompanyLogo viewBox="0 0 125 45" />)
@@ -86,10 +68,16 @@ export const home = () => {
 
   return (
     <Home
+      contactFormParams={{
+        email: '',
+        onEmailChange: () => {},
+        userType: '',
+        onUserTypeChange: () => {},
+      }}
       isBlack={isBlack}
       isFluor={isFluor}
       isLock={isLock}
-      courses={courses}
+      courses={COURSES}
       dates={dates}
       logos={logos}
       faqsList={faqsList}

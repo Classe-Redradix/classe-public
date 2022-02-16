@@ -1,6 +1,7 @@
 import React from 'react'
 import Contact from './Contact'
 import useScrambleText from '../../../hooks/useScrambleText'
+import COURSES from '../../../../pages/data/courses'
 
 export default {
   title: 'Views/Contact',
@@ -10,24 +11,5 @@ export default {
 export const contact = () => {
   useScrambleText()
 
-  const courses = [
-    {
-      title: 'Js pro',
-      href: '/',
-    },
-    {
-      title: 'React',
-      href: '/',
-    },
-    {
-      title: 'Redux',
-      href: '/',
-    },
-    {
-      title: 'Data',
-      href: '/',
-    },
-  ]
-
-  return <Contact isBlack courses={courses} />
+  return <Contact isBlack courses={COURSES} />
 }

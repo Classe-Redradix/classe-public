@@ -1,5 +1,6 @@
 const COURSE_JS_PRO = {
   id: 'js-pro',
+  href: '/courses/js-pro',
   information: {
     title: 'JS PRO',
     start: '1',
@@ -48,6 +49,7 @@ const COURSE_JS_PRO = {
 
 const COURSE_REACT = {
   id: 'react',
+  href: '/courses/react',
   information: {
     title: 'React',
     start: '10',
@@ -96,6 +98,7 @@ const COURSE_REACT = {
 
 const COURSE_REDUX = {
   id: 'redux',
+  href: '/courses/redux',
   information: {
     title: 'Redux',
     start: '16',
@@ -144,10 +147,11 @@ const COURSE_REDUX = {
 
 const COURSE_DATA = {
   id: 'data',
+  href: '/courses/data',
   information: {
     title: 'Data',
-    start: '21',
-    finish: '25',
+    start: '21.08.2022',
+    finish: '25.08.2022',
     description: "This is the best Data course you'll ever find",
     price: 1200,
     hours: 30,
@@ -192,6 +196,7 @@ const COURSE_DATA = {
 
 const COURSE_FULL_STACK = {
   id: 'full-stack',
+  href: '/courses/full-stack',
   information: {
     title: 'Full stack',
     start: '26',

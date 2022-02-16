@@ -1,30 +1,12 @@
 import React from 'react'
 import Course from './Course'
 import useScrambleText from '../../../hooks/useScrambleText'
+import COURSES from '../../../../pages/data/courses'
 
 export default {
   title: 'Views/Course',
   component: Course,
 }
-
-const courses = [
-  {
-    title: 'Js pro',
-    href: '/',
-  },
-  {
-    title: 'React',
-    href: '/',
-  },
-  {
-    title: 'Redux',
-    href: '/',
-  },
-  {
-    title: 'Data',
-    href: '/',
-  },
-]
 
 const dates = [
   {
@@ -47,7 +29,7 @@ export const course = () => {
   return (
     <Course
       isBlack
-      courses={courses}
+      courses={COURSES}
       dates={dates}
       name="JS PRO"
       title="objetivos"

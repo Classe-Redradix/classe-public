@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Footer from '../Footer'
+import COURSES from '../../../../../pages/data/courses'
 
 export default {
   title: 'Layout/Footer',
@@ -15,27 +16,19 @@ export default {
   },
 }
 
-const courses = [
-  {
-    title: 'Js pro',
-    href: '/',
-  },
-  {
-    title: 'React',
-    href: '/',
-  },
-  {
-    title: 'Redux',
-    href: '/',
-  },
-  {
-    title: 'Data',
-    href: '/',
-  },
-]
-
 export const footer = ({ ...args }) => {
-  return <Footer courses={courses} {...args} />
+  return (
+    <Footer
+      contactFormParams={{
+        email: '',
+        onEmailChange: () => {},
+        userType: '',
+        onUserTypeChange: () => {},
+      }}
+      courses={COURSES}
+      {...args}
+    />
+  )
 }
 
 footer.parameters = {

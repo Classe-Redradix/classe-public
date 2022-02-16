@@ -26,20 +26,18 @@ const dates = [
   },
 ]
 
-const MenuCourse = ({
-  course,
-  price = 900,
-  hours = 20,
-  places = 30,
-  students = 120,
-  successPercentage = 94,
-}) => {
+const MenuCourse = ({ course }) => {
   const t = useTranslations()
+
   useScrambleText()
+
+  const { information, index, objetives } = course
+
+  console.log('information', information)
 
   return (
     <section className="courseSections">
-      <CourseIntro dates={dates} name={course.title} />
+      <CourseIntro dates={dates} name={information.title} />
       <CourseTitle title={t('course:index-title')} />
       <CourseSection
         number="01"
@@ -91,16 +89,14 @@ Declaración de variables. (2H)"
         objectives="course:objectives"
       />
       <CourseInfo
-        price={price}
-        hours={hours}
-        places={places}
-        students={students}
-        successPercentage={successPercentage}
+        price={information.price}
+        hours={information.hours}
+        places={information.places}
+        students={information.enrolledStudents}
+        successPercentage={information.successPercentage}
       />
       <CourseTitle title={t('footer:contact')} />
       <CourseContact />
-      {/* {JSON.stringify(course)}
-        {course.title} */}
     </section>
   )
 }

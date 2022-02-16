@@ -19,7 +19,7 @@ const CoursesList = ({ courses, handleOpenCourse }) => {
       </p>
       <ol className="coursesList-list">
         {courses.map((course, index) => (
-          <li key={course.title}>
+          <li key={course.information.title}>
             <a
               className="coursesList-link h1"
               onClick={e => handleCourseClick(e, course)}
@@ -29,7 +29,9 @@ const CoursesList = ({ courses, handleOpenCourse }) => {
               </span>
               <span className="coursesList-linkTextWrapper">
                 <TabIcon color="red" className="icon" />
-                <span className="coursesList-linkText">{course.title}</span>
+                <span className="coursesList-linkText">
+                  {course.information.title}
+                </span>
               </span>
             </a>
           </li>
