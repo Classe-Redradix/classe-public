@@ -18,6 +18,7 @@ const MenuLayer = ({
   handleContactOpen,
   handleOpenCourse,
   hasClose = true,
+  actionText = 'menu:close',
 }) => {
   const isOpen = isContactOpen || areCoursesOpen || isCourseOpen
   const t = useTranslations()
@@ -46,7 +47,7 @@ const MenuLayer = ({
               className="menuLayer-desktopHeader-button button"
               onClick={handleClose}
             >
-              [ <span className="braketHover">{t('menu:close')}</span> ]
+              [ <span className="braketHover">{t(actionText)}</span> ]
             </button>
           </div>
         ) : null}

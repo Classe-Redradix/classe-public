@@ -5,11 +5,20 @@ import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 
-const Menu = ({ isBlack, isFluor, courses }) => {
+const Menu = ({
+  isBlack,
+  isFluor,
+  courses,
+  defaultIsContactOpen = false,
+  defaultAreCoursesOpen = false,
+  defaultIsCourseOpen = false,
+  actionText = 'menu:close',
+  handleText,
+}) => {
   const size = useWindowSize()
-  const [isContactOpen, setIsContactOpen] = useState(false)
-  const [areCoursesOpen, setAreCoursesOpen] = useState(false)
-  const [isCourseOpen, setIsCourseOpen] = useState(false)
+  const [isContactOpen, setIsContactOpen] = useState(defaultIsContactOpen)
+  const [areCoursesOpen, setAreCoursesOpen] = useState(defaultAreCoursesOpen)
+  const [isCourseOpen, setIsCourseOpen] = useState(defaultIsCourseOpen)
   const [course, setCourse] = useState(null)
 
   const handleCoursesOpen = () => {
@@ -45,6 +54,7 @@ const Menu = ({ isBlack, isFluor, courses }) => {
   return (
     <>
       <MenuLayer
+        actionText={actionText}
         courses={courses}
         handleContactOpen={handleContactOpen}
         isContactOpen={isContactOpen}
@@ -52,7 +62,7 @@ const Menu = ({ isBlack, isFluor, courses }) => {
         handleOpenCourse={openCourse}
         course={course}
         areCoursesOpen={areCoursesOpen}
-        handleClose={handleClose}
+        handleClose={!!handleText ? handleText : handleClose}
       />
       {size.width >= 768 ? (
         <MenuDesktop
