@@ -62,7 +62,9 @@ const Courses = ({ courses, isBlack, isFluor }) => {
                   </span>
                   <span className="coursesList-linkTextWrapper">
                     <TabIcon className="icon" color="yellow" />
-                    <span className="coursesList-linkText">{course.title}</span>
+                    <span className="coursesList-linkText">
+                      {course.information.title}
+                    </span>
                   </span>
                 </a>
               </li>
