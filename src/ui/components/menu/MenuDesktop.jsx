@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import useTranslations from '../../../hooks/useTranslations'
 import Cell from '../cell/Cell'
+import Link from 'next/link'
 
 const MenuDesktop = ({
   isBlack,
@@ -32,13 +33,15 @@ const MenuDesktop = ({
           </span>
           ] {t('menu:courses')}
         </button>
-        <button
-          onClick={handleContactOpen}
-          className="menuDesktop-link menu"
-          aria-label={t('menu:contact')}
-        >
-          {t('menu:contact')}
-        </button>
+        <Link href="?contact=true" as="/contact">
+          <button
+            onClick={handleContactOpen}
+            className="menuDesktop-link menu"
+            aria-label={t('menu:contact')}
+          >
+            {t('menu:contact')}
+          </button>
+        </Link>
       </Cell>
     </header>
   )

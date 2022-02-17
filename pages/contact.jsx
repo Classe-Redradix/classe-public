@@ -1,7 +1,26 @@
 import ContactView from '../src/app/contact/Contact'
+import MenuContact from 'ui/components/menu/MenuContact'
+import Menu from 'ui/components/menu/Menu'
+import MainWrapper from 'ui/components/wrappers/MainWrapper'
+import { useRouter } from 'next/router'
+import COURSES from './data/courses'
 
 const Contact = ({ courseId }) => {
-  return <ContactView courseId={courseId} />
+  const router = useRouter()
+
+  return (
+    <MainWrapper isBlack={true}>
+      <Menu
+        actionText="general:go-to-home"
+        handleText={() => {
+          router.replace('/')
+        }}
+        defaultIsContactOpen={true}
+        isBlack={true}
+        courses={COURSES}
+      />
+    </MainWrapper>
+  )
 }
 
 Contact.getInitialProps = async ({ query }) => {

@@ -4,6 +4,7 @@ import useWindowSize from '../../../hooks/useWindowSize'
 import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
+import { useRouter } from 'next/router'
 
 const Menu = ({
   isBlack,
@@ -15,6 +16,7 @@ const Menu = ({
   actionText = 'menu:close',
   handleText,
 }) => {
+  const router = useRouter()
   const size = useWindowSize()
   const [isContactOpen, setIsContactOpen] = useState(defaultIsContactOpen)
   const [areCoursesOpen, setAreCoursesOpen] = useState(defaultAreCoursesOpen)
@@ -43,6 +45,7 @@ const Menu = ({
     setIsContactOpen(false)
     setAreCoursesOpen(false)
     setIsCourseOpen(false)
+    router.replace('/')
   }
 
   const openCourse = course => {
