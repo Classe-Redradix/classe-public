@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import TabIcon from './../../../assets/icons/TabIcon'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const CoursesList = ({ courses, handleOpenCourse }) => {
   const t = useTranslations()
+  const router = useRouter()
 
   const handleCourseClick = (e, course) => {
     handleOpenCourse(course)
@@ -20,7 +22,10 @@ const CoursesList = ({ courses, handleOpenCourse }) => {
       <ol className="coursesList-list">
         {courses.map((course, index) => (
           <li key={course.information.title}>
-            <Link href={'/'} as={`/courses/${course.id}`}>
+            {/* HACK: we use `router?.pathname ?? '/'` because of Storybook, so
+            we don't have to install any additional dependencies to add the
+            next router to Storybook */}
+            <Link href={router?.pathname ?? '/'} as={`/courses/${course.id}`}>
               <a
                 className="coursesList-link h1"
                 onClick={e => handleCourseClick(e, course)}
