@@ -4,22 +4,26 @@ import useWindowSize from '../../../hooks/useWindowSize'
 import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
+import { useRouter } from 'next/router'
 
 const Menu = ({
   isBlack,
   isFluor,
   courses,
+  contactFormParams,
+  defaultCourse = null,
   defaultIsContactOpen = false,
   defaultAreCoursesOpen = false,
   defaultIsCourseOpen = false,
   actionText = 'menu:close',
   handleText,
 }) => {
+  const router = useRouter()
   const size = useWindowSize()
   const [isContactOpen, setIsContactOpen] = useState(defaultIsContactOpen)
   const [areCoursesOpen, setAreCoursesOpen] = useState(defaultAreCoursesOpen)
   const [isCourseOpen, setIsCourseOpen] = useState(defaultIsCourseOpen)
-  const [course, setCourse] = useState(null)
+  const [course, setCourse] = useState(defaultCourse)
 
   const handleCoursesOpen = () => {
     setIsContactOpen(false)
@@ -33,7 +37,7 @@ const Menu = ({
     setIsContactOpen(true)
   }
 
-  const handleCourseOpen = () => {
+  const handleCourseOpen = course => {
     setAreCoursesOpen(false)
     setIsContactOpen(false)
     setIsCourseOpen(true)
@@ -43,6 +47,7 @@ const Menu = ({
     setIsContactOpen(false)
     setAreCoursesOpen(false)
     setIsCourseOpen(false)
+    router.replace('/')
   }
 
   const openCourse = course => {
@@ -56,6 +61,7 @@ const Menu = ({
       <MenuLayer
         actionText={actionText}
         courses={courses}
+        contactFormParams={contactFormParams}
         handleContactOpen={handleContactOpen}
         isContactOpen={isContactOpen}
         isCourseOpen={isCourseOpen}

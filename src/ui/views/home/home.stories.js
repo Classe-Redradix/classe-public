@@ -73,6 +73,11 @@ export const home = () => {
         onEmailChange: () => {},
         userType: '',
         onUserTypeChange: () => {},
+        interestedInOptions: [],
+        onInterestedInOptionChange: () => {},
+        name: '',
+        onNameChange: () => {},
+        saveToFirebase: () => {},
       }}
       isBlack={isBlack}
       isFluor={isFluor}

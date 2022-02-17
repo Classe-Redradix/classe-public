@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import TabIcon from './../../../assets/icons/TabIcon'
+import Link from 'next/link'
 
 const CoursesList = ({ courses, handleOpenCourse }) => {
   const t = useTranslations()
 
   const handleCourseClick = (e, course) => {
-    e.preventDefault()
     handleOpenCourse(course)
   }
 
@@ -20,20 +20,22 @@ const CoursesList = ({ courses, handleOpenCourse }) => {
       <ol className="coursesList-list">
         {courses.map((course, index) => (
           <li key={course.information.title}>
-            <a
-              className="coursesList-link h1"
-              onClick={e => handleCourseClick(e, course)}
-            >
-              <span className="coursesList-linkNumber">
-                {index < 10 ? `0${index + 1}` : index + 1}
-              </span>
-              <span className="coursesList-linkTextWrapper">
-                <TabIcon color="red" className="icon" />
-                <span className="coursesList-linkText">
-                  {course.information.title}
+            <Link href={'/'} as={`/courses/${course.id}`}>
+              <a
+                className="coursesList-link h1"
+                onClick={e => handleCourseClick(e, course)}
+              >
+                <span className="coursesList-linkNumber">
+                  {index < 10 ? `0${index + 1}` : index + 1}
                 </span>
-              </span>
-            </a>
+                <span className="coursesList-linkTextWrapper">
+                  <TabIcon color="red" className="icon" />
+                  <span className="coursesList-linkText">
+                    {course.information.title}
+                  </span>
+                </span>
+              </a>
+            </Link>
           </li>
         ))}
       </ol>

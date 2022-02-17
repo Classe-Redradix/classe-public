@@ -1,11 +1,6 @@
 import CourseUI from 'ui/views/course/Course'
 import COURSES from '../../../pages/data/courses'
 
-const courses = COURSES.map(course => ({
-  title: course.information.title,
-  href: `/courses/${course.id}`,
-}))
-
 const dates = [
   {
     day: '01',
@@ -27,7 +22,7 @@ const Course = ({ course }) => {
   return (
     <CourseUI
       isBlack
-      courses={courses}
+      courses={COURSES}
       dates={dates}
       name={information.title}
       title="objetivosd"
