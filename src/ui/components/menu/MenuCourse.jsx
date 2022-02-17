@@ -33,8 +33,6 @@ const MenuCourse = ({ course }) => {
 
   const { information, index, objetives } = course
 
-  console.log('information', information)
-
   return (
     <section className="courseSections">
       <CourseIntro dates={dates} name={information.title} />

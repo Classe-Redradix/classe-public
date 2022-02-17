@@ -10,6 +10,7 @@ const Menu = ({
   isBlack,
   isFluor,
   courses,
+  defaultCourse = null,
   defaultIsContactOpen = false,
   defaultAreCoursesOpen = false,
   defaultIsCourseOpen = false,
@@ -21,7 +22,7 @@ const Menu = ({
   const [isContactOpen, setIsContactOpen] = useState(defaultIsContactOpen)
   const [areCoursesOpen, setAreCoursesOpen] = useState(defaultAreCoursesOpen)
   const [isCourseOpen, setIsCourseOpen] = useState(defaultIsCourseOpen)
-  const [course, setCourse] = useState(null)
+  const [course, setCourse] = useState(defaultCourse)
 
   const handleCoursesOpen = () => {
     setIsContactOpen(false)
@@ -35,7 +36,7 @@ const Menu = ({
     setIsContactOpen(true)
   }
 
-  const handleCourseOpen = () => {
+  const handleCourseOpen = course => {
     setAreCoursesOpen(false)
     setIsContactOpen(false)
     setIsCourseOpen(true)
