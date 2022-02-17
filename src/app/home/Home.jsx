@@ -101,7 +101,7 @@ const Home = () => {
       isBlack={isBlack}
       isFluor={isFluor}
       isLock={isLock}
-      courses={courses}
+      courses={COURSES}
       dates={dates}
       logos={logos}
       faqsList={faqsList}
