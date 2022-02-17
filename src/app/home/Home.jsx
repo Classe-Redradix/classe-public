@@ -23,6 +23,10 @@ const Home = () => {
     onEmailChange,
     userType,
     onUserTypeChange,
+    interestedInOptions,
+    onInterestedInOptionChange,
+    name,
+    onNameChange,
     saveToFirebase: saveContactFormToFirebase,
   } = useContactForm()
 
@@ -89,11 +93,18 @@ const Home = () => {
     } catch (error) {}
   }
 
+  // NOTE: we are using a shared contact form state. If the home contact form
+  // changes, so it will the modal contact form, and vice versa
   const contactFormParams = {
     email,
     onEmailChange,
     userType,
     onUserTypeChange,
+    interestedInOptions,
+    onInterestedInOptionChange,
+    name,
+    onNameChange,
+    saveToFirebase: saveContactFormToFirebase,
   }
 
   return (

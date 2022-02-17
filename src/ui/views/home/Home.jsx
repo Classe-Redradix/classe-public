@@ -28,7 +28,12 @@ const Home = ({
 
   return (
     <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
-      <Menu type="home" isBlack={isBlack} courses={courses} />
+      <Menu
+        type="home"
+        contactFormParams={contactFormParams}
+        isBlack={isBlack}
+        courses={courses}
+      />
       <div className="blurableWrapper">
         <Header title={t('manifest:header')} number={1} />
         <Manifest isBlack={isBlack} isFluor={isFluor} />

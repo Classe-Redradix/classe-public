@@ -12,6 +12,7 @@ import MenuCourse from './MenuCourse'
 const MenuLayer = ({
   course,
   courses,
+  contactFormParams,
   isContactOpen,
   isCourseOpen,
   areCoursesOpen,
@@ -68,7 +69,10 @@ const MenuLayer = ({
             </Row>
           ) : null}
           {isContactOpen ? (
-            <MenuContact linesHidden={linesHidden} />
+            <MenuContact
+              linesHidden={linesHidden}
+              contactFormParams={contactFormParams}
+            />
           ) : isCourseOpen ? (
             <MenuCourse course={course} />
           ) : (

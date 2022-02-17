@@ -1,17 +1,40 @@
-import ContactView from '../src/app/contact/Contact'
-import MenuContact from 'ui/components/menu/MenuContact'
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import COURSES from './data/courses'
+import useContactForm from 'app/useContactForm'
 
 const Contact = ({ courseId }) => {
   const router = useRouter()
+  const {
+    email,
+    onEmailChange,
+    name,
+    onNameChange,
+    userType,
+    onUserTypeChange,
+    saveToFirebase,
+    interestedInOptions,
+    onInterestedInOptionChange,
+  } = useContactForm()
+
+  const contactFormParams = {
+    email,
+    onEmailChange,
+    name,
+    onNameChange,
+    userType,
+    onUserTypeChange,
+    saveToFirebase,
+    interestedInOptions,
+    onInterestedInOptionChange,
+  }
 
   return (
     <MainWrapper isBlack={true}>
       <Menu
         actionText="general:go-to-home"
+        contactFormParams={contactFormParams}
         handleText={() => {
           router.replace('/')
         }}

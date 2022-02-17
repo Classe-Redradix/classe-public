@@ -10,6 +10,7 @@ const Menu = ({
   isBlack,
   isFluor,
   courses,
+  contactFormParams,
   defaultCourse = null,
   defaultIsContactOpen = false,
   defaultAreCoursesOpen = false,
@@ -60,6 +61,7 @@ const Menu = ({
       <MenuLayer
         actionText={actionText}
         courses={courses}
+        contactFormParams={contactFormParams}
         handleContactOpen={handleContactOpen}
         isContactOpen={isContactOpen}
         isCourseOpen={isCourseOpen}
