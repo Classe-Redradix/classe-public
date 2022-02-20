@@ -39,6 +39,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
       </Cell>
       <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
         <form
+          className="contact-form"
           onSubmit={e => {
             e.preventDefault()
             contactFormParams.saveToFirebase({
@@ -122,7 +123,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
               isNegative
             />
           </div>
-          <div className="contact-formBlock--flex">
+          <div className="contact-formBlock">
             <Checkbox
               hasMessage
               handleChange={() => {}}
