@@ -51,7 +51,7 @@ const Courses = ({ courses, isBlack, isFluor }) => {
         <Cell isNegative={isBlack}>
           <ol className="coursesList-list">
             {courses.map((course, index) => (
-              <li key={course.title}>
+              <li key={course.information.title}>
                 <a
                   className="coursesList-link h1"
                   href={course.href}
@@ -62,7 +62,9 @@ const Courses = ({ courses, isBlack, isFluor }) => {
                   </span>
                   <span className="coursesList-linkTextWrapper">
                     <TabIcon className="icon" color="yellow" />
-                    <span className="coursesList-linkText">{course.title}</span>
+                    <span className="coursesList-linkText">
+                      {course.information.title}
+                    </span>
                   </span>
                 </a>
               </li>
