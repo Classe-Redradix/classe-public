@@ -11,5 +11,21 @@ export default {
 export const contact = () => {
   useScrambleText()
 
-  return <Contact isBlack courses={COURSES} />
+  return (
+    <Contact
+      isBlack
+      courses={COURSES}
+      contactFormParams={{
+        email: '',
+        onEmailChange: () => {},
+        userType: '',
+        onUserTypeChange: () => {},
+        interestedInOptions: [],
+        onInterestedInOptionChange: () => {},
+        name: '',
+        onNameChange: () => {},
+        saveToFirebase: () => {},
+      }}
+    />
+  )
 }
