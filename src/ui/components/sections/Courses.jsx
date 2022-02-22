@@ -8,7 +8,7 @@ import Button from '../button/Button'
 import demoImage from '/public/images/demo-small-black.png'
 import TabIcon from './../../../assets/icons/TabIcon'
 
-const Courses = ({ courses, isBlack, isFluor, openCourse }) => {
+const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
   const t = useTranslations()
 
   const handleClick = (e, course) => {
@@ -43,6 +43,7 @@ const Courses = ({ courses, isBlack, isFluor, openCourse }) => {
               isNegative={isBlack}
               href="/"
               text={t('courses:button')}
+              onClick={openContact}
             />
           </Cell>
         </Cell>
@@ -83,6 +84,8 @@ Courses.propTypes = {
   ).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
+  openCourse: PropTypes.func,
+  openContact: PropTypes.func,
 }
 
 export default Courses

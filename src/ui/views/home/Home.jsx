@@ -65,6 +65,7 @@ const Home = ({
           isBlack={isBlack}
           isFluor={isFluor}
           openCourse={openCourse}
+          openContact={handleContactOpen}
         />
         <Header isClose title={t('courses:header')} />
         <Header title={t('custom:header')} number={3} />
@@ -84,7 +85,12 @@ const Home = ({
         <Calendar dates={dates} isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('calendar:header')} />
         <Header title={t('companies:header')} number={7} />
-        <Companies logos={logos} isBlack={isBlack} isFluor={isFluor} />
+        <Companies
+          logos={logos}
+          isBlack={isBlack}
+          isFluor={isFluor}
+          openContact={handleContactOpen}
+        />
         <Header isClose title={t('companies:header')} />
         <Header title={t('faqs:header')} number={8} />
         <Faqs isBlack={isBlack} isFluor={isFluor} list={faqsList} />
