@@ -18,7 +18,7 @@ const Menu = ({
   course = null,
   handleClose,
   handleContactOpen,
-  handleCoursesOpen,
+  openCourses,
   isContactOpen = false,
   isCourseOpen = false,
   openCourse,
@@ -43,7 +43,7 @@ const Menu = ({
         <MenuDesktop
           isBlack={isBlack}
           isFluor={isFluor}
-          handleCoursesOpen={handleCoursesOpen}
+          openCourses={openCourses}
           handleContactOpen={handleContactOpen}
           courses={courses.length}
         />
@@ -53,7 +53,7 @@ const Menu = ({
           isFluor={isFluor}
           isContactOpen={isContactOpen}
           areCoursesOpen={areCoursesOpen}
-          handleCoursesOpen={handleCoursesOpen}
+          openCourses={openCourses}
           handleContactOpen={handleContactOpen}
           handleClose={handleClose}
         />

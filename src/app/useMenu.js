@@ -14,7 +14,7 @@ const useMenu = ({
   const [isCourseOpen, setIsCourseOpen] = useState(defaultIsCourseOpen)
   const [course, setCourse] = useState(defaultCourse)
 
-  const handleCoursesOpen = () => {
+  const openCourses = () => {
     setIsContactOpen(false)
     setIsCourseOpen(false)
     setAreCoursesOpen(true)
@@ -54,7 +54,7 @@ const useMenu = ({
     areCoursesOpen,
     isCourseOpen,
     course,
-    handleCoursesOpen,
+    openCourses,
     handleContactOpen,
     handleClose,
     openCourse,

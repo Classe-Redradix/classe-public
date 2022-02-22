@@ -6,7 +6,7 @@ import useTranslations from '../../../hooks/useTranslations'
 const MenuMobile = ({
   isBlack,
   isFluor,
-  handleCoursesOpen,
+  openCourses,
   handleContactOpen,
   isContactOpen,
   areCoursesOpen,
@@ -27,7 +27,7 @@ const MenuMobile = ({
       <span className="menuMobile-claim h2">{t('menu:claimSmall')}</span>
       <button
         className="menuMobile-button menu"
-        onClick={isOpen ? handleClose : handleCoursesOpen}
+        onClick={isOpen ? handleClose : openCourses}
         aria-label={isOpen ? t('menu:close') : t('menu:open')}
       >
         [{isOpen ? t('menu:close') : t('menu:open')}]

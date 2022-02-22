@@ -6,15 +6,10 @@ import useMenu from 'app/useMenu'
 
 const Courses = () => {
   const router = useRouter()
-  const {
-    openCourse,
-    isCourseOpen,
-    areCoursesOpen,
-    course,
-    handleCoursesOpen,
-  } = useMenu({
-    defaultAreCoursesOpen: true,
-  })
+  const { openCourse, isCourseOpen, areCoursesOpen, course, openCourses } =
+    useMenu({
+      defaultAreCoursesOpen: true,
+    })
 
   const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
 
@@ -25,7 +20,7 @@ const Courses = () => {
         handleText={() => {
           if (isCourseOpen) {
             router.replace('/courses')
-            handleCoursesOpen()
+            openCourses()
           } else {
             router.replace('/')
           }

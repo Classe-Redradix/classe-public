@@ -7,7 +7,7 @@ import Cell from '../cell/Cell'
 const MenuDesktop = ({
   isBlack,
   isFluor,
-  handleCoursesOpen,
+  openCourses,
   handleContactOpen,
   courses,
 }) => {
@@ -23,7 +23,7 @@ const MenuDesktop = ({
         <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
         <button
           className="menuDesktop-button menu"
-          onClick={handleCoursesOpen}
+          onClick={openCourses}
           aria-label={t('menu:courses')}
         >
           [
@@ -47,7 +47,7 @@ const MenuDesktop = ({
 MenuDesktop.propTypes = {
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
-  handleCoursesOpen: PropTypes.func.isRequired,
+  openCourses: PropTypes.func.isRequired,
   handleContactOpen: PropTypes.func.isRequired,
   courses: PropTypes.number.isRequired,
 }
