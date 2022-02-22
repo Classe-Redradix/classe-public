@@ -41,21 +41,21 @@ const Course = ({ dates, name }) => {
           </Cell>
           <Cell isNegative>
             <div className="courseIntro-description">
-              <p class="p">
+              <p className="p">
                 Curso de 20h de profundización en el lenguaje para convertirse
                 en un experto. Se tratarán los principios que van más allá de
                 cualquier librería o de cualquier framework. Fundamentos sólidos
                 sobre los que construir. Los objetivos son dominar el lenguaje
                 por completo y asimilar los patrones más complejos.
               </p>
-              <p class="p">
+              <p className="p">
                 Todos nuestros cursos son configurables para poder adaptarse a
                 tus necesidades y las de tu empresa
               </p>
             </div>
             <div className="courseIntro-actions">
               <Button isLink isNegative href="/" text={t('course:button')} />
-              <span class="p uppercase">Scroll o drag</span>
+              <span className="p uppercase">Scroll o drag</span>
             </div>
           </Cell>
         </Cell>
