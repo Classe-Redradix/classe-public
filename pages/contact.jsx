@@ -38,7 +38,7 @@ const Contact = ({ courseId }) => {
         handleText={() => {
           router.replace('/')
         }}
-        defaultIsContactOpen={true}
+        isContactOpen={true}
         isBlack={true}
         courses={COURSES}
       />

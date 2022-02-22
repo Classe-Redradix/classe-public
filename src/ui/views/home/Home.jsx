@@ -12,6 +12,7 @@ import Faqs from '../../components/sections/Faqs'
 import Find from '../../components/sections/Find'
 import Footer from '../../components/footer/Footer'
 import useTranslations from '../../../hooks/useTranslations'
+import useMenu from 'app/useMenu'
 
 const Home = ({
   isBlack,
@@ -25,6 +26,17 @@ const Home = ({
   contactFormParams,
 }) => {
   const t = useTranslations()
+  const {
+    areCoursesOpen,
+    course,
+    handleClose,
+    handleContactOpen,
+    handleCourseOpen,
+    handleCoursesOpen,
+    isContactOpen,
+    isCourseOpen,
+    openCourse,
+  } = useMenu()
 
   return (
     <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
@@ -33,13 +45,27 @@ const Home = ({
         contactFormParams={contactFormParams}
         isBlack={isBlack}
         courses={courses}
+        areCoursesOpen={areCoursesOpen}
+        course={course}
+        handleClose={handleClose}
+        handleContactOpen={handleContactOpen}
+        handleCourseOpen={handleCourseOpen}
+        handleCoursesOpen={handleCoursesOpen}
+        isContactOpen={isContactOpen}
+        isCourseOpen={isCourseOpen}
+        openCourse={openCourse}
       />
       <div className="blurableWrapper">
         <Header title={t('manifest:header')} number={1} />
         <Manifest isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('manifest:header')} />
         <Header title={t('courses:header')} number={2} />
-        <Courses courses={courses} isBlack={isBlack} isFluor={isFluor} />
+        <Courses
+          courses={courses}
+          isBlack={isBlack}
+          isFluor={isFluor}
+          openCourse={openCourse}
+        />
         <Header isClose title={t('courses:header')} />
         <Header title={t('custom:header')} number={3} />
         <Custom isBlack={isBlack} isFluor={isFluor} />

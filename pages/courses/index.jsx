@@ -2,18 +2,38 @@ import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import COURSES from './../data/courses'
+import useMenu from 'app/useMenu'
 
 const Courses = () => {
   const router = useRouter()
+  const {
+    openCourse,
+    isCourseOpen,
+    areCoursesOpen,
+    course,
+    handleCoursesOpen,
+  } = useMenu({
+    defaultAreCoursesOpen: true,
+  })
+
+  const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
 
   return (
     <MainWrapper isBlack={true}>
       <Menu
-        actionText="general:go-to-home"
+        actionText={actionText}
         handleText={() => {
-          router.replace('/')
+          if (isCourseOpen) {
+            router.replace('/courses')
+            handleCoursesOpen()
+          } else {
+            router.replace('/')
+          }
         }}
-        defaultAreCoursesOpen={true}
+        areCoursesOpen={areCoursesOpen}
+        isCourseOpen={isCourseOpen}
+        course={course}
+        openCourse={openCourse}
         isBlack={true}
         courses={COURSES}
       />

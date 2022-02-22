@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
@@ -9,13 +8,12 @@ import Button from '../button/Button'
 import demoImage from '/public/images/demo-small-black.png'
 import TabIcon from './../../../assets/icons/TabIcon'
 
-const Courses = ({ courses, isBlack, isFluor }) => {
-  const router = useRouter()
+const Courses = ({ courses, isBlack, isFluor, openCourse }) => {
   const t = useTranslations()
 
-  const handleClick = e => {
+  const handleClick = (e, course) => {
     e.preventDefault()
-    router.push(href)
+    openCourse(course)
   }
 
   return (
@@ -55,7 +53,7 @@ const Courses = ({ courses, isBlack, isFluor }) => {
                 <a
                   className="coursesList-link h1"
                   href={course.href}
-                  onClick={handleClick}
+                  onClick={e => handleClick(e, course)}
                 >
                   <span className="coursesList-linkNumber">
                     {index < 10 ? `0${index + 1}` : index + 1}

@@ -5,56 +5,26 @@ import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 import { useRouter } from 'next/router'
+import useMenu from './../../../app/useMenu'
 
 const Menu = ({
   isBlack,
   isFluor,
   courses,
   contactFormParams,
-  defaultCourse = null,
-  defaultIsContactOpen = false,
-  defaultAreCoursesOpen = false,
-  defaultIsCourseOpen = false,
   actionText = 'menu:close',
   handleText,
+  areCoursesOpen = false,
+  course = null,
+  handleClose,
+  handleContactOpen,
+  handleCourseOpen,
+  handleCoursesOpen,
+  isContactOpen = false,
+  isCourseOpen = false,
+  openCourse,
 }) => {
-  const router = useRouter()
   const size = useWindowSize()
-  const [isContactOpen, setIsContactOpen] = useState(defaultIsContactOpen)
-  const [areCoursesOpen, setAreCoursesOpen] = useState(defaultAreCoursesOpen)
-  const [isCourseOpen, setIsCourseOpen] = useState(defaultIsCourseOpen)
-  const [course, setCourse] = useState(defaultCourse)
-
-  const handleCoursesOpen = () => {
-    setIsContactOpen(false)
-    setIsCourseOpen(false)
-    setAreCoursesOpen(true)
-  }
-
-  const handleContactOpen = () => {
-    setAreCoursesOpen(false)
-    setIsCourseOpen(false)
-    setIsContactOpen(true)
-  }
-
-  const handleCourseOpen = course => {
-    setAreCoursesOpen(false)
-    setIsContactOpen(false)
-    setIsCourseOpen(true)
-  }
-
-  const handleClose = () => {
-    setIsContactOpen(false)
-    setAreCoursesOpen(false)
-    setIsCourseOpen(false)
-    router.replace('/')
-  }
-
-  const openCourse = course => {
-    setAreCoursesOpen(false)
-    setIsCourseOpen(true)
-    setCourse(course)
-  }
 
   return (
     <>

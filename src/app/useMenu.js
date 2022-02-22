@@ -6,7 +6,7 @@ const useMenu = ({
   defaultAreCoursesOpen = false,
   defaultIsCourseOpen = false,
   defaultCourse = null,
-}) => {
+} = {}) => {
   const router = useRouter()
 
   const [isContactOpen, setIsContactOpen] = useState(defaultIsContactOpen)

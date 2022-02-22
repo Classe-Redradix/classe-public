@@ -13,8 +13,8 @@ const Course = ({ course }) => {
         handleText={() => {
           router.replace('/')
         }}
-        defaultCourse={course}
-        defaultIsCourseOpen={true}
+        course={course}
+        isCourseOpen={true}
         isBlack={true}
         courses={COURSES}
       />
