@@ -68,7 +68,11 @@ const Home = ({
         />
         <Header isClose title={t('courses:header')} />
         <Header title={t('custom:header')} number={3} />
-        <Custom isBlack={isBlack} isFluor={isFluor} />
+        <Custom
+          isBlack={isBlack}
+          isFluor={isFluor}
+          openCourses={handleCoursesOpen}
+        />
         <Header isClose title={t('custom:header')} />
         <Header title={t('featured:header')} number={4} />
         <Featured isBlack={isBlack} isFluor={isFluor} />
@@ -95,6 +99,7 @@ const Home = ({
           isFluor={isFluor}
           onContactFormSubmit={onContactFormSubmit}
           contactFormParams={contactFormParams}
+          openCourse={openCourse}
         />
         <Header isClose title={t('footer:header')} />
       </div>
