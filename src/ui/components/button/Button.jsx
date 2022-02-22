@@ -18,16 +18,17 @@ const Button = ({
     'is-negative': isNegative,
   })
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     e.preventDefault()
-    onClick
+    onClick()
   }
 
   return (
     <As
       className={classes}
       href={href ? href : null}
-      onClick={onClick ? handleClick : null}>
+      onClick={onClick ? handleClick : null}
+    >
       <span className="mainButton-text button">{text}</span>
     </As>
   )
