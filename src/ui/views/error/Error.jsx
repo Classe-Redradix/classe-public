@@ -10,9 +10,23 @@ import Cell from '../../components/cell/Cell'
 import ArrowFact from '../../../assets/icons/ArrowFact'
 import ArrowError from '../../../assets/icons/ArrowError'
 import useFitText from 'use-fit-text'
+import useMenu from 'app/useMenu'
 
-const Error = ({ isBlack, isFluor, isLock, courses }) => {
+const Error = ({ isBlack, isFluor, isLock, courses, contactFormParams }) => {
   const t = useTranslations()
+
+  const {
+    areCoursesOpen,
+    course,
+    handleClose,
+    handleContactOpen,
+    handleCourseOpen,
+    handleCoursesOpen,
+    isContactOpen,
+    isCourseOpen,
+    openCourse,
+  } = useMenu()
+
   const onFinish = useCallback(fontSize => {}, [])
   const { fontSize, ref } = useFitText({ maxFontSize: 8000, onFinish })
 
@@ -57,7 +71,20 @@ const Error = ({ isBlack, isFluor, isLock, courses }) => {
 
   return (
     <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
-      <Menu isBlack={isBlack} courses={courses} />
+      <Menu
+        isBlack={isBlack}
+        courses={courses}
+        contactFormParams={contactFormParams}
+        areCoursesOpen={areCoursesOpen}
+        course={course}
+        handleClose={handleClose}
+        handleContactOpen={handleContactOpen}
+        handleCourseOpen={handleCourseOpen}
+        handleCoursesOpen={handleCoursesOpen}
+        isContactOpen={isContactOpen}
+        isCourseOpen={isCourseOpen}
+        openCourse={openCourse}
+      />
       <SectionWrapper isBlack extraClass="error">
         <div onMouseMove={cursorFinderEvent}>
           <Row type="full" extraClass="error-content">

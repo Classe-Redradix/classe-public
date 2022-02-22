@@ -1,25 +1,34 @@
-import Link from 'next/link'
+import useContactForm from 'app/useContactForm'
+import Error from 'ui/views/error/Error'
+import COURSES from '../../../pages/data/courses'
 
 const Error404 = () => {
+  const {
+    email,
+    onEmailChange,
+    userType,
+    onUserTypeChange,
+    interestedInOptions,
+    onInterestedInOptionChange,
+    name,
+    onNameChange,
+    saveToFirebase: saveContactFormToFirebase,
+  } = useContactForm()
+
+  const contactFormParams = {
+    email,
+    onEmailChange,
+    userType,
+    onUserTypeChange,
+    interestedInOptions,
+    onInterestedInOptionChange,
+    name,
+    onNameChange,
+    saveToFirebase: saveContactFormToFirebase,
+  }
+
   return (
-    <section
-      style={{
-        maxWidth: 500,
-        margin: '2rem auto',
-        textAlign: 'center',
-      }}
-    >
-      <h1>Page not found</h1>
-      <img
-        src="https://c.tenor.com/lx2WSGRk8bcAAAAC/pulp-fiction-john-travolta.gif"
-        alt="Not found page"
-        style={{
-          display: 'block',
-          marginBottom: '2rem',
-        }}
-      />
-      <Link href="/">Come back to home</Link>
-    </section>
+    <Error courses={COURSES} isBlack contactFormParams={contactFormParams} />
   )
 }
 
