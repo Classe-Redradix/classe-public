@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-// import MainWrapper from '../../components/wrappers/MainWrapper'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import CourseIntro from '../../components/sections/course/CourseIntro'
 import CourseTitle from '../../components/sections/course/CourseTitle'
 import CourseSection from '../../components/sections/course/CourseSection'
@@ -27,9 +28,25 @@ const dates = [
 ]
 
 const MenuCourse = ({ course }) => {
+  gsap.registerPlugin(ScrollTrigger)
   const t = useTranslations()
-
   useScrambleText()
+
+  useEffect(() => {
+    const container = document.querySelectorAll('.courseSections')
+    gsap.to(container, {
+      x: () =>
+        -(container.scrollWidth - document.documentElement.clientWidth) + 'px',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: container,
+        invalidateOnRefresh: true,
+        pin: true,
+        scrub: 1,
+        end: () => '+=' + container.offsetWidth,
+      },
+    })
+  }, [])
 
   const { information, index, objetives } = course
 
