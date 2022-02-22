@@ -7,6 +7,7 @@ import Cell from '../cell/Cell'
 import Button from '../button/Button'
 import demoImage from '/public/images/demo-small-black.png'
 import TabIcon from './../../../assets/icons/TabIcon'
+import { CoursePropType } from '../sharedProptypes'
 
 const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
   const t = useTranslations()
@@ -76,12 +77,7 @@ const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
 }
 
 Courses.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
   openCourse: PropTypes.func,

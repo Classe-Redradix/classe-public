@@ -4,6 +4,7 @@ import useTranslations from '../../../hooks/useTranslations'
 import TabIcon from './../../../assets/icons/TabIcon'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { CoursePropType } from '../sharedProptypes'
 
 const CoursesList = ({ courses, handleOpenCourse }) => {
   const t = useTranslations()
@@ -49,12 +50,7 @@ const CoursesList = ({ courses, handleOpenCourse }) => {
 }
 
 CoursesList.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
 }
 
 export default CoursesList

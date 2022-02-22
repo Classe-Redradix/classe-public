@@ -8,6 +8,7 @@ import Cell from '../cell/Cell'
 import CoursesList from './CoursesList'
 import MenuContact from './MenuContact'
 import MenuCourse from './MenuCourse'
+import { CoursePropType } from '../sharedProptypes'
 
 const MenuLayer = ({
   course,
@@ -116,11 +117,6 @@ const MenuLayer = ({
     </div>
   )
 }
-
-const CoursePropType = PropTypes.shape({
-  title: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-})
 
 MenuLayer.propTypes = {
   course: CoursePropType,

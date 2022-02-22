@@ -6,6 +6,7 @@ import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 import { useRouter } from 'next/router'
 import useMenu from './../../../app/useMenu'
+import { CoursePropType } from '../sharedProptypes'
 
 const Menu = ({
   isBlack,
@@ -63,12 +64,7 @@ const Menu = ({
 }
 
 Menu.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
 }

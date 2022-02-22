@@ -7,6 +7,7 @@ import Cell from '../cell/Cell'
 import Radio from '../forms/Radio'
 import Input from '../forms/Input'
 import Checkbox from '../forms/Checkbox'
+import { CoursePropType } from '../sharedProptypes'
 
 const Footer = ({
   courses,
@@ -182,12 +183,7 @@ const Footer = ({
 }
 
 Footer.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
   onContactForm: PropTypes.object,
