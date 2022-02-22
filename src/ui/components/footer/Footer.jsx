@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
@@ -15,13 +14,13 @@ const Footer = ({
   isFluor,
   onContactFormSubmit,
   contactFormParams,
+  openCourse,
 }) => {
-  const router = useRouter()
   const t = useTranslations()
 
-  const handleClick = e => {
+  const handleClick = (e, course) => {
     e.preventDefault()
-    router.push(href)
+    openCourse(course)
   }
 
   return (
@@ -92,7 +91,11 @@ const Footer = ({
           <ul className="footer-list">
             {courses.map(course => (
               <li key={course.information.title}>
-                <a className="h4" href={course.href} onClick={handleClick}>
+                <a
+                  className="h4"
+                  href={course.href}
+                  onClick={e => handleClick(e, course)}
+                >
                   {course.information.title}
                 </a>
               </li>
@@ -189,6 +192,7 @@ Footer.propTypes = {
   isFluor: PropTypes.bool.isRequired,
   onContactForm: PropTypes.object,
   onContactFormSubmit: PropTypes.func,
+  openCourse: PropTypes.func,
 }
 
 export default Footer
