@@ -20,7 +20,6 @@ const Error = ({ isBlack, isFluor, isLock, courses, contactFormParams }) => {
     course,
     handleClose,
     handleContactOpen,
-    handleCourseOpen,
     handleCoursesOpen,
     isContactOpen,
     isCourseOpen,
@@ -79,7 +78,6 @@ const Error = ({ isBlack, isFluor, isLock, courses, contactFormParams }) => {
         course={course}
         handleClose={handleClose}
         handleContactOpen={handleContactOpen}
-        handleCourseOpen={handleCourseOpen}
         handleCoursesOpen={handleCoursesOpen}
         isContactOpen={isContactOpen}
         isCourseOpen={isCourseOpen}

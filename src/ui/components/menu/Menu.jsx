@@ -18,7 +18,6 @@ const Menu = ({
   course = null,
   handleClose,
   handleContactOpen,
-  handleCourseOpen,
   handleCoursesOpen,
   isContactOpen = false,
   isCourseOpen = false,
@@ -46,7 +45,6 @@ const Menu = ({
           isFluor={isFluor}
           handleCoursesOpen={handleCoursesOpen}
           handleContactOpen={handleContactOpen}
-          handleCourseOpen={handleCourseOpen}
           courses={courses.length}
         />
       ) : (
@@ -57,7 +55,6 @@ const Menu = ({
           areCoursesOpen={areCoursesOpen}
           handleCoursesOpen={handleCoursesOpen}
           handleContactOpen={handleContactOpen}
-          handleCourseOpen={handleCourseOpen}
           handleClose={handleClose}
         />
       )}

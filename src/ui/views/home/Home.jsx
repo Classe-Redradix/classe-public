@@ -31,7 +31,6 @@ const Home = ({
     course,
     handleClose,
     handleContactOpen,
-    handleCourseOpen,
     handleCoursesOpen,
     isContactOpen,
     isCourseOpen,
@@ -49,7 +48,6 @@ const Home = ({
         course={course}
         handleClose={handleClose}
         handleContactOpen={handleContactOpen}
-        handleCourseOpen={handleCourseOpen}
         handleCoursesOpen={handleCoursesOpen}
         isContactOpen={isContactOpen}
         isCourseOpen={isCourseOpen}
