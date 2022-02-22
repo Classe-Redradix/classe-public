@@ -4,12 +4,12 @@ import useTranslations from '../../../hooks/useTranslations'
 import TabIcon from './../../../assets/icons/TabIcon'
 import { CoursePropType } from '../sharedProptypes'
 
-const CoursesList = ({ courses, handleOpenCourse }) => {
+const CoursesList = ({ courses, openCourse }) => {
   const t = useTranslations()
 
   const handleCourseClick = (e, course) => {
     e.preventDefault()
-    handleOpenCourse(course)
+    openCourse(course)
   }
 
   return (

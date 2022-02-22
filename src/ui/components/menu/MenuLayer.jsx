@@ -19,7 +19,7 @@ const MenuLayer = ({
   areCoursesOpen,
   handleClose,
   openContact,
-  handleOpenCourse,
+  openCourse,
   hasClose = true,
   actionText = 'menu:close',
 }) => {
@@ -82,10 +82,7 @@ const MenuLayer = ({
                 <p>image</p>
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <CoursesList
-                  courses={courses}
-                  handleOpenCourse={handleOpenCourse}
-                />
+                <CoursesList courses={courses} openCourse={openCourse} />
               </Cell>
             </Row>
           )}
@@ -125,7 +122,7 @@ MenuLayer.propTypes = {
   hasClose: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
   openContact: PropTypes.func.isRequired,
-  handleOpenCourse: PropTypes.func.isRequired,
+  openCourse: PropTypes.func.isRequired,
 }
 
 export default MenuLayer
