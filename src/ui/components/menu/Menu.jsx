@@ -17,7 +17,7 @@ const Menu = ({
   areCoursesOpen = false,
   course = null,
   handleClose,
-  handleContactOpen,
+  openContact,
   openCourses,
   isContactOpen = false,
   isCourseOpen = false,
@@ -31,7 +31,7 @@ const Menu = ({
         actionText={actionText}
         courses={courses}
         contactFormParams={contactFormParams}
-        handleContactOpen={handleContactOpen}
+        openContact={openContact}
         isContactOpen={isContactOpen}
         isCourseOpen={isCourseOpen}
         handleOpenCourse={openCourse}
@@ -44,7 +44,7 @@ const Menu = ({
           isBlack={isBlack}
           isFluor={isFluor}
           openCourses={openCourses}
-          handleContactOpen={handleContactOpen}
+          openContact={openContact}
           courses={courses.length}
         />
       ) : (
@@ -54,7 +54,7 @@ const Menu = ({
           isContactOpen={isContactOpen}
           areCoursesOpen={areCoursesOpen}
           openCourses={openCourses}
-          handleContactOpen={handleContactOpen}
+          openContact={openContact}
           handleClose={handleClose}
         />
       )}

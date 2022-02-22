@@ -17,7 +17,7 @@ const MenuLayer = ({
   isCourseOpen,
   areCoursesOpen,
   handleClose,
-  handleContactOpen,
+  openContact,
   handleOpenCourse,
   hasClose = true,
   actionText = 'menu:close',
@@ -102,7 +102,7 @@ const MenuLayer = ({
                   ] {t('menu:courses')}
                 </span>
                 <button
-                  onClick={handleContactOpen}
+                  onClick={openContact}
                   className="menuDesktop-link"
                   aria-label={t('menu:contact')}
                 >
@@ -128,7 +128,7 @@ MenuLayer.propTypes = {
   isOpen: PropTypes.bool,
   hasClose: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
-  handleContactOpen: PropTypes.func.isRequired,
+  openContact: PropTypes.func.isRequired,
   handleOpenCourse: PropTypes.func.isRequired,
 }
 

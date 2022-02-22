@@ -8,7 +8,7 @@ const MenuDesktop = ({
   isBlack,
   isFluor,
   openCourses,
-  handleContactOpen,
+  openContact,
   courses,
 }) => {
   const t = useTranslations()
@@ -33,7 +33,7 @@ const MenuDesktop = ({
           ] {t('menu:courses')}
         </button>
         <button
-          onClick={handleContactOpen}
+          onClick={openContact}
           className="menuDesktop-link menu"
           aria-label={t('menu:contact')}
         >
@@ -48,7 +48,7 @@ MenuDesktop.propTypes = {
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
   openCourses: PropTypes.func.isRequired,
-  handleContactOpen: PropTypes.func.isRequired,
+  openContact: PropTypes.func.isRequired,
   courses: PropTypes.number.isRequired,
 }
 

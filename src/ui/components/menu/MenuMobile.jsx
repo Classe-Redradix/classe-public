@@ -7,7 +7,7 @@ const MenuMobile = ({
   isBlack,
   isFluor,
   openCourses,
-  handleContactOpen,
+  openContact,
   isContactOpen,
   areCoursesOpen,
   handleClose,

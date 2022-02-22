@@ -30,7 +30,7 @@ const Home = ({
     areCoursesOpen,
     course,
     handleClose,
-    handleContactOpen,
+    openContact,
     openCourses,
     isContactOpen,
     isCourseOpen,
@@ -47,7 +47,7 @@ const Home = ({
         areCoursesOpen={areCoursesOpen}
         course={course}
         handleClose={handleClose}
-        handleContactOpen={handleContactOpen}
+        openContact={openContact}
         openCourses={openCourses}
         isContactOpen={isContactOpen}
         isCourseOpen={isCourseOpen}
@@ -63,7 +63,7 @@ const Home = ({
           isBlack={isBlack}
           isFluor={isFluor}
           openCourse={openCourse}
-          openContact={handleContactOpen}
+          openContact={openContact}
         />
         <Header isClose title={t('courses:header')} />
         <Header title={t('custom:header')} number={3} />
@@ -83,7 +83,7 @@ const Home = ({
           logos={logos}
           isBlack={isBlack}
           isFluor={isFluor}
-          openContact={handleContactOpen}
+          openContact={openContact}
         />
         <Header isClose title={t('companies:header')} />
         <Header title={t('faqs:header')} number={8} />
