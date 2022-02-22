@@ -8,7 +8,7 @@ import Cell from '../cell/Cell'
 import CoursesList from './CoursesList'
 import MenuContact from './MenuContact'
 import MenuCourse from './MenuCourse'
-import { CoursePropType } from '../sharedProptypes'
+import { CoursePropType } from '../../sharedProptypes'
 
 const MenuLayer = ({
   course,

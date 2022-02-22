@@ -7,7 +7,7 @@ import Cell from '../cell/Cell'
 import Button from '../button/Button'
 import demoImage from '/public/images/demo-small-black.png'
 import TabIcon from './../../../assets/icons/TabIcon'
-import { CoursePropType } from '../sharedProptypes'
+import { CoursePropType } from '../../sharedProptypes'
 
 const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
   const t = useTranslations()

@@ -9,6 +9,7 @@ import TabIcon from './../../../../assets/icons/TabIcon'
 import DatePicker from '../../date-picker/DatePicker'
 import useTranslations from '../../../../hooks/useTranslations'
 import useFitText from 'use-fit-text'
+import { DatesPropType } from './../../../sharedProptypes'
 
 const Course = ({ dates, name }) => {
   const t = useTranslations()
@@ -65,20 +66,7 @@ const Course = ({ dates, name }) => {
 }
 
 Course.propTypes = {
-  dates: PropTypes.arrayOf(
-    PropTypes.shape({
-      day: PropTypes.string,
-      month: PropTypes.string.isRequired,
-      courses: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          start: PropTypes.string.isRequired,
-          finish: PropTypes.string.isRequired,
-          to: PropTypes.string.isRequired,
-        }),
-      ),
-    }).isRequired,
-  ).isRequired,
+  dates: PropTypes.arrayOf(DatesPropType).isRequired,
   name: PropTypes.string.isRequired,
 }
 

@@ -6,6 +6,7 @@ import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
 import useTranslations from '../../../hooks/useTranslations'
 import Button from '../button/Button'
 import ArrowIcon from './../../../assets/icons/ArrowIcon'
+import { DatesPropType } from './../../sharedProptypes'
 
 const DatePicker = ({ dates, isCourse }) => {
   const t = useTranslations()
@@ -100,20 +101,7 @@ const DatePicker = ({ dates, isCourse }) => {
 }
 
 DatePicker.propTypes = {
-  dates: PropTypes.arrayOf(
-    PropTypes.shape({
-      day: PropTypes.string,
-      month: PropTypes.string.isRequired,
-      courses: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          start: PropTypes.string.isRequired,
-          finish: PropTypes.string.isRequired,
-          to: PropTypes.string.isRequired,
-        }),
-      ),
-    }).isRequired,
-  ).isRequired,
+  dates: PropTypes.arrayOf(DatesPropType),
   isCourse: PropTypes.bool,
 }
 

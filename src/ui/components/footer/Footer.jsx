@@ -7,7 +7,7 @@ import Cell from '../cell/Cell'
 import Radio from '../forms/Radio'
 import Input from '../forms/Input'
 import Checkbox from '../forms/Checkbox'
-import { CoursePropType } from '../sharedProptypes'
+import { CoursePropType } from '../../sharedProptypes'
 
 const Footer = ({
   courses,

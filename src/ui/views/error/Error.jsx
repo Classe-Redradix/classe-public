@@ -11,6 +11,10 @@ import ArrowFact from '../../../assets/icons/ArrowFact'
 import ArrowError from '../../../assets/icons/ArrowError'
 import useFitText from 'use-fit-text'
 import useMenu from './../../../app/useMenu'
+import {
+  ContactFormParamsPropType,
+  CoursePropType,
+} from './../../sharedProptypes'
 
 const Error = ({ isBlack, isFluor, isLock, courses, contactFormParams }) => {
   const t = useTranslations()
@@ -118,6 +122,12 @@ const Error = ({ isBlack, isFluor, isLock, courses, contactFormParams }) => {
   )
 }
 
-Error.propTypes = {}
+Error.propTypes = {
+  isBlack: PropTypes.bool,
+  isFluor: PropTypes.bool,
+  isLock: PropTypes.bool,
+  courses: PropTypes.arrayOf(CoursePropType),
+  contactFormParams: ContactFormParamsPropType,
+}
 
 export default Error

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import TabIcon from './../../../assets/icons/TabIcon'
-import { CoursePropType } from '../sharedProptypes'
+import { CoursePropType } from '../../sharedProptypes'
 
 const CoursesList = ({ courses, openCourse }) => {
   const t = useTranslations()

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import MainWrapper from '../../components/wrappers/MainWrapper'
 import Menu from '../../components/menu/Menu'
 import Header from '../../components/header/Header'
@@ -13,6 +14,12 @@ import Find from '../../components/sections/Find'
 import Footer from '../../components/footer/Footer'
 import useTranslations from '../../../hooks/useTranslations'
 import useMenu from './../../../app/useMenu'
+import {
+  CoursePropType,
+  ContactFormParamsPropType,
+  DatesPropType,
+  FaqsListPropType,
+} from './../../sharedProptypes'
 
 const Home = ({
   isBlack,
@@ -107,6 +114,16 @@ const Home = ({
   )
 }
 
-Home.propTypes = {}
+Home.propTypes = {
+  isBlack: PropTypes.bool,
+  isFluor: PropTypes.bool,
+  isLock: PropTypes.bool,
+  courses: PropTypes.arrayOf(CoursePropType),
+  logos: PropTypes.arrayOf(PropTypes.node),
+  faqsList: FaqsListPropType,
+  dates: PropTypes.arrayOf(DatesPropType).isRequired,
+  onContactFormSubmit: PropTypes.func,
+  contactFormParams: ContactFormParamsPropType,
+}
 
 export default Home

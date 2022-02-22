@@ -6,7 +6,10 @@ import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 import { useRouter } from 'next/router'
 import useMenu from './../../../app/useMenu'
-import { CoursePropType } from '../sharedProptypes'
+import {
+  CoursePropType,
+  ContactFormParamsPropType,
+} from '../../sharedProptypes'
 
 const Menu = ({
   isBlack,
@@ -64,9 +67,20 @@ const Menu = ({
 }
 
 Menu.propTypes = {
+  course: CoursePropType,
   courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
+  contactFormParams: ContactFormParamsPropType,
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
+  areCoursesOpen: PropTypes.bool,
+  isContactOpen: PropTypes.bool,
+  isCourseOpen: PropTypes.bool,
+  actionText: PropTypes.string,
+  handleText: PropTypes.func,
+  handleClose: PropTypes.func,
+  openContact: PropTypes.func,
+  openCourses: PropTypes.func,
+  openCourse: PropTypes.func,
 }
 
 export default Menu

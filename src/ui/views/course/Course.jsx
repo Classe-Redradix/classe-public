@@ -10,6 +10,7 @@ import CourseObjectives from '../../components/sections/course/CourseObjectives'
 import CourseInfo from '../../components/sections/course/CourseInfo'
 import CourseContact from '../../components/sections/course/CourseContact'
 import useTranslations from '../../../hooks/useTranslations'
+import { CoursePropType } from './../../sharedProptypes'
 
 const Course = ({
   isBlack,
@@ -94,6 +95,18 @@ Declaración de variables. (2H)"
   )
 }
 
-Course.propTypes = {}
+Course.propTypes = {
+  isBlack: PropTypes.bool,
+  isFluor: PropTypes.bool,
+  isLock: PropTypes.bool,
+  courses: PropTypes.arrayOf(CoursePropType),
+  dates,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  hours: PropTypes.number,
+  places: PropTypes.number,
+  students: PropTypes.number,
+  successPercentage: PropTypes.number,
+}
 
 export default Course
