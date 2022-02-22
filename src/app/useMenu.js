@@ -18,6 +18,8 @@ const useMenu = ({
     setIsContactOpen(false)
     setIsCourseOpen(false)
     setAreCoursesOpen(true)
+
+    router.replace(router.pathname, '/courses')
   }
 
   const handleContactOpen = () => {
@@ -45,6 +47,8 @@ const useMenu = ({
       setAreCoursesOpen(false)
       setIsCourseOpen(true)
       setCourse(course)
+
+      router.replace(router.pathname, course.href)
     },
     [course],
   )
