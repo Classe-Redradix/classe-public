@@ -22,12 +22,20 @@ const useMenu = ({
     router.replace(router.pathname, '/courses')
   }
 
-  const openContact = () => {
+  const openContact = (_, interestedIn) => {
     setAreCoursesOpen(false)
     setIsCourseOpen(false)
     setIsContactOpen(true)
 
-    router.replace(router.pathname, '/contact')
+    const path =
+      interestedIn !== undefined
+        ? {
+            name: `${router.pathname}?interested-in=${interestedIn}`,
+            as: `/contact?interested-in=${interestedIn}`,
+          }
+        : { name: router.pathname, as: '/contact' }
+
+    router.replace(path.name, path.as)
   }
 
   const handleClose = () => {

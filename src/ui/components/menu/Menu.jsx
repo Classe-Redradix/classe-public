@@ -34,7 +34,13 @@ const Menu = ({
         actionText={actionText}
         courses={courses}
         contactFormParams={contactFormParams}
-        openContact={openContact}
+        openContact={_ => {
+          // NOTE: we don't need to check if the course exists because if the
+          // user clicks on this button, it means that the modal course is
+          // open, which means that there'll always be a course selected
+          // at this point
+          openContact(_, course.id)
+        }}
         isContactOpen={isContactOpen}
         isCourseOpen={isCourseOpen}
         openCourse={openCourse}

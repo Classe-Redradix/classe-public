@@ -27,7 +27,7 @@ const dates = [
   },
 ]
 
-const MenuCourse = ({ course }) => {
+const MenuCourse = ({ course, openContact }) => {
   // gsap.registerPlugin(ScrollTrigger)
   const t = useTranslations()
   useScrambleText()
@@ -52,7 +52,12 @@ const MenuCourse = ({ course }) => {
 
   return (
     <section className="courseSections">
-      <CourseIntro dates={dates} name={information.title} />
+      <CourseIntro
+        dates={dates}
+        name={information.title}
+        openContact={openContact}
+        course={course}
+      />
       <CourseTitle title={t('course:index-title')} />
       <CourseSection
         number="01"

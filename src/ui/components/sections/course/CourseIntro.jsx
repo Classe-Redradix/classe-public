@@ -11,7 +11,7 @@ import useTranslations from '../../../../hooks/useTranslations'
 import useFitText from 'use-fit-text'
 import { DatesPropType } from './../../../sharedProptypes'
 
-const Course = ({ dates, name }) => {
+const Course = ({ dates, name, openContact }) => {
   const t = useTranslations()
   const onFinish = useCallback(fontSize => {}, [])
   const { fontSize, ref } = useFitText({ maxFontSize: 5000, onFinish })
@@ -55,7 +55,12 @@ const Course = ({ dates, name }) => {
               </p>
             </div>
             <div className="courseIntro-actions">
-              <Button isLink isNegative href="/" text={t('course:button')} />
+              <Button
+                isLink
+                isNegative
+                onClick={openContact}
+                text={t('course:button')}
+              />
               <span className="p uppercase">Scroll o drag</span>
             </div>
           </Cell>
@@ -68,6 +73,7 @@ const Course = ({ dates, name }) => {
 Course.propTypes = {
   dates: PropTypes.arrayOf(DatesPropType).isRequired,
   name: PropTypes.string.isRequired,
+  openContact: PropTypes.func,
 }
 
 export default Course

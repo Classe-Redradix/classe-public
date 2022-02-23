@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 import CompanyLogo from '/public/images/demo-company.svg'
 
@@ -15,6 +16,9 @@ import {
 import { useContactForm } from './../app/hooks'
 
 const Home = () => {
+  const router = useRouter()
+  const interestedIn = router.query['interested-in']
+
   const [isLock, setIsLock] = useState(false)
   const [isBlack, setIsBlack] = useState(false)
   const [isFluor, setIsFluor] = useState(false)
@@ -29,7 +33,7 @@ const Home = () => {
     name,
     onNameChange,
     saveToFirebase: saveContactFormToFirebase,
-  } = useContactForm()
+  } = useContactForm(interestedIn)
 
   useViewportHeight()
   useDetectMobile()

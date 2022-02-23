@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import useInput from 'hooks/useInput'
 import { useRadio } from './../hooks'
 import { COURSES } from '../../data'
@@ -8,12 +8,12 @@ import { COURSES } from '../../data'
  * we provide a custom hook that exposes all the contact form values, input
  * handlers and a method to store the contact form easily into Firebase.
  */
-const useContactForm = (interestedInCourseId = undefined) => {
+const useContactForm = interestedInCourseId => {
   // Form values
   const [name, onNameChange, setName] = useInput()
   const [email, onEmailChange, setEmail] = useInput()
   const [userType, onUserTypeChange, setUserType] = useRadio('company')
-  const [interestedInOptions, setInterestedInOptions] = useState(
+  const [interestedInOptions, setInterestedInOptions] = useState(() =>
     COURSES.map(course => ({
       checked: course.id === interestedInCourseId,
       id: course.id,
@@ -93,6 +93,19 @@ const useContactForm = (interestedInCourseId = undefined) => {
       setIsLoading(false)
     }
   }
+
+  // NOTE: since the `interestedInCourseId` might not be initialized when the
+  // user opens the modal, we need to force the `interestedInOptions` to be
+  // resetted
+  useEffect(() => {
+    setInterestedInOptions(
+      COURSES.map(course => ({
+        checked: course.id === interestedInCourseId,
+        id: course.id,
+        label: course.information.title,
+      })),
+    )
+  }, [interestedInCourseId])
 
   return {
     isLoading,

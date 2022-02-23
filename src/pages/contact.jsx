@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { COURSES } from '../data'
 import { useContactForm } from '../app/hooks'
 
-const Contact = ({ courseId }) => {
+const Contact = ({ interestedIn }) => {
   const router = useRouter()
   const {
     email,
@@ -16,7 +16,7 @@ const Contact = ({ courseId }) => {
     saveToFirebase,
     interestedInOptions,
     onInterestedInOptionChange,
-  } = useContactForm()
+  } = useContactForm(interestedIn)
 
   const contactFormParams = {
     email,
@@ -47,12 +47,12 @@ const Contact = ({ courseId }) => {
 }
 
 Contact.getInitialProps = async ({ query }) => {
-  // if `courseId !== undefined` means that the user came here by clicking on
+  // if `interestedIn !== undefined` means that the user came here by clicking on
   // a course's `Contact us` link
-  const courseId = query['course-id']
+  const interestedIn = query['interested-in']
 
   return {
-    courseId,
+    interestedIn,
   }
 }
 
