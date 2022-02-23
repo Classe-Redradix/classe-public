@@ -3,7 +3,7 @@ import { IntlProvider } from 'react-intl'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 
-import { setupI18n } from 'libs/i18n'
+import { setupI18n } from './libs/i18n'
 
 export const IntlAppProvider = ({ children }) => {
   const { locale: nextLocale } = useRouter()
