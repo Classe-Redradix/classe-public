@@ -4,7 +4,7 @@ import COURSES from './../../../pages/data/courses'
 
 import { useInput, useCheckbox } from './../../hooks'
 
-import useContactRequest from './../useContactRequest'
+import { useContactRequest } from './../hooks'
 
 const Label = ({ children, htmlFor, ...props }) => (
   <label

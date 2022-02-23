@@ -13,7 +13,7 @@ import Faqs from '../../components/sections/Faqs'
 import Find from '../../components/sections/Find'
 import Footer from '../../components/footer/Footer'
 import useTranslations from '../../../hooks/useTranslations'
-import useMenu from './../../../app/useMenu'
+import { useMenu } from '../../../hooks'
 import {
   CoursePropType,
   ContactFormParamsPropType,

@@ -10,7 +10,7 @@ import Cell from '../../components/cell/Cell'
 import ArrowFact from '../../../assets/icons/ArrowFact'
 import ArrowError from '../../../assets/icons/ArrowError'
 import useFitText from 'use-fit-text'
-import useMenu from './../../../app/useMenu'
+import { useMenu } from '../../../hooks'
 import {
   ContactFormParamsPropType,
   CoursePropType,

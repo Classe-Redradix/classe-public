@@ -7,6 +7,7 @@ import useViewportHeight from './useViewportHeight'
 import useWindowSize from './useWindowSize'
 import useInput from './useInput'
 import useCheckbox from './useCheckbox'
+import useMenu from './useMenu'
 
 export {
   useBackgroundChange,
@@ -18,4 +19,5 @@ export {
   useWindowSize,
   useInput,
   useCheckbox,
+  useMenu,
 }

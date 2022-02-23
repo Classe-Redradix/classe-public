@@ -5,7 +5,6 @@ import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 import { useRouter } from 'next/router'
-import useMenu from './../../../app/useMenu'
 import {
   CoursePropType,
   ContactFormParamsPropType,

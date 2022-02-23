@@ -12,7 +12,7 @@ import {
   useScrambleText,
 } from './../../hooks'
 
-import useContactForm from './../useContactForm'
+import { useContactForm } from '../hooks'
 
 const Home = () => {
   const [isLock, setIsLock] = useState(false)
