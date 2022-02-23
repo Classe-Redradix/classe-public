@@ -30,6 +30,7 @@ const MenuLayer = ({
   const classes = cx('menuLayer', {
     'is-open': isOpen,
     'is-free': isContactOpen || isCourseOpen,
+    'is-course': isCourseOpen,
   })
   const isDesktop = size.width >= 768
 

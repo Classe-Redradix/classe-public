@@ -32,21 +32,47 @@ const MenuCourse = ({ course, openContact }) => {
   const t = useTranslations()
   useScrambleText()
 
-  // useEffect(() => {
-  //   const container = document.querySelectorAll('.courseSections')
-  //   gsap.to(container, {
-  //     x: () =>
-  //       -(container.scrollWidth - document.documentElement.clientWidth) + 'px',
-  //     ease: 'none',
-  //     scrollTrigger: {
-  //       trigger: container,
-  //       invalidateOnRefresh: true,
-  //       pin: true,
-  //       scrub: 1,
-  //       end: () => '+=' + container.offsetWidth,
-  //     },
-  //   })
-  // }, [])
+  useEffect(() => {
+    // Option #1
+    // const sections = gsap.utils.toArray('.courseSection')
+    // var maxWidth = 0
+    // const getMaxWidth = () => {
+    //   maxWidth = 0
+    //   sections.forEach(section => {
+    //     maxWidth += section.offsetWidth
+    //   })
+    // }
+    // getMaxWidth()
+    // ScrollTrigger.addEventListener('refreshInit', getMaxWidth)
+    // gsap.to(sections, {
+    //   x: () => `-${maxWidth - window.innerWidth}`,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.courseSections',
+    //     invalidateOnRefresh: true,
+    //     pin: true,
+    //     scrub: true,
+    //     end: () => `+=${maxWidth}`,
+    //   },
+    // })
+    // Option #2
+    // const container = document.querySelectorAll('.courseSections')
+    // if (container) {
+    //   gsap.to(container, {
+    //     x: () =>
+    //       -(container.scrollWidth - document.documentElement.clientWidth) +
+    //       'px',
+    //     ease: 'none',
+    //     scrollTrigger: {
+    //       trigger: container,
+    //       invalidateOnRefresh: true,
+    //       pin: true,
+    //       scrub: 1,
+    //       end: () => '+=' + container.offsetWidth,
+    //     },
+    //   })
+    // }
+  }, [])
 
   const { information, index, objetives } = course
 

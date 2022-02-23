@@ -23,15 +23,24 @@ const CourseContact = ({}) => {
       <Row type="half" extraClass="courseSection-title">
         <Cell isNegative>
           <Glyph viewBox="0 0 56 73" className="courseSection-glypTop" />
-          <div className="scrambleTextWrapper">
-            <h3 className="h5 scrambleText">
-              {t('contact:address', {
-                line: text => <span className="line">{text}</span>,
-              })}
-            </h3>
-          </div>
+
+          <h2 className="heading menuLayer-contactAddressText">
+            {t('contact:address1', {
+              line: text => <span className="line">{text}</span>,
+            })}
+          </h2>
+          <h2 className="heading menuLayer-contactAddressText">
+            {t('contact:address2', {
+              line: text => <span className="line">{text}</span>,
+            })}
+          </h2>
+          <h2 className="heading menuLayer-contactAddressText">
+            {t('contact:address3', {
+              line: text => <span className="line">{text}</span>,
+            })}
+          </h2>
         </Cell>
-        <Cell isNegative>4</Cell>
+        <Cell isNegative></Cell>
       </Row>
     </SectionWrapper>
   )
