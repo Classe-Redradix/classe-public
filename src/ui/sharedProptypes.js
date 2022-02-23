@@ -28,7 +28,7 @@ const ContactFormParamsPropType = PropTypes.shape({
   email: PropTypes.string,
   name: PropTypes.string,
   interestedInOptions: PropTypes.arrayOf(PropTypes.string),
-  userType: PropTypes.oneOf(['student', 'enterprise']),
+  userType: PropTypes.oneOf(['student', 'company']),
   onEmailChange: PropTypes.func,
   onNameChange: PropTypes.func,
   onUserTypeChange: PropTypes.func,
