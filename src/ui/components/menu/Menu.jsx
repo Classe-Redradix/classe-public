@@ -5,56 +5,28 @@ import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
 import { useRouter } from 'next/router'
+import {
+  CoursePropType,
+  ContactFormParamsPropType,
+} from '../../sharedProptypes'
 
 const Menu = ({
   isBlack,
   isFluor,
   courses,
   contactFormParams,
-  defaultCourse = null,
-  defaultIsContactOpen = false,
-  defaultAreCoursesOpen = false,
-  defaultIsCourseOpen = false,
   actionText = 'menu:close',
   handleText,
+  areCoursesOpen = false,
+  course = null,
+  handleClose,
+  openContact,
+  openCourses,
+  isContactOpen = false,
+  isCourseOpen = false,
+  openCourse,
 }) => {
-  const router = useRouter()
   const size = useWindowSize()
-  const [isContactOpen, setIsContactOpen] = useState(defaultIsContactOpen)
-  const [areCoursesOpen, setAreCoursesOpen] = useState(defaultAreCoursesOpen)
-  const [isCourseOpen, setIsCourseOpen] = useState(defaultIsCourseOpen)
-  const [course, setCourse] = useState(defaultCourse)
-
-  const handleCoursesOpen = () => {
-    setIsContactOpen(false)
-    setIsCourseOpen(false)
-    setAreCoursesOpen(true)
-  }
-
-  const handleContactOpen = () => {
-    setAreCoursesOpen(false)
-    setIsCourseOpen(false)
-    setIsContactOpen(true)
-  }
-
-  const handleCourseOpen = course => {
-    setAreCoursesOpen(false)
-    setIsContactOpen(false)
-    setIsCourseOpen(true)
-  }
-
-  const handleClose = () => {
-    setIsContactOpen(false)
-    setAreCoursesOpen(false)
-    setIsCourseOpen(false)
-    router.replace('/')
-  }
-
-  const openCourse = course => {
-    setAreCoursesOpen(false)
-    setIsCourseOpen(true)
-    setCourse(course)
-  }
 
   return (
     <>
@@ -62,10 +34,10 @@ const Menu = ({
         actionText={actionText}
         courses={courses}
         contactFormParams={contactFormParams}
-        handleContactOpen={handleContactOpen}
+        openContact={openContact}
         isContactOpen={isContactOpen}
         isCourseOpen={isCourseOpen}
-        handleOpenCourse={openCourse}
+        openCourse={openCourse}
         course={course}
         areCoursesOpen={areCoursesOpen}
         handleClose={!!handleText ? handleText : handleClose}
@@ -74,9 +46,8 @@ const Menu = ({
         <MenuDesktop
           isBlack={isBlack}
           isFluor={isFluor}
-          handleCoursesOpen={handleCoursesOpen}
-          handleContactOpen={handleContactOpen}
-          handleCourseOpen={handleCourseOpen}
+          openCourses={openCourses}
+          openContact={openContact}
           courses={courses.length}
         />
       ) : (
@@ -85,9 +56,8 @@ const Menu = ({
           isFluor={isFluor}
           isContactOpen={isContactOpen}
           areCoursesOpen={areCoursesOpen}
-          handleCoursesOpen={handleCoursesOpen}
-          handleContactOpen={handleContactOpen}
-          handleCourseOpen={handleCourseOpen}
+          openCourses={openCourses}
+          openContact={openContact}
           handleClose={handleClose}
         />
       )}
@@ -96,14 +66,20 @@ const Menu = ({
 }
 
 Menu.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  course: CoursePropType,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
+  contactFormParams: ContactFormParamsPropType,
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
+  areCoursesOpen: PropTypes.bool,
+  isContactOpen: PropTypes.bool,
+  isCourseOpen: PropTypes.bool,
+  actionText: PropTypes.string,
+  handleText: PropTypes.func,
+  handleClose: PropTypes.func,
+  openContact: PropTypes.func,
+  openCourses: PropTypes.func,
+  openCourse: PropTypes.func,
 }
 
 export default Menu

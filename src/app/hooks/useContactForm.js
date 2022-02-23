@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import useInput from 'hooks/useInput'
-import useRadio from 'app/useRadio'
-import COURSES from '../../pages/data/courses'
+import { useRadio } from './../hooks'
+import { COURSES } from '../../data'
 
 /**
  * The contact forms are vary similar. Since they use almost the same fields,
@@ -10,9 +10,9 @@ import COURSES from '../../pages/data/courses'
  */
 const useContactForm = (interestedInCourseId = undefined) => {
   // Form values
-  const [name, onNameChange] = useInput()
-  const [email, onEmailChange] = useInput()
-  const [userType, onUserTypeChange] = useRadio('company')
+  const [name, onNameChange, setName] = useInput()
+  const [email, onEmailChange, setEmail] = useInput()
+  const [userType, onUserTypeChange, setUserType] = useRadio('company')
   const [interestedInOptions, setInterestedInOptions] = useState(
     COURSES.map(course => ({
       checked: course.id === interestedInCourseId,
@@ -73,6 +73,15 @@ const useContactForm = (interestedInCourseId = undefined) => {
       })
 
       setIsSaved(true)
+
+      const interestedInOptionsReset = interestedInOptions.map(option =>
+        Object.assign({}, option, { checked: false }),
+      )
+
+      setName('')
+      setEmail('')
+      setUserType('company')
+      setInterestedInOptions(interestedInOptionsReset)
 
       if (onSuccess !== undefined) {
         onSuccess()

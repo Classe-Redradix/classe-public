@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
@@ -8,6 +7,7 @@ import Cell from '../cell/Cell'
 import Radio from '../forms/Radio'
 import Input from '../forms/Input'
 import Checkbox from '../forms/Checkbox'
+import { CoursePropType } from '../../sharedProptypes'
 
 const Footer = ({
   courses,
@@ -15,13 +15,13 @@ const Footer = ({
   isFluor,
   onContactFormSubmit,
   contactFormParams,
+  openCourse,
 }) => {
-  const router = useRouter()
   const t = useTranslations()
 
-  const handleClick = e => {
+  const handleClick = (e, course) => {
     e.preventDefault()
-    router.push(href)
+    openCourse(course)
   }
 
   return (
@@ -92,7 +92,11 @@ const Footer = ({
           <ul className="footer-list">
             {courses.map(course => (
               <li key={course.information.title}>
-                <a className="h4" href={course.href} onClick={handleClick}>
+                <a
+                  className="h4"
+                  href={course.href}
+                  onClick={e => handleClick(e, course)}
+                >
                   {course.information.title}
                 </a>
               </li>
@@ -179,16 +183,12 @@ const Footer = ({
 }
 
 Footer.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
   onContactForm: PropTypes.object,
   onContactFormSubmit: PropTypes.func,
+  openCourse: PropTypes.func,
 }
 
 export default Footer

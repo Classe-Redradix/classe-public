@@ -6,6 +6,7 @@ import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import DatePicker from '../date-picker/DatePicker'
 import demoImage from '/public/images/demo-small.png'
+import { DatesPropType } from './../../sharedProptypes'
 
 const Calendar = ({ dates, isBlack, isFluor }) => {
   const t = useTranslations()
@@ -40,20 +41,7 @@ const Calendar = ({ dates, isBlack, isFluor }) => {
 }
 
 Calendar.propTypes = {
-  dates: PropTypes.arrayOf(
-    PropTypes.shape({
-      day: PropTypes.string,
-      month: PropTypes.string.isRequired,
-      courses: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          start: PropTypes.string.isRequired,
-          finish: PropTypes.string.isRequired,
-          to: PropTypes.string.isRequired,
-        }),
-      ),
-    }).isRequired,
-  ).isRequired,
+  dates: PropTypes.arrayOf(DatesPropType).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
 }

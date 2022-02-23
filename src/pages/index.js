@@ -1,17 +1,18 @@
 import { useState } from 'react'
 
 import CompanyLogo from '/public/images/demo-company.svg'
-import COURSES from './../../../pages/data/courses'
 
+import { COURSES } from '../data'
+
+import { Home as HomeUI } from '../ui/views'
 import {
   useViewportHeight,
   useDetectMobile,
   useBackgroundChange,
   useScrambleText,
-} from './../../hooks'
+} from '../hooks'
 
-import HomeUI from '../../ui/views/home/Home'
-import useContactForm from 'app/useContactForm'
+import { useContactForm } from './../app/hooks'
 
 const Home = () => {
   const [isLock, setIsLock] = useState(false)

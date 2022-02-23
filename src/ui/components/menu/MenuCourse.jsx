@@ -28,7 +28,7 @@ const dates = [
 ]
 
 const MenuCourse = ({ course }) => {
-  gsap.registerPlugin(ScrollTrigger)
+  // gsap.registerPlugin(ScrollTrigger)
   const t = useTranslations()
   useScrambleText()
 

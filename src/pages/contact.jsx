@@ -1,8 +1,8 @@
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
-import COURSES from './data/courses'
-import useContactForm from 'app/useContactForm'
+import { COURSES } from '../data'
+import { useContactForm } from '../app/hooks'
 
 const Contact = ({ courseId }) => {
   const router = useRouter()
@@ -38,7 +38,7 @@ const Contact = ({ courseId }) => {
         handleText={() => {
           router.replace('/')
         }}
-        defaultIsContactOpen={true}
+        isContactOpen={true}
         isBlack={true}
         courses={COURSES}
       />

@@ -8,7 +8,7 @@ import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
 
-const Companies = ({ logos, isBlack, isFluor }) => {
+const Companies = ({ logos, isBlack, isFluor, openContact }) => {
   gsap.registerPlugin(ScrollTrigger)
   const t = useTranslations()
 
@@ -34,12 +34,18 @@ const Companies = ({ logos, isBlack, isFluor }) => {
           <div className="scrambleTextWrapper">
             <h3 className="h1 scrambleText">
               {t('companies:title', {
-                line: (text) => <span className="line">{text}</span>,
-                lineTab: (text) => <span className="line has-tab">{text}</span>,
+                line: text => <span className="line">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h3>
           </div>
-          <Button isFull isLink href="/" text={t('companies:button')} />
+          <Button
+            isFull
+            isLink
+            href="/"
+            text={t('companies:button')}
+            onClick={openContact}
+          />
         </Cell>
         <Cell>
           {logos.map((logo, index) => (
@@ -57,6 +63,7 @@ Companies.propTypes = {
   logos: PropTypes.arrayOf(PropTypes.node).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
+  openContact: PropTypes.func,
 }
 
 export default Companies

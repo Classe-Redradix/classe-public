@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import MainWrapper from '../../components/wrappers/MainWrapper'
 import Menu from '../../components/menu/Menu'
 import Header from '../../components/header/Header'
@@ -12,6 +13,13 @@ import Faqs from '../../components/sections/Faqs'
 import Find from '../../components/sections/Find'
 import Footer from '../../components/footer/Footer'
 import useTranslations from '../../../hooks/useTranslations'
+import { useMenu } from '../../../hooks'
+import {
+  CoursePropType,
+  ContactFormParamsPropType,
+  DatesPropType,
+  FaqsListPropType,
+} from './../../sharedProptypes'
 
 const Home = ({
   isBlack,
@@ -25,6 +33,16 @@ const Home = ({
   contactFormParams,
 }) => {
   const t = useTranslations()
+  const {
+    areCoursesOpen,
+    course,
+    handleClose,
+    openContact,
+    openCourses,
+    isContactOpen,
+    isCourseOpen,
+    openCourse,
+  } = useMenu()
 
   return (
     <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
@@ -33,16 +51,30 @@ const Home = ({
         contactFormParams={contactFormParams}
         isBlack={isBlack}
         courses={courses}
+        areCoursesOpen={areCoursesOpen}
+        course={course}
+        handleClose={handleClose}
+        openContact={openContact}
+        openCourses={openCourses}
+        isContactOpen={isContactOpen}
+        isCourseOpen={isCourseOpen}
+        openCourse={openCourse}
       />
       <div className="blurableWrapper">
         <Header title={t('manifest:header')} number={1} />
         <Manifest isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('manifest:header')} />
         <Header title={t('courses:header')} number={2} />
-        <Courses courses={courses} isBlack={isBlack} isFluor={isFluor} />
+        <Courses
+          courses={courses}
+          isBlack={isBlack}
+          isFluor={isFluor}
+          openCourse={openCourse}
+          openContact={openContact}
+        />
         <Header isClose title={t('courses:header')} />
         <Header title={t('custom:header')} number={3} />
-        <Custom isBlack={isBlack} isFluor={isFluor} />
+        <Custom isBlack={isBlack} isFluor={isFluor} openCourses={openCourses} />
         <Header isClose title={t('custom:header')} />
         <Header title={t('featured:header')} number={4} />
         <Featured isBlack={isBlack} isFluor={isFluor} />
@@ -54,7 +86,12 @@ const Home = ({
         <Calendar dates={dates} isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('calendar:header')} />
         <Header title={t('companies:header')} number={7} />
-        <Companies logos={logos} isBlack={isBlack} isFluor={isFluor} />
+        <Companies
+          logos={logos}
+          isBlack={isBlack}
+          isFluor={isFluor}
+          openContact={openContact}
+        />
         <Header isClose title={t('companies:header')} />
         <Header title={t('faqs:header')} number={8} />
         <Faqs isBlack={isBlack} isFluor={isFluor} list={faqsList} />
@@ -69,6 +106,7 @@ const Home = ({
           isFluor={isFluor}
           onContactFormSubmit={onContactFormSubmit}
           contactFormParams={contactFormParams}
+          openCourse={openCourse}
         />
         <Header isClose title={t('footer:header')} />
       </div>
@@ -76,6 +114,16 @@ const Home = ({
   )
 }
 
-Home.propTypes = {}
+Home.propTypes = {
+  isBlack: PropTypes.bool,
+  isFluor: PropTypes.bool,
+  isLock: PropTypes.bool,
+  courses: PropTypes.arrayOf(CoursePropType),
+  logos: PropTypes.arrayOf(PropTypes.node),
+  faqsList: FaqsListPropType,
+  dates: PropTypes.arrayOf(DatesPropType).isRequired,
+  onContactFormSubmit: PropTypes.func,
+  contactFormParams: ContactFormParamsPropType,
+}
 
 export default Home

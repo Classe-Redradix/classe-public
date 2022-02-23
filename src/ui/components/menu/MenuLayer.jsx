@@ -8,6 +8,7 @@ import Cell from '../cell/Cell'
 import CoursesList from './CoursesList'
 import MenuContact from './MenuContact'
 import MenuCourse from './MenuCourse'
+import { CoursePropType } from '../../sharedProptypes'
 
 const MenuLayer = ({
   course,
@@ -17,8 +18,8 @@ const MenuLayer = ({
   isCourseOpen,
   areCoursesOpen,
   handleClose,
-  handleContactOpen,
-  handleOpenCourse,
+  openContact,
+  openCourse,
   hasClose = true,
   actionText = 'menu:close',
 }) => {
@@ -82,10 +83,7 @@ const MenuLayer = ({
                 <p>image</p>
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <CoursesList
-                  courses={courses}
-                  handleOpenCourse={handleOpenCourse}
-                />
+                <CoursesList courses={courses} openCourse={openCourse} />
               </Cell>
             </Row>
           )}
@@ -103,7 +101,7 @@ const MenuLayer = ({
                   ] {t('menu:courses')}
                 </span>
                 <button
-                  onClick={handleContactOpen}
+                  onClick={openContact}
                   className="menuDesktop-link"
                   aria-label={t('menu:contact')}
                 >
@@ -118,19 +116,14 @@ const MenuLayer = ({
   )
 }
 
-const CoursePropType = PropTypes.shape({
-  title: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-})
-
 MenuLayer.propTypes = {
   course: CoursePropType,
   courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
   isOpen: PropTypes.bool,
   hasClose: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
-  handleContactOpen: PropTypes.func.isRequired,
-  handleOpenCourse: PropTypes.func.isRequired,
+  openContact: PropTypes.func.isRequired,
+  openCourse: PropTypes.func.isRequired,
 }
 
 export default MenuLayer

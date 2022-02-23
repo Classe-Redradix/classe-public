@@ -1,7 +1,7 @@
 import React from 'react'
 import Contact from './Contact'
 import useScrambleText from '../../../hooks/useScrambleText'
-import COURSES from '../../../../pages/data/courses'
+import { COURSES } from '../../../data'
 
 export default {
   title: 'Views/Contact',
@@ -11,5 +11,21 @@ export default {
 export const contact = () => {
   useScrambleText()
 
-  return <Contact isBlack courses={COURSES} />
+  return (
+    <Contact
+      isBlack
+      courses={COURSES}
+      contactFormParams={{
+        email: '',
+        onEmailChange: () => {},
+        userType: '',
+        onUserTypeChange: () => {},
+        interestedInOptions: [],
+        onInterestedInOptionChange: () => {},
+        name: '',
+        onNameChange: () => {},
+        saveToFirebase: () => {},
+      }}
+    />
+  )
 }

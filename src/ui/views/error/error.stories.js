@@ -1,6 +1,6 @@
 import Error from './Error'
 import useScrambleText from '../../../hooks/useScrambleText'
-import COURSES from '../../../../pages/data/courses'
+import { COURSES } from '../../../data'
 
 export default {
   title: 'Views/Error',

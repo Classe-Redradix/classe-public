@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
@@ -8,14 +7,14 @@ import Cell from '../cell/Cell'
 import Button from '../button/Button'
 import demoImage from '/public/images/demo-small-black.png'
 import TabIcon from './../../../assets/icons/TabIcon'
+import { CoursePropType } from '../../sharedProptypes'
 
-const Courses = ({ courses, isBlack, isFluor }) => {
-  const router = useRouter()
+const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
   const t = useTranslations()
 
-  const handleClick = e => {
+  const handleClick = (e, course) => {
     e.preventDefault()
-    router.push(href)
+    openCourse(course)
   }
 
   return (
@@ -45,17 +44,18 @@ const Courses = ({ courses, isBlack, isFluor }) => {
               isNegative={isBlack}
               href="/"
               text={t('courses:button')}
+              onClick={openContact}
             />
           </Cell>
         </Cell>
         <Cell isNegative={isBlack}>
           <ol className="coursesList-list">
             {courses.map((course, index) => (
-              <li key={course.title}>
+              <li key={course.information.title}>
                 <a
                   className="coursesList-link h1"
                   href={course.href}
-                  onClick={handleClick}
+                  onClick={e => handleClick(e, course)}
                 >
                   <span className="coursesList-linkNumber">
                     {index < 10 ? `0${index + 1}` : index + 1}
@@ -77,14 +77,11 @@ const Courses = ({ courses, isBlack, isFluor }) => {
 }
 
 Courses.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
+  openCourse: PropTypes.func,
+  openContact: PropTypes.func,
 }
 
 export default Courses

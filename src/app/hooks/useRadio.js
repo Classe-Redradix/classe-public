@@ -7,7 +7,7 @@ const useRadio = (initialValue = '') => {
     setValue(event.target.value)
   }
 
-  return [value, onChange]
+  return [value, onChange, setValue]
 }
 
 export default useRadio
