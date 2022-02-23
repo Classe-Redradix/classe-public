@@ -1,4 +1,4 @@
-import IntlAppProvider from './../app/IntlProvider'
+import IntlAppProvider from '../IntlProvider'
 import './../../styles/globals.css'
 import './../assets/stylesheets/style.scss'
 
