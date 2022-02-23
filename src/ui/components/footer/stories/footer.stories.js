@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Footer from '../Footer'
-import COURSES from '../../../../pages/data/courses'
+import { COURSES } from '../../../../data'
 
 export default {
   title: 'Layout/Footer',

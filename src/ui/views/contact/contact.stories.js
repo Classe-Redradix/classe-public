@@ -1,7 +1,7 @@
 import React from 'react'
 import Contact from './Contact'
 import useScrambleText from '../../../hooks/useScrambleText'
-import COURSES from '../../../pages/data/courses'
+import { COURSES } from '../../../data'
 
 export default {
   title: 'Views/Contact',

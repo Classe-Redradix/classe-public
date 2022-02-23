@@ -6,7 +6,7 @@ import useDetectMobile from '../../../hooks/useDetectMobile'
 import useBackgroundChange from '../../../hooks/useBackgroundChange'
 import useScrambleText from '../../../hooks/useScrambleText'
 import CompanyLogo from '/public/images/demo-company.svg'
-import COURSES from '../../../pages/data/courses'
+import { COURSES } from '../../../data'
 
 export default {
   title: 'Views/Home',

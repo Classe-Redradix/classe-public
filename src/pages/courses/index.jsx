@@ -1,7 +1,7 @@
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
-import COURSES from '../data/courses'
+import { COURSES } from '../../data'
 import { useMenu } from '../../hooks'
 
 const Courses = () => {

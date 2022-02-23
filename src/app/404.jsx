@@ -1,4 +1,4 @@
-import COURSES from '../pages/data/courses'
+import { COURSES } from '../data'
 
 import { Error } from '../ui/views'
 
