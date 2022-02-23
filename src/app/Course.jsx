@@ -1,6 +1,6 @@
-import COURSES from '../../pages/data/courses'
+import COURSES from '../pages/data/courses'
 
-import { Course as CourseUI } from './../../ui/views'
+import { Course as CourseUI } from '../ui/views'
 
 const dates = [
   {

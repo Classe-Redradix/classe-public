@@ -1,8 +1,8 @@
-import COURSES from '../../pages/data/courses'
+import COURSES from '../pages/data/courses'
 
-import { Error } from './../../ui/views'
+import { Error } from '../ui/views'
 
-import { useContactForm } from '../hooks'
+import { useContactForm } from './hooks'
 
 const Error404 = () => {
   const {
