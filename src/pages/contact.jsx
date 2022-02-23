@@ -2,7 +2,7 @@ import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import COURSES from './data/courses'
-import { useContactForm } from './../src/app/hooks'
+import { useContactForm } from '../app/hooks'
 
 const Contact = ({ courseId }) => {
   const router = useRouter()

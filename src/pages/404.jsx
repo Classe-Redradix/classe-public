@@ -1,4 +1,4 @@
-import Error404View from '../src/app/errors/404'
+import Error404View from '../app/errors/404'
 
 const Error404 = () => {
   return <Error404View />
