@@ -20,6 +20,8 @@ const dates = [
 const Course = ({ course }) => {
   const { information } = course
 
+  console.log('Is this showing or something????')
+
   return (
     <CourseUI
       isBlack

@@ -1,7 +1,37 @@
-import Error404View from '../app/404'
+import { COURSES } from '../data'
+
+import { Error } from '../ui/views'
+
+import { useContactForm } from './../app/hooks'
 
 const Error404 = () => {
-  return <Error404View />
+  const {
+    email,
+    onEmailChange,
+    userType,
+    onUserTypeChange,
+    interestedInOptions,
+    onInterestedInOptionChange,
+    name,
+    onNameChange,
+    saveToFirebase: saveContactFormToFirebase,
+  } = useContactForm()
+
+  const contactFormParams = {
+    email,
+    onEmailChange,
+    userType,
+    onUserTypeChange,
+    interestedInOptions,
+    onInterestedInOptionChange,
+    name,
+    onNameChange,
+    saveToFirebase: saveContactFormToFirebase,
+  }
+
+  return (
+    <Error courses={COURSES} isBlack contactFormParams={contactFormParams} />
+  )
 }
 
 export default Error404
