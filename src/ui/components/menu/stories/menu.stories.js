@@ -1,7 +1,7 @@
 import React from 'react'
 import MainWrapper from '../../wrappers/MainWrapper'
 import Menu from '../Menu'
-import COURSES from '../../../../../pages/data/courses'
+import COURSES from '../../../../pages/data/courses'
 
 export default {
   title: 'Layout/Menu',

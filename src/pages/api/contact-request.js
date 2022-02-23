@@ -1,4 +1,4 @@
-import { saveContactRequest } from '../../firebase/client'
+import { saveContactRequest } from '../../../firebase/client'
 
 export default (req, res) => {
   try {
