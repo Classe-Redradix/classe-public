@@ -1,6 +1,8 @@
-import useContactForm from 'app/useContactForm'
-import Error from 'ui/views/error/Error'
-import COURSES from '../../../pages/data/courses'
+import COURSES from './../../../pages/data/courses'
+
+import { Error } from './../../ui/views'
+
+import useContactForm from './../useContactForm'
 
 const Error404 = () => {
   const {

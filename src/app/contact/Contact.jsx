@@ -1,7 +1,10 @@
 import { useState } from 'react'
-import COURSES from '../../../pages/data/courses'
-import { useInput, useCheckbox } from 'hooks'
-import useContactRequest from 'app/useContactRequest'
+
+import COURSES from './../../../pages/data/courses'
+
+import { useInput, useCheckbox } from './../../hooks'
+
+import useContactRequest from './../useContactRequest'
 
 const Label = ({ children, htmlFor, ...props }) => (
   <label

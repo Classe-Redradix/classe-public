@@ -10,7 +10,7 @@ import CourseObjectives from '../../components/sections/course/CourseObjectives'
 import CourseInfo from '../../components/sections/course/CourseInfo'
 import CourseContact from '../../components/sections/course/CourseContact'
 import useTranslations from '../../../hooks/useTranslations'
-import { CoursePropType } from './../../sharedProptypes'
+import { CoursePropType, DatesPropType } from './../../sharedProptypes'
 
 const Course = ({
   isBlack,
@@ -100,7 +100,7 @@ Course.propTypes = {
   isFluor: PropTypes.bool,
   isLock: PropTypes.bool,
   courses: PropTypes.arrayOf(CoursePropType),
-  dates,
+  dates: DatesPropType,
   name: PropTypes.string,
   price: PropTypes.number,
   hours: PropTypes.number,
