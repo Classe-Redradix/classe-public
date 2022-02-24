@@ -2,7 +2,7 @@ import { COURSES } from '../data'
 
 import { Error } from '../ui/views'
 
-import { useContactForm } from './../app/hooks'
+import { useContactForm } from './../hooks'
 
 const Error404 = () => {
   const {
