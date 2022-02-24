@@ -44,6 +44,11 @@ const Home = ({
     openCourse,
   } = useMenu()
 
+  // NOTE: we can search for the featured course directly because we only have
+  // one featured course, so we don't need to search for a specific course id
+  // or check if the course exists
+  const featuredCourse = courses.find(course => course.isFeatured)
+
   return (
     <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
       <Menu
@@ -77,7 +82,12 @@ const Home = ({
         <Custom isBlack={isBlack} isFluor={isFluor} openCourses={openCourses} />
         <Header isClose title={t('custom:header')} />
         <Header title={t('featured:header')} number={4} />
-        <Featured isBlack={isBlack} isFluor={isFluor} />
+        <Featured
+          isBlack={isBlack}
+          isFluor={isFluor}
+          course={featuredCourse}
+          openCourse={openCourse}
+        />
         <Header isClose title={t('featured:header')} />
         <Header title={t('facts:header')} number={5} />
         <Facts isBlack={isBlack} isFluor={isFluor} />

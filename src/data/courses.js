@@ -1,5 +1,6 @@
 const COURSE_JS_PRO = {
   id: 'js-pro',
+  isFeatured: false,
   href: '/courses/js-pro',
   information: {
     title: 'JS PRO',
@@ -49,6 +50,7 @@ const COURSE_JS_PRO = {
 
 const COURSE_REACT = {
   id: 'react',
+  isFeatured: false,
   href: '/courses/react',
   information: {
     title: 'React',
@@ -98,6 +100,7 @@ const COURSE_REACT = {
 
 const COURSE_REDUX = {
   id: 'redux',
+  isFeatured: false,
   href: '/courses/redux',
   information: {
     title: 'Redux',
@@ -147,6 +150,7 @@ const COURSE_REDUX = {
 
 const COURSE_DATA = {
   id: 'data',
+  isFeatured: false,
   href: '/courses/data',
   information: {
     title: 'Data',
@@ -196,6 +200,7 @@ const COURSE_DATA = {
 
 const COURSE_FULL_STACK = {
   id: 'full-stack',
+  isFeatured: true,
   href: '/courses/full-stack',
   information: {
     title: 'Full stack',
