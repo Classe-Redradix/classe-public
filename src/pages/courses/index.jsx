@@ -2,14 +2,45 @@ import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import { COURSES } from '../../data'
-import { useMenu } from '../../hooks'
+import { useContactForm, useMenu } from '../../hooks'
 
 const Courses = () => {
   const router = useRouter()
-  const { openCourse, isCourseOpen, areCoursesOpen, course, openCourses } =
-    useMenu({
-      defaultAreCoursesOpen: true,
-    })
+  const {
+    openCourse,
+    isCourseOpen,
+    areCoursesOpen,
+    course,
+    openCourses,
+    openContact,
+    isContactOpen,
+  } = useMenu({
+    defaultAreCoursesOpen: true,
+  })
+
+  const {
+    email,
+    onEmailChange,
+    name,
+    onNameChange,
+    userType,
+    onUserTypeChange,
+    saveToFirebase,
+    interestedInOptions,
+    onInterestedInOptionChange,
+  } = useContactForm(course?.id)
+
+  const contactFormParams = {
+    email,
+    onEmailChange,
+    name,
+    onNameChange,
+    userType,
+    onUserTypeChange,
+    saveToFirebase,
+    interestedInOptions,
+    onInterestedInOptionChange,
+  }
 
   const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
 
@@ -17,6 +48,7 @@ const Courses = () => {
     <MainWrapper isBlack={true}>
       <Menu
         actionText={actionText}
+        contactFormParams={contactFormParams}
         handleText={() => {
           if (isCourseOpen) {
             router.replace('/courses')
@@ -25,6 +57,8 @@ const Courses = () => {
             router.replace('/')
           }
         }}
+        isContactOpen={isContactOpen}
+        openContact={openContact}
         areCoursesOpen={areCoursesOpen}
         isCourseOpen={isCourseOpen}
         course={course}

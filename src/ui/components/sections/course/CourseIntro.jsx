@@ -55,6 +55,12 @@ const Course = ({ dates, name, openContact }) => {
               </p>
             </div>
             <div className="courseIntro-actions">
+              {/**
+               * TODO: add the `href` attribute to provide the link the course
+               * route to the contact page (e.g. `/contact/interested-in=js-pro`,
+               * `/contact/interested-in=full-stack`)
+               * Now it's working, but we should implement it for SEO
+               */}
               <Button
                 isLink
                 isNegative
