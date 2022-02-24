@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import useInput from 'hooks/useInput'
-import { useRadio } from './../hooks'
-import { COURSES } from '../../data'
+import useInput from './useInput'
+import useRadio from './useRadio'
+import { COURSES } from '../data'
 
 /**
  * The contact forms are vary similar. Since they use almost the same fields,

@@ -8,6 +8,9 @@ import useWindowSize from './useWindowSize'
 import useInput from './useInput'
 import useCheckbox from './useCheckbox'
 import useMenu from './useMenu'
+import useContactForm from './useContactForm'
+import useContactRequest from './useContactRequest'
+import useRadio from './useRadio'
 
 export {
   useBackgroundChange,
@@ -20,4 +23,7 @@ export {
   useInput,
   useCheckbox,
   useMenu,
+  useContactForm,
+  useContactRequest,
+  useRadio,
 }
