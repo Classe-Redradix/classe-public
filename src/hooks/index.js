@@ -9,7 +9,6 @@ import useInput from './useInput'
 import useCheckbox from './useCheckbox'
 import useMenu from './useMenu'
 import useContactForm from './useContactForm'
-import useContactRequest from './useContactRequest'
 import useRadio from './useRadio'
 
 export {
@@ -24,6 +23,5 @@ export {
   useCheckbox,
   useMenu,
   useContactForm,
-  useContactRequest,
   useRadio,
 }
