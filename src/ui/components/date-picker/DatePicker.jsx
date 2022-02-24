@@ -8,7 +8,7 @@ import Button from '../button/Button'
 import ArrowIcon from './../../../assets/icons/ArrowIcon'
 import { DatesPropType } from './../../sharedProptypes'
 
-const DatePicker = ({ dates, isCourse }) => {
+const DatePicker = ({ dates, isCourse, openContact }) => {
   const t = useTranslations()
   gsap.registerPlugin(ScrambleTextPlugin)
   const dayRef = useRef(null)
@@ -91,7 +91,14 @@ const DatePicker = ({ dates, isCourse }) => {
               {`}`}
             </div>
             {!isCourse ? (
-              <Button isLink href={course.to} text="Inscríbeme" />
+              <Button
+                isLink
+                href={`/contact?interested-in=${course.id}`}
+                onClick={_ => {
+                  openContact(_, course.id)
+                }}
+                text="Inscríbeme"
+              />
             ) : null}
           </div>
         ))}
@@ -103,6 +110,7 @@ const DatePicker = ({ dates, isCourse }) => {
 DatePicker.propTypes = {
   dates: PropTypes.arrayOf(DatesPropType),
   isCourse: PropTypes.bool,
+  openContact: PropTypes.func,
 }
 
 export default DatePicker

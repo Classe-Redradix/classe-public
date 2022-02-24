@@ -83,7 +83,12 @@ const Home = ({
         <Facts isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={t('facts:header')} />
         <Header title={t('calendar:header')} number={6} />
-        <Calendar dates={dates} isBlack={isBlack} isFluor={isFluor} />
+        <Calendar
+          dates={dates}
+          isBlack={isBlack}
+          isFluor={isFluor}
+          openContact={openContact}
+        />
         <Header isClose title={t('calendar:header')} />
         <Header title={t('companies:header')} number={7} />
         <Companies

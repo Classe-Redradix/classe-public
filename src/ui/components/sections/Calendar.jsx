@@ -8,7 +8,7 @@ import DatePicker from '../date-picker/DatePicker'
 import demoImage from '/public/images/demo-small.png'
 import { DatesPropType } from './../../sharedProptypes'
 
-const Calendar = ({ dates, isBlack, isFluor }) => {
+const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
   const t = useTranslations()
 
   return (
@@ -33,7 +33,7 @@ const Calendar = ({ dates, isBlack, isFluor }) => {
           <p className="p">{t('calendar:description')}</p>
         </Cell>
         <Cell>
-          <DatePicker dates={dates} />
+          <DatePicker dates={dates} openContact={openContact} />
         </Cell>
       </Row>
     </SectionWrapper>
