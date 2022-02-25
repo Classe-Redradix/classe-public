@@ -104,3 +104,25 @@ más cercanos donde se utilizan dichos archivos.
   Se ha decidido almacenarlos directamente en el archivo
   [src/data/courses.js](./src/data/courses.js) para ahorrar servicios externos
   y hacer la carga de la aplicación más eficiente.
+
+## TODOs:
+
+- [src/assets/stylesheets/globals/texts.scss](./src/assets/stylesheets/globals/texts.scss):
+  por algún motivo, cuando lanzamos Storybook las fuentes `./../fonts/` y
+  cuando se lanza el servidor de desarrollo, las coge de `./../../fonts/`. Hay
+  que averiguar por qué ocurre este comportamiento para solucionarlo.
+
+- [src/pages/index.js](./src/pages/index.js): se puede saber cuándo se ha
+  guardado el formulario de contacto de la Home (función `onContactFormSuccess`).
+  Si es necesario mostrar algún mensaje o cualquier actualización de la
+  aplicación cuando se guarda el contacto, se debe hacer en esta función. Se
+  ha separado el success del formulario de contacto de la home del de la página
+  de contacto porque es muy posible que se tengan que realizar acciones
+  diferentes cuando se guarden. En caso de que se realicen las mismas acciones
+  tanto con un formulario como con otro, lo mejor sería pasar esta función por
+  props o añadirla al hook [src/hooks/useContactForm.js](./src/hooks/useContactForm.js).
+
+- [src/ui/components/sections/course/CourseIntro.jsx](./src/ui/components/sections/course/CourseIntro.jsx):
+  hay que añadir el atributo `href` al botón de _inscribirme_ que aparece en la
+  vista individual de un curso. Hay que incluirlo porque ayudará a mejorar el
+  SEO de la página.
