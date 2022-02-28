@@ -88,5 +88,12 @@
 
   "error:page-not": "Page not",
   "error:found": "found",
-  "error:back-to-homne": "Volver a la home"
+  "error:back-to-homne": "Volver a la home",
+
+  "konami:congrats": "¡Enhorabuena!",
+  "konami:unlock-discount": "Has desbloqueado un descuento para los cursos.",
+  "konami:use-it-1": "Para usarlo, deberás introducir tu nombre",
+  "konami:use-it-2": "en el formulario de \"Contacta\" de la siguiente manera:",
+  "konami:how-to": "%c[VIP] - tu_nombre",
+  "konami:example": "Por ejemplo: %c[VIP] - Luke Skywalker"
 }

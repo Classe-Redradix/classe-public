@@ -11,6 +11,7 @@ import {
   useBackgroundChange,
   useScrambleText,
   useContactForm,
+  useKonami,
 } from '../hooks'
 
 const Home = () => {
@@ -20,6 +21,8 @@ const Home = () => {
   const [isLock, setIsLock] = useState(false)
   const [isBlack, setIsBlack] = useState(false)
   const [isFluor, setIsFluor] = useState(false)
+
+  useKonami()
 
   const {
     email,

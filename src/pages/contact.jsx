@@ -2,10 +2,13 @@ import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import { COURSES } from '../data'
-import { useContactForm } from '../hooks'
+import { useContactForm, useKonami } from '../hooks'
 
 const Contact = ({ interestedIn }) => {
   const router = useRouter()
+
+  useKonami()
+
   const {
     email,
     onEmailChange,

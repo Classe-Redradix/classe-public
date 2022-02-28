@@ -10,6 +10,7 @@ import useCheckbox from './useCheckbox'
 import useMenu from './useMenu'
 import useContactForm from './useContactForm'
 import useRadio from './useRadio'
+import useKonami from './useKonami'
 
 export {
   useBackgroundChange,
@@ -24,4 +25,5 @@ export {
   useMenu,
   useContactForm,
   useRadio,
+  useKonami,
 }

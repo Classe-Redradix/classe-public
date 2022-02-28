@@ -1,10 +1,14 @@
-import { COURSES } from '../../data'
-import MainWrapper from 'ui/components/wrappers/MainWrapper'
-import Menu from 'ui/components/menu/Menu'
 import { useRouter } from 'next/router'
+
+import { COURSES } from './../../data'
+import { useKonami } from './../../hooks'
+import MainWrapper from './../../ui/components/wrappers/MainWrapper'
+import Menu from './../../ui/components/menu/Menu'
 
 const Course = ({ course }) => {
   const router = useRouter()
+
+  useKonami()
 
   return (
     <MainWrapper isBlack={true}>
