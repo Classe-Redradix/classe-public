@@ -11,7 +11,7 @@ import useTranslations from '../../../../hooks/useTranslations'
 import useFitText from 'use-fit-text'
 import { DatesPropType } from './../../../sharedProptypes'
 
-const Course = ({ dates, name, openContact }) => {
+const Course = ({ dates, name, openContact, course }) => {
   const t = useTranslations()
   const onFinish = useCallback(fontSize => {}, [])
   const { fontSize, ref } = useFitText({ maxFontSize: 5000, onFinish })
@@ -36,10 +36,29 @@ const Course = ({ dates, name, openContact }) => {
         <Cell isNegative>
           <img src={demoImage} alt="" />
         </Cell>
+
+        {/**
+         * TODO: when the course is private, fix the layout with the correct
+         * layout
+         */}
         <Cell isColumn isNegative>
-          <Cell isNegative>
-            <DatePicker dates={dates} isCourse />
-          </Cell>
+          {course.isPublic ? (
+            <Cell isNegative>
+              <DatePicker dates={dates} isCourse />
+            </Cell>
+          ) : (
+            <Cell isNegative>
+              {t('course:need-more-details')}
+              <Button
+                isLink
+                isNegative
+                onClick={openContact}
+                text={t('course:contact-us')}
+              >
+                Contáctanos
+              </Button>
+            </Cell>
+          )}
           <Cell isNegative>
             <div className="courseIntro-description">
               <p className="p">
@@ -61,12 +80,14 @@ const Course = ({ dates, name, openContact }) => {
                * `/contact/interested-in=full-stack`)
                * Now it's working, but we should implement it for SEO
                */}
-              <Button
-                isLink
-                isNegative
-                onClick={openContact}
-                text={t('course:button')}
-              />
+              {course.isPublic ? (
+                <Button
+                  isLink
+                  isNegative
+                  onClick={openContact}
+                  text={t('course:button')}
+                />
+              ) : null}
               <span className="p uppercase">Scroll o drag</span>
             </div>
           </Cell>

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 const CoursePropType = PropTypes.shape({
   id: PropTypes.string,
   href: PropTypes.string,
+  isFeatured: PropTypes.bool,
+  isPublic: PropTypes.bool,
   information: PropTypes.shape({
     title: PropTypes.string,
     start: PropTypes.string,
