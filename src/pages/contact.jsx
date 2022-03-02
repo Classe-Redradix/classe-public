@@ -1,3 +1,5 @@
+import Head from 'next/head'
+import InfoHead from 'ui/seo/InfoHead'
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
@@ -34,18 +36,27 @@ const Contact = ({ interestedIn }) => {
   }
 
   return (
-    <MainWrapper isBlack={true}>
-      <Menu
-        actionText="general:go-to-home"
-        contactFormParams={contactFormParams}
-        handleText={() => {
-          router.replace('/')
-        }}
-        isContactOpen={true}
-        isBlack={true}
-        courses={COURSES}
-      />
-    </MainWrapper>
+    <>
+      <Head>
+        <InfoHead
+          title="Contacto | Classe"
+          description="Descripción de la página de contacto"
+          url="https://classe.es/contact"
+        />
+      </Head>
+      <MainWrapper isBlack={true}>
+        <Menu
+          actionText="general:go-to-home"
+          contactFormParams={contactFormParams}
+          handleText={() => {
+            router.replace('/')
+          }}
+          isContactOpen={true}
+          isBlack={true}
+          courses={COURSES}
+        />
+      </MainWrapper>
+    </>
   )
 }
 
