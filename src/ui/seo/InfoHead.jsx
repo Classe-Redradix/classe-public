@@ -10,6 +10,8 @@ const InfoHead = ({ title, description, url }) => {
       <meta name="title" content={title} />
       <meta name="description" content={description} />
 
+      <link rel="canonical" href={`${urlRoot}${url}`} />
+
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${urlRoot}${url}`} />
       <meta property="og:title" content={title} />
