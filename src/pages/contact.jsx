@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import InfoHead from 'ui/seo/InfoHead'
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
@@ -37,13 +36,11 @@ const Contact = ({ interestedIn }) => {
 
   return (
     <>
-      <Head>
-        <InfoHead
-          title="Contacto | Classe"
-          description="Descripción de la página de contacto"
-          url="https://classe.es/contact"
-        />
-      </Head>
+      <InfoHead
+        title="Contacto | Classe"
+        description="Descripción de la página de contacto"
+        url="/contact"
+      />
       <MainWrapper isBlack={true}>
         <Menu
           actionText="general:go-to-home"

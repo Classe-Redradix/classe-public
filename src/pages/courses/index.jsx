@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import InfoHead from 'ui/seo/InfoHead'
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
@@ -51,13 +50,12 @@ const Courses = () => {
 
   return (
     <>
-      <Head>
-        <InfoHead
-          title="Cursos | Classe"
-          description="Descripción de la página de cursos"
-          url="https://classe.es/courses"
-        />
-      </Head>
+      <InfoHead
+        title="Cursos | Classe"
+        description="Descripción de la página de cursos"
+        url="/courses"
+      />
+
       <MainWrapper isBlack={true}>
         <Menu
           actionText={actionText}
