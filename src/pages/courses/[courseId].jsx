@@ -1,4 +1,4 @@
-import InfoHead from 'ui/seo/InfoHead'
+import InfoHead from 'InfoHead'
 import { useRouter } from 'next/router'
 
 import { COURSES } from './../../data'
