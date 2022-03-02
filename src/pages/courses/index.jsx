@@ -1,3 +1,5 @@
+import Head from 'next/head'
+import InfoHead from 'ui/seo/InfoHead'
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
@@ -48,28 +50,37 @@ const Courses = () => {
   const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
 
   return (
-    <MainWrapper isBlack={true}>
-      <Menu
-        actionText={actionText}
-        contactFormParams={contactFormParams}
-        handleText={() => {
-          if (isCourseOpen) {
-            router.replace('/courses')
-            openCourses()
-          } else {
-            router.replace('/')
-          }
-        }}
-        isContactOpen={isContactOpen}
-        openContact={openContact}
-        areCoursesOpen={areCoursesOpen}
-        isCourseOpen={isCourseOpen}
-        course={course}
-        openCourse={openCourse}
-        isBlack={true}
-        courses={COURSES}
-      />
-    </MainWrapper>
+    <>
+      <Head>
+        <InfoHead
+          title="Cursos | Classe"
+          description="Descripción de la página de cursos"
+          url="https://classe.es/courses"
+        />
+      </Head>
+      <MainWrapper isBlack={true}>
+        <Menu
+          actionText={actionText}
+          contactFormParams={contactFormParams}
+          handleText={() => {
+            if (isCourseOpen) {
+              router.replace('/courses')
+              openCourses()
+            } else {
+              router.replace('/')
+            }
+          }}
+          isContactOpen={isContactOpen}
+          openContact={openContact}
+          areCoursesOpen={areCoursesOpen}
+          isCourseOpen={isCourseOpen}
+          course={course}
+          openCourse={openCourse}
+          isBlack={true}
+          courses={COURSES}
+        />
+      </MainWrapper>
+    </>
   )
 }
 

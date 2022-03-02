@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 
 import CompanyLogo from '/public/images/demo-company.svg'
 
+import Head from 'next/head'
+import InfoHead from 'ui/seo/InfoHead'
 import { COURSES } from '../data'
 import { Home as HomeUI } from '../ui/views'
 import {
@@ -117,17 +119,26 @@ const Home = () => {
   }
 
   return (
-    <HomeUI
-      isBlack={isBlack}
-      isFluor={isFluor}
-      isLock={isLock}
-      courses={COURSES}
-      dates={dates}
-      logos={logos}
-      faqsList={faqsList}
-      onContactFormSubmit={handleContactFormSubmit}
-      contactFormParams={contactFormParams}
-    />
+    <>
+      <Head>
+        <InfoHead
+          title="Classe | Escuela de programación"
+          description="Descripción de la home"
+          url="https://classe.es/"
+        />
+      </Head>
+      <HomeUI
+        isBlack={isBlack}
+        isFluor={isFluor}
+        isLock={isLock}
+        courses={COURSES}
+        dates={dates}
+        logos={logos}
+        faqsList={faqsList}
+        onContactFormSubmit={handleContactFormSubmit}
+        contactFormParams={contactFormParams}
+      />
+    </>
   )
 }
 
