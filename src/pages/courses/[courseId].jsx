@@ -14,7 +14,7 @@ const Course = ({ course }) => {
   return (
     <>
       <InfoHead
-        title={course.information.title}
+        title={`Curso de ${course.information.title} | Classe`}
         description={course.information.description}
         url={course.href}
       />
