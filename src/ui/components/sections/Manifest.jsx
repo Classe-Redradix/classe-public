@@ -11,7 +11,6 @@ const Manifest = ({ isBlack, isFluor }) => {
 
   return (
     <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="manifest">
-      <h1 className="sr-only">{t('home:h1-title')}</h1>
       <Row type="half">
         <Cell isColumn>
           <Cell isNegative={isBlack}>

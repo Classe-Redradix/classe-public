@@ -48,7 +48,9 @@ const MenuLayer = ({
     ? t('course:h1-title', {
         course: course.information.title,
       })
-    : t('courses:h1-title')
+    : areCoursesOpen
+    ? t('courses:h1-title')
+    : t('home:h1-title')
 
   return (
     <div className={classes}>
