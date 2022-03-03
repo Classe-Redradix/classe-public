@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 
-const Radio = ({ isChecked, handleChange, label, name }) => {
+const Radio = ({ isChecked, label, name, value, id, onChange }) => {
   const t = useTranslations()
 
   return (
-    <label className="radio" htmlFor={name}>
+    <label className="radio" htmlFor={id}>
       <input
-        className="radio-input"
         type="radio"
-        id={name}
         name={name}
-        value={name}
+        id={id}
+        className="radio-input"
+        value={value}
         checked={isChecked}
-        onChange={handleChange}
+        onChange={onChange}
       />
       <span className="radio-icon notes">
         [<span className="radio-iconCheck">X</span>]
@@ -25,7 +25,7 @@ const Radio = ({ isChecked, handleChange, label, name }) => {
 
 Radio.propTypes = {
   isChecked: PropTypes.bool,
-  handleChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 }

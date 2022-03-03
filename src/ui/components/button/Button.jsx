@@ -19,7 +19,7 @@ const Button = ({
 
   const handleClick = e => {
     e.preventDefault()
-    onClick
+    onClick()
   }
 
   return (

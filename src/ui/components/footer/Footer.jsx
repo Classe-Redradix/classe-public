@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
@@ -7,14 +6,21 @@ import Cell from '../cell/Cell'
 import Radio from '../forms/Radio'
 import Input from '../forms/Input'
 import Checkbox from '../forms/Checkbox'
+import { CoursePropType } from '../../sharedProptypes'
 
-const Footer = ({ courses, isBlack, isFluor }) => {
-  const router = useRouter()
+const Footer = ({
+  courses,
+  isBlack,
+  isFluor,
+  onContactFormSubmit,
+  contactFormParams,
+  openCourse,
+}) => {
   const t = useTranslations()
 
-  const handleClick = e => {
+  const handleClick = (e, course) => {
     e.preventDefault()
-    router.push(href)
+    openCourse(course)
   }
 
   return (
@@ -36,38 +42,42 @@ const Footer = ({ courses, isBlack, isFluor }) => {
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
-          <form className="footer-form">
+          <form className="footer-form" onSubmit={onContactFormSubmit}>
             <div className="footer-formBlock">
               <span className="notes">{t('footer:iam')}</span>
               <Radio
-                handleChange={() => {}}
+                onChange={contactFormParams.onUserTypeChange}
                 label="footer:company"
-                name="company"
-                value=""
+                name="user-type"
+                id="user-type-company"
+                value="company"
+                isChecked={contactFormParams.userType === 'company'}
               />
               <Radio
-                handleChange={() => {}}
+                onChange={contactFormParams.onUserTypeChange}
                 label="footer:student"
-                name="student"
-                value=""
+                id="user-type-student"
+                name="user-type"
+                value="student"
+                isChecked={contactFormParams.userType === 'student'}
               />
             </div>
             <div className="footer-formBlock">
               <Input
                 handleBlur={() => {}}
-                handleChange={() => {}}
+                handleChange={contactFormParams.onEmailChange}
                 handleSubmit={() => {}}
                 name="email"
                 placeholder={t('general:placeholder')}
                 type="email"
-                value=""
+                value={contactFormParams.email}
               />
             </div>
             <div className="footer-formBlock">
               <Checkbox
                 hasMessage
                 handleChange={() => {}}
-                label="general:conditions-check"
+                label={t('general:conditions-check')}
                 name="conditions"
                 value=""
               />
@@ -80,9 +90,13 @@ const Footer = ({ courses, isBlack, isFluor }) => {
           <span className="tiny">{t('courses:header')}</span>
           <ul className="footer-list">
             {courses.map(course => (
-              <li key={course.title}>
-                <a className="h4" href={course.href} onClick={handleClick}>
-                  {course.title}
+              <li key={course.information.title}>
+                <a
+                  className="h4"
+                  href={course.href}
+                  onClick={e => handleClick(e, course)}
+                >
+                  {course.information.title}
                 </a>
               </li>
             ))}
@@ -168,14 +182,12 @@ const Footer = ({ courses, isBlack, isFluor }) => {
 }
 
 Footer.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
+  onContactForm: PropTypes.object,
+  onContactFormSubmit: PropTypes.func,
+  openCourse: PropTypes.func,
 }
 
 export default Footer

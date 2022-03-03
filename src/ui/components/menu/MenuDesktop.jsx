@@ -3,7 +3,13 @@ import cx from 'classnames'
 import useTranslations from '../../../hooks/useTranslations'
 import Cell from '../cell/Cell'
 
-const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
+const MenuDesktop = ({
+  isBlack,
+  isFluor,
+  openCourses,
+  openContact,
+  courses,
+}) => {
   const t = useTranslations()
   const classes = cx('menuDesktop', {
     'is-black': isBlack,
@@ -16,7 +22,7 @@ const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
         <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
         <button
           className="menuDesktop-button menu"
-          onClick={handleOpen}
+          onClick={openCourses}
           aria-label={t('menu:courses')}
         >
           [
@@ -26,6 +32,7 @@ const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
           ] {t('menu:courses')}
         </button>
         <button
+          onClick={openContact}
           className="menuDesktop-link menu"
           aria-label={t('menu:contact')}
         >
@@ -39,7 +46,8 @@ const MenuDesktop = ({ isBlack, isFluor, handleOpen, courses }) => {
 MenuDesktop.propTypes = {
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
-  handleOpen: PropTypes.func.isRequired,
+  openCourses: PropTypes.func.isRequired,
+  openContact: PropTypes.func.isRequired,
   courses: PropTypes.number.isRequired,
 }
 

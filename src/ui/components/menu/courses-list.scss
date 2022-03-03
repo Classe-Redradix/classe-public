@@ -26,7 +26,7 @@
     position: relative;
 
     html:not(.is-mobile) &:hover {
-      .coursesList-linkTextWrapper svg {
+      .coursesList-linkTextWrapper .icon {
         opacity: 1;
         transform: translateX(0);
       }
@@ -44,6 +44,7 @@
   &-link {
     display: flex;
     align-items: flex-start;
+    cursor: pointer;
   }
 
   &-linkNumber {
@@ -60,7 +61,7 @@
     overflow: hidden;
   }
 
-  &-linkTextWrapper svg {
+  &-linkTextWrapper .icon {
     position: absolute;
     top: 0;
     left: 0;
@@ -69,11 +70,7 @@
     opacity: 0;
     transform: translateX(-100%);
     transition: opacity $fade-short, transform $transform-short;
-
-    path {
-      stroke: $fluor;
-      fill: $fluor;
-    }
+    color: $fluor;
   }
 
   &-linkText {
@@ -114,7 +111,7 @@
       padding-right: 64px;
     }
 
-    &-linkTextWrapper svg {
+    &-linkTextWrapper .icon {
       height: 44px;
     }
   }
@@ -135,7 +132,7 @@
       padding-right: 130px;
     }
 
-    &-linkTextWrapper svg {
+    &-linkTextWrapper .icon {
       height: 84px;
     }
   }

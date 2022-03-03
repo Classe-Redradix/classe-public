@@ -1,5 +1,6 @@
 import MainWrapper from '../../wrappers/MainWrapper'
 import Menu from '../Menu'
+import { COURSES } from '../../../../data'
 
 export default {
   title: 'Layout/Menu',
@@ -8,26 +9,6 @@ export default {
 
 export const menu = ({ ...args }) => (
   <MainWrapper>
-    <Menu
-      courses={[
-        {
-          title: 'Js pro',
-          href: '/',
-        },
-        {
-          title: 'React',
-          href: '/',
-        },
-        {
-          title: 'Redux',
-          href: '/',
-        },
-        {
-          title: 'Data',
-          href: '/',
-        },
-      ]}
-      {...args}
-    />
+    <Menu courses={COURSES} {...args} />
   </MainWrapper>
 )

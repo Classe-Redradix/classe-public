@@ -4,7 +4,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import FaqsContainer from '../faqs/FaqsContainer'
-import demoImage from '../../../assets/images/demo.png'
+import demoImage from '/public/images/demo.png'
 
 const Faqs = ({ list, isBlack, isFluor }) => {
   const t = useTranslations()

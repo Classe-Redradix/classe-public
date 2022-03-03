@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Arrow from '../../../assets/icons/arrow-icon.svg'
+import ArrowIcon from './../../../assets/icons/ArrowIcon'
 
 const Input = ({
   handleBlur,
@@ -10,8 +10,12 @@ const Input = ({
   placeholder,
   type,
   value,
+  isNegative,
 }) => {
-  const classes = cx('input', { 'has-submit': handleSubmit })
+  const classes = cx('input', {
+    'has-submit': handleSubmit,
+    'is-negative': isNegative,
+  })
 
   return (
     <div className={classes}>
@@ -25,11 +29,7 @@ const Input = ({
         value={value}
       />
       {handleSubmit ? (
-        <Arrow
-          viewBox="0 0 72 72"
-          className="input-submit"
-          onClick={handleSubmit}
-        />
+        <ArrowIcon className="icon input-submit" onClick={handleSubmit} />
       ) : null}
     </div>
   )
@@ -43,6 +43,7 @@ Input.propTypes = {
   placeholder: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['email', 'text']).isRequired,
   value: PropTypes.string.isRequired,
+  isNegative: PropTypes.bool,
 }
 
 export default Input

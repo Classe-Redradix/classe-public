@@ -4,37 +4,66 @@ import useWindowSize from '../../../hooks/useWindowSize'
 import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
+import { useRouter } from 'next/router'
+import {
+  CoursePropType,
+  ContactFormParamsPropType,
+} from '../../sharedProptypes'
 
-const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
+const Menu = ({
+  isBlack,
+  isFluor,
+  courses,
+  contactFormParams,
+  actionText = 'menu:close',
+  handleText,
+  areCoursesOpen = false,
+  course = null,
+  handleClose,
+  openContact,
+  openCourses,
+  isContactOpen = false,
+  isCourseOpen = false,
+  openCourse,
+}) => {
   const size = useWindowSize()
-  const [isOpen, setIsOpen] = useState(false)
-
-  const handleOpen = () => {
-    setIsOpen(true)
-    onToggle(true)
-  }
-
-  const handleClose = () => {
-    setIsOpen(false)
-    onToggle(false)
-  }
 
   return (
     <>
-      <MenuLayer courses={courses} isOpen={isOpen} handleClose={handleClose} />
+      <MenuLayer
+        actionText={actionText}
+        courses={courses}
+        contactFormParams={contactFormParams}
+        openContact={_ => {
+          // NOTE: we don't need to check if the course exists because if the
+          // user clicks on this button, it means that the modal course is
+          // open, which means that there'll always be a course selected
+          // at this point
+          openContact(_, course.id)
+        }}
+        isContactOpen={isContactOpen}
+        isCourseOpen={isCourseOpen}
+        openCourse={openCourse}
+        course={course}
+        areCoursesOpen={areCoursesOpen}
+        handleClose={!!handleText ? handleText : handleClose}
+      />
       {size.width >= 768 ? (
         <MenuDesktop
           isBlack={isBlack}
           isFluor={isFluor}
-          handleOpen={handleOpen}
+          openCourses={openCourses}
+          openContact={openContact}
           courses={courses.length}
         />
       ) : (
         <MenuMobile
           isBlack={isBlack}
           isFluor={isFluor}
-          isOpen={isOpen}
-          handleOpen={handleOpen}
+          isContactOpen={isContactOpen}
+          areCoursesOpen={areCoursesOpen}
+          openCourses={openCourses}
+          openContact={openContact}
           handleClose={handleClose}
         />
       )}
@@ -43,15 +72,20 @@ const Menu = ({ isBlack, isFluor, courses, onToggle }) => {
 }
 
 Menu.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
+  course: CoursePropType,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
+  contactFormParams: ContactFormParamsPropType,
   isBlack: PropTypes.bool,
   isFluor: PropTypes.bool,
-  onToggle: PropTypes.func.isRequired,
+  areCoursesOpen: PropTypes.bool,
+  isContactOpen: PropTypes.bool,
+  isCourseOpen: PropTypes.bool,
+  actionText: PropTypes.string,
+  handleText: PropTypes.func,
+  handleClose: PropTypes.func,
+  openContact: PropTypes.func,
+  openCourses: PropTypes.func,
+  openCourse: PropTypes.func,
 }
 
 export default Menu

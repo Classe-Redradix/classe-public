@@ -85,9 +85,14 @@ button {
 .notes,
 .button,
 .tiny,
-.hero {
+.hero,
+.heading {
   display: block;
   position: relative;
+  text-transform: uppercase;
+}
+
+.uppercase {
   text-transform: uppercase;
 }
 
@@ -134,6 +139,10 @@ button {
 
 .tiny {
   @include typo-rwd(tiny);
+}
+
+.fact-text {
+  @include typo-rwd(fact);
 }
 
 .line {

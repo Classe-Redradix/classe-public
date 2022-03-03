@@ -3,7 +3,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import useTranslations from '../../../hooks/useTranslations'
-import demoImage from '../../../assets/images/demo.png'
+import demoImage from '/public/images/demo.png'
 
 const Manifest = ({ isBlack, isFluor }) => {
   const t = useTranslations()

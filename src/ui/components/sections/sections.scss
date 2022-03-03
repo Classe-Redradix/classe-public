@@ -19,11 +19,11 @@
 
 .sectionWrapper.custom,
 .sectionWrapper.find {
-  &.is-black svg path {
+  &.is-black .icon path {
     fill: $white;
   }
 
-  svg {
+  .icon {
     display: block;
     position: relative;
     left: 100%;
@@ -86,7 +86,7 @@
     height: 24px;
   }
 
-  svg {
+  .icon {
     display: block;
     position: relative;
     max-width: 100%;
@@ -219,7 +219,7 @@
 
   .sectionWrapper.custom,
   .sectionWrapper.find {
-    svg {
+    .icon {
       height: 48px;
     }
 
@@ -280,8 +280,8 @@
 }
 
 @include mq(xl) {
-  .sectionWrapper.custom svg,
-  .sectionWrapper.find svg {
+  .sectionWrapper.custom .icon,
+  .sectionWrapper.find .icon {
     height: 80px;
   }
 

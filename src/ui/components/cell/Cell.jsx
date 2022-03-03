@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 
 const Cell = ({
+  extraClass,
   hasGap,
   hasLinesHidden,
   isAnimated,
@@ -9,7 +10,7 @@ const Cell = ({
   isNegative,
   children,
 }) => {
-  const classes = cx('cell', {
+  const classes = cx('cell', `${extraClass ? extraClass : ''}`, {
     'has-gap': hasGap,
     'has-linesHidden': hasLinesHidden,
     'is-column': isColumn,
@@ -39,6 +40,7 @@ const Cell = ({
 }
 
 Cell.propTypes = {
+  extraClass: PropTypes.string,
   hasGap: PropTypes.bool,
   hasLinesHidden: PropTypes.bool,
   isAnimated: PropTypes.bool,

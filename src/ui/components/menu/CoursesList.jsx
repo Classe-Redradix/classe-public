@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
 import useTranslations from '../../../hooks/useTranslations'
-import Tab from '../../../assets/icons/tab-icon.svg'
+import TabIcon from './../../../assets/icons/TabIcon'
+import { CoursePropType } from '../../sharedProptypes'
 
-const CoursesList = ({ courses }) => {
-  const router = useRouter()
+const CoursesList = ({ courses, openCourse }) => {
   const t = useTranslations()
 
-  const handleClick = e => {
+  const handleCourseClick = (e, course) => {
     e.preventDefault()
-    router.push(href)
+    openCourse(course)
   }
 
   return (
@@ -20,18 +19,20 @@ const CoursesList = ({ courses }) => {
       </p>
       <ol className="coursesList-list">
         {courses.map((course, index) => (
-          <li key={course.title}>
+          <li key={course.information.title}>
             <a
               className="coursesList-link h1"
               href={course.href}
-              onClick={handleClick}
+              onClick={e => handleCourseClick(e, course)}
             >
               <span className="coursesList-linkNumber">
                 {index < 10 ? `0${index + 1}` : index + 1}
               </span>
               <span className="coursesList-linkTextWrapper">
-                <Tab viewBox="0 0 85 73" />
-                <span className="coursesList-linkText">{course.title}</span>
+                <TabIcon color="red" className="icon" />
+                <span className="coursesList-linkText">
+                  {course.information.title}
+                </span>
               </span>
             </a>
           </li>
@@ -42,12 +43,7 @@ const CoursesList = ({ courses }) => {
 }
 
 CoursesList.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
 }
 
 export default CoursesList

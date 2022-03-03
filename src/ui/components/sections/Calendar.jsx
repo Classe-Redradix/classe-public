@@ -4,9 +4,10 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import DatePicker from '../date-picker/DatePicker'
-import demoImage from '../../../assets/images/demo-small.png'
+import demoImage from '/public/images/demo-small.png'
+import { DatesPropType } from './../../sharedProptypes'
 
-const Calendar = ({ dates, isBlack, isFluor }) => {
+const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
   const t = useTranslations()
 
   return (
@@ -31,7 +32,7 @@ const Calendar = ({ dates, isBlack, isFluor }) => {
           <p className="p">{t('calendar:description')}</p>
         </Cell>
         <Cell>
-          <DatePicker dates={dates} />
+          <DatePicker dates={dates} openContact={openContact} />
         </Cell>
       </Row>
     </SectionWrapper>
@@ -39,20 +40,7 @@ const Calendar = ({ dates, isBlack, isFluor }) => {
 }
 
 Calendar.propTypes = {
-  dates: PropTypes.arrayOf(
-    PropTypes.shape({
-      day: PropTypes.string,
-      month: PropTypes.string.isRequired,
-      courses: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          start: PropTypes.string.isRequired,
-          finish: PropTypes.string.isRequired,
-          to: PropTypes.string.isRequired,
-        }),
-      ),
-    }).isRequired,
-  ).isRequired,
+  dates: PropTypes.arrayOf(DatesPropType).isRequired,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
 }

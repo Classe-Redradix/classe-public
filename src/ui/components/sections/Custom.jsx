@@ -4,10 +4,10 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
-import demoImage from '../../../assets/images/demo-small.png'
-import Glyph from '../../../assets/icons/glyph-icon.svg'
+import demoImage from '/public/images/demo-small.png'
+import GlyphIcon from './../../../assets/icons/GlyphIcon'
 
-const Custom = ({ isBlack, isFluor }) => {
+const Custom = ({ isBlack, isFluor, openCourses }) => {
   const t = useTranslations()
 
   return (
@@ -29,7 +29,7 @@ const Custom = ({ isBlack, isFluor }) => {
       </Row>
       <Row type="half">
         <Cell hasGap isNegative={isBlack}>
-          <Glyph viewBox="0 0 76 80" />
+          <GlyphIcon className="icon" />
           <p className="p">{t('custom:description')}</p>
         </Cell>
         <Cell hasGap isNegative={isBlack}>
@@ -41,7 +41,13 @@ const Custom = ({ isBlack, isFluor }) => {
               })}
             </h4>
           </div>
-          <Button isLink isFluor={isFluor} href="/" text={t('custom:button')} />
+          <Button
+            isLink
+            isFluor={isFluor}
+            href="/"
+            text={t('custom:button')}
+            onClick={openCourses}
+          />
         </Cell>
       </Row>
     </SectionWrapper>
@@ -51,6 +57,7 @@ const Custom = ({ isBlack, isFluor }) => {
 Custom.propTypes = {
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
+  openCourses: PropTypes.func,
 }
 
 export default Custom

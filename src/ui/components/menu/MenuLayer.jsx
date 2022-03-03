@@ -6,42 +6,60 @@ import useTranslations from '../../../hooks/useTranslations'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import CoursesList from './CoursesList'
+import MenuContact from './MenuContact'
+import MenuCourse from './MenuCourse'
+import { CoursePropType } from '../../sharedProptypes'
 
-const MenuLayer = ({ courses, isOpen = true, handleClose }) => {
+const MenuLayer = ({
+  course,
+  courses,
+  contactFormParams,
+  isContactOpen,
+  isCourseOpen,
+  areCoursesOpen,
+  handleClose,
+  openContact,
+  openCourse,
+  hasClose = true,
+  actionText = 'menu:close',
+}) => {
+  const isOpen = isContactOpen || areCoursesOpen || isCourseOpen
   const t = useTranslations()
   const size = useWindowSize()
   const [linesHidden, setLinesHidden] = useState(false)
-  const classes = cx('menuLayer', { 'is-open': isOpen })
+  const classes = cx('menuLayer', {
+    'is-open': isOpen,
+    'is-free': isContactOpen || isCourseOpen,
+    'is-course': isCourseOpen,
+  })
   const isDesktop = size.width >= 768
 
   useEffect(() => {
-    // const lines = document.querySelectorAll('.menuLayer .cell-line')
     if (isOpen) {
-      // lines.forEach(
-      //   (line, index) =>
-      //     (line.style.transition = `transform 0.6s cubic-bezier(0.65, 0.05, 0.36, 1) 0.${index}s`)
-      // )
       setLinesHidden(true)
     } else {
       setLinesHidden(false)
-      // lines.forEach((line) => (line.style.transition = `transform 0s 0.6s`))
     }
   }, [isOpen])
 
   return (
     <div className={classes}>
       <div className="menuLayer-wrapper">
-        {isDesktop ? (
+        {isDesktop && hasClose ? (
           <div className="menuLayer-desktopHeader">
             <button
               className="menuLayer-desktopHeader-button button"
               onClick={handleClose}
             >
-              [ <span className="braketHover">{t('menu:close')}</span> ]
+              [ <span className="braketHover">{t(actionText)}</span> ]
             </button>
           </div>
         ) : null}
-        <div className="menuLayer-content">
+        <div
+          className={cx('menuLayer-content', {
+            'is-block': isCourseOpen,
+          })}
+        >
           {!isDesktop ? (
             <Row type="half" extraClass="menuLayer-mobileHeader">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
@@ -52,32 +70,46 @@ const MenuLayer = ({ courses, isOpen = true, handleClose }) => {
               </Cell>
             </Row>
           ) : null}
-          <Row type="quarter" extraClass="menuLayer-courses">
-            <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-              <p>image</p>
-            </Cell>
-            <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-              <CoursesList courses={courses} />
-            </Cell>
-          </Row>
-          <Row type="full" extraClass="menuLayer-menu">
-            <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-              <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
-              <span
-                className="menuDesktop-button menu"
-                aria-label={t('menu:courses')}
-              >
-                [{courses.length < 10 ? `0${courses.length}` : courses.length}]{' '}
-                {t('menu:courses')}
-              </span>
-              <button
-                className="menuDesktop-link"
-                aria-label={t('menu:contact')}
-              >
-                {t('menu:contact')}
-              </button>
-            </Cell>
-          </Row>
+          {isContactOpen ? (
+            <MenuContact
+              linesHidden={linesHidden}
+              contactFormParams={contactFormParams}
+            />
+          ) : isCourseOpen ? (
+            <MenuCourse course={course} openContact={openContact} />
+          ) : (
+            <Row type="quarter" extraClass="menuLayer-courses">
+              <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
+                <p>image</p>
+              </Cell>
+              <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
+                <CoursesList courses={courses} openCourse={openCourse} />
+              </Cell>
+            </Row>
+          )}
+          {!isCourseOpen ? (
+            <Row type="full" extraClass="menuLayer-menu">
+              <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
+                <span className="menuDesktop-claim menu">
+                  {t('menu:claim')}
+                </span>
+                <span
+                  className="menuDesktop-button menu"
+                  aria-label={t('menu:courses')}
+                >
+                  [{courses.length < 10 ? `0${courses.length}` : courses.length}
+                  ] {t('menu:courses')}
+                </span>
+                <button
+                  onClick={openContact}
+                  className="menuDesktop-link"
+                  aria-label={t('menu:contact')}
+                >
+                  {t('menu:contact')}
+                </button>
+              </Cell>
+            </Row>
+          ) : null}
         </div>
       </div>
     </div>
@@ -85,14 +117,13 @@ const MenuLayer = ({ courses, isOpen = true, handleClose }) => {
 }
 
 MenuLayer.propTypes = {
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  course: CoursePropType,
+  courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
   isOpen: PropTypes.bool,
+  hasClose: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
+  openContact: PropTypes.func.isRequired,
+  openCourse: PropTypes.func.isRequired,
 }
 
 export default MenuLayer

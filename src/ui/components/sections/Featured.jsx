@@ -4,9 +4,10 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
-import demoImage from '../../../assets/images/demo.png'
+import demoImage from '/public/images/demo.png'
+import { CoursePropType } from './../../sharedProptypes'
 
-const Featured = ({ isBlack, isFluor }) => {
+const Featured = ({ isBlack, isFluor, course, openCourse }) => {
   const t = useTranslations()
 
   return (
@@ -30,7 +31,8 @@ const Featured = ({ isBlack, isFluor }) => {
             isLink
             isFluor={isFluor}
             isFull
-            href="/"
+            href={course.href}
+            onClick={() => openCourse(course)}
             text={t('featured:button')}
           />
         </Cell>
@@ -45,6 +47,8 @@ const Featured = ({ isBlack, isFluor }) => {
 Featured.propTypes = {
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
+  course: CoursePropType,
+  openCourse: PropTypes.func,
 }
 
 export default Featured

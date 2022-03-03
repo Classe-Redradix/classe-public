@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import FaqButton from './FaqButton'
+import { FaqsListPropType } from './../../sharedProptypes'
 
 const FaqsContainer = ({ list }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeItem, setActiveItem] = useState(0)
 
-  const toggle = (index) => {
+  const toggle = index => {
     if (index === activeItem) {
-      setIsOpen((isState) => !isState)
+      setIsOpen(isState => !isState)
       setActiveItem(index)
     } else {
       setIsOpen(true)
@@ -35,12 +35,7 @@ const FaqsContainer = ({ list }) => {
 }
 
 FaqsContainer.propTpes = {
-  list: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  list: FaqsListPropType.isRequired,
 }
 
 export default FaqsContainer

@@ -1,5 +1,6 @@
 // font-face
 // @include font-face('Gotham', 'GothaHTFLig', 200);
+
 @mixin font-face-modern(
   $font-family,
   $font-filename,
@@ -9,6 +10,7 @@
 ) {
   @font-face {
     font-family: '#{$font-family}';
+    // TODO: find a way to use the same source in Storybbok and Next
     src: url('../fonts/#{$font-filename}.woff') format('woff'),
       url('../fonts/#{$font-filename}.woff2') format('woff2');
     font-weight: $font-weight;
@@ -184,6 +186,20 @@ $typography: (
       md: (
         fz: 0.5625rem,
         lh: 0.5625rem,
+      ),
+    ),
+  ),
+  fact: (
+    format: (
+      xs: (
+        ff: monument-grotesk-mono,
+        fz: 0.75rem,
+        fw: $regular,
+        lh: 1rem,
+      ),
+      md: (
+        fz: 1.125rem,
+        lh: 1.25rem,
       ),
     ),
   ),
