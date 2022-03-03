@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import CompanyLogo from '/public/images/demo-company.svg'
 
 import InfoHead from 'InfoHead'
-import { COURSES } from '../data'
+import { INFO_HEAD, COURSES } from '../data'
 import { Home as HomeUI } from '../ui/views'
 import {
   useViewportHeight,
@@ -120,9 +120,9 @@ const Home = () => {
   return (
     <>
       <InfoHead
-        title="Classe | Escuela de programación"
-        description="Descripción de la home"
-        url="/"
+        title={INFO_HEAD.HOME.title}
+        description={INFO_HEAD.HOME.description}
+        url={INFO_HEAD.HOME.url}
       />
       <HomeUI
         isBlack={isBlack}

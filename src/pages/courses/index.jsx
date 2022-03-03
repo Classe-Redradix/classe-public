@@ -2,7 +2,7 @@ import InfoHead from 'InfoHead'
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
-import { COURSES } from '../../data'
+import { INFO_HEAD, COURSES } from '../../data'
 import { useContactForm, useMenu, useKonami } from '../../hooks'
 
 const Courses = () => {
@@ -51,9 +51,9 @@ const Courses = () => {
   return (
     <>
       <InfoHead
-        title="Cursos | Classe"
-        description="Descripción de la página de cursos"
-        url="/courses"
+        title={INFO_HEAD.COURSES.title}
+        description={INFO_HEAD.COURSES.description}
+        url={INFO_HEAD.COURSES.url}
       />
 
       <MainWrapper isBlack={true}>
