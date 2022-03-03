@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -28,56 +28,36 @@ const dates = [
 ]
 
 const MenuCourse = ({ course, openContact }) => {
-  // gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger)
+  const container = useRef(null)
   const t = useTranslations()
   useScrambleText()
 
   useEffect(() => {
-    // Option #1
-    // const sections = gsap.utils.toArray('.courseSection')
-    // var maxWidth = 0
-    // const getMaxWidth = () => {
-    //   maxWidth = 0
-    //   sections.forEach(section => {
-    //     maxWidth += section.offsetWidth
-    //   })
-    // }
-    // getMaxWidth()
-    // ScrollTrigger.addEventListener('refreshInit', getMaxWidth)
-    // gsap.to(sections, {
-    //   x: () => `-${maxWidth - window.innerWidth}`,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.courseSections',
-    //     invalidateOnRefresh: true,
-    //     pin: true,
-    //     scrub: true,
-    //     end: () => `+=${maxWidth}`,
-    //   },
-    // })
-    // Option #2
-    // const container = document.querySelectorAll('.courseSections')
-    // if (container) {
-    //   gsap.to(container, {
-    //     x: () =>
-    //       -(container.scrollWidth - document.documentElement.clientWidth) +
-    //       'px',
-    //     ease: 'none',
-    //     scrollTrigger: {
-    //       trigger: container,
-    //       invalidateOnRefresh: true,
-    //       pin: true,
-    //       scrub: 1,
-    //       end: () => '+=' + container.offsetWidth,
-    //     },
-    //   })
-    // }
-  }, [])
+    if (container.current) {
+      console.log(container.current.scrollWidth)
+      gsap.to(container.current, {
+        x: () =>
+          -(
+            container.current.scrollWidth - document.documentElement.clientWidth
+          ) + 'px',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: container.current,
+          invalidateOnRefresh: true,
+          pin: true,
+          scrub: 1,
+          markers: true,
+          end: () => '+=' + container.offsetWidth,
+        },
+      })
+    }
+  }, [container.current])
 
   const { information, index, objetives } = course
 
   return (
-    <section className="courseSections">
+    <section className="courseSections" ref={container}>
       <CourseIntro
         dates={dates}
         name={information.title}
