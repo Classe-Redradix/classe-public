@@ -6,23 +6,13 @@
     flex-wrap: nowrap;
     height: calc(100vh - 52px - #{$distance-big});
     padding-right: $distance-big;
-    // overflow-x: scroll;
-
-    &::-webkit-scrollbar {
-      height: 1px;
-    }
-    &::-webkit-scrollbar-track {
-      background: #484a5f;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: $white;
-    }
+    height: 100vh;
   }
 }
 
 .courseIntro {
   $self: &;
-  min-width: calc(100vw - (#{$distance-small} * 2));
+  max-width: calc(100vw - (#{$distance-small} * 2));
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -60,7 +50,7 @@
   }
 
   @include mq(md) {
-    min-width: calc(100vw - (#{$distance-big} * 2));
+    max-width: calc(100vw - (#{$distance-big} * 2));
 
     &-name {
       order: 1;
