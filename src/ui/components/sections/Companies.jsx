@@ -32,12 +32,12 @@ const Companies = ({ logos, isBlack, isFluor, openContact }) => {
       <Row type="half">
         <Cell hasGap>
           <div className="scrambleTextWrapper">
-            <h3 className="h1 scrambleText">
+            <h2 className="h1 scrambleText">
               {t('companies:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
-            </h3>
+            </h2>
           </div>
           <Button
             isFull

@@ -34,12 +34,12 @@ const Footer = ({
       <Row type="quarter">
         <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h3 className="h2 scrambleText">
+            <h2 className="h2 scrambleText">
               {t('footer:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
-            </h3>
+            </h2>
           </div>
         </Cell>
         <Cell isNegative={isBlack}>

@@ -16,12 +16,12 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
       <Row type="half">
         <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h3 className="h1 scrambleText">
+            <h2 className="h1 scrambleText">
               {t('custom:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
-            </h3>
+            </h2>
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
@@ -35,12 +35,12 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
         </Cell>
         <Cell hasGap isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h4 className="h1 scrambleText">
+            <h3 className="h1 scrambleText">
               {t('custom:claim', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
-            </h4>
+            </h3>
           </div>
           <Button
             isLink
