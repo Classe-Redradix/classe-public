@@ -18,6 +18,14 @@ const Faqs = ({ list, isBlack, isFluor }) => {
             <h2 className="h1 scrambleText">
               {t('faqs:title', {
                 line: text => <span className="line has-wrap">{text}</span>,
+                lineAriaHidden: text => (
+                  <span className="line has-wrap" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                lineSROnly: text => (
+                  <span className="line has-wrap sr-only">{text}</span>
+                ),
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h2>

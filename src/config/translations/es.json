@@ -48,7 +48,7 @@
   "course:contact": "¿echas algo en falta? puedes combinar todo el temario de todos nuestros cursos como mejor se adapte a lo que BUSCAS",
 
   "custom:header": "Personaliza",
-  "custom:title": "<line>Nuestros</line> <lineTab>cursos=</lineTab><lineTab>a tu</lineTab> <lineTab>medida</lineTab>",
+  "custom:title": "<line>Nuestros</line> <lineTabAriaHidden>cursos=</lineTabAriaHidden> <lineTabSROnly>cursos</lineTabSROnly> <lineTab>a tu</lineTab> <lineTab>medida</lineTab>",
   "custom:description": "La misma formación no vale para todos, es por ello que nuestros cursos pueden configurarse según tus necesidades y las de tu empresa, incluso con la posibilidad de confeccionar bundles.",
   "custom:claim": "<lineTab>¿Quieres</lineTab> <line>saber</line> <line>cómo?</line>",
   "custom:button": "Ver cursos",
@@ -73,11 +73,11 @@
   "calendar:finish": "Finish",
 
   "companies:header": "Empresas",
-  "companies:title": "<line>#</line> <lineTab>Empresas</lineTab> <lineTab>que han</lineTab> <lineTab>vuelto a</lineTab> <lineTab>Class;e</lineTab> <line>#</line>",
+  "companies:title": "<lineAriaHidden>#</lineAriaHidden><lineTab>Empresas</lineTab> <lineTab>que han</lineTab> <lineTab>vuelto a</lineTab> <lineTabAriaHidden>Class;e</lineTabAriaHidden><lineTabSROnly>Classe</lineTabSROnly> <lineAriaHidden>#</lineAriaHidden>",
   "companies:button": "¿Quieres ser una de ellas? contáctanos",
 
   "faqs:header": "Faq's",
-  "faqs:title": "<line>//Aprender es no parar</line> <lineTab>de preguntar</lineTab>",
+  "faqs:title": "<lineAriaHidden>//Aprender es no parar</lineAriaHidden><lineSROnly>Aprender es no parar</lineSROnly> <lineTab>de preguntar</lineTab>",
 
   "find:header": "Encuéntranos",
   "find:title": "<line>Estamos</line> <lineTab>en la</lineTab> <lineTab>Latina</lineTab>",
