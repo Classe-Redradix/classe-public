@@ -24,21 +24,21 @@ const CourseContact = ({}) => {
         <Cell isNegative>
           <Glyph viewBox="0 0 56 73" className="courseSection-glypTop" />
 
-          <h2 className="heading menuLayer-contactAddressText">
+          <h3 className="heading menuLayer-contactAddressText">
             {t('contact:address1', {
               line: text => <span className="line">{text}</span>,
             })}
-          </h2>
-          <h2 className="heading menuLayer-contactAddressText">
+          </h3>
+          <h3 className="heading menuLayer-contactAddressText">
             {t('contact:address2', {
               line: text => <span className="line">{text}</span>,
             })}
-          </h2>
-          <h2 className="heading menuLayer-contactAddressText">
+          </h3>
+          <h3 className="heading menuLayer-contactAddressText">
             {t('contact:address3', {
               line: text => <span className="line">{text}</span>,
             })}
-          </h2>
+          </h3>
         </Cell>
         <Cell isNegative></Cell>
       </Row>

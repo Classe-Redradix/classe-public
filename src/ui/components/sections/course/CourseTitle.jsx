@@ -13,7 +13,7 @@ const CourseTitle = ({ title }) => {
     <SectionWrapper isBlack extraClass="courseTitle">
       <Row type="full" extraClass="courseTitle-name">
         <Cell isNegative extraClass="courseTitle-cell">
-          <div
+          <h2
             className="courseTitle-nameText"
             ref={ref}
             style={{
@@ -21,7 +21,7 @@ const CourseTitle = ({ title }) => {
             }}
           >
             {title}
-          </div>
+          </h2>
         </Cell>
       </Row>
     </SectionWrapper>

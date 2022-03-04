@@ -49,11 +49,11 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
         >
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
-              <h3 className="h3 -scrambleText">
+              <h2 className="h3 -scrambleText">
                 {t('contact:my-name-is', {
                   line: text => <span className="line">{text}</span>,
                 })}
-              </h3>
+              </h2>
             </div>
             <Input
               placeholder={t('general:name-lastname-placeholder')}
@@ -84,11 +84,11 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           </div>
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
-              <h3 className="h3 -scrambleText">
+              <h2 className="h3 -scrambleText">
                 {t('contact:interested-in', {
                   line: text => <span className="line">{text}</span>,
                 })}
-              </h3>
+              </h2>
             </div>
           </div>
           <div className="contact-formBlock--flex">
@@ -107,11 +107,11 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           </div>
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
-              <h3 className="h3 -scrambleText">
+              <h2 className="h3 -scrambleText">
                 {t('contact:my-email', {
                   line: text => <span className="line">{text}</span>,
                 })}
-              </h3>
+              </h2>
             </div>
             <Input
               placeholder={t('general:placeholder')}
