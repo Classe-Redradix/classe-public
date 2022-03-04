@@ -41,7 +41,12 @@ const Find = ({ isBlack, isFluor }) => {
               })}
             </h3>
           </div>
-          <p className="notes">{t('find:description2')}</p>
+          <p className="notes">
+            {t('find:description2', {
+              ariaHidden: text => <span aria-hidden="true">{text}</span>,
+              screenReader: text => <span className="sr-only">{text}</span>,
+            })}
+          </p>
         </Cell>
       </Row>
     </SectionWrapper>

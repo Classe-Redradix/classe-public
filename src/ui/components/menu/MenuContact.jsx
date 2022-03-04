@@ -27,7 +27,12 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           </h2>
           <h2 className="heading menuLayer-contactAddressText">
             {t('contact:address2', {
-              line: text => <span className="line">{text}</span>,
+              lineAriaHidden: text => (
+                <span className="line" aria-hidden="true">
+                  {text}
+                </span>
+              ),
+              lineSROnly: text => <span className="line sr-only">{text}</span>,
             })}
           </h2>
           <h2 className="heading menuLayer-contactAddressText">
