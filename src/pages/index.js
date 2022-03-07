@@ -123,7 +123,31 @@ const Home = () => {
         title={INFO_HEAD.HOME.title}
         description={INFO_HEAD.HOME.description}
         url={INFO_HEAD.HOME.url}
-      />
+      >
+        <script type="application/ld+json">
+          {`
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "Classe",
+          "url": "https:classe.dev",
+          "logo": {
+            "@type": "ImageObject",
+            "url":"https:classe.dev/images/logo.png",
+            "width":"175",
+            "height":"175"
+          },
+          "sameAs": "https:classe.dev",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+34910000000",
+            "contactType": "customer service",
+            "areaServed": "ES",
+            "availableLanguage": "es",
+            "url": "https:classe.dev/contacto"
+          }
+        `}
+        </script>
+      </InfoHead>
       <HomeUI
         isBlack={isBlack}
         isFluor={isFluor}
