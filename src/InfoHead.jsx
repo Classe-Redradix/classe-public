@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const InfoHead = ({ title, description, url, children }) => {
-  const urlRoot = 'https://classe.com'
+  const urlRoot = 'https://classe.dev'
   return (
     <Head>
       <title>{title}</title>
