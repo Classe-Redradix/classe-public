@@ -125,27 +125,35 @@ const Home = () => {
         url={INFO_HEAD.HOME.url}
       >
         <script type="application/ld+json">
-          {`
-          "@context": "https://schema.org",
-          "@type": "EducationalOrganization",
-          "name": "Classe",
-          "url": "https:classe.dev",
-          "logo": {
-            "@type": "ImageObject",
-            "url":"https:classe.dev/images/logo.png",
-            "width":"175",
-            "height":"175"
-          },
-          "sameAs": "https:classe.dev",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+34910000000",
-            "contactType": "customer service",
-            "areaServed": "ES",
-            "availableLanguage": "es",
-            "url": "https:classe.dev/contacto"
-          }
-        `}
+          [
+          {`{
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Classe",
+            "url": "https:classe.dev",
+            "logo": {
+              "@type": "ImageObject",
+              "url":"https:classe.dev/images/logo.png"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+34910000000",
+              "contactType": "customer service",
+              "areaServed": "ES",
+              "availableLanguage": "es",
+              "url": "https:classe.dev/contacto"
+            }
+          }`}
+          ,
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "WebSite",
+            "headline": "Classe, escuela de programación",
+            "name": "Classe, escuela de programación",
+            "url": "https://classe.dev",
+            "description": "Classe, escuela de programación para dar el salto en tu carrera profesional."
+          }`}
+          ]
         </script>
       </InfoHead>
       <HomeUI
