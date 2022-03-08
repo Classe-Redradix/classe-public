@@ -130,7 +130,7 @@ const Home = () => {
             "@context": "https://schema.org",
             "@type": "EducationalOrganization",
             "name": "Classe",
-            "url": "https:classe.dev",
+            "url": "https://classe.dev",
             "logo": {
               "@type": "ImageObject",
               "url":"https:classe.dev/images/logo.png"
@@ -141,7 +141,7 @@ const Home = () => {
               "contactType": "customer service",
               "areaServed": "ES",
               "availableLanguage": "es",
-              "url": "https:classe.dev/contacto"
+              "url": "https://classe.dev/contacto"
             }
           }`}
           ,
@@ -150,8 +150,8 @@ const Home = () => {
             "@type": "WebSite",
             "headline": "Classe, escuela de programación",
             "name": "Classe, escuela de programación",
-            "url": "https://classe.dev",
             "description": "Classe, escuela de programación para dar el salto en tu carrera profesional."
+            "url": "https://classe.dev",
           }`}
           ]
         </script>
