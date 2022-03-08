@@ -11,13 +11,47 @@ const Course = ({ course }) => {
 
   useKonami()
 
+  const formatDate = str => {
+    const date = str.split('.')
+    const day = date.slice(0, 1)[0]
+    const month = date.slice(1, 2)[0]
+    const year = date.slice(2, 3)[0]
+
+    return `20${year}-${month}-${day}`
+  }
+
   return (
     <>
       <InfoHead
         title={`Curso de ${course.information.title} | Classe`}
         description={course.information.description}
         url={course.href}
-      />
+      >
+        {console.log(course)}
+        <script type="application/ld+json">
+          [
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "url": "${course.href}",
+            "name": "${course.information.title}",
+            "description": "${course.information.description}",
+            "hasCourseInstance": [{
+              "@type": "CourseInstance",
+              "startDate": "${formatDate(course.information.start)}",
+              "endDate": "${formatDate(course.information.finish)}",
+              "offers": {
+                "@type": "Offer",
+                "price": "${course.information.price}",
+                "priceCurrency": "EUR"
+              }
+            }]
+          }
+         `}
+          ]
+        </script>
+      </InfoHead>
       <MainWrapper isBlack={true}>
         <Menu
           actionText="general:go-to-home"
