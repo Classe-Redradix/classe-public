@@ -3,7 +3,7 @@ import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import { COURSES } from '../data'
-import { useContactForm, useKonami } from '../hooks'
+import { useContactForm, useKonami, useSchema, useTranslations } from '../hooks'
 
 const Contact = ({ interestedIn }) => {
   const router = useRouter()
@@ -34,6 +34,9 @@ const Contact = ({ interestedIn }) => {
     onInterestedInOptionChange,
   }
 
+  const formatMessage = useTranslations()
+  const { contactPageSchema } = useSchema()
+
   return (
     <>
       <InfoHead
@@ -42,41 +45,7 @@ const Contact = ({ interestedIn }) => {
         url={formatMessage('info-head-contact:url')}
       >
         <script type="application/ld+json">
-          [
-          {`
-          {
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "url": "https://www.classe.dev/contacto/",
-            "headline": "Classe, escuela de programación",
-            "description": "Si tienes cualquier duda contacta con nosotros. Classe, Escuela especialiazada en programación en Madrid.",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "name": "Contacto"
-            },
-            "provider": {
-              "@type": "EducationalOrganization",
-              "telephone": "+34910000000",
-              "email": "info@clase.dev",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Calle Calatrava, 27",
-                "postalCode": "28005",
-                "addressLocality": "Madrid",
-                "addressCountry": {
-                  "@type": "Country",
-                  "name": "España"
-                }
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "40.41097267132999",
-                "longitude": "-3.712211732196113"
-              }
-            }
-          }
-         `}
-          ,
+          [ {`${contactPageSchema}`},
           {`{
             "@context": "https://schema.org/",
             "@type": "BreadcrumbList",

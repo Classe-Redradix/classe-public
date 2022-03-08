@@ -3,7 +3,12 @@ import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import { COURSES } from '../../data'
-import { useContactForm, useMenu, useKonami } from '../../hooks'
+import {
+  useContactForm,
+  useMenu,
+  useKonami,
+  useTranslations,
+} from '../../hooks'
 
 const Courses = () => {
   const router = useRouter()
@@ -45,6 +50,8 @@ const Courses = () => {
     interestedInOptions,
     onInterestedInOptionChange,
   }
+
+  const formatMessage = useTranslations()
 
   const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
 
