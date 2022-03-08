@@ -11,6 +11,8 @@ import useMenu from './useMenu'
 import useContactForm from './useContactForm'
 import useRadio from './useRadio'
 import useKonami from './useKonami'
+import useSchema from './useSchema'
+import useCoursechema from './useCourseSchema'
 
 export {
   useBackgroundChange,
@@ -26,4 +28,6 @@ export {
   useContactForm,
   useRadio,
   useKonami,
+  useSchema,
+  useCoursechema,
 }

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import CompanyLogo from '/public/images/demo-company.svg'
 
 import InfoHead from 'InfoHead'
-import { INFO_HEAD, COURSES } from '../data'
+import { COURSES } from '../data'
 import { Home as HomeUI } from '../ui/views'
 import {
   useViewportHeight,
@@ -13,6 +13,8 @@ import {
   useScrambleText,
   useContactForm,
   useKonami,
+  useSchema,
+  useTranslations,
 } from '../hooks'
 
 const Home = () => {
@@ -91,6 +93,9 @@ const Home = () => {
     },
   ]
 
+  const formatMessage = useTranslations()
+  const { educationalOrganizationSchema, webSiteSchema } = useSchema()
+
   const onContactFormSuccess = () => {
     // TODO: handle success contact saving into Firebase
   }
@@ -117,43 +122,17 @@ const Home = () => {
     saveToFirebase: saveContactFormToFirebase,
   }
 
+  console.log(educationalOrganizationSchema, webSiteSchema)
+
   return (
     <>
       <InfoHead
-        title={INFO_HEAD.HOME.title}
-        description={INFO_HEAD.HOME.description}
-        url={INFO_HEAD.HOME.url}
+        title={formatMessage('info-head-home:title')}
+        description={formatMessage('info-head-home:description')}
+        url={formatMessage('info-head-home:url')}
       >
         <script type="application/ld+json">
-          [
-          {`{
-            "@context": "https://schema.org",
-            "@type": "EducationalOrganization",
-            "name": "Classe",
-            "url": "https://classe.dev",
-            "logo": {
-              "@type": "ImageObject",
-              "url":"https:classe.dev/images/logo.png"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+34910000000",
-              "contactType": "customer service",
-              "areaServed": "ES",
-              "availableLanguage": "es",
-              "url": "https://classe.dev/contacto"
-            }
-          }`}
-          ,
-          {`{
-            "@context": "https://schema.org/",
-            "@type": "WebSite",
-            "headline": "Classe, escuela de programación",
-            "name": "Classe, escuela de programación",
-            "description": "Classe, escuela de programación para dar el salto en tu carrera profesional.",
-            "url": "https://classe.dev"
-          }`}
-          ,
+          [ {`${educationalOrganizationSchema}`} , {`${webSiteSchema}`} ,
           {`{
             "@context": "https://schema.org/",
             "@type": "BreadcrumbList",

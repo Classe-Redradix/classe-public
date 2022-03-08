@@ -2,7 +2,7 @@ import InfoHead from 'InfoHead'
 import { useRouter } from 'next/router'
 
 import { COURSES } from './../../data'
-import { useKonami } from './../../hooks'
+import { useKonami, useCoursechema } from './../../hooks'
 import MainWrapper from './../../ui/components/wrappers/MainWrapper'
 import Menu from './../../ui/components/menu/Menu'
 
@@ -10,15 +10,7 @@ const Course = ({ course }) => {
   const router = useRouter()
 
   useKonami()
-
-  const formatDate = str => {
-    const date = str.split('.')
-    const day = date.slice(0, 1)[0]
-    const month = date.slice(1, 2)[0]
-    const year = date.slice(2, 3)[0]
-
-    return `20${year}-${month}-${day}`
-  }
+  const { courseSchema } = useCoursechema(course)
 
   return (
     <>
@@ -28,25 +20,7 @@ const Course = ({ course }) => {
         url={course.href}
       >
         <script type="application/ld+json">
-          [
-          {`{
-            "@context": "https://schema.org",
-            "@type": "Course",
-            "url": "https://clase.dev${course.href}",
-            "name": "${course.information.title}",
-            "description": "${course.information.description}",
-            "hasCourseInstance": [{
-              "@type": "CourseInstance",
-              "startDate": "${formatDate(course.information.start)}",
-              "endDate": "${formatDate(course.information.finish)}",
-              "offers": {
-                "@type": "Offer",
-                "price": "${course.information.price}",
-                "priceCurrency": "EUR"
-              }
-            }]
-          }`}
-          ,
+          [ {`${courseSchema}`},
           {`{
             "@context": "https://schema.org/",
             "@type": "BreadcrumbList",
