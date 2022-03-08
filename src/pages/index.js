@@ -150,8 +150,22 @@ const Home = () => {
             "@type": "WebSite",
             "headline": "Classe, escuela de programación",
             "name": "Classe, escuela de programación",
-            "description": "Classe, escuela de programación para dar el salto en tu carrera profesional."
-            "url": "https://classe.dev",
+            "description": "Classe, escuela de programación para dar el salto en tu carrera profesional.",
+            "url": "https://classe.dev"
+          }`}
+          ,
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": {
+              "@type": "ListItem",
+              "name": "Classe, escuela de programación",
+              "position": "1",
+              "item": {
+                "@type": "Thing",
+                "@id": "https://clase.dev/"
+              }
+            }
           }`}
           ]
         </script>
