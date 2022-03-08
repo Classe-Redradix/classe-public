@@ -76,6 +76,29 @@ const Contact = ({ interestedIn }) => {
             }
           }
          `}
+          ,
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "name": "Classe, escuela de programación",
+              "position": "1",
+              "item": {
+                "@type": "Thing",
+                "@id": "https://clase.dev/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "name": "Contacto",
+              "position": "2",
+              "item": {
+                "@type": "Thing",
+                "@id": "https://clase.dev/contacto"
+              }
+            }]
+          }`}
           ]
         </script>
       </InfoHead>
