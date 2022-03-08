@@ -27,14 +27,12 @@ const Course = ({ course }) => {
         description={course.information.description}
         url={course.href}
       >
-        {console.log(course)}
         <script type="application/ld+json">
           [
-          {`
-          {
+          {`{
             "@context": "https://schema.org",
             "@type": "Course",
-            "url": "${course.href}",
+            "url": "https://clase.dev${course.href}",
             "name": "${course.information.title}",
             "description": "${course.information.description}",
             "hasCourseInstance": [{
@@ -47,8 +45,39 @@ const Course = ({ course }) => {
                 "priceCurrency": "EUR"
               }
             }]
-          }
-         `}
+          }`}
+          ,
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "name": "Classe, escuela de programación",
+              "position": "1",
+              "item": {
+                "@type": "Thing",
+                "@id": "https://clase.dev/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "name": "Cursos",
+              "position": "2",
+              "item": {
+                "@type": "Thing",
+                "@id": "https://clase.dev/cursos"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "name": "${course.information.title}",
+              "position": "3",
+              "item": {
+                "@type": "Thing",
+                "@id": "https://clase.dev${course.href}"
+              }
+            }]
+          }`}
           ]
         </script>
       </InfoHead>
