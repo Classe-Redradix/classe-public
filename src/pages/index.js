@@ -132,7 +132,7 @@ const Home = () => {
         url={formatMessage('info-head-home:url')}
       >
         <script type="application/ld+json">
-          [ {`${educationalOrganizationSchema}`} , {`${webSiteSchema}`} ,
+          [ {`${educationalOrganizationSchema}`}, {`${webSiteSchema}`} ,
           {`{
             "@context": "https://schema.org/",
             "@type": "BreadcrumbList",

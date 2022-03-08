@@ -7,6 +7,7 @@ import {
   useContactForm,
   useMenu,
   useKonami,
+  useSchema,
   useTranslations,
 } from '../../hooks'
 
@@ -52,6 +53,7 @@ const Courses = () => {
   }
 
   const formatMessage = useTranslations()
+  const { educationalOrganizationSchema } = useSchema()
 
   const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
 
@@ -63,26 +65,7 @@ const Courses = () => {
         url={formatMessage('info-head-courses:url')}
       >
         <script type="application/ld+json">
-          [
-          {`{
-            "@context": "https://schema.org",
-            "@type": "EducationalOrganization",
-            "name": "Classe",
-            "url": "https://classe.dev",
-            "logo": {
-              "@type": "ImageObject",
-              "url":"https:classe.dev/images/logo.png"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+34910000000",
-              "contactType": "customer service",
-              "areaServed": "ES",
-              "availableLanguage": "es",
-              "url": "https://classe.dev/contacto"
-            }
-          }`}
-          ,
+          [{`${educationalOrganizationSchema}`},
           {`{
             "@context": "https://schema.org/",
             "@type": "BreadcrumbList",
