@@ -54,7 +54,53 @@ const Courses = () => {
         title={INFO_HEAD.COURSES.title}
         description={INFO_HEAD.COURSES.description}
         url={INFO_HEAD.COURSES.url}
-      />
+      >
+        <script type="application/ld+json">
+          [
+          {`{
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Classe",
+            "url": "https://classe.dev",
+            "logo": {
+              "@type": "ImageObject",
+              "url":"https:classe.dev/images/logo.png"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+34910000000",
+              "contactType": "customer service",
+              "areaServed": "ES",
+              "availableLanguage": "es",
+              "url": "https://classe.dev/contacto"
+            }
+          }`}
+          ,
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "name": "Classe, escuela de programación",
+              "position": "1",
+              "item": {
+                "@type": "Thing",
+                "@id": "https://clase.dev/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "name": "Cursos",
+              "position": "2",
+              "item": {
+                "@type": "Thing",
+                "@id": "https://clase.dev/cursos"
+              }
+            }]
+          }`}
+          ]
+        </script>
+      </InfoHead>
 
       <MainWrapper isBlack={true}>
         <Menu
