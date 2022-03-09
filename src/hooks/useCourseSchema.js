@@ -2,9 +2,9 @@ import useTranslations from './useTranslations'
 
 const formatDate = str => {
   const date = str.split('.')
-  const day = date.slice(0, 1)[0]
-  const month = date.slice(1, 2)[0]
-  const year = date.slice(2, 3)[0]
+  const day = date[0]
+  const month = date[1]
+  const year = date[2]
 
   return `20${year}-${month}-${day}`
 }
