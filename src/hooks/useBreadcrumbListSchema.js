@@ -1,4 +1,4 @@
-const useBreadcrumbListSchema = (list, course) => {
+const useBreadcrumbListSchema = list => {
   const breadcrumbList = {
     '@context': 'https://schema.org/',
     '@type': 'BreadcrumbList',

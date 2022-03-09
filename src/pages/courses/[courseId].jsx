@@ -2,7 +2,11 @@ import InfoHead from 'InfoHead'
 import { useRouter } from 'next/router'
 
 import { COURSES } from './../../data'
-import { useKonami, useCoursechema } from './../../hooks'
+import {
+  useKonami,
+  useCoursechema,
+  useBreadcrumbListSchema,
+} from './../../hooks'
 import MainWrapper from './../../ui/components/wrappers/MainWrapper'
 import Menu from './../../ui/components/menu/Menu'
 
@@ -10,7 +14,13 @@ const Course = ({ course }) => {
   const router = useRouter()
 
   useKonami()
+
   const { courseSchema } = useCoursechema(course)
+  const { breadcrumbListSchema } = useBreadcrumbListSchema([
+    { name: 'Classe, escuela de programación', url: 'https://clase.dev/' },
+    { name: 'Cursos', url: 'https://clase.dev/cursos' },
+    { name: course.information.title, url: `https://clase.dev${course.href}` },
+  ])
 
   return (
     <>
@@ -20,39 +30,7 @@ const Course = ({ course }) => {
         url={course.href}
       >
         <script type="application/ld+json">
-          [ {`${courseSchema}`},
-          {`{
-            "@context": "https://schema.org/",
-            "@type": "BreadcrumbList",
-            "itemListElement": [{
-              "@type": "ListItem",
-              "name": "Classe, escuela de programación",
-              "position": "1",
-              "item": {
-                "@type": "Thing",
-                "@id": "https://clase.dev/"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "name": "Cursos",
-              "position": "2",
-              "item": {
-                "@type": "Thing",
-                "@id": "https://clase.dev/cursos"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "name": "${course.information.title}",
-              "position": "3",
-              "item": {
-                "@type": "Thing",
-                "@id": "https://clase.dev${course.href}"
-              }
-            }]
-          }`}
-          ]
+          [{`${courseSchema}`}, {`${breadcrumbListSchema}`}]
         </script>
       </InfoHead>
       <MainWrapper isBlack={true}>
