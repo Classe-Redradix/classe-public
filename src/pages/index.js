@@ -133,7 +133,7 @@ const Home = () => {
       <InfoHead
         title={formatMessage('info-head-home:title')}
         description={formatMessage('info-head-home:description')}
-        url={formatMessage('info-head-home:url')}
+        url={formatMessage('url:root')}
       >
         <script type="application/ld+json">
           [ {`${educationalOrganizationSchema}`}, {`${webSiteSchema}`},{' '}

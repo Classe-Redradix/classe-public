@@ -7,7 +7,7 @@ const useSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     name: 'Classe',
-    url: formatMessage('url-root'),
+    url: formatMessage('url:root'),
     logo: {
       '@type': 'ImageObject',
       url: 'https:classe.dev/images/logo.png',

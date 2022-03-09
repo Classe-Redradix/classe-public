@@ -43,8 +43,8 @@ const Contact = ({ interestedIn }) => {
   const formatMessage = useTranslations()
   const { contactPageSchema } = useSchema()
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
-    { name: 'Classe, escuela de programación', url: 'https://clase.dev/' },
-    { name: 'Contacto', url: 'https://clase.dev/contacto' },
+    { name: 'Classe, escuela de programación', url: formatMessage('url:root') },
+    { name: 'Contacto', url: formatMessage('url:contact') },
   ])
 
   return (
@@ -52,7 +52,7 @@ const Contact = ({ interestedIn }) => {
       <InfoHead
         title={formatMessage('info-head-contact:title')}
         description={formatMessage('info-head-contact:description')}
-        url={formatMessage('info-head-contact:url')}
+        url={formatMessage('url:contact')}
       >
         <script type="application/ld+json">
           [{`${contactPageSchema}`}, {`${breadcrumbListSchema}`}]

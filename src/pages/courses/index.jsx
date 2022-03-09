@@ -56,8 +56,8 @@ const Courses = () => {
   const formatMessage = useTranslations()
   const { educationalOrganizationSchema } = useSchema()
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
-    { name: 'Classe, escuela de programación', url: 'https://clase.dev/' },
-    { name: 'Cursos', url: 'https://clase.dev/cursos' },
+    { name: 'Classe, escuela de programación', url: formatMessage('url:root') },
+    { name: 'Cursos', url: formatMessage('url:courses') },
   ])
 
   const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
@@ -67,7 +67,7 @@ const Courses = () => {
       <InfoHead
         title={formatMessage('info-head-courses:title')}
         description={formatMessage('info-head-courses:description')}
-        url={formatMessage('info-head-courses:url')}
+        url={formatMessage('url:courses')}
       >
         <script type="application/ld+json">
           [{`${educationalOrganizationSchema}`}, {`${breadcrumbListSchema}`}]
