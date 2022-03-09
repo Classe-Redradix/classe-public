@@ -7,8 +7,9 @@ import {
   useContactForm,
   useMenu,
   useKonami,
-  useSchema,
   useTranslations,
+  useSchema,
+  useBreadcrumbListSchema,
 } from '../../hooks'
 
 const Courses = () => {
@@ -54,6 +55,10 @@ const Courses = () => {
 
   const formatMessage = useTranslations()
   const { educationalOrganizationSchema } = useSchema()
+  const { breadcrumbListSchema } = useBreadcrumbListSchema([
+    { name: 'Classe, escuela de programación', url: 'https://clase.dev/' },
+    { name: 'Cursos', url: 'https://clase.dev/cursos' },
+  ])
 
   const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
 
@@ -65,30 +70,7 @@ const Courses = () => {
         url={formatMessage('info-head-courses:url')}
       >
         <script type="application/ld+json">
-          [{`${educationalOrganizationSchema}`},
-          {`{
-            "@context": "https://schema.org/",
-            "@type": "BreadcrumbList",
-            "itemListElement": [{
-              "@type": "ListItem",
-              "name": "Classe, escuela de programación",
-              "position": "1",
-              "item": {
-                "@type": "Thing",
-                "@id": "https://clase.dev/"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "name": "Cursos",
-              "position": "2",
-              "item": {
-                "@type": "Thing",
-                "@id": "https://clase.dev/cursos"
-              }
-            }]
-          }`}
-          ]
+          [{`${educationalOrganizationSchema}`}, {`${breadcrumbListSchema}`}]
         </script>
       </InfoHead>
 

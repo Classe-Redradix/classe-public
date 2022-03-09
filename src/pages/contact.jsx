@@ -3,7 +3,13 @@ import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import { COURSES } from '../data'
-import { useContactForm, useKonami, useSchema, useTranslations } from '../hooks'
+import {
+  useContactForm,
+  useKonami,
+  useTranslations,
+  useSchema,
+  useBreadcrumbListSchema,
+} from '../hooks'
 
 const Contact = ({ interestedIn }) => {
   const router = useRouter()
@@ -36,6 +42,10 @@ const Contact = ({ interestedIn }) => {
 
   const formatMessage = useTranslations()
   const { contactPageSchema } = useSchema()
+  const { breadcrumbListSchema } = useBreadcrumbListSchema([
+    { name: 'Classe, escuela de programación', url: 'https://clase.dev/' },
+    { name: 'Contacto', url: 'https://clase.dev/contacto' },
+  ])
 
   return (
     <>
@@ -45,30 +55,7 @@ const Contact = ({ interestedIn }) => {
         url={formatMessage('info-head-contact:url')}
       >
         <script type="application/ld+json">
-          [ {`${contactPageSchema}`},
-          {`{
-            "@context": "https://schema.org/",
-            "@type": "BreadcrumbList",
-            "itemListElement": [{
-              "@type": "ListItem",
-              "name": "Classe, escuela de programación",
-              "position": "1",
-              "item": {
-                "@type": "Thing",
-                "@id": "https://clase.dev/"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "name": "Contacto",
-              "position": "2",
-              "item": {
-                "@type": "Thing",
-                "@id": "https://clase.dev/contacto"
-              }
-            }]
-          }`}
-          ]
+          [{`${contactPageSchema}`}, {`${breadcrumbListSchema}`}]
         </script>
       </InfoHead>
       <MainWrapper isBlack={true}>

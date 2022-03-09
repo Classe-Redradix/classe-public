@@ -13,6 +13,7 @@ import useRadio from './useRadio'
 import useKonami from './useKonami'
 import useSchema from './useSchema'
 import useCoursechema from './useCourseSchema'
+import useBreadcrumbListSchema from './useBreadcrumbListSchema'
 
 export {
   useBackgroundChange,
@@ -30,4 +31,5 @@ export {
   useKonami,
   useSchema,
   useCoursechema,
+  useBreadcrumbListSchema,
 }

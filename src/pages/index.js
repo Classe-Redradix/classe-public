@@ -13,8 +13,9 @@ import {
   useScrambleText,
   useContactForm,
   useKonami,
-  useSchema,
   useTranslations,
+  useSchema,
+  useBreadcrumbListSchema,
 } from '../hooks'
 
 const Home = () => {
@@ -95,6 +96,9 @@ const Home = () => {
 
   const formatMessage = useTranslations()
   const { educationalOrganizationSchema, webSiteSchema } = useSchema()
+  const { breadcrumbListSchema } = useBreadcrumbListSchema([
+    { name: 'Classe, escuela de programación', url: 'https://clase.dev/' },
+  ])
 
   const onContactFormSuccess = () => {
     // TODO: handle success contact saving into Firebase
@@ -132,21 +136,8 @@ const Home = () => {
         url={formatMessage('info-head-home:url')}
       >
         <script type="application/ld+json">
-          [ {`${educationalOrganizationSchema}`}, {`${webSiteSchema}`} ,
-          {`{
-            "@context": "https://schema.org/",
-            "@type": "BreadcrumbList",
-            "itemListElement": {
-              "@type": "ListItem",
-              "name": "Classe, escuela de programación",
-              "position": "1",
-              "item": {
-                "@type": "Thing",
-                "@id": "https://clase.dev/"
-              }
-            }
-          }`}
-          ]
+          [ {`${educationalOrganizationSchema}`}, {`${webSiteSchema}`},{' '}
+          {`${breadcrumbListSchema}`}]
         </script>
       </InfoHead>
       <HomeUI
