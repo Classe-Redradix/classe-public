@@ -129,8 +129,6 @@ const Home = () => {
     saveToFirebase: saveContactFormToFirebase,
   }
 
-  console.log(educationalOrganizationSchema, webSiteSchema)
-
   return (
     <>
       <InfoHead
