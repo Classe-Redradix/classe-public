@@ -6,61 +6,61 @@ const useSchema = () => {
   const educationalOrganization = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
-    name: 'Classe',
+    name: formatMessage('schema-educational-organization:name'),
     url: formatMessage('url:root'),
     logo: {
       '@type': 'ImageObject',
-      url: 'https:classe.dev/images/logo.png',
+      url: formatMessage('url:logo'),
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+34910000000',
+      telephone: formatMessage('schema-educational-organization:phone'),
       contactType: 'customer service',
-      areaServed: 'ES',
-      availableLanguage: 'es',
-      url: 'https://classe.dev/contacto',
+      areaServed: formatMessage(
+        'schema-educational-organization:lang-upper-case',
+      ),
+      availableLanguage: formatMessage('schema-educational-organization:lang'),
+      url: formatMessage('url:contact'),
     },
   }
 
   const webSite = {
     '@context': 'https://schema.org/',
     '@type': 'WebSite',
-    headline: 'Classe, escuela de programación',
-    name: 'Classe, escuela de programación',
-    description:
-      'Classe, escuela de programación para dar el salto en tu carrera profesional.',
-    url: 'https://classe.dev',
+    headline: formatMessage('schema-website:headline'),
+    name: formatMessage('schema-website:name'),
+    description: formatMessage('schema-website:description'),
+    url: formatMessage('url:root'),
   }
 
   const contactPage = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
-    url: 'https://www.classe.dev/contacto/',
-    headline: 'Classe, escuela de programación',
-    description:
-      'Si tienes cualquier duda contacta con nosotros. Classe, Escuela especialiazada en programación en Madrid.',
+    url: formatMessage('url:contact'),
+    headline: formatMessage('schema-contact-page:headline'),
+    description: formatMessage('schema-contact-page:description'),
     mainEntityOfPage: {
       '@type': 'WebPage',
-      name: 'Contacto',
+      name: formatMessage('schema-contact-page:main-entity-of-page-name'),
     },
     provider: {
       '@type': 'EducationalOrganization',
-      telephone: '+34910000000',
-      email: 'info@clase.dev',
+      telephone: formatMessage('schema-contact-page:phone'),
+      email: formatMessage('schema-contact-page:email'),
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Calle Calatrava, 27',
-        postalCode: '28005',
-        addressLocality: 'Madrid',
+        streetAddress: formatMessage('schema-contact-page:address'),
+        postalCode: formatMessage('schema-contact-page:postal-code'),
+        addressLocality: formatMessage('schema-contact-page:locality'),
         addressCountry: {
           '@type': 'Country',
-          name: 'España',
+          name: formatMessage('schema-contact-page:country'),
         },
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: '40.41097267132999',
-        longitude: '-3.712211732196113',
+        latitude: formatMessage('schema-contact-page:latitude'),
+        longitude: formatMessage('schema-contact-page:longitude'),
       },
     },
   }

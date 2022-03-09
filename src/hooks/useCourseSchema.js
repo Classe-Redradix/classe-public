@@ -26,7 +26,7 @@ const useCoursechema = courseData => {
         offers: {
           '@type': 'Offer',
           price: courseData.information.price,
-          priceCurrency: 'EUR',
+          priceCurrency: formatMessage('schema-course:price-currency'),
         },
       },
     ],

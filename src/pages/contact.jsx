@@ -43,8 +43,14 @@ const Contact = ({ interestedIn }) => {
   const formatMessage = useTranslations()
   const { contactPageSchema } = useSchema()
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
-    { name: 'Classe, escuela de programación', url: formatMessage('url:root') },
-    { name: 'Contacto', url: formatMessage('url:contact') },
+    {
+      name: formatMessage('schema-breadcrumb-list:home-name'),
+      url: formatMessage('url:root'),
+    },
+    {
+      name: formatMessage('schema-breadcrumb-list:contact-name'),
+      url: formatMessage('url:contact'),
+    },
   ])
 
   return (

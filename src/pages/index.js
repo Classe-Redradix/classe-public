@@ -97,7 +97,10 @@ const Home = () => {
   const formatMessage = useTranslations()
   const { educationalOrganizationSchema, webSiteSchema } = useSchema()
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
-    { name: 'Classe, escuela de programación', url: 'https://clase.dev/' },
+    {
+      name: formatMessage('schema-breadcrumb-list:home-name'),
+      url: formatMessage('url:root'),
+    },
   ])
 
   const onContactFormSuccess = () => {

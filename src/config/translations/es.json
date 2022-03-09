@@ -3,6 +3,7 @@
   "url:courses": "https://classe.dev/cursos",
   "url:course": "https://classe.dev{course}",
   "url:contact": "https://classe.dev/contacto",
+  "url:logo": "https://classe.dev/images/logo.png",
   "url:og-logo": "https://classe.dev/images/og-logo.png",
 
   "info-head-home:title": "Classe - Escuela de programación",
@@ -15,6 +16,33 @@
 
   "info-head-contact:title": "Contacto | Classe",
   "info-head-contact:description": "Descripción de la página de contacto",
+
+  "schema-educational-organization:name": "Classe",
+  "schema-educational-organization:phone": "+34910000000",
+  "schema-educational-organization:lang": "es",
+  "schema-educational-organization:lang-upper-case": "ES",
+
+  "schema-website:headline": "Classe, escuela de programación",
+  "schema-website:name": "Classe, escuela de programación",
+  "schema-website:description": "Classe, escuela de programación para dar el salto en tu carrera profesional.",
+
+  "schema-contact-page:headline": "Classe, escuela de programación",
+  "schema-contact-page:description": "Si tienes cualquier duda contacta con nosotros. Classe, Escuela especialiazada en programación en Madrid.",
+  "schema-contact-page:main-entity-of-page-name": "Contacto",
+  "schema-contact-page:phone": "+34910000000",
+  "schema-contact-page:email": "info@clase.dev",
+  "schema-contact-page:address": "Calle Calatrava, 27",
+  "schema-contact-page:postal-code": "28005",
+  "schema-contact-page:locality": "Madrid",
+  "schema-contact-page:country": "España",
+  "schema-contact-page:latitude": "40.41097267132999",
+  "schema-contact-page:longitude": "-3.712211732196113",
+
+  "schema-course:price-currency": "EUR",
+
+  "schema-breadcrumb-list:home-name": "Classe, escuela de programación",
+  "schema-breadcrumb-list:courses-name": "Cursos",
+  "schema-breadcrumb-list:contact-name": "Contacto",
 
   "general:conditions-check": "Acepto los términos y condiciones",
   "general:go-to-home": "Ir a la home",

@@ -56,8 +56,14 @@ const Courses = () => {
   const formatMessage = useTranslations()
   const { educationalOrganizationSchema } = useSchema()
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
-    { name: 'Classe, escuela de programación', url: formatMessage('url:root') },
-    { name: 'Cursos', url: formatMessage('url:courses') },
+    {
+      name: formatMessage('schema-breadcrumb-list:home-name'),
+      url: formatMessage('url:root'),
+    },
+    {
+      name: formatMessage('schema-breadcrumb-list:courses-name'),
+      url: formatMessage('url:courses'),
+    },
   ])
 
   const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'

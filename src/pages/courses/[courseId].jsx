@@ -20,10 +20,13 @@ const Course = ({ course }) => {
   const { courseSchema } = useCoursechema(course)
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
     {
-      name: 'Classe, escuela de programación',
+      name: formatMessage('schema-breadcrumb-list:home-name'),
       url: formatMessage('url:root'),
     },
-    { name: 'Cursos', url: formatMessage('url:courses') },
+    {
+      name: formatMessage('schema-breadcrumb-list:courses-name'),
+      url: formatMessage('url:courses'),
+    },
     {
       name: course.information.title,
       url: formatMessage('url:course', {
