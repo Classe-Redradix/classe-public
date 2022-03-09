@@ -3,10 +3,8 @@
   height: 70vh;
   @include mq(md) {
     display: flex;
-    flex-wrap: nowrap;
     height: calc(100vh - 52px - #{$distance-big});
     padding-right: $distance-big;
-    height: 100vh;
   }
 }
 
@@ -26,6 +24,12 @@
     align-items: center;
     white-space: nowrap;
     text-transform: uppercase;
+    overflow: hidden;
+
+    span {
+      position: relative;
+      top: -15%;
+    }
   }
 
   &-tab {
@@ -50,7 +54,7 @@
   }
 
   @include mq(md) {
-    max-width: calc(100vw - (#{$distance-big} * 2));
+    min-width: calc(100vw - (#{$distance-big} * 2));
 
     &-name {
       order: 1;

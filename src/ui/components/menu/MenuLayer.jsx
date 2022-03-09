@@ -76,7 +76,11 @@ const MenuLayer = ({
               contactFormParams={contactFormParams}
             />
           ) : isCourseOpen ? (
-            <MenuCourse course={course} openContact={openContact} />
+            <MenuCourse
+              isCourseOpen={isCourseOpen}
+              course={course}
+              openContact={openContact}
+            />
           ) : (
             <Row type="quarter" extraClass="menuLayer-courses">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>

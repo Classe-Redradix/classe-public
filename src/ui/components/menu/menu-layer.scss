@@ -210,10 +210,6 @@
       height: calc(var(--vh, 1vh) * 100);
     }
 
-    &.is-course {
-      // padding-right: $distance-big;
-    }
-
     &-wrapper {
       padding: $distance-big;
       padding-top: $distance-big;
@@ -221,6 +217,15 @@
 
     &-content {
       min-height: calc(100% - 28px);
+
+      &.is-block {
+        height: calc(100% - 60px);
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
     }
 
     &-courses.row {

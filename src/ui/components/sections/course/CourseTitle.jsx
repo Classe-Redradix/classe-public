@@ -7,7 +7,7 @@ import useFitText from 'use-fit-text'
 
 const CourseTitle = ({ title }) => {
   const onFinish = useCallback(fontSize => {}, [])
-  const { fontSize, ref } = useFitText({ maxFontSize: 800, onFinish })
+  const { fontSize, ref } = useFitText({ maxFontSize: 700, onFinish })
 
   return (
     <SectionWrapper isBlack extraClass="courseTitle">

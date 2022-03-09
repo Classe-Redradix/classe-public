@@ -37,8 +37,6 @@ const Course = ({ course = COURSES[0], isBlack, isFluor, isLock }) => {
 
   useEffect(() => {
     if (container.current) {
-      console.log('scroll:' + container.current.scrollWidth)
-      console.log('window:' + document.documentElement.clientWidth)
       gsap.to(container.current, {
         x: () =>
           -(
@@ -46,12 +44,12 @@ const Course = ({ course = COURSES[0], isBlack, isFluor, isLock }) => {
           ) + 'px',
         ease: 'none',
         scrollTrigger: {
+          scroller: '.mainWrapper',
           trigger: container.current,
           invalidateOnRefresh: true,
           pin: true,
           scrub: 1,
-          markers: true,
-          end: () => '+=' + container.offsetWidth,
+          end: () => '+=' + container.current.offsetWidth,
         },
       })
     }

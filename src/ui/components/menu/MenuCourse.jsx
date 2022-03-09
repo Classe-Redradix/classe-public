@@ -27,103 +27,114 @@ const dates = [
   },
 ]
 
-const MenuCourse = ({ course, openContact }) => {
-  gsap.registerPlugin(ScrollTrigger)
-  const container = useRef(null)
+const MenuCourse = ({ course, openContact, isCourseOpen }) => {
   const t = useTranslations()
   useScrambleText()
+  gsap.registerPlugin(ScrollTrigger)
+  const container = useRef(null)
+
+  const { information, index, objetives } = course
 
   useEffect(() => {
+    let t = null
     if (container.current) {
-      console.log(container.current.scrollWidth)
-      gsap.to(container.current, {
+      const t = gsap.to(container.current, {
         x: () =>
           -(
             container.current.scrollWidth - document.documentElement.clientWidth
           ) + 'px',
         ease: 'none',
         scrollTrigger: {
+          // id: `fake`,
+          scroller: '.menuLayer-content',
           trigger: container.current,
           invalidateOnRefresh: true,
           pin: true,
           scrub: 1,
-          markers: true,
-          end: () => '+=' + container.offsetWidth,
+          end: () => '+=' + container.current.offsetWidth,
         },
       })
     }
-  }, [container.current])
 
-  const { information, index, objetives } = course
+    // return () => {
+    //   const titleElTrigger = ScrollTrigger.getById('fake')
+
+    //   if (titleElTrigger) {
+    //     titleElTrigger.kill()
+    //   }
+    // }
+  }, [isCourseOpen])
 
   return (
-    <section className="courseSections" ref={container}>
-      <CourseIntro
-        dates={dates}
-        name={information.title}
-        openContact={openContact}
-        course={course}
-      />
-      <CourseTitle title={t('course:index-title')} />
-      <CourseSection
-        number="01"
-        text="Introducción y recursos. String templates. Desestructuración.
+    <div>
+      <div className="courseSections" ref={container}>
+        <CourseIntro
+          dates={dates}
+          name={information.title}
+          openContact={openContact}
+          course={course}
+        />
+        <CourseTitle title={t('course:index-title')} />
+        <CourseSection
+          number="01"
+          text="Introducción y recursos. String templates. Desestructuración.
 Declaración de variables. (2H)"
-        title="course:fundamentals"
-      />
-      <CourseSectionEmpty />
-      <CourseSection
-        number="02"
-        text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
-        title="course:functional-programming"
-      />
-      <CourseSectionEmpty />
-      <CourseSection
-        number="03"
-        text="Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)"
-        title="course:object-oriented-programming"
-      />
-      <CourseSectionEmpty />
-      <CourseSection
-        number="04"
-        text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
-        title="course:functional-programming"
-      />
-      <CourseSectionEmpty />
-      <CourseSection
-        number="05"
-        text="Introducción. Callbacks. Iteración asíncrona. Sincronización. Eventos y Observables. Combinación de eventos. (4H)"
-        title="course:asynchronous-programming"
-      />
-      <CourseSectionEmpty />
-      <CourseSection
-        number="06"
-        text="Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)"
-        title="course:promises"
-      />
-      <CourseSectionEmpty />
+          title="course:fundamentals"
+        />
+        <CourseSectionEmpty />
+        <CourseSection
+          number="02"
+          text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
+          title="course:functional-programming"
+        />
+        <CourseSectionEmpty />
+        <CourseSection
+          number="03"
+          text="Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)"
+          title="course:object-oriented-programming"
+        />
+        <CourseSectionEmpty />
+        <CourseSection
+          number="04"
+          text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
+          title="course:functional-programming"
+        />
+        <CourseSectionEmpty />
+        <CourseSection
+          number="05"
+          text="Introducción. Callbacks. Iteración asíncrona. Sincronización. Eventos y Observables. Combinación de eventos. (4H)"
+          title="course:asynchronous-programming"
+        />
+        <CourseSectionEmpty />
+        <CourseSection
+          number="06"
+          text="Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)"
+          title="course:promises"
+        />
+        <CourseSectionEmpty />
 
-      <CourseSection
-        number="07"
-        text="Further study. Lecturas recomendadas. Recursos extra. (1H)"
-        title="courses:closing"
-      />
-      <CourseTitle title={t('course:objectives-title')} />
-      <CourseObjectives
-        learn="course:learn"
-        text="Congue fermentum fermentum justo, phasellus. Aliquam sapien scelerisque porttitor quam congue nibh. "
-        objectives="course:objectives"
-      />
-      <CourseInfo
-        price={information.price}
-        hours={information.hours}
-        places={information.places}
-        students={information.enrolledStudents}
-        successPercentage={information.successPercentage}
-      />
-      <CourseTitle title={t('footer:contact')} />
-      <CourseContact />
-    </section>
+        <CourseSection
+          number="07"
+          text="Further study. Lecturas recomendadas. Recursos extra. (1H)"
+          title="courses:closing"
+        />
+        <CourseTitle title={t('course:objectives-title')} />
+        <CourseObjectives
+          learn="course:learn"
+          text="Congue fermentum fermentum justo, phasellus. Aliquam sapien scelerisque porttitor quam congue nibh. "
+          objectives="course:objectives"
+        />
+        <CourseInfo
+          price={information.price}
+          hours={information.hours}
+          places={information.places}
+          students={information.enrolledStudents}
+          successPercentage={information.successPercentage}
+        />
+        <CourseTitle title={t('footer:contact')} />
+        <CourseContact />
+      </div>
+    </div>
   )
 }
 
