@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { COURSES } from './../../data'
 import {
   useKonami,
+  useTranslations,
   useCoursechema,
   useBreadcrumbListSchema,
 } from './../../hooks'
@@ -15,19 +16,32 @@ const Course = ({ course }) => {
 
   useKonami()
 
+  const formatMessage = useTranslations()
   const { courseSchema } = useCoursechema(course)
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
-    { name: 'Classe, escuela de programación', url: 'https://clase.dev/' },
-    { name: 'Cursos', url: 'https://clase.dev/cursos' },
-    { name: course.information.title, url: `https://clase.dev${course.href}` },
+    {
+      name: 'Classe, escuela de programación',
+      url: formatMessage('url:root'),
+    },
+    { name: 'Cursos', url: formatMessage('url:courses') },
+    {
+      name: course.information.title,
+      url: formatMessage('url:course', {
+        course: course.href,
+      }),
+    },
   ])
 
   return (
     <>
       <InfoHead
-        title={`Curso de ${course.information.title} | Classe`}
+        title={formatMessage('info-head-course:title', {
+          course: course.information.title,
+        })}
         description={course.information.description}
-        url={course.href}
+        url={formatMessage('url:course', {
+          course: course.href,
+        })}
       >
         <script type="application/ld+json">
           [{`${courseSchema}`}, {`${breadcrumbListSchema}`}]

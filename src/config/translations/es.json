@@ -1,16 +1,19 @@
 {
   "url:root": "https://classe.dev",
   "url:courses": "https://classe.dev/cursos",
+  "url:course": "https://classe.dev{course}",
   "url:contact": "https://classe.dev/contacto",
   "url:og-logo": "https://classe.dev/images/og-logo.png",
 
   "info-head-home:title": "Classe - Escuela de programación",
   "info-head-home:description": "Classe - Escuela de programación",
 
-  "info-head-courses:title": "Cursos | Classe'",
+  "info-head-courses:title": "Cursos | Classe",
   "info-head-courses:description": "Descripción de la página de cursos",
 
-  "info-head-contact:title": "Contacto | Classe'",
+  "info-head-course:title": "Curso de {course} | Classe",
+
+  "info-head-contact:title": "Contacto | Classe",
   "info-head-contact:description": "Descripción de la página de contacto",
 
   "general:conditions-check": "Acepto los términos y condiciones",
