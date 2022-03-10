@@ -45,6 +45,8 @@ const useSchema = () => {
     },
     provider: {
       '@type': 'EducationalOrganization',
+      name: formatMessage('schema-contact-page:name'),
+      image: formatMessage('url:logo'),
       telephone: formatMessage('schema-contact-page:phone'),
       email: formatMessage('schema-contact-page:email'),
       address: {
