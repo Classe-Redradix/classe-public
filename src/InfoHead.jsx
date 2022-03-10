@@ -36,6 +36,8 @@ const InfoHead = ({ title, description, url, children }) => {
         content={formatMessage('url:og-1200x1200')}
       />
 
+      <meta name="theme-color" content="#000000" />
+
       <link rel="manifest" href="manifest.json" />
 
       {children}
