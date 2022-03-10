@@ -11,7 +11,7 @@
   "url:favicon-144": "https://classe.dev/favicon-144.png",
 
   "info-head-home:title": "Classe - Escuela de programación",
-  "info-head-home:description": "Classe - Escuela de programación",
+  "info-head-home:description": "Descripción de la home",
 
   "info-head-courses:title": "Cursos | Classe",
   "info-head-courses:description": "Descripción de la página de cursos",
@@ -30,6 +30,7 @@
   "schema-website:name": "Classe, escuela de programación",
   "schema-website:description": "Classe, escuela de programación para dar el salto en tu carrera profesional.",
 
+  "schema-contact-page:name": "Classe",
   "schema-contact-page:headline": "Classe, escuela de programación",
   "schema-contact-page:description": "Si tienes cualquier duda contacta con nosotros. Classe, Escuela especialiazada en programación en Madrid.",
   "schema-contact-page:main-entity-of-page-name": "Contacto",
