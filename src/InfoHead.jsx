@@ -12,6 +12,8 @@ const InfoHead = ({ title, description, url, children }) => {
       <meta name="title" content={title} />
       <meta name="description" content={description} />
 
+      <meta name="robots" content="index, follow" />
+
       <link rel="canonical" href={url} />
 
       <meta property="og:type" content="website" />
@@ -27,7 +29,10 @@ const InfoHead = ({ title, description, url, children }) => {
       <meta property="twitter:url" content={url} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={formatMessage('url:og-1200x1200')} />
+      <meta
+        property="twitter:image"
+        content={formatMessage('url:og-1200x1200')}
+      />
 
       <link rel="manifest" href="manifest.json" />
 
