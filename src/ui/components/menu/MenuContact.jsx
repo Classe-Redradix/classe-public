@@ -44,6 +44,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
             e.preventDefault()
             contactFormParams.saveToFirebase({
               onSuccess: () => alert('Se guardó!'),
+              isMenuContact: true,
             })
           }}
         >
