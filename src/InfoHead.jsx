@@ -25,6 +25,8 @@ const InfoHead = ({ title, description, url, children }) => {
       <link rel="icon" href="/favicon-72.png" sizes="72x72" />
       <link rel="icon" href="/favicon-48.png" sizes="48x48" />
 
+      <link rel="apple-touch-icon" href="/favicon-192.png" />
+
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
