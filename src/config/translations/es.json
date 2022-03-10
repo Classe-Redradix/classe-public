@@ -4,9 +4,10 @@
   "url:course": "https://classe.dev{course}",
   "url:contact": "https://classe.dev/contacto",
   "url:logo": "https://classe.dev/images/logo.png",
-  "url:og-1200x1200": "https://classe.dev/images/og-1200x1200.png",
+  "url:og-1200x1200": "https://classe.dev/images/og/og-1200x1200.png",
   "url:og-921x518": "https://classe.dev/images/og/og-921x518.png",
   "url:og-400x400": "https://classe.dev/images/og/og-400x400.png",
+  "url:og-256x256": "https://classe.dev/images/og/og-256x256.png",
   "url:og-256x256": "https://classe.dev/images/og/og-256x256.png",
 
   "info-head-home:title": "Classe - Escuela de programación",
