@@ -55,7 +55,10 @@ const InfoHead = ({ title, description, url, children }) => {
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       <meta name="apple-mobile-web-app-title" content="CLASS(E)" />
 
-      <meta name="msapplication-TileImage" content="/favicon-144.png" />
+      <meta
+        name="msapplication-TileImage"
+        content={formatMessage('url:favicon-144')}
+      />
       <meta name="msapplication-TileColor" content="#000000" />
 
       {children}
