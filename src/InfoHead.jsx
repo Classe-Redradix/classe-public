@@ -26,6 +26,8 @@ const InfoHead = ({ title, description, url, children }) => {
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={formatMessage('url:og-logo')} />
 
+      <link rel="manifest" href="manifest.json" />
+
       {children}
     </Head>
   )

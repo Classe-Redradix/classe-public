@@ -1,0 +1,42 @@
+{
+  "name": "CLASS(E)",
+  "short_name": "CLASS(E)",
+  "icons": [
+    {
+      "src": "images/demo.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/demo.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "images/demo.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/demo.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "images/demo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/demo.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "orientation": "portrait",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF"
+}
