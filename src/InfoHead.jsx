@@ -24,8 +24,6 @@ const InfoHead = ({ title, description, url, children }) => {
       <link rel="icon" href="/favicon-72.png" sizes="72x72" />
       <link rel="icon" href="/favicon-48.png" sizes="48x48" />
 
-      <link rel="apple-touch-icon" href="/favicon-192.png" />
-
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
@@ -44,9 +42,21 @@ const InfoHead = ({ title, description, url, children }) => {
         content={formatMessage('url:og-1200x1200')}
       />
 
+      <link rel="manifest" href="manifest.json" />
+
       <meta name="theme-color" content="#000000" />
 
-      <link rel="manifest" href="manifest.json" />
+      <meta name="mobile-web-app-capable" content="yes" />
+
+      <meta name="application-name" content="CLASS(E)" />
+
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <link rel="apple-touch-icon" href="/favicon-192.png" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      <meta name="apple-mobile-web-app-title" content="CLASS(E)" />
+
+      <meta name="msapplication-TileImage" content="/favicon-144.png" />
+      <meta name="msapplication-TileColor" content="#000000" />
 
       {children}
     </Head>
