@@ -13,7 +13,6 @@ const InfoHead = ({ title, description, url, children }) => {
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
       <title>{title}</title>
-      <meta name="title" content={title} />
       <meta name="description" content={description} />
 
       <link rel="canonical" href={url} />
