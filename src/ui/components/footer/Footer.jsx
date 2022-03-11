@@ -127,7 +127,7 @@ const Footer = ({
             <li>
               <a
                 className="h4"
-                href="https://github.com/redradix"
+                href="https://github.com/ophion-studio/classe-public"
                 target="_blank"
               >
                 GitHub
