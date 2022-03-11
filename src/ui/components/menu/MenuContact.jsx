@@ -1,4 +1,5 @@
-import useTranslations from '../../../hooks/useTranslations'
+import { copyClasseEmailToClipboard } from '../../../business'
+import { useTranslations } from '../../../hooks'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Input from '../forms/Input'
@@ -25,7 +26,12 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
               line: text => <span className="line">{text}</span>,
             })}
           </h2>
-          <h2 className="heading menuLayer-contactAddressText">
+          {/* TODO: add the cursor pointer in the css (?) */}
+          <h2
+            className="heading menuLayer-contactAddressText"
+            style={{ cursor: 'pointer' }}
+            onClick={copyClasseEmailToClipboard}
+          >
             {t('contact:address2', {
               line: text => <span className="line">{text}</span>,
             })}
