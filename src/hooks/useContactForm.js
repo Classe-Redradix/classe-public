@@ -124,6 +124,7 @@ const useContactForm = interestedInCourseId => {
       setEmail('')
       setUserType('company')
       setInterestedInOptions(interestedInOptionsReset)
+      toggleTermsAndConditions()
 
       if (onSuccess !== undefined) {
         onSuccess()

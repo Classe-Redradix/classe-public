@@ -136,7 +136,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
               handleChange={contactFormParams.toggleTermsAndConditions}
               label={t('general:conditions-check')}
               name="conditions"
-              value={contactFormParams.termsAndConditions}
+              isChecked={contactFormParams.termsAndConditions}
             />
             {/* <Checkbox
               hasMessage
