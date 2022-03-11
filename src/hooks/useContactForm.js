@@ -45,8 +45,40 @@ const useContactForm = interestedInCourseId => {
    * @param {Object} config - Additional config
    * @callback config.onSuccess - Executed after storing the contact details
    * @callback config.onError - Executed if the storing throws an error
+   * @callback config.isMenuContact - Indicates if we are saving the full form
    */
-  const saveToFirebase = async ({ onSuccess, onError }) => {
+  const saveToFirebase = async ({
+    onSuccess,
+    onError,
+    isMenuContact = false,
+  }) => {
+    const errors = []
+
+    // NOTE: since in the home contact form the user only indicates what type
+    // of user is (student or company) and that the home contact form and the
+    // modal contact form are using the same form state, we have to indicate
+    // if we want to validate the "interested in" options and the user name.
+    // That's why the `isMenuContact` param is added.
+    // TODO: add error messages to `../config/translations/es.json`.
+    if (isMenuContact) {
+      if (interestedInOptions.filter(option => option.checked).length === 0) {
+        errors.push('Selecciona al menos un curso de tu interés')
+      }
+
+      if (name.trimRight() === '') {
+        errors.push('El nombre no puede estar vacío')
+      }
+    }
+
+    if (email.trimRight() === '') {
+      errors.push('Introduce un email válido')
+    }
+
+    if (errors.length > 0) {
+      alert(errors.join('\n'))
+      return
+    }
+
     setIsLoading(true)
 
     try {

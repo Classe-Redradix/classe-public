@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import MainWrapper from '../../components/wrappers/MainWrapper'
-import Menu from '../../components/menu/Menu'
 import CourseIntro from '../../components/sections/course/CourseIntro'
 import CourseTitle from '../../components/sections/course/CourseTitle'
 import CourseSection from '../../components/sections/course/CourseSection'
@@ -11,82 +12,114 @@ import CourseInfo from '../../components/sections/course/CourseInfo'
 import CourseContact from '../../components/sections/course/CourseContact'
 import useTranslations from '../../../hooks/useTranslations'
 import { CoursePropType, DatesPropType } from './../../sharedProptypes'
+import { COURSES } from '../../../data'
 
-const Course = ({
-  isBlack,
-  isFluor,
-  isLock,
-  courses,
-  dates,
-  name,
-  price,
-  hours,
-  places,
-  students,
-  successPercentage,
-}) => {
+const dates = [
+  {
+    day: '01',
+    month: 'Enero',
+    courses: [
+      {
+        title: 'Próxima convocatoria',
+        start: '16.01.21',
+        finish: '27.02.21',
+        to: '/',
+      },
+    ],
+  },
+]
+
+const Course = ({ course = COURSES[0], isBlack, isFluor, isLock }) => {
   const t = useTranslations()
+  gsap.registerPlugin(ScrollTrigger)
+  const container = useRef(null)
+  const { information } = course
+
+  useEffect(() => {
+    if (container.current) {
+      gsap.to(container.current, {
+        x: () =>
+          -(
+            container.current.scrollWidth - document.documentElement.clientWidth
+          ) + 'px',
+        ease: 'none',
+        scrollTrigger: {
+          scroller: '.mainWrapper',
+          trigger: container.current,
+          invalidateOnRefresh: true,
+          pin: true,
+          scrub: 1,
+          end: () => '+=' + container.current.offsetWidth,
+        },
+      })
+    }
+  }, [container.current])
+
   return (
     <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
-      <Menu isBlack={isBlack} courses={courses} />
-      <CourseIntro dates={dates} name={name} />
-      <section className="courseSections">
+      <section className="courseSections" ref={container}>
+        <CourseIntro
+          dates={dates}
+          name={information.title}
+          // openContact={openContact}
+          course={course}
+        />
         <CourseTitle title={t('course:index-title')} />
         <CourseSection
           number="01"
           text="Introducción y recursos. String templates. Desestructuración.
 Declaración de variables. (2H)"
-          title={t('course:fundamentals')}
+          title="course:fundamentals"
         />
         <CourseSectionEmpty />
         <CourseSection
           number="02"
           text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
-          title={t('course:functional-programming')}
+          title="course:functional-programming"
         />
         <CourseSectionEmpty />
         <CourseSection
           number="03"
           text="Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)"
-          title={t('course:object-oriented-programming')}
+          title="course:object-oriented-programming"
         />
         <CourseSectionEmpty />
         <CourseSection
           number="04"
           text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
-          title={t('course:functional-programming')}
+          title="course:functional-programming"
         />
         <CourseSectionEmpty />
         <CourseSection
           number="05"
           text="Introducción. Callbacks. Iteración asíncrona. Sincronización. Eventos y Observables. Combinación de eventos. (4H)"
-          title={t('course:asynchronous-programming')}
+          title="course:asynchronous-programming"
         />
         <CourseSectionEmpty />
         <CourseSection
           number="06"
           text="Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)"
-          title={t('course:promises')}
+          title="course:promises"
         />
         <CourseSectionEmpty />
 
         <CourseSection
           number="07"
           text="Further study. Lecturas recomendadas. Recursos extra. (1H)"
-          title={t('courses:closing')}
+          title="courses:closing"
         />
         <CourseTitle title={t('course:objectives-title')} />
         <CourseObjectives
-          learn={t('course:learn')}
+          learn="course:learn"
           text="Congue fermentum fermentum justo, phasellus. Aliquam sapien scelerisque porttitor quam congue nibh. "
-          objectives={t('course:objectives')}
+          objectives="course:objectives"
         />
         <CourseInfo
-          price={price}
-          hours={hours}
-          places={places}
-          students={students}
-          successPercentage={successPercentage}
+          price={information.price}
+          hours={information.hours}
+          places={information.places}
+          students={information.enrolledStudents}
+          successPercentage={information.successPercentage}
         />
         <CourseTitle title={t('footer:contact')} />
         <CourseContact />

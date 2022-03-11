@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -27,123 +27,114 @@ const dates = [
   },
 ]
 
-const MenuCourse = ({ course, openContact }) => {
-  // gsap.registerPlugin(ScrollTrigger)
+const MenuCourse = ({ course, openContact, isCourseOpen }) => {
   const t = useTranslations()
   useScrambleText()
-
-  useEffect(() => {
-    // Option #1
-    // const sections = gsap.utils.toArray('.courseSection')
-    // var maxWidth = 0
-    // const getMaxWidth = () => {
-    //   maxWidth = 0
-    //   sections.forEach(section => {
-    //     maxWidth += section.offsetWidth
-    //   })
-    // }
-    // getMaxWidth()
-    // ScrollTrigger.addEventListener('refreshInit', getMaxWidth)
-    // gsap.to(sections, {
-    //   x: () => `-${maxWidth - window.innerWidth}`,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.courseSections',
-    //     invalidateOnRefresh: true,
-    //     pin: true,
-    //     scrub: true,
-    //     end: () => `+=${maxWidth}`,
-    //   },
-    // })
-    // Option #2
-    // const container = document.querySelectorAll('.courseSections')
-    // if (container) {
-    //   gsap.to(container, {
-    //     x: () =>
-    //       -(container.scrollWidth - document.documentElement.clientWidth) +
-    //       'px',
-    //     ease: 'none',
-    //     scrollTrigger: {
-    //       trigger: container,
-    //       invalidateOnRefresh: true,
-    //       pin: true,
-    //       scrub: 1,
-    //       end: () => '+=' + container.offsetWidth,
-    //     },
-    //   })
-    // }
-  }, [])
+  gsap.registerPlugin(ScrollTrigger)
+  const container = useRef(null)
 
   const { information, index, objetives } = course
 
-  return (
-    <section className="courseSections">
-      <CourseIntro
-        dates={dates}
-        name={information.title}
-        openContact={openContact}
-        course={course}
-      />
-      <CourseTitle title={t('course:index-title')} />
-      <CourseSection
-        number="01"
-        text="Introducción y recursos. String templates. Desestructuración.
-Declaración de variables. (2H)"
-        title="course:fundamentals"
-      />
-      <CourseSectionEmpty />
-      <CourseSection
-        number="02"
-        text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
-        title="course:functional-programming"
-      />
-      <CourseSectionEmpty />
-      <CourseSection
-        number="03"
-        text="Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)"
-        title="course:object-oriented-programming"
-      />
-      <CourseSectionEmpty />
-      <CourseSection
-        number="04"
-        text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
-        title="course:functional-programming"
-      />
-      <CourseSectionEmpty />
-      <CourseSection
-        number="05"
-        text="Introducción. Callbacks. Iteración asíncrona. Sincronización. Eventos y Observables. Combinación de eventos. (4H)"
-        title="course:asynchronous-programming"
-      />
-      <CourseSectionEmpty />
-      <CourseSection
-        number="06"
-        text="Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)"
-        title="course:promises"
-      />
-      <CourseSectionEmpty />
+  useEffect(() => {
+    let t = null
+    if (container.current) {
+      const t = gsap.to(container.current, {
+        x: () =>
+          -(
+            container.current.scrollWidth - document.documentElement.clientWidth
+          ) + 'px',
+        ease: 'none',
+        scrollTrigger: {
+          // id: `fake`,
+          scroller: '.menuLayer-content',
+          trigger: container.current,
+          invalidateOnRefresh: true,
+          pin: true,
+          scrub: 1,
+          end: () => '+=' + container.current.offsetWidth,
+        },
+      })
+    }
 
-      <CourseSection
-        number="07"
-        text="Further study. Lecturas recomendadas. Recursos extra. (1H)"
-        title="courses:closing"
-      />
-      <CourseTitle title={t('course:objectives-title')} />
-      <CourseObjectives
-        learn="course:learn"
-        text="Congue fermentum fermentum justo, phasellus. Aliquam sapien scelerisque porttitor quam congue nibh. "
-        objectives="course:objectives"
-      />
-      <CourseInfo
-        price={information.price}
-        hours={information.hours}
-        places={information.places}
-        students={information.enrolledStudents}
-        successPercentage={information.successPercentage}
-      />
-      <CourseTitle title={t('footer:contact')} />
-      <CourseContact />
-    </section>
+    // return () => {
+    //   const titleElTrigger = ScrollTrigger.getById('fake')
+
+    //   if (titleElTrigger) {
+    //     titleElTrigger.kill()
+    //   }
+    // }
+  }, [isCourseOpen])
+
+  return (
+    <div>
+      <div className="courseSections" ref={container}>
+        <CourseIntro
+          dates={dates}
+          name={information.title}
+          openContact={openContact}
+          course={course}
+        />
+        <CourseTitle title={t('course:index-title')} />
+        <CourseSection
+          number="01"
+          text="Introducción y recursos. String templates. Desestructuración.
+Declaración de variables. (2H)"
+          title="course:fundamentals"
+        />
+        <CourseSectionEmpty />
+        <CourseSection
+          number="02"
+          text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
+          title="course:functional-programming"
+        />
+        <CourseSectionEmpty />
+        <CourseSection
+          number="03"
+          text="Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)"
+          title="course:object-oriented-programming"
+        />
+        <CourseSectionEmpty />
+        <CourseSection
+          number="04"
+          text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
+          title="course:functional-programming"
+        />
+        <CourseSectionEmpty />
+        <CourseSection
+          number="05"
+          text="Introducción. Callbacks. Iteración asíncrona. Sincronización. Eventos y Observables. Combinación de eventos. (4H)"
+          title="course:asynchronous-programming"
+        />
+        <CourseSectionEmpty />
+        <CourseSection
+          number="06"
+          text="Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)"
+          title="course:promises"
+        />
+        <CourseSectionEmpty />
+
+        <CourseSection
+          number="07"
+          text="Further study. Lecturas recomendadas. Recursos extra. (1H)"
+          title="courses:closing"
+        />
+        <CourseTitle title={t('course:objectives-title')} />
+        <CourseObjectives
+          learn="course:learn"
+          text="Congue fermentum fermentum justo, phasellus. Aliquam sapien scelerisque porttitor quam congue nibh. "
+          objectives="course:objectives"
+        />
+        <CourseInfo
+          price={information.price}
+          hours={information.hours}
+          places={information.places}
+          students={information.enrolledStudents}
+          successPercentage={information.successPercentage}
+        />
+        <CourseTitle title={t('footer:contact')} />
+        <CourseContact />
+      </div>
+    </div>
   )
 }
 

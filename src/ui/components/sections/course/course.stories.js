@@ -34,10 +34,61 @@ export default {
       control: {
         type: 'range',
         min: 0,
-        max: 100,
+        max: 342,
       },
     },
   },
+}
+
+const course = {
+  id: 'js-pro',
+  isFeatured: false,
+  // isPublic: true,
+  href: '/courses/js-pro',
+  information: {
+    title: 'JS PRO',
+    start: '1',
+    finish: '9',
+    description: "This is the best JavaScript course you'll ever find",
+    price: 900,
+    hours: 20,
+    places: 30,
+    enrolledStudents: 13,
+    successPercentage: 95,
+  },
+  index: [
+    {
+      number: '01',
+      name: 'Fundamentos',
+      description:
+        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
+    },
+    {
+      number: '02',
+      name: 'Programación funcional',
+      description:
+        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
+    },
+    {
+      number: '03',
+      name: 'Programación orientada a objetos',
+      description:
+        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
+    },
+    {
+      number: '04',
+      name: 'Programación funcional II',
+      description:
+        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
+    },
+  ],
+  objetives: [
+    'Objetive 1',
+    'Objetive 2',
+    'Objetive 3',
+    'Objetive 4',
+    'Objetive N',
+  ],
 }
 
 const dates = [
@@ -56,7 +107,7 @@ const dates = [
 ]
 
 export const courseIntro = ({ ...args }) => (
-  <CourseIntro isBlack dates={dates} {...args} />
+  <CourseIntro isBlack dates={dates} {...args} course={course} />
 )
 courseIntro.parameters = {
   options: {

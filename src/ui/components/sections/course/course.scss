@@ -3,26 +3,14 @@
   height: 70vh;
   @include mq(md) {
     display: flex;
-    flex-wrap: nowrap;
     height: calc(100vh - 52px - #{$distance-big});
     padding-right: $distance-big;
-    // overflow-x: scroll;
-
-    &::-webkit-scrollbar {
-      height: 1px;
-    }
-    &::-webkit-scrollbar-track {
-      background: #484a5f;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: $white;
-    }
   }
 }
 
 .courseIntro {
   $self: &;
-  min-width: calc(100vw - (#{$distance-small} * 2));
+  max-width: calc(100vw - (#{$distance-small} * 2));
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -36,6 +24,12 @@
     align-items: center;
     white-space: nowrap;
     text-transform: uppercase;
+    overflow: hidden;
+
+    span {
+      position: relative;
+      top: -15%;
+    }
   }
 
   &-tab {
