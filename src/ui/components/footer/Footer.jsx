@@ -77,10 +77,10 @@ const Footer = ({
             <div className="footer-formBlock">
               <Checkbox
                 hasMessage
-                handleChange={() => {}}
+                handleChange={contactFormParams.toggleTermsAndConditions}
                 label={t('general:conditions-check')}
                 name="conditions"
-                value=""
+                value={contactFormParams.termsAndConditions}
               />
             </div>
           </form>

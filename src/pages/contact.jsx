@@ -1,4 +1,4 @@
-import Menu from 'ui/components/menu/Menu'
+import Menu from '../ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import { COURSES } from '../data'
@@ -18,6 +18,8 @@ const Contact = ({ interestedIn }) => {
     onUserTypeChange,
     saveToFirebase,
     interestedInOptions,
+    termsAndConditions,
+    toggleTermsAndConditions,
     onInterestedInOptionChange,
   } = useContactForm(interestedIn)
 
@@ -30,6 +32,8 @@ const Contact = ({ interestedIn }) => {
     onUserTypeChange,
     saveToFirebase,
     interestedInOptions,
+    termsAndConditions,
+    toggleTermsAndConditions,
     onInterestedInOptionChange,
   }
 

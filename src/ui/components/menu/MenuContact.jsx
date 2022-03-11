@@ -127,10 +127,10 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           <div className="contact-formBlock">
             <Checkbox
               hasMessage
-              handleChange={() => {}}
+              handleChange={contactFormParams.toggleTermsAndConditions}
               label={t('general:conditions-check')}
               name="conditions"
-              value=""
+              value={contactFormParams.termsAndConditions}
             />
             {/* <Checkbox
               hasMessage
