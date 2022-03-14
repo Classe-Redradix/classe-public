@@ -63,21 +63,21 @@
   "menu:open": "Menu",
   "menu:close": "Cerrar",
 
-  "home:h1-title": "Classe, escuela de programación en Madrid. Cursos online y presenciales.",
+  "home:title": "Classe, escuela de programación en Madrid. Cursos online y presenciales.",
 
   "manifest:header": "Manifiesto",
   "manifest:claim": "<line>Más de 10 años</line> <lineTab>formando</lineTab> <lineTab>(pro)fesionales</lineTab>",
   "manifest:title": "<line>Aquí</line> <lineTab>nuestro</lineTab> <line>manifiesto</line>",
   "manifest:description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus semper ultricies et quis nibh imperdiet lorem fermentum, tempor. Ultrices mauris diam sapien est. Diam sit lorem dolor sed sit ac. Sollicitudin donec purus pretium nam ornare in ut.",
 
-  "courses:h1-title": "Listado de cursos de Classe",
+  "courses:title": "Listado de cursos de Classe",
   "courses:header": "Cursos",
   "courses:claim": "<line>Formación</line> <lineTab>para</lineTab> <lineTab>perfiles con</lineTab> <line>[pro] skills</line>",
   "courses:description": "Sabes programar pero todavía no eres un experto. Éste es el impulso que tu carrera necesita para alcanzar el trabajo que te mereces.",
   "courses:button": "Consúltanos",
   "courses:closing": "Cierre",
 
-  "course:h1-title": "Curso de {course}",
+  "course:title": "Curso de {course}",
   "course:button": "Inscribirme",
   "course:need-more-details": "¿Necesitas más detalles?",
   "course:contact-us": "Contáctanos",
@@ -135,8 +135,8 @@
   "find:description2": "INFO<ariaHidden>[at]</ariaHidden><screenReader>@</screenReader>classe.com",
   "find:claim": "<line>Y detrás</line> <lineTab>de la</lineTab> <lineTab>pantalla</lineTab>",
 
-  "contact:h1-title": "Ponte en contacto con Classe",
-  "contact:title": "<line>Ponte en</line> <line>contacto</line> <line>blabla</line>",
+  "contact:title": "Ponte en contacto con Classe",
+  "contact:second-title": "<line>Ponte en</line> <line>contacto</line> <line>blabla</line>",
   "contact:address1": "<line>Madrid, Calatrava 27</line> <line>[Metro La Latina]</line>",
   "contact:address2": "<lineAriaHidden>info[at]classe.com</lineAriaHidden><lineSROnly>info@classe.com</lineSROnly>",
   "contact:address3": "<line>+34 000 000 000</line>",

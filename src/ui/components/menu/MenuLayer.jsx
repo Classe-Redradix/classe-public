@@ -42,19 +42,19 @@ const MenuLayer = ({
     }
   }, [isOpen])
 
-  const h1Title = isContactOpen
-    ? t('contact:h1-title')
+  const title = isContactOpen
+    ? t('contact:title')
     : isCourseOpen
-    ? t('course:h1-title', {
+    ? t('course:title', {
         course: course.information.title,
       })
     : areCoursesOpen
-    ? t('courses:h1-title')
-    : t('home:h1-title')
+    ? t('courses:title')
+    : t('home:title')
 
   return (
     <div className={classes}>
-      <h1 className="sr-only">{h1Title}</h1>
+      <h1 className="sr-only">{title}</h1>
       <div className="menuLayer-wrapper">
         {isDesktop && hasClose ? (
           <div className="menuLayer-desktopHeader">

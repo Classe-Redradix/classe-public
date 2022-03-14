@@ -15,7 +15,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
       <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
         <div className="-scrambleTextWrapper">
           <h2 className="h2 -scrambleText">
-            {t('contact:title', {
+            {t('contact:second-title', {
               line: text => <span className="line">{text}</span>,
             })}
           </h2>
