@@ -25,6 +25,8 @@ const Contact = ({ interestedIn }) => {
     onUserTypeChange,
     saveToFirebase,
     interestedInOptions,
+    termsAndConditions,
+    toggleTermsAndConditions,
     onInterestedInOptionChange,
   } = useContactForm(interestedIn)
 
@@ -37,6 +39,8 @@ const Contact = ({ interestedIn }) => {
     onUserTypeChange,
     saveToFirebase,
     interestedInOptions,
+    termsAndConditions,
+    toggleTermsAndConditions,
     onInterestedInOptionChange,
   }
 

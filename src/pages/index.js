@@ -37,6 +37,8 @@ const Home = () => {
     onInterestedInOptionChange,
     name,
     onNameChange,
+    termsAndConditions,
+    toggleTermsAndConditions,
     saveToFirebase: saveContactFormToFirebase,
   } = useContactForm(interestedIn)
 
@@ -125,6 +127,8 @@ const Home = () => {
     interestedInOptions,
     onInterestedInOptionChange,
     name,
+    termsAndConditions,
+    toggleTermsAndConditions,
     onNameChange,
     saveToFirebase: saveContactFormToFirebase,
   }

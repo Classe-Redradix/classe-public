@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
+
+import { COURSES } from '../data'
+
 import useInput from './useInput'
 import useRadio from './useRadio'
-import { COURSES } from '../data'
+import useCheckbox from './useCheckbox'
 
 /**
  * The contact forms are vary similar. Since they use almost the same fields,
@@ -20,6 +23,9 @@ const useContactForm = interestedInCourseId => {
       label: course.information.title,
     })),
   )
+
+  // NOTE: we are not sending this value, it's just a form control
+  const [termsAndConditions, toggleTermsAndConditions] = useCheckbox(false)
 
   // States to know the request status
   const [isLoading, setIsLoading] = useState(false)
@@ -72,6 +78,10 @@ const useContactForm = interestedInCourseId => {
 
     if (email.trimRight() === '') {
       errors.push('Introduce un email válido')
+    }
+
+    if (!termsAndConditions) {
+      errors.push('Debes aceptar los términos y condiciones')
     }
 
     if (errors.length > 0) {
@@ -153,6 +163,8 @@ const useContactForm = interestedInCourseId => {
     onUserTypeChange,
     interestedInOptions,
     onInterestedInOptionChange,
+    termsAndConditions,
+    toggleTermsAndConditions,
   }
 }
 

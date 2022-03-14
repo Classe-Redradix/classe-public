@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { copyClasseEmailToClipboard } from '../../../business'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
@@ -41,7 +42,12 @@ const Find = ({ isBlack, isFluor }) => {
               })}
             </h3>
           </div>
-          <p className="notes">
+          {/* TODO: add the cursor pointer in the css (?) */}
+          <p
+            className="notes"
+            onClick={copyClasseEmailToClipboard}
+            style={{ cursor: 'pointer' }}
+          >
             {t('find:description2', {
               ariaHidden: text => <span aria-hidden="true">{text}</span>,
               screenReader: text => <span className="sr-only">{text}</span>,

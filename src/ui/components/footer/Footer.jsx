@@ -77,10 +77,10 @@ const Footer = ({
             <div className="footer-formBlock">
               <Checkbox
                 hasMessage
-                handleChange={() => {}}
+                handleChange={contactFormParams.toggleTermsAndConditions}
                 label={t('general:conditions-check')}
                 name="conditions"
-                value=""
+                value={contactFormParams.termsAndConditions}
               />
             </div>
           </form>
@@ -127,7 +127,7 @@ const Footer = ({
             <li>
               <a
                 className="h4"
-                href="https://github.com/redradix"
+                href="https://github.com/ophion-studio/classe-public"
                 target="_blank"
               >
                 GitHub
