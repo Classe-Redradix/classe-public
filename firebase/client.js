@@ -1,4 +1,5 @@
 import { initializeApp, getApps } from 'firebase/app'
+import { getAuth, signInAnonymously } from 'firebase/auth'
 import { getFirestore, collection, doc, setDoc } from 'firebase/firestore'
 
 const config = {
@@ -14,9 +15,14 @@ const config = {
 // prevent live reloading errors during development
 getApps().length === 0 && initializeApp(config)
 
+const auth = getAuth()
+
 const firestore = getFirestore()
 
 /**
+ * Saves a contact request into Firestore. It also checks if the user is
+ * logged in anonymously and, if it's not, signs it in so the contact request
+ * can be stored correctly.
  *
  * @param { Object } details Contact details
  * @param { string } details.name - User name
@@ -28,8 +34,18 @@ const firestore = getFirestore()
  *
  * @returns a promise with the contact request result
  */
-const saveContactRequest = details => {
+const saveContactRequest = async details => {
   const contactRequestRef = doc(collection(firestore, 'contactRequests'))
+
+  // We only sign in the user anonymously if there's no user
+  // The anonymous authentication token never expires:
+  //  https://stackoverflow.com/questions/41733137/firebase-auth-anonymous-login#comment70661655_41733137
+  if (auth.currentUser === null) {
+    // We must sign the requests anonymously to successfully store the contact requests
+    // as a security measure.
+    // Once the user is signed in, there's no need to do anything else.
+    await signInAnonymously(auth)
+  }
 
   setDoc(contactRequestRef, details)
 }
