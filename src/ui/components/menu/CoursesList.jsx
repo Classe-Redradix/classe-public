@@ -4,7 +4,7 @@ import useTranslations from '../../../hooks/useTranslations'
 import TabIcon from './../../../assets/icons/TabIcon'
 import { CoursePropType } from '../../sharedProptypes'
 
-const CoursesList = ({ courses, openCourse }) => {
+const CoursesList = ({ courses, openCourse, isPlacedAtHome }) => {
   const t = useTranslations()
 
   const handleCourseClick = (e, course) => {
@@ -12,18 +12,22 @@ const CoursesList = ({ courses, openCourse }) => {
     openCourse(course)
   }
 
+  const CoursesListlinkWrapper = isPlacedAtHome ? 'div' : 'h2'
+
   return (
     <div className="coursesList">
-      <h1 className="coursesList-title h2">
-        <span aria-hidden="true">
-          [{courses.length < 10 ? `0${courses.length}` : courses.length}]
-        </span>{' '}
-        {t('menu:courses')}
-      </h1>
+      {isPlacedAtHome ? null : (
+        <h1 className="coursesList-title h2">
+          <span aria-hidden="true">
+            [{courses.length < 10 ? `0${courses.length}` : courses.length}]
+          </span>{' '}
+          {t('menu:courses')}
+        </h1>
+      )}
       <ol className="coursesList-list">
         {courses.map((course, index) => (
           <li key={course.information.title}>
-            <h2>
+            <CoursesListlinkWrapper>
               <a
                 className="coursesList-link h1"
                 href={course.href}
@@ -39,7 +43,7 @@ const CoursesList = ({ courses, openCourse }) => {
                   </span>
                 </span>
               </a>
-            </h2>
+            </CoursesListlinkWrapper>
           </li>
         ))}
       </ol>
@@ -49,6 +53,7 @@ const CoursesList = ({ courses, openCourse }) => {
 
 CoursesList.propTypes = {
   courses: PropTypes.arrayOf(CoursePropType.isRequired).isRequired,
+  isPlacedAtHome: PropTypes.bool,
 }
 
 export default CoursesList

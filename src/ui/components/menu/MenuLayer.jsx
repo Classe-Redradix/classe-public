@@ -54,7 +54,9 @@ const MenuLayer = ({
 
   return (
     <div className={classes}>
-      {/* <h1 className="sr-only">{title}</h1> */}
+      {!areCoursesOpen && !isCourseOpen && !isContactOpen ? (
+        <h1 className="sr-only">{t('home:title')}</h1>
+      ) : null}
       <div className="menuLayer-wrapper">
         {isDesktop && hasClose ? (
           <div className="menuLayer-desktopHeader">
@@ -98,7 +100,11 @@ const MenuLayer = ({
                 <p>image</p>
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <CoursesList courses={courses} openCourse={openCourse} />
+                <CoursesList
+                  courses={courses}
+                  openCourse={openCourse}
+                  isPlacedAtHome={!areCoursesOpen}
+                />
               </Cell>
             </Row>
           )}
