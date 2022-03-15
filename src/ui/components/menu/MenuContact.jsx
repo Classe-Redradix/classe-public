@@ -14,20 +14,20 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
     <Row type="quarter" extraClass="menuLayer-contact">
       <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
         <div className="-scrambleTextWrapper">
-          <h2 className="h2 -scrambleText">
+          <h1 className="h2 -scrambleText">
             {t('contact:second-title', {
               line: text => <span className="line">{text}</span>,
             })}
-          </h2>
+          </h1>
         </div>
         <div className="menuLayer-contactAddress">
-          <h2 className="heading menuLayer-contactAddressText">
+          <div className="heading menuLayer-contactAddressText">
             {t('contact:address1', {
               line: text => <span className="line">{text}</span>,
             })}
-          </h2>
+          </div>
           {/* TODO: add the cursor pointer in the css (?) */}
-          <h2
+          <div
             className="heading menuLayer-contactAddressText"
             style={{ cursor: 'pointer' }}
             onClick={copyClasseEmailToClipboard}
@@ -40,12 +40,12 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
               ),
               lineSROnly: text => <span className="line sr-only">{text}</span>,
             })}
-          </h2>
-          <h2 className="heading menuLayer-contactAddressText">
+          </div>
+          <div className="heading menuLayer-contactAddressText">
             {t('contact:address3', {
               line: text => <span className="line">{text}</span>,
             })}
-          </h2>
+          </div>
         </div>
       </Cell>
       <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
@@ -61,11 +61,11 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
         >
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
-              <h2 className="h3 -scrambleText">
+              <label className="h3 -scrambleText" for="contactName">
                 {t('contact:my-name-is', {
                   line: text => <span className="line">{text}</span>,
                 })}
-              </h2>
+              </label>
             </div>
             <Input
               placeholder={t('general:name-lastname-placeholder')}
@@ -75,6 +75,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
               name="name"
               type="name"
               isNegative
+              id="contactName"
             />
           </div>
           <div className="contact-formBlock--flex">
@@ -96,11 +97,11 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           </div>
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
-              <h2 className="h3 -scrambleText">
+              <label className="h3 -scrambleText">
                 {t('contact:interested-in', {
                   line: text => <span className="line">{text}</span>,
                 })}
-              </h2>
+              </label>
             </div>
           </div>
           <div className="contact-formBlock--flex">
@@ -119,11 +120,11 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           </div>
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
-              <h2 className="h3 -scrambleText">
+              <label className="h3 -scrambleText" for="classeEmail">
                 {t('contact:my-email', {
                   line: text => <span className="line">{text}</span>,
                 })}
-              </h2>
+              </label>
             </div>
             <Input
               placeholder={t('general:placeholder')}
@@ -133,6 +134,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
               type="email"
               value={contactFormParams.email}
               isNegative
+              id="classeEmail"
             />
           </div>
           <div className="contact-formBlock">
