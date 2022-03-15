@@ -92,7 +92,7 @@
   "course:hours": "<line>horas</line>",
   "course:places": "<line>plazas</line>",
   "course:students": " <line>alumnos</line> <line>inscritos</line>",
-  "course:success": "<line>de éxito</line>",
+  "course:success": "<line>% de éxito</line>",
   "course:contact": "¿echas algo en falta? puedes combinar todo el temario de todos nuestros cursos como mejor se adapte a lo que BUSCAS",
 
   "custom:header": "Personaliza",
