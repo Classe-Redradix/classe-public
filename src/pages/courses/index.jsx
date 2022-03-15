@@ -4,6 +4,7 @@ import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import { COURSES } from '../../data'
 import {
+  useWindowSize,
   useContactForm,
   useMenu,
   useKonami,
@@ -68,6 +69,9 @@ const Courses = () => {
 
   const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
 
+  const size = useWindowSize()
+  const isDesktop = size.width >= 768
+
   return (
     <>
       <InfoHead
@@ -81,6 +85,9 @@ const Courses = () => {
       </InfoHead>
 
       <MainWrapper isBlack={true}>
+        {isDesktop ? (
+          <h1 className="sr-only">{formatMessage('courses:header')}</h1>
+        ) : null}
         <Menu
           actionText={actionText}
           contactFormParams={contactFormParams}

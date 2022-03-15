@@ -20,16 +20,16 @@ const Course = ({ dates, name, openContact, course }) => {
     <SectionWrapper isBlack extraClass="courseIntro">
       <Row type="full" extraClass="courseIntro-name">
         <Cell isNegative>
-          <div
+          <h1
             className="courseIntro-nameText"
             ref={ref}
             style={{
               fontSize,
             }}
           >
-            <TabIcon className="courseIntro-tab" />
+            <TabIcon className="courseIntro-tab" aria-hidden="true" />
             {name}
-          </div>
+          </h1>
         </Cell>
       </Row>
       <Row type="half" extraClass="courseIntro-data">
