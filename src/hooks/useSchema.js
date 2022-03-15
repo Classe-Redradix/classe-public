@@ -14,7 +14,6 @@ const useSchema = () => {
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: formatMessage('schema-educational-organization:phone'),
       contactType: 'customer service',
       areaServed: formatMessage(
         'schema-educational-organization:lang-upper-case',
@@ -47,7 +46,6 @@ const useSchema = () => {
       '@type': 'EducationalOrganization',
       name: formatMessage('schema-contact-page:name'),
       image: formatMessage('url:logo'),
-      telephone: formatMessage('schema-contact-page:phone'),
       email: formatMessage('schema-contact-page:email'),
       address: {
         '@type': 'PostalAddress',

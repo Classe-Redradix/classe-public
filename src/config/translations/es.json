@@ -22,7 +22,6 @@
   "info-head-contact:description": "Descripción de la página de contacto",
 
   "schema-educational-organization:name": "Classe",
-  "schema-educational-organization:phone": "+34910000000",
   "schema-educational-organization:lang": "es",
   "schema-educational-organization:lang-upper-case": "ES",
 
@@ -34,7 +33,6 @@
   "schema-contact-page:headline": "Classe, escuela de programación",
   "schema-contact-page:description": "Si tienes cualquier duda contacta con nosotros. Classe, Escuela especialiazada en programación en Madrid.",
   "schema-contact-page:main-entity-of-page-name": "Contacto",
-  "schema-contact-page:phone": "+34910000000",
   "schema-contact-page:email": "info@clase.dev",
   "schema-contact-page:address": "Calle Calatrava, 27",
   "schema-contact-page:postal-code": "28005",
@@ -139,7 +137,6 @@
   "contact:second-title": "<line>Ponte en</line> <line>contacto</line> <line>blabla</line>",
   "contact:address1": "<line>Madrid, Calatrava 27</line> <line>[Metro La Latina]</line>",
   "contact:address2": "<lineAriaHidden>info[at]classe.com</lineAriaHidden><lineSROnly>info@classe.com</lineSROnly>",
-  "contact:address3": "<line>+34 000 000 000</line>",
   "contact:my-name-is": "<line>Ey! Me llamo</line>",
   "contact:interested-in": "<line>Estoy interesado en</line>",
   "contact:my-email": "<line>Y este es mi correo</line>",

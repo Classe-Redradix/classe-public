@@ -39,11 +39,6 @@ const CourseContact = ({}) => {
               lineSROnly: text => <span className="line sr-only">{text}</span>,
             })}
           </h3>
-          <h3 className="heading menuLayer-contactAddressText">
-            {t('contact:address3', {
-              line: text => <span className="line">{text}</span>,
-            })}
-          </h3>
         </Cell>
         <Cell isNegative></Cell>
       </Row>

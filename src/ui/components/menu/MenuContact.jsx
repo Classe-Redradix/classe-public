@@ -41,11 +41,6 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
               lineSROnly: text => <span className="line sr-only">{text}</span>,
             })}
           </div>
-          <div className="heading menuLayer-contactAddressText">
-            {t('contact:address3', {
-              line: text => <span className="line">{text}</span>,
-            })}
-          </div>
         </div>
       </Cell>
       <Cell hasLinesHidden={linesHidden} isAnimated isNegative>

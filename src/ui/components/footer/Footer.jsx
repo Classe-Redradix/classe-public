@@ -168,9 +168,6 @@ const Footer = ({
           <a className="button" href="mailto:info@classe.com">
             info[at]classe.com
           </a>
-          <a className="button" href="tel:+34914346336">
-            +34 914 346 336
-          </a>
         </Cell>
       </Row>
       <Row type="full">
