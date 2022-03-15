@@ -24,21 +24,25 @@ const CourseContact = ({}) => {
         <Cell isNegative>
           <Glyph viewBox="0 0 56 73" className="courseSection-glypTop" />
 
-          <h3 className="heading menuLayer-contactAddressText">
-            {t('contact:address1', {
-              line: text => <span className="line">{text}</span>,
-            })}
-          </h3>
-          <h3 className="heading menuLayer-contactAddressText">
-            {t('contact:address2', {
-              lineAriaHidden: text => (
-                <span className="line" aria-hidden="true">
-                  {text}
-                </span>
-              ),
-              lineSROnly: text => <span className="line sr-only">{text}</span>,
-            })}
-          </h3>
+          <address>
+            <h3 className="heading menuLayer-contactAddressText">
+              {t('contact:address1', {
+                line: text => <span className="line">{text}</span>,
+              })}
+            </h3>
+            <h3 className="heading menuLayer-contactAddressText">
+              {t('contact:address2', {
+                lineAriaHidden: text => (
+                  <span className="line" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                lineSROnly: text => (
+                  <span className="line sr-only">{text}</span>
+                ),
+              })}
+            </h3>
+          </address>
         </Cell>
         <Cell isNegative></Cell>
       </Row>
