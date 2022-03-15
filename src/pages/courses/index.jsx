@@ -1,4 +1,4 @@
-import InfoHead from '../../InfoHead'
+import InfoHead from 'InfoHead'
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'

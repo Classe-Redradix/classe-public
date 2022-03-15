@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 import CompanyLogo from '/public/images/demo-company.svg'
 
-import InfoHead from '../InfoHead'
+import InfoHead from 'InfoHead'
 import { COURSES } from '../data'
 import { Home as HomeUI } from '../ui/views'
 import {
