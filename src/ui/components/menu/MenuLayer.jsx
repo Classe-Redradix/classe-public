@@ -46,11 +46,11 @@ const MenuLayer = ({
     }
   }, [isOpen])
 
+  const hasHomeTitle = !areCoursesOpen && !isCourseOpen && !isContactOpen
+
   return (
     <div className={classes}>
-      {!areCoursesOpen && !isCourseOpen && !isContactOpen ? (
-        <h1 className="sr-only">{t('home:title')}</h1>
-      ) : null}
+      {hasHomeTitle ? <h1 className="sr-only">{t('home:title')}</h1> : null}
       <div className="menuLayer-wrapper">
         {isDesktop && hasClose ? (
           <div className="menuLayer-desktopHeader">
