@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+
+import { MEDIA_QUERIES } from '../../../constants'
+
 import useWindowSize from '../../../hooks/useWindowSize'
 import useTranslations from '../../../hooks/useTranslations'
-import { MEDIA_QUERIES } from '../../../data'
+
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import CoursesList from './CoursesList'

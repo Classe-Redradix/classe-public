@@ -2,7 +2,10 @@ import InfoHead from '../../InfoHead'
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
-import { COURSES, MEDIA_QUERIES } from '../../data'
+
+import { MEDIA_QUERIES } from '../../../src/constants'
+
+import { COURSES } from '../../data'
 import {
   useWindowSize,
   useContactForm,
