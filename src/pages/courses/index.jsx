@@ -2,7 +2,7 @@ import InfoHead from '../../InfoHead'
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
-import { COURSES } from '../../data'
+import { COURSES, MEDIA_QUERIES } from '../../data'
 import {
   useWindowSize,
   useContactForm,
@@ -70,7 +70,7 @@ const Courses = () => {
   const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
 
   const size = useWindowSize()
-  const isDesktop = size.width >= 768
+  const isDesktop = size.width >= MEDIA_QUERIES.desktop
 
   return (
     <>

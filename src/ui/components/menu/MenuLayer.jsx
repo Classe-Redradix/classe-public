@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import useWindowSize from '../../../hooks/useWindowSize'
 import useTranslations from '../../../hooks/useTranslations'
+import { MEDIA_QUERIES } from '../../../data'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import CoursesList from './CoursesList'
@@ -32,7 +33,7 @@ const MenuLayer = ({
     'is-free': isContactOpen || isCourseOpen,
     'is-course': isCourseOpen,
   })
-  const isDesktop = size.width >= 768
+  const isDesktop = size.width >= MEDIA_QUERIES.desktop
 
   useEffect(() => {
     if (isOpen) {

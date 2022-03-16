@@ -4,6 +4,7 @@ import useWindowSize from '../../../hooks/useWindowSize'
 import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
+import { MEDIA_QUERIES } from '../../../data/'
 import { useRouter } from 'next/router'
 import {
   CoursePropType,
@@ -48,7 +49,7 @@ const Menu = ({
         areCoursesOpen={areCoursesOpen}
         handleClose={!!handleText ? handleText : handleClose}
       />
-      {size.width >= 768 ? (
+      {size.width >= MEDIA_QUERIES.desktop ? (
         <MenuDesktop
           isBlack={isBlack}
           isFluor={isFluor}
