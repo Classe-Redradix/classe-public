@@ -2,7 +2,7 @@
 
 La prioridad a la hora de estructurar el código ha sido la de crear el mínimo
 número de carpetas, intentando ubicar todos los archivos a los lugares más
-más cercanos donde se utilizan dichos archivos.
+más cercanos donde se utilizan dichos archivos (agrupación por contexto).
 
 ## Carpetas
 
@@ -21,7 +21,10 @@ más cercanos donde se utilizan dichos archivos.
 - [src/config](./src/config/): aquí se ubican las traducciones de la aplicación.
 
 - [src/data](./src/data/): en esta carpeta se incluyen todos los datos comunes
-  que se utilizan a lo largo de toda la aplicación.
+  que se utilizan a lo largo de toda la aplicación y que no tienen que ver
+  con la parte técnica. Sería como una carpeta `mocks`, siendo la única
+  diferencia el que los datos aquí almacenados sí que se utilizarán en la
+  aplicación final.
 
 - [src/hooks](./src/hooks/): hooks personalizados de React. Se han desarrollado
   con la idea de optimizar el trabajo y poder reutilizar funcionalidades de
