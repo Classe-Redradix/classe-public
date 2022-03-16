@@ -53,6 +53,7 @@ const MenuLayer = ({
             <button
               className="menuLayer-desktopHeader-button button"
               onClick={handleClose}
+              role="link"
             >
               [ <span className="braketHover">{t(actionText)}</span> ]
             </button>
@@ -115,6 +116,7 @@ const MenuLayer = ({
                   onClick={openContact}
                   className="menuDesktop-link"
                   aria-label={t('menu:contact')}
+                  role="link"
                 >
                   {t('menu:contact')}
                 </button>
