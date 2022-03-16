@@ -20,6 +20,9 @@ const Find = ({ isBlack, isFluor }) => {
               {t('find:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
+                lineSROnly: text => (
+                  <span className="line has-tab sr-only">{text}</span>
+                ),
               })}
             </h2>
           </div>
@@ -35,7 +38,7 @@ const Find = ({ isBlack, isFluor }) => {
         </Cell>
         <Cell hasGap isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h3 className="h1 scrambleText">
+            <h3 className="h1 scrambleText" aria-hidden="true">
               {t('find:claim', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
