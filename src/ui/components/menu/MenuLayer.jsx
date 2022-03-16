@@ -42,16 +42,6 @@ const MenuLayer = ({
     }
   }, [isOpen])
 
-  // const title = isContactOpen
-  //   ? t('contact:title')
-  //   : isCourseOpen
-  //   ? t('course:title', {
-  //       course: course.information.title,
-  //     })
-  //   : areCoursesOpen
-  //   ? t('courses:title')
-  //   : t('home:title')
-
   return (
     <div className={classes}>
       {!areCoursesOpen && !isCourseOpen && !isContactOpen ? (
