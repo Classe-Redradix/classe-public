@@ -115,7 +115,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           </div>
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
-              <label className="h3 -scrambleText" for="classeEmail">
+              <label className="h3 -scrambleText" for="contactEmail">
                 {t('contact:my-email', {
                   line: text => <span className="line">{text}</span>,
                 })}
@@ -129,7 +129,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
               type="email"
               value={contactFormParams.email}
               isNegative
-              id="classeEmail"
+              id="contactEmail"
             />
           </div>
           <div className="contact-formBlock">
