@@ -13,6 +13,7 @@ import useRadio from './useRadio'
 import useKonami from './useKonami'
 import useSchema from './useSchema'
 import useCoursechema from './useCourseSchema'
+import useEducationalEventchema from './useEducationalEventSchema'
 import useBreadcrumbListSchema from './useBreadcrumbListSchema'
 
 export {
@@ -31,5 +32,6 @@ export {
   useKonami,
   useSchema,
   useCoursechema,
+  useEducationalEventchema,
   useBreadcrumbListSchema,
 }

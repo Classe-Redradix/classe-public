@@ -43,6 +43,9 @@
 
   "schema-course:price-currency": "EUR",
 
+  "schema-educational-event:location-name": "Classe, escuela de programación",
+  "schema-educational-event:organitation-name": "Classe, escuela de programación",
+
   "schema-breadcrumb-list:home-name": "Classe, escuela de programación",
   "schema-breadcrumb-list:courses-name": "Cursos",
   "schema-breadcrumb-list:contact-name": "Contacto",

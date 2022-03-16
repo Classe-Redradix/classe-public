@@ -6,6 +6,7 @@ import {
   useKonami,
   useTranslations,
   useCoursechema,
+  useEducationalEventchema,
   useBreadcrumbListSchema,
 } from './../../hooks'
 import MainWrapper from './../../ui/components/wrappers/MainWrapper'
@@ -18,6 +19,7 @@ const Course = ({ course }) => {
 
   const formatMessage = useTranslations()
   const { courseSchema } = useCoursechema(course)
+  const { educationalEventSchema } = useEducationalEventchema(course)
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
     {
       name: formatMessage('schema-breadcrumb-list:home-name'),
@@ -47,7 +49,8 @@ const Course = ({ course }) => {
         })}
       >
         <script type="application/ld+json">
-          [{`${courseSchema}`}, {`${breadcrumbListSchema}`}]
+          [{`${courseSchema}`}, {`${educationalEventSchema}`},{' '}
+          {`${breadcrumbListSchema}`}]
         </script>
       </InfoHead>
       <MainWrapper isBlack={true}>
