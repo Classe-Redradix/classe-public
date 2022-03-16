@@ -19,8 +19,8 @@ const CoursesList = ({ courses, openCourse, isPlacedAtHome }) => {
       {isPlacedAtHome ? null : (
         <h1 className="coursesList-title h2">
           <span aria-hidden="true">
-            [{courses.length < 10 ? `0${courses.length}` : courses.length}]
-          </span>{' '}
+            [{courses.length < 10 ? `0${courses.length}` : courses.length}]{' '}
+          </span>
           {t('menu:courses')}
         </h1>
       )}
