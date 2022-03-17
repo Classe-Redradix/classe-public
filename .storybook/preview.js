@@ -2,7 +2,7 @@ import { addDecorator, addParameters } from '@storybook/react'
 import * as NextImage from 'next/image'
 import withIntl from './addons/intl/withIntl'
 import { registerIcon } from '../src/styleguide/styleguide-config'
-import '!style-loader!css-loader!sass-loader!../src/assets/stylesheets/style.scss'
+import '!style-loader!css-loader!resolve-url-loader!sass-loader!../src/assets/stylesheets/style.scss'
 
 const OriginalNextImage = NextImage.default
 
