@@ -7,7 +7,7 @@ const copyClasseEmailToClipboard = () => {
   // If we try to `navigator.clipboard.writeText('hello')`
   // directly on the browser's console, we would get and error if
   // the document is not focused.
-  navigator.clipboard.writeText('info@classe.com')
+  navigator.clipboard.writeText('info@classe.dev')
 
   // TODO: show better feedback, don't use `alert`. Maybe we could pass a
   // callback as param to handle this event when it's completed'
