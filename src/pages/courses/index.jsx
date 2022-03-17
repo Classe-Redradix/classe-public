@@ -54,10 +54,10 @@ const Courses = () => {
         contactFormParams={contactFormParams}
         handleText={() => {
           if (isCourseOpen) {
-            router.replace('/courses')
+            router.push('/courses')
             openCourses()
           } else {
-            router.replace('/')
+            router.push('/')
           }
         }}
         isContactOpen={isContactOpen}

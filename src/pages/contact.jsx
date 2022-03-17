@@ -43,7 +43,7 @@ const Contact = ({ interestedIn }) => {
         actionText="general:go-to-home"
         contactFormParams={contactFormParams}
         handleText={() => {
-          router.replace('/')
+          router.push('/')
         }}
         isContactOpen={true}
         isBlack={true}

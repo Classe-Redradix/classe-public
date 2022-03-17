@@ -15,7 +15,7 @@ const Course = ({ course }) => {
       <Menu
         actionText="general:go-to-home"
         handleText={() => {
-          router.replace('/')
+          router.push('/')
         }}
         openContact={() =>
           // HACK: in the course page, we force the app to redirect to the
@@ -25,7 +25,7 @@ const Course = ({ course }) => {
           // If we find a way to make it compatible, then we should use the
           // `useMenu` and `useContactForm` hooks and pass all their values to
           // the `Menu` component, like in `src/pages/courses/index.jsx`
-          router.replace(`/contact?interested-in=${course.id}`)
+          router.push(`/contact?interested-in=${course.id}`)
         }
         course={course}
         isCourseOpen={true}

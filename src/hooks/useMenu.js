@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 const useMenu = ({
@@ -19,7 +19,7 @@ const useMenu = ({
     setIsCourseOpen(false)
     setAreCoursesOpen(true)
 
-    router.replace(router.pathname, '/courses')
+    router.push(router.pathname, '/courses')
   }
 
   const openContact = (_, interestedIn) => {
@@ -35,7 +35,7 @@ const useMenu = ({
           }
         : { name: router.pathname, as: '/contact' }
 
-    router.replace(path.name, path.as)
+    router.push(path.name, path.as)
   }
 
   const handleClose = () => {
@@ -43,7 +43,7 @@ const useMenu = ({
     setAreCoursesOpen(false)
     setIsCourseOpen(false)
 
-    router.replace('/')
+    router.push('/')
   }
 
   const openCourse = useCallback(
@@ -52,10 +52,41 @@ const useMenu = ({
       setIsCourseOpen(true)
       setCourse(course)
 
-      router.replace(router.pathname, course.href)
+      router.push(router.pathname, course.href)
     },
     [course],
   )
+
+  useEffect(() => {
+    // HACK: since we are using a navigation like Twitter, we have to handle
+    // the `history back` action. This will allow us to navigate with the
+    // history (forwards and backwards) and show the correct page.
+    const handlePopState = event => {
+      if (event.state.as === '/') {
+        setAreCoursesOpen(false)
+        setIsCourseOpen(false)
+        setIsContactOpen(false)
+      } else if (event.state.as === '/courses') {
+        setIsCourseOpen(false)
+        setIsContactOpen(false)
+        setAreCoursesOpen(true)
+      } else if (event.state.as === '/contact') {
+        setIsCourseOpen(false)
+        setAreCoursesOpen(false)
+        setIsContactOpen(true)
+      } else {
+        setAreCoursesOpen(false)
+        setIsCourseOpen(false)
+        setIsCourseOpen(true)
+      }
+    }
+
+    window.addEventListener('popstate', handlePopState)
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState)
+    }
+  }, [])
 
   return {
     isContactOpen,
