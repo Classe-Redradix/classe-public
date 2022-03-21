@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
  * `undefined`.
  *
  * @example
- *  /// URL: https://classe.com/contact?course-id=react
+ *  /// URL: https://classe.dev/contact?course-id=react
  *  const courseId = useQueryParams('course-id') // "react"
  */
 const useQueryParams = queryParamName => {
