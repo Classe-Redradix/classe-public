@@ -1,7 +1,21 @@
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-import CompanyLogo from '/public/images/demo-company.svg'
+import Abertis from '/public/images/logos/abertis.svg'
+import Alantra from '/public/images/logos/alantra.svg'
+import Anaya from '/public/images/logos/anaya.svg'
+import Esa from '/public/images/logos/esa.svg'
+import Gmv from '/public/images/logos/gmv.svg'
+import HugoBoss from '/public/images/logos/hugo-boss.svg'
+import Idealista from '/public/images/logos/idealista.svg'
+import Iqvia from '/public/images/logos/iqvia.svg'
+import Indra from '/public/images/logos/indra.svg'
+import LifullConnect from '/public/images/logos/lifull-connect.svg'
+import Masmovil from '/public/images/logos/masmovil.svg'
+import Movistar from '/public/images/logos/movistar.svg'
+import Santander from '/public/images/logos/santander.svg'
+import Solera from '/public/images/logos/solera.svg'
+import Vivanta from '/public/images/logos/vivanta.svg'
 
 import { COURSES } from '../data'
 import {
@@ -46,8 +60,24 @@ const Home = () => {
     href: `/courses/${course.id}`,
   }))
 
-  const fakeLogosArray = new Array(15).fill(null)
-  const logos = fakeLogosArray.map(() => <img src={CompanyLogo} />)
+  const logos = [
+    Santander,
+    Movistar,
+    Solera,
+    HugoBoss,
+    Gmv,
+    Idealista,
+    LifullConnect,
+    Iqvia,
+    Alantra,
+    Vivanta,
+    Anaya,
+    Indra,
+    Masmovil,
+    Abertis,
+    Esa,
+  ]
+
   const fakeFaqsArray = new Array(7).fill(null)
   const faqsList = fakeFaqsArray.map(() => ({
     title: '¿Lorem ipsum dolor sit amet, consectetur adipiscing eli?',

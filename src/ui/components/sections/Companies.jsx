@@ -50,7 +50,9 @@ const Companies = ({ logos, isBlack, isFluor, openContact }) => {
         <Cell>
           {logos.map((logo, index) => (
             <div className="companies-logoWrapper" key={index}>
-              <div className="companies-logoWrapper-container">{logo}</div>
+              <div className="companies-logoWrapper-container">
+                <img src={logo} alt="" />
+              </div>
             </div>
           ))}
         </Cell>
