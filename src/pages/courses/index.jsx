@@ -2,12 +2,11 @@ import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 import { COURSES } from '../../data'
-import { useContactForm, useMenu, useKonami } from '../../hooks'
+import { useContactForm, useMenu } from '../../hooks'
+import withKonami from './../../with-konami'
 
 const Courses = () => {
   const router = useRouter()
-
-  useKonami()
 
   const {
     openCourse,
@@ -73,4 +72,4 @@ const Courses = () => {
   )
 }
 
-export default Courses
+export default withKonami(Courses)

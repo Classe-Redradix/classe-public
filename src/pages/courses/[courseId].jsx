@@ -1,14 +1,12 @@
 import { useRouter } from 'next/router'
 
 import { COURSES } from './../../data'
-import { useKonami } from './../../hooks'
 import MainWrapper from './../../ui/components/wrappers/MainWrapper'
 import Menu from './../../ui/components/menu/Menu'
+import withKonami from './../../with-konami'
 
 const Course = ({ course }) => {
   const router = useRouter()
-
-  useKonami()
 
   return (
     <MainWrapper isBlack={true}>
@@ -55,4 +53,4 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default Course
+export default withKonami(Course)

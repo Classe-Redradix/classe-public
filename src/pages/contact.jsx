@@ -1,13 +1,13 @@
-import Menu from '../ui/components/menu/Menu'
-import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
+
 import { COURSES } from '../data'
-import { useContactForm, useKonami } from '../hooks'
+import { useContactForm } from '../hooks'
+import Menu from './../ui/components/menu/Menu'
+import MainWrapper from './../ui/components/wrappers/MainWrapper'
+import withKonami from './../with-konami'
 
 const Contact = ({ interestedIn }) => {
   const router = useRouter()
-
-  useKonami()
 
   const {
     email,
@@ -63,4 +63,4 @@ Contact.getInitialProps = async ({ query }) => {
   }
 }
 
-export default Contact
+export default withKonami(Contact)

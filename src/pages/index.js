@@ -1,18 +1,18 @@
-import { useState } from 'react'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 import CompanyLogo from '/public/images/demo-company.svg'
 
 import { COURSES } from '../data'
-import { Home as HomeUI } from '../ui/views'
 import {
   useViewportHeight,
   useDetectMobile,
   useBackgroundChange,
   useScrambleText,
   useContactForm,
-  useKonami,
 } from '../hooks'
+import { Home as HomeUI } from '../ui/views'
+import withKonami from './../with-konami'
 
 const Home = () => {
   const router = useRouter()
@@ -21,8 +21,6 @@ const Home = () => {
   const [isLock, setIsLock] = useState(false)
   const [isBlack, setIsBlack] = useState(false)
   const [isFluor, setIsFluor] = useState(false)
-
-  useKonami()
 
   const {
     email,
@@ -135,4 +133,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default withKonami(Home)
