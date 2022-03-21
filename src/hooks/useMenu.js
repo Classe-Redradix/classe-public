@@ -52,8 +52,9 @@ const useMenu = ({
 
   const openCourse = useCallback(
     course => {
-      setAreCoursesOpen(false)
       setIsCourseOpen(true)
+      setIsContactOpen(false)
+      setAreCoursesOpen(false)
       setCourse(course)
 
       router.push(router.pathname, course.href)
@@ -68,9 +69,9 @@ const useMenu = ({
     // TODO: we can't compare with literals, we must compare using translations
     const handlePopState = event => {
       if (event.state.as === '/') {
+        setIsContactOpen(false)
         setAreCoursesOpen(false)
         setIsCourseOpen(false)
-        setIsContactOpen(false)
       } else if (event.state.as === '/courses') {
         setIsCourseOpen(false)
         setIsContactOpen(false)
@@ -80,8 +81,8 @@ const useMenu = ({
         setAreCoursesOpen(false)
         setIsContactOpen(true)
       } else {
+        setIsContactOpen(false)
         setAreCoursesOpen(false)
-        setIsCourseOpen(false)
         setIsCourseOpen(true)
       }
     }
