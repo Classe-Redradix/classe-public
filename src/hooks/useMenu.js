@@ -61,6 +61,7 @@ const useMenu = ({
     // HACK: since we are using a navigation like Twitter, we have to handle
     // the `history back` action. This will allow us to navigate with the
     // history (forwards and backwards) and show the correct page.
+    // TODO: we can't compare with literals, we must compare using translations
     const handlePopState = event => {
       if (event.state.as === '/') {
         setAreCoursesOpen(false)
