@@ -48,15 +48,15 @@ const Course = ({ dates, name, openContact, course }) => {
             </Cell>
           ) : (
             <Cell isNegative>
-              {t('course:need-more-details')}
-              <Button
-                isLink
-                isNegative
-                onClick={openContact}
-                text={t('course:contact-us')}
-              >
-                Contáctanos
-              </Button>
+              <div className="courseIntro-help">
+                <p>{t('course:need-more-details')}</p>
+                <Button
+                  isLink
+                  isNegative
+                  onClick={openContact}
+                  text={t('course:contact-us')}
+                />
+              </div>
             </Cell>
           )}
           <Cell isNegative>
