@@ -16,6 +16,7 @@ const Courses = () => {
     openCourses,
     openContact,
     isContactOpen,
+    goToHome,
   } = useMenu({
     defaultAreCoursesOpen: true,
   })
@@ -64,6 +65,7 @@ const Courses = () => {
         areCoursesOpen={areCoursesOpen}
         isCourseOpen={isCourseOpen}
         course={course}
+        goToHome={goToHome}
         openCourse={openCourse}
         isBlack={true}
         courses={COURSES}

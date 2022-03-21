@@ -19,7 +19,9 @@ const MenuLayer = ({
   areCoursesOpen,
   handleClose,
   openContact,
+  goToHome,
   openCourse,
+  openCourses,
   hasClose = true,
   actionText = 'menu:close',
 }) => {
@@ -94,10 +96,11 @@ const MenuLayer = ({
           {!isCourseOpen ? (
             <Row type="full" extraClass="menuLayer-menu">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <span className="menuDesktop-claim menu">
-                  {t('menu:claim')}
+                <span className="menuDesktop-claim menu" onClick={goToHome}>
+                  {t('menu:claim')} jajaja
                 </span>
                 <span
+                  onClick={openCourses}
                   className="menuDesktop-button menu"
                   aria-label={t('menu:courses')}
                 >

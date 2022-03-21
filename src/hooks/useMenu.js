@@ -14,6 +14,10 @@ const useMenu = ({
   const [isCourseOpen, setIsCourseOpen] = useState(defaultIsCourseOpen)
   const [course, setCourse] = useState(defaultCourse)
 
+  const goToHome = () => {
+    router.push('/')
+  }
+
   const openCourses = () => {
     setIsContactOpen(false)
     setIsCourseOpen(false)
@@ -94,6 +98,7 @@ const useMenu = ({
     areCoursesOpen,
     isCourseOpen,
     course,
+    goToHome,
     openCourses,
     openContact,
     handleClose,

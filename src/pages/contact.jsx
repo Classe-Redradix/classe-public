@@ -1,13 +1,24 @@
 import { useRouter } from 'next/router'
 
 import { COURSES } from '../data'
-import { useContactForm } from '../hooks'
+import { useContactForm, useMenu } from '../hooks'
 import Menu from './../ui/components/menu/Menu'
 import MainWrapper from './../ui/components/wrappers/MainWrapper'
 import withKonami from './../with-konami'
 
 const Contact = ({ interestedIn }) => {
   const router = useRouter()
+
+  const {
+    openCourse,
+    isCourseOpen,
+    areCoursesOpen,
+    course,
+    openCourses,
+    openContact,
+    isContactOpen,
+    goToHome,
+  } = useMenu({ defaultIsContactOpen: true })
 
   const {
     email,
@@ -42,12 +53,17 @@ const Contact = ({ interestedIn }) => {
       <Menu
         actionText="general:go-to-home"
         contactFormParams={contactFormParams}
-        handleText={() => {
-          router.push('/')
-        }}
-        isContactOpen={true}
+        handleText={goToHome}
+        isContactOpen={isContactOpen}
+        openCourses={openCourses}
+        goToHome={goToHome}
         isBlack={true}
         courses={COURSES}
+        openContact={openContact}
+        areCoursesOpen={areCoursesOpen}
+        isCourseOpen={isCourseOpen}
+        course={course}
+        openCourse={openCourse}
       />
     </MainWrapper>
   )
