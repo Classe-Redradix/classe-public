@@ -4,6 +4,9 @@ La prioridad a la hora de estructurar el código ha sido la de crear el mínimo
 número de carpetas, intentando ubicar todos los archivos a los lugares más
 más cercanos donde se utilizan dichos archivos (agrupación por contexto).
 
+Antes de continuar, es recomendable ver el archivo [ETIQUETTE](./ETIQUETTE.md)
+para saber los estándares que se siguen en este proyecto.
+
 ## Carpetas
 
 - [firebase](./firebase/): carpeta con todo lo relacionado con Firebase.

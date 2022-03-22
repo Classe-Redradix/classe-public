@@ -2,7 +2,8 @@
 
 ## Imports
 
-No es una norma escrita en piedra, pero los `imports`:
+No es una norma escrita en piedra, todo puede hablarse para ponernos de acuerdo
+entre todos, pero por intentar tener un estándar mínimo, los `imports`:
 
 - Son importados de mayor a menor distancia con respecto al archivo actual.
   Primero se importan recursos como React, Next, Proptypes, Lodash, etc.
@@ -18,7 +19,7 @@ No es una norma escrita en piedra, pero los `imports`:
   archivo que estamos editando. Por ejemplo: `import Button from '../Button'`,
   `import Collapsable from '../../Collapsable'`.
 
-Ejemplo de cómo deberían utilizarse:
+Ejemplo de cómo deberían utilizarse siguiendo estas reglas:
 
 ```javascript
 // Primero se importan todas las dependencias que "no están en nuestro
