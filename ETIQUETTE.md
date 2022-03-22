@@ -1,5 +1,79 @@
 # Etiquette
 
+## Imports
+
+No es una norma escrita en piedra, pero los `imports`:
+
+- Son importados de mayor a menor distancia con respecto al archivo actual.
+  Primero se importan recursos como React, Next, Proptypes, Lodash, etc.
+  Después, todos los recursos que están en la carpeta `public`. Finalmente,
+  los archivos propios de nuestro proyecto.
+- Son utilizados ordenados alfabéticamente.
+- Entre un nivel y otro de carpetas, debería haber un espacio de separación
+  para saber rápidamente si pertenecen al mismo nivel.
+- Empiezan por `./` cuando se importen archivos que están al mismo nivel o por
+  debajo del que nos encontramos. Por ejemplo: `import Button from './Button'`,
+  `import MenuItem from './Menu/Item'`.
+- Empiezan por `../` cuando se importen archivos que están por encima del
+  archivo que estamos editando. Por ejemplo: `import Button from '../Button'`,
+  `import Collapsable from '../../Collapsable'`.
+
+Ejemplo de cómo deberían utilizarse:
+
+```javascript
+// Primero se importan todas las dependencias que "no están en nuestro
+// proyecto" (react, next, prop-types, lodash, etc.)
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+
+// Después importamos los recursos públicos
+import Abertis from '/public/images/logos/abertis.svg'
+import Alantra from '/public/images/logos/alantra.svg'
+import Anaya from '/public/images/logos/anaya.svg'
+import Esa from '/public/images/logos/esa.svg'
+import Gmv from '/public/images/logos/gmv.svg'
+import HugoBoss from '/public/images/logos/hugo-boss.svg'
+import Idealista from '/public/images/logos/idealista.svg'
+import Iqvia from '/public/images/logos/iqvia.svg'
+import Indra from '/public/images/logos/indra.svg'
+import LifullConnect from '/public/images/logos/lifull-connect.svg'
+import Masmovil from '/public/images/logos/masmovil.svg'
+import Movistar from '/public/images/logos/movistar.svg'
+import Santander from '/public/images/logos/santander.svg'
+import Solera from '/public/images/logos/solera.svg'
+import Vivanta from '/public/images/logos/vivanta.svg'
+
+// Empezamos a importar los archivos propios de nuestro proyecto
+
+// Todos los archivos que se encuentran dos niveles por encima del archivo
+// que estamos utilizando (fijarse en que las rutas no empizan por `./../`,
+// sino que utilizan directamente `../`).
+import { COURSES } from '../../data'
+import InfoHead from '../../InfoHead'
+import {
+  useViewportHeight,
+  useDetectMobile,
+  useBackgroundChange,
+  useScrambleText,
+  useContactForm,
+  useTranslations,
+  useSchema,
+  useBreadcrumbListSchema,
+} from '../../hooks'
+import { withKonami } from '../../hocs'
+import { Home as HomeUI } from '../../ui/views'
+
+// Todos los archivos que se encuentran un nivel por encima del archivo que
+// estamos utilizando
+import { CoursePropType } from '../sharedProptypes'
+
+// Todos los archivos que se encuentran al mismo nivel que el archivo que
+// estamos utilizando (fijarse en que las rutas empiezan por `./`).
+import Button from './Button'
+import Course from './Course'
+import Menu from './Menu'
+```
+
 ## Archivos y carpetas
 
 - [Pages](./src/pages): las páginas están escritas con la nomenclatura de
