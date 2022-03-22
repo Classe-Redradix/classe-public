@@ -26,6 +26,12 @@ más cercanos donde se utilizan dichos archivos (agrupación por contexto).
   diferencia el que los datos aquí almacenados sí que se utilizarán en la
   aplicación final.
 
+- [src/hocs](./src/hocs/): aquí se almacenan todos los componentes de orden
+  superior. El más importante es [with-menu.js](./src/hocs/with-menu.js), el
+  cual se encarga de renderizar las páginas estáticas y abrir el menú con la
+  página que se le indique por parámetros, además de poder aplicar
+  configuraciones por defecto a los hooks que utiliza.
+
 - [src/hooks](./src/hooks/): hooks personalizados de React. Se han desarrollado
   con la idea de optimizar el trabajo y poder reutilizar funcionalidades de
   manera más rápida.
@@ -65,11 +71,17 @@ más cercanos donde se utilizan dichos archivos (agrupación por contexto).
   y exporta una función para guardar el formulario de contacto en la base de
   datos de Firestore.
 
+- [src/business.js](./src/business.js): exporta funcionalidades de negocio
+  reutilizables.
+
 - [src/IntlProvider.jsx](./src/IntlProvider.jsx): proveedor que se encarga de
   que la aplicación sea multi-idioma.
 
 - [src/data/index.js](./src/data/index.js): exporta los datos comunes que se
   utilizan fuera de su carpeta.
+
+- [src/hocs/index.js](./src/hocs/index.js): exporta todos los componentes de
+  orden superior.
 
 - [src/hooks/index.js](./src/hooks/index.js): fichero el cual expone todos los
   hooks que se utilizan fuera de esta carpeta.
@@ -108,12 +120,7 @@ más cercanos donde se utilizan dichos archivos (agrupación por contexto).
   [src/data/courses.js](./src/data/courses.js) para ahorrar servicios externos
   y hacer la carga de la aplicación más eficiente.
 
-## TODOs:
-
-- [src/assets/stylesheets/globals/texts.scss](./src/assets/stylesheets/globals/texts.scss):
-  por algún motivo, cuando lanzamos Storybook las fuentes `./../fonts/` y
-  cuando se lanza el servidor de desarrollo, las coge de `./../../fonts/`. Hay
-  que averiguar por qué ocurre este comportamiento para solucionarlo.
+## TODOs importantes:
 
 - [src/pages/index.js](./src/pages/index.js): se puede saber cuándo se ha
   guardado el formulario de contacto de la Home (función `onContactFormSuccess`).
