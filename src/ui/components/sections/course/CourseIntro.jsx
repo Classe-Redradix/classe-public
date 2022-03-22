@@ -51,7 +51,6 @@ const Course = ({ dates, name, openContact, course }) => {
               <div className="courseIntro-help">
                 <p>{t('course:need-more-details')}</p>
                 <Button
-                  isLink
                   isNegative
                   onClick={openContact}
                   text={t('course:contact-us')}
