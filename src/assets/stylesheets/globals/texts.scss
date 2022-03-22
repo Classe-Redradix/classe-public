@@ -10,7 +10,6 @@
 ) {
   @font-face {
     font-family: '#{$font-family}';
-    // TODO: find a way to use the same source in Storybbok and Next
     src: url('../../fonts/#{$font-filename}.woff') format('woff'),
       url('../../fonts/#{$font-filename}.woff2') format('woff2');
     font-weight: $font-weight;

@@ -2,10 +2,10 @@ import InfoHead from '../InfoHead'
 import Menu from 'ui/components/menu/Menu'
 import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
+
 import { COURSES } from '../data'
 import {
   useContactForm,
-  useKonami,
   useTranslations,
   useSchema,
   useBreadcrumbListSchema,
@@ -14,7 +14,16 @@ import {
 const Contact = ({ interestedIn }) => {
   const router = useRouter()
 
-  useKonami()
+  const {
+    openCourse,
+    isCourseOpen,
+    areCoursesOpen,
+    course,
+    openCourses,
+    openContact,
+    isContactOpen,
+    goToHome,
+  } = useMenu({ defaultIsContactOpen: true })
 
   const {
     email,
@@ -68,16 +77,22 @@ const Contact = ({ interestedIn }) => {
           [{`${contactPageSchema}`}, {`${breadcrumbListSchema}`}]
         </script>
       </InfoHead>
+
       <MainWrapper isBlack={true}>
         <Menu
           actionText="general:go-to-home"
           contactFormParams={contactFormParams}
-          handleText={() => {
-            router.replace('/')
-          }}
-          isContactOpen={true}
+          handleText={goToHome}
+          isContactOpen={isContactOpen}
+          openCourses={openCourses}
+          goToHome={goToHome}
           isBlack={true}
           courses={COURSES}
+          openContact={openContact}
+          areCoursesOpen={areCoursesOpen}
+          isCourseOpen={isCourseOpen}
+          course={course}
+          openCourse={openCourse}
         />
       </MainWrapper>
     </>
@@ -94,4 +109,4 @@ Contact.getInitialProps = async ({ query }) => {
   }
 }
 
-export default Contact
+export default withKonami(Contact)

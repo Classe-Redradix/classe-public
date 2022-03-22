@@ -10,7 +10,6 @@ import {
   useWindowSize,
   useContactForm,
   useMenu,
-  useKonami,
   useTranslations,
   useSchema,
   useBreadcrumbListSchema,
@@ -18,8 +17,6 @@ import {
 
 const Courses = () => {
   const router = useRouter()
-
-  useKonami()
 
   const {
     openCourse,
@@ -29,6 +26,7 @@ const Courses = () => {
     openCourses,
     openContact,
     isContactOpen,
+    goToHome,
   } = useMenu({
     defaultAreCoursesOpen: true,
   })
@@ -91,29 +89,30 @@ const Courses = () => {
         {isDesktop ? (
           <h1 className="sr-only">{formatMessage('courses:header')}</h1>
         ) : null}
-        <Menu
-          actionText={actionText}
-          contactFormParams={contactFormParams}
-          handleText={() => {
-            if (isCourseOpen) {
-              router.replace('/courses')
-              openCourses()
-            } else {
-              router.replace('/')
-            }
-          }}
-          isContactOpen={isContactOpen}
-          openContact={openContact}
-          areCoursesOpen={areCoursesOpen}
-          isCourseOpen={isCourseOpen}
-          course={course}
-          openCourse={openCourse}
-          isBlack={true}
-          courses={COURSES}
-        />
+      <Menu
+        actionText={actionText}
+        contactFormParams={contactFormParams}
+        handleText={() => {
+          if (isCourseOpen) {
+            router.push('/courses')
+            openCourses()
+          } else {
+            router.push('/')
+          }
+        }}
+        isContactOpen={isContactOpen}
+        openContact={openContact}
+        areCoursesOpen={areCoursesOpen}
+        isCourseOpen={isCourseOpen}
+        course={course}
+        goToHome={goToHome}
+        openCourse={openCourse}
+        isBlack={true}
+        courses={COURSES}
+      />
       </MainWrapper>
     </>
   )
 }
 
-export default Courses
+export default withKonami(Courses)

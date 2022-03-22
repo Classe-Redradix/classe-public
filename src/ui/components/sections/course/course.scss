@@ -41,6 +41,12 @@
     flex-shrink: 0;
   }
 
+  &-help {
+    display: flex;
+    align-items: baseline;
+    column-gap: 16px;
+  }
+
   &-description {
     .p + .p {
       margin-top: 16px;
