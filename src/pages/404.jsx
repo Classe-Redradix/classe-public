@@ -1,8 +1,7 @@
 import { COURSES } from '../data'
-
-import { Error } from '../ui/views'
-
+import { withKonami } from '../hocs'
 import { useContactForm } from './../hooks'
+import { Error } from '../ui/views'
 
 const Error404 = () => {
   const {
@@ -34,4 +33,4 @@ const Error404 = () => {
   )
 }
 
-export default Error404
+export default withKonami(Error404)
