@@ -1,0 +1,95 @@
+import { useRouter } from 'next/router'
+
+import Menu from './../ui/components/menu/Menu'
+import MainWrapper from './../ui/components/wrappers/MainWrapper'
+import { COURSES } from './../data'
+import { useContactForm, useMenu } from './../hooks'
+
+// TODO: move this constansts to `src/constants.js` when Juan's PR is merged
+export const CONTACT_PAGE = 'CONTACT_PAGE'
+export const COURSES_PAGE = 'COURSES_PAGE'
+export const COURSE_PAGE = 'COURSE_PAGE'
+
+// TODO: add JSDoc
+const withMenu = (pageName, config) => {
+  const router = useRouter()
+
+  const {
+    openCourse,
+    isCourseOpen,
+    areCoursesOpen,
+    course,
+    openCourses,
+    openContact,
+    isContactOpen,
+    goToHome,
+  } = useMenu(config?.useMenuConfig)
+
+  // NOTE: if we are loading the `course` page directly, the `interedted in
+  // course id` comes from the URL (which is stored in
+  // `config.useContactFormConfig.interestedIn`) , but if not, comes from the
+  // `course.id` directly.
+  // We use `?` in `course?.id` because if the user opens the `contact` view,
+  // we don't need to check any course, just show the contact form.
+  const contactFormParams = useContactForm(
+    config?.useContactFormConfig?.interestedIn || course?.id,
+  )
+
+  const actionText =
+    config?.actionText ?? isCourseOpen ? 'menu:close' : 'general:go-to-home'
+
+  const coursesHandleTextClick = () => {
+    if (isCourseOpen) {
+      router.push('/courses')
+      openCourses()
+    } else {
+      router.push('/')
+    }
+  }
+
+  const handleTextClick =
+    pageName === COURSES_PAGE
+      ? coursesHandleTextClick
+      : pageName === CONTACT_PAGE
+      ? goToHome
+      : pageName === COURSE_PAGE
+      ? () => {
+          router.push('/')
+        }
+      : null
+
+  const openContactView =
+    pageName === COURSE_PAGE
+      ? () =>
+          // HACK: in the course page, we force the app to redirect to the
+          // contact page directly instead of opening it as a modal.
+          // This is because the route that would be displayed is not
+          // compatible with the url (https://nextjs.org/docs/messages/incompatible-href-as)
+          // If we find a way to make it compatible, then we should use the
+          // `useMenu` and `useContactForm` hooks and pass all their values to
+          // the `Menu` component, like in `src/pages/courses/index.jsx`
+          router.push(`/contact?interested-in=${config.course.id}`)
+      : openContact
+
+  return (
+    <MainWrapper isBlack={true}>
+      <Menu
+        actionText={actionText}
+        contactFormParams={contactFormParams}
+        handleText={handleTextClick}
+        openCourses={openCourses}
+        openContact={openContactView}
+        course={pageName === COURSE_PAGE ? config.course : course}
+        goToHome={goToHome}
+        openCourse={openCourse}
+        isBlack={true}
+        isContactOpen={isContactOpen}
+        areCoursesOpen={areCoursesOpen}
+        isCourseOpen={isCourseOpen}
+        courses={COURSES}
+      />
+    </MainWrapper>
+  )
+}
+
+export default withMenu

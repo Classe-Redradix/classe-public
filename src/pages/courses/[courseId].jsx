@@ -1,38 +1,14 @@
-import { useRouter } from 'next/router'
-
 import { COURSES } from './../../data'
-import MainWrapper from './../../ui/components/wrappers/MainWrapper'
-import Menu from './../../ui/components/menu/Menu'
-import withKonami from './../../with-konami'
+import { withMenu, withKonami, COURSE_PAGE } from './../../hocs'
 
-const Course = ({ course }) => {
-  const router = useRouter()
-
-  return (
-    <MainWrapper isBlack={true}>
-      <Menu
-        actionText="general:go-to-home"
-        handleText={() => {
-          router.push('/')
-        }}
-        openContact={() =>
-          // HACK: in the course page, we force the app to redirect to the
-          // contact page directly instead of opening it as a modal.
-          // This is because the route that would be displayed is not
-          // compatible with the url (https://nextjs.org/docs/messages/incompatible-href-as)
-          // If we find a way to make it compatible, then we should use the
-          // `useMenu` and `useContactForm` hooks and pass all their values to
-          // the `Menu` component, like in `src/pages/courses/index.jsx`
-          router.push(`/contact?interested-in=${course.id}`)
-        }
-        course={course}
-        isCourseOpen={true}
-        isBlack={true}
-        courses={COURSES}
-      />
-    </MainWrapper>
-  )
-}
+const Course = withKonami(({ course }) => {
+  return withMenu(COURSE_PAGE, {
+    course,
+    useMenuConfig: {
+      defaultIsCourseOpen: true,
+    },
+  })
+})
 
 export async function getStaticPaths() {
   const paths = COURSES.map(course => ({
@@ -53,4 +29,4 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default withKonami(Course)
+export default Course
