@@ -1,6 +1,7 @@
 import { MEDIA_QUERIES } from '../../../src/constants'
 
-import { COURSES_PAGE, withKonami, withMenu } from '../../hocs'
+import { COURSES_PAGE } from '../../constants'
+import { withKonami, withMenu } from '../../hocs'
 import {
   useWindowSize,
   useTranslations,

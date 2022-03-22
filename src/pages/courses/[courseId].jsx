@@ -1,5 +1,6 @@
+import { COURSE_PAGE } from '../../constants'
 import { COURSES } from '../../data'
-import { COURSE_PAGE, withKonami, withMenu } from '../../hocs'
+import { withKonami, withMenu } from '../../hocs'
 import {
   useBreadcrumbListSchema,
   useCoursechema,

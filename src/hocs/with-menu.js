@@ -1,14 +1,10 @@
 import { useRouter } from 'next/router'
 
-import Menu from './../ui/components/menu/Menu'
-import MainWrapper from './../ui/components/wrappers/MainWrapper'
-import { COURSES } from './../data'
-import { useContactForm, useMenu } from './../hooks'
-
-// TODO: move this constansts to `src/constants.js` when Juan's PR is merged
-export const CONTACT_PAGE = 'CONTACT_PAGE'
-export const COURSES_PAGE = 'COURSES_PAGE'
-export const COURSE_PAGE = 'COURSE_PAGE'
+import { COURSES_PAGE, CONTACT_PAGE, COURSE_PAGE } from '../constants'
+import { COURSES } from '../data'
+import { useContactForm, useMenu } from '../hooks'
+import Menu from '../ui/components/menu/Menu'
+import MainWrapper from '../ui/components/wrappers/MainWrapper'
 
 /**
  * Renders a page with the menu open with the given page.

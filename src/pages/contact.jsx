@@ -1,4 +1,5 @@
-import { CONTACT_PAGE, withKonami, withMenu } from '../hocs'
+import { CONTACT_PAGE } from '../constants'
+import { withKonami, withMenu } from '../hocs'
 import { useTranslations, useSchema, useBreadcrumbListSchema } from '../hooks'
 import InfoHead from '../InfoHead'
 
