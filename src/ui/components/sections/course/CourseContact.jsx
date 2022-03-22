@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
+import Button from '../../button/Button'
 import useTranslations from '../../../../hooks/useTranslations'
 import demoImage from '/public/images/demo-small-black.png'
 import Glyph from '../../../../assets/icons/GlyphIcon'
 
-const CourseContact = ({}) => {
+const CourseContact = ({ openContact }) => {
   const t = useTranslations()
 
   return (
@@ -15,6 +16,11 @@ const CourseContact = ({}) => {
       <Row type="half" extraClass="courseSection-number">
         <Cell isNegative>
           <h3 className="h3">{t('course:contact')}</h3>
+          <Button
+            isNegative
+            onClick={openContact}
+            text={t('course:contact-us')}
+          />
         </Cell>
         <Cell isNegative>
           <img src={demoImage} alt="" />
@@ -50,6 +56,8 @@ const CourseContact = ({}) => {
   )
 }
 
-CourseContact.propTypes = {}
+CourseContact.propTypes = {
+  openContact: PropTypes.func,
+}
 
 export default CourseContact

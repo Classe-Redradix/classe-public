@@ -152,7 +152,7 @@ Declaración de variables. (2H)"
           successPercentage={information.successPercentage}
         />
         <CourseTitle title={t('footer:contact')} />
-        <CourseContact />
+        <CourseContact openContact={openContact} />
       </div>
     </div>
   )

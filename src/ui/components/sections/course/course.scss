@@ -137,7 +137,7 @@
   padding: 0;
 
   &-number {
-    height: 55%;
+    height: 60%;
 
     .cell {
       display: flex;
@@ -151,7 +151,7 @@
   }
 
   &-title {
-    height: 45%;
+    height: 40%;
 
     .cell {
       display: flex;
@@ -178,6 +178,18 @@
     position: absolute;
     top: 48px;
     right: 48px;
+  }
+
+  &--contact {
+    .courseSection-number {
+      .cell {
+        justify-content: space-between;
+      }
+
+      .mainButton {
+        align-self: flex-start;
+      }
+    }
   }
 
   @include mq($until: md) {
