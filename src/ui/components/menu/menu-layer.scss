@@ -89,23 +89,6 @@
     justify-content: space-between;
   }
 
-  &-mobileHeader.row.is-half {
-    display: flex;
-    align-items: stretch;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-
-    .cell {
-      width: 50%;
-      text-align: center;
-    }
-
-    .cell + .cell {
-      margin-top: 0;
-      margin-left: 1px;
-    }
-  }
-
   .menuDesktop-claim,
   .menuDesktop-button {
     display: none;
