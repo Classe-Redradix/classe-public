@@ -17,8 +17,8 @@ import Santander from '/public/images/logos/santander.svg'
 import Solera from '/public/images/logos/solera.svg'
 import Vivanta from '/public/images/logos/vivanta.svg'
 
-import InfoHead from '../InfoHead'
 import { COURSES } from '../data'
+import InfoHead from '../InfoHead'
 import {
   useViewportHeight,
   useDetectMobile,
@@ -29,8 +29,8 @@ import {
   useSchema,
   useBreadcrumbListSchema,
 } from '../hooks'
-import { Home as HomeUI } from '../ui/views'
 import { withKonami } from '../hocs'
+import { Home as HomeUI } from '../ui/views'
 
 const Home = () => {
   const router = useRouter()

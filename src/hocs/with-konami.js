@@ -1,4 +1,4 @@
-import { useKonami } from './../hooks'
+import { useKonami } from '../hooks'
 
 const withKonami = Page => props => {
   useKonami()

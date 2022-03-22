@@ -1,6 +1,6 @@
 import { CONTACT_PAGE } from '../constants'
 import { withKonami, withMenu } from '../hocs'
-import { useTranslations, useSchema, useBreadcrumbListSchema } from '../hooks'
+import { useBreadcrumbListSchema, useSchema, useTranslations } from '../hooks'
 import InfoHead from '../InfoHead'
 
 const Contact = withKonami(({ interestedIn }) => {

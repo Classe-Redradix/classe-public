@@ -1,6 +1,6 @@
 import { COURSES } from '../data'
 import { withKonami } from '../hocs'
-import { useContactForm } from './../hooks'
+import { useContactForm } from '../hooks'
 import { Error } from '../ui/views'
 
 const Error404 = () => {

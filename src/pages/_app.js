@@ -1,7 +1,9 @@
-import IntlAppProvider from '../IntlProvider'
-import './../styles/globals.css'
-import './../assets/stylesheets/style.scss'
 import { useEffect } from 'react'
+
+import IntlAppProvider from '../IntlProvider'
+
+import '../styles/globals.css'
+import '../assets/stylesheets/style.scss'
 
 function MyApp({ Component, pageProps }) {
   // useEffect(() => {
