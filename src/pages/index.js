@@ -17,6 +17,7 @@ import Santander from '/public/images/logos/santander.svg'
 import Solera from '/public/images/logos/solera.svg'
 import Vivanta from '/public/images/logos/vivanta.svg'
 
+import InfoHead from '../InfoHead'
 import { COURSES } from '../data'
 import {
   useViewportHeight,
@@ -24,6 +25,9 @@ import {
   useBackgroundChange,
   useScrambleText,
   useContactForm,
+  useTranslations,
+  useSchema,
+  useBreadcrumbListSchema,
 } from '../hooks'
 import { Home as HomeUI } from '../ui/views'
 import withKonami from './../with-konami'
@@ -120,6 +124,15 @@ const Home = () => {
     },
   ]
 
+  const formatMessage = useTranslations()
+  const { educationalOrganizationSchema, webSiteSchema } = useSchema()
+  const { breadcrumbListSchema } = useBreadcrumbListSchema([
+    {
+      name: formatMessage('schema-breadcrumb-list:home-name'),
+      url: formatMessage('url:root'),
+    },
+  ])
+
   const onContactFormSuccess = () => {
     // TODO: handle success contact saving into Firebase
   }
@@ -149,17 +162,29 @@ const Home = () => {
   }
 
   return (
-    <HomeUI
-      isBlack={isBlack}
-      isFluor={isFluor}
-      isLock={isLock}
-      courses={COURSES}
-      dates={dates}
-      logos={logos}
-      faqsList={faqsList}
-      onContactFormSubmit={handleContactFormSubmit}
-      contactFormParams={contactFormParams}
-    />
+    <>
+      <InfoHead
+        title={formatMessage('info-head-home:title')}
+        description={formatMessage('info-head-home:description')}
+        url={formatMessage('url:root')}
+      >
+        <script type="application/ld+json">
+          [ {`${educationalOrganizationSchema}`}, {`${webSiteSchema}`},{' '}
+          {`${breadcrumbListSchema}`}]
+        </script>
+      </InfoHead>
+      <HomeUI
+        isBlack={isBlack}
+        isFluor={isFluor}
+        isLock={isLock}
+        courses={COURSES}
+        dates={dates}
+        logos={logos}
+        faqsList={faqsList}
+        onContactFormSubmit={handleContactFormSubmit}
+        contactFormParams={contactFormParams}
+      />
+    </>
   )
 }
 

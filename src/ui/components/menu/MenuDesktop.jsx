@@ -25,6 +25,7 @@ const MenuDesktop = ({
           className="menuDesktop-button menu"
           onClick={openCourses}
           aria-label={t('menu:courses')}
+          role="link"
         >
           [
           <span className="braketHover">
@@ -36,6 +37,7 @@ const MenuDesktop = ({
           onClick={openContact}
           className="menuDesktop-link menu"
           aria-label={t('menu:contact')}
+          role="link"
         >
           {t('menu:contact')}
         </button>

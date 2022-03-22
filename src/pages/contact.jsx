@@ -1,10 +1,15 @@
+import InfoHead from '../InfoHead'
+import Menu from 'ui/components/menu/Menu'
+import MainWrapper from 'ui/components/wrappers/MainWrapper'
 import { useRouter } from 'next/router'
 
 import { COURSES } from '../data'
-import { useContactForm, useMenu } from '../hooks'
-import Menu from './../ui/components/menu/Menu'
-import MainWrapper from './../ui/components/wrappers/MainWrapper'
-import withKonami from './../with-konami'
+import {
+  useContactForm,
+  useTranslations,
+  useSchema,
+  useBreadcrumbListSchema,
+} from '../hooks'
 
 const Contact = ({ interestedIn }) => {
   const router = useRouter()
@@ -48,24 +53,49 @@ const Contact = ({ interestedIn }) => {
     onInterestedInOptionChange,
   }
 
+  const formatMessage = useTranslations()
+  const { contactPageSchema } = useSchema()
+  const { breadcrumbListSchema } = useBreadcrumbListSchema([
+    {
+      name: formatMessage('schema-breadcrumb-list:home-name'),
+      url: formatMessage('url:root'),
+    },
+    {
+      name: formatMessage('schema-breadcrumb-list:contact-name'),
+      url: formatMessage('url:contact'),
+    },
+  ])
+
   return (
-    <MainWrapper isBlack={true}>
-      <Menu
-        actionText="general:go-to-home"
-        contactFormParams={contactFormParams}
-        handleText={goToHome}
-        isContactOpen={isContactOpen}
-        openCourses={openCourses}
-        goToHome={goToHome}
-        isBlack={true}
-        courses={COURSES}
-        openContact={openContact}
-        areCoursesOpen={areCoursesOpen}
-        isCourseOpen={isCourseOpen}
-        course={course}
-        openCourse={openCourse}
-      />
-    </MainWrapper>
+    <>
+      <InfoHead
+        title={formatMessage('info-head-contact:title')}
+        description={formatMessage('info-head-contact:description')}
+        url={formatMessage('url:contact')}
+      >
+        <script type="application/ld+json">
+          [{`${contactPageSchema}`}, {`${breadcrumbListSchema}`}]
+        </script>
+      </InfoHead>
+
+      <MainWrapper isBlack={true}>
+        <Menu
+          actionText="general:go-to-home"
+          contactFormParams={contactFormParams}
+          handleText={goToHome}
+          isContactOpen={isContactOpen}
+          openCourses={openCourses}
+          goToHome={goToHome}
+          isBlack={true}
+          courses={COURSES}
+          openContact={openContact}
+          areCoursesOpen={areCoursesOpen}
+          isCourseOpen={isCourseOpen}
+          course={course}
+          openCourse={openCourse}
+        />
+      </MainWrapper>
+    </>
   )
 }
 

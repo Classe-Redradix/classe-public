@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+
+import { MEDIA_QUERIES } from '../../../constants'
+
 import useWindowSize from '../../../hooks/useWindowSize'
+
 import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
+
 import { useRouter } from 'next/router'
 import {
   CoursePropType,
@@ -55,7 +60,7 @@ const Menu = ({
         openCourses={openCourses}
         handleClose={!!handleText ? handleText : handleClose}
       />
-      {size.width >= 768 ? (
+      {size.width >= MEDIA_QUERIES.desktop ? (
         <MenuDesktop
           isBlack={isBlack}
           isFluor={isFluor}

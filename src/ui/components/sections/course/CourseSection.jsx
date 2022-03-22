@@ -12,7 +12,9 @@ const CourseSection = ({ number, text, title }) => {
     <SectionWrapper isBlack extraClass="courseSection">
       <Row type="full" extraClass="courseSection-number">
         <Cell isNegative>
-          <h3 className="h1">{number}</h3>
+          <h3 className="h1" aria-hidden="true">
+            {number}
+          </h3>
           <p className="p courseSection-text">{text}</p>
         </Cell>
       </Row>
