@@ -108,9 +108,13 @@ const MenuLayer = ({
           {!isCourseOpen ? (
             <Row type="full" extraClass="menuLayer-menu">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <span className="menuDesktop-claim menu" onClick={goToHome}>
-                  {t('menu:claim')} jajaja
-                </span>
+                <a
+                  href="/"
+                  className="menuDesktop-claim menu"
+                  onClick={goToHome}
+                >
+                  {t('menu:claim')}
+                </a>
                 <span
                   onClick={openCourses}
                   className="menuDesktop-button menu"

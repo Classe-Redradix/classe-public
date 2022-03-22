@@ -20,7 +20,9 @@ const MenuDesktop = ({
   return (
     <header className={classes}>
       <Cell isNegative={isBlack}>
-        <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
+        <a href="/" className="menuDesktop-claim menu">
+          {t('menu:claim')}
+        </a>
         <button
           className="menuDesktop-button menu"
           onClick={openCourses}
