@@ -24,7 +24,9 @@ const MenuMobile = ({
 
   return (
     <header className={classes}>
-      <span className="menuMobile-claim h2">{t('menu:claimSmall')}</span>
+      <a href="/" className="menuMobile-claim h2">
+        {t('menu:claimSmall')}
+      </a>
       <button
         className="menuMobile-button menu"
         onClick={isOpen ? handleClose : openCourses}
