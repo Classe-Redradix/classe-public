@@ -81,7 +81,6 @@ const Course = ({ dates, name, openContact, course }) => {
                */}
               {course.isPublic ? (
                 <Button
-                  isLink
                   isNegative
                   onClick={openContact}
                   text={t('course:button')}
