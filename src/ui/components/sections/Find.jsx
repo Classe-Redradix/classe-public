@@ -16,12 +16,15 @@ const Find = ({ isBlack, isFluor }) => {
       <Row type="half">
         <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h3 className="h1 scrambleText">
+            <h2 className="h1 scrambleText">
               {t('find:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
+                lineSROnly: text => (
+                  <span className="line has-tab sr-only">{text}</span>
+                ),
               })}
-            </h3>
+            </h2>
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
@@ -35,12 +38,12 @@ const Find = ({ isBlack, isFluor }) => {
         </Cell>
         <Cell hasGap isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h4 className="h1 scrambleText">
+            <h3 className="h1 scrambleText" aria-hidden="true">
               {t('find:claim', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
-            </h4>
+            </h3>
           </div>
           {/* TODO: add the cursor pointer in the css (?) */}
           <p
@@ -48,7 +51,10 @@ const Find = ({ isBlack, isFluor }) => {
             onClick={copyClasseEmailToClipboard}
             style={{ cursor: 'pointer' }}
           >
-            {t('find:description2')}
+            {t('find:description2', {
+              ariaHidden: text => <span aria-hidden="true">{text}</span>,
+              screenReader: text => <span className="sr-only">{text}</span>,
+            })}
           </p>
         </Cell>
       </Row>

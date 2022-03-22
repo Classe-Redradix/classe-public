@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+
+import { MEDIA_QUERIES } from '../../../constants'
+
 import useWindowSize from '../../../hooks/useWindowSize'
 import useTranslations from '../../../hooks/useTranslations'
+
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import CoursesList from './CoursesList'
@@ -34,7 +38,7 @@ const MenuLayer = ({
     'is-free': isContactOpen || isCourseOpen,
     'is-course': isCourseOpen,
   })
-  const isDesktop = size.width >= 768
+  const isDesktop = size.width >= MEDIA_QUERIES.desktop
 
   useEffect(() => {
     if (isOpen) {
@@ -44,14 +48,18 @@ const MenuLayer = ({
     }
   }, [isOpen])
 
+  const hasHomeTitle = !areCoursesOpen && !isCourseOpen && !isContactOpen
+
   return (
     <div className={classes}>
+      {hasHomeTitle ? <h1 className="sr-only">{t('home:title')}</h1> : null}
       <div className="menuLayer-wrapper">
         {isDesktop && hasClose ? (
           <div className="menuLayer-desktopHeader">
             <button
               className="menuLayer-desktopHeader-button button"
               onClick={handleClose}
+              role="link"
             >
               [ <span className="braketHover">{t(actionText)}</span> ]
             </button>
@@ -89,7 +97,11 @@ const MenuLayer = ({
                 <p>image</p>
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <CoursesList courses={courses} openCourse={openCourse} />
+                <CoursesList
+                  courses={courses}
+                  openCourse={openCourse}
+                  isPlacedAtHome={!areCoursesOpen}
+                />
               </Cell>
             </Row>
           )}
@@ -111,6 +123,7 @@ const MenuLayer = ({
                   onClick={openContact}
                   className="menuDesktop-link"
                   aria-label={t('menu:contact')}
+                  role="link"
                 >
                   {t('menu:contact')}
                 </button>

@@ -59,7 +59,8 @@ const CourseInfo = ({ price, hours, places, students, successPercentage }) => {
               {t('course:success', {
                 line: text => (
                   <span className="line">
-                    {successPercentage} {text}
+                    {successPercentage}
+                    {text}
                   </span>
                 ),
               })}
