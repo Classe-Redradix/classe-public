@@ -12,6 +12,7 @@ const Input = ({
   type,
   value,
   isNegative,
+  id,
 }) => {
   const classes = cx('input', {
     'has-submit': handleSubmit,
@@ -28,6 +29,7 @@ const Input = ({
         placeholder={placeholder}
         type={type}
         value={value}
+        id={id}
       />
       {handleSubmit ? (
         <ArrowIcon className="icon input-submit" onClick={handleSubmit} />
@@ -45,6 +47,7 @@ Input.propTypes = {
   type: PropTypes.oneOf(['email', 'text']).isRequired,
   value: PropTypes.string.isRequired,
   isNegative: PropTypes.bool,
+  id: PropTypes.string,
 }
 
 export default Input

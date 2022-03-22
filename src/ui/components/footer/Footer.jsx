@@ -34,12 +34,12 @@ const Footer = ({
       <Row type="quarter">
         <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h3 className="h2 scrambleText">
+            <h2 className="h2 scrambleText">
               {t('footer:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
-            </h3>
+            </h2>
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
@@ -155,22 +155,21 @@ const Footer = ({
         </Cell>
         <Cell isNegative={isBlack} />
         <Cell isNegative={isBlack}>
-          <span className="tiny">{t('footer:contact')}</span>
-          <a
-            className="button"
-            href="https://www.google.es/maps/place/Redradix/@40.4092458,-3.7143432,17z/data=!3m1!4b1!4m5!3m4!1s0xd42287e4a90167b:0x9bfdc0ed1f91d800!8m2!3d40.4092458!4d-3.7121545?shorturl=1"
-            target="_blank"
-          >
-            Madrid, Calatrava 27
-            <br />
-            [Metro La Latina]
-          </a>
-          <a className="button" href="mailto:info@classe.dev">
-            info[at]classe.dev
-          </a>
-          <a className="button" href="tel:+34914346336">
-            +34 914 346 336
-          </a>
+          <address>
+            <span className="tiny">{t('footer:contact')}</span>
+            <a
+              className="button"
+              href="https://www.google.es/maps/place/Redradix/@40.4092458,-3.7143432,17z/data=!3m1!4b1!4m5!3m4!1s0xd42287e4a90167b:0x9bfdc0ed1f91d800!8m2!3d40.4092458!4d-3.7121545?shorturl=1"
+              target="_blank"
+            >
+              Madrid, Calatrava 27
+              <br />
+              [Metro La Latina]
+            </a>
+            <a className="button" href="mailto:info@classe.com">
+              info[at]classe.com
+            </a>
+          </address>
         </Cell>
       </Row>
       <Row type="full">

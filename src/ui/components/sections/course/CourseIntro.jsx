@@ -20,16 +20,16 @@ const Course = ({ dates, name, openContact, course }) => {
     <SectionWrapper isBlack extraClass="courseIntro">
       <Row type="full" extraClass="courseIntro-name">
         <Cell isNegative>
-          <div
+          <h1
             className="courseIntro-nameText"
             ref={ref}
             style={{
               fontSize,
             }}
           >
-            <TabIcon className="courseIntro-tab" />
+            <TabIcon className="courseIntro-tab" aria-hidden="true" />
             {name}
-          </div>
+          </h1>
         </Cell>
       </Row>
       <Row type="half" extraClass="courseIntro-data">
@@ -48,15 +48,15 @@ const Course = ({ dates, name, openContact, course }) => {
             </Cell>
           ) : (
             <Cell isNegative>
-              {t('course:need-more-details')}
-              <Button
-                isLink
-                isNegative
-                onClick={openContact}
-                text={t('course:contact-us')}
-              >
-                Contáctanos
-              </Button>
+              <div className="courseIntro-help">
+                <p>{t('course:need-more-details')}</p>
+                <Button
+                  isLink
+                  isNegative
+                  onClick={openContact}
+                  text={t('course:contact-us')}
+                />
+              </div>
             </Cell>
           )}
           <Cell isNegative>

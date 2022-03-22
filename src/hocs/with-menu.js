@@ -10,7 +10,22 @@ export const CONTACT_PAGE = 'CONTACT_PAGE'
 export const COURSES_PAGE = 'COURSES_PAGE'
 export const COURSE_PAGE = 'COURSE_PAGE'
 
-// TODO: add JSDoc
+/**
+ * Renders a page with the menu open with the given page.
+ *
+ * @param { string } pageName - Name of the page, stored in `src/constants.js`.
+ * This will allow the component handle different situations depending on the
+ * rendered page.
+ * @param { object } config Additional HOC configuration, like `useMenu` config,
+ * `useContactForm` config, `InfoHead` component, etc.
+ * @param { object } config.useMenuConfig - Configuration for `useMenu` hook
+ * @param { object } config.useContactFormConfig -  Configuration for
+ * `useContactForm` hooks
+ * @param { Node } config.indoHead - Head component for better SEO
+ * @param { Node } config.hiddenTitle - Hidden heading for better SEO
+ *
+ * @returns a page that contains the given page open in the menu
+ */
 const withMenu = (pageName, config) => {
   const router = useRouter()
 
@@ -72,23 +87,27 @@ const withMenu = (pageName, config) => {
       : openContact
 
   return (
-    <MainWrapper isBlack={true}>
-      <Menu
-        actionText={actionText}
-        contactFormParams={contactFormParams}
-        handleText={handleTextClick}
-        openCourses={openCourses}
-        openContact={openContactView}
-        course={pageName === COURSE_PAGE ? config.course : course}
-        goToHome={goToHome}
-        openCourse={openCourse}
-        isBlack={true}
-        isContactOpen={isContactOpen}
-        areCoursesOpen={areCoursesOpen}
-        isCourseOpen={isCourseOpen}
-        courses={COURSES}
-      />
-    </MainWrapper>
+    <>
+      {config?.infoHead}
+      <MainWrapper isBlack={true}>
+        {config?.hiddenTitle}
+        <Menu
+          actionText={actionText}
+          contactFormParams={contactFormParams}
+          handleText={handleTextClick}
+          openCourses={openCourses}
+          openContact={openContactView}
+          course={pageName === COURSE_PAGE ? config.course : course}
+          goToHome={goToHome}
+          openCourse={openCourse}
+          isBlack={true}
+          isContactOpen={isContactOpen}
+          areCoursesOpen={areCoursesOpen}
+          isCourseOpen={isCourseOpen}
+          courses={COURSES}
+        />
+      </MainWrapper>
+    </>
   )
 }
 

@@ -32,12 +32,25 @@ const Companies = ({ logos, isBlack, isFluor, openContact }) => {
       <Row type="half">
         <Cell hasGap>
           <div className="scrambleTextWrapper">
-            <h3 className="h1 scrambleText">
+            <h2 className="h1 scrambleText">
               {t('companies:title', {
                 line: text => <span className="line">{text}</span>,
+                lineAriaHidden: text => (
+                  <span className="line" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
                 lineTab: text => <span className="line has-tab">{text}</span>,
+                lineTabAriaHidden: text => (
+                  <span className="line has-tab" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                lineTabSROnly: text => (
+                  <span className="line has-tab sr-only">{text}</span>
+                ),
               })}
-            </h3>
+            </h2>
           </div>
           <Button
             isFull
@@ -50,7 +63,9 @@ const Companies = ({ logos, isBlack, isFluor, openContact }) => {
         <Cell>
           {logos.map((logo, index) => (
             <div className="companies-logoWrapper" key={index}>
-              <div className="companies-logoWrapper-container">{logo}</div>
+              <div className="companies-logoWrapper-container">
+                <img src={logo} alt="" />
+              </div>
             </div>
           ))}
         </Cell>
