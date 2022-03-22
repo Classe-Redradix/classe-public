@@ -30,7 +30,7 @@ import {
   useBreadcrumbListSchema,
 } from '../hooks'
 import { Home as HomeUI } from '../ui/views'
-import withKonami from './../with-konami'
+import { withKonami } from '../hocs'
 
 const Home = () => {
   const router = useRouter()

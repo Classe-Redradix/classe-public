@@ -56,7 +56,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
         >
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
-              <label className="h3 -scrambleText" for="contactName">
+              <label className="h3 -scrambleText" htmlFor="contactName">
                 {t('contact:my-name-is', {
                   line: text => <span className="line">{text}</span>,
                 })}
@@ -115,7 +115,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           </div>
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
-              <label className="h3 -scrambleText" for="contactEmail">
+              <label className="h3 -scrambleText" htmlFor="contactEmail">
                 {t('contact:my-email', {
                   line: text => <span className="line">{text}</span>,
                 })}

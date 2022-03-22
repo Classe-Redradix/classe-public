@@ -1,58 +1,8 @@
+import { CONTACT_PAGE, withKonami, withMenu } from '../hocs'
+import { useTranslations, useSchema, useBreadcrumbListSchema } from '../hooks'
 import InfoHead from '../InfoHead'
-import Menu from 'ui/components/menu/Menu'
-import MainWrapper from 'ui/components/wrappers/MainWrapper'
-import { useRouter } from 'next/router'
 
-import { COURSES } from '../data'
-import {
-  useContactForm,
-  useTranslations,
-  useSchema,
-  useBreadcrumbListSchema,
-} from '../hooks'
-
-const Contact = ({ interestedIn }) => {
-  const router = useRouter()
-
-  const {
-    openCourse,
-    isCourseOpen,
-    areCoursesOpen,
-    course,
-    openCourses,
-    openContact,
-    isContactOpen,
-    goToHome,
-  } = useMenu({ defaultIsContactOpen: true })
-
-  const {
-    email,
-    onEmailChange,
-    name,
-    onNameChange,
-    userType,
-    onUserTypeChange,
-    saveToFirebase,
-    interestedInOptions,
-    termsAndConditions,
-    toggleTermsAndConditions,
-    onInterestedInOptionChange,
-  } = useContactForm(interestedIn)
-
-  const contactFormParams = {
-    email,
-    onEmailChange,
-    name,
-    onNameChange,
-    userType,
-    onUserTypeChange,
-    saveToFirebase,
-    interestedInOptions,
-    termsAndConditions,
-    toggleTermsAndConditions,
-    onInterestedInOptionChange,
-  }
-
+const Contact = withKonami(({ interestedIn }) => {
   const formatMessage = useTranslations()
   const { contactPageSchema } = useSchema()
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
@@ -66,38 +16,24 @@ const Contact = ({ interestedIn }) => {
     },
   ])
 
-  return (
-    <>
-      <InfoHead
-        title={formatMessage('info-head-contact:title')}
-        description={formatMessage('info-head-contact:description')}
-        url={formatMessage('url:contact')}
-      >
-        <script type="application/ld+json">
-          [{`${contactPageSchema}`}, {`${breadcrumbListSchema}`}]
-        </script>
-      </InfoHead>
-
-      <MainWrapper isBlack={true}>
-        <Menu
-          actionText="general:go-to-home"
-          contactFormParams={contactFormParams}
-          handleText={goToHome}
-          isContactOpen={isContactOpen}
-          openCourses={openCourses}
-          goToHome={goToHome}
-          isBlack={true}
-          courses={COURSES}
-          openContact={openContact}
-          areCoursesOpen={areCoursesOpen}
-          isCourseOpen={isCourseOpen}
-          course={course}
-          openCourse={openCourse}
-        />
-      </MainWrapper>
-    </>
+  const infoHead = (
+    <InfoHead
+      title={formatMessage('info-head-contact:title')}
+      description={formatMessage('info-head-contact:description')}
+      url={formatMessage('url:contact')}
+    >
+      <script type="application/ld+json">
+        [{`${contactPageSchema}`}, {`${breadcrumbListSchema}`}]
+      </script>
+    </InfoHead>
   )
-}
+
+  return withMenu(CONTACT_PAGE, {
+    infoHead,
+    useMenuConfig: { defaultIsContactOpen: true },
+    useContactFormConfig: { interestedIn },
+  })
+})
 
 Contact.getInitialProps = async ({ query }) => {
   // if `interestedIn !== undefined` means that the user came here by clicking on
@@ -109,4 +45,4 @@ Contact.getInitialProps = async ({ query }) => {
   }
 }
 
-export default withKonami(Contact)
+export default Contact

@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import React from 'react'
 import PropTypes from 'prop-types'
-import useTranslations from './hooks/useTranslations'
+import { useTranslations } from './hooks'
 
 const InfoHead = ({ title, description, url, children }) => {
   const formatMessage = useTranslations()
