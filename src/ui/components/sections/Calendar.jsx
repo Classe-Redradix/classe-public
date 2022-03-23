@@ -5,7 +5,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import DatePicker from '../date-picker/DatePicker'
-import demoImage from '/public/images/demo-small.png'
+import image from '/public/images/haz-hueco-en-tu-agenda.jpg'
 import { DatesPropType } from './../../sharedProptypes'
 
 const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
@@ -25,7 +25,11 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
           </div>
         </Cell>
         <Cell>
-          <img src={demoImage} alt="" />
+          <img
+            className="bwfilter"
+            src={image}
+            alt="Un estudiante de programación atendiendo a una charla"
+          />
         </Cell>
       </Row>
       <Row type="half">
