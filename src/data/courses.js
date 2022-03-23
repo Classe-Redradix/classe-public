@@ -1,3 +1,5 @@
+// TODO: evaluate if renaming courses are needed
+
 import imageCourseJS from '/public/images/curso-javascript.jpg'
 import imageCourseReact from '/public/images/curso-front.jpg'
 import imageCourseUIDeveloper from '/public/images/curso-maqueta.jpg'
@@ -63,7 +65,7 @@ const COURSE_REACT = {
   isPublic: true,
   href: '/courses/react',
   information: {
-    title: 'React',
+    title: 'Maquetación',
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best React course you'll ever find",
@@ -174,7 +176,7 @@ const COURSE_DATA = {
   isPublic: true,
   href: '/courses/data',
   information: {
-    title: 'Data',
+    title: 'Front-end',
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best Data course you'll ever find",
@@ -229,7 +231,7 @@ const COURSE_FULL_STACK = {
   isPublic: false,
   href: '/courses/full-stack',
   information: {
-    title: 'Full stack',
+    title: 'Backend con Node',
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best Full stack course you'll ever find",
@@ -278,12 +280,6 @@ const COURSE_FULL_STACK = {
   ],
 }
 
-const COURSES = [
-  COURSE_JS_PRO,
-  COURSE_REACT,
-  COURSE_REDUX,
-  COURSE_DATA,
-  COURSE_FULL_STACK,
-]
+const COURSES = [COURSE_JS_PRO, COURSE_REACT, COURSE_DATA, COURSE_FULL_STACK]
 
 export default COURSES
