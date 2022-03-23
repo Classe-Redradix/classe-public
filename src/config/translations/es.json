@@ -104,20 +104,20 @@
 
   "featured:header": "Curso destacado",
   "featured:title": "<line>Full stack</line> <line>Program</line> <lineTab>(2021, 2022);</lineTab>",
-  "featured:button": "¿Quieres saber más? mira el dossier",
+  "featured:button": "¿Quieres saber más? Echa un ojo al curso",
 
   "facts:header": "Facts",
   "facts:title": "<line>Cuando decimos no</line> <lineTab>bullshit, es no bullshit</lineTab>",
-  "facts:fact1": "Un programador motivado y bien preparado puede producir 10x más.",
+  "facts:fact1": "Un programador motivado y bien preparado puede reducir hasta 10 veces el número de errores que comete.",
   "facts:fact2": "Éste es el único máster de desarrollo frontend orientado a profesionales con experiencia.",
-  "facts:fact3": "La formación de calidad aumenta la velocidad de aprendizaje.",
+  "facts:fact3": "No tenemos profesores. Solo profesionales que llevan años sacando todo tipo de proyectos. Y que saben lo que realmente importa en el día a día.",
   "facts:fact4": "Los desarrolladores senior ganan, de media, 30.000€ más que los junior.",
   "facts:fact5": "Un 60% de los alumnos han encontrado un puesto de trabajo mejor remunerado a los tres meses asistir a alguno de uno de nuestros cursos.",
-  "facts:fact6": "No tenemos profesores. La experiencia de nuestros formadores es real, adquirida en nuestros más de 6 años haciendo las cosas bien.",
+  "facts:fact6": "Todos los cursos se basan en en JS porque creemos en la especialización y es el lenguaje que usamos nosotros.",
 
   "calendar:header": "Calendario",
   "calendar:title": "<line>Haz</line> <line>hueco</line> <lineTab>(en tu</lineTab> <lineTab>agenda)</lineTab>",
-  "calendar:description": "Las clases se impartirán de Lunes a Viernes de 18:30h a 21:30h. Será en nuestras oficinas de la C/ Calatrava 27. Metro: La Latina, Puerta de Toledo o Tirso de Molina. También tenemos la opción de asistencia híbrida presencial y online.",
+  "calendar:description": "Las clases se impartirán de lunes a viernes de 18:30h a 21:30h. Será en nuestras oficinas de la C/ Calatrava 27. Metro: La Latina, Puerta de Toledo o Tirso de Molina.\nTambién tenemos la opción de asistencia en remoto, o híbrida presencial+ online.",
   "calendar:start": "Start",
   "calendar:finish": "Finish",
 
