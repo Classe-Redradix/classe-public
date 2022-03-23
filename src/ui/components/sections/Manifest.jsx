@@ -3,20 +3,9 @@ import PropTypes from 'prop-types'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
+import Paragraphs from '../paragraphs/Paragraphs'
 import useTranslations from '../../../hooks/useTranslations'
 import image from '/public/images/manifiesto-classe.jpg'
-
-const Paragraphs = ({ text }) => {
-  return (
-    <div className="wrap-p">
-      {text.split('\n').map((p, index) => (
-        <p key={index} className="p">
-          {p}
-        </p>
-      ))}
-    </div>
-  )
-}
 
 const Manifest = ({ isBlack, isFluor }) => {
   const t = useTranslations()
