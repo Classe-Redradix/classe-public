@@ -91,6 +91,7 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
         <CourseIntro
           dates={dates}
           name={information.title}
+          image={information.image}
           openContact={openContact}
           course={menuCourse}
         />

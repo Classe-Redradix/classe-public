@@ -1,3 +1,7 @@
+import imageCourseJS from '/public/images/curso-javascript.jpg'
+import imageCourseReact from '/public/images/curso-front.jpg'
+import imageCourseUIDeveloper from '/public/images/curso-maqueta.jpg'
+
 const COURSE_JS_PRO = {
   id: 'js-pro',
   isFeatured: false,
@@ -8,6 +12,10 @@ const COURSE_JS_PRO = {
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best JavaScript course you'll ever find",
+    image: {
+      source: imageCourseJS,
+      alt: 'Un chico de perfil trabajando con su portátil',
+    },
     price: 900,
     hours: 20,
     places: 30,
@@ -59,6 +67,10 @@ const COURSE_REACT = {
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best React course you'll ever find",
+    image: {
+      source: imageCourseUIDeveloper,
+      alt: 'Un chico de perfil trabajando con su portátil',
+    },
     price: 1400,
     hours: 25,
     places: 30,
@@ -110,6 +122,11 @@ const COURSE_REDUX = {
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best Redux course you'll ever find",
+    image: {
+      source: imageCourseReact,
+      alt: 'Un chico con un gorro trabajando en su portátil',
+    },
+    imageAlt: '',
     price: 1300,
     hours: 25,
     places: 30,
@@ -161,6 +178,10 @@ const COURSE_DATA = {
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best Data course you'll ever find",
+    image: {
+      source: imageCourseReact,
+      alt: 'Un chico con un gorro trabajando en su portátil',
+    },
     price: 1200,
     hours: 30,
     places: 20,
@@ -212,6 +233,10 @@ const COURSE_FULL_STACK = {
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best Full stack course you'll ever find",
+    image: {
+      source: imageCourseReact,
+      alt: 'Un chico con un gorro trabajando en su portátil',
+    },
     price: 1500,
     hours: 50,
     places: 30,

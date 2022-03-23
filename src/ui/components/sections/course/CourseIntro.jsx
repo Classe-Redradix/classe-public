@@ -4,14 +4,13 @@ import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import Button from '../../button/Button'
-import demoImage from '/public/images/demo-small-black.png'
 import TabIcon from './../../../../assets/icons/TabIcon'
 import DatePicker from '../../date-picker/DatePicker'
 import useTranslations from '../../../../hooks/useTranslations'
 import useFitText from 'use-fit-text'
 import { DatesPropType } from './../../../sharedProptypes'
 
-const Course = ({ dates, name, openContact, course }) => {
+const Course = ({ dates, name, image, openContact, course }) => {
   const t = useTranslations()
   const onFinish = useCallback(fontSize => {}, [])
   const { fontSize, ref } = useFitText({ maxFontSize: 5000, onFinish })
@@ -34,7 +33,7 @@ const Course = ({ dates, name, openContact, course }) => {
       </Row>
       <Row type="half" extraClass="courseIntro-data">
         <Cell isNegative>
-          <img src={demoImage} alt="" />
+          <img src={image.source} alt={image.alt} />
         </Cell>
 
         {/**
