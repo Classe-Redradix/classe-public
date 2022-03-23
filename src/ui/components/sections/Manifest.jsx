@@ -6,6 +6,18 @@ import Cell from '../cell/Cell'
 import useTranslations from '../../../hooks/useTranslations'
 import image from '/public/images/manifiesto-classe.jpg'
 
+const Paragraphs = ({ text }) => {
+  return (
+    <div className="wrap-p">
+      {text.split('\n').map((p, index) => (
+        <p key={index} className="p">
+          {p}
+        </p>
+      ))}
+    </div>
+  )
+}
+
 const Manifest = ({ isBlack, isFluor }) => {
   const t = useTranslations()
 
@@ -38,7 +50,7 @@ const Manifest = ({ isBlack, isFluor }) => {
               })}
             </h3>
           </div>
-          <p className="p">{t('manifest:description')}</p>
+          <Paragraphs text={t('manifest:description')} />
         </Cell>
       </Row>
     </SectionWrapper>

@@ -2,8 +2,15 @@
   filter: grayscale(100%);
 }
 
-.sectionWrapper.manifest .p {
-  margin-top: 96px;
+.sectionWrapper.manifest {
+  .wrap-p {
+    margin-top: 96px;
+
+    .p + .p {
+      margin-top: 16px;
+      text-indent: 32px;
+    }
+  }
 }
 
 .sectionWrapper.courses {
@@ -202,8 +209,10 @@
 }
 
 @include mq(md) {
-  .sectionWrapper.manifest .p {
-    margin-top: 0;
+  .sectionWrapper.manifest {
+    .wrap-p {
+      margin-top: 0;
+    }
   }
 
   .sectionWrapper.featured .mainButton {
