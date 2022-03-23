@@ -133,24 +133,6 @@ const Footer = ({
                 GitHub
               </a>
             </li>
-            <li>
-              <a
-                className="h4"
-                href="https://www.behance.net/Redradix"
-                target="_blank"
-              >
-                Behance
-              </a>
-            </li>
-            <li>
-              <a
-                className="h4"
-                href="https://www.instagram.com/redradix_/"
-                target="_blank"
-              >
-                Instagram
-              </a>
-            </li>
           </ul>
         </Cell>
         <Cell isNegative={isBlack} />
