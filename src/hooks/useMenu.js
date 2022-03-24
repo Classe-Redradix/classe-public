@@ -76,7 +76,10 @@ const useMenu = ({
         setIsCourseOpen(false)
         setIsContactOpen(false)
         setAreCoursesOpen(true)
-      } else if (event.state.as === '/contact') {
+      } else if (
+        event.state.as === '/contact' ||
+        event.state.as.includes('interested-in')
+      ) {
         setIsCourseOpen(false)
         setAreCoursesOpen(false)
         setIsContactOpen(true)
