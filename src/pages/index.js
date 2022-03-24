@@ -59,6 +59,8 @@ const Home = () => {
   useBackgroundChange(setIsBlack, setIsFluor)
   useScrambleText()
 
+  const formatMessage = useTranslations()
+
   const courses = COURSES.map(course => ({
     title: course.information.title,
     href: `/courses/${course.id}`,
@@ -82,12 +84,45 @@ const Home = () => {
     Esa,
   ]
 
-  const fakeFaqsArray = new Array(7).fill(null)
-  const faqsList = fakeFaqsArray.map(() => ({
-    title: '¿Lorem ipsum dolor sit amet, consectetur adipiscing eli?',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur nulla sed libero dui. Ac molestie diam egestas magnis auctor vitae. Magna scelerisque blandit sed vulputate accumsan pulvinar enim scelerisque. Malesuada.',
-  }))
+  const faqsList = [
+    {
+      title: formatMessage('faqs:faq1-title'),
+      description: formatMessage('faqs:faq1-description'),
+    },
+    {
+      title: formatMessage('faqs:faq2-title'),
+      description: formatMessage('faqs:faq2-description'),
+    },
+    {
+      title: formatMessage('faqs:faq3-title'),
+      description: formatMessage('faqs:faq3-description'),
+    },
+    {
+      title: formatMessage('faqs:faq4-title'),
+      description: formatMessage('faqs:faq4-description'),
+    },
+    {
+      title: formatMessage('faqs:faq5-title'),
+      description: formatMessage('faqs:faq5-description'),
+    },
+    {
+      title: formatMessage('faqs:faq6-title'),
+      description: formatMessage('faqs:faq6-description'),
+    },
+    {
+      title: formatMessage('faqs:faq7-title'),
+      description: formatMessage('faqs:faq7-description'),
+    },
+    {
+      title: formatMessage('faqs:faq8-title'),
+      description: formatMessage('faqs:faq8-description'),
+    },
+    {
+      title: formatMessage('faqs:faq9-title'),
+      description: formatMessage('faqs:faq9-description'),
+    },
+  ]
+
   const dates = [
     {
       day: '01',
@@ -124,7 +159,6 @@ const Home = () => {
     },
   ]
 
-  const formatMessage = useTranslations()
   const { educationalOrganizationSchema, webSiteSchema } = useSchema()
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
     {
