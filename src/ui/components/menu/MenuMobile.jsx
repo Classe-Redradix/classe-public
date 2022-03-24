@@ -9,12 +9,13 @@ const MenuMobile = ({
   openCourses,
   openContact,
   isContactOpen,
+  isCourseOpen,
   areCoursesOpen,
   handleClose,
   handleOpen,
   courses,
 }) => {
-  const isOpen = isContactOpen || areCoursesOpen
+  const isOpen = isContactOpen || isCourseOpen || areCoursesOpen
   const t = useTranslations()
   const classes = cx('menuMobile', {
     'is-black': isBlack,
