@@ -5,7 +5,7 @@ import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import Button from '../../button/Button'
 import useTranslations from '../../../../hooks/useTranslations'
-import demoImage from '/public/images/demo-small-black.png'
+import image from '/public/images/contacto-classe.jpg'
 import Glyph from '../../../../assets/icons/GlyphIcon'
 
 const CourseContact = ({ openContact }) => {
@@ -23,7 +23,11 @@ const CourseContact = ({ openContact }) => {
           />
         </Cell>
         <Cell isNegative>
-          <img src={demoImage} alt="" />
+          <img
+            className="bwfilter"
+            src={image}
+            alt="Oficina con varias mesas y equipos informáticos"
+          />
         </Cell>
       </Row>
       <Row type="half" extraClass="courseSection-title">

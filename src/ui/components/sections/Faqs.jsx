@@ -5,7 +5,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import FaqsContainer from '../faqs/FaqsContainer'
-import demoImage from '/public/images/demo.png'
+import image from '/public/images/formacion-remoto-presencial.jpg'
 
 const Faqs = ({ list, isBlack, isFluor }) => {
   const t = useTranslations()
@@ -34,7 +34,11 @@ const Faqs = ({ list, isBlack, isFluor }) => {
       </Row>
       <Row type="half">
         <Cell>
-          <img src={demoImage} alt="" />
+          <img
+            className="bwfilter"
+            src={image}
+            alt="Un apuesto hombre trabajando en remoto visible a través de una videollamada"
+          />
         </Cell>
         <Cell>
           <FaqsContainer list={list} />

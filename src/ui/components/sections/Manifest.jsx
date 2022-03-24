@@ -4,7 +4,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import useTranslations from '../../../hooks/useTranslations'
-import demoImage from '/public/images/demo.png'
+import image from '/public/images/manifiesto-classe.jpg'
 
 const Manifest = ({ isBlack, isFluor }) => {
   const t = useTranslations()
@@ -22,7 +22,11 @@ const Manifest = ({ isBlack, isFluor }) => {
             </h2>
           </Cell>
           <Cell isNegative={isBlack}>
-            <img src={demoImage} alt="" />
+            <img
+              className="bwfilter"
+              src={image}
+              alt="Dos programadores web trabajando"
+            />
           </Cell>
         </Cell>
         <Cell hasGap isNegative={isBlack}>

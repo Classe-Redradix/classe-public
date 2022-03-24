@@ -5,7 +5,7 @@ import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
-import demoImage from '/public/images/demo-small.png'
+import image from '/public/images/contacto-classe.jpg'
 import GlyphIcon from './../../../assets/icons/Glyph2Icon'
 
 const Find = ({ isBlack, isFluor }) => {
@@ -28,7 +28,11 @@ const Find = ({ isBlack, isFluor }) => {
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
-          <img src={demoImage} alt="" />
+          <img
+            className="bwfilter"
+            src={image}
+            alt="Oficina con varias mesas y equipos informáticos"
+          />
         </Cell>
       </Row>
       <Row type="half">

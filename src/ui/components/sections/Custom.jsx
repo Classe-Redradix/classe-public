@@ -5,7 +5,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
-import demoImage from '/public/images/demo-small.png'
+import image from '/public/images/nuestros-cursos-a-tu-medida.jpg'
 import GlyphIcon from './../../../assets/icons/GlyphIcon'
 
 const Custom = ({ isBlack, isFluor, openCourses }) => {
@@ -33,7 +33,11 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
-          <img src={demoImage} alt="" />
+          <img
+            className="bwfilter"
+            src={image}
+            alt="Mesa de trabajo con muchos dispositivos electrónicos sobre ella"
+          />
         </Cell>
       </Row>
       <Row type="half">
