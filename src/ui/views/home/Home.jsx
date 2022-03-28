@@ -136,7 +136,7 @@ Home.propTypes = {
   courses: PropTypes.arrayOf(CoursePropType),
   logos: PropTypes.arrayOf(PropTypes.node),
   faqsList: FaqsListPropType,
-  dates: PropTypes.arrayOf(DatesPropType).isRequired,
+  dates: Calendar.propTypes.dates,
   onContactFormSubmit: PropTypes.func,
   contactFormParams: ContactFormParamsPropType,
 }

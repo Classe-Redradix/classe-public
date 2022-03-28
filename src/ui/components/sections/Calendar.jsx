@@ -46,7 +46,7 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
 }
 
 Calendar.propTypes = {
-  dates: PropTypes.arrayOf(DatesPropType).isRequired,
+  dates: DatePicker.propTypes.dates,
   isBlack: PropTypes.bool.isRequired,
   isFluor: PropTypes.bool.isRequired,
 }

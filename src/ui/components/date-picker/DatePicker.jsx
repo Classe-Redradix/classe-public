@@ -108,7 +108,7 @@ const DatePicker = ({ dates, isCourse, openContact }) => {
 }
 
 DatePicker.propTypes = {
-  dates: PropTypes.arrayOf(DatesPropType),
+  dates: DatesPropType,
   isCourse: PropTypes.bool,
   openContact: PropTypes.func,
 }
