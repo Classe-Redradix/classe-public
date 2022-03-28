@@ -16,6 +16,10 @@
 
   &.is-black {
     color: $white;
+
+    .menuDesktop-claim {
+      color: $white;
+    }
   }
 
   .cell {
@@ -30,6 +34,10 @@
     html:not(.is-mobile) &:hover .braketHover {
       padding: 0 4px;
     }
+  }
+
+  &-claim {
+    color: $black;
   }
 
   @include mq(lg) {
