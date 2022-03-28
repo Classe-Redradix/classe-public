@@ -7,13 +7,10 @@ const MenuMobile = ({
   isBlack,
   isFluor,
   openCourses,
-  openContact,
   isContactOpen,
   isCourseOpen,
   areCoursesOpen,
   handleClose,
-  handleOpen,
-  courses,
 }) => {
   const isOpen = isContactOpen || isCourseOpen || areCoursesOpen
   const t = useTranslations()

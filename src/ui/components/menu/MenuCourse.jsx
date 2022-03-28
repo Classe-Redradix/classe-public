@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import PropTypes from 'prop-types'
 import gsap from 'gsap'
-import { useRouter } from 'next/router'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import CourseIntro from '../../components/sections/course/CourseIntro'
 import CourseTitle from '../../components/sections/course/CourseTitle'
@@ -158,7 +156,5 @@ Declaración de variables. (2H)"
     </div>
   )
 }
-
-MenuCourse.propTypes = {}
 
 export default MenuCourse
