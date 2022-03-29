@@ -6,7 +6,7 @@ import Cell from '../../cell/Cell'
 import useTranslations from '../../../../hooks/useTranslations'
 
 const CourseSection = ({ number, text, title }) => {
-  const t = useTranslations()
+  const formatMessage = useTranslations()
 
   return (
     <SectionWrapper isBlack extraClass="courseSection">
@@ -23,7 +23,7 @@ const CourseSection = ({ number, text, title }) => {
           {title ? (
             <div className="scrambleTextWrapper">
               <h3 className="h3 scrambleText">
-                {t(title, {
+                {formatMessage(title, {
                   line: text => <span className="line">{text}</span>,
                 })}
               </h3>

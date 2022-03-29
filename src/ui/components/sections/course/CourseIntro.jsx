@@ -11,7 +11,7 @@ import useFitText from 'use-fit-text'
 import { DatesPropType } from './../../../sharedProptypes'
 
 const Course = ({ dates, name, image, openContact, course }) => {
-  const t = useTranslations()
+  const formatMessage = useTranslations()
   const onFinish = useCallback(fontSize => {}, [])
   const { fontSize, ref } = useFitText({ maxFontSize: 5000, onFinish })
 
@@ -48,11 +48,11 @@ const Course = ({ dates, name, image, openContact, course }) => {
           ) : (
             <Cell isNegative>
               <div className="courseIntro-help">
-                <p>{t('course:need-more-details')}</p>
+                <p>{formatMessage('course:need-more-details')}</p>
                 <Button
                   isNegative
                   onClick={openContact}
-                  text={t('course:contact-us')}
+                  text={formatMessage('course:contact-us')}
                 />
               </div>
             </Cell>
@@ -82,7 +82,7 @@ const Course = ({ dates, name, image, openContact, course }) => {
                 <Button
                   isNegative
                   onClick={openContact}
-                  text={t('course:button')}
+                  text={formatMessage('course:button')}
                 />
               ) : null}
               <span className="p uppercase">Scroll o drag</span>
