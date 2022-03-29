@@ -17,7 +17,6 @@ import { useMenu } from '../../../hooks'
 import {
   CoursePropType,
   ContactFormParamsPropType,
-  DatesPropType,
   FaqsListPropType,
 } from './../../sharedProptypes'
 

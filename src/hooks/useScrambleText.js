@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { gsap } from 'gsap/dist/gsap'
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
