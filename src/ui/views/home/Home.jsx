@@ -32,7 +32,7 @@ const Home = ({
   onContactFormSubmit,
   contactFormParams,
 }) => {
-  const t = useTranslations()
+  const formatMessage = useTranslations()
   const {
     areCoursesOpen,
     course,
@@ -66,10 +66,10 @@ const Home = ({
         openCourse={openCourse}
       />
       <div className="blurableWrapper">
-        <Header title={t('manifest:header')} number={1} />
+        <Header title={formatMessage('manifest:header')} number={1} />
         <Manifest isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('manifest:header')} />
-        <Header title={t('courses:header')} number={2} />
+        <Header isClose title={formatMessage('manifest:header')} />
+        <Header title={formatMessage('courses:header')} number={2} />
         <Courses
           courses={courses}
           isBlack={isBlack}
@@ -77,44 +77,44 @@ const Home = ({
           openCourse={openCourse}
           openContact={openContact}
         />
-        <Header isClose title={t('courses:header')} />
-        <Header title={t('custom:header')} number={3} />
+        <Header isClose title={formatMessage('courses:header')} />
+        <Header title={formatMessage('custom:header')} number={3} />
         <Custom isBlack={isBlack} isFluor={isFluor} openCourses={openCourses} />
-        <Header isClose title={t('custom:header')} />
-        <Header title={t('featured:header')} number={4} />
+        <Header isClose title={formatMessage('custom:header')} />
+        <Header title={formatMessage('featured:header')} number={4} />
         <Featured
           isBlack={isBlack}
           isFluor={isFluor}
           course={featuredCourse}
           openCourse={openCourse}
         />
-        <Header isClose title={t('featured:header')} />
-        <Header title={t('facts:header')} number={5} />
+        <Header isClose title={formatMessage('featured:header')} />
+        <Header title={formatMessage('facts:header')} number={5} />
         <Facts isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('facts:header')} />
-        <Header title={t('calendar:header')} number={6} />
+        <Header isClose title={formatMessage('facts:header')} />
+        <Header title={formatMessage('calendar:header')} number={6} />
         <Calendar
           dates={dates}
           isBlack={isBlack}
           isFluor={isFluor}
           openContact={openContact}
         />
-        <Header isClose title={t('calendar:header')} />
-        <Header title={t('companies:header')} number={7} />
+        <Header isClose title={formatMessage('calendar:header')} />
+        <Header title={formatMessage('companies:header')} number={7} />
         <Companies
           logos={logos}
           isBlack={isBlack}
           isFluor={isFluor}
           openContact={openContact}
         />
-        <Header isClose title={t('companies:header')} />
-        <Header title={t('faqs:header')} number={8} />
+        <Header isClose title={formatMessage('companies:header')} />
+        <Header title={formatMessage('faqs:header')} number={8} />
         <Faqs isBlack={isBlack} isFluor={isFluor} list={faqsList} />
-        <Header isClose title={t('faqs:header')} />
-        <Header title={t('find:header')} number={9} />
+        <Header isClose title={formatMessage('faqs:header')} />
+        <Header title={formatMessage('find:header')} number={9} />
         <Find isBlack={isBlack} isFluor={isFluor} />
-        <Header isClose title={t('find:header')} />
-        <Header title={t('footer:header')} number={10} />
+        <Header isClose title={formatMessage('find:header')} />
+        <Header title={formatMessage('footer:header')} number={10} />
         <Footer
           courses={courses}
           isBlack={isBlack}
@@ -123,7 +123,7 @@ const Home = ({
           contactFormParams={contactFormParams}
           openCourse={openCourse}
         />
-        <Header isClose title={t('footer:header')} />
+        <Header isClose title={formatMessage('footer:header')} />
       </div>
     </MainWrapper>
   )

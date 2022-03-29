@@ -28,7 +28,7 @@ const dates = [
 ]
 
 const MenuCourse = ({ course, openContact, isCourseOpen }) => {
-  const t = useTranslations()
+  const formatMessage = useTranslations()
   useScrambleText()
   gsap.registerPlugin(ScrollTrigger)
   const container = useRef(null)
@@ -93,7 +93,7 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
           openContact={openContact}
           course={menuCourse}
         />
-        <CourseTitle title={t('course:index-title')} />
+        <CourseTitle title={formatMessage('course:index-title')} />
         <CourseSection
           number="01"
           text="Introducción y recursos. String templates. Desestructuración.
@@ -137,7 +137,7 @@ Declaración de variables. (2H)"
           text="Further study. Lecturas recomendadas. Recursos extra. (1H)"
           title="courses:closing"
         />
-        <CourseTitle title={t('course:objectives-title')} />
+        <CourseTitle title={formatMessage('course:objectives-title')} />
         <CourseObjectives
           learn="course:learn"
           text="Congue fermentum fermentum justo, phasellus. Aliquam sapien scelerisque porttitor quam congue nibh. "
@@ -150,7 +150,7 @@ Declaración de variables. (2H)"
           students={information.enrolledStudents}
           successPercentage={information.successPercentage}
         />
-        <CourseTitle title={t('footer:contact')} />
+        <CourseTitle title={formatMessage('footer:contact')} />
         <CourseContact openContact={openContact} />
       </div>
     </div>
