@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
+import Paragraphs from '../paragraphs/Paragraphs'
 import useTranslations from '../../../hooks/useTranslations'
 import image from '/public/images/manifiesto-classe.jpg'
 
@@ -38,7 +39,7 @@ const Manifest = ({ isBlack, isFluor }) => {
               })}
             </h3>
           </div>
-          <p className="p">{t('manifest:description')}</p>
+          <Paragraphs text={t('manifest:description')} />
         </Cell>
       </Row>
     </SectionWrapper>

@@ -2,10 +2,6 @@
   filter: grayscale(100%);
 }
 
-.sectionWrapper.manifest .p {
-  margin-top: 96px;
-}
-
 .sectionWrapper.courses {
   .p {
     margin-top: 16px;
@@ -41,9 +37,9 @@
     }
   }
 
-  .p,
   .notes {
     margin-top: 104px;
+    cursor: pointer;
   }
 
   .mainButton {
@@ -202,10 +198,6 @@
 }
 
 @include mq(md) {
-  .sectionWrapper.manifest .p {
-    margin-top: 0;
-  }
-
   .sectionWrapper.featured .mainButton {
     margin-top: 0;
   }
@@ -236,9 +228,6 @@
       height: 48px;
     }
 
-    .p {
-      margin-top: 0;
-    }
     .mainButton {
       margin-top: 208px;
     }

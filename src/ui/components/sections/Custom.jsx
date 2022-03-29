@@ -5,6 +5,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
+import Paragraphs from '../paragraphs/Paragraphs'
 import image from '/public/images/nuestros-cursos-a-tu-medida.jpg'
 import GlyphIcon from './../../../assets/icons/GlyphIcon'
 
@@ -43,7 +44,7 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
       <Row type="half">
         <Cell hasGap isNegative={isBlack}>
           <GlyphIcon className="icon" />
-          <p className="p">{t('custom:description')}</p>
+          <Paragraphs text={t('custom:description')} />
         </Cell>
         <Cell hasGap isNegative={isBlack}>
           <div className="scrambleTextWrapper">
