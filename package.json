@@ -8,7 +8,12 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "storybook": "start-storybook -p 9001",
-    "build-storybook": "build-storybook -c .storybook -o .out"
+    "storybook:build": "build-storybook -c .storybook -o .out",
+    "prestorybook:deploy": "npm run storybook:build",
+    "storybook:deploy": "surge --project ./.out/ --domain $npm_package_config_storybookDomain"
+  },
+  "config": {
+    "storybookDomain": "https://classe-storybook.ophion.studio/"
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
