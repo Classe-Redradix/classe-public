@@ -95,7 +95,7 @@ const Course = ({ dates, name, image, openContact, course }) => {
 }
 
 Course.propTypes = {
-  dates: PropTypes.arrayOf(DatesPropType).isRequired,
+  dates: DatesPropType,
   name: PropTypes.string.isRequired,
   openContact: PropTypes.func,
 }

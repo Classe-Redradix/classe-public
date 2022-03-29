@@ -131,7 +131,6 @@ Declaración de variables. (2H)"
           title="course:promises"
         />
         <CourseSectionEmpty />
-
         <CourseSection
           number="07"
           text="Further study. Lecturas recomendadas. Recursos extra. (1H)"
