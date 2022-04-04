@@ -10,16 +10,17 @@
   "url:og-256x256": "https://classe.dev/images/og/og-256x256.png",
   "url:favicon-144": "https://classe.dev/favicon-144.png",
 
-  "info-head-home:title": "Classe - Escuela de programación",
-  "info-head-home:description": "Descripción de la home",
+  "info-head-home:title": "Classe | Formación para desarrolladores por desarrolladores",
+  "info-head-home:description": "Cursos de programación presenciales y online pensados para profesionales -tanto de forma particular como para empresas- e impartidos por el equipo de Redradix.",
 
-  "info-head-courses:title": "Cursos | Classe",
-  "info-head-courses:description": "Descripción de la página de cursos",
+  "info-head-courses:title": "Nuestros cursos | Classe",
+  "info-head-courses:description": "Actualmente realizamos cursos para profundizar al máximo en JavaScript, Maquetación (UI Development), Desarrollo Front-end y Back-end.",
 
   "info-head-course:title": "Curso de {course} | Classe",
+  "info-head-course:description": "Con nuestro curso de {course} asentarás todos tus conocimientos para sacarles el máximo partido en tu carrera profesional.",
 
   "info-head-contact:title": "Contacto | Classe",
-  "info-head-contact:description": "Descripción de la página de contacto",
+  "info-head-contact:description": "Contacta con nosotros. Calatrava, 27 (en La Latina, Madrid) info@classe.dev",
 
   "schema-educational-organization:name": "Classe",
   "schema-educational-organization:lang": "es",
