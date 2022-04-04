@@ -31,9 +31,7 @@ const Courses = () => {
       description={formatMessage('info-head-courses:description')}
       url={formatMessage('url:courses')}
     >
-      <script type="application/ld+json">
-        [{`${educationalOrganizationSchema}`}, {`${breadcrumbListSchema}`}]
-      </script>
+      <script type="application/ld+json">[{`${breadcrumbListSchema}`}]</script>
     </InfoHead>
   )
 
