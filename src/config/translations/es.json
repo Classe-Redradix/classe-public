@@ -65,7 +65,7 @@
   "menu:open": "Menu",
   "menu:close": "Cerrar",
 
-  "home:title": "Classe, escuela de programación en Madrid. Cursos online y presenciales.",
+  "home:title": "Cursos de programación y producto digital por y para desarrolladores",
 
   "manifest:header": "Manifiesto",
   "manifest:claim": "<line>Más de 10 años</line> <lineTab>formando</lineTab> <lineTab>(pro)fesionales</lineTab>",
@@ -154,7 +154,7 @@
   "find:claim": "<line>Y detrás</line> <lineTab>de la</lineTab> <lineTab>pantalla</lineTab>",
   "find:aria": "Copia nuestro email en el portapapeles",
 
-  "contact:second-title": "<line>Ponte en</line> <line>contacto</line> <line>blabla</line>",
+  "contact:second-title": "<line>Contacta</line> <line>con Classe</line>",
   "contact:address1": "<line>Madrid, Calatrava 27</line> <line>[Metro La Latina]</line>",
   "contact:address2": "<lineAriaHidden>info[at]classe.dev</lineAriaHidden><lineSROnly>info@classe.dev</lineSROnly>",
   "contact:my-name-is": "<line>Ey! Me llamo</line>",
