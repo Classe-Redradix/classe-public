@@ -33,7 +33,7 @@ const Course = ({ dates, name, image, openContact, course }) => {
       </Row>
       <Row type="half" extraClass="courseIntro-data">
         <Cell isNegative>
-          <img src={image.source} alt={image.alt} />
+          <img className="bwfilter" src={image.source} alt={image.alt} />
         </Cell>
 
         {/**

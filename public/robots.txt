@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://classe.dev
+
+# Sitemaps
+Sitemap: https://classe.dev/sitemap.xml

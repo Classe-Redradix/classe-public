@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "storybook": "start-storybook -p 9001",
     "build-storybook": "build-storybook -c .storybook -o .out"
@@ -26,6 +27,7 @@
     "@storybook/addon-knobs": "^6.2.9",
     "@storybook/react": "^6.4.18",
     "css-loader": "^5.2.6",
+    "next-sitemap": "^2.5.20",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.34.0",
     "sass-loader": "^10.1.1",

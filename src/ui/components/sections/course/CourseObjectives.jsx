@@ -19,6 +19,12 @@ const CourseObjectives = ({ learn, text, objectives }) => {
             <h3 className="h3 scrambleText">
               {t(learn, {
                 line: text => <span className="line">{text}</span>,
+                lineAriaHidden: text => (
+                  <span className="line" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                lineSROnly: text => <span className="sr-only">{text}</span>,
               })}
             </h3>
           </div>
@@ -32,6 +38,12 @@ const CourseObjectives = ({ learn, text, objectives }) => {
             <h3 className="h3 scrambleText">
               {t(objectives, {
                 line: text => <span className="line">{text}</span>,
+                lineAriaHidden: text => (
+                  <span className="line" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                lineSROnly: text => <span className="sr-only">{text}</span>,
               })}
             </h3>
           </div>

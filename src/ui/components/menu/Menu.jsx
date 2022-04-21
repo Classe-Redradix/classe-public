@@ -73,6 +73,7 @@ const Menu = ({
           isBlack={isBlack}
           isFluor={isFluor}
           isContactOpen={isContactOpen}
+          isCourseOpen={isCourseOpen}
           areCoursesOpen={areCoursesOpen}
           openCourses={openCourses}
           openContact={openContact}

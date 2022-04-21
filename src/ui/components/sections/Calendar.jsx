@@ -4,6 +4,7 @@ import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
+import Paragraphs from '../paragraphs/Paragraphs'
 import DatePicker from '../date-picker/DatePicker'
 import image from '/public/images/haz-hueco-en-tu-agenda.jpg'
 import { DatesPropType } from './../../sharedProptypes'
@@ -34,7 +35,7 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
       </Row>
       <Row type="half">
         <Cell hasGap>
-          <p className="p">{t('calendar:description')}</p>
+          <Paragraphs text={t('calendar:description')} />
         </Cell>
         <Cell>
           <DatePicker dates={dates} openContact={openContact} />

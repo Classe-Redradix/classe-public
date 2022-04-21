@@ -2,7 +2,7 @@ import imageCourseJS from '/public/images/curso-javascript.jpg'
 import imageCourseReact from '/public/images/curso-front.jpg'
 import imageCourseUIDeveloper from '/public/images/curso-maqueta.jpg'
 
-const COURSE_JS_PRO = {
+const JS_PRO = {
   id: 'js-pro',
   isFeatured: false,
   isPublic: false,
@@ -57,13 +57,13 @@ const COURSE_JS_PRO = {
   ],
 }
 
-const COURSE_REACT = {
+const UI_DEV = {
   id: 'react',
   isFeatured: false,
   isPublic: true,
-  href: '/courses/react',
+  href: '/courses/maqueta',
   information: {
-    title: 'React',
+    title: 'Maqueta',
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best React course you'll ever find",
@@ -112,69 +112,13 @@ const COURSE_REACT = {
   ],
 }
 
-const COURSE_REDUX = {
-  id: 'redux',
-  isFeatured: false,
-  isPublic: true,
-  href: '/courses/redux',
-  information: {
-    title: 'Redux',
-    start: '21.08.22',
-    finish: '25.08.22',
-    description: "This is the best Redux course you'll ever find",
-    image: {
-      source: imageCourseReact,
-      alt: 'Un chico con un gorro trabajando en su portátil',
-    },
-    imageAlt: '',
-    price: 1300,
-    hours: 25,
-    places: 30,
-    enrolledStudents: 23,
-    successPercentage: 92,
-  },
-  index: [
-    {
-      number: '01',
-      name: 'Fundamentos',
-      description:
-        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
-    },
-    {
-      number: '02',
-      name: 'Programación funcional',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
-    },
-    {
-      number: '03',
-      name: 'Programación orientada a objetos',
-      description:
-        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
-    },
-    {
-      number: '04',
-      name: 'Programación funcional II',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
-    },
-  ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
-}
-
-const COURSE_DATA = {
+const FRONT_END = {
   id: 'data',
   isFeatured: false,
   isPublic: true,
-  href: '/courses/data',
+  href: '/courses/front-end',
   information: {
-    title: 'Data',
+    title: 'Front-end',
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best Data course you'll ever find",
@@ -223,13 +167,13 @@ const COURSE_DATA = {
   ],
 }
 
-const COURSE_FULL_STACK = {
+const BACK_END = {
   id: 'full-stack',
   isFeatured: true,
   isPublic: false,
-  href: '/courses/full-stack',
+  href: '/courses/back-end',
   information: {
-    title: 'Full stack',
+    title: 'Backend con Node',
     start: '21.08.22',
     finish: '25.08.22',
     description: "This is the best Full stack course you'll ever find",
@@ -278,12 +222,6 @@ const COURSE_FULL_STACK = {
   ],
 }
 
-const COURSES = [
-  COURSE_JS_PRO,
-  COURSE_REACT,
-  COURSE_REDUX,
-  COURSE_DATA,
-  COURSE_FULL_STACK,
-]
+const COURSES = [JS_PRO, UI_DEV, FRONT_END, BACK_END]
 
 export default COURSES

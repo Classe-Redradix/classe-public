@@ -49,17 +49,16 @@ const Find = ({ isBlack, isFluor }) => {
               })}
             </h3>
           </div>
-          {/* TODO: add the cursor pointer in the css (?) */}
-          <p
+          <button
             className="notes"
+            aria-label={t('find:aria')}
             onClick={copyClasseEmailToClipboard}
-            style={{ cursor: 'pointer' }}
           >
             {t('find:description2', {
               ariaHidden: text => <span aria-hidden="true">{text}</span>,
               screenReader: text => <span className="sr-only">{text}</span>,
             })}
-          </p>
+          </button>
         </Cell>
       </Row>
     </SectionWrapper>
