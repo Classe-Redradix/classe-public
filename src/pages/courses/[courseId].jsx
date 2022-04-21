@@ -38,6 +38,7 @@ const Course = withKonami(({ course }) => {
       description={formatMessage('info-head-course:description', {
         course: course.information.title,
       })}
+      url={`${formatMessage('url:root')}${course.href}`}
     >
       <script type="application/ld+json">
         [{`${courseSchema}`}, {`${educationalEventSchema}`},{' '}
