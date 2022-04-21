@@ -139,3 +139,6 @@ para saber los estándares que se siguen en este proyecto.
   hay que añadir el atributo `href` al botón de _inscribirme_ que aparece en la
   vista individual de un curso. Hay que incluirlo porque ayudará a mejorar el
   SEO de la página.
+
+- Modificar el nombre de las carpetas de inglés a español. Ejemplo:
+  `classe.dev/courses` --> `classe.dev/cursos`
