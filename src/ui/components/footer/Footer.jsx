@@ -124,18 +124,22 @@ const Footer = ({
                 Twitter
               </a>
             </li>
+          </ul>
+        </Cell>
+        <Cell isNegative={isBlack}>
+          <span className="tiny">Así se ha hecho</span>
+          <ul className="footer-list">
             <li>
               <a
                 className="h4"
                 href="https://github.com/ophion-studio/classe-public"
                 target="_blank"
               >
-                GitHub
+                Repositorio Classe
               </a>
             </li>
           </ul>
         </Cell>
-        <Cell isNegative={isBlack} />
         <Cell isNegative={isBlack}>
           <address>
             <span className="tiny">{t('footer:contact')}</span>
