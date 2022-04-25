@@ -89,6 +89,8 @@ const course = {
     'Objetive 4',
     'Objetive N',
   ],
+  source: 'static/media/public/images/curso-javascript.jpg',
+  alt: 'JS PRO',
 }
 
 const dates = [
@@ -107,7 +109,7 @@ const dates = [
 ]
 
 export const courseIntro = ({ ...args }) => (
-  <CourseIntro isBlack dates={dates} {...args} course={course} />
+  <CourseIntro isBlack dates={dates} {...args} course={course} image={course} />
 )
 courseIntro.parameters = {
   options: {
