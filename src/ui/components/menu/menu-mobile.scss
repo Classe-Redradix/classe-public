@@ -1,0 +1,53 @@
+.menuMobile {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: sticky;
+  padding: $distance-small;
+  top: 0;
+  width: 100%;
+  height: auto;
+  color: $black;
+  backdrop-filter: $blur-value;
+  z-index: $index-menu-mobile;
+
+  &.is-black,
+  &.is-open,
+  &.is-fluor.is-open {
+    color: $white;
+
+    &::before {
+      background-color: $black;
+    }
+
+    .menuMobile-claim {
+      color: $white;
+    }
+  }
+
+  &.is-fluor::before {
+    background-color: $fluor;
+  }
+
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   top: -$distance-small;
+  //   right: -$distance-small;
+  //   bottom: 0;
+  //   left: -$distance-small;
+  //   background-color: $white;
+  //   transition: background-color $fade-simple;
+  // }
+
+  &-claim {
+    color: inherit;
+  }
+
+  &-button {
+    font-size: 1.125rem;
+  }
+}

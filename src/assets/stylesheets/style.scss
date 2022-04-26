@@ -8,3 +8,24 @@
 @import 'base/base';
 
 // COMPONENTS
+@import '../../ui/components/button/button';
+@import '../../ui/components/cell/cell';
+@import '../../ui/components/date-picker/date-picker';
+@import '../../ui/components/facts/fact';
+@import '../../ui/components/faqs/faq-button';
+@import '../../ui/components/faqs/faqs-container';
+@import '../../ui/components/forms/checkbox';
+@import '../../ui/components/forms/input';
+@import '../../ui/components/forms/radio';
+@import '../../ui/components/header/header';
+@import '../../ui/components/menu/courses-list';
+@import '../../ui/components/menu/menu-desktop';
+@import '../../ui/components/menu/menu-layer';
+@import '../../ui/components/menu/menu-mobile';
+@import '../../ui/components/paragraphs/paragraphs';
+@import '../../ui/components/wrappers/main-wrapper';
+@import '../../ui/components/wrappers/section-wrapper';
+@import '../../ui/components/row/row';
+@import '../../ui/components/sections/sections';
+@import '../../ui/components/sections/course/course';
+@import '../../ui/views/error/error';

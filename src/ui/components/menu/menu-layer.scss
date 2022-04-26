@@ -1,0 +1,274 @@
+.menuLayer {
+  $self: &;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  color: $white;
+  background-color: $black;
+  opacity: 0;
+  transition: opacity $fade-simple;
+  pointer-events: none;
+  z-index: $index-menu-layer;
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &.is-free {
+    bottom: 0;
+    overflow-y: scroll;
+    height: auto;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
+  &:not(.is-open) .cell-line {
+    transition: transform 0s $fade-simple;
+  }
+
+  &-wrapper {
+    display: block;
+    position: relative;
+    padding: $distance-small;
+    padding-top: 60px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &-desktopHeader {
+    display: block;
+    position: relative;
+    margin-bottom: 16px;
+    text-align: right;
+  }
+
+  &-desktopHeader-button {
+    position: relative;
+    margin-left: auto;
+
+    html:not(.is-mobile) &:hover .braketHover {
+      padding: 0 4px;
+    }
+  }
+
+  &-content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+
+    .row {
+      width: 100%;
+    }
+
+    &.is-block {
+      display: block;
+    }
+  }
+
+  &-menu .cell {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .menuDesktop-claim,
+  .menuDesktop-button {
+    display: none;
+  }
+
+  .menuDesktop-link {
+    @include typo-rwd(h2);
+    text-transform: uppercase;
+  }
+
+  &-courses.row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .cell:first-child {
+      display: none;
+
+      & + .cell {
+        margin-top: 0;
+      }
+    }
+
+    .cell:last-child {
+      flex: 1;
+    }
+  }
+
+  &-contact.row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .cell {
+      display: flex;
+      flex-direction: column;
+      min-height: 65vh;
+
+      #{$self}-contactAddress {
+        margin-top: auto;
+      }
+
+      #{$self}-contactAddressText {
+        margin-top: 24px;
+        @include typo-rwd(h4);
+      }
+    }
+
+    .cell:last-child {
+      flex: 1;
+    }
+
+    .contact-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-formBlock {
+      position: relative;
+
+      & + .contact-formBlock {
+        margin-top: 24px;
+      }
+
+      &--flex {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 16px;
+
+        & + .contact-formBlock {
+          margin-top: 24px;
+        }
+
+        .checkbox,
+        .radio {
+          margin-top: 12px;
+        }
+      }
+    }
+
+    .mainButton {
+      margin-top: 40px;
+    }
+  }
+
+  @include mq(md) {
+    &.is-open {
+      transition: opacity $fade-simple $fade-short-delay;
+
+      & + .menuDesktop,
+      & ~ .blurableWrapper {
+        filter: $blur-value;
+        transition: filter $fade-short;
+      }
+    }
+
+    &.is-free {
+      overflow-y: unset;
+      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
+    }
+
+    &-wrapper {
+      padding: $distance-big;
+      padding-top: $distance-big;
+    }
+
+    &-content {
+      min-height: calc(100% - 28px);
+
+      &.is-block {
+        height: calc(100% - 60px);
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
+    }
+
+    &-courses.row {
+      flex-direction: row;
+
+      .cell:first-child {
+        display: block;
+      }
+
+      .cell:last-child {
+        flex: none;
+      }
+    }
+
+    &-contact.row {
+      flex-direction: row;
+
+      .cell {
+        height: auto;
+
+        #{$self}-contactAddressText {
+          margin-top: 24px;
+          @include typo-rwd(h5);
+        }
+      }
+
+      .cell:last-child {
+        flex: none;
+      }
+
+      .contact-formBlock--flex {
+        flex-direction: row;
+        align-items: center;
+
+        .checkbox {
+          margin-top: 0;
+          &:not(:first-child) {
+            margin-top: 0;
+            margin-left: 24px;
+          }
+        }
+
+        .radio {
+          margin-top: 0;
+          margin-left: 24px;
+        }
+      }
+
+      .mainButton {
+        margin-top: auto;
+      }
+    }
+
+    .menuDesktop-claim,
+    .menuDesktop-button {
+      display: block;
+    }
+
+    .menuDesktop-link {
+      @include typo-rwd(menu);
+    }
+  }
+}

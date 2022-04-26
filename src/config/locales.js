@@ -1,6 +1,6 @@
 const LOCALES = [
-  { locale: 'en', match: /en/ },
-  { locale: 'es', match: /es/ }
+  { locale: 'es', match: /es/ },
+  { locale: 'en', match: /en/ }
 ]
 
 export default LOCALES

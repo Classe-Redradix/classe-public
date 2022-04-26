@@ -5,21 +5,35 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
-    "storybook": "start-storybook",
-    "build-storybook": "build-storybook -c .storybook -o .out"
+    "storybook": "start-storybook -p 9001",
+    "storybook:build": "build-storybook -c .storybook -o .out",
+    "prestorybook:deploy": "npm run storybook:build",
+    "storybook:deploy": "surge --project ./.out/ --domain $npm_package_config_storybookDomain"
+  },
+  "config": {
+    "storybookDomain": "https://classe-storybook.ophion.studio/"
   },
   "dependencies": {
+    "@svgr/webpack": "^5.5.0",
+    "firebase": "^9.6.5",
+    "gsap": "./gsap-bonus.tgz",
     "next": "10.2.2",
+    "next-images": "^1.8.4",
+    "next-transpile-modules": "^9.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-intl": "^5.18.1"
+    "react-intl": "^5.18.1",
+    "use-fit-text": "^2.4.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-controls": "^6.4.18",
     "@storybook/addon-knobs": "^6.2.9",
-    "@storybook/react": "^6.2.9",
+    "@storybook/react": "^6.4.18",
     "css-loader": "^5.2.6",
+    "next-sitemap": "^2.5.20",
+    "resolve-url-loader": "^5.0.0",
     "sass": "^1.34.0",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0"
