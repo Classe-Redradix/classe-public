@@ -3,8 +3,16 @@
   height: 70vh;
   @include mq(md) {
     display: flex;
-    height: calc(100vh - 52px - #{$distance-big});
+    height: calc(100vh - 28px - (#{$distance-big} * 2));
     padding-right: $distance-big;
+    flex-wrap: wrap;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .sectionWrapper {
+    height: calc(100vh - 80px);
   }
 }
 
@@ -14,18 +22,27 @@
   display: flex;
   flex-direction: column;
   padding: 0;
-
+  @include mq(md) {
+    min-width: calc(100vw - (#{$distance-big} * 2));
+  }
   &-name {
     order: -1;
+    @include mq(md) {
+      order: 1;
+      height: 30%;
+      margin-top: -1px;
+    }
   }
 
   &-nameText {
     display: flex;
     align-items: center;
-    white-space: nowrap;
     text-transform: uppercase;
     overflow: hidden;
+    height: 100%;
     font-weight: $regular;
+    font-size: 6rem;
+    line-height: 0.8;
 
     span {
       position: relative;
@@ -48,8 +65,19 @@
   }
 
   &-description {
+    .wrap-p {
+      margin-top: auto;
+    }
     .p + .p {
       margin-top: 16px;
+      @include mq(md) {
+        margin-top: 24px;
+      }
+    }
+    @include mq(xl) {
+      .p {
+        max-width: 65%;
+      }
     }
   }
 
@@ -58,35 +86,22 @@
     align-items: flex-end;
     justify-content: space-between;
     margin-top: 82px;
-  }
-
-  @include mq(md) {
-    min-width: calc(100vw - (#{$distance-big} * 2));
-
-    &-name {
-      order: 1;
-      height: 30%;
-    }
-
-    &-data {
-      height: 70%;
-    }
-
-    &-description {
-      .p + .p {
-        margin-top: 24px;
-      }
-    }
-
-    &-actions {
+    @include mq(md) {
       margin-top: 3vh;
     }
   }
-
-  @include mq(xl) {
-    &-description {
-      .p {
-        max-width: 65%;
+  &-data {
+    @include mq(md) {
+      height: 70%;
+      &.row {
+        margin-top: 0;
+      }
+      :nth-child(2) {
+        display: flex;
+        flex-direction: column;
+      }
+      .cell-description {
+        flex-grow: 1;
       }
     }
   }
@@ -107,6 +122,7 @@
 
   &-nameText {
     font-weight: inherit;
+    font-size: 6rem;
   }
 
   &-cell {
@@ -135,7 +151,10 @@
   width: 100%;
   height: 100%;
   padding: 0;
-
+  @include mq(md) {
+    width: 342px;
+    min-width: 342px;
+  }
   &-number {
     height: 60%;
 
@@ -143,11 +162,17 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+      justify-content: space-between;
+      //TODO: Create a media query for very large screens with "justify-content: end"
+      //and give a margin-top to the number.
     }
   }
 
   &-text {
-    margin-top: auto;
+    .sectionWrapper & {
+      margin-top: rem(100px);
+      margin-top: auto;
+    }
   }
 
   &-title {
@@ -157,6 +182,12 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+    }
+    .scrambleText {
+      @include mq(md) {
+        font-size: 2.25rem;
+        line-height: 2rem;
+      }
     }
   }
 
@@ -180,43 +211,30 @@
     right: 48px;
   }
 
-  &--contact {
-    .courseSection-number {
-      .cell {
-        justify-content: space-between;
-      }
-
-      .mainButton {
-        align-self: flex-start;
-      }
-    }
-  }
-
-  @include mq($until: md) {
-    &--empty {
+  &--empty {
+    @include mq($until: md) {
       display: none;
     }
-
-    .line {
+    @include mq(md) {
+      width: auto;
+      min-width: inherit;
+    }
+  }
+  .line {
+    @include mq($until: md) {
       display: inline;
     }
   }
 
-  @include mq(md) {
-    width: 342px;
-    min-width: 342px;
-
-    &--empty {
-      width: auto;
-      min-width: inherit;
-    }
-
-    &--objectives {
+  &--objectives {
+    @include mq(md) {
       width: 476px;
       min-width: 476px;
     }
+  }
 
-    &--info {
+  &--info {
+    @include mq(md) {
       width: 696px;
       min-width: 696px;
 
@@ -233,10 +251,21 @@
         }
       }
     }
+  }
 
-    &--contact {
+  &--contact {
+    @include mq(md) {
       width: calc(100vw - 342px);
       min-width: calc(100vw - 342px);
+    }
+    .courseSection-number {
+      .cell {
+        justify-content: space-between;
+      }
+
+      .mainButton {
+        align-self: flex-start;
+      }
     }
   }
 }
