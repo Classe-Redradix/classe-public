@@ -4,17 +4,18 @@ import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import Button from '../../button/Button'
+import Paragraphs from '../../paragraphs/Paragraphs'
 import TabIcon from './../../../../assets/icons/TabIcon'
 import DatePicker from '../../date-picker/DatePicker'
 import useTranslations from '../../../../hooks/useTranslations'
 import useFitText from 'use-fit-text'
 import { DatesPropType } from './../../../sharedProptypes'
 
-const Course = ({ dates, name, image, openContact, course }) => {
+const Course = ({ dates, name, image, description, openContact, course }) => {
   const formatMessage = useTranslations()
   const onFinish = useCallback(fontSize => {}, [])
   const { fontSize, ref } = useFitText({ maxFontSize: 5000, onFinish })
-
+  console.log('course', course)
   return (
     <SectionWrapper isBlack extraClass="courseIntro">
       <Row type="full" extraClass="courseIntro-name">
@@ -22,9 +23,9 @@ const Course = ({ dates, name, image, openContact, course }) => {
           <h1
             className="courseIntro-nameText"
             ref={ref}
-            style={{
-              fontSize,
-            }}
+            // style={{
+            //   fontSize,
+            // }}
           >
             <TabIcon className="courseIntro-tab" aria-hidden="true" />
             {name}
@@ -57,19 +58,9 @@ const Course = ({ dates, name, image, openContact, course }) => {
               </div>
             </Cell>
           )}
-          <Cell isNegative>
+          <Cell isNegative extraClass="cell-description">
             <div className="courseIntro-description">
-              <p className="p">
-                Curso de 20h de profundización en el lenguaje para convertirse
-                en un experto. Se tratarán los principios que van más allá de
-                cualquier librería o de cualquier framework. Fundamentos sólidos
-                sobre los que construir. Los objetivos son dominar el lenguaje
-                por completo y asimilar los patrones más complejos.
-              </p>
-              <p className="p">
-                Todos nuestros cursos son configurables para poder adaptarse a
-                tus necesidades y las de tu empresa
-              </p>
+              <Paragraphs text={formatMessage(description)} />
             </div>
             <div className="courseIntro-actions">
               {/**

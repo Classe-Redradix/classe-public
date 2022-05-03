@@ -28,8 +28,10 @@ const CourseObjectives = ({ learn, text, objectives }) => {
               })}
             </h3>
           </div>
-          <p className="p courseSection-text">{text}</p>
-          <p className="p courseSection-text">{text}</p>
+          <div className="courseSection-text">
+            <p className="p ">{text}</p>
+            <p className="p">{text}</p>
+          </div>
         </Cell>
       </Row>
       <Row type="full" extraClass="courseSection-title">

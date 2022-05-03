@@ -51,7 +51,7 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
     menuCourse = Object.assign({}, course)
   }
 
-  const { information } = menuCourse
+  const { information, indexItems, href } = menuCourse
 
   useEffect(() => {
     let t = null
@@ -92,50 +92,21 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
           image={information.image}
           openContact={openContact}
           course={menuCourse}
+          description={information.description}
         />
         <CourseTitle title={formatMessage('course:index-title')} />
-        <CourseSection
-          number="01"
-          text="Introducción y recursos. String templates. Desestructuración.
-Declaración de variables. (2H)"
-          title="course:fundamentals"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="02"
-          text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
-          title="course:functional-programming"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="03"
-          text="Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)"
-          title="course:object-oriented-programming"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="04"
-          text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
-          title="course:functional-programming"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="05"
-          text="Introducción. Callbacks. Iteración asíncrona. Sincronización. Eventos y Observables. Combinación de eventos. (4H)"
-          title="course:asynchronous-programming"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="06"
-          text="Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)"
-          title="course:promises"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="07"
-          text="Further study. Lecturas recomendadas. Recursos extra. (1H)"
-          title="courses:closing"
-        />
+        {indexItems.map((indexItem, index) => (
+          <>
+            <CourseSection
+              key={index}
+              number={indexItem.number}
+              text={indexItem.description}
+              title={indexItem.name}
+            />
+            <CourseSectionEmpty />
+          </>
+        ))}
+
         <CourseTitle title={formatMessage('course:objectives-title')} />
         <CourseObjectives
           learn="course:learn"
@@ -146,8 +117,7 @@ Declaración de variables. (2H)"
           price={information.price}
           hours={information.hours}
           places={information.places}
-          students={information.enrolledStudents}
-          successPercentage={information.successPercentage}
+          practical={information.practical}
         />
         <CourseTitle title={formatMessage('footer:contact')} />
         <CourseContact openContact={openContact} />
