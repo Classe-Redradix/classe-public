@@ -16,9 +16,9 @@ const CourseTitle = ({ title }) => {
           <h2
             className="courseTitle-nameText"
             ref={ref}
-            style={{
-              fontSize,
-            }}
+            // style={{
+            //   fontSize,
+            // }}
           >
             {title}
           </h2>
