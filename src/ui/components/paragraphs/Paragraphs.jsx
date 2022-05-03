@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 
-const Paragraphs = ({ text }) => {
+const Paragraphs = ({ text, extraClass }) => {
   return (
-    <div className="wrap-p">
+    <div className={cx('wrap-p', `${extraClass ? extraClass : ''}`)}>
       {text.split('\n').map((p, index) => (
         <p key={index} className="p">
           {p}
@@ -14,6 +15,7 @@ const Paragraphs = ({ text }) => {
 }
 
 Paragraphs.propTypes = {
+  extraClass: PropTypes.string,
   p: PropTypes.string,
 }
 
