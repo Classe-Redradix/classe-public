@@ -13,20 +13,13 @@ const CourseContact = ({ openContact }) => {
 
   return (
     <SectionWrapper isBlack extraClass="courseSection courseSection--contact">
-      <Row type="half" extraClass="courseSection-number">
+      <Row type="full" extraClass="courseSection-number">
         <Cell isNegative>
           <h3 className="h3">{t('course:contact')}</h3>
           <Button
             isNegative
             onClick={openContact}
             text={t('course:contact-us')}
-          />
-        </Cell>
-        <Cell isNegative>
-          <img
-            className="bwfilter"
-            src={image}
-            alt="Oficina con varias mesas y equipos informáticos"
           />
         </Cell>
       </Row>
@@ -54,7 +47,13 @@ const CourseContact = ({ openContact }) => {
             </h3>
           </address>
         </Cell>
-        <Cell isNegative></Cell>
+        <Cell isNegative>
+          <img
+            className="bwfilter"
+            src={image}
+            alt="Oficina con varias mesas y equipos informáticos"
+          />
+        </Cell>{' '}
       </Row>
     </SectionWrapper>
   )
