@@ -1,5 +1,7 @@
 .bwfilter {
   filter: grayscale(100%);
+  object-fit: cover;
+  height: 100%;
 }
 
 .sectionWrapper.courses {
