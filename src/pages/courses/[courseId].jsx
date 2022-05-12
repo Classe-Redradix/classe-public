@@ -40,10 +40,12 @@ const Course = withKonami(({ course }) => {
       })}
       url={`${formatMessage('url:root')}${course.href}`}
     >
-      <script type="application/ld+json">
-        [{`${courseSchema}`}, {`${educationalEventSchema}`},{' '}
-        {`${breadcrumbListSchema}`}]
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `[${courseSchema}, ${educationalEventSchema}, ${breadcrumbListSchema}]`,
+        }}
+      />
     </InfoHead>
   )
 

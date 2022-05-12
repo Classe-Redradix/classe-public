@@ -23,9 +23,12 @@ const Contact = withKonami(({ interestedIn }) => {
       description={formatMessage('info-head-contact:description')}
       url={formatMessage('url:contact')}
     >
-      <script type="application/ld+json">
-        [{`${contactPageSchema}`}, {`${breadcrumbListSchema}`}]
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `[${contactPageSchema}, ${breadcrumbListSchema}]`,
+        }}
+      />
     </InfoHead>
   )
 

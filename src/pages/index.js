@@ -202,10 +202,12 @@ const Home = () => {
         description={formatMessage('info-head-home:description')}
         url={formatMessage('url:root')}
       >
-        <script type="application/ld+json">
-          [ {`${educationalOrganizationSchema}`}, {`${webSiteSchema}`},{' '}
-          {`${breadcrumbListSchema}`}]
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `[${educationalOrganizationSchema}, ${webSiteSchema}, ${breadcrumbListSchema}]`,
+          }}
+        />
       </InfoHead>
       <HomeUI
         isBlack={isBlack}
