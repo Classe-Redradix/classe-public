@@ -96,15 +96,14 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
         />
         <CourseTitle title={formatMessage('course:index-title')} />
         {indexItems.map((indexItem, index) => (
-          <>
+          <div key={index}>
             <CourseSection
-              key={index}
               number={indexItem.number}
               text={indexItem.description}
               title={indexItem.name}
             />
             <CourseSectionEmpty />
-          </>
+          </div>
         ))}
 
         <CourseTitle title={formatMessage('course:objectives-title')} />
