@@ -24,6 +24,7 @@ const JS_PRO = {
   indexItems: [
     {
       number: '01',
+      name: 'course:object-oriented-programming',
       name: 'course:js-pro-01-title',
       description: 'course:js-pro-01-description',
     },

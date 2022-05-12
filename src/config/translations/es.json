@@ -84,13 +84,14 @@
   "course:index-title": "Índice",
 
   "course:js-pro-description": "**Con este curso aprenderás**\nBásicamente: JavaScript en profundidad. Los cimientos sobre los que apoyar conocimientos futuros. Descubrirás que se puede pasar de Angular a React en cuestión de horas si las bases son sólidas. No solo eso, tus compañeros agradecerán a partir de ahora que tu código sea robusto, escalable y, sobre todo, legible.\n**Si te preguntas si es para ti...**\nEste es un curso avanzado para profesionales que han trabajado en desarrollo web al menos durante un año. Está centrado en *learn by doing* con ejercicios divertidos para hacer y corregir en vivo. *Live programming* al poder!",
-  "course:js-pro-01-title": "<line>Tipos de</line><line>datos</line>",
+  "course:js-pro-01-title": "<line>Tipos</line><line> de</line><line>datos</line>",
+
   "course:js-pro-01-description": "Empezando por Arrays y Mapas, pasando por Sets, Símbolos hasta llegar a Proxies y Objetos. Serás capaz de explotar estas estructuras como no imaginabas que fuera posible.",
-  "course:js-pro-02-title": "<line>Orientación a</line><line>objetos</line>",
+  "course:js-pro-02-title": "<line>Orientación</line><line>  a</line><line>objetos</line>",
   "course:js-pro-02-description": "JavaScript es un lenguaje orientado a prototipos, así que conocer la trampa que esconde para implementar OO te ayudará a ver sus posibilidades y limitaciones.",
-  "course:js-pro-03-title": "<line>Programación</line><line>funcional</line>",
+  "course:js-pro-03-title": "<line>Programa</line><line> ción</line><line>funcional</line>",
   "course:js-pro-03-description": "Pon un curry en tu vida y déjate seducir por las posibilidades de la programación funcional y lo mucho que puede aportar en términos de simplicidad a tu base de código.",
-  "course:js-pro-04-title": "<line>Programación</line><line>asíncrona</line>",
+  "course:js-pro-04-title": "<line>Programa</line><line> ción</line><line>asíncrona</line>",
   "course:js-pro-04-description": "Está por todas partes y es necesario entender todas sus implicaciones sin que te explote la cabeza. Desde callback hell hasta generadores, pasando por la creación de una implementación de promesas y async/await.",
 
   "course:ui-dev-description": "**Con este curso aprenderás**\nEstamos hartos de ver comportamientos *responsive* defectuosos, transiciones que no fluyen o *scrolls* que dan ganas de tirar el ordenador por la ventana. Eso por no hablar de la web de Renfe. Basta ya! Este curso te dará el conocimiento para crear interfaces que respeten los estándares y, sobre todo, a los usuarios. Bueno y ya que estamos, y con un poco de suerte, también [que ganen premios.](https://www.awwwards.com/) 🏆\n**Si te preguntas si es para ti...**\nEste es un curso avanzado para profesionales que han trabajado en desarrollo web al menos durante un año. Está centrado en *learn by doing* con ejercicios divertidos para hacer y corregir en vivo. *Live programming* al poder!",
