@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
+
+import Paragraphs from '../../paragraphs/Paragraphs'
 import useTranslations from '../../../../hooks/useTranslations'
 
-const CourseObjectives = ({ learn, text, objectives }) => {
-  const t = useTranslations()
+const CourseObjectives = ({ learn, text, objectives, objectivesText }) => {
+  const formatMessage = useTranslations()
 
   return (
     <SectionWrapper
@@ -17,7 +19,7 @@ const CourseObjectives = ({ learn, text, objectives }) => {
         <Cell isNegative>
           <div className="scrambleTextWrapper">
             <h3 className="h3 scrambleText">
-              {t(learn, {
+              {formatMessage(learn, {
                 line: text => <span className="line">{text}</span>,
                 lineAriaHidden: text => (
                   <span className="line" aria-hidden="true">
@@ -29,8 +31,7 @@ const CourseObjectives = ({ learn, text, objectives }) => {
             </h3>
           </div>
           <div className="courseSection-text">
-            <p className="p ">{text}</p>
-            <p className="p">{text}</p>
+            <Paragraphs text={formatMessage(text)} />
           </div>
         </Cell>
       </Row>
@@ -38,7 +39,7 @@ const CourseObjectives = ({ learn, text, objectives }) => {
         <Cell isNegative>
           <div className="scrambleTextWrapper">
             <h3 className="h3 scrambleText">
-              {t(objectives, {
+              {formatMessage(objectives, {
                 line: text => <span className="line">{text}</span>,
                 lineAriaHidden: text => (
                   <span className="line" aria-hidden="true">
@@ -49,7 +50,7 @@ const CourseObjectives = ({ learn, text, objectives }) => {
               })}
             </h3>
           </div>
-          <p className="p courseSection-text">{text}</p>
+          <Paragraphs text={formatMessage(objectivesText)} />
         </Cell>
       </Row>
     </SectionWrapper>
@@ -60,6 +61,7 @@ CourseObjectives.propTypes = {
   learn: PropTypes.string,
   text: PropTypes.string,
   objectives: PropTypes.string,
+  objectivesText: PropTypes.string,
 }
 
 export default CourseObjectives

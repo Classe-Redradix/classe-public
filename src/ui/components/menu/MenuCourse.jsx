@@ -51,7 +51,7 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
     menuCourse = Object.assign({}, course)
   }
 
-  const { information, indexItems, href } = menuCourse
+  const { information, indexItems, objectives, href } = menuCourse
 
   useEffect(() => {
     let t = null
@@ -108,9 +108,10 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
 
         <CourseTitle title={formatMessage('course:objectives-title')} />
         <CourseObjectives
-          learn="course:learn"
-          text="Congue fermentum fermentum justo, phasellus. Aliquam sapien scelerisque porttitor quam congue nibh. "
-          objectives="course:objectives"
+          learn={objectives.learn}
+          text={objectives.text}
+          objectives={objectives.objectives}
+          objectivesText={objectives.objectivesText}
         />
         <CourseInfo
           price={information.price}

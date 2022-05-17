@@ -43,14 +43,18 @@ const JS_PRO = {
       name: 'course:js-pro-04-title',
       description: 'course:js-pro-04-description',
     },
+    {
+      number: '05',
+      name: 'course:js-pro-05-title',
+      description: 'course:js-pro-05-description',
+    },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N5',
-  ],
+  objectives: {
+    learn: 'course:js-pro-learn',
+    text: 'course:js-pro-learn-description',
+    objectives: 'course:js-pro-objectives',
+    objectivesText: 'course:js-pro-objetives-description',
+  },
 }
 
 const UI_DEV = {
@@ -99,13 +103,12 @@ const UI_DEV = {
       description: 'course:ui-dev-05-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
+  objectives: {
+    learn: 'course:ui-dev-learn',
+    text: 'course:ui-dev-learn-description',
+    objectives: 'course:ui-dev-objectives',
+    objectivesText: 'course:ui-dev-objetives-description',
+  },
 }
 
 const FRONT_END = {
@@ -150,13 +153,12 @@ const FRONT_END = {
       description: 'course:front-04-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
+  objectives: {
+    learn: 'course:front-learn',
+    text: 'course:front-learn-description',
+    objectives: 'course:front-objectives',
+    objectivesText: 'course:front-objetives-description',
+  },
 }
 
 const BACK_END = {
@@ -210,13 +212,12 @@ const BACK_END = {
       description: 'course:back-06-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
+  objectives: {
+    learn: 'course:back-learn',
+    text: 'course:back-learn-description',
+    objectives: 'course:back-objectives',
+    objectivesText: 'course:back-objetives-description',
+  },
 }
 
 const COURSES = [JS_PRO, UI_DEV, FRONT_END, BACK_END]
