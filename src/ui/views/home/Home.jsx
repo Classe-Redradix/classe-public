@@ -76,28 +76,32 @@ const Home = ({
           openCourse={openCourse}
           openContact={openContact}
         />
+
         <Header isClose title={formatMessage('courses:header')} />
         <Header title={formatMessage('custom:header')} number={3} />
         <Custom isBlack={isBlack} isFluor={isFluor} openCourses={openCourses} />
         <Header isClose title={formatMessage('custom:header')} />
         <Header title={formatMessage('featured:header')} number={4} />
+
         <Featured
           isBlack={isBlack}
           isFluor={isFluor}
           course={featuredCourse}
           openCourse={openCourse}
         />
+
         <Header isClose title={formatMessage('featured:header')} />
+
         <Header title={formatMessage('facts:header')} number={5} />
         <Facts isBlack={isBlack} isFluor={isFluor} />
         <Header isClose title={formatMessage('facts:header')} />
         <Header title={formatMessage('calendar:header')} number={6} />
         <Calendar
-          dates={dates}
           isBlack={isBlack}
           isFluor={isFluor}
           openContact={openContact}
         />
+
         <Header isClose title={formatMessage('calendar:header')} />
         <Header title={formatMessage('companies:header')} number={7} />
         <Companies

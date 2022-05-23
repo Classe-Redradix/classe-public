@@ -38,7 +38,11 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
           <Paragraphs text={t('calendar:description')} />
         </Cell>
         <Cell>
-          <DatePicker dates={dates} openContact={openContact} />
+          {dates ? (
+            <DatePicker dates={dates} openContact={openContact} />
+          ) : (
+            <Paragraphs text={t('calendar:no-courses')} />
+          )}
         </Cell>
       </Row>
     </SectionWrapper>

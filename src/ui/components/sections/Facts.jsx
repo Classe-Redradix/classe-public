@@ -79,7 +79,12 @@ const Facts = ({ isBlack }) => {
             <Fact text={t('facts:fact5')} />
           </Cell>
           <Cell>
-            <Fact text={t('facts:fact6')} />
+            <a
+              href="https://redradix.com/blog/de-donde-viene-el-stack-de-redradix/"
+              target="_blank"
+            >
+              <Fact text={t('facts:fact6')} />
+            </a>
           </Cell>
         </Row>
       </div>

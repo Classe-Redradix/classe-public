@@ -2,16 +2,16 @@ import imageCourseJS from '/public/images/curso-javascript.jpg'
 import imageCourseReact from '/public/images/curso-front.jpg'
 import imageCourseUIDeveloper from '/public/images/curso-maqueta.jpg'
 
-const JS_PRO = {
-  id: 'js-pro',
+const PROGRAMACION = {
+  id: 'programacion',
   isFeatured: false,
   isPublic: false,
-  href: '/courses/js-pro',
+  href: '/courses/programacion',
   information: {
-    title: 'JS PRO',
+    title: 'PROGRAMACIÓN',
     start: '21.08.22',
     finish: '25.08.22',
-    description: 'course:js-pro-description',
+    description: 'course:programacion-description',
     image: {
       source: imageCourseJS,
       alt: 'Un chico de perfil trabajando con su portátil',
@@ -25,37 +25,92 @@ const JS_PRO = {
     {
       number: '01',
       name: 'course:object-oriented-programming',
-      name: 'course:js-pro-01-title',
-      description: 'course:js-pro-01-description',
+      name: 'course:programacion-01-title',
+      description: 'course:programacion-01-description',
     },
     {
       number: '02',
-      name: 'course:js-pro-02-title',
-      description: 'course:js-pro-02-description',
+      name: 'course:programacion-02-title',
+      description: 'course:programacion-02-description',
     },
     {
       number: '03',
-      name: 'course:js-pro-03-title',
-      description: 'course:js-pro-03-description',
+      name: 'course:programacion-03-title',
+      description: 'course:programacion-03-description',
     },
     {
       number: '04',
-      name: 'course:js-pro-04-title',
-      description: 'course:js-pro-04-description',
+      name: 'course:programacion-04-title',
+      description: 'course:programacion-04-description',
     },
     {
       number: '05',
-      name: 'course:js-pro-05-title',
-      description: 'course:js-pro-05-description',
+      name: 'course:programacion-05-title',
+      description: 'course:programacion-05-description',
     },
   ],
   objectives: {
-    learn: 'course:js-pro-learn',
-    text: 'course:js-pro-learn-description',
-    objectives: 'course:js-pro-objectives',
-    objectivesText: 'course:js-pro-objetives-description',
+    learn: 'course:programacion-learn',
+    text: 'course:programacion-learn-description',
+    objectives: 'course:programacion-objectives',
+    objectivesText: 'course:programacion-objetives-description',
   },
 }
+
+// const JS_PRO = {
+//   id: 'js-pro',
+//   isFeatured: false,
+//   isPublic: false,
+//   href: '/courses/js-pro',
+//   information: {
+//     title: 'JSSSSSSSS PRO',
+//     start: '21.08.22',
+//     finish: '25.08.22',
+//     description: 'course:js-pro-description',
+//     image: {
+//       source: imageCourseJS,
+//       alt: 'Un chico de perfil trabajando con su portátil',
+//     },
+//     price: 600,
+//     hours: 30,
+//     places: 15,
+//     practical: 80,
+//   },
+//   indexItems: [
+//     {
+//       number: '01',
+//       name: 'course:object-oriented-programming',
+//       name: 'course:js-pro-01-title',
+//       description: 'course:js-pro-01-description',
+//     },
+//     {
+//       number: '02',
+//       name: 'course:js-pro-02-title',
+//       description: 'course:js-pro-02-description',
+//     },
+//     {
+//       number: '03',
+//       name: 'course:js-pro-03-title',
+//       description: 'course:js-pro-03-description',
+//     },
+//     {
+//       number: '04',
+//       name: 'course:js-pro-04-title',
+//       description: 'course:js-pro-04-description',
+//     },
+//     {
+//       number: '05',
+//       name: 'course:js-pro-05-title',
+//       description: 'course:js-pro-05-description',
+//     },
+//   ],
+//   objectives: {
+//     learn: 'course:js-pro-learn',
+//     text: 'course:js-pro-learn-description',
+//     objectives: 'course:js-pro-objectives',
+//     objectivesText: 'course:js-pro-objetives-description',
+//   },
+// }
 
 const UI_DEV = {
   id: 'uidev',
@@ -117,7 +172,7 @@ const FRONT_END = {
   isPublic: true,
   href: '/courses/front-end',
   information: {
-    title: 'Front-end con React',
+    title: 'Front-end',
     start: '21.08.22',
     finish: '25.08.22',
     description: 'course:front-description',
@@ -167,7 +222,7 @@ const BACK_END = {
   isPublic: false,
   href: '/courses/back-end',
   information: {
-    title: 'Backend con Node',
+    title: 'Back-end',
     start: '21.08.22',
     finish: '25.08.22',
     description: 'course:back-description',
@@ -220,6 +275,6 @@ const BACK_END = {
   },
 }
 
-const COURSES = [JS_PRO, UI_DEV, FRONT_END, BACK_END]
+const COURSES = [PROGRAMACION, UI_DEV, FRONT_END, BACK_END]
 
 export default COURSES
