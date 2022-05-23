@@ -1,5 +1,6 @@
 import imageCourseJS from '/public/images/curso-javascript.jpg'
 import imageCourseReact from '/public/images/curso-front.jpg'
+import imageCourseBack from '/public/images/curso-back.jpg'
 import imageCourseUIDeveloper from '/public/images/curso-maqueta.jpg'
 
 const PROGRAMACION = {
@@ -227,7 +228,7 @@ const BACK_END = {
     finish: '25.08.22',
     description: 'course:back-description',
     image: {
-      source: imageCourseReact,
+      source: imageCourseBack,
       alt: 'Un chico con un gorro trabajando en su portátil',
     },
     price: 600,
