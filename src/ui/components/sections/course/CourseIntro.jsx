@@ -15,7 +15,6 @@ const Course = ({ dates, name, image, description, openContact, course }) => {
   const formatMessage = useTranslations()
   const onFinish = useCallback(fontSize => {}, [])
   const { fontSize, ref } = useFitText({ maxFontSize: 5000, onFinish })
-  console.log('course', course)
   return (
     <SectionWrapper isBlack extraClass="courseIntro">
       <Row type="full" extraClass="courseIntro-name">

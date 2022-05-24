@@ -54,7 +54,6 @@ const Error = ({ isBlack, isFluor, isLock, courses, contactFormParams }) => {
     const x = e.clientX
     const y = e.clientY
     const coor = 'Coordinates: (' + x + ',' + y + ')'
-    // console.log(coor)
 
     const theArrows = document.getElementsByClassName('error-arrow')
     for (var i = 0; i < theArrows.length; i++) {
