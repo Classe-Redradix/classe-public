@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
+
+import { COURSES } from '../data'
+
 import useInput from './useInput'
 import useRadio from './useRadio'
-import { COURSES } from '../data'
+import useCheckbox from './useCheckbox'
 
 /**
  * The contact forms are vary similar. Since they use almost the same fields,
@@ -20,6 +23,9 @@ const useContactForm = interestedInCourseId => {
       label: course.information.title,
     })),
   )
+
+  // NOTE: we are not sending this value, it's just a form control
+  const [termsAndConditions, toggleTermsAndConditions] = useCheckbox(false)
 
   // States to know the request status
   const [isLoading, setIsLoading] = useState(false)
@@ -45,8 +51,44 @@ const useContactForm = interestedInCourseId => {
    * @param {Object} config - Additional config
    * @callback config.onSuccess - Executed after storing the contact details
    * @callback config.onError - Executed if the storing throws an error
+   * @callback config.isMenuContact - Indicates if we are saving the full form
    */
-  const saveToFirebase = async ({ onSuccess, onError }) => {
+  const saveToFirebase = async ({
+    onSuccess,
+    onError,
+    isMenuContact = false,
+  }) => {
+    const errors = []
+
+    // NOTE: since in the home contact form the user only indicates what type
+    // of user is (student or company) and that the home contact form and the
+    // modal contact form are using the same form state, we have to indicate
+    // if we want to validate the "interested in" options and the user name.
+    // That's why the `isMenuContact` param is added.
+    // TODO: add error messages to `../config/translations/es.json`.
+    if (isMenuContact) {
+      if (interestedInOptions.filter(option => option.checked).length === 0) {
+        errors.push('Selecciona al menos un curso de tu interés')
+      }
+
+      if (name.trimRight() === '') {
+        errors.push('El nombre no puede estar vacío')
+      }
+    }
+
+    if (email.trimRight() === '') {
+      errors.push('Introduce un email válido')
+    }
+
+    if (!termsAndConditions) {
+      errors.push('Debes aceptar los términos y condiciones')
+    }
+
+    if (errors.length > 0) {
+      alert(errors.join('\n'))
+      return
+    }
+
     setIsLoading(true)
 
     try {
@@ -82,6 +124,7 @@ const useContactForm = interestedInCourseId => {
       setEmail('')
       setUserType('company')
       setInterestedInOptions(interestedInOptionsReset)
+      toggleTermsAndConditions()
 
       if (onSuccess !== undefined) {
         onSuccess()
@@ -121,6 +164,8 @@ const useContactForm = interestedInCourseId => {
     onUserTypeChange,
     interestedInOptions,
     onInterestedInOptionChange,
+    termsAndConditions,
+    toggleTermsAndConditions,
   }
 }
 

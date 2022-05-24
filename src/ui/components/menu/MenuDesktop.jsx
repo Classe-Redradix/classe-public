@@ -19,11 +19,14 @@ const MenuDesktop = ({
   return (
     <header className={classes}>
       <Cell isNegative={isBlack}>
-        <span className="menuDesktop-claim menu">{t('menu:claim')}</span>
+        <a href="/" className="menuDesktop-claim menu">
+          {t('menu:claim')}
+        </a>
         <button
           className="menuDesktop-button menu"
           onClick={openCourses}
           aria-label={t('menu:courses')}
+          role="link"
         >
           [
           <span className="braketHover">
@@ -35,6 +38,7 @@ const MenuDesktop = ({
           onClick={openContact}
           className="menuDesktop-link menu"
           aria-label={t('menu:contact')}
+          role="link"
         >
           {t('menu:contact')}
         </button>

@@ -4,7 +4,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
-import demoImage from '/public/images/demo-small-black.png'
+import image from '/public/images/formacion-para-profesionales.jpg'
 import TabIcon from './../../../assets/icons/TabIcon'
 import { CoursePropType } from '../../sharedProptypes'
 
@@ -27,16 +27,20 @@ const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
         <Cell isColumn isNegative={isBlack}>
           <Cell isNegative={isBlack}>
             <div className="scrambleTextWrapper">
-              <h3 className="h2 scrambleText">
+              <h2 className="h2 scrambleText">
                 {t('courses:claim', {
                   line: text => <span className="line">{text}</span>,
                   lineTab: text => <span className="line has-tab">{text}</span>,
                 })}
-              </h3>
+              </h2>
             </div>
           </Cell>
           <Cell isNegative={isBlack}>
-            <img src={demoImage} alt="" />
+            <img
+              className="bwfilter"
+              src={image}
+              alt="Tres desarrolladores web desarrollando productos digitales"
+            />
             <p className="p">{t('courses:description')}</p>
             <Button
               isLink

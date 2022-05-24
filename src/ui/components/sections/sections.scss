@@ -1,5 +1,7 @@
-.sectionWrapper.manifest .p {
-  margin-top: 96px;
+.bwfilter {
+  filter: grayscale(100%);
+  object-fit: cover;
+  height: 100%;
 }
 
 .sectionWrapper.courses {
@@ -37,9 +39,9 @@
     }
   }
 
-  .p,
   .notes {
     margin-top: 104px;
+    cursor: pointer;
   }
 
   .mainButton {
@@ -61,28 +63,25 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 56px 10px;
     padding-top: 56px;
     padding-bottom: 56px;
-
-    .companies-logoWrapper:nth-child(7) ~ .companies-logoWrapper {
-      margin-top: 56px;
-    }
   }
 }
 
 .companies-logoWrapper {
   display: block;
   position: relative;
-  width: 33.33%;
+  flex: 0 0 calc(50% - 10px);
   height: auto;
   text-align: center;
 
   &-container {
-    display: block;
+    display: flex;
     position: relative;
     margin: 0 auto;
-    width: 80px;
+    width: 120px;
     height: 24px;
   }
 
@@ -188,11 +187,19 @@
   }
 }
 
-@include mq(md) {
-  .sectionWrapper.manifest .p {
-    margin-top: 0;
-  }
+@include mq(sm) {
+  .sectionWrapper.companies {
+    .cell:last-child {
+      column-gap: 32px;
+    }
 
+    .companies-logoWrapper {
+      flex-basis: calc(33.33% - 32px);
+    }
+  }
+}
+
+@include mq(md) {
   .sectionWrapper.featured .mainButton {
     margin-top: 0;
   }
@@ -223,17 +230,16 @@
       height: 48px;
     }
 
-    .p {
-      margin-top: 0;
-    }
     .mainButton {
       margin-top: 208px;
     }
   }
 
-  .sectionWrapper.companies .cell:last-child {
-    padding-top: 32px;
-    padding-bottom: 32px;
+  .sectionWrapper.companies {
+    .cell:last-child {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
   }
 
   .sectionWrapper.footer {
@@ -289,12 +295,16 @@
     margin-top: 220px;
   }
 
-  .sectionWrapper.companies .cell:last-child {
-    padding-top: 56px;
-    padding-bottom: 56px;
+  .sectionWrapper.companies {
+    .cell:last-child {
+      padding-top: 56px;
+      padding-bottom: 56px;
+      column-gap: 64px;
+      row-gap: 156px;
 
-    .companies-logoWrapper:nth-child(7) ~ .companies-logoWrapper {
-      margin-top: 156px;
+      .companies-logoWrapper {
+        flex: 0 0 calc(33.33% - 64px);
+      }
     }
   }
 

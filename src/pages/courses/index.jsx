@@ -1,76 +1,54 @@
-import Menu from 'ui/components/menu/Menu'
-import MainWrapper from 'ui/components/wrappers/MainWrapper'
-import { useRouter } from 'next/router'
-import { COURSES } from '../../data'
-import { useContactForm, useMenu, useKonami } from '../../hooks'
+import { COURSES_PAGE, MEDIA_QUERIES } from '../../constants'
+import { withKonami, withMenu } from '../../hocs'
+import {
+  useWindowSize,
+  useTranslations,
+  useSchema,
+  useBreadcrumbListSchema,
+} from '../../hooks'
+import InfoHead from '../../InfoHead'
 
 const Courses = () => {
-  const router = useRouter()
+  const formatMessage = useTranslations()
+  const { educationalOrganizationSchema } = useSchema()
+  const { breadcrumbListSchema } = useBreadcrumbListSchema([
+    {
+      name: formatMessage('schema-breadcrumb-list:home-name'),
+      url: formatMessage('url:root'),
+    },
+    {
+      name: formatMessage('schema-breadcrumb-list:courses-name'),
+      url: formatMessage('url:courses'),
+    },
+  ])
 
-  useKonami()
+  const size = useWindowSize()
+  const isDesktop = size.width >= MEDIA_QUERIES.desktop
 
-  const {
-    openCourse,
-    isCourseOpen,
-    areCoursesOpen,
-    course,
-    openCourses,
-    openContact,
-    isContactOpen,
-  } = useMenu({
-    defaultAreCoursesOpen: true,
-  })
-
-  const {
-    email,
-    onEmailChange,
-    name,
-    onNameChange,
-    userType,
-    onUserTypeChange,
-    saveToFirebase,
-    interestedInOptions,
-    onInterestedInOptionChange,
-  } = useContactForm(course?.id)
-
-  const contactFormParams = {
-    email,
-    onEmailChange,
-    name,
-    onNameChange,
-    userType,
-    onUserTypeChange,
-    saveToFirebase,
-    interestedInOptions,
-    onInterestedInOptionChange,
-  }
-
-  const actionText = isCourseOpen ? 'menu:close' : 'general:go-to-home'
-
-  return (
-    <MainWrapper isBlack={true}>
-      <Menu
-        actionText={actionText}
-        contactFormParams={contactFormParams}
-        handleText={() => {
-          if (isCourseOpen) {
-            router.replace('/courses')
-            openCourses()
-          } else {
-            router.replace('/')
-          }
+  const infoHead = (
+    <InfoHead
+      title={formatMessage('info-head-courses:title')}
+      description={formatMessage('info-head-courses:description')}
+      url={formatMessage('url:courses')}
+    >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `${breadcrumbListSchema}`,
         }}
-        isContactOpen={isContactOpen}
-        openContact={openContact}
-        areCoursesOpen={areCoursesOpen}
-        isCourseOpen={isCourseOpen}
-        course={course}
-        openCourse={openCourse}
-        isBlack={true}
-        courses={COURSES}
       />
-    </MainWrapper>
+    </InfoHead>
   )
+
+  const hiddenTitle = isDesktop ? (
+    <h1 className="sr-only">{formatMessage('courses:header')}</h1>
+  ) : null
+
+  return withMenu(COURSES_PAGE, {
+    hiddenTitle,
+    infoHead,
+    useMenuConfig: { defaultAreCoursesOpen: true },
+  })
 }
 
-export default Courses
+export default withKonami(Courses)

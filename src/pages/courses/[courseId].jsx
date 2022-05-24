@@ -1,40 +1,62 @@
-import { useRouter } from 'next/router'
+import { COURSE_PAGE } from '../../constants'
+import { COURSES } from '../../data'
+import { withKonami, withMenu } from '../../hocs'
+import {
+  useBreadcrumbListSchema,
+  useCoursechema,
+  useEducationalEventchema,
+  useTranslations,
+} from '../../hooks'
+import InfoHead from '../../InfoHead'
 
-import { COURSES } from './../../data'
-import { useKonami } from './../../hooks'
-import MainWrapper from './../../ui/components/wrappers/MainWrapper'
-import Menu from './../../ui/components/menu/Menu'
+const Course = withKonami(({ course }) => {
+  const formatMessage = useTranslations()
+  const { courseSchema } = useCoursechema(course)
+  const { educationalEventSchema } = useEducationalEventchema(course)
+  const { breadcrumbListSchema } = useBreadcrumbListSchema([
+    {
+      name: formatMessage('schema-breadcrumb-list:home-name'),
+      url: formatMessage('url:root'),
+    },
+    {
+      name: formatMessage('schema-breadcrumb-list:courses-name'),
+      url: formatMessage('url:courses'),
+    },
+    {
+      name: course.information.title,
+      url: formatMessage('url:course', {
+        course: course.href,
+      }),
+    },
+  ])
 
-const Course = ({ course }) => {
-  const router = useRouter()
-
-  useKonami()
-
-  return (
-    <MainWrapper isBlack={true}>
-      <Menu
-        actionText="general:go-to-home"
-        handleText={() => {
-          router.replace('/')
+  const infoHead = (
+    <InfoHead
+      title={formatMessage('info-head-course:title', {
+        course: course.information.title,
+      })}
+      description={formatMessage('info-head-course:description', {
+        course: course.information.title,
+      })}
+      url={`${formatMessage('url:root')}${course.href}`}
+    >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `[${courseSchema}, ${educationalEventSchema}, ${breadcrumbListSchema}]`,
         }}
-        openContact={() =>
-          // HACK: in the course page, we force the app to redirect to the
-          // contact page directly instead of opening it as a modal.
-          // This is because the route that would be displayed is not
-          // compatible with the url (https://nextjs.org/docs/messages/incompatible-href-as)
-          // If we find a way to make it compatible, then we should use the
-          // `useMenu` and `useContactForm` hooks and pass all their values to
-          // the `Menu` component, like in `src/pages/courses/index.jsx`
-          router.replace(`/contact?interested-in=${course.id}`)
-        }
-        course={course}
-        isCourseOpen={true}
-        isBlack={true}
-        courses={COURSES}
       />
-    </MainWrapper>
+    </InfoHead>
   )
-}
+
+  return withMenu(COURSE_PAGE, {
+    course,
+    infoHead,
+    useMenuConfig: {
+      defaultIsCourseOpen: true,
+    },
+  })
+})
 
 export async function getStaticPaths() {
   const paths = COURSES.map(course => ({

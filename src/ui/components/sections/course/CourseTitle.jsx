@@ -7,21 +7,21 @@ import useFitText from 'use-fit-text'
 
 const CourseTitle = ({ title }) => {
   const onFinish = useCallback(fontSize => {}, [])
-  const { fontSize, ref } = useFitText({ maxFontSize: 800, onFinish })
+  const { fontSize, ref } = useFitText({ maxFontSize: 700, onFinish })
 
   return (
     <SectionWrapper isBlack extraClass="courseTitle">
       <Row type="full" extraClass="courseTitle-name">
         <Cell isNegative extraClass="courseTitle-cell">
-          <div
+          <h2
             className="courseTitle-nameText"
             ref={ref}
-            style={{
-              fontSize,
-            }}
+            // style={{
+            //   fontSize,
+            // }}
           >
             {title}
-          </div>
+          </h2>
         </Cell>
       </Row>
     </SectionWrapper>

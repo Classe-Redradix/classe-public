@@ -5,7 +5,7 @@ import useViewportHeight from '../../../hooks/useViewportHeight'
 import useDetectMobile from '../../../hooks/useDetectMobile'
 import useBackgroundChange from '../../../hooks/useBackgroundChange'
 import useScrambleText from '../../../hooks/useScrambleText'
-import CompanyLogo from '/public/images/demo-company.svg'
+import CompanyLogo from '/public/images/logos/hugo-boss.svg'
 import { COURSES } from '../../../data'
 
 export default {

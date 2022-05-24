@@ -4,16 +4,21 @@ import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import useTranslations from '../../../../hooks/useTranslations'
-
+import Paragraphs from '../../paragraphs/Paragraphs'
 const CourseSection = ({ number, text, title }) => {
-  const t = useTranslations()
+  const formatMessage = useTranslations()
 
   return (
     <SectionWrapper isBlack extraClass="courseSection">
       <Row type="full" extraClass="courseSection-number">
         <Cell isNegative>
-          <h3 className="h1">{number}</h3>
-          <p className="p courseSection-text">{text}</p>
+          <h3 className="h1" aria-hidden="true">
+            {number}
+          </h3>
+          <Paragraphs
+            text={formatMessage(text)}
+            extraClass="courseSection-text"
+          />
         </Cell>
       </Row>
       <Row type="full" extraClass="courseSection-title">
@@ -21,7 +26,7 @@ const CourseSection = ({ number, text, title }) => {
           {title ? (
             <div className="scrambleTextWrapper">
               <h3 className="h3 scrambleText">
-                {t(title, {
+                {formatMessage(title, {
                   line: text => <span className="line">{text}</span>,
                 })}
               </h3>

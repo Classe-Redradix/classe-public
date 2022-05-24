@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 const useMenu = ({
@@ -14,12 +14,16 @@ const useMenu = ({
   const [isCourseOpen, setIsCourseOpen] = useState(defaultIsCourseOpen)
   const [course, setCourse] = useState(defaultCourse)
 
+  const goToHome = () => {
+    router.push('/')
+  }
+
   const openCourses = () => {
     setIsContactOpen(false)
     setIsCourseOpen(false)
     setAreCoursesOpen(true)
 
-    router.replace(router.pathname, '/courses')
+    router.push(router.pathname, '/courses')
   }
 
   const openContact = (_, interestedIn) => {
@@ -35,7 +39,7 @@ const useMenu = ({
           }
         : { name: router.pathname, as: '/contact' }
 
-    router.replace(path.name, path.as)
+    router.push(path.name, path.as)
   }
 
   const handleClose = () => {
@@ -43,25 +47,62 @@ const useMenu = ({
     setAreCoursesOpen(false)
     setIsCourseOpen(false)
 
-    router.replace('/')
+    router.push('/')
   }
 
   const openCourse = useCallback(
     course => {
-      setAreCoursesOpen(false)
       setIsCourseOpen(true)
+      setIsContactOpen(false)
+      setAreCoursesOpen(false)
       setCourse(course)
 
-      router.replace(router.pathname, course.href)
+      router.push(router.pathname, course.href)
     },
     [course],
   )
+
+  useEffect(() => {
+    // HACK: since we are using a navigation like Twitter, we have to handle
+    // the `history back` action. This will allow us to navigate with the
+    // history (forwards and backwards) and show the correct page.
+    // TODO: we can't compare with literals, we must compare using translations
+    const handlePopState = event => {
+      if (event.state.as === '/') {
+        setIsContactOpen(false)
+        setAreCoursesOpen(false)
+        setIsCourseOpen(false)
+      } else if (event.state.as === '/courses') {
+        setIsCourseOpen(false)
+        setIsContactOpen(false)
+        setAreCoursesOpen(true)
+      } else if (
+        event.state.as === '/contact' ||
+        event.state.as.includes('interested-in')
+      ) {
+        setIsCourseOpen(false)
+        setAreCoursesOpen(false)
+        setIsContactOpen(true)
+      } else {
+        setIsContactOpen(false)
+        setAreCoursesOpen(false)
+        setIsCourseOpen(true)
+      }
+    }
+
+    window.addEventListener('popstate', handlePopState)
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState)
+    }
+  }, [])
 
   return {
     isContactOpen,
     areCoursesOpen,
     isCourseOpen,
     course,
+    goToHome,
     openCourses,
     openContact,
     handleClose,

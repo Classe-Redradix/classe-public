@@ -1,264 +1,225 @@
-const COURSE_JS_PRO = {
-  id: 'js-pro',
+import imageCourseJS from '/public/images/curso-javascript.jpg'
+import imageCourseReact from '/public/images/curso-front.jpg'
+import imageCourseBack from '/public/images/curso-back.jpg'
+import imageCourseUIDeveloper from '/public/images/curso-maqueta.jpg'
+
+const PROGRAMACION = {
+  id: 'programacion',
   isFeatured: false,
   isPublic: false,
-  href: '/courses/js-pro',
+  href: '/courses/programacion',
   information: {
-    title: 'JS PRO',
-    start: '1',
-    finish: '9',
-    description: "This is the best JavaScript course you'll ever find",
-    price: 900,
-    hours: 20,
-    places: 30,
-    enrolledStudents: 13,
-    successPercentage: 95,
+    title: 'PROGRAMACIÓN',
+    start: '21.08.22',
+    finish: '25.08.22',
+    description: 'course:programacion-description',
+    image: {
+      source: imageCourseJS,
+      alt: 'Un chico de perfil trabajando con su portátil',
+    },
+    price: 600,
+    hours: 30,
+    places: 15,
+    practical: 80,
   },
-  index: [
+  indexItems: [
     {
       number: '01',
-      name: 'Fundamentos',
-      description:
-        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
+      name: 'course:programacion-01-title',
+      description: 'course:programacion-01-description',
     },
     {
       number: '02',
-      name: 'Programación funcional',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
+      name: 'course:programacion-02-title',
+      description: 'course:programacion-02-description',
     },
     {
       number: '03',
-      name: 'Programación orientada a objetos',
-      description:
-        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
+      name: 'course:programacion-03-title',
+      description: 'course:programacion-03-description',
     },
     {
       number: '04',
-      name: 'Programación funcional II',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
+      name: 'course:programacion-04-title',
+      description: 'course:programacion-04-description',
+    },
+    {
+      number: '',
+      name: 'course:programacion-05-title',
+      description: 'course:programacion-05-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
+  objectives: {
+    learn: 'course:programacion-learn',
+    text: 'course:programacion-learn-description',
+    objectives: 'course:programacion-objectives',
+    objectivesText: 'course:programacion-objetives-description',
+  },
 }
 
-const COURSE_REACT = {
-  id: 'react',
+const UI_DEV = {
+  id: 'uidev',
   isFeatured: false,
   isPublic: true,
-  href: '/courses/react',
+  href: '/courses/maqueta',
   information: {
-    title: 'React',
-    start: '10',
-    finish: '15',
-    description: "This is the best React course you'll ever find",
-    price: 1400,
-    hours: 25,
-    places: 30,
-    enrolledStudents: 28,
-    successPercentage: 98,
+    title: 'Maqueta',
+    start: '21.08.22',
+    finish: '25.08.22',
+    description: 'course:ui-dev-description',
+    image: {
+      source: imageCourseUIDeveloper,
+      alt: 'Un chico de perfil trabajando con su portátil',
+    },
+    price: 600,
+    hours: 30,
+    places: 15,
+    practical: 80,
   },
-  index: [
+  indexItems: [
     {
       number: '01',
-      name: 'Fundamentos',
-      description:
-        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
+      name: 'course:ui-dev-01-title',
+      description: 'course:ui-dev-01-description',
     },
     {
       number: '02',
-      name: 'Programación funcional',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
+      name: 'course:ui-dev-02-title',
+      description: 'course:ui-dev-02-description',
     },
     {
       number: '03',
-      name: 'Programación orientada a objetos',
-      description:
-        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
+      name: 'course:ui-dev-03-title',
+      description: 'course:ui-dev-03-description',
     },
     {
       number: '04',
-      name: 'Programación funcional II',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
+      name: 'course:ui-dev-04-title',
+      description: 'course:ui-dev-04-description',
+    },
+    {
+      number: '05',
+      name: 'course:ui-dev-05-title',
+      description: 'course:ui-dev-05-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
-}
-
-const COURSE_REDUX = {
-  id: 'redux',
-  isFeatured: false,
-  isPublic: true,
-  href: '/courses/redux',
-  information: {
-    title: 'Redux',
-    start: '16',
-    finish: '20',
-    description: "This is the best Redux course you'll ever find",
-    price: 1300,
-    hours: 25,
-    places: 30,
-    enrolledStudents: 23,
-    successPercentage: 92,
+  objectives: {
+    learn: 'course:ui-dev-learn',
+    text: 'course:ui-dev-learn-description',
+    objectives: 'course:ui-dev-objectives',
+    objectivesText: 'course:ui-dev-objetives-description',
   },
-  index: [
-    {
-      number: '01',
-      name: 'Fundamentos',
-      description:
-        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
-    },
-    {
-      number: '02',
-      name: 'Programación funcional',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
-    },
-    {
-      number: '03',
-      name: 'Programación orientada a objetos',
-      description:
-        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
-    },
-    {
-      number: '04',
-      name: 'Programación funcional II',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
-    },
-  ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
 }
 
-const COURSE_DATA = {
+const FRONT_END = {
   id: 'data',
   isFeatured: false,
   isPublic: true,
-  href: '/courses/data',
+  href: '/courses/front-end',
   information: {
-    title: 'Data',
-    start: '21.08.2022',
-    finish: '25.08.2022',
-    description: "This is the best Data course you'll ever find",
+    title: 'Front-end',
+    start: '21.08.22',
+    finish: '25.08.22',
+    description: 'course:front-description',
+    image: {
+      source: imageCourseReact,
+      alt: 'Un chico con un gorro trabajando en su portátil',
+    },
     price: 1200,
     hours: 30,
     places: 20,
     enrolledStudents: 9,
     successPercentage: 94,
   },
-  index: [
+  indexItems: [
     {
       number: '01',
-      name: 'Fundamentos',
-      description:
-        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
+      name: 'course:front-01-title',
+      description: 'course:front-01-description',
     },
     {
       number: '02',
-      name: 'Programación funcional',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
+      name: 'course:front-02-title',
+      description: 'course:front-02-description',
     },
     {
       number: '03',
-      name: 'Programación orientada a objetos',
-      description:
-        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
+      name: 'course:front-03-title',
+      description: 'course:front-03-description',
     },
     {
-      number: '04',
-      name: 'Programación funcional II',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
+      number: '',
+      name: 'course:front-04-title',
+      description: 'course:front-04-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
+  objectives: {
+    learn: 'course:front-learn',
+    text: 'course:front-learn-description',
+    objectives: 'course:front-objectives',
+    objectivesText: 'course:front-objetives-description',
+  },
 }
 
-const COURSE_FULL_STACK = {
+const BACK_END = {
   id: 'full-stack',
   isFeatured: true,
   isPublic: false,
-  href: '/courses/full-stack',
+  href: '/courses/back-end',
   information: {
-    title: 'Full stack',
-    start: '26',
-    finish: '30',
-    description: "This is the best Full stack course you'll ever find",
-    price: 1500,
-    hours: 50,
-    places: 30,
-    enrolledStudents: 18,
-    successPercentage: 93,
+    title: 'Back-end',
+    start: '21.08.22',
+    finish: '25.08.22',
+    description: 'course:back-description',
+    image: {
+      source: imageCourseBack,
+      alt: 'Un chico con un gorro trabajando en su portátil',
+    },
+    price: 600,
+    hours: 30,
+    places: 15,
+    practical: 80,
   },
-  index: [
+  indexItems: [
     {
       number: '01',
-      name: 'Fundamentos',
-      description:
-        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
+      name: 'course:back-01-title',
+      description: 'course:back-01-description',
     },
     {
       number: '02',
-      name: 'Programación funcional',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
+      name: 'course:back-02-title',
+      description: 'course:back-02-description',
     },
     {
       number: '03',
-      name: 'Programación orientada a objetos',
-      description:
-        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
+      name: 'course:back-03-title',
+      description: 'course:back-03-description',
     },
     {
       number: '04',
-      name: 'Programación funcional II',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
+      name: 'course:back-04-title',
+      description: 'course:back-04-description',
+    },
+    {
+      number: '05',
+      name: 'course:back-05-title',
+      description: 'course:back-05-description',
+    },
+    {
+      number: '',
+      name: 'course:back-06-title',
+      description: 'course:back-06-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
+  objectives: {
+    learn: 'course:back-learn',
+    text: 'course:back-learn-description',
+    objectives: 'course:back-objectives',
+    objectivesText: 'course:back-objetives-description',
+  },
 }
 
-const COURSES = [
-  COURSE_JS_PRO,
-  COURSE_REACT,
-  COURSE_REDUX,
-  COURSE_DATA,
-  COURSE_FULL_STACK,
-]
+const COURSES = [PROGRAMACION, UI_DEV, FRONT_END, BACK_END]
 
 export default COURSES

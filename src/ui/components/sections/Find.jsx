@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
+import { copyClasseEmailToClipboard } from '../../../business'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
-import demoImage from '/public/images/demo-small.png'
+import image from '/public/images/contacto-classe.jpg'
 import GlyphIcon from './../../../assets/icons/Glyph2Icon'
 
 const Find = ({ isBlack, isFluor }) => {
@@ -14,16 +15,23 @@ const Find = ({ isBlack, isFluor }) => {
       <Row type="half">
         <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h3 className="h1 scrambleText">
+            <h2 className="h1 scrambleText">
               {t('find:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
+                lineSROnly: text => (
+                  <span className="line has-tab sr-only">{text}</span>
+                ),
               })}
-            </h3>
+            </h2>
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
-          <img src={demoImage} alt="" />
+          <img
+            className="bwfilter"
+            src={image}
+            alt="Oficina con varias mesas y equipos informáticos"
+          />
         </Cell>
       </Row>
       <Row type="half">
@@ -33,14 +41,23 @@ const Find = ({ isBlack, isFluor }) => {
         </Cell>
         <Cell hasGap isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h4 className="h1 scrambleText">
+            <h3 className="h1 scrambleText" aria-hidden="true">
               {t('find:claim', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
-            </h4>
+            </h3>
           </div>
-          <p className="notes">{t('find:description2')}</p>
+          <button
+            className="notes"
+            aria-label={t('find:aria')}
+            onClick={copyClasseEmailToClipboard}
+          >
+            {t('find:description2', {
+              ariaHidden: text => <span aria-hidden="true">{text}</span>,
+              screenReader: text => <span className="sr-only">{text}</span>,
+            })}
+          </button>
         </Cell>
       </Row>
     </SectionWrapper>

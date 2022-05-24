@@ -2,7 +2,10 @@
 
 La prioridad a la hora de estructurar el código ha sido la de crear el mínimo
 número de carpetas, intentando ubicar todos los archivos a los lugares más
-más cercanos donde se utilizan dichos archivos.
+más cercanos donde se utilizan dichos archivos (agrupación por contexto).
+
+Antes de continuar, es recomendable ver el archivo [ETIQUETTE](./ETIQUETTE.md)
+para saber los estándares que se siguen en este proyecto.
 
 ## Carpetas
 
@@ -21,7 +24,16 @@ más cercanos donde se utilizan dichos archivos.
 - [src/config](./src/config/): aquí se ubican las traducciones de la aplicación.
 
 - [src/data](./src/data/): en esta carpeta se incluyen todos los datos comunes
-  que se utilizan a lo largo de toda la aplicación.
+  que se utilizan a lo largo de toda la aplicación y que no tienen que ver
+  con la parte técnica. Sería como una carpeta `mocks`, siendo la única
+  diferencia el que los datos aquí almacenados sí que se utilizarán en la
+  aplicación final.
+
+- [src/hocs](./src/hocs/): aquí se almacenan todos los componentes de orden
+  superior. El más importante es [with-menu.js](./src/hocs/with-menu.js), el
+  cual se encarga de renderizar las páginas estáticas y abrir el menú con la
+  página que se le indique por parámetros, además de poder aplicar
+  configuraciones por defecto a los hooks que utiliza.
 
 - [src/hooks](./src/hooks/): hooks personalizados de React. Se han desarrollado
   con la idea de optimizar el trabajo y poder reutilizar funcionalidades de
@@ -62,11 +74,17 @@ más cercanos donde se utilizan dichos archivos.
   y exporta una función para guardar el formulario de contacto en la base de
   datos de Firestore.
 
+- [src/business.js](./src/business.js): exporta funcionalidades de negocio
+  reutilizables.
+
 - [src/IntlProvider.jsx](./src/IntlProvider.jsx): proveedor que se encarga de
   que la aplicación sea multi-idioma.
 
 - [src/data/index.js](./src/data/index.js): exporta los datos comunes que se
   utilizan fuera de su carpeta.
+
+- [src/hocs/index.js](./src/hocs/index.js): exporta todos los componentes de
+  orden superior.
 
 - [src/hooks/index.js](./src/hooks/index.js): fichero el cual expone todos los
   hooks que se utilizan fuera de esta carpeta.
@@ -105,12 +123,7 @@ más cercanos donde se utilizan dichos archivos.
   [src/data/courses.js](./src/data/courses.js) para ahorrar servicios externos
   y hacer la carga de la aplicación más eficiente.
 
-## TODOs:
-
-- [src/assets/stylesheets/globals/texts.scss](./src/assets/stylesheets/globals/texts.scss):
-  por algún motivo, cuando lanzamos Storybook las fuentes `./../fonts/` y
-  cuando se lanza el servidor de desarrollo, las coge de `./../../fonts/`. Hay
-  que averiguar por qué ocurre este comportamiento para solucionarlo.
+## TODOs importantes:
 
 - [src/pages/index.js](./src/pages/index.js): se puede saber cuándo se ha
   guardado el formulario de contacto de la Home (función `onContactFormSuccess`).
@@ -126,3 +139,6 @@ más cercanos donde se utilizan dichos archivos.
   hay que añadir el atributo `href` al botón de _inscribirme_ que aparece en la
   vista individual de un curso. Hay que incluirlo porque ayudará a mejorar el
   SEO de la página.
+
+- Modificar el nombre de las carpetas de inglés a español. Ejemplo:
+  `classe.dev/courses` --> `classe.dev/cursos`

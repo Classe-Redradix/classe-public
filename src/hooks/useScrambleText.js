@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { gsap } from 'gsap/dist/gsap'
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -13,6 +13,7 @@ const useScrambleText = () => {
       const text = wrapper.querySelector('.scrambleText')
       const cloned = text.cloneNode(true)
       cloned.classList.add('is-cloned')
+      cloned.setAttribute('aria-hidden', 'true')
       wrapper.appendChild(cloned)
 
       const lines = cloned.querySelectorAll('.line')

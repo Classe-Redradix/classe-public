@@ -49,12 +49,12 @@ const Facts = ({ isBlack }) => {
         <Row type="full">
           <Cell>
             <div className="scrambleTextWrapper">
-              <h3 className="h1 scrambleText">
+              <h2 className="h1 scrambleText">
                 {t('facts:title', {
                   line: text => <span className="line">{text}</span>,
                   lineTab: text => <span className="line has-tab">{text}</span>,
                 })}
-              </h3>
+              </h2>
             </div>
           </Cell>
         </Row>
@@ -79,7 +79,12 @@ const Facts = ({ isBlack }) => {
             <Fact text={t('facts:fact5')} />
           </Cell>
           <Cell>
-            <Fact text={t('facts:fact6')} />
+            <a
+              href="https://redradix.com/blog/de-donde-viene-el-stack-de-redradix/"
+              target="_blank"
+            >
+              <Fact text={t('facts:fact6')} />
+            </a>
           </Cell>
         </Row>
       </div>

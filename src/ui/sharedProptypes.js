@@ -29,13 +29,22 @@ const CoursePropType = PropTypes.shape({
 const ContactFormParamsPropType = PropTypes.shape({
   email: PropTypes.string,
   name: PropTypes.string,
-  interestedInOptions: PropTypes.arrayOf(PropTypes.string),
+  interestedInOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      checked: PropTypes.bool,
+      id: PropTypes.string,
+      label: PropTypes.string,
+    }),
+  ),
   userType: PropTypes.oneOf(['student', 'company']),
   onEmailChange: PropTypes.func,
   onNameChange: PropTypes.func,
   onUserTypeChange: PropTypes.func,
   saveToFirebase: PropTypes.func,
   onInterestedInOptionChange: PropTypes.func,
+  termsAndConditions: PropTypes.bool,
+  toggleTermsAndConditions: PropTypes.func,
+  saveToFirebase: PropTypes.func,
 })
 
 const DatesPropType = PropTypes.arrayOf(

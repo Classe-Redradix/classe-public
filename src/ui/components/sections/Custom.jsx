@@ -4,7 +4,8 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
-import demoImage from '/public/images/demo-small.png'
+import Paragraphs from '../paragraphs/Paragraphs'
+import image from '/public/images/nuestros-cursos-a-tu-medida.jpg'
 import GlyphIcon from './../../../assets/icons/GlyphIcon'
 
 const Custom = ({ isBlack, isFluor, openCourses }) => {
@@ -15,31 +16,43 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
       <Row type="half">
         <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h3 className="h1 scrambleText">
+            <h2 className="h1 scrambleText">
               {t('custom:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
+                lineTabAriaHidden: text => (
+                  <span className="line has-tab" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                lineTabSROnly: text => (
+                  <span className="line has-tab sr-only">{text}</span>
+                ),
               })}
-            </h3>
+            </h2>
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
-          <img src={demoImage} alt="" />
+          <img
+            className="bwfilter"
+            src={image}
+            alt="Mesa de trabajo con muchos dispositivos electrónicos sobre ella"
+          />
         </Cell>
       </Row>
       <Row type="half">
         <Cell hasGap isNegative={isBlack}>
           <GlyphIcon className="icon" />
-          <p className="p">{t('custom:description')}</p>
+          <Paragraphs text={t('custom:description')} />
         </Cell>
         <Cell hasGap isNegative={isBlack}>
           <div className="scrambleTextWrapper">
-            <h4 className="h1 scrambleText">
+            <h3 className="h1 scrambleText" aria-hidden="true">
               {t('custom:claim', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
-            </h4>
+            </h3>
           </div>
           <Button
             isLink

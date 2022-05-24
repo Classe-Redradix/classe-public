@@ -6,7 +6,7 @@ import Cell from '../../cell/Cell'
 import useTranslations from '../../../../hooks/useTranslations'
 import ExclamationIcon from './../../../../assets/icons/ExclamationIcon'
 
-const CourseInfo = ({ price, hours, places, students, successPercentage }) => {
+const CourseInfo = ({ price, hours, places, practical }) => {
   const t = useTranslations()
 
   return (
@@ -48,20 +48,9 @@ const CourseInfo = ({ price, hours, places, students, successPercentage }) => {
           </div>
           <div className="scrambleTextWrapper">
             <h3 className="h2 scrambleText">
-              <span className="line line--inline">{students}</span>
-              {t('course:students', {
+              <span className="line line--inline">{practical}%</span>
+              {t('course:practical', {
                 line: text => <span className="line">{text}</span>,
-              })}
-            </h3>
-          </div>
-          <div className="scrambleTextWrapper">
-            <h3 className="h2 scrambleText">
-              {t('course:success', {
-                line: text => (
-                  <span className="line">
-                    {successPercentage} {text}
-                  </span>
-                ),
               })}
             </h3>
           </div>
@@ -79,8 +68,8 @@ const CourseInfo = ({ price, hours, places, students, successPercentage }) => {
 CourseInfo.propTypes = {
   price: PropTypes.number.isRequired,
   hours: PropTypes.number.isRequired,
-  students: PropTypes.number.isRequired,
-  successPercentage: PropTypes.number.isRequired,
+  places: PropTypes.number.isRequired,
+  practical: PropTypes.number.isRequired,
 }
 
 export default CourseInfo

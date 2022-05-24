@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+
+import { MEDIA_QUERIES } from '../../../constants'
+
 import useWindowSize from '../../../hooks/useWindowSize'
+
 import MenuLayer from './MenuLayer'
 import MenuDesktop from './MenuDesktop'
 import MenuMobile from './MenuMobile'
+
 import { useRouter } from 'next/router'
 import {
   CoursePropType,
@@ -20,6 +25,7 @@ const Menu = ({
   areCoursesOpen = false,
   course = null,
   handleClose,
+  goToHome,
   openContact,
   openCourses,
   isContactOpen = false,
@@ -35,20 +41,26 @@ const Menu = ({
         courses={courses}
         contactFormParams={contactFormParams}
         openContact={_ => {
-          // NOTE: we don't need to check if the course exists because if the
-          // user clicks on this button, it means that the modal course is
-          // open, which means that there'll always be a course selected
-          // at this point
-          openContact(_, course.id)
+          // NOTE: when the user opens the menu, he may navigate to the contact
+          // page via `/courses` view or `/courses/[courseId]` view. If he is
+          // in the `courses` view, the `course.id` is not available since he
+          // is navigating to the contact page directly without being
+          // interested in a particular course, but if he navigates via
+          // `course` view, he will navigate by clicking in the `Contact us`,
+          // button, which means that the `course.id` property will be
+          // available. That's why we are using `?` in `course?.id`.
+          openContact(_, course?.id)
         }}
         isContactOpen={isContactOpen}
         isCourseOpen={isCourseOpen}
         openCourse={openCourse}
+        goToHome={goToHome}
         course={course}
         areCoursesOpen={areCoursesOpen}
+        openCourses={openCourses}
         handleClose={!!handleText ? handleText : handleClose}
       />
-      {size.width >= 768 ? (
+      {size.width >= MEDIA_QUERIES.desktop ? (
         <MenuDesktop
           isBlack={isBlack}
           isFluor={isFluor}
@@ -61,6 +73,7 @@ const Menu = ({
           isBlack={isBlack}
           isFluor={isFluor}
           isContactOpen={isContactOpen}
+          isCourseOpen={isCourseOpen}
           areCoursesOpen={areCoursesOpen}
           openCourses={openCourses}
           openContact={openContact}

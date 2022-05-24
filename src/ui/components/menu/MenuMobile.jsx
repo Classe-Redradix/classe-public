@@ -6,15 +6,13 @@ const MenuMobile = ({
   isBlack,
   isFluor,
   openCourses,
-  openContact,
   isContactOpen,
+  isCourseOpen,
   areCoursesOpen,
   handleClose,
-  handleOpen,
-  courses,
 }) => {
-  const isOpen = isContactOpen || areCoursesOpen
-  const t = useTranslations()
+  const isOpen = isContactOpen || isCourseOpen || areCoursesOpen
+  const formatMessage = useTranslations()
   const classes = cx('menuMobile', {
     'is-black': isBlack,
     'is-fluor': isFluor,
@@ -23,13 +21,17 @@ const MenuMobile = ({
 
   return (
     <header className={classes}>
-      <span className="menuMobile-claim h2">{t('menu:claimSmall')}</span>
+      <a href="/" className="menuMobile-claim h2">
+        {formatMessage('menu:claimSmall')}
+      </a>
       <button
         className="menuMobile-button menu"
         onClick={isOpen ? handleClose : openCourses}
-        aria-label={isOpen ? t('menu:close') : t('menu:open')}
+        aria-label={
+          isOpen ? formatMessage('menu:close') : formatMessage('menu:open')
+        }
       >
-        [{isOpen ? t('menu:close') : t('menu:open')}]
+        [{isOpen ? formatMessage('menu:close') : formatMessage('menu:open')}]
       </button>
     </header>
   )

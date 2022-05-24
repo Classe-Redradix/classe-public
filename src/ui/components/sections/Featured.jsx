@@ -4,7 +4,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
-import demoImage from '/public/images/demo.png'
+import image from '/public/images/cursos.jpg'
 import { CoursePropType } from './../../sharedProptypes'
 
 const Featured = ({ isBlack, isFluor, course, openCourse }) => {
@@ -20,12 +20,12 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
       <Row type="half">
         <Cell hasGap>
           <div className="scrambleTextWrapper">
-            <h3 className="h1 scrambleText">
+            <h2 className="h1 scrambleText">
               {t('featured:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
-            </h3>
+            </h2>
           </div>
           <Button
             isLink
@@ -37,7 +37,11 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
           />
         </Cell>
         <Cell>
-          <img src={demoImage} alt="" />
+          <img
+            className="bwfilter"
+            src={image}
+            alt="Unas manos sobre un teclado y un ratón"
+          />
         </Cell>
       </Row>
     </SectionWrapper>

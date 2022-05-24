@@ -54,6 +54,11 @@
         border-left: 1px solid $white;
       }
     }
+
+    .coursesList-link,
+    .menu {
+      color: $white;
+    }
   }
 
   &-corner {
