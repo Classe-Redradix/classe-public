@@ -19,6 +19,8 @@ import Vivanta from '/public/images/logos/vivanta.svg'
 
 import { COURSES } from '../data'
 import InfoHead from '../InfoHead'
+import Hero from '../ui/components/hero/Hero'
+
 import {
   useViewportHeight,
   useDetectMobile,
@@ -209,6 +211,7 @@ const Home = () => {
           }}
         />
       </InfoHead>
+      {/* <Hero textClaim="loader:text" /> */}
       <HomeUI
         isBlack={isBlack}
         isFluor={isFluor}

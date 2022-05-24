@@ -3,8 +3,8 @@ import cx from 'classnames'
 import Loading from '../loading/Loading'
 import useTranslations from '../../../hooks/useTranslations'
 
-const Hero = ({ type }) => {
-  const t = useTranslations()
+const Hero = ({ type, textClaim }) => {
+  const formatMessage = useTranslations()
   const classes = cx('hero', {
     'is-full': type === 'full',
     'is-half': type === 'half',
@@ -13,12 +13,21 @@ const Hero = ({ type }) => {
   })
   return (
     <div className={classes}>
-      <p className="hero__heading">Class[e]</p>
-      <Loading title={t('manifest:header')} number={1} />
+      <div className="scrambleTextWrapper">
+        <h3 className="h1 hero__heading scrambleText">
+          {formatMessage(`${textClaim}`, {
+            line: text => <span className="line">{text}</span>,
+            lineTab: text => <span className="line has-tab">{text}</span>,
+          })}
+        </h3>
+      </div>
+      <Loading title={formatMessage('manifest:header')} number={1} />
     </div>
   )
 }
 
-Hero.propTypes = {}
+Hero.propTypes = {
+  textClaim: PropTypes.string,
+}
 
 export default Hero
