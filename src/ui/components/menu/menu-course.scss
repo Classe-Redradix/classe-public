@@ -1,0 +1,22 @@
+.courseSections {
+  padding: 0;
+  height: 70vh;
+  @include mq(md) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: calc(100vh - 28px - (#{$distance-big} * 2));
+    padding-right: $distance-big;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .sectionWrapper {
+    height: calc(100vh - 80px);
+  }
+}

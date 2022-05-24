@@ -1,21 +1,3 @@
-.courseSections {
-  padding: 0;
-  height: 70vh;
-  @include mq(md) {
-    display: flex;
-    height: calc(100vh - 28px - (#{$distance-big} * 2));
-    padding-right: $distance-big;
-    flex-wrap: wrap;
-    flex-direction: column;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-  .sectionWrapper {
-    height: calc(100vh - 80px);
-  }
-}
-
 .courseIntro {
   $self: &;
   max-width: calc(100vw - (#{$distance-small} * 2));
