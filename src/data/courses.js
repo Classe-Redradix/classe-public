@@ -25,7 +25,6 @@ const PROGRAMACION = {
   indexItems: [
     {
       number: '01',
-      name: 'course:object-oriented-programming',
       name: 'course:programacion-01-title',
       description: 'course:programacion-01-description',
     },
@@ -45,7 +44,7 @@ const PROGRAMACION = {
       description: 'course:programacion-04-description',
     },
     {
-      number: '05',
+      number: '',
       name: 'course:programacion-05-title',
       description: 'course:programacion-05-description',
     },
@@ -57,61 +56,6 @@ const PROGRAMACION = {
     objectivesText: 'course:programacion-objetives-description',
   },
 }
-
-// const JS_PRO = {
-//   id: 'js-pro',
-//   isFeatured: false,
-//   isPublic: false,
-//   href: '/courses/js-pro',
-//   information: {
-//     title: 'JSSSSSSSS PRO',
-//     start: '21.08.22',
-//     finish: '25.08.22',
-//     description: 'course:js-pro-description',
-//     image: {
-//       source: imageCourseJS,
-//       alt: 'Un chico de perfil trabajando con su portátil',
-//     },
-//     price: 600,
-//     hours: 30,
-//     places: 15,
-//     practical: 80,
-//   },
-//   indexItems: [
-//     {
-//       number: '01',
-//       name: 'course:object-oriented-programming',
-//       name: 'course:js-pro-01-title',
-//       description: 'course:js-pro-01-description',
-//     },
-//     {
-//       number: '02',
-//       name: 'course:js-pro-02-title',
-//       description: 'course:js-pro-02-description',
-//     },
-//     {
-//       number: '03',
-//       name: 'course:js-pro-03-title',
-//       description: 'course:js-pro-03-description',
-//     },
-//     {
-//       number: '04',
-//       name: 'course:js-pro-04-title',
-//       description: 'course:js-pro-04-description',
-//     },
-//     {
-//       number: '05',
-//       name: 'course:js-pro-05-title',
-//       description: 'course:js-pro-05-description',
-//     },
-//   ],
-//   objectives: {
-//     learn: 'course:js-pro-learn',
-//     text: 'course:js-pro-learn-description',
-//     objectives: 'course:js-pro-objectives',
-//     objectivesText: 'course:js-pro-objetives-description',
-//   },
-// }
 
 const UI_DEV = {
   id: 'uidev',
@@ -204,7 +148,7 @@ const FRONT_END = {
       description: 'course:front-03-description',
     },
     {
-      number: '04',
+      number: '',
       name: 'course:front-04-title',
       description: 'course:front-04-description',
     },
@@ -263,7 +207,7 @@ const BACK_END = {
       description: 'course:back-05-description',
     },
     {
-      number: '06',
+      number: '',
       name: 'course:back-06-title',
       description: 'course:back-06-description',
     },
