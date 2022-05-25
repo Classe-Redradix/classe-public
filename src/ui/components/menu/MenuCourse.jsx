@@ -11,6 +11,7 @@ import { COURSES } from '../../../data'
 import useScrambleText from '../../../hooks/useScrambleText'
 import useTranslations from '../../../hooks/useTranslations'
 import useHorizontalScroll from '../../../hooks/useHorizontalScroll'
+import CoursePdf from '../sections/course/CoursePdf'
 
 const dates = [
   {
@@ -49,7 +50,7 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
     menuCourse = Object.assign({}, course)
   }
 
-  const { information, indexItems, objectives, href } = menuCourse
+  const { information, indexItems, objectives, href, dossier } = menuCourse
 
   const container = useHorizontalScroll()
 
@@ -75,6 +76,12 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
           <CourseSectionEmpty key={`0${index + 1}`} />
         </>
       ))}
+      <CoursePdf
+        title={formatMessage('course:pdf-title')}
+        href={dossier}
+        textButton={formatMessage('course:pdf-button')}
+      />
+      <CourseSectionEmpty />
 
       <CourseTitle title={formatMessage('course:objectives-title')} />
       <CourseObjectives

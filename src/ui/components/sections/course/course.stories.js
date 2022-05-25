@@ -3,6 +3,7 @@ import CourseIntro from './CourseIntro'
 import CourseTitle from './CourseTitle'
 import CourseSection from './CourseSection'
 import CourseSectionEmpty from './CourseSectionEmpty'
+import CoursePdf from './CoursePdf'
 
 export default {
   title: 'Modules/Course',
@@ -130,6 +131,9 @@ export const courseSection = ({ ...args }) => (
     text="Introducción y recursos. String templates. Desestructuración.
 Declaración de variables. (2H)"
   />
+)
+export const coursePdf = ({ ...args }) => (
+  <CoursePdf href="/" textButton="Descargar" title="Dossier del curso" />
 )
 
 export const courseSectionEmpty = ({ ...args }) => (
