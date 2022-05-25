@@ -3,7 +3,7 @@ import cx from 'classnames'
 import Loading from '../loading/Loading'
 import useTranslations from '../../../hooks/useTranslations'
 
-const Hero = ({ type, textClaim }) => {
+const Hero = ({ type, textClaim, number }) => {
   const formatMessage = useTranslations()
   const classes = cx('hero', {
     'is-full': type === 'full',
@@ -21,13 +21,14 @@ const Hero = ({ type, textClaim }) => {
           })}
         </h3>
       </div>
-      <Loading title={formatMessage('manifest:header')} number={1} />
+      <Loading title={formatMessage('manifest:header')} number={number} />
     </div>
   )
 }
 
 Hero.propTypes = {
   textClaim: PropTypes.string,
+  number: PropTypes.number,
 }
 
 export default Hero

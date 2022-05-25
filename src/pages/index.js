@@ -211,7 +211,7 @@ const Home = () => {
           }}
         />
       </InfoHead>
-      {/* <Hero textClaim="loader:text" /> */}
+      <Hero textClaim="loader:text" number={30} />
       <HomeUI
         isBlack={isBlack}
         isFluor={isFluor}
