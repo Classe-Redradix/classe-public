@@ -10,6 +10,7 @@ const Button = ({
   onClick,
   href,
   text,
+  targetBlank,
 }) => {
   const As = isLink ? 'a' : 'button'
   const classes = cx('mainButton', {
@@ -28,6 +29,7 @@ const Button = ({
       className={classes}
       href={href ? href : null}
       onClick={onClick ? handleClick : null}
+      target={targetBlank ? '_blank' : null}
     >
       <span className="mainButton-text button">{text}</span>
     </As>
@@ -39,6 +41,7 @@ Button.propTypes = {
   isFull: PropTypes.bool,
   isLink: PropTypes.bool,
   isNegative: PropTypes.bool,
+  targetBlank: PropTypes.bool,
   onClick: PropTypes.func,
   href: PropTypes.string,
   text: PropTypes.string.isRequired,

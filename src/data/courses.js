@@ -22,6 +22,7 @@ const PROGRAMACION = {
     places: 15,
     practical: 80,
   },
+  dossier: '/courses/programacion-javascript.pdf',
   indexItems: [
     {
       number: '01',
@@ -76,6 +77,7 @@ const UI_DEV = {
     places: 15,
     practical: 80,
   },
+  dossier: '/courses/maquetacion-con-HTML-CSS.pdf',
   indexItems: [
     {
       number: '01',
@@ -128,9 +130,9 @@ const FRONT_END = {
     price: 1200,
     hours: 30,
     places: 20,
-    enrolledStudents: 9,
-    successPercentage: 94,
+    practical: 80,
   },
+  dossier: '/courses/front-end-con-react.pdf',
   indexItems: [
     {
       number: '01',
@@ -180,6 +182,7 @@ const BACK_END = {
     places: 15,
     practical: 80,
   },
+  dossier: '/courses/back-end-con-node.pdf',
   indexItems: [
     {
       number: '01',
