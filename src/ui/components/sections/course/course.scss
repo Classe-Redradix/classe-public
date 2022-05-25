@@ -251,3 +251,26 @@
     }
   }
 }
+
+.coursePdf {
+  $self: &;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  @include mq(md) {
+    width: 342px;
+    min-width: 342px;
+  }
+  .cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 80px;
+  }
+  h3 {
+    word-wrap: break-word;
+  }
+  .courseSection-pdf {
+    height: calc(100% - 1px);
+  }
+}
