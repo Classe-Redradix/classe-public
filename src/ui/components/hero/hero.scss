@@ -4,7 +4,21 @@
   display: flex;
   align-items: center;
   padding: calc(5 / 80 * 100vw);
+  opacity: 1;
+  transition: opacity $fade-simple;
+  z-index: $index-menu-layer;
+  background-color: $white;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  pointer-events: none;
+  z-index: $index-menu-layer;
+  &:not(.is-closed) ~ .blurableWrapper {
+    filter: $blur-value;
+    transition: filter $fade-short;
+  }
   &__heading {
     font-size: max(3em, calc(16 / 80 * 100vw));
     letter-spacing: -0.02em;
@@ -12,5 +26,9 @@
 
   &__header {
     outline: 1px solid red;
+  }
+  &.is-closed {
+    opacity: 0;
+    pointer-events: none;
   }
 }

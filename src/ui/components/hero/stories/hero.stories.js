@@ -4,7 +4,7 @@ export default {
   title: 'Layout/Hero',
   component: Hero,
   args: {
-    textClaim: 'Class[e]',
+    text: 'Class[e]',
   },
   parameters: {
     options: {
