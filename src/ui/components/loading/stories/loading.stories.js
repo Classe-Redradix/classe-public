@@ -1,9 +1,9 @@
 import MainWrapper from '../../wrappers/MainWrapper'
-import Header from '../Header'
+import Loading from '../Loading'
 
 export default {
-  title: 'Layout/Header',
-  component: Header,
+  title: 'Layout/Loading',
+  component: Loading,
   argTypes: {
     isClose: {
       name: 'isClose',
@@ -16,12 +16,14 @@ export default {
       name: 'number',
       defaultValue: 1,
       control: {
-        type: 'number',
+        type: 'range',
+        min: 0,
+        max: 100,
       },
     },
     title: {
       name: 'title',
-      defaultValue: 'Manifiesto',
+      defaultValue: 'Loading',
       control: {
         type: 'text',
       },
@@ -29,13 +31,13 @@ export default {
   },
 }
 
-export const header = ({ ...args }) => (
+export const loading = ({ ...args }) => (
   <MainWrapper>
-    <Header {...args} />
+    <Loading {...args} />
   </MainWrapper>
 )
 
-header.parameters = {
+loading.parameters = {
   options: {
     showPanel: true,
   },

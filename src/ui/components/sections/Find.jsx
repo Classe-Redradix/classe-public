@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { copyClasseEmailToClipboard } from '../../../business'
 import useTranslations from '../../../hooks/useTranslations'

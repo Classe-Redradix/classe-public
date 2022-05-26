@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import ArrowIcon from './../../../assets/icons/ArrowIcon'

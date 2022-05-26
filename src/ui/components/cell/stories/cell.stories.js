@@ -1,4 +1,3 @@
-import React from 'react'
 import MainWrapper from '../../wrappers/MainWrapper'
 import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'

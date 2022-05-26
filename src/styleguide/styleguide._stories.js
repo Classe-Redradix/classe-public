@@ -1,4 +1,3 @@
-import React from 'react'
 import PatternColorWrapper from './components/pattern-color-wrapper'
 import PatternFontWrapper from './components/pattern-font-wrapper'
 import PatternIconWrapper from './components/pattern-icon-wrapper'

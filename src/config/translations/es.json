@@ -64,6 +64,7 @@
   "menu:contact": "Contacta",
   "menu:open": "Menu",
   "menu:close": "Cerrar",
+  "loader:text": "<line>Class[e]</line>",
 
   "home:title": "Cursos de programación y producto digital por y para desarrolladores",
 
