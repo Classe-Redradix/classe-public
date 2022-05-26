@@ -14,7 +14,7 @@
   left: 0;
 
   pointer-events: none;
-  z-index: $index-menu-layer;
+  z-index: $index-loader;
   &:not(.is-closed) ~ .blurableWrapper {
     filter: $blur-value;
     transition: filter $fade-short;
