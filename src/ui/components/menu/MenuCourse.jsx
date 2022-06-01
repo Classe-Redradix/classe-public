@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useMemo } from 'react'
 
 import CourseIntro from '../../components/sections/course/CourseIntro'
 import CourseTitle from '../../components/sections/course/CourseTitle'
@@ -10,9 +10,10 @@ import CourseContact from '../../components/sections/course/CourseContact'
 import { COURSES } from '../../../data'
 import useScrambleText from '../../../hooks/useScrambleText'
 import useTranslations from '../../../hooks/useTranslations'
-import useHorizontalScroll from '../../../hooks/useHorizontalScroll'
 import CoursePdf from '../sections/course/CoursePdf'
+import { MEDIA_QUERIES } from '../../../constants'
 
+import useWindowSize from '../../../hooks/useWindowSize'
 const dates = [
   {
     day: '01',
@@ -52,53 +53,92 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
 
   const { information, indexItems, objectives, href, dossier } = menuCourse
 
-  const container = useHorizontalScroll()
+  const size = useWindowSize()
+  const isDesktop = useMemo(() => size.width >= MEDIA_QUERIES.desktop, [size])
+
+  const container = useRef(null)
+  const courseIntro = useRef(null)
+  const courseTitleHeader = useRef(null)
+  useEffect(() => {
+    const el = container.current
+    const courseIntroEl = courseIntro.current
+    const titleHeaderEl = courseTitleHeader.current
+
+    if (!el || !courseIntroEl) return
+    const widthIntro = courseIntroEl.offsetWidth
+
+    const onWheel = e => {
+      if (e.deltaY == 0) return
+      e.preventDefault()
+      el.scrollTo({
+        left: el.scrollLeft + e.deltaY,
+      })
+      if (el.scrollLeft >= widthIntro) {
+        titleHeaderEl.classList.add('is-visible')
+      } else {
+        titleHeaderEl.classList.remove('is-visible')
+      }
+    }
+
+    if (isDesktop) {
+      el.addEventListener('wheel', onWheel)
+    } else {
+      el.removeEventListener('wheel', onWheel)
+    }
+    return () => el.removeEventListener('wheel', onWheel)
+  }, [isDesktop])
 
   return (
-    <div className="courseSections" ref={container}>
-      <CourseIntro
-        dates={dates}
-        name={information.title}
-        image={information.image}
-        openContact={openContact}
-        course={menuCourse}
-        description={information.description}
-      />
-      <CourseTitle title={formatMessage('course:index-title')} />
-      {indexItems.map((indexItem, index) => (
-        <>
-          <CourseSection
-            key={index}
-            number={indexItem.number}
-            text={indexItem.description}
-            title={indexItem.name}
-          />
-          <CourseSectionEmpty key={`0${index + 1}`} />
-        </>
-      ))}
-      <CoursePdf
-        title={formatMessage('course:pdf-title')}
-        href={dossier}
-        textButton={formatMessage('course:pdf-button')}
-      />
-      <CourseSectionEmpty />
+    <>
+      <p className="courseTitle-header" ref={courseTitleHeader}>
+        {information.title}
+      </p>
+      <div className="courseSections" ref={container}>
+        <CourseIntro
+          dates={dates}
+          name={information.title}
+          image={information.image}
+          openContact={openContact}
+          course={menuCourse}
+          description={information.description}
+          ref={courseIntro}
+        />
+        <CourseTitle title={formatMessage('course:index-title')} />
+        {indexItems.map((indexItem, index) => (
+          <>
+            <CourseSection
+              key={index}
+              number={indexItem.number}
+              text={indexItem.description}
+              title={indexItem.name}
+            />
+            <CourseSectionEmpty key={`0${index + 1}`} />
+          </>
+        ))}
+        <CoursePdf
+          title={formatMessage('course:pdf-title')}
+          href={dossier}
+          textButton={formatMessage('course:pdf-button')}
+        />
+        <CourseSectionEmpty />
 
-      <CourseTitle title={formatMessage('course:objectives-title')} />
-      <CourseObjectives
-        learn={objectives.learn}
-        text={objectives.text}
-        objectives={objectives.objectives}
-        objectivesText={objectives.objectivesText}
-      />
-      <CourseInfo
-        price={information.price}
-        hours={information.hours}
-        places={information.places}
-        practical={information.practical}
-      />
-      <CourseTitle title={formatMessage('footer:contact')} />
-      <CourseContact openContact={openContact} />
-    </div>
+        <CourseTitle title={formatMessage('course:objectives-title')} />
+        <CourseObjectives
+          learn={objectives.learn}
+          text={objectives.text}
+          objectives={objectives.objectives}
+          objectivesText={objectives.objectivesText}
+        />
+        <CourseInfo
+          price={information.price}
+          hours={information.hours}
+          places={information.places}
+          practical={information.practical}
+        />
+        <CourseTitle title={formatMessage('footer:contact')} />
+        <CourseContact openContact={openContact} />
+      </div>
+    </>
   )
 }
 
