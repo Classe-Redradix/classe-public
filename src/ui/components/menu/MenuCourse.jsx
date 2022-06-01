@@ -10,7 +10,6 @@ import CourseContact from '../../components/sections/course/CourseContact'
 import { COURSES } from '../../../data'
 import useScrambleText from '../../../hooks/useScrambleText'
 import useTranslations from '../../../hooks/useTranslations'
-// import useHorizontalScroll from '../../../hooks/useHorizontalScroll'
 import CoursePdf from '../sections/course/CoursePdf'
 import { MEDIA_QUERIES } from '../../../constants'
 
@@ -56,17 +55,14 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
 
   const size = useWindowSize()
   const isDesktop = useMemo(() => size.width >= MEDIA_QUERIES.desktop, [size])
-  isDesktop ? console.log('desktop') : console.log('mobile-')
-  // const container = useHorizontalScroll()
+
   const container = useRef(null)
   const courseIntro = useRef(null)
+  const courseTitleHeader = useRef(null)
   useEffect(() => {
     const el = container.current
     const courseIntroEl = courseIntro.current
-    console.log(courseIntro)
-    const titleItem = document.querySelector('.courseTitle-header')
-    // console.log(isDesktop)
-    console.log({ el, courseIntroEl })
+    const titleHeaderEl = courseTitleHeader.current
 
     if (!el || !courseIntroEl) return
     const widthIntro = courseIntroEl.offsetWidth
@@ -78,15 +74,13 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
         left: el.scrollLeft + e.deltaY,
       })
       if (el.scrollLeft >= widthIntro) {
-        titleItem.classList.add('is-visible')
+        titleHeaderEl.classList.add('is-visible')
       } else {
-        titleItem.classList.remove('is-visible')
+        titleHeaderEl.classList.remove('is-visible')
       }
     }
-    console.log('-323----')
 
     if (isDesktop) {
-      console.log('-----')
       el.addEventListener('wheel', onWheel)
     } else {
       el.removeEventListener('wheel', onWheel)
@@ -94,13 +88,11 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
     return () => el.removeEventListener('wheel', onWheel)
   }, [isDesktop])
 
-  // const container = responsive && useHorizontalScroll()
-  // const container = responsive ? useHorizontalScroll() : useRef(null)
-
-  // console.log('useHorizontalScroll.elRef', container.scrollLeft)
   return (
     <>
-      <p className="courseTitle-header">{information.title}</p>
+      <p className="courseTitle-header" ref={courseTitleHeader}>
+        {information.title}
+      </p>
       <div className="courseSections" ref={container}>
         <CourseIntro
           dates={dates}
