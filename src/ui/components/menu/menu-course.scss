@@ -20,3 +20,14 @@
     height: calc(100vh - 80px);
   }
 }
+.courseTitle-header {
+  position: fixed;
+  top: 10px;
+  font-size: 1.6rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  text-transform: uppercase;
+  &.is-visible {
+    opacity: 1;
+  }
+}
