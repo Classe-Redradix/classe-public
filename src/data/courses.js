@@ -9,7 +9,7 @@ const PROGRAMACION = {
   isPublic: false,
   href: '/courses/programacion',
   information: {
-    title: 'PROGRAMACIÓN',
+    title: 'Programación con JavaScript',
     start: '21.08.22',
     finish: '25.08.22',
     description: 'course:programacion-description',
@@ -22,7 +22,7 @@ const PROGRAMACION = {
     places: 15,
     practical: 80,
   },
-  dossier: '/courses/programacion-javascript.pdf',
+  dosier: '/courses/programacion-javascript.pdf',
   indexItems: [
     {
       number: '01',
@@ -64,7 +64,7 @@ const UI_DEV = {
   isPublic: true,
   href: '/courses/maqueta',
   information: {
-    title: 'Maqueta',
+    title: 'Maquetación con HTML y CSS',
     start: '21.08.22',
     finish: '25.08.22',
     description: 'course:ui-dev-description',
@@ -77,7 +77,7 @@ const UI_DEV = {
     places: 15,
     practical: 80,
   },
-  dossier: '/courses/maquetacion-con-HTML-CSS.pdf',
+  dosier: '/courses/maquetacion-con-HTML-CSS.pdf',
   indexItems: [
     {
       number: '01',
@@ -119,7 +119,7 @@ const FRONT_END = {
   isPublic: true,
   href: '/courses/front-end',
   information: {
-    title: 'Front-end',
+    title: 'Front-end con React',
     start: '21.08.22',
     finish: '25.08.22',
     description: 'course:front-description',
@@ -132,7 +132,7 @@ const FRONT_END = {
     places: 20,
     practical: 80,
   },
-  dossier: '/courses/front-end-con-react.pdf',
+  dosier: '/courses/front-end-con-react.pdf',
   indexItems: [
     {
       number: '01',
@@ -169,7 +169,7 @@ const BACK_END = {
   isPublic: false,
   href: '/courses/back-end',
   information: {
-    title: 'Back-end',
+    title: 'Back-end con Node',
     start: '21.08.22',
     finish: '25.08.22',
     description: 'course:back-description',
@@ -182,7 +182,7 @@ const BACK_END = {
     places: 15,
     practical: 80,
   },
-  dossier: '/courses/back-end-con-node.pdf',
+  dosier: '/courses/back-end-con-node.pdf',
   indexItems: [
     {
       number: '01',

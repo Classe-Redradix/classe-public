@@ -84,10 +84,10 @@
   "course:contact-us": "Contáctanos",
   "course:index-title": "Índice",
 
-  "course:pdf-title": "Dossier del curso",
+  "course:pdf-title": "Dosier del curso",
   "course:pdf-button": "Descargar",
 
-  "course:programacion-description": "Programación con Javascript. Brendan Eich escribió la primera versión de JS en 10 días. 25 años después sigue siendo una parte clave dentro y fuera de Internet. Este curso va más allá de las nociones básicas y empieza donde otros acaban. Profundizaremos en conceptos de programación avanzados desde el punto de vista de este lenguaje y hurgaremos en las tripas de JS para conquistarlo y entender sus pros y sus contras.",
+  "course:programacion-description": "Brendan Eich escribió la primera versión de JS en 10 días. 25 años después sigue siendo una parte clave dentro y fuera de Internet. Este curso va más allá de las nociones básicas y empieza donde otros acaban. Profundizaremos en conceptos de programación avanzados desde el punto de vista de este lenguaje y hurgaremos en las tripas de JS para conquistarlo y entender sus pros y sus contras. ",
   "course:programacion-01-title": "<line>Tipos</line><line> de</line><line>datos</line>",
   "course:programacion-01-description": "Empezando por Arrays y Mapas, pasando por Sets, Símbolos hasta llegar a Proxies y Objetos. Serás capaz de explotar estas estructuras como no imaginabas que fuera posible.",
   "course:programacion-02-title": "<line>Orientación</line><line>  a</line><line>objetos</line>",
@@ -103,7 +103,7 @@
   "course:programacion-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><lineSROnly>Es para /</lineSROnly> <line>mí?</line>",
   "course:programacion-objetives-description": "Este es un curso avanzado para profesionales que han trabajado en desarrollo web al menos durante un año. Está centrado en learn by doing con ejercicios divertidos para hacer y corregir en vivo. Live programming al poder!",
 
-  "course:ui-dev-description": "[FALTA INTRO]  **Con este curso aprenderás**\nEstamos hartos de ver comportamientos *responsive* defectuosos, transiciones que no fluyen o *scrolls* que dan ganas de tirar el ordenador por la ventana. Eso por no hablar de la web de Renfe. Basta ya! Este curso te dará el conocimiento para crear interfaces que respeten los estándares y, sobre todo, a los usuarios. Bueno y ya que estamos, y con un poco de suerte, también [que ganen premios.](https://www.awwwards.com/) 🏆\n**Si te preguntas si es para ti...**\nEste es un curso avanzado para profesionales que han trabajado en desarrollo web al menos durante un año. Está centrado en *learn by doing* con ejercicios divertidos para hacer y corregir en vivo. *Live programming* al poder!",
+  "course:ui-dev-description": "Creemos en la división de responsabilidades y consideramos la maquetación como una disciplina en sí misma con un alto grado de especialización. Así lo hemos hecho en Redradix desde hace mas de 10 años y hemos aprendido mucho por el camino. En este curso profundizaremos en la maquetación para crear plataformas accesibles, dinámicas, escalables y usables. Atacando conceptos como arquitectura CSS, o analizando cuándo usar diferentes layouts, navegaremos a través de ejemplos cotidianos que te pondrán contra las cuerdas. No es un curso de iniciación. ¿Sabes HTML y CSS? En este curso te lo vas a replantear.",
   "course:ui-dev-01-title": "<line>Estructura</line><line>HTML</line>",
   "course:ui-dev-01-description": "Etiquetas, imágenes, tabulación de datos, buenas prácticas sobre enlaces, validación de formularios, carga de archivos, microformatos o accesibilidad son algunos de los temas de los que hablaremos desde una perspectiva avanzada.",
   "course:ui-dev-02-title": "<line>Estructura</line><line>CSS</line>",
@@ -115,11 +115,11 @@
   "course:ui-dev-05-title": "<line>Ecosistema</line>",
   "course:ui-dev-05-description": "Si quieres introducirte en conceptos de maquetación avanzada es esencial conocer las herramientas de las que dispones, desde las posibilidades del editor hasta los trucos ocultos del navegador y la consola. Magia negra.",
   "course:ui-dev-learn": "<lineAriaHidden>Con este/</lineAriaHidden><lineSROnly>Con este</lineSROnly> <line>curso</line> <line>aprenderás:</line>",
-  "course:ui-dev-learn-description": "Estamos hartos de ver comportamientos *responsive* defectuosos, transiciones que no fluyen o *scrolls* que dan ganas de tirar el ordenador por la ventana. Basta ya! Este curso te ayudará a crear interfaces que respeten los estándares y, sobre todo, a los usuarios",
+  "course:ui-dev-learn-description": "Estamos hartos de ver comportamientos responsive defectuosos, transiciones que no fluyen o scrolls que dan ganas de tirar el ordenador por la ventana. Basta ya! Este curso te ayudará a crear interfaces que respeten los estándares y, sobre todo, a los usuarios.",
   "course:ui-dev-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><lineSROnly>Es para /</lineSROnly> <line>mí?</line>",
   "course:ui-dev-objetives-description": "Este es un curso avanzado para profesionales que han trabajado en desarrollo web al menos durante un año. Está centrado en learn by doing con ejercicios divertidos para hacer y corregir en vivo. Live programming al poder!",
 
-  "course:front-description": "[FALTA INTRO]  **Con este curso aprenderás**\nNo solo React, si no más importante: por qué React, cómo funciona, cuándo aplicarlo, patrones y antipatrones y en qué elementos del navegador se apoya. La versatilidad de React es muy amplia, como demuestran los proyectos de nuestro a día a día en Redradix. Y queremos contarte cómo lo hacemos.\n**Si te preguntas si es para ti...**\nEste es un curso avanzado para profesionales que han trabajado en desarrollo front al menos durante un año. Está centrado en *learn by doing* con ejercicios divertidos para hacer y corregir en vivo. *Live programming* al poder!",
+  "course:front-description": "El mundo front cambia rapidamente y nosotros con él. Nos adaptamos y evolucionamos según lo hacen las necesidades del desarrollo. Abrazamos los nuevos paradigmas y ponemos en tela de juicio las tendencias. Con los años hemos aprendido a diferenciar las modas pasajeras de los patrones que ayudan a crear mejor código. Y eso es lo que queremos enseñarte. Desde exprimir las APIs del navegador para no depender de librerías externas hasta diseccionar React para interiorizar las implicaciones del flujo unidireccional de datos. Principios de diseño y buenas prácticas que mejoren la legibilidad de tu código hasta el punto de que volver a él sea una experiencia placentera. Para aquellos que les guste el desarrollo front y quieran profundizar en él.",
   "course:front-01-title": "<line>Fundame</line><line>ntos</line>",
   "course:front-01-description": "Es necesario tener conocimiento de las posibilidades que ofrece el navegador: APIs, protocolos de comunicación, formularios o navegación. En verdad, solo así podremos construir algo verdaderamente escalable.",
   "course:front-02-title": "<line>Librerías y </line><line>frameworks</line>",
@@ -127,7 +127,7 @@
   "course:front-03-title": "<line>React</line>",
   "course:front-03-description": "Nos centraremos en la librería que se ha ganado el derecho a ser el referente del desarrollo front. Profundizaremos en JSX, ciclo de vida, flujo unidireccional, renderizado condicional y tocaremos temas controvertidos como sus efectos secundarios o React Suspense.",
   "course:front-04-title": "<line>Módulos</line><line>opcionales</line>",
-  "course:front-04-description": "Este curso tiene un montón de módulos opcionales con los que complementar una asignatura tan compleja como el desarrollo front. Algunos relacionados con React como ReactRouter, ReactQuery o Redux, y otros más como testing en front, webextensions o i18n.",
+  "course:front-04-description": "Este curso tiene un montón de módulos opcionales con los que complementar una asignatura tan compleja como el desarrollo front. Algunos relacionados con React como ReactRouter, ReactQuery o Redux, y otros  como testing en front, webextensions o i18n.",
   "course:front-learn": "<lineAriaHidden>Con este/</lineAriaHidden><lineSROnly>Con este</lineSROnly> <line>curso</line> <line>aprenderás:</line>",
   "course:front-learn-description": "No solo React, sino más importante: por qué React, cómo funciona, cuándo aplicarlo, patrones y antipatrones y en qué elementos del navegador se apoya. La versatilidad de React es muy amplia, como demuestran los proyectos de nuestro a día a día en Redradix. Queremos contarte cómo lo hacemos.",
   "course:front-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><lineSROnly>Es para /</lineSROnly> <line>mí?</line>",
@@ -135,7 +135,7 @@
 
   "course:back-description": "[FALTA INTRO]  **Con este curso aprenderás**\nEl 80% de los proyectos que hacemos en Redradix tienen APIs, programación asíncrona o persistencia de datos. Queremos contarte cómo lo hacemos aplicando Node.js, para que tú puedas aplicar estos conocimientos desde el primer día, creando servicios robustos y escalables de los que estar orgulloso.\n**Si te preguntas si es para ti...**\nEste es un curso avanzado para profesionales que han trabajado en *desarrollo back-end* al menos durante un año. Está centrado en *learn by doing* con ejercicios divertidos para hacer y corregir en vivo. *Live programming* al poder.",
   "course:back-01-title": "<line>Core</line><line>Modules</line>",
-  "course:back-01-description": "Qué es Node y qué partes lo componen? Veremos módulos como Stream, CLI o Process, complejos pero necesarios para entender las tripas de este runtime tan querido por todos. Y esto nos servirá para sentar las bases para el resto del curso.",
+  "course:back-01-description": "En Redradix hemos hecho tantos backends como frontends hemos integrado con backends externos. Tenemos las dos visiones: cómo debería ser un backend desde el punto de vista de su consumo por un cliente y también desde dentro para que sea robusto pero a la vez flexible y escalable. En este curso vamos a navegar por diferentes ejemplos reales de problemas a los que todos nos hemos enfrentado pero no siempre hemos aplicado la mejor solución. Desde la creación de APIs hasta patrón repositorio o arquitectura hexagonal, siempre desde el punto de vista práctico.",
   "course:back-02-title": "<line>HTTP y</line><line>HTTPS</line>",
   "course:back-02-description": "Desde cómo crear un servidor a cómo servir contenido a las bases de una buena API REST o el uso de proxies.",
   "course:back-03-title": "<line>Express</line>",
@@ -173,7 +173,7 @@
   "custom:button": "Ver cursos",
 
   "featured:header": "Curso destacado",
-  "featured:title": "<line>Progra</line><line> mación</line> <line>con</line><line>JavaScript</line> <lineTab>(2022, 2023);</lineTab>",
+  "featured:title": "<line>Progra</line><line> mación</line> <line>con</line><line>JavaScript</line>",
   "featured:button": "¿Quieres saber más? Echa un ojo al curso",
 
   "facts:header": "Facts",
@@ -188,7 +188,7 @@
   "calendar:header": "Calendario",
   "calendar:title": "<line>Haz</line> <line>hueco</line> <lineTab>(en tu</lineTab> <lineTab>agenda)</lineTab>",
   "calendar:description": "Las clases se impartirán de lunes a viernes de 18:30h a 21:30h. Será en nuestras oficinas de la C/ Calatrava 27. Metro: La Latina, Puerta de Toledo o Tirso de Molina.\nTambién tenemos la opción de asistencia en remoto, o híbrida presencial+ online.",
-  "calendar:no-courses": "Estamos hasta arriba con cursos para empresas y en estos momentos no tenemos ninguna convocatoria pública abierta.  \nSi te interesa saber cuándo será el próximo curso,  regístrate y nos pondremos en contacto contigo en cuanto tengamos fechas confirmadas.",
+  "calendar:no-courses": "Escríbenos para enterarte el primero. ",
   "calendar:start": "Start",
   "calendar:finish": "Finish",
 
@@ -198,7 +198,7 @@
 
   "faqs:header": "Faq's",
   "faqs:title": "<lineAriaHidden>//Aprender es no parar</lineAriaHidden><lineSROnly>Aprender es no parar</lineSROnly> <lineTab>de preguntar</lineTab>",
-  "faqs:faq1-title": "¿LLEVO POCO TIEMPO EN ESTO DEL DESARROLLO, ESTE CURSO ES PARA MÍ?",
+  "faqs:faq1-title": "LLEVO POCO TIEMPO EN ESTO DEL DESARROLLO, ¿ESTE CURSO ES PARA MÍ?",
   "faqs:faq1-description": "No creemos en los años de experiencia. Creemos en la pasión por la programación. Si tienes unas bases sólidas sobre las que podamos trabajar, entonces podemos hacer magia.",
   "faqs:faq2-title": "¿COMO CONVENZO A MI EMPRESA PARA QUE ORGANICE UNO DE LOS CURSOS?",
   "faqs:faq2-description": "Dile que nos contacte. Seguro que es consciente de en qué podéis mejorar. Y nosotros podemos explicarle cómo podéis hacerlo y cómo nuestros cursos se adaptan a las necesidades de cada empresa. También podemos hablar con él del resultado: menos errores en programación, menos dolores de cabeza y una mayor productividad.",
@@ -214,7 +214,7 @@
   "faqs:faq7-description": "Mejor aún. Si quieres podrás repetir las sesiones que te interese en las siguientes ediciones. Y además podrás acceder a los repositorios. Pero el nuestro es un curso en directo porque aunque en nuestro día a día defendemos la comunicación asíncrona, no se aprende igual si no se comparte el momento con el resto de la clase. ",
   "faqs:faq8-title": "¿NECESITO ALGÚN EQUIPO O PROGRAMA ESPECIAL?",
   "faqs:faq8-description": "Todo el mundo debe utilizar su ordenador porque se trabaja más cómodamente. Nos da igual la herramienta que uses, con la que más cómodo estés. Más allá de eso, proveemos de todo, incluidas chucherías para que tu cerebro funcione si haces el curso presencial en nuestra oficina.",
-  "faqs:faq9-title": "¿CUÁLES SON LAS FORMAS DE PAGO? ¿EXISTE FINANCIACIÓN?",
+  "faqs:faq9-title": "¿CUÁLES SON LAS FORMAS DE PAGO?",
   "faqs:faq9-description": "El pago se realiza mediante tarjeta bancaria. Una vez realices tu inscripción te enviaremos un enlace para poder hacerlo de forma segura. ",
 
   "find:header": "Encuéntranos",
