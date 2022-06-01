@@ -2,6 +2,12 @@
   filter: grayscale(100%);
   object-fit: cover;
   height: 100%;
+  @include mq($until: md) {
+    max-height: 300px;
+  }
+  @include mq(xl) {
+    max-height: 800px;
+  }
 }
 
 .sectionWrapper.courses {
