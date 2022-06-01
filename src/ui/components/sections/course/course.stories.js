@@ -133,7 +133,7 @@ Declaración de variables. (2H)"
   />
 )
 export const coursePdf = ({ ...args }) => (
-  <CoursePdf href="/" textButton="Descargar" title="Dossier del curso" />
+  <CoursePdf href="/" textButton="Descargar" title="Dosier del curso" />
 )
 
 export const courseSectionEmpty = ({ ...args }) => (

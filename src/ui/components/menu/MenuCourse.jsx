@@ -51,7 +51,7 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
     menuCourse = Object.assign({}, course)
   }
 
-  const { information, indexItems, objectives, href, dossier } = menuCourse
+  const { information, indexItems, objectives, href, dosier } = menuCourse
 
   const size = useWindowSize()
   const isDesktop = useMemo(() => size.width >= MEDIA_QUERIES.desktop, [size])
@@ -117,7 +117,7 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
         ))}
         <CoursePdf
           title={formatMessage('course:pdf-title')}
-          href={dossier}
+          href={dosier}
           textButton={formatMessage('course:pdf-button')}
         />
         <CourseSectionEmpty />
