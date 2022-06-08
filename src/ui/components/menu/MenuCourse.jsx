@@ -91,7 +91,7 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
   return (
     <>
       <p className="courseTitle-header" ref={courseTitleHeader}>
-        {information.title}
+        {formatMessage(information.title)}
       </p>
       <div className="courseSections" ref={container}>
         <CourseIntro
