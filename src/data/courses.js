@@ -12,7 +12,8 @@ const PROGRAMACION = {
     title: 'Programación con JavaScript',
     start: '21.08.22',
     finish: '25.08.22',
-    description: 'course:programacion-description',
+    schemaDescription: 'course:js-schema-description',
+    description: 'course:js-description',
     image: {
       source: imageCourseJS,
       alt: 'Un chico de perfil trabajando con su portátil',
@@ -26,35 +27,35 @@ const PROGRAMACION = {
   indexItems: [
     {
       number: '01',
-      name: 'course:programacion-01-title',
-      description: 'course:programacion-01-description',
+      name: 'course:js-01-title',
+      description: 'course:js-01-description',
     },
     {
       number: '02',
-      name: 'course:programacion-02-title',
-      description: 'course:programacion-02-description',
+      name: 'course:js-02-title',
+      description: 'course:js-02-description',
     },
     {
       number: '03',
-      name: 'course:programacion-03-title',
-      description: 'course:programacion-03-description',
+      name: 'course:js-03-title',
+      description: 'course:js-03-description',
     },
     {
       number: '04',
-      name: 'course:programacion-04-title',
-      description: 'course:programacion-04-description',
+      name: 'course:js-04-title',
+      description: 'course:js-04-description',
     },
     {
       number: '',
-      name: 'course:programacion-05-title',
-      description: 'course:programacion-05-description',
+      name: 'course:js-05-title',
+      description: 'course:js-05-description',
     },
   ],
   objectives: {
-    learn: 'course:programacion-learn',
-    text: 'course:programacion-learn-description',
-    objectives: 'course:programacion-objectives',
-    objectivesText: 'course:programacion-objetives-description',
+    learn: 'course:js-learn',
+    text: 'course:js-learn-description',
+    objectives: 'course:js-objectives',
+    objectivesText: 'course:js-objetives-description',
   },
 }
 
@@ -67,6 +68,7 @@ const UI_DEV = {
     title: 'Maquetación con HTML y CSS',
     start: '21.08.22',
     finish: '25.08.22',
+    schemaDescription: 'course:ui-dev-schema-description',
     description: 'course:ui-dev-description',
     image: {
       source: imageCourseUIDeveloper,
@@ -122,7 +124,8 @@ const FRONT_END = {
     title: 'Front-end con React',
     start: '21.08.22',
     finish: '25.08.22',
-    description: 'course:front-description',
+    schemaDescription: 'course:front-react-schema-description',
+    description: 'course:front-react-description',
     image: {
       source: imageCourseReact,
       alt: 'Un chico con un gorro trabajando en su portátil',
@@ -136,30 +139,30 @@ const FRONT_END = {
   indexItems: [
     {
       number: '01',
-      name: 'course:front-01-title',
-      description: 'course:front-01-description',
+      name: 'course:front-react-01-title',
+      description: 'course:front-react-01-description',
     },
     {
       number: '02',
-      name: 'course:front-02-title',
-      description: 'course:front-02-description',
+      name: 'course:front-react-02-title',
+      description: 'course:front-react-02-description',
     },
     {
       number: '03',
-      name: 'course:front-03-title',
-      description: 'course:front-03-description',
+      name: 'course:front-react-03-title',
+      description: 'course:front-react-03-description',
     },
     {
       number: '',
-      name: 'course:front-04-title',
-      description: 'course:front-04-description',
+      name: 'course:front-react-04-title',
+      description: 'course:front-react-04-description',
     },
   ],
   objectives: {
-    learn: 'course:front-learn',
-    text: 'course:front-learn-description',
-    objectives: 'course:front-objectives',
-    objectivesText: 'course:front-objetives-description',
+    learn: 'course:front-react-learn',
+    text: 'course:front-react-learn-description',
+    objectives: 'course:front-react-objectives',
+    objectivesText: 'course:front-react-objetives-description',
   },
 }
 
@@ -172,7 +175,8 @@ const BACK_END = {
     title: 'Back-end con Node',
     start: '21.08.22',
     finish: '25.08.22',
-    description: 'course:back-description',
+    schemaDescription: 'course:back-node-schema-description',
+    description: 'course:back-node-description',
     image: {
       source: imageCourseBack,
       alt: 'Un chico con un gorro trabajando en su portátil',
@@ -186,40 +190,40 @@ const BACK_END = {
   indexItems: [
     {
       number: '01',
-      name: 'course:back-01-title',
-      description: 'course:back-01-description',
+      name: 'course:back-node-01-title',
+      description: 'course:back-node-01-description',
     },
     {
       number: '02',
-      name: 'course:back-02-title',
-      description: 'course:back-02-description',
+      name: 'course:back-node-02-title',
+      description: 'course:back-node-02-description',
     },
     {
       number: '03',
-      name: 'course:back-03-title',
-      description: 'course:back-03-description',
+      name: 'course:back-node-03-title',
+      description: 'course:back-node-03-description',
     },
     {
       number: '04',
-      name: 'course:back-04-title',
-      description: 'course:back-04-description',
+      name: 'course:back-node-04-title',
+      description: 'course:back-node-04-description',
     },
     {
       number: '05',
-      name: 'course:back-05-title',
-      description: 'course:back-05-description',
+      name: 'course:back-node-05-title',
+      description: 'course:back-node-05-description',
     },
     {
       number: '',
-      name: 'course:back-06-title',
-      description: 'course:back-06-description',
+      name: 'course:back-node-06-title',
+      description: 'course:back-node-06-description',
     },
   ],
   objectives: {
-    learn: 'course:back-learn',
-    text: 'course:back-learn-description',
-    objectives: 'course:back-objectives',
-    objectivesText: 'course:back-objetives-description',
+    learn: 'course:back-node-learn',
+    text: 'course:back-node-learn-description',
+    objectives: 'course:back-node-objectives',
+    objectivesText: 'course:back-node-objetives-description',
   },
 }
 

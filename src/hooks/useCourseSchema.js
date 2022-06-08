@@ -17,7 +17,7 @@ const useCoursechema = courseData => {
     '@type': 'Course',
     url: `${formatMessage('url:root')}${courseData.href}`,
     name: courseData.information.title,
-    description: courseData.information.description,
+    description: formatMessage(courseData.information.schemaDescription),
     hasCourseInstance: [
       {
         '@type': 'CourseInstance',
