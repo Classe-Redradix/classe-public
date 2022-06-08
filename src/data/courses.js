@@ -12,7 +12,7 @@ const PROGRAMACION = {
     title: 'course:js-title',
     start: '21.08.22',
     finish: '25.08.22',
-    schemaDescription: 'course:js-schema-description',
+    metaDescription: 'course:js-schema-description',
     description: 'course:js-description',
     image: {
       source: imageCourseJS,
@@ -68,7 +68,7 @@ const UI_DEV = {
     title: 'course:ui-dev-title',
     start: '21.08.22',
     finish: '25.08.22',
-    schemaDescription: 'course:ui-dev-schema-description',
+    metaDescription: 'course:ui-dev-meta-description',
     description: 'course:ui-dev-description',
     image: {
       source: imageCourseUIDeveloper,
@@ -124,7 +124,7 @@ const FRONT_END = {
     title: 'course:front-react-title',
     start: '21.08.22',
     finish: '25.08.22',
-    schemaDescription: 'course:front-react-schema-description',
+    metaDescription: 'course:front-react-schema-description',
     description: 'course:front-react-description',
     image: {
       source: imageCourseReact,
@@ -175,7 +175,7 @@ const BACK_END = {
     title: 'course:back-node-title',
     start: '21.08.22',
     finish: '25.08.22',
-    schemaDescription: 'course:back-node-schema-description',
+    metaDescription: 'course:back-node-schema-description',
     description: 'course:back-node-description',
     image: {
       source: imageCourseBack,

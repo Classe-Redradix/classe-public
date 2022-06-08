@@ -17,7 +17,6 @@
   "info-head-courses:description": "Actualmente realizamos cursos para profundizar al máximo en JavaScript, Maquetación (UI Development), Desarrollo Front-end y Back-end.",
 
   "info-head-course:title": "Curso de {course} | Classe",
-  "info-head-course:description": "Con nuestro curso de {course} asentarás todos tus conocimientos para sacarles el máximo partido en tu carrera profesional.",
 
   "info-head-contact:title": "Contacto | Classe",
   "info-head-contact:description": "Contacta con nosotros. Calatrava, 27 (en La Latina, Madrid) info@classe.dev",
@@ -87,7 +86,7 @@
   "course:pdf-title": "Dosier del curso",
   "course:pdf-button": "Descargar",
 
-  "course:js-title": "Programación con JavaScript",
+  "course:js-title": "programación con JavaScript",
   "course:js-alt-image": "Un chico de perfil trabajando con su ordenador",
   "course:js-schema-description": "El mejor curso para aprender JavaScript en profundidad. Los cimientos sobre los que apoyar conocimientos futuros.",
   "course:js-description": "Brendan Eich escribió la primera versión de JS en 10 días. 25 años después sigue siendo una parte clave dentro y fuera de Internet. Este curso va más allá de las nociones básicas y empieza donde otros acaban. Profundizaremos en conceptos de programación avanzados desde el punto de vista de este lenguaje y hurgaremos en las tripas de JS para conquistarlo y entender sus pros y sus contras.",
@@ -106,9 +105,9 @@
   "course:js-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><lineSROnly>Es para /</lineSROnly> <line>mí?</line>",
   "course:js-objetives-description": "Este es un curso avanzado para profesionales que han trabajado en desarrollo web al menos durante un año. Está centrado en learn by doing con ejercicios divertidos para hacer y corregir en vivo. Live programming al poder!",
 
-  "course:ui-dev-title": "Maquetación con HTML y CSS",
+  "course:ui-dev-title": "maquetación con HTML y CSS",
   "course:ui-dev-alt-image": "Un chico de perfil trabajando en su portátil",
-  "course:ui-dev-schema-description": "El mejor curso para profundizar en la maquetación para crear plataformas accesibles, dinámicas, escalables y usables.",
+  "course:ui-dev-meta-description": "El mejor curso para profundizar en la maquetación para crear plataformas accesibles, dinámicas, escalables y usables.",
   "course:ui-dev-description": "Creemos en la división de responsabilidades y consideramos la maquetación como una disciplina en sí misma con un alto grado de especialización. Así lo hemos hecho en Redradix desde hace mas de 10 años y hemos aprendido mucho por el camino. En este curso profundizaremos en la maquetación para crear plataformas accesibles, dinámicas, escalables y usables. Atacando conceptos como arquitectura CSS, o analizando cuándo usar diferentes layouts, navegaremos a través de ejemplos cotidianos que te pondrán contra las cuerdas. No es un curso de iniciación. ¿Sabes HTML y CSS? En este curso te lo vas a replantear.",
   "course:ui-dev-01-title": "<line>Estructura</line><line>HTML</line>",
   "course:ui-dev-01-description": "Etiquetas, imágenes, tabulación de datos, buenas prácticas sobre enlaces, validación de formularios, carga de archivos, microformatos o accesibilidad son algunos de los temas de los que hablaremos desde una perspectiva avanzada.",
@@ -175,7 +174,7 @@
   "course:places": "<line>plazas</line>",
   "course:practical": "<line>práctico</line>",
   "course:students": "<line>alumnos</line> <line>inscritos</line>",
-  "course:success": "<line>% de éxito</line>",
+  "course:success": " <line>% de éxito</line>",
   "course:contact": "¿ECHAS ALGO EN FALTA? PUEDES COMBINAR EL TEMARIO DE TODOS NUESTROS CURSOS PARA QUE SE ADAPTE MEJOR A LO QUE BUSCAS",
 
   "custom:header": "Personaliza",
