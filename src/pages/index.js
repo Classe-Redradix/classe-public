@@ -64,7 +64,7 @@ const Home = () => {
   const formatMessage = useTranslations()
 
   const courses = COURSES.map(course => ({
-    title: course.information.title,
+    title: formatMessage(course.information.title),
     href: `/courses/${course.id}`,
   }))
 

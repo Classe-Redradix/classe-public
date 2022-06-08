@@ -32,7 +32,7 @@ const Course = React.forwardRef(
                 // }}
               >
                 <TabIcon className="courseIntro-tab" aria-hidden="true" />
-                {name}
+                {formatMessage(name)}
               </h1>
             </Cell>
           </Row>

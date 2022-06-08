@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import { useTranslations } from '../hooks'
+
 import { COURSES } from '../data'
 
 import useInput from './useInput'
@@ -12,6 +14,8 @@ import useCheckbox from './useCheckbox'
  * handlers and a method to store the contact form easily into Firebase.
  */
 const useContactForm = interestedInCourseId => {
+  const formatMessage = useTranslations()
+
   // Form values
   const [name, onNameChange, setName] = useInput()
   const [email, onEmailChange, setEmail] = useInput()
@@ -20,7 +24,7 @@ const useContactForm = interestedInCourseId => {
     COURSES.map(course => ({
       checked: course.id === interestedInCourseId,
       id: course.id,
-      label: course.information.title,
+      label: formatMessage(course.information.title),
     })),
   )
 
@@ -145,7 +149,7 @@ const useContactForm = interestedInCourseId => {
       COURSES.map(course => ({
         checked: course.id === interestedInCourseId,
         id: course.id,
-        label: course.information.title,
+        label: formatMessage(course.information.title),
       })),
     )
   }, [interestedInCourseId])

@@ -25,7 +25,7 @@ const CoursesList = ({ courses, openCourse, isPlacedAtHome }) => {
       )}
       <ol className="coursesList-list">
         {courses.map((course, index) => (
-          <li key={course.information.title}>
+          <li key={t(course.information.title)}>
             <CoursesListlinkWrapper>
               <a
                 className="coursesList-link h1"
@@ -38,7 +38,7 @@ const CoursesList = ({ courses, openCourse, isPlacedAtHome }) => {
                 <span className="coursesList-linkTextWrapper">
                   <TabIcon color="red" className="icon" />
                   <span className="coursesList-linkText">
-                    {course.information.title}
+                    {t(course.information.title)}
                   </span>
                 </span>
               </a>

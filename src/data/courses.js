@@ -9,7 +9,7 @@ const PROGRAMACION = {
   isPublic: false,
   href: '/courses/programacion',
   information: {
-    title: 'Programación con JavaScript',
+    title: 'course:js-title',
     start: '21.08.22',
     finish: '25.08.22',
     schemaDescription: 'course:js-schema-description',
@@ -65,7 +65,7 @@ const UI_DEV = {
   isPublic: true,
   href: '/courses/maqueta',
   information: {
-    title: 'Maquetación con HTML y CSS',
+    title: 'course:ui-dev-title',
     start: '21.08.22',
     finish: '25.08.22',
     schemaDescription: 'course:ui-dev-schema-description',
@@ -121,7 +121,7 @@ const FRONT_END = {
   isPublic: true,
   href: '/courses/front-end',
   information: {
-    title: 'Front-end con React',
+    title: 'course:front-react-title',
     start: '21.08.22',
     finish: '25.08.22',
     schemaDescription: 'course:front-react-schema-description',
@@ -172,7 +172,7 @@ const BACK_END = {
   isPublic: false,
   href: '/courses/back-end',
   information: {
-    title: 'Back-end con Node',
+    title: 'course:back-node-title',
     start: '21.08.22',
     finish: '25.08.22',
     schemaDescription: 'course:back-node-schema-description',

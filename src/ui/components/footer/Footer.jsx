@@ -90,13 +90,13 @@ const Footer = ({
           <span className="tiny">{t('courses:header')}</span>
           <ul className="footer-list">
             {courses.map(course => (
-              <li key={course.information.title}>
+              <li key={t(course.information.title)}>
                 <a
                   className="h4"
                   href={course.href}
                   onClick={e => handleClick(e, course)}
                 >
-                  {course.information.title}
+                  {t(course.information.title)}
                 </a>
               </li>
             ))}
