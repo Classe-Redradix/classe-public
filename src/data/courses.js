@@ -16,7 +16,7 @@ const PROGRAMACION = {
     description: 'course:js-description',
     image: {
       source: imageCourseJS,
-      alt: 'Un chico de perfil trabajando con su portátil',
+      alt: 'course:js-alt-image',
     },
     price: 600,
     hours: 30,
@@ -72,7 +72,7 @@ const UI_DEV = {
     description: 'course:ui-dev-description',
     image: {
       source: imageCourseUIDeveloper,
-      alt: 'Un chico de perfil trabajando con su portátil',
+      alt: 'course:ui-dev-alt-image',
     },
     price: 600,
     hours: 30,
@@ -128,7 +128,7 @@ const FRONT_END = {
     description: 'course:front-react-description',
     image: {
       source: imageCourseReact,
-      alt: 'Un chico con un gorro trabajando en su portátil',
+      alt: 'course:front-react-alt-image',
     },
     price: 1200,
     hours: 30,
@@ -179,7 +179,7 @@ const BACK_END = {
     description: 'course:back-node-description',
     image: {
       source: imageCourseBack,
-      alt: 'Un chico con un gorro trabajando en su portátil',
+      alt: 'course:back-node-alt-image',
     },
     price: 600,
     hours: 30,
