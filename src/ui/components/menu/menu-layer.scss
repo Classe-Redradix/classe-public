@@ -145,6 +145,16 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      .isError {
+        margin-top: 5px;
+
+        span {
+          display: inline-block;
+
+          margin-right: 5px;
+          color: $error;
+        }
+      }
     }
 
     .contact-formBlock {
@@ -245,9 +255,9 @@
 
         .checkbox {
           margin-top: 0;
-          &:not(:first-child) {
+          &:not(:last-child) {
             margin-top: 0;
-            margin-left: 24px;
+            margin-right: 24px;
           }
         }
 

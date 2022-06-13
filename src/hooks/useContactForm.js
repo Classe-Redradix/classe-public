@@ -93,7 +93,7 @@ const useContactForm = interestedInCourseId => {
 
     if (validationErrors.length > 0) {
       setErrors(validationErrors)
-      alert(validationErrors.join('\n'))
+      // alert(validationErrors.join('\n'))
       return
     }
 
