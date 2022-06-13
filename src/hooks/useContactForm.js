@@ -36,6 +36,7 @@ const useContactForm = interestedInCourseId => {
   const [isError, setIsError] = useState(null)
   const [error, setError] = useState(null)
   const [isSaved, setIsSaved] = useState(false)
+  const [errors, setErrors] = useState(null)
 
   const onInterestedInOptionChange = interestedInOption => {
     setInterestedInOptions(interestedInOptions =>
@@ -62,7 +63,9 @@ const useContactForm = interestedInCourseId => {
     onError,
     isMenuContact = false,
   }) => {
-    const errors = []
+    setErrors(null)
+
+    const validationErrors = []
 
     // NOTE: since in the home contact form the user only indicates what type
     // of user is (student or company) and that the home contact form and the
@@ -72,26 +75,29 @@ const useContactForm = interestedInCourseId => {
     // TODO: add error messages to `../config/translations/es.json`.
     if (isMenuContact) {
       if (interestedInOptions.filter(option => option.checked).length === 0) {
-        errors.push('Selecciona al menos un curso de tu interés')
+        validationErrors.push('Selecciona al menos un curso de tu interés')
       }
 
       if (name.trimRight() === '') {
-        errors.push('El nombre no puede estar vacío')
+        validationErrors.push('El nombre no puede estar vacío')
       }
     }
 
     if (email.trimRight() === '') {
-      errors.push('Introduce un email válido')
+      validationErrors.push('Introduce un email válido')
     }
 
     if (!termsAndConditions) {
-      errors.push('Debes aceptar los términos y condiciones')
+      validationErrors.push('Debes aceptar los términos y condiciones')
     }
 
-    if (errors.length > 0) {
-      alert(errors.join('\n'))
+    if (validationErrors.length > 0) {
+      setErrors(validationErrors)
+      alert(validationErrors.join('\n'))
       return
     }
+
+    setErrors([])
 
     setIsLoading(true)
 
@@ -159,6 +165,7 @@ const useContactForm = interestedInCourseId => {
     isSaved,
     isError,
     error,
+    errors,
     saveToFirebase,
     name,
     onNameChange,

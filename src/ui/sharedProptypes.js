@@ -29,6 +29,7 @@ const CoursePropType = PropTypes.shape({
 const ContactFormParamsPropType = PropTypes.shape({
   email: PropTypes.string,
   name: PropTypes.string,
+  errors: PropTypes.arrayOf(PropTypes.string),
   interestedInOptions: PropTypes.arrayOf(
     PropTypes.shape({
       checked: PropTypes.bool,
