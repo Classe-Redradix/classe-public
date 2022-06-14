@@ -15,6 +15,7 @@ import Find from '../../components/sections/Find'
 import Footer from '../../components/footer/Footer'
 import useTranslations from '../../../hooks/useTranslations'
 import Hero from '../../components/hero/Hero'
+import CookiesLayer from '../../components/cookies/Cookies'
 import { useMenu } from '../../../hooks'
 import {
   CoursePropType,
@@ -72,13 +73,9 @@ const Home = ({
 
   return (
     <>
-      <MainWrapper
-        isBlack={isBlack}
-        isFluor={isFluor}
-        isLock={isLock}
-        extraClass={`${visible} && 'is-loading'`}
-      >
+      <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
         {visible && <Hero text="loader:text" loaded={loaded} />}
+        <CookiesLayer isBlack={isBlack} />
 
         <Menu
           type="home"
