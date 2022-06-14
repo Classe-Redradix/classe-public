@@ -54,6 +54,7 @@ const Home = () => {
     termsAndConditions,
     toggleTermsAndConditions,
     saveToFirebase: saveContactFormToFirebase,
+    errors,
   } = useContactForm(interestedIn)
 
   useViewportHeight()
@@ -192,6 +193,7 @@ const Home = () => {
     onInterestedInOptionChange,
     name,
     termsAndConditions,
+    errors,
     toggleTermsAndConditions,
     onNameChange,
     saveToFirebase: saveContactFormToFirebase,

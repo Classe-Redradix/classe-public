@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import { copyClasseEmailToClipboard } from '../../../business'
 import { useTranslations } from '../../../hooks'
 import Row from '../row/Row'
@@ -8,21 +9,37 @@ import Checkbox from '../forms/Checkbox'
 import Radio from '../forms/Radio'
 
 const MenuContact = ({ linesHidden, contactFormParams }) => {
-  const t = useTranslations()
+  const formatMessage = useTranslations()
+  const [mensSuccess, setMensSuccess] = useState(false)
+
+  let showMessageError
+
+  if (contactFormParams.errors !== null) {
+    showMessageError = contactFormParams.errors.map(error => (
+      <small className="isError">
+        <span>Error</span>
+        {error}
+      </small>
+    ))
+  }
+  const contentSuccess = useRef(null)
+  const showMessageSuccess = () => {
+    contentSuccess.current.classList.add('isVisible')
+  }
 
   return (
     <Row type="quarter" extraClass="menuLayer-contact">
       <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
         <div className="-scrambleTextWrapper">
           <h1 className="h2 -scrambleText">
-            {t('contact:second-title', {
+            {formatMessage('contact:second-title', {
               line: text => <span className="line">{text}</span>,
             })}
           </h1>
         </div>
         <address className="menuLayer-contactAddress">
           <div className="heading menuLayer-contactAddressText">
-            {t('contact:address1', {
+            {formatMessage('contact:address1', {
               line: text => <span className="line">{text}</span>,
             })}
           </div>
@@ -32,7 +49,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
             style={{ cursor: 'pointer' }}
             onClick={copyClasseEmailToClipboard}
           >
-            {t('contact:address2', {
+            {formatMessage('contact:address2', {
               lineAriaHidden: text => (
                 <span className="line" aria-hidden="true">
                   {text}
@@ -49,7 +66,10 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           onSubmit={e => {
             e.preventDefault()
             contactFormParams.saveToFirebase({
-              onSuccess: () => alert('Se guardó!'),
+              onSuccess: () => {
+                setMensSuccess(true)
+                setTimeout(showMessageSuccess, 1000)
+              },
               isMenuContact: true,
             })
           }}
@@ -57,13 +77,13 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
               <label className="h3 -scrambleText" htmlFor="contactName">
-                {t('contact:my-name-is', {
+                {formatMessage('contact:my-name-is', {
                   line: text => <span className="line">{text}</span>,
                 })}
               </label>
             </div>
             <Input
-              placeholder={t('general:name-lastname-placeholder')}
+              placeholder={formatMessage('general:name-lastname-placeholder')}
               handleBlur={() => {}}
               handleChange={contactFormParams.onNameChange}
               value={contactFormParams.name}
@@ -74,7 +94,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
             />
           </div>
           <div className="contact-formBlock--flex">
-            <span className="notes">{t('footer:iam')}</span>
+            <span className="notes">{formatMessage('footer:iam')}</span>
             <Radio
               onChange={contactFormParams.onUserTypeChange}
               label="footer:company"
@@ -93,7 +113,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
               <label className="h3 -scrambleText">
-                {t('contact:interested-in', {
+                {formatMessage('contact:interested-in', {
                   line: text => <span className="line">{text}</span>,
                 })}
               </label>
@@ -116,13 +136,13 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           <div className="contact-formBlock">
             <div className="-scrambleTextWrapper">
               <label className="h3 -scrambleText" htmlFor="contactEmail">
-                {t('contact:my-email', {
+                {formatMessage('contact:my-email', {
                   line: text => <span className="line">{text}</span>,
                 })}
               </label>
             </div>
             <Input
-              placeholder={t('general:placeholder')}
+              placeholder={formatMessage('general:placeholder')}
               handleBlur={() => {}}
               handleChange={contactFormParams.onEmailChange}
               name="email"
@@ -136,7 +156,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
             <Checkbox
               hasMessage
               handleChange={contactFormParams.toggleTermsAndConditions}
-              label={t('general:conditions-check')}
+              label={formatMessage('general:conditions-check')}
               name="conditions"
               isChecked={contactFormParams.termsAndConditions}
             />
@@ -148,8 +168,22 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
               value=""
             /> */}
           </div>
-          <Button isNegative isFull text={t('general:send')} />
+          <Button isNegative isFull text={formatMessage('general:send')} />
+          {showMessageError && showMessageError}
         </form>
+        {mensSuccess && (
+          <div className="mensSuccess" ref={contentSuccess}>
+            <div className="contact-formBlock">
+              <div className="-scrambleTextWrapper">
+                <label className="h3 -scrambleText">
+                  {formatMessage('contact:success', {
+                    line: text => <span className="line">{text}</span>,
+                  })}
+                </label>
+              </div>
+            </div>
+          </div>
+        )}
       </Cell>
     </Row>
   )

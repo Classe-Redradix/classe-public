@@ -7,6 +7,7 @@ import {
 } from '../../sharedProptypes'
 
 const Contact = ({ isBlack, courses, contactFormParams }) => {
+
   return (
     <MainWrapper isBlack={isBlack}>
       <Menu
