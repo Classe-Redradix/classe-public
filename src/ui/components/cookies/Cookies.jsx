@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
-// import PropTypes from 'prop-types'
+
+import TagManager from 'react-gtm-module'
+
 import useTranslations from '../../../hooks/useTranslations'
 
 import Button from '../button/Button'
@@ -14,12 +16,12 @@ const CookiesLayer = () => {
   const classes = cx('cookiesLayer', { 'is-visible': isVisibleCookies })
 
   const handleRefuse = () => {
-    // window.localStorage.setItem('cookies-accepted', false)
+    window.localStorage.setItem('cookies-accepted', false)
     setIsVisibleCookies(false)
   }
 
   const handleAccept = () => {
-    // window.localStorage.setItem('cookies-accepted', true)
+    window.localStorage.setItem('cookies-accepted', true)
     setIsVisibleCookies(false)
     setIsAcceptedCookies(true)
   }
@@ -32,10 +34,9 @@ const CookiesLayer = () => {
 
   useEffect(() => {
     if (isAcceptedCookies) {
-      console.log('tagManager')
-      //   TagManager.initialize({
-      //     gtmId: 'GTM-KT8VSSB',
-      //   })
+      TagManager.initialize({
+        gtmId: 'GTM-KFNH9TT',
+      })
     }
   }, [isAcceptedCookies])
 
