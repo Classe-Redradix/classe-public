@@ -10,6 +10,13 @@
   }
 }
 
+.manifest-imgCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: space-between;
+}
+
 .sectionWrapper.courses {
   .p {
     margin-top: 16px;

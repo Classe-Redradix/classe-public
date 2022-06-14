@@ -13,6 +13,7 @@ import CoursesList from './CoursesList'
 import MenuContact from './MenuContact'
 import MenuCourse from './MenuCourse'
 import { CoursePropType } from '../../sharedProptypes'
+import image from '/public/images/cursos.jpg'
 
 const MenuLayer = ({
   course,
@@ -94,7 +95,11 @@ const MenuLayer = ({
           ) : (
             <Row type="quarter" extraClass="menuLayer-courses">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <p>image</p>
+                <img
+                  className="bwfilter"
+                  src={image}
+                  alt="Tres desarrolladores web desarrollando productos digitales"
+                />
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
                 <CoursesList

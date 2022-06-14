@@ -11,7 +11,7 @@ const Hero = ({ type, text, loaded }) => {
     'is-half': type === 'half',
     'is-third': type === 'third',
     'is-quarter': type === 'quarter',
-    'is-closed': loaded >= 90,
+    'is-closed': loaded >= 30,
   })
 
   return (
@@ -24,7 +24,7 @@ const Hero = ({ type, text, loaded }) => {
           })}
         </h3>
       </div>
-      <Loading title={formatMessage('manifest:header')} number={loaded} />
+      {/* <Loading title={formatMessage('manifest:header')} number={loaded} /> */}
     </div>
   )
 }

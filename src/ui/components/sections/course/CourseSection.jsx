@@ -24,13 +24,11 @@ const CourseSection = ({ number, text, title }) => {
       <Row type="full" extraClass="courseSection-title">
         <Cell isNegative>
           {title ? (
-            <div className="scrambleTextWrapper">
-              <h3 className="h3 scrambleText">
-                {formatMessage(title, {
-                  line: text => <span className="line">{text}</span>,
-                })}
-              </h3>
-            </div>
+            <h3 className="h3 ">
+              {formatMessage(title, {
+                line: text => <span className="line">{text}</span>,
+              })}
+            </h3>
           ) : null}
         </Cell>
       </Row>
