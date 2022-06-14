@@ -11,7 +11,7 @@
   opacity: 0;
   transform: translateY(100%);
   transition: $fade-simple, $transform-short;
-  z-index: $index-loader;
+  z-index: 24;
   @include mq(md) {
     right: 2rem;
     bottom: 2rem;
