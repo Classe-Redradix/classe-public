@@ -60,12 +60,12 @@ const Home = ({
   useEffect(() => {
     hero = setInterval(() => {
       setloaded(time => time + 10)
-    }, 500)
+    }, 300)
     return () => finishedLoading()
   }, [])
 
   useEffect(() => {
-    if (loaded >= 100) {
+    if (loaded >= 50) {
       finishedLoading()
       setVisible(false)
     }
