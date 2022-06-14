@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import { copyClasseEmailToClipboard } from '../../../business'
 import { useTranslations } from '../../../hooks'
 import Row from '../row/Row'
@@ -9,15 +10,21 @@ import Radio from '../forms/Radio'
 
 const MenuContact = ({ linesHidden, contactFormParams }) => {
   const formatMessage = useTranslations()
+  const [mensSuccess, setMensSuccess] = useState(false)
 
-  let showMessage
+  let showMessageError
+
   if (contactFormParams.errors !== null) {
-    showMessage = contactFormParams.errors.map(error => (
+    showMessageError = contactFormParams.errors.map(error => (
       <small className="isError">
         <span>Error</span>
         {error}
       </small>
     ))
+  }
+  const contentSuccess = useRef(null)
+  const showMessageSuccess = () => {
+    contentSuccess.current.classList.add('isVisible')
   }
 
   return (
@@ -58,11 +65,11 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
           className="contact-form"
           onSubmit={e => {
             e.preventDefault()
-            if (contactFormParams.errors) {
-              console.log('errors', contactFormParams.errors)
-            }
             contactFormParams.saveToFirebase({
-              onSuccess: () => alert('Se guardó!'),
+              onSuccess: () => {
+                setMensSuccess(true)
+                setTimeout(showMessageSuccess, 1000)
+              },
               isMenuContact: true,
             })
           }}
@@ -162,8 +169,21 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
             /> */}
           </div>
           <Button isNegative isFull text={formatMessage('general:send')} />
-          {showMessage && showMessage}
+          {showMessageError && showMessageError}
         </form>
+        {mensSuccess && (
+          <div className="mensSuccess" ref={contentSuccess}>
+            <div className="contact-formBlock">
+              <div className="-scrambleTextWrapper">
+                <label className="h3 -scrambleText">
+                  {formatMessage('contact:success', {
+                    line: text => <span className="line">{text}</span>,
+                  })}
+                </label>
+              </div>
+            </div>
+          </div>
+        )}
       </Cell>
     </Row>
   )
