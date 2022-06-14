@@ -60,7 +60,7 @@ const PROGRAMACION = {
 }
 
 const UI_DEV = {
-  id: 'uidev',
+  id: 'maqueta',
   isFeatured: false,
   isPublic: true,
   href: '/courses/maqueta',
@@ -116,7 +116,7 @@ const UI_DEV = {
 }
 
 const FRONT_END = {
-  id: 'data',
+  id: 'front-end',
   isFeatured: false,
   isPublic: true,
   href: '/courses/front-end',
@@ -167,7 +167,7 @@ const FRONT_END = {
 }
 
 const BACK_END = {
-  id: 'full-stack',
+  id: 'back-end',
   isFeatured: true,
   isPublic: false,
   href: '/courses/back-end',
