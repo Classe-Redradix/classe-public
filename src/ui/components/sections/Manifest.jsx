@@ -21,7 +21,7 @@ const Manifest = ({ isBlack, isFluor }) => {
               })}
             </h2>
           </Cell>
-          <Cell isNegative={isBlack}>
+          <Cell isNegative={isBlack} extraClass={'manifest-imgCel'}>
             <img
               className="bwfilter"
               src={image}
