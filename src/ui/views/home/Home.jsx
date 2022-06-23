@@ -75,7 +75,6 @@ const Home = ({
     <>
       <MainWrapper isBlack={isBlack} isFluor={isFluor} isLock={isLock}>
         {visible && <Hero text="loader:text" loaded={loaded} />}
-        <CookiesLayer isBlack={isBlack} />
 
         <Menu
           type="home"
