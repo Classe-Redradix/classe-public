@@ -13,7 +13,11 @@
   transition: opacity $fade-simple;
   pointer-events: none;
   z-index: $index-menu-layer;
-
+  .bwfilter {
+    @include mq(xl) {
+      max-height: calc(100vh - 290px);
+    }
+  }
   &.is-open {
     opacity: 1;
     pointer-events: all;
@@ -219,7 +223,6 @@
 
     &-wrapper {
       padding: $distance-big;
-      padding-top: $distance-big;
     }
 
     &-content {
