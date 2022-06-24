@@ -21,6 +21,9 @@
   "info-head-contact:title": "Contacto | Classe",
   "info-head-contact:description": "Contacta con nosotros. Calatrava, 27 (en La Latina, Madrid) info@classe.dev",
 
+  "info-head-legal-terms:title": "Términos legales | Classe",
+  "info-head-legal-terms:description": "...",
+
   "schema-educational-organization:name": "Classe",
   "schema-educational-organization:lang": "es",
   "schema-educational-organization:lang-upper-case": "ES",
@@ -49,6 +52,7 @@
   "schema-breadcrumb-list:home-name": "Classe, programación para profesionales por profesionales",
   "schema-breadcrumb-list:courses-name": "Cursos",
   "schema-breadcrumb-list:contact-name": "Contacto",
+  "schema-breadcrumb-list:legal-terms-name": "Términos legales",
 
   "general:conditions-check": "Acepto los términos y condiciones",
   "general:go-to-home": "Ir a la home",
@@ -267,5 +271,27 @@
   "cookies-layer:description": "Esta web almacena cookies y tecnologías similares propias y de terceros en tu dispositivo. Estas cookies se utilizan únicamente con fines analíticos para recopilar información anónima sobre cómo interactúas con nuestra web. {link}.",
   "cookies-layer:link": "Saber más",
   "cookies-layer:button-accept": "Aceptar",
-  "cookies-layer:button-refuse": "Rechazar"
+  "cookies-layer:button-refuse": "Rechazar",
+
+  "legal-terms:title": "<line>Términos</line> <lineTab>legales</lineTab>",
+
+  "legal-terms:section01-title": "Aviso legal",
+  "legal-terms:section01-sub01": "Titularidad del sitio web",
+  "legal-terms:section01-sub01-block-1": "El titular de la presente página web es Redradix S.L. con CIF: B86840394 y domicilio en la Calle Calatrava, 27 de Madrid, inscrita en el Registro Mercantil de Madrid - Tomo 31.483, Folio 152, Hoja M-566718, inscripción 1ª.",
+
+  "legal-terms:section01-sub02": "Condiciones generales de uso",
+  "legal-terms:section01-sub02-block-1": "El objetivo de esta página web es facilitar información sobre los servicios de formación ofrecidos por Classe, todos los cursos ofertados y contenidos relacionados. Toda la información recogida en esta página web tiene carácter meramente informativo, pero no es vinculante.",
+  "legal-terms:section01-sub02-block-2": "Redradix, como titular de la página web, se reserva además el derecho de realizar, sin aviso previo, cuantas modificaciones considere necesarias en esta página web, por lo que no garantiza ni se hace responsable de la continuidad de los contenidos.",
+
+  "legal-terms:section02-title": "Política de privacidad",
+  "legal-terms:section02-block-1": "A través de esta página web es posible que nos facilites algunos datos personales como tu nombre y el correo electrónico. Para ello deberás confirmar que aceptas estas condiciones de uso a través de la casilla de verificación.",
+  "legal-terms:section02-block-2": "Todos los datos personales facilitados a través del formulario de contacto serán recopilados y tratados por Redradix S.L. con al menos una de las siguientes finalidades:",
+  "legal-terms:section02-block-3": "1. Dar respuesta a las solicitudes de información acerca de Classe, sus cursos y el contenido recogido en esta página web.",
+  "legal-terms:section02-block-4": "2. Mantenerte informado sobre la actualidad de Classe y futuros cursos, eventos o actividades que puedan ser de tu interés.",
+  "legal-terms:section02-block-5": "3. En el caso de que contrates uno de nuestros cursos, facilitar la comunicación y poder prestar el servicio con la fluidez necesaria.",
+  "legal-terms:section02-block-6": "Al facilitarnos los datos contemplados en los párrafos anteriores, das tu consentimiento expreso para tratar los mismos con las finalidades mencionadas, sin perjuicio de tu derecho a revocar o ejercer tus derechos respecto a los mismos conforme se indica en esta política. Tus datos personales serán incorporados en ficheros debidamente notificados al Registro de la Agencia Española de Protección de Datos, en cumplimiento de las obligaciones establecidas en la Ley Orgánica de Protección de Datos. Incorporarte a nuestra base de datos para hacerte llegar las informaciones recogidas anteriormente.",
+  "legal-terms:section02-block-7": "Podrás solicitar la baja de nuestra base de datos en cualquier momento para dejar de recibir nuestras comunicaciones. ",
+  "legal-terms:section02-block-8": "Los datos de los titulares no serán comunicados a terceros en ningún caso. Si por alguna razón fuera necesario comunicar dichos datos a terceros, el titular de los datos será informado de dicha circunstancia, con carácter previo a la comunicación, especificando las finalidades de la comunicación y el tercero a quien van a ser comunicados.",
+  "legal-terms:section02-block-9": "El responsable del tratamiento de estos datos es Redradix S.L. con CIF: B86840394 y domicilio en la Calle Calatrava, 27 de Madrid, inscrita en el Registro Mercantil de Madrid - Tomo 31.483, Folio 152, Hoja M-566718, inscripción 1ª.",
+  "legal-terms:section02-block-10": "Puedes ejercer tus derechos de acceso, rectificación o supresión de tus datos personales a través del siguiente correo electrónico: <mailto>info@redradix.com</mailto> o mediante escrito a Redradix, Calle Calatrava, 27 28005 Madrid."
 }
