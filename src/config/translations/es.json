@@ -278,7 +278,7 @@
 
   "cookies-layer:aria-label": "Modal política de cookies",
   "cookies-layer:title": "Política de cookies {emoji}",
-  "cookies-layer:description": "Esta web almacena cookies y tecnologías similares propias y de terceros en tu dispositivo. Estas cookies se utilizan únicamente con fines analíticos para recopilar información anónima sobre cómo interactúas con nuestra web. {link}.",
+  "cookies-layer:description": "Esta web almacena cookies y tecnologías similares propias y de terceros en tu dispositivo. Estas cookies se utilizan únicamente con fines analíticos para recopilar información anónima sobre cómo interactúas con nuestra web. <link>Puedes saber más sobre estas cookies aquí</link>.",
   "cookies-layer:link": "Saber más",
   "cookies-layer:button-accept": "Aceptar",
   "cookies-layer:button-refuse": "Rechazar",
