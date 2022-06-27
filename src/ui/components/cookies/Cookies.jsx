@@ -53,13 +53,14 @@ const CookiesLayer = () => {
       </p>
       <p className="p">
         {formatMessage('cookies-layer:description', {
-          link: (
+          link: text => (
             <a className="cookiesLayer-link" href="/cookies" target="_blank">
-              Puedes saber más sobre estas cookies aquí
+              {text}
             </a>
           ),
         })}
       </p>
+
       <div className="cookiesLayer-controls">
         <Button
           isNegative
