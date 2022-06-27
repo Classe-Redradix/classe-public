@@ -258,6 +258,12 @@
   "footer:student": "Alumno",
   "footer:social": "Social",
   "footer:contact": "Contacto",
+  "footer:legal": "Legal",
+  "footer:legal-terms": "Términos legales",
+  "footer:legal-terms-route": "/terminos-legales/",
+
+  "footer:cookies": "Cookies",
+  "footer:cookies-route": "/cookies/",
 
   "error:page-not": "Page not",
   "error:found": "found",
@@ -278,15 +284,12 @@
   "cookies-layer:button-refuse": "Rechazar",
 
   "legal-terms:title": "<line>Términos</line> <lineTab>legales</lineTab>",
-
   "legal-terms:section01-title": "Aviso legal",
   "legal-terms:section01-sub01": "Titularidad del sitio web",
   "legal-terms:section01-sub01-block-1": "El titular de la presente página web es Redradix S.L. con CIF: B86840394 y domicilio en la Calle Calatrava, 27 de Madrid, inscrita en el Registro Mercantil de Madrid - Tomo 31.483, Folio 152, Hoja M-566718, inscripción 1ª.",
-
   "legal-terms:section01-sub02": "Condiciones generales de uso",
   "legal-terms:section01-sub02-block-1": "El objetivo de esta página web es facilitar información sobre los servicios de formación ofrecidos por Classe, todos los cursos ofertados y contenidos relacionados. Toda la información recogida en esta página web tiene carácter meramente informativo, pero no es vinculante.",
   "legal-terms:section01-sub02-block-2": "Redradix, como titular de la página web, se reserva además el derecho de realizar, sin aviso previo, cuantas modificaciones considere necesarias en esta página web, por lo que no garantiza ni se hace responsable de la continuidad de los contenidos.",
-
   "legal-terms:section02-title": "Política de privacidad",
   "legal-terms:section02-block-1": "A través de esta página web es posible que nos facilites algunos datos personales como tu nombre y el correo electrónico. Para ello deberás confirmar que aceptas estas condiciones de uso a través de la casilla de verificación.",
   "legal-terms:section02-block-2": "Todos los datos personales facilitados a través del formulario de contacto serán recopilados y tratados por Redradix S.L. con al menos una de las siguientes finalidades:",
