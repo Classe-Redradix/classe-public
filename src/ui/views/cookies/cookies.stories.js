@@ -1,23 +1,23 @@
 import React, { useState } from 'react'
 
-import LegalTerms from './LegalTerms'
+import CookiesPolicy from './Cookies'
 import { useBackgroundChange, useScrambleText } from '../../../hooks'
 
 import { COURSES } from '../../../data'
 
 export default {
-  title: 'Views/Legal/Legal Terms',
-  component: LegalTerms,
+  title: 'Views/Legal/Cookies Policy',
+  component: CookiesPolicy,
 }
 
-export const _LegalTerms = () => {
+export const _CookiesPolicy = () => {
   const [isBlack, setIsBlack] = useState(false)
   const [isFluor, setIsFluor] = useState(false)
 
   useBackgroundChange(setIsBlack, setIsFluor)
   useScrambleText()
   return (
-    <LegalTerms
+    <CookiesPolicy
       isBlack={isBlack}
       isFluor={isFluor}
       contactFormParams={{
@@ -32,6 +32,6 @@ export const _LegalTerms = () => {
         saveToFirebase: () => {},
       }}
       courses={COURSES}
-    ></LegalTerms>
+    ></CookiesPolicy>
   )
 }
