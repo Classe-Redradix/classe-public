@@ -21,6 +21,19 @@
   .is-black & {
     background-color: $white;
     color: $black;
+    .mainButton {
+      color: #eaeaea;
+      background-color: #000000;
+      border: 1px solid #eaeaea;
+      &.is-negative {
+        color: #000000;
+        background-color: #eaeaea;
+        border: 1px solid #000000;
+        &:hover {
+          background-color: #e2f754;
+        }
+      }
+    }
   }
 
   &.is-visible {
@@ -29,15 +42,16 @@
   }
 
   &-title {
-    font-size: 0.85rem;
     margin-bottom: 0.5rem;
-    font-family: 'Monument Grotesk Mono';
-    @include mq(md) {
-      font-size: 1.125rem;
-    }
-    @include mq(lg) {
-      font-size: 1.375rem;
-    }
+    font-size: 1.2rem;
+    font-weight: 900;
+    font-family: 'Monument Grotesk';
+    text-transform: uppercase;
+  }
+  .p {
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 0.84rem;
   }
 
   &-controls {
