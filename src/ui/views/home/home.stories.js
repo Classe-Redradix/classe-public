@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import Home from './Home'
-import useTranslations from '../../../hooks/useTranslations'
-import useViewportHeight from '../../../hooks/useViewportHeight'
-import useDetectMobile from '../../../hooks/useDetectMobile'
-import useBackgroundChange from '../../../hooks/useBackgroundChange'
-import useScrambleText from '../../../hooks/useScrambleText'
+import {
+  useTranslations,
+  useViewportHeight,
+  useDetectMobile,
+  useBackgroundChange,
+  useScrambleText,
+} from '../../../hooks'
+
 import CompanyLogo from '/public/images/logos/hugo-boss.svg'
 import { COURSES } from '../../../data'
 
