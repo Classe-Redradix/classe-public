@@ -113,7 +113,7 @@
   "course:js-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><lineSROnly>Es para /</lineSROnly> <line>mí?</line>",
   "course:js-objetives-description": "Este es un curso avanzado para profesionales que han trabajado en desarrollo web al menos durante un año. Está centrado en learn by doing con ejercicios divertidos para hacer y corregir en vivo. Live programming al poder!",
 
-  "course:ui-dev-title": "Maquetación",
+  "course:ui-dev-title": "Maqueta",
   "course:ui-dev-alt-image": "Un chico de perfil trabajando en su portátil",
   "course:ui-dev-meta-description": "El mejor curso para profundizar en la maquetación para crear plataformas accesibles, dinámicas, escalables y usables.",
   "course:ui-dev-description": "Creemos en la división de responsabilidades y consideramos la maquetación como una disciplina en sí misma con un alto grado de especialización. Así lo hemos hecho en Redradix desde hace mas de 10 años y hemos aprendido mucho por el camino. En este curso profundizaremos en la maquetación para crear plataformas accesibles, dinámicas, escalables y usables. Atacando conceptos como arquitectura CSS, o analizando cuándo usar diferentes layouts, navegaremos a través de ejemplos cotidianos que te pondrán contra las cuerdas. No es un curso de iniciación. ¿Sabes HTML y CSS? En este curso te lo vas a replantear.",
@@ -180,9 +180,8 @@
   "course:euros": "<line>euros</line>",
   "course:hours": "<line>horas</line>",
   "course:places": "<line>plazas</line>",
-  "course:practical": "<line>práctico</line>",
+  "course:practical": "<line>% práctico</line>",
   "course:students": "<line>alumnos</line> <line>inscritos</line>",
-  "course:success": " <line>% de éxito</line>",
   "course:contact": "¿ECHAS ALGO EN FALTA? PUEDES COMBINAR EL TEMARIO DE TODOS NUESTROS CURSOS PARA QUE SE ADAPTE MEJOR A LO QUE BUSCAS",
 
   "custom:header": "Personaliza",

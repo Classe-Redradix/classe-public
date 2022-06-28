@@ -198,7 +198,7 @@
       display: none;
     }
     @include mq(md) {
-      width: auto;
+      width: 150px;
       min-width: inherit;
     }
   }
