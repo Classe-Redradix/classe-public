@@ -27,9 +27,7 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
                     {text}
                   </span>
                 ),
-                lineTabSROnly: text => (
-                  <span className="line sr-only">{text}</span>
-                ),
+                screenReadOnly: text => <span className="sr-only">{text}</span>,
                 line: text => <span className="line">{text}</span>,
               })}
             </h2>

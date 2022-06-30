@@ -23,9 +23,7 @@ const Find = ({ isBlack, isFluor }) => {
                     {text}
                   </span>
                 ),
-                lineSROnly: text => (
-                  <span className="line sr-only">{text}</span>
-                ),
+                screenReadOnly: text => <span className="sr-only">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h2>

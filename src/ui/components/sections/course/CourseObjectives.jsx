@@ -26,7 +26,7 @@ const CourseObjectives = ({ learn, text, objectives, objectivesText }) => {
                     {text}
                   </span>
                 ),
-                lineSROnly: text => <span className="sr-only">{text}</span>,
+                screenReadOnly: text => <span className="sr-only">{text}</span>,
               })}
             </h3>
           </div>
@@ -46,7 +46,7 @@ const CourseObjectives = ({ learn, text, objectives, objectivesText }) => {
                     {text}
                   </span>
                 ),
-                lineSROnly: text => <span className="sr-only">{text}</span>,
+                screenReadOnly: text => <span className="sr-only">{text}</span>,
               })}
             </h3>
           </div>

@@ -76,7 +76,7 @@
   "home:title": "Cursos de programación y producto digital por y para desarrolladores",
 
   "manifest:header": "Manifiesto",
-  "manifest:claim": "<line>Más de 10 años</line> <lineTab>formando</lineTab> <lineTabAriaHidden>(pro)fesionales</lineTabAriaHidden> <lineTabSROnly>profesionales</lineTabSROnly>",
+  "manifest:claim": "<line>Más de 10 años</line> <lineTab>formando</lineTab> <lineTabAriaHidden>(pro)fesionales</lineTabAriaHidden> <screenReadOnly>profesionales</screenReadOnly>",
   "manifest:title": "<line>Aquí</line> <lineTab>nuestro</lineTab> <line>manifiesto</line>",
   "manifest:description": "Classe es Redradix y Redradix es Classe. La una sin la otra no tienen sentido. Una porque si nuestros cursos y contenidos valen la pena es porque los imparte el equipo de Redradix, curtido a diario en mil batallas y proyectos reales. La otra, porque una de las cosas que hacen que llevemos 10 años al pie del cañón es nuestro carácter didáctico. Ya sea en charlas, talleres, katas o conversaciones de Slack, siempre compartimos todo lo que vamos aprendiendo. Para que nos conozcas más: nos alejamos de lo que nos suene a bullshit. Y no engañamos a nadie. \n Classe es la formación que nos habría gustado tener a nosotros en nuestros primeros años trabajando en productos digitales. Una formación complementaria para todos los que se dedican al desarrollo y diseño digital, que no es teoría ni se queda en ella. Una formación que se basa en el día a día de los que la imparten -todos profesionales en activo- y en todo lo que han ido aprendiendo para mejorar en sus proyectos y sus carreras. Una formación que comparte las bases que hacen que contemos con auténticos cracks del desarrollo en nuestro equipo. \n Classe quiere compartir todo esto en cursos abiertos de acceso libre para gente que ya sabe de qué va esto de programar y hacer producto digital. Y también con cursos que se adaptan a las empresas para que mejoren las habilidades de sus equipos y dar así el salto que necesitan en sus proyectos. \n Classe va de aprender para poder ponerlo en práctica después y de ser mejor profesional, incluso si crees que ya lo sabes todo. ",
 
@@ -108,9 +108,9 @@
   "course:js-04-description": "Está por todas partes y es necesario entender todas sus implicaciones sin que te explote la cabeza. De callback hell a generadores, pasando por la creación de una implementación de promesas y async/await.",
   "course:js-05-title": "<line>Módulos</line><line> op</line><line>cionales</line>",
   "course:js-05-description": "Podemos complementar el curso con distintos módulos de 4 horas sobre lenguaje tipado con typescript, estrategias de testing, graphQL y las mejoras propuestas para ECMAScript.",
-  "course:js-learn": "<lineAriaHidden>Con este/</lineAriaHidden><lineSROnly>Con este</lineSROnly> <line>curso</line> <line>aprenderás:</line>",
+  "course:js-learn": "<lineAriaHidden>Con este/</lineAriaHidden><screenReadOnly>Con este</screenReadOnly> <line>curso</line> <line>aprenderás:</line>",
   "course:js-learn-description": "Básicamente: JavaScript en profundidad. Los cimientos sobre los que apoyar conocimientos futuros. Verás que se puede pasar de Angular a React en horas si las bases son sólidas. No solo eso, tus compañeros te agradecerán que tu código sea robusto, escalable y, sobre todo, legible.",
-  "course:js-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><lineSROnly>Es para /</lineSROnly> <line>mí?</line>",
+  "course:js-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><screenReadOnly>Es para /</screenReadOnly> <line>mí?</line>",
   "course:js-objetives-description": "Este es un curso avanzado para profesionales que han trabajado en desarrollo web al menos durante un año. Está centrado en learn by doing con ejercicios divertidos para hacer y corregir en vivo. Live programming al poder!",
 
   "course:ui-dev-title": "Maqueta",
@@ -127,9 +127,9 @@
   "course:ui-dev-04-description": "Dada la relevancia que han cogido en los últimos tiempos, tanto Flexbox como Grid merecen un reservado donde ver todos sus entresijos y cómo pueden simplificar nuestras vidas.",
   "course:ui-dev-05-title": "<line>Ecosistema</line>",
   "course:ui-dev-05-description": "Si quieres introducirte en conceptos de maquetación avanzada es esencial conocer las herramientas de las que dispones, desde las posibilidades del editor hasta los trucos ocultos del navegador y la consola. Magia negra.",
-  "course:ui-dev-learn": "<lineAriaHidden>Con este/</lineAriaHidden><lineSROnly>Con este</lineSROnly> <line>curso</line> <line>aprenderás:</line>",
+  "course:ui-dev-learn": "<lineAriaHidden>Con este/</lineAriaHidden><screenReadOnly>Con este</screenReadOnly> <line>curso</line> <line>aprenderás:</line>",
   "course:ui-dev-learn-description": "Estamos hartos de ver comportamientos responsive defectuosos, transiciones que no fluyen o scrolls que dan ganas de tirar el ordenador por la ventana. Basta ya! Este curso te ayudará a crear interfaces que respeten los estándares y, sobre todo, a los usuarios.",
-  "course:ui-dev-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><lineSROnly>Es para /</lineSROnly> <line>mí?</line>",
+  "course:ui-dev-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><screenReadOnly>Es para /</screenReadOnly> <line>mí?</line>",
   "course:ui-dev-objetives-description": "Este es un curso avanzado para profesionales que han trabajado en desarrollo web al menos durante un año. Está centrado en learn by doing con ejercicios divertidos para hacer y corregir en vivo. Live programming al poder!",
 
   "course:front-react-title": "Front-end",
@@ -144,9 +144,9 @@
   "course:front-react-03-description": "Nos centraremos en la librería que se ha ganado el derecho a ser el referente del desarrollo front. Profundizaremos en JSX, ciclo de vida, flujo unidireccional, renderizado condicional y tocaremos temas controvertidos como sus efectos secundarios o React Suspense.",
   "course:front-react-04-title": "<line>Módulos</line><line>opcionales</line>",
   "course:front-react-04-description": "Este curso tiene un montón de módulos opcionales con los que complementar una asignatura tan compleja como el desarrollo front. Algunos relacionados con React como ReactRouter, ReactQuery o Redux, y otros  como testing en front, webextensions o i18n.",
-  "course:front-react-learn": "<lineAriaHidden>Con este/</lineAriaHidden><lineSROnly>Con este</lineSROnly> <line>curso</line> <line>aprenderás:</line>",
+  "course:front-react-learn": "<lineAriaHidden>Con este/</lineAriaHidden><screenReadOnly>Con este</screenReadOnly> <line>curso</line> <line>aprenderás:</line>",
   "course:front-react-learn-description": "No solo React, sino más importante: por qué React, cómo funciona, cuándo aplicarlo, patrones y antipatrones y en qué elementos del navegador se apoya. La versatilidad de React es muy amplia, como demuestran los proyectos de nuestro a día a día en Redradix. Queremos contarte cómo lo hacemos.",
-  "course:front-react-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><lineSROnly>Es para /</lineSROnly> <line>mí?</line>",
+  "course:front-react-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><screenReadOnly>Es para /</screenReadOnly> <line>mí?</line>",
   "course:front-react-objetives-description": "Este es un curso avanzado para profesionales que han trabajado en desarrollo front al menos durante un año. Está centrado en learn by doing con ejercicios divertidos para hacer y corregir en vivo. Live programming al poder!",
 
   "course:back-node-title": "Back-end",
@@ -165,9 +165,9 @@
   "course:back-node-05-description": "Relacionales, documentales, clave valor y también una ligera pincelada sobre las bases de datos de grafos para entender sus pros y contras. Y, sobre todo, cuándo es bueno utilizar cada una.",
   "course:back-node-06-title": "<line>Módulos</line><line>opcionales</line>",
   "course:back-node-06-description": "Podemos complementar con pequeños módulos de 4 horas sobre server side rendering, SMTP o, incluso, procesamiento y almacenamiento en la nube.",
-  "course:back-node-learn": "<lineAriaHidden>Con este/</lineAriaHidden><lineSROnly>Con este</lineSROnly> <line>curso</line> <line>aprenderás:</line>",
+  "course:back-node-learn": "<lineAriaHidden>Con este/</lineAriaHidden><screenReadOnly>Con este</screenReadOnly> <line>curso</line> <line>aprenderás:</line>",
   "course:back-node-learn-description": "El 80% de los proyectos que hacemos en Redradix tienen APIs, programación asíncrona o persistencia de datos. Queremos contarte cómo lo hacemos aplicando Node.js, para que tú puedas aplicar estos conocimientos desde el primer día, creando servicios robustos y escalables de los que estar orgulloso.",
-  "course:back-node-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><lineSROnly>Es para /</lineSROnly> <line>mí?</line>",
+  "course:back-node-objectives": "<lineAriaHidden>Es para/</lineAriaHidden><screenReadOnly>Es para /</screenReadOnly> <line>mí?</line>",
   "course:back-node-objetives-description": "Este es un curso avanzado para profesionales que han trabajado en desarrollo back-end al menos durante un año. Está centrado en learn by doing con ejercicios divertidos para hacer y corregir en vivo. Live programming al poder.",
 
   "course:objectives-title": "Objetivos",
@@ -185,13 +185,13 @@
   "course:contact": "¿ECHAS ALGO EN FALTA? PUEDES COMBINAR EL TEMARIO DE TODOS NUESTROS CURSOS PARA QUE SE ADAPTE MEJOR A LO QUE BUSCAS",
 
   "custom:header": "Personaliza",
-  "custom:title": "<line>Nuestros</line> <lineTabAriaHidden>cursos=</lineTabAriaHidden> <lineTabSROnly>cursos</lineTabSROnly> <lineTab>a tu</lineTab> <lineTab>medida</lineTab> <lineTabSROnly>¿Quieres saber cómo?</lineTabSROnly>",
+  "custom:title": "<line>Nuestros</line> <lineTabAriaHidden>cursos=</lineTabAriaHidden> <screenReadOnly>cursos</screenReadOnly> <lineTab>a tu</lineTab> <lineTab>medida</lineTab> <screenReadOnly>¿Quieres saber cómo?</screenReadOnly>",
   "custom:description": "Una misma formación, por muy buena que sea, no tiene por qué valerle a todo el mundo. Por eso, con los cursos que hacemos en Classe es posible que te hagas un bundle con lo que más se adapte a ti.\nAdemás, para las empresas el temario se adapta dependiendo de lo que necesite el equipo que va a recibir la formación.\nTambién somos flexibles con el formato, ya que todos nuestros cursos pueden ser presenciales en nuestra oficina, en la tuya -si lo que quieres es un curso para empresas- o en remoto, pero en streaming. En directo para poder sacar el máximo partido de todos los que participan en la clase. Las preguntas en vivo se responden mejor. Nuestro equipo está dispuesto a hacer de patito de goma si en algún momento te hace falta.",
   "custom:claim": "<lineTab>¿Quieres</lineTab> <line>saber</line> <line>cómo?</line>",
   "custom:button": "Ver cursos",
 
   "featured:header": "Curso destacado",
-  "featured:title": "<lineTabAriaHidden>Progra</lineTabAriaHidden><lineTabAriaHidden>mación</lineTabAriaHidden><lineTabSROnly>Programación</lineTabSROnly> <line>con</line> <line>JavaScript</line>",
+  "featured:title": "<lineTabAriaHidden>Progra</lineTabAriaHidden><lineTabAriaHidden>mación</lineTabAriaHidden><screenReadOnly>Programación</screenReadOnly> <line>con</line> <line>JavaScript</line>",
   "featured:button": "¿Quieres saber más? Echa un ojo al curso",
 
   "facts:header": "Facts",
@@ -211,11 +211,11 @@
   "calendar:finish": "Finish",
 
   "companies:header": "Empresas",
-  "companies:title": "<lineAriaHidden>#</lineAriaHidden><lineTab>Empresas</lineTab> <lineTab>que han</lineTab> <lineTab>vuelto a</lineTab> <lineTabAriaHidden>Class;e</lineTabAriaHidden><lineTabSROnly>Classe</lineTabSROnly> <lineAriaHidden>#</lineAriaHidden>",
+  "companies:title": "<lineAriaHidden>#</lineAriaHidden><lineTab>Empresas</lineTab> <lineTab>que han</lineTab> <lineTab>vuelto a</lineTab> <lineTabAriaHidden>Class;e</lineTabAriaHidden><screenReadOnly>Classe</screenReadOnly> <lineAriaHidden>#</lineAriaHidden>",
   "companies:button": "¿Quieres ser una de ellas? contáctanos",
 
   "faqs:header": "Faq's",
-  "faqs:title": "<lineAriaHidden>//Aprender es no parar</lineAriaHidden><lineSROnly>Aprender es no parar</lineSROnly> <lineTab>de preguntar</lineTab>",
+  "faqs:title": "<lineAriaHidden>//Aprender es no parar</lineAriaHidden><screenReadOnly>Aprender es no parar</screenReadOnly> <lineTab>de preguntar</lineTab>",
   "faqs:faq1-title": "LLEVO POCO TIEMPO EN ESTO DEL DESARROLLO, ¿ESTE CURSO ES PARA MÍ?",
   "faqs:faq1-description": "No creemos en los años de experiencia. Creemos en la pasión por la programación. Si tienes unas bases sólidas sobre las que podamos trabajar, entonces podemos hacer magia.",
   "faqs:faq2-title": "¿COMO CONVENZO A MI EMPRESA PARA QUE ORGANICE UNO DE LOS CURSOS?",
@@ -236,7 +236,7 @@
   "faqs:faq9-description": "El pago se realiza mediante tarjeta bancaria. Una vez realices tu inscripción te enviaremos un enlace para poder hacerlo de forma segura. ",
 
   "find:header": "Encuéntranos",
-  "find:title": "<lineAriaHidden>Encuéntra</lineAriaHidden><lineAriaHidden>nos en la</lineAriaHidden><lineSROnly>Encuéntranos en la</lineSROnly> <lineTab>Latina</lineTab> <lineSROnly>y detrás pantalla</lineSROnly>",
+  "find:title": "<lineAriaHidden>Encuéntra</lineAriaHidden><lineAriaHidden>nos en la</lineAriaHidden><screenReadOnly>Encuéntranos en la</screenReadOnly> <lineTab>Latina</lineTab> <screenReadOnly>y detrás pantalla</screenReadOnly>",
   "find:description": "Si quieres venir a nuestras oficinas, estamos en pleno centro de Madrid, en la calle Calatrava, 27, al lado del Metro de La Latina.",
   "find:description2": "INFO<ariaHidden>[at]</ariaHidden><screenReader>@</screenReader>classe.dev",
   "find:claim": "<line>Y detrás</line> <lineTab>de la</lineTab> <lineTab>pantalla</lineTab>",
@@ -244,7 +244,7 @@
 
   "contact:second-title": "<line>Contacta</line> <line>con Classe</line>",
   "contact:address1": "<line>Madrid, Calatrava, 27</line> <line>[Metro La Latina]</line>",
-  "contact:address2": "<lineAriaHidden>info[at]classe.dev</lineAriaHidden><lineSROnly>info@classe.dev</lineSROnly>",
+  "contact:address2": "<lineAriaHidden>info[at]classe.dev</lineAriaHidden><screenReadOnly>info@classe.dev</screenReadOnly>",
   "contact:my-name-is": "<line>Ey! Me llamo</line>",
   "contact:interested-in": "<line>Estoy interesado en</line>",
   "contact:my-email": "<line>Y este es mi correo</line>",

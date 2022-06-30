@@ -55,7 +55,7 @@ const MenuContact = ({ linesHidden, contactFormParams }) => {
                   {text}
                 </span>
               ),
-              lineSROnly: text => <span className="line sr-only">{text}</span>,
+              screenReadOnly: text => <span className="sr-only">{text}</span>,
             })}
           </div>
         </address>
