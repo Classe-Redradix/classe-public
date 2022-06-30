@@ -66,7 +66,7 @@ const Home = () => {
 
   const courses = COURSES.map(course => ({
     title: formatMessage(course.information.title),
-    href: `/courses/${course.id}`,
+    href: `/cursos/${course.id}`,
   }))
 
   const logos = [
@@ -135,14 +135,14 @@ const Home = () => {
           title: 'Js Pro',
           start: '16',
           finish: '27',
-          to: '/contact?interested-in=js-pro',
+          to: '/contacto?interested-in=js-pro',
           id: 'js-pro',
         },
         {
           title: 'Data',
           start: '16',
           finish: '27',
-          to: '/contact?interested-in=data',
+          to: '/contacto?interested-in=data',
           id: 'data',
         },
       ],
@@ -155,7 +155,7 @@ const Home = () => {
           title: 'Redux',
           start: '16',
           finish: '27',
-          to: '/contact?interested-in=redux',
+          to: '/contacto?interested-in=redux',
           id: 'redux',
         },
       ],

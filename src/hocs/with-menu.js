@@ -51,7 +51,7 @@ const withMenu = (pageName, config) => {
 
   const coursesHandleTextClick = () => {
     if (isCourseOpen) {
-      router.push('/courses')
+      router.push('/cursos')
       openCourses()
     } else {
       router.push('/')
@@ -79,7 +79,7 @@ const withMenu = (pageName, config) => {
           // If we find a way to make it compatible, then we should use the
           // `useMenu` and `useContactForm` hooks and pass all their values to
           // the `Menu` component, like in `src/pages/courses/index.jsx`
-          router.push(`/contact?interested-in=${config.course.id}`)
+          router.push(`/contacto?interested-in=${config.course.id}`)
       : openContact
 
   return (

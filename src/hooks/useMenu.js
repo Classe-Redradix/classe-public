@@ -23,7 +23,7 @@ const useMenu = ({
     setIsCourseOpen(false)
     setAreCoursesOpen(true)
 
-    router.push(router.pathname, '/courses')
+    router.push(router.pathname, '/cursos')
   }
 
   const openContact = (_, interestedIn) => {
@@ -35,9 +35,9 @@ const useMenu = ({
       interestedIn !== undefined
         ? {
             name: `${router.pathname}?interested-in=${interestedIn}`,
-            as: `/contact?interested-in=${interestedIn}`,
+            as: `/contacto?interested-in=${interestedIn}`,
           }
-        : { name: router.pathname, as: '/contact' }
+        : { name: router.pathname, as: '/contacto' }
 
     router.push(path.name, path.as)
   }
@@ -72,12 +72,12 @@ const useMenu = ({
         setIsContactOpen(false)
         setAreCoursesOpen(false)
         setIsCourseOpen(false)
-      } else if (event.state.as === '/courses') {
+      } else if (event.state.as === '/cursos') {
         setIsCourseOpen(false)
         setIsContactOpen(false)
         setAreCoursesOpen(true)
       } else if (
-        event.state.as === '/contact' ||
+        event.state.as === '/contacto' ||
         event.state.as.includes('interested-in')
       ) {
         setIsCourseOpen(false)
