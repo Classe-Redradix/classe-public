@@ -307,5 +307,8 @@
   "cookies-policy:subtitle": "¿Qué cookies utilizamos?",
   "cookies-policy:block-3": "En esta web empleamos cookies analíticas de terceros. La finalidad de estas es conocer datos estadísticos de uso de la web, como el número de usuarios o los contenidos que más se consultan. De esta manera podemos concentrar nuestros esfuerzos en mejorar nuestra web y las áreas más visitadas y hacer que el usuario encuentre más fácilmente lo que busca. La información de las visitas puede utilizarse para realizar evaluaciones y métricas siempre con datos anónimos.",
   "cookies-policy:block-4": "Como usuario, debes asegurarte de que estás conforme con ellas antes de seguir navegando. Todas nuestras cookies son analíticas y puedes rechazarlas aquí.",
-  "cookies-policy:block-5": "También puedes configurar el navegador para que no acepte cookies, aunque eso puede afectar al correcto funcionamiento de la aplicación."
+  "cookies-policy:block-5": "También puedes configurar el navegador para que no acepte cookies, aunque eso puede afectar al correcto funcionamiento de la aplicación.",
+
+  "newsletter:placeholder": "Email",
+  "newsletter:btn": "Quiero estar informad@"
 }
