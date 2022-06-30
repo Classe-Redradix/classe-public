@@ -18,6 +18,14 @@ const Manifest = ({ isBlack, isFluor }) => {
               {t('manifest:claim', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
+                lineTabAriaHidden: text => (
+                  <span className="line has-tab" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                lineTabSROnly: text => (
+                  <span className="line has-tab sr-only">{text}</span>
+                ),
               })}
             </h2>
           </Cell>

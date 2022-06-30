@@ -76,12 +76,12 @@
   "home:title": "Cursos de programación y producto digital por y para desarrolladores",
 
   "manifest:header": "Manifiesto",
-  "manifest:claim": "<line>Más de 10 años</line> <lineTab>formando</lineTab> <lineTab>(pro)fesionales</lineTab>",
+  "manifest:claim": "<line>Más de 10 años</line> <lineTab>formando</lineTab> <lineTabAriaHidden>(pro)fesionales</lineTabAriaHidden> <lineTabSROnly>profesionales</lineTabSROnly>",
   "manifest:title": "<line>Aquí</line> <lineTab>nuestro</lineTab> <line>manifiesto</line>",
   "manifest:description": "Classe es Redradix y Redradix es Classe. La una sin la otra no tienen sentido. Una porque si nuestros cursos y contenidos valen la pena es porque los imparte el equipo de Redradix, curtido a diario en mil batallas y proyectos reales. La otra, porque una de las cosas que hacen que llevemos 10 años al pie del cañón es nuestro carácter didáctico. Ya sea en charlas, talleres, katas o conversaciones de Slack, siempre compartimos todo lo que vamos aprendiendo. Para que nos conozcas más: nos alejamos de lo que nos suene a bullshit. Y no engañamos a nadie. \n Classe es la formación que nos habría gustado tener a nosotros en nuestros primeros años trabajando en productos digitales. Una formación complementaria para todos los que se dedican al desarrollo y diseño digital, que no es teoría ni se queda en ella. Una formación que se basa en el día a día de los que la imparten -todos profesionales en activo- y en todo lo que han ido aprendiendo para mejorar en sus proyectos y sus carreras. Una formación que comparte las bases que hacen que contemos con auténticos cracks del desarrollo en nuestro equipo. \n Classe quiere compartir todo esto en cursos abiertos de acceso libre para gente que ya sabe de qué va esto de programar y hacer producto digital. Y también con cursos que se adaptan a las empresas para que mejoren las habilidades de sus equipos y dar así el salto que necesitan en sus proyectos. \n Classe va de aprender para poder ponerlo en práctica después y de ser mejor profesional, incluso si crees que ya lo sabes todo. ",
 
   "courses:header": "Cursos",
-  "courses:claim": "<line>Formación</line> <line>para</line> <lineTab>profesionales</lineTab> <line>POR</line> <lineTab>profesionales</lineTab>",
+  "courses:claim": "<line>Formación</line> <line>para</line> <lineTab>profesionales</lineTab> <line>por</line> <lineTab>profesionales</lineTab>",
   "courses:description": "Sí. Sabes programar. Pero todavía no eres un experto. Y este es el impulso que tu carrera necesita para alcanzar el trabajo que te mereces.",
   "courses:button": "Pregúntanos",
   "courses:closing": "Cierre",
@@ -191,7 +191,7 @@
   "custom:button": "Ver cursos",
 
   "featured:header": "Curso destacado",
-  "featured:title": "<line>Progra</line><line> mación</line> <line>con</line><line>JavaScript</line>",
+  "featured:title": "<lineTabAriaHidden>Progra</lineTabAriaHidden><lineTabAriaHidden>mación</lineTabAriaHidden><lineTabSROnly>Programación</lineTabSROnly> <line>con</line> <line>JavaScript</line>",
   "featured:button": "¿Quieres saber más? Echa un ojo al curso",
 
   "facts:header": "Facts",
@@ -236,7 +236,7 @@
   "faqs:faq9-description": "El pago se realiza mediante tarjeta bancaria. Una vez realices tu inscripción te enviaremos un enlace para poder hacerlo de forma segura. ",
 
   "find:header": "Encuéntranos",
-  "find:title": "<line>Encuéntra</line> <line>nos en la</line> <lineTab>Latina</lineTab> <lineSROnly>y detrás pantalla</lineSROnly>",
+  "find:title": "<lineAriaHidden>Encuéntra</lineAriaHidden><lineAriaHidden>nos en la</lineAriaHidden><lineSROnly>Encuéntranos en la</lineSROnly> <lineTab>Latina</lineTab> <lineSROnly>y detrás pantalla</lineSROnly>",
   "find:description": "Si quieres venir a nuestras oficinas, estamos en pleno centro de Madrid, en la calle Calatrava, 27, al lado del Metro de La Latina.",
   "find:description2": "INFO<ariaHidden>[at]</ariaHidden><screenReader>@</screenReader>classe.dev",
   "find:claim": "<line>Y detrás</line> <lineTab>de la</lineTab> <lineTab>pantalla</lineTab>",

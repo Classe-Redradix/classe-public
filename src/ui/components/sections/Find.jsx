@@ -18,10 +18,15 @@ const Find = ({ isBlack, isFluor }) => {
             <h2 className="h1 scrambleText">
               {t('find:title', {
                 line: text => <span className="line">{text}</span>,
-                lineTab: text => <span className="line has-tab">{text}</span>,
-                lineSROnly: text => (
-                  <span className="line has-tab sr-only">{text}</span>
+                lineAriaHidden: text => (
+                  <span className="line" aria-hidden="true">
+                    {text}
+                  </span>
                 ),
+                lineSROnly: text => (
+                  <span className="line sr-only">{text}</span>
+                ),
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h2>
           </div>

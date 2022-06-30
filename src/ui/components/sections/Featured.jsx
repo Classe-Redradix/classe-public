@@ -22,8 +22,15 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
           <div className="scrambleTextWrapper">
             <h2 className="h1 scrambleText">
               {t('featured:title', {
+                lineTabAriaHidden: text => (
+                  <span className="line" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                lineTabSROnly: text => (
+                  <span className="line sr-only">{text}</span>
+                ),
                 line: text => <span className="line">{text}</span>,
-                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h2>
           </div>
