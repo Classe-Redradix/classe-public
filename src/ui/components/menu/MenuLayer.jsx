@@ -130,7 +130,7 @@ const MenuLayer = ({
                 </span>
                 <button
                   onClick={openContact}
-                  className="menuDesktop-link"
+                  className="menuDesktop-link menu"
                   aria-label={t('menu:contact')}
                   role="link"
                 >

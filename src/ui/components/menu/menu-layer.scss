@@ -61,10 +61,6 @@
   &-desktopHeader-button {
     position: relative;
     margin-left: auto;
-
-    html:not(.is-mobile) &:hover .braketHover {
-      padding: 0 4px;
-    }
   }
 
   &-content {

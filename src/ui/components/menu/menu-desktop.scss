@@ -30,12 +30,6 @@
     justify-content: space-between;
   }
 
-  &-button {
-    html:not(.is-mobile) &:hover .braketHover {
-      padding: 0 4px;
-    }
-  }
-
   &-claim {
     color: $black;
   }
