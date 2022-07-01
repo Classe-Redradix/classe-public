@@ -60,9 +60,9 @@ const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
                   href={course.href}
                   onClick={e => handleClick(e, course)}
                 >
-                  <span className="coursesList-linkNumber">
+                  {/* <span className="coursesList-linkNumber">
                     {index < 10 ? `0${index + 1}` : index + 1}
-                  </span>
+                  </span> */}
                   <span className="coursesList-linkTextWrapper">
                     <TabIcon className="icon" color="yellow" />
                     <span className="coursesList-linkText">

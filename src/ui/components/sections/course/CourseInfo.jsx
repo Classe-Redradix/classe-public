@@ -45,7 +45,8 @@ const CourseInfo = ({ price, hours, places, practical }) => {
             {formatMessage('course:practical', {
               line: text => (
                 <span className="line">
-                  {practical} {text}
+                  {practical}
+                  {text}
                 </span>
               ),
             })}

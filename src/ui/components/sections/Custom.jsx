@@ -25,9 +25,7 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
                     {text}
                   </span>
                 ),
-                lineTabSROnly: text => (
-                  <span className="line has-tab sr-only">{text}</span>
-                ),
+                screenReadOnly: text => <span className="sr-only">{text}</span>,
               })}
             </h2>
           </div>
