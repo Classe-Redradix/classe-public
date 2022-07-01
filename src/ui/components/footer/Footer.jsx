@@ -7,6 +7,7 @@ import Radio from '../forms/Radio'
 import Input from '../forms/Input'
 import Checkbox from '../forms/Checkbox'
 import { CoursePropType } from '../../sharedProptypes'
+import Button from '../button/Button'
 
 const Footer = ({
   courses,
@@ -68,9 +69,13 @@ const Footer = ({
                 handleChange={contactFormParams.onEmailChange}
                 handleSubmit={() => {}}
                 name="email"
-                placeholder={formatMessage('general:placeholder')}
+                placeholder={formatMessage('newsletter:placeholder')}
                 type="email"
                 value={contactFormParams.email}
+              />
+              <Button
+                text={formatMessage('newsletter:btn')}
+                onClick={() => {}}
               />
             </div>
             <div className="footer-formBlock">

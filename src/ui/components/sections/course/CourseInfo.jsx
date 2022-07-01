@@ -55,7 +55,10 @@ const CourseInfo = ({ price, hours, places, practical }) => {
       </Row>
       <Row type="full" extraClass="courseSection-title">
         <Cell isNegative>
-          <ExclamationIcon className="icon courseSection-glypBottom" />
+          <ExclamationIcon
+            color={'#fff'}
+            className="icon courseSection-glypBottom"
+          />
         </Cell>
       </Row>
     </SectionWrapper>

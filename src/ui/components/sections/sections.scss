@@ -154,6 +154,14 @@
     & + .footer-formBlock {
       margin-top: 24px;
     }
+    .mainButton {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      span {
+        margin: 0;
+      }
+    }
   }
 
   .radio {
