@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import { useTranslations } from '../hooks'
+
 import { COURSES } from '../data'
 
 import useInput from './useInput'
@@ -12,6 +14,8 @@ import useCheckbox from './useCheckbox'
  * handlers and a method to store the contact form easily into Firebase.
  */
 const useContactForm = interestedInCourseId => {
+  const formatMessage = useTranslations()
+
   // Form values
   const [name, onNameChange, setName] = useInput()
   const [email, onEmailChange, setEmail] = useInput()
@@ -20,7 +24,7 @@ const useContactForm = interestedInCourseId => {
     COURSES.map(course => ({
       checked: course.id === interestedInCourseId,
       id: course.id,
-      label: course.information.title,
+      label: formatMessage(course.information.title),
     })),
   )
 
@@ -32,6 +36,7 @@ const useContactForm = interestedInCourseId => {
   const [isError, setIsError] = useState(null)
   const [error, setError] = useState(null)
   const [isSaved, setIsSaved] = useState(false)
+  const [errors, setErrors] = useState({})
 
   const onInterestedInOptionChange = interestedInOption => {
     setInterestedInOptions(interestedInOptions =>
@@ -58,7 +63,9 @@ const useContactForm = interestedInCourseId => {
     onError,
     isMenuContact = false,
   }) => {
-    const errors = []
+    setErrors({})
+
+    const validationErrors = {}
 
     // NOTE: since in the home contact form the user only indicates what type
     // of user is (student or company) and that the home contact form and the
@@ -68,26 +75,32 @@ const useContactForm = interestedInCourseId => {
     // TODO: add error messages to `../config/translations/es.json`.
     if (isMenuContact) {
       if (interestedInOptions.filter(option => option.checked).length === 0) {
-        errors.push('Selecciona al menos un curso de tu interés')
+        validationErrors.optionNoSelected =
+          'Selecciona al menos un curso de tu interés'
       }
 
       if (name.trimRight() === '') {
-        errors.push('El nombre no puede estar vacío')
+        validationErrors.nameNoSelected = 'El nombre no puede estar vacío'
       }
     }
 
     if (email.trimRight() === '') {
-      errors.push('Introduce un email válido')
+      validationErrors.emailNoSelected = 'Introduce un email válido'
     }
 
     if (!termsAndConditions) {
-      errors.push('Debes aceptar los términos y condiciones')
+      validationErrors.termsNoSelected =
+        'Debes aceptar los términos y condiciones'
     }
 
-    if (errors.length > 0) {
-      alert(errors.join('\n'))
+    // if (validationErrors.length > 0) {
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      // alert(validationErrors.join('\n'))
       return
     }
+
+    setErrors({})
 
     setIsLoading(true)
 
@@ -145,7 +158,7 @@ const useContactForm = interestedInCourseId => {
       COURSES.map(course => ({
         checked: course.id === interestedInCourseId,
         id: course.id,
-        label: course.information.title,
+        label: formatMessage(course.information.title),
       })),
     )
   }, [interestedInCourseId])
@@ -155,6 +168,7 @@ const useContactForm = interestedInCourseId => {
     isSaved,
     isError,
     error,
+    errors,
     saveToFirebase,
     name,
     onNameChange,

@@ -13,6 +13,7 @@ import CoursesList from './CoursesList'
 import MenuContact from './MenuContact'
 import MenuCourse from './MenuCourse'
 import { CoursePropType } from '../../sharedProptypes'
+import image from '/public/images/cursos.jpg'
 
 const MenuLayer = ({
   course,
@@ -70,6 +71,16 @@ const MenuLayer = ({
             'is-block': isCourseOpen,
           })}
         >
+          {!isDesktop ? (
+            <Row type="half" extraClass="menuLayer-mobileHeader">
+              <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
+                <p>[ Light Mode ]</p>
+              </Cell>
+              <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
+                <p>[ Dark Mode ]</p>
+              </Cell>
+            </Row>
+          ) : null}
           {isContactOpen ? (
             <MenuContact
               linesHidden={linesHidden}
@@ -84,7 +95,11 @@ const MenuLayer = ({
           ) : (
             <Row type="quarter" extraClass="menuLayer-courses">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <p>image</p>
+                <img
+                  className="bwfilter"
+                  src={image}
+                  alt="Tres desarrolladores web desarrollando productos digitales"
+                />
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
                 <CoursesList
@@ -115,7 +130,7 @@ const MenuLayer = ({
                 </span>
                 <button
                   onClick={openContact}
-                  className="menuDesktop-link"
+                  className="menuDesktop-link menu"
                   aria-label={t('menu:contact')}
                   role="link"
                 >

@@ -12,6 +12,7 @@ const Error404 = () => {
     interestedInOptions,
     onInterestedInOptionChange,
     name,
+    errors,
     onNameChange,
     saveToFirebase: saveContactFormToFirebase,
   } = useContactForm()
@@ -24,6 +25,7 @@ const Error404 = () => {
     interestedInOptions,
     onInterestedInOptionChange,
     name,
+    errors,
     onNameChange,
     saveToFirebase: saveContactFormToFirebase,
   }

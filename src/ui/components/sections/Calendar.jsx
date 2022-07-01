@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
@@ -8,9 +7,10 @@ import Paragraphs from '../paragraphs/Paragraphs'
 import DatePicker from '../date-picker/DatePicker'
 import image from '/public/images/haz-hueco-en-tu-agenda.jpg'
 import { DatesPropType } from './../../sharedProptypes'
+import Button from '../button/Button'
 
 const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
-  const t = useTranslations()
+  const formatMessage = useTranslations()
 
   return (
     <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="calendar">
@@ -18,7 +18,7 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
         <Cell>
           <div className="scrambleTextWrapper">
             <h2 className="h1 scrambleText">
-              {t('calendar:title', {
+              {formatMessage('calendar:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
@@ -35,10 +35,18 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
       </Row>
       <Row type="half">
         <Cell hasGap>
-          <Paragraphs text={t('calendar:description')} />
+          <Paragraphs text={formatMessage('calendar:description')} />
         </Cell>
         <Cell>
-          <DatePicker dates={dates} openContact={openContact} />
+          {dates ? (
+            <DatePicker dates={dates} openContact={openContact} />
+          ) : (
+            <Button
+              isFull
+              onClick={openContact}
+              text={formatMessage('calendar:no-courses')}
+            />
+          )}
         </Cell>
       </Row>
     </SectionWrapper>

@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
@@ -8,6 +7,7 @@ import Radio from '../forms/Radio'
 import Input from '../forms/Input'
 import Checkbox from '../forms/Checkbox'
 import { CoursePropType } from '../../sharedProptypes'
+import Button from '../button/Button'
 
 const Footer = ({
   courses,
@@ -17,7 +17,7 @@ const Footer = ({
   contactFormParams,
   openCourse,
 }) => {
-  const t = useTranslations()
+  const formatMessage = useTranslations()
 
   const handleClick = (e, course) => {
     e.preventDefault()
@@ -35,7 +35,7 @@ const Footer = ({
         <Cell isNegative={isBlack}>
           <div className="scrambleTextWrapper">
             <h2 className="h2 scrambleText">
-              {t('footer:title', {
+              {formatMessage('footer:title', {
                 line: text => <span className="line">{text}</span>,
                 lineTab: text => <span className="line has-tab">{text}</span>,
               })}
@@ -45,7 +45,7 @@ const Footer = ({
         <Cell isNegative={isBlack}>
           <form className="footer-form" onSubmit={onContactFormSubmit}>
             <div className="footer-formBlock">
-              <span className="notes">{t('footer:iam')}</span>
+              <span className="notes">{formatMessage('footer:iam')}</span>
               <Radio
                 onChange={contactFormParams.onUserTypeChange}
                 label="footer:company"
@@ -69,16 +69,20 @@ const Footer = ({
                 handleChange={contactFormParams.onEmailChange}
                 handleSubmit={() => {}}
                 name="email"
-                placeholder={t('general:placeholder')}
+                placeholder={formatMessage('newsletter:placeholder')}
                 type="email"
                 value={contactFormParams.email}
+              />
+              <Button
+                text={formatMessage('newsletter:btn')}
+                onClick={() => {}}
               />
             </div>
             <div className="footer-formBlock">
               <Checkbox
                 hasMessage
                 handleChange={contactFormParams.toggleTermsAndConditions}
-                label={t('general:conditions-check')}
+                label={formatMessage('general:conditions-check')}
                 name="conditions"
                 isChecked={contactFormParams.termsAndConditions}
               />
@@ -88,23 +92,23 @@ const Footer = ({
       </Row>
       <Row type="half">
         <Cell isNegative={isBlack}>
-          <span className="tiny">{t('courses:header')}</span>
+          <span className="tiny">{formatMessage('courses:header')}</span>
           <ul className="footer-list">
             {courses.map(course => (
-              <li key={course.information.title}>
+              <li key={formatMessage(course.information.title)}>
                 <a
                   className="h4"
                   href={course.href}
                   onClick={e => handleClick(e, course)}
                 >
-                  {course.information.title}
+                  {formatMessage(course.information.title)}
                 </a>
               </li>
             ))}
           </ul>
         </Cell>
         <Cell isNegative={isBlack}>
-          <span className="tiny">{t('footer:social')}</span>
+          <span className="tiny">{formatMessage('footer:social')}</span>
           <ul className="footer-list">
             <li>
               <a
@@ -132,7 +136,7 @@ const Footer = ({
             <li>
               <a
                 className="h4"
-                href="https://github.com/ophion-studio/classe-public"
+                href="https://github.com/Classe-Redradix/classe-public"
                 target="_blank"
               >
                 Repositorio Classe
@@ -142,7 +146,7 @@ const Footer = ({
         </Cell>
         <Cell isNegative={isBlack}>
           <address>
-            <span className="tiny">{t('footer:contact')}</span>
+            <span className="tiny">{formatMessage('footer:contact')}</span>
             <a
               className="button"
               href="https://www.google.es/maps/place/Redradix/@40.4092458,-3.7143432,17z/data=!3m1!4b1!4m5!3m4!1s0xd42287e4a90167b:0x9bfdc0ed1f91d800!8m2!3d40.4092458!4d-3.7121545?shorturl=1"
@@ -156,6 +160,29 @@ const Footer = ({
               info[at]classe.com
             </a>
           </address>
+          <div className="footer-legal">
+            <span className="tiny">{formatMessage('footer:legal')}</span>
+            <ul className="">
+              <li>
+                <a
+                  className="button"
+                  href={`${formatMessage('footer:legal-terms-route')}`}
+                  target="_blank"
+                >
+                  {formatMessage('footer:legal-terms')}
+                </a>
+              </li>
+              <li>
+                <a
+                  className="button"
+                  href={`${formatMessage('footer:cookies-route')}`}
+                  target="_blank"
+                >
+                  {formatMessage('footer:cookies')}
+                </a>
+              </li>
+            </ul>
+          </div>
         </Cell>
       </Row>
       <Row type="full">

@@ -4,7 +4,7 @@ import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import useTranslations from '../../../../hooks/useTranslations'
-
+import Paragraphs from '../../paragraphs/Paragraphs'
 const CourseSection = ({ number, text, title }) => {
   const formatMessage = useTranslations()
 
@@ -15,19 +15,26 @@ const CourseSection = ({ number, text, title }) => {
           <h3 className="h1" aria-hidden="true">
             {number}
           </h3>
-          <p className="p courseSection-text">{text}</p>
+          <Paragraphs
+            text={formatMessage(text)}
+            extraClass="courseSection-text"
+          />
         </Cell>
       </Row>
       <Row type="full" extraClass="courseSection-title">
         <Cell isNegative>
           {title ? (
-            <div className="scrambleTextWrapper">
-              <h3 className="h3 scrambleText">
-                {formatMessage(title, {
-                  line: text => <span className="line">{text}</span>,
-                })}
-              </h3>
-            </div>
+            <h3 className="h3 ">
+              {formatMessage(title, {
+                line: text => <span className="line">{text}</span>,
+                lineAriaHidden: text => (
+                  <span className="line" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                screenReadOnly: text => <span className="sr-only">{text}</span>,
+              })}
+            </h3>
           ) : null}
         </Cell>
       </Row>

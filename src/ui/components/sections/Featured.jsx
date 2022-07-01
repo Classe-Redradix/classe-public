@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
@@ -23,8 +22,13 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
           <div className="scrambleTextWrapper">
             <h2 className="h1 scrambleText">
               {t('featured:title', {
+                lineTabAriaHidden: text => (
+                  <span className="line" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                screenReadOnly: text => <span className="sr-only">{text}</span>,
                 line: text => <span className="line">{text}</span>,
-                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h2>
           </div>

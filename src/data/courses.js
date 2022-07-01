@@ -1,227 +1,232 @@
 import imageCourseJS from '/public/images/curso-javascript.jpg'
 import imageCourseReact from '/public/images/curso-front.jpg'
+import imageCourseBack from '/public/images/curso-back.jpg'
 import imageCourseUIDeveloper from '/public/images/curso-maqueta.jpg'
 
-const JS_PRO = {
-  id: 'js-pro',
+const PROGRAMACION = {
+  id: 'programacion',
   isFeatured: false,
   isPublic: false,
-  href: '/courses/js-pro',
+  href: '/cursos/programacion',
   information: {
-    title: 'JS PRO',
+    title: 'course:js-title',
     start: '21.08.22',
     finish: '25.08.22',
-    description: "This is the best JavaScript course you'll ever find",
+    metaDescription: 'course:js-schema-description',
+    description: 'course:js-description',
     image: {
       source: imageCourseJS,
-      alt: 'Un chico de perfil trabajando con su portátil',
+      alt: 'course:js-alt-image',
     },
-    price: 900,
-    hours: 20,
-    places: 30,
-    enrolledStudents: 13,
-    successPercentage: 95,
+    price: 600,
+    hours: 30,
+    places: 15,
+    practical: 80,
   },
-  index: [
+  dosier: '/cursos/programacion-javascript.pdf',
+  indexItems: [
     {
       number: '01',
-      name: 'Fundamentos',
-      description:
-        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
+      name: 'course:js-01-title',
+      description: 'course:js-01-description',
     },
     {
       number: '02',
-      name: 'Programación funcional',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
+      name: 'course:js-02-title',
+      description: 'course:js-02-description',
     },
     {
       number: '03',
-      name: 'Programación orientada a objetos',
-      description:
-        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
+      name: 'course:js-03-title',
+      description: 'course:js-03-description',
     },
     {
       number: '04',
-      name: 'Programación funcional II',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
+      name: 'course:js-04-title',
+      description: 'course:js-04-description',
+    },
+    {
+      number: '',
+      name: 'course:js-05-title',
+      description: 'course:js-05-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
+  objectives: {
+    learn: 'course:js-learn',
+    text: 'course:js-learn-description',
+    objectives: 'course:js-objectives',
+    objectivesText: 'course:js-objetives-description',
+  },
 }
 
 const UI_DEV = {
-  id: 'react',
+  id: 'maqueta',
   isFeatured: false,
   isPublic: true,
-  href: '/courses/maqueta',
+  href: '/cursos/maqueta',
   information: {
-    title: 'Maqueta',
+    title: 'course:ui-dev-title',
     start: '21.08.22',
     finish: '25.08.22',
-    description: "This is the best React course you'll ever find",
+    metaDescription: 'course:ui-dev-meta-description',
+    description: 'course:ui-dev-description',
     image: {
       source: imageCourseUIDeveloper,
-      alt: 'Un chico de perfil trabajando con su portátil',
+      alt: 'course:ui-dev-alt-image',
     },
-    price: 1400,
-    hours: 25,
-    places: 30,
-    enrolledStudents: 28,
-    successPercentage: 98,
+    price: 600,
+    hours: 30,
+    places: 15,
+    practical: 80,
   },
-  index: [
+  dosier: '/cursos/maquetacion-con-HTML-CSS.pdf',
+  indexItems: [
     {
       number: '01',
-      name: 'Fundamentos',
-      description:
-        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
+      name: 'course:ui-dev-01-title',
+      description: 'course:ui-dev-01-description',
     },
     {
       number: '02',
-      name: 'Programación funcional',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
+      name: 'course:ui-dev-02-title',
+      description: 'course:ui-dev-02-description',
     },
     {
       number: '03',
-      name: 'Programación orientada a objetos',
-      description:
-        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
+      name: 'course:ui-dev-03-title',
+      description: 'course:ui-dev-03-description',
     },
     {
       number: '04',
-      name: 'Programación funcional II',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
+      name: 'course:ui-dev-04-title',
+      description: 'course:ui-dev-04-description',
+    },
+    {
+      number: '05',
+      name: 'course:ui-dev-05-title',
+      description: 'course:ui-dev-05-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
+  objectives: {
+    learn: 'course:ui-dev-learn',
+    text: 'course:ui-dev-learn-description',
+    objectives: 'course:ui-dev-objectives',
+    objectivesText: 'course:ui-dev-objetives-description',
+  },
 }
 
 const FRONT_END = {
-  id: 'data',
+  id: 'front-end',
   isFeatured: false,
   isPublic: true,
-  href: '/courses/front-end',
+  href: '/cursos/front-end',
   information: {
-    title: 'Front-end',
+    title: 'course:front-react-title',
     start: '21.08.22',
     finish: '25.08.22',
-    description: "This is the best Data course you'll ever find",
+    metaDescription: 'course:front-react-schema-description',
+    description: 'course:front-react-description',
     image: {
       source: imageCourseReact,
-      alt: 'Un chico con un gorro trabajando en su portátil',
+      alt: 'course:front-react-alt-image',
     },
     price: 1200,
     hours: 30,
     places: 20,
-    enrolledStudents: 9,
-    successPercentage: 94,
+    practical: 80,
   },
-  index: [
+  dosier: '/cursos/front-end-con-react.pdf',
+  indexItems: [
     {
       number: '01',
-      name: 'Fundamentos',
-      description:
-        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
+      name: 'course:front-react-01-title',
+      description: 'course:front-react-01-description',
     },
     {
       number: '02',
-      name: 'Programación funcional',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
+      name: 'course:front-react-02-title',
+      description: 'course:front-react-02-description',
     },
     {
       number: '03',
-      name: 'Programación orientada a objetos',
-      description:
-        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
+      name: 'course:front-react-03-title',
+      description: 'course:front-react-03-description',
     },
     {
-      number: '04',
-      name: 'Programación funcional II',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
+      number: '',
+      name: 'course:front-react-04-title',
+      description: 'course:front-react-04-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
+  objectives: {
+    learn: 'course:front-react-learn',
+    text: 'course:front-react-learn-description',
+    objectives: 'course:front-react-objectives',
+    objectivesText: 'course:front-react-objetives-description',
+  },
 }
 
 const BACK_END = {
-  id: 'full-stack',
+  id: 'back-end',
   isFeatured: true,
   isPublic: false,
-  href: '/courses/back-end',
+  href: '/cursos/back-end',
   information: {
-    title: 'Backend con Node',
+    title: 'course:back-node-title',
     start: '21.08.22',
     finish: '25.08.22',
-    description: "This is the best Full stack course you'll ever find",
+    metaDescription: 'course:back-node-schema-description',
+    description: 'course:back-node-description',
     image: {
-      source: imageCourseReact,
-      alt: 'Un chico con un gorro trabajando en su portátil',
+      source: imageCourseBack,
+      alt: 'course:back-node-alt-image',
     },
-    price: 1500,
-    hours: 50,
-    places: 30,
-    enrolledStudents: 18,
-    successPercentage: 93,
+    price: 600,
+    hours: 30,
+    places: 15,
+    practical: 80,
   },
-  index: [
+  dosier: '/cursos/back-end-con-node.pdf',
+  indexItems: [
     {
       number: '01',
-      name: 'Fundamentos',
-      description:
-        'Introducción y recursos. String templates. Desestructuración. Declaración de variables. (2H)',
+      name: 'course:back-node-01-title',
+      description: 'course:back-node-01-description',
     },
     {
       number: '02',
-      name: 'Programación funcional',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)',
+      name: 'course:back-node-02-title',
+      description: 'course:back-node-02-description',
     },
     {
       number: '03',
-      name: 'Programación orientada a objetos',
-      description:
-        'Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)',
+      name: 'course:back-node-03-title',
+      description: 'course:back-node-03-description',
     },
     {
       number: '04',
-      name: 'Programación funcional II',
-      description:
-        'Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)',
+      name: 'course:back-node-04-title',
+      description: 'course:back-node-04-description',
+    },
+    {
+      number: '05',
+      name: 'course:back-node-05-title',
+      description: 'course:back-node-05-description',
+    },
+    {
+      number: '',
+      name: 'course:back-node-06-title',
+      description: 'course:back-node-06-description',
     },
   ],
-  objetives: [
-    'Objetive 1',
-    'Objetive 2',
-    'Objetive 3',
-    'Objetive 4',
-    'Objetive N',
-  ],
+  objectives: {
+    learn: 'course:back-node-learn',
+    text: 'course:back-node-learn-description',
+    objectives: 'course:back-node-objectives',
+    objectivesText: 'course:back-node-objetives-description',
+  },
 }
 
-const COURSES = [JS_PRO, UI_DEV, FRONT_END, BACK_END]
+const COURSES = [PROGRAMACION, UI_DEV, FRONT_END, BACK_END]
 
 export default COURSES

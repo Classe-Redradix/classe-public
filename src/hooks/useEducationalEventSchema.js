@@ -16,8 +16,8 @@ const useEducationalEventchema = courseData => {
     '@context': 'https://schema.org',
     '@type': 'EducationEvent',
     url: `${formatMessage('url:root')}${courseData.href}`,
-    name: courseData.information.title,
-    description: courseData.information.description,
+    name: formatMessage(courseData.information.title),
+    description: formatMessage(courseData.information.metaDescription),
     startDate: `${formatDate(courseData.information.start)}`,
     endDate: `${formatDate(courseData.information.finish)}`,
     location: {

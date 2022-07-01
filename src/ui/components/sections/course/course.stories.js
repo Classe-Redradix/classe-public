@@ -3,6 +3,7 @@ import CourseIntro from './CourseIntro'
 import CourseTitle from './CourseTitle'
 import CourseSection from './CourseSection'
 import CourseSectionEmpty from './CourseSectionEmpty'
+import CoursePdf from './CoursePdf'
 
 export default {
   title: 'Modules/Course',
@@ -89,6 +90,8 @@ const course = {
     'Objetive 4',
     'Objetive N',
   ],
+  source: 'static/media/public/images/curso-javascript.jpg',
+  alt: 'JS PRO',
 }
 
 const dates = [
@@ -107,7 +110,7 @@ const dates = [
 ]
 
 export const courseIntro = ({ ...args }) => (
-  <CourseIntro isBlack dates={dates} {...args} course={course} />
+  <CourseIntro isBlack dates={dates} {...args} course={course} image={course} />
 )
 courseIntro.parameters = {
   options: {
@@ -128,6 +131,9 @@ export const courseSection = ({ ...args }) => (
     text="Introducción y recursos. String templates. Desestructuración.
 Declaración de variables. (2H)"
   />
+)
+export const coursePdf = ({ ...args }) => (
+  <CoursePdf href="/" textButton="Descargar" title="Dosier del curso" />
 )
 
 export const courseSectionEmpty = ({ ...args }) => (

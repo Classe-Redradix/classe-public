@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { copyClasseEmailToClipboard } from '../../../business'
 import useTranslations from '../../../hooks/useTranslations'
@@ -19,10 +18,13 @@ const Find = ({ isBlack, isFluor }) => {
             <h2 className="h1 scrambleText">
               {t('find:title', {
                 line: text => <span className="line">{text}</span>,
-                lineTab: text => <span className="line has-tab">{text}</span>,
-                lineSROnly: text => (
-                  <span className="line has-tab sr-only">{text}</span>
+                lineAriaHidden: text => (
+                  <span className="line" aria-hidden="true">
+                    {text}
+                  </span>
                 ),
+                screenReadOnly: text => <span className="sr-only">{text}</span>,
+                lineTab: text => <span className="line has-tab">{text}</span>,
               })}
             </h2>
           </div>

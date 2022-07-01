@@ -19,10 +19,11 @@
     flex-wrap: nowrap;
     justify-content: center;
     position: relative;
-    padding: 0 48px;
+    padding: 0 rem(48px);
     width: 100%;
     box-sizing: border-box;
     pointer-events: none;
+    margin-bottom: rem(32px);
   }
 
   &-dateText {
@@ -62,7 +63,6 @@
   &-carousel {
     display: block;
     position: relative;
-    margin-top: 32px;
     width: 100%;
     filter: blur(0);
     opacity: 1;
@@ -74,7 +74,7 @@
     position: relative;
 
     & + .datePicker-courseWrapper {
-      margin-top: 32px;
+      margin-top: rem(32px);
     }
   }
 

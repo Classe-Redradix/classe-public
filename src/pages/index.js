@@ -19,6 +19,8 @@ import Vivanta from '/public/images/logos/vivanta.svg'
 
 import { COURSES } from '../data'
 import InfoHead from '../InfoHead'
+import Hero from '../ui/components/hero/Hero'
+
 import {
   useViewportHeight,
   useDetectMobile,
@@ -52,6 +54,7 @@ const Home = () => {
     termsAndConditions,
     toggleTermsAndConditions,
     saveToFirebase: saveContactFormToFirebase,
+    errors,
   } = useContactForm(interestedIn)
 
   useViewportHeight()
@@ -62,8 +65,8 @@ const Home = () => {
   const formatMessage = useTranslations()
 
   const courses = COURSES.map(course => ({
-    title: course.information.title,
-    href: `/courses/${course.id}`,
+    title: formatMessage(course.information.title),
+    href: `/cursos/${course.id}`,
   }))
 
   const logos = [
@@ -132,14 +135,14 @@ const Home = () => {
           title: 'Js Pro',
           start: '16',
           finish: '27',
-          to: '/contact?interested-in=js-pro',
+          to: '/contacto?interested-in=js-pro',
           id: 'js-pro',
         },
         {
           title: 'Data',
           start: '16',
           finish: '27',
-          to: '/contact?interested-in=data',
+          to: '/contacto?interested-in=data',
           id: 'data',
         },
       ],
@@ -152,7 +155,7 @@ const Home = () => {
           title: 'Redux',
           start: '16',
           finish: '27',
-          to: '/contact?interested-in=redux',
+          to: '/contacto?interested-in=redux',
           id: 'redux',
         },
       ],
@@ -190,6 +193,7 @@ const Home = () => {
     onInterestedInOptionChange,
     name,
     termsAndConditions,
+    errors,
     toggleTermsAndConditions,
     onNameChange,
     saveToFirebase: saveContactFormToFirebase,
@@ -209,6 +213,7 @@ const Home = () => {
           }}
         />
       </InfoHead>
+
       <HomeUI
         isBlack={isBlack}
         isFluor={isFluor}

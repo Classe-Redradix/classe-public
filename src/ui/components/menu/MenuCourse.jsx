@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import React, { useEffect, useRef, useMemo } from 'react'
+
 import CourseIntro from '../../components/sections/course/CourseIntro'
 import CourseTitle from '../../components/sections/course/CourseTitle'
 import CourseSection from '../../components/sections/course/CourseSection'
@@ -11,7 +10,10 @@ import CourseContact from '../../components/sections/course/CourseContact'
 import { COURSES } from '../../../data'
 import useScrambleText from '../../../hooks/useScrambleText'
 import useTranslations from '../../../hooks/useTranslations'
+import CoursePdf from '../sections/course/CoursePdf'
+import { MEDIA_QUERIES } from '../../../constants'
 
+import useWindowSize from '../../../hooks/useWindowSize'
 const dates = [
   {
     day: '01',
@@ -30,8 +32,6 @@ const dates = [
 const MenuCourse = ({ course, openContact, isCourseOpen }) => {
   const formatMessage = useTranslations()
   useScrambleText()
-  gsap.registerPlugin(ScrollTrigger)
-  const container = useRef(null)
 
   // HACK: here we have two posibilities:
   //  1. The user is navigating to the course directly with app links (no problem)
@@ -51,40 +51,48 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
     menuCourse = Object.assign({}, course)
   }
 
-  const { information } = menuCourse
+  const { information, indexItems, objectives, href, dosier } = menuCourse
 
+  const size = useWindowSize()
+  const isDesktop = useMemo(() => size.width >= MEDIA_QUERIES.desktop, [size])
+
+  const container = useRef(null)
+  const courseIntro = useRef(null)
+  const courseTitleHeader = useRef(null)
   useEffect(() => {
-    let t = null
-    if (container.current) {
-      const t = gsap.to(container.current, {
-        x: () =>
-          -(
-            container.current.scrollWidth - document.documentElement.clientWidth
-          ) + 'px',
-        ease: 'none',
-        scrollTrigger: {
-          // id: `fake`,
-          scroller: '.menuLayer-content',
-          trigger: container.current,
-          invalidateOnRefresh: true,
-          pin: true,
-          scrub: 1,
-          end: () => '+=' + container.current.offsetWidth,
-        },
+    const el = container.current
+    const courseIntroEl = courseIntro.current
+    const titleHeaderEl = courseTitleHeader.current
+
+    if (!el || !courseIntroEl) return
+    const widthIntro = courseIntroEl.offsetWidth
+
+    const onWheel = e => {
+      if (e.deltaY == 0) return
+      e.preventDefault()
+      el.scrollTo({
+        left: el.scrollLeft + e.deltaY,
       })
+      if (el.scrollLeft >= widthIntro) {
+        titleHeaderEl.classList.add('is-visible')
+      } else {
+        titleHeaderEl.classList.remove('is-visible')
+      }
     }
 
-    // return () => {
-    //   const titleElTrigger = ScrollTrigger.getById('fake')
-
-    //   if (titleElTrigger) {
-    //     titleElTrigger.kill()
-    //   }
-    // }
-  }, [isCourseOpen])
+    if (isDesktop) {
+      el.addEventListener('wheel', onWheel)
+    } else {
+      el.removeEventListener('wheel', onWheel)
+    }
+    return () => el.removeEventListener('wheel', onWheel)
+  }, [isDesktop])
 
   return (
-    <div>
+    <>
+      <p className="courseTitle-header" ref={courseTitleHeader}>
+        {formatMessage(information.title)}
+      </p>
       <div className="courseSections" ref={container}>
         <CourseIntro
           dates={dates}
@@ -92,67 +100,45 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
           image={information.image}
           openContact={openContact}
           course={menuCourse}
+          description={information.description}
+          ref={courseIntro}
         />
         <CourseTitle title={formatMessage('course:index-title')} />
-        <CourseSection
-          number="01"
-          text="Introducción y recursos. String templates. Desestructuración.
-Declaración de variables. (2H)"
-          title="course:fundamentals"
+        {indexItems.map((indexItem, index) => (
+          <>
+            <CourseSection
+              key={index}
+              number={indexItem.number}
+              text={indexItem.description}
+              title={indexItem.name}
+            />
+            <CourseSectionEmpty key={`0${index + 1}`} />
+          </>
+        ))}
+        <CoursePdf
+          title={formatMessage('course:pdf-title')}
+          href={dosier}
+          textButton={formatMessage('course:pdf-button')}
         />
         <CourseSectionEmpty />
-        <CourseSection
-          number="02"
-          text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
-          title="course:functional-programming"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="03"
-          text="Métodos y receptor. Constructores. Clases. Principios de diseño S.O.L.I.D. (3H)"
-          title="course:object-oriented-programming"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="04"
-          text="Higher order functions. Operaciones sobre listas. Composición de funciones. (2H)"
-          title="course:functional-programming"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="05"
-          text="Introducción. Callbacks. Iteración asíncrona. Sincronización. Eventos y Observables. Combinación de eventos. (4H)"
-          title="course:asynchronous-programming"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="06"
-          text="Higher order functions. Operaciones sobre listas. Composición de funciones.(4H)"
-          title="course:promises"
-        />
-        <CourseSectionEmpty />
-        <CourseSection
-          number="07"
-          text="Further study. Lecturas recomendadas. Recursos extra. (1H)"
-          title="courses:closing"
-        />
+
         <CourseTitle title={formatMessage('course:objectives-title')} />
         <CourseObjectives
-          learn="course:learn"
-          text="Congue fermentum fermentum justo, phasellus. Aliquam sapien scelerisque porttitor quam congue nibh. "
-          objectives="course:objectives"
+          learn={objectives.learn}
+          text={objectives.text}
+          objectives={objectives.objectives}
+          objectivesText={objectives.objectivesText}
         />
         <CourseInfo
           price={information.price}
           hours={information.hours}
           places={information.places}
-          students={information.enrolledStudents}
-          successPercentage={information.successPercentage}
+          practical={information.practical}
         />
         <CourseTitle title={formatMessage('footer:contact')} />
         <CourseContact openContact={openContact} />
       </div>
-    </div>
+    </>
   )
 }
 

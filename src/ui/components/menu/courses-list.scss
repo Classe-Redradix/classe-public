@@ -8,7 +8,7 @@
 
     & + .coursesList-list {
       margin-top: 24px;
-      padding-left: 72px;
+      // padding-left: 72px;
     }
   }
 
@@ -59,18 +59,17 @@
     margin-left: 16px;
     padding-right: 52px;
     overflow: hidden;
-  }
-
-  &-linkTextWrapper .icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: 34px;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity $fade-short, transform $transform-short;
-    color: $fluor;
+    .icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 34px;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: opacity $fade-short, transform $transform-short;
+      color: $fluor;
+    }
   }
 
   &-linkText {
@@ -107,12 +106,12 @@
     }
 
     &-linkTextWrapper {
-      margin-left: 32px;
       padding-right: 64px;
-    }
+      margin-left: 0px;
 
-    &-linkTextWrapper .icon {
-      height: 44px;
+      .icon {
+        height: 44px;
+      }
     }
   }
 
@@ -128,12 +127,10 @@
     }
 
     &-linkTextWrapper {
-      margin-left: 56px;
       padding-right: 130px;
-    }
-
-    &-linkTextWrapper .icon {
-      height: 84px;
+      .icon {
+        height: 84px;
+      }
     }
   }
 }

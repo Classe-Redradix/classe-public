@@ -89,6 +89,7 @@ button {
 .notes,
 .button,
 .tiny,
+.hero,
 .heading {
   display: block;
   position: relative;
@@ -128,8 +129,17 @@ button {
 .menu {
   display: block;
   position: relative;
-  @include typo-rwd(menu);
   text-transform: uppercase;
+  transition: letter-spacing $transform-short;
+  width: 6.875rem;
+  text-align: center;
+
+  &:hover {
+    letter-spacing: 0.8px;
+  }
+  &.menuDesktop-claim {
+    width: 12.5rem;
+  }
 }
 
 .notes {

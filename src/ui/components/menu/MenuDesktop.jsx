@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import useTranslations from '../../../hooks/useTranslations'
@@ -11,7 +10,7 @@ const MenuDesktop = ({
   openContact,
   courses,
 }) => {
-  const t = useTranslations()
+  const formatMessage = useTranslations()
   const classes = cx('menuDesktop', {
     'is-black': isBlack,
     'is-fluor': isFluor,
@@ -21,27 +20,29 @@ const MenuDesktop = ({
     <header className={classes}>
       <Cell isNegative={isBlack}>
         <a href="/" className="menuDesktop-claim menu">
-          {t('menu:claim')}
+          {formatMessage('menu:claim')}
         </a>
         <button
           className="menuDesktop-button menu"
           onClick={openCourses}
-          aria-label={t('menu:courses')}
+          aria-label={formatMessage('menu:courses')}
           role="link"
         >
-          [
-          <span className="braketHover">
-            {courses < 10 ? `0${courses}` : courses}
+          <span className="menu-textButton">
+            [
+            <span className="braketHover">
+              {courses < 10 ? `0${courses}` : courses}
+            </span>
+            ] {formatMessage('menu:courses')}
           </span>
-          ] {t('menu:courses')}
         </button>
         <button
           onClick={openContact}
           className="menuDesktop-link menu"
-          aria-label={t('menu:contact')}
+          aria-label={formatMessage('menu:contact')}
           role="link"
         >
-          {t('menu:contact')}
+          <span>{formatMessage('menu:contact')}</span>
         </button>
       </Cell>
     </header>

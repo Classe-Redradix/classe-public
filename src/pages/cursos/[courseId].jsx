@@ -23,7 +23,7 @@ const Course = withKonami(({ course }) => {
       url: formatMessage('url:courses'),
     },
     {
-      name: course.information.title,
+      name: formatMessage(course.information.title),
       url: formatMessage('url:course', {
         course: course.href,
       }),
@@ -33,11 +33,9 @@ const Course = withKonami(({ course }) => {
   const infoHead = (
     <InfoHead
       title={formatMessage('info-head-course:title', {
-        course: course.information.title,
+        course: formatMessage(course.information.title),
       })}
-      description={formatMessage('info-head-course:description', {
-        course: course.information.title,
-      })}
+      description={formatMessage(course.information.metaDescription)}
       url={`${formatMessage('url:root')}${course.href}`}
     >
       <script

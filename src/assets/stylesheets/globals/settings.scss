@@ -6,11 +6,13 @@
 $black: #000000;
 $white: #eaeaea;
 $fluor: #e2f754;
+$error: #f88078;
 
 // Index
 $index-menu: 10;
 $index-menu-layer: 15;
 $index-menu-mobile: 20;
+$index-loader: 25;
 
 // Fonts
 $font-base: 16;
@@ -33,7 +35,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 1024px,
   xl: 1280px,
-  xxl: 1440px,
+  xxl: 2440px,
 );
 
 // Transitions
