@@ -93,7 +93,7 @@ const DatePicker = ({ dates, isCourse, openContact }) => {
             {!isCourse ? (
               <Button
                 isLink
-                href={`/contact?interested-in=${course.id}`}
+                href={`/contacto?interested-in=${course.id}`}
                 onClick={_ => {
                   openContact(_, course.id)
                 }}
