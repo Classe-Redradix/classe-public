@@ -61,10 +61,6 @@
   &-desktopHeader-button {
     position: relative;
     margin-left: auto;
-
-    html:not(.is-mobile) &:hover .braketHover {
-      padding: 0 4px;
-    }
   }
 
   &-content {
@@ -163,16 +159,6 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      .isError {
-        margin-top: 5px;
-
-        span {
-          display: inline-block;
-
-          margin-right: 5px;
-          color: $error;
-        }
-      }
     }
 
     .contact-formBlock {
