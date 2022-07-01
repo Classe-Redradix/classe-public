@@ -248,7 +248,7 @@
   "contact:my-name-is": "<line>Ey! Me llamo</line>",
   "contact:interested-in": "<line>Estoy interesado en</line>",
   "contact:my-email": "<line>Y este es mi correo</line>",
-  "contact:success": "¡Gracias! Te responderemos lo antes posible.",
+  "contact:success": "Gracias! Te responderemos lo antes posible.",
 
   "footer:header": "Bye bye",
   "footer:title": "<line>Stay</line> <lineTab>in the</lineTab> <lineTab>know</lineTab>",
