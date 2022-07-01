@@ -27,6 +27,12 @@ const CourseSection = ({ number, text, title }) => {
             <h3 className="h3 ">
               {formatMessage(title, {
                 line: text => <span className="line">{text}</span>,
+                lineAriaHidden: text => (
+                  <span className="line" aria-hidden="true">
+                    {text}
+                  </span>
+                ),
+                screenReadOnly: text => <span className="sr-only">{text}</span>,
               })}
             </h3>
           ) : null}
