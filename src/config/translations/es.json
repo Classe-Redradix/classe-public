@@ -71,6 +71,7 @@
   "menu:contact": "Contacta",
   "menu:open": "Menu",
   "menu:close": "Cerrar",
+
   "loader:text": "<line>Class[e]</line>",
 
   "home:title": "Cursos de programación y producto digital por y para desarrolladores",
@@ -260,7 +261,6 @@
   "footer:legal": "Legal",
   "footer:legal-terms": "Términos legales",
   "footer:legal-terms-route": "/terminos-legales/",
-
   "footer:cookies": "Cookies",
   "footer:cookies-route": "/cookies/",
 
@@ -307,5 +307,13 @@
   "cookies-policy:subtitle": "¿Qué cookies utilizamos?",
   "cookies-policy:block-3": "En esta web empleamos cookies analíticas de terceros. La finalidad de estas es conocer datos estadísticos de uso de la web, como el número de usuarios o los contenidos que más se consultan. De esta manera podemos concentrar nuestros esfuerzos en mejorar nuestra web y las áreas más visitadas y hacer que el usuario encuentre más fácilmente lo que busca. La información de las visitas puede utilizarse para realizar evaluaciones y métricas siempre con datos anónimos.",
   "cookies-policy:block-4": "Como usuario, debes asegurarte de que estás conforme con ellas antes de seguir navegando. Todas nuestras cookies son analíticas y puedes rechazarlas aquí.",
-  "cookies-policy:block-5": "También puedes configurar el navegador para que no acepte cookies, aunque eso puede afectar al correcto funcionamiento de la aplicación."
+  "cookies-policy:block-5": "También puedes configurar el navegador para que no acepte cookies, aunque eso puede afectar al correcto funcionamiento de la aplicación.",
+
+  "alt-image:three-web-developers": "Tres desarrolladores web desarrollando productos digitales",
+  "alt-image:programming-student-attending": "Un estudiante de programación atendiendo a una charla",
+  "alt-image:work-table-with-electronic-devices": "Mesa de trabajo con muchos dispositivos electrónicos sobre ella",
+  "alt-image:man-working-remotely": "Un hombre trabajando en remoto visible a través de una videollamada",
+  "alt-image:hands-keyboard-mouse": "Unas manos sobre un teclado y un ratón",
+  "alt-image:office-desks-computer-equipment": "Oficina con varias mesas y equipos informáticos",
+  "alt-image:two-web-programmers": "Dos programadores web trabajando"
 }

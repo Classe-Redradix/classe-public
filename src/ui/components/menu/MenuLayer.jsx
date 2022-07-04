@@ -98,7 +98,7 @@ const MenuLayer = ({
                 <img
                   className="bwfilter"
                   src={image}
-                  alt="Tres desarrolladores web desarrollando productos digitales"
+                  alt={t('alt-image:three-web-developers')}
                 />
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>

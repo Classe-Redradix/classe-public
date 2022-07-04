@@ -33,7 +33,7 @@ const Find = ({ isBlack, isFluor }) => {
           <img
             className="bwfilter"
             src={image}
-            alt="Oficina con varias mesas y equipos informáticos"
+            alt={t('alt-image:two-web-programmers')}
           />
         </Cell>
       </Row>

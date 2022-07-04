@@ -34,7 +34,7 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
           <img
             className="bwfilter"
             src={image}
-            alt="Mesa de trabajo con muchos dispositivos electrónicos sobre ella"
+            alt={t('alt-image:work-table-with-electronic-devices')}
           />
         </Cell>
       </Row>

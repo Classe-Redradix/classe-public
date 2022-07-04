@@ -34,7 +34,7 @@ const Faqs = ({ list, isBlack, isFluor }) => {
           <img
             className="bwfilter"
             src={image}
-            alt="Un apuesto hombre trabajando en remoto visible a través de una videollamada"
+            alt={t('alt-image:man-working-remotely')}
           />
         </Cell>
         <Cell>
