@@ -98,7 +98,7 @@ const MenuLayer = ({
                 <img
                   className="bwfilter"
                   src={image}
-                  alt={t('alt-image:three-web-developers')}
+                  alt={t('alt-image:hands-keyboard-mouse')}
                 />
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
