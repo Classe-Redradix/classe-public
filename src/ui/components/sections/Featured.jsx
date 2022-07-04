@@ -45,7 +45,7 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
           <img
             className="bwfilter"
             src={image}
-            alt={t('alt-image:office-desks-computer-equipment')}
+            alt={t('alt-image:hands-keyboard-mouse')}
           />
         </Cell>
       </Row>

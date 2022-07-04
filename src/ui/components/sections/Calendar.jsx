@@ -28,7 +28,7 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
           <img
             className="bwfilter"
             src={image}
-            alt={formatMessage('alt-image:programming-student-attending')}
+            alt={formatMessage('alt-image:programming-students-attending')}
           />
         </Cell>
       </Row>
