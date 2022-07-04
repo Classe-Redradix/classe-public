@@ -10,7 +10,6 @@ import {
   useScrambleText,
   useContactForm,
   useTranslations,
-  useSchema,
   useBreadcrumbListSchema,
 } from '../../hooks'
 const LegalTermsView = () => {
@@ -40,7 +39,6 @@ const LegalTermsView = () => {
 
   const formatMessage = useTranslations()
 
-  const { educationalOrganizationSchema, webSiteSchema } = useSchema()
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
     {
       name: formatMessage('schema-breadcrumb-list:cookies-policy-name'),
@@ -82,11 +80,12 @@ const LegalTermsView = () => {
         title={formatMessage('info-head-cookies-policy:title')}
         description={formatMessage('info-head-cookies-policy:description')}
         url={formatMessage('url:root')}
+        noindexNofollow
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: `[${educationalOrganizationSchema}, ${webSiteSchema}, ${breadcrumbListSchema}]`,
+            __html: `${breadcrumbListSchema}`,
           }}
         />
       </InfoHead>
@@ -96,7 +95,7 @@ const LegalTermsView = () => {
         onContactFormSubmit={handleContactFormSubmit}
         contactFormParams={contactFormParams}
         courses={COURSES}
-      ></LegalTerms>
+      />
     </>
   )
 }
