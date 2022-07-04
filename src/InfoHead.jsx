@@ -2,12 +2,16 @@ import Head from 'next/head'
 import PropTypes from 'prop-types'
 import { useTranslations } from './hooks'
 
-const InfoHead = ({ title, description, url, children }) => {
+const InfoHead = ({ title, description, url, children, noindexNofollow }) => {
   const formatMessage = useTranslations()
 
   return (
     <Head>
-      <meta name="robots" content="index, follow" />
+      {noindexNofollow ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <meta name="robots" content="index, follow" />
+      )}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -74,6 +78,7 @@ InfoHead.propTypes = {
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   children: PropTypes.node,
+  noindexNofollow: PropTypes.bool,
 }
 
 export default InfoHead

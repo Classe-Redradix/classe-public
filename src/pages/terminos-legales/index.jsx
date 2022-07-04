@@ -40,7 +40,6 @@ const LegalTermsView = () => {
 
   const formatMessage = useTranslations()
 
-  const { educationalOrganizationSchema, webSiteSchema } = useSchema()
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
     {
       name: formatMessage('schema-breadcrumb-list:legal-terms-name'),
@@ -82,11 +81,12 @@ const LegalTermsView = () => {
         title={formatMessage('info-head-legal-terms:title')}
         description={formatMessage('info-head-legal-terms:description')}
         url={formatMessage('url:root')}
+        noindexNofollow
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: `[${educationalOrganizationSchema}, ${webSiteSchema}, ${breadcrumbListSchema}]`,
+            __html: `${breadcrumbListSchema}`,
           }}
         />
       </InfoHead>
@@ -96,7 +96,7 @@ const LegalTermsView = () => {
         onContactFormSubmit={handleContactFormSubmit}
         contactFormParams={contactFormParams}
         courses={COURSES}
-      ></LegalTerms>
+      />
     </>
   )
 }
