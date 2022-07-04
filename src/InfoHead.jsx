@@ -59,6 +59,10 @@ const InfoHead = ({ title, description, url, children }) => {
         content={formatMessage('url:favicon-144')}
       />
       <meta name="msapplication-TileColor" content="#000000" />
+      <meta
+        name="google-site-verification"
+        content="IiF5tRVBbvXxoDP8yt3ev6qYjogEIMCaLdE3naZsBog"
+      />
 
       {children}
     </Head>
