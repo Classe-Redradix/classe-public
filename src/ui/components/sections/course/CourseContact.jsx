@@ -49,7 +49,7 @@ const CourseContact = ({ openContact }) => {
           <img
             className="bwfilter"
             src={image}
-            alt="Oficina con varias mesas y equipos informáticos"
+            alt={t('alt-image:office-desks-computer-equipment')}
           />
         </Cell>{' '}
       </Row>

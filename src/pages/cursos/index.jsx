@@ -3,14 +3,12 @@ import { withKonami, withMenu } from '../../hocs'
 import {
   useWindowSize,
   useTranslations,
-  useSchema,
   useBreadcrumbListSchema,
 } from '../../hooks'
 import InfoHead from '../../InfoHead'
 
 const Courses = () => {
   const formatMessage = useTranslations()
-  const { educationalOrganizationSchema } = useSchema()
   const { breadcrumbListSchema } = useBreadcrumbListSchema([
     {
       name: formatMessage('schema-breadcrumb-list:home-name'),

@@ -6,7 +6,6 @@ import Cell from '../cell/Cell'
 import Paragraphs from '../paragraphs/Paragraphs'
 import DatePicker from '../date-picker/DatePicker'
 import image from '/public/images/haz-hueco-en-tu-agenda.jpg'
-import { DatesPropType } from './../../sharedProptypes'
 import Button from '../button/Button'
 
 const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
@@ -29,7 +28,7 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
           <img
             className="bwfilter"
             src={image}
-            alt="Un estudiante de programación atendiendo a una charla"
+            alt={formatMessage('alt-image:programming-students-attending')}
           />
         </Cell>
       </Row>

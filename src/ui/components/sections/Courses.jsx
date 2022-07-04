@@ -39,7 +39,7 @@ const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
             <img
               className="bwfilter"
               src={image}
-              alt="Tres desarrolladores web desarrollando productos digitales"
+              alt={t('alt-image:three-web-developers')}
             />
             <p className="p">{t('courses:description')}</p>
             <Button
