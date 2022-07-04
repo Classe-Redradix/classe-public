@@ -21,8 +21,8 @@
   "info-head-contact:title": "Contacto | Classe",
   "info-head-contact:description": "Contacta con nosotros. Calatrava, 27 (en La Latina, Madrid) info@classe.dev",
 
-  "info-head-legal-terms:title": "Términos legales | Classe",
-  "info-head-legal-terms:description": "...",
+  "info-head-legal-terms:title": "Aviso legal y política de privacidad | Classe",
+  "info-head-legal-terms:description": "Description. El titular de esta página web es Redradix S.L. Cualquier dato personal facilitado a través de ella será tratado de acuerdo a esta política de privacidad.",
 
   "info-head-cookies-policy:title": "Cookies | Classe",
   "info-head-cookies-policy:description": " Utilizamos cookies analíticas para recopilar información anónima sobre cómo interactúas con nuestro sitio web.",
@@ -249,7 +249,7 @@
   "contact:my-name-is": "<line>Ey! Me llamo</line>",
   "contact:interested-in": "<line>Estoy interesado en</line>",
   "contact:my-email": "<line>Y este es mi correo</line>",
-  "contact:success": "¡Gracias! Te responderemos lo antes posible.",
+  "contact:success": "Gracias! Te responderemos lo antes posible.",
 
   "footer:header": "Bye bye",
   "footer:title": "<line>Stay</line> <lineTab>in the</lineTab> <lineTab>know</lineTab>",
@@ -315,5 +315,8 @@
   "alt-image:man-working-remotely": "Un hombre trabajando en remoto visible a través de una videollamada",
   "alt-image:hands-keyboard-mouse": "Unas manos sobre un teclado y un ratón",
   "alt-image:office-desks-computer-equipment": "Oficina con varias mesas y equipos informáticos",
-  "alt-image:two-web-programmers": "Dos programadores web trabajando"
+  "alt-image:two-web-programmers": "Dos programadores web trabajando",
+
+  "newsletter:placeholder": "Email",
+  "newsletter:btn": "Quiero estar informad@"
 }
