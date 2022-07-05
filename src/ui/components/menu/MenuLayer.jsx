@@ -71,16 +71,6 @@ const MenuLayer = ({
             'is-block': isCourseOpen,
           })}
         >
-          {!isDesktop ? (
-            <Row type="half" extraClass="menuLayer-mobileHeader">
-              <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <p>[ Light Mode ]</p>
-              </Cell>
-              <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <p>[ Dark Mode ]</p>
-              </Cell>
-            </Row>
-          ) : null}
           {isContactOpen ? (
             <MenuContact
               linesHidden={linesHidden}

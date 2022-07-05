@@ -47,9 +47,7 @@ const CookiesLayer = () => {
       aria-label={formatMessage('cookies-layer:aria-label')}
     >
       <p className="cookiesLayer-title">
-        {formatMessage('cookies-layer:title', {
-          emoji: <span aria-hidden="true">🍪</span>,
-        })}
+        {formatMessage('cookies-layer:title')}
       </p>
       <p className="p">
         {formatMessage('cookies-layer:description', {

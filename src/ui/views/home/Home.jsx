@@ -15,7 +15,6 @@ import Find from '../../components/sections/Find'
 import Footer from '../../components/footer/Footer'
 import useTranslations from '../../../hooks/useTranslations'
 import Hero from '../../components/hero/Hero'
-import CookiesLayer from '../../components/cookies/Cookies'
 import { useMenu } from '../../../hooks'
 import {
   CoursePropType,
@@ -28,7 +27,6 @@ const Home = ({
   isFluor,
   isLock,
   courses,
-  dates,
   logos,
   faqsList,
   onContactFormSubmit,

@@ -29,7 +29,12 @@ const CoursePropType = PropTypes.shape({
 const ContactFormParamsPropType = PropTypes.shape({
   email: PropTypes.string,
   name: PropTypes.string,
-  errors: PropTypes.arrayOf(PropTypes.string),
+  errors: PropTypes.shape({
+    optionNoSelected: PropTypes.string,
+    nameNoSelected: PropTypes.string,
+    emailNoSelected: PropTypes.string,
+    termsNoSelected: PropTypes.string,
+  }),
   interestedInOptions: PropTypes.arrayOf(
     PropTypes.shape({
       checked: PropTypes.bool,
@@ -61,7 +66,7 @@ const DatesPropType = PropTypes.arrayOf(
       }),
     ),
   }).isRequired,
-).isRequired
+)
 
 const FaqsListPropType = PropTypes.arrayOf(
   PropTypes.shape({

@@ -167,7 +167,6 @@ const Footer = ({
                 <a
                   className="button"
                   href={`${formatMessage('footer:legal-terms-route')}`}
-                  target="_blank"
                 >
                   {formatMessage('footer:legal-terms')}
                 </a>
@@ -176,7 +175,6 @@ const Footer = ({
                 <a
                   className="button"
                   href={`${formatMessage('footer:cookies-route')}`}
-                  target="_blank"
                 >
                   {formatMessage('footer:cookies')}
                 </a>
