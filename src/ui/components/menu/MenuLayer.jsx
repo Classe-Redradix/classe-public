@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
@@ -85,12 +86,16 @@ const MenuLayer = ({
           ) : (
             <Row type="quarter" extraClass="menuLayer-courses">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
-                <img
-                  className="bwfilter"
-                  src={image}
-                  alt={t('alt-image:hands-keyboard-mouse')}
-                  loading="lazy"
-                />
+                <div className="imageWrapper">
+                  <Image
+                    src={image}
+                    alt={t('alt-image:hands-keyboard-mouse')}
+                    width={3456}
+                    height={5184}
+                    objectFit="cover"
+                    layout="responsive"
+                  />
+                </div>
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
                 <CoursesList
