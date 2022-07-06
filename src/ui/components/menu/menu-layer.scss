@@ -18,6 +18,11 @@
       max-height: calc(100vh - 290px);
     }
   }
+  .imageWrapper {
+    @include mq(xl) {
+      max-height: calc(100vh - 290px);
+    }
+  }
   &.is-open {
     opacity: 1;
     pointer-events: all;

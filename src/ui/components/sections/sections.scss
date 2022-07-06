@@ -9,6 +9,17 @@
   }
 }
 
+.imageWrapper {
+  height: 100%;
+  overflow: hidden;
+  @include mq($until: md) {
+    max-height: 300px;
+  }
+  @include mq(xl) {
+    max-height: 800px;
+  }
+}
+
 .manifest-imgCell {
   display: flex;
   flex-direction: column;
