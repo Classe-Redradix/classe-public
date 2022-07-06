@@ -29,7 +29,7 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
           <div className="imageWrapper">
             <Image
               src={image}
-              alt={t('alt-image:programming-students-attending')}
+              alt={formatMessage('alt-image:programming-students-attending')}
               width={3480}
               height={2688}
               objectFit="cover"

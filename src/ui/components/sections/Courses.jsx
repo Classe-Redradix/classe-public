@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
@@ -36,12 +37,17 @@ const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
             </div>
           </Cell>
           <Cell isNegative={isBlack}>
-            <img
-              className="bwfilter"
-              src={image}
-              alt={t('alt-image:three-web-developers')}
-              loading="lazy"
-            />
+            <div className="imageWrapper">
+              <Image
+                src={image}
+                alt={t('alt-image:three-web-developers')}
+                width={3480}
+                height={2320}
+                objectFit="cover"
+                layout="responsive"
+              />
+            </div>
+
             <p className="p">{t('courses:description')}</p>
             <Button
               isLink
