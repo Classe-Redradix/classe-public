@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
@@ -31,12 +32,16 @@ const Faqs = ({ list, isBlack, isFluor }) => {
       </Row>
       <Row type="half">
         <Cell>
-          <img
-            className="bwfilter"
-            src={image}
-            alt={t('alt-image:man-working-remotely')}
-            loading="lazy"
-          />
+          <div className="imageWrapper">
+            <Image
+              src={image}
+              alt={t('alt-image:man-working-remotely')}
+              width={3264}
+              height={2448}
+              objectFit="cover"
+              layout="responsive"
+            />
+          </div>
         </Cell>
         <Cell>
           <FaqsContainer list={list} />
