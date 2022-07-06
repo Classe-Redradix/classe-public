@@ -43,12 +43,6 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
           />
         </Cell>
         <Cell>
-          <img
-            className="bwfilter"
-            src={image}
-            alt={t('alt-image:hands-keyboard-mouse')}
-            loading="lazy"
-          />
           <div className="imageWrapper">
             <Image
               src={image}

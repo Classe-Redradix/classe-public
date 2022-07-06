@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import PropTypes from 'prop-types'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
@@ -28,12 +29,17 @@ const Manifest = ({ isBlack, isFluor }) => {
             </h2>
           </Cell>
           <Cell isNegative={isBlack} extraClass={'manifest-imgCel'}>
-            <img
-              className="bwfilter"
-              src={image}
-              alt={t('alt-image:two-web-programmers')}
-              loading="lazy"
-            />
+            <div className="imageWrapper">
+              <Image
+                src={image}
+                alt={t('alt-image:two-web-programmers')}
+                width={3456}
+                height={5184}
+                objectFit="cover"
+                layout="responsive"
+                loading="eager"
+              />
+            </div>
           </Cell>
         </Cell>
         <Cell hasGap isNegative={isBlack}>
