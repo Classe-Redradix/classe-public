@@ -62,7 +62,7 @@ const Companies = ({ logos, isBlack, isFluor, openContact }) => {
           {logos.map((logo, index) => (
             <div className="companies-logoWrapper" key={index}>
               <div className="companies-logoWrapper-container">
-                <img src={logo} alt="" />
+                <img src={logo} alt="" loading="lazy" />
               </div>
             </div>
           ))}

@@ -34,6 +34,7 @@ const Find = ({ isBlack, isFluor }) => {
             className="bwfilter"
             src={image}
             alt={t('alt-image:office-desks-computer-equipment')}
+            loading="lazy"
           />
         </Cell>
       </Row>

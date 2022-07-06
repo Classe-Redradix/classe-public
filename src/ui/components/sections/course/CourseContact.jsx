@@ -50,8 +50,9 @@ const CourseContact = ({ openContact }) => {
             className="bwfilter"
             src={image}
             alt={t('alt-image:office-desks-computer-equipment')}
+            loading="lazy"
           />
-        </Cell>{' '}
+        </Cell>
       </Row>
     </SectionWrapper>
   )

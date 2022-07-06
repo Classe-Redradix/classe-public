@@ -42,6 +42,7 @@ const Course = React.forwardRef(
                 className="bwfilter"
                 src={image.source}
                 alt={formatMessage(image.alt)}
+                loading="lazy"
               />
             </Cell>
 

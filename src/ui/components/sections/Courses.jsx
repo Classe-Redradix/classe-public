@@ -40,6 +40,7 @@ const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
               className="bwfilter"
               src={image}
               alt={t('alt-image:three-web-developers')}
+              loading="lazy"
             />
             <p className="p">{t('courses:description')}</p>
             <Button

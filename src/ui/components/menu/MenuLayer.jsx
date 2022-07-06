@@ -89,6 +89,7 @@ const MenuLayer = ({
                   className="bwfilter"
                   src={image}
                   alt={t('alt-image:hands-keyboard-mouse')}
+                  loading="lazy"
                 />
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>

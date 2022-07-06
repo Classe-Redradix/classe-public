@@ -35,6 +35,7 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
             className="bwfilter"
             src={image}
             alt={t('alt-image:developers-working')}
+            loading="lazy"
           />
         </Cell>
       </Row>

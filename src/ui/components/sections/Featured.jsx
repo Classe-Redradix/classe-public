@@ -46,6 +46,7 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
             className="bwfilter"
             src={image}
             alt={t('alt-image:hands-keyboard-mouse')}
+            loading="lazy"
           />
         </Cell>
       </Row>

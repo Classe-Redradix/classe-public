@@ -35,6 +35,7 @@ const Faqs = ({ list, isBlack, isFluor }) => {
             className="bwfilter"
             src={image}
             alt={t('alt-image:man-working-remotely')}
+            loading="lazy"
           />
         </Cell>
         <Cell>

@@ -32,6 +32,7 @@ const Manifest = ({ isBlack, isFluor }) => {
               className="bwfilter"
               src={image}
               alt={t('alt-image:two-web-programmers')}
+              loading="lazy"
             />
           </Cell>
         </Cell>
