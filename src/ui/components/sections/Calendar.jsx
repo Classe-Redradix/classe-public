@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
@@ -25,12 +26,16 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
           </div>
         </Cell>
         <Cell>
-          <img
-            className="bwfilter"
-            src={image}
-            alt={formatMessage('alt-image:programming-students-attending')}
-            loading="lazy"
-          />
+          <div className="imageWrapper">
+            <Image
+              src={image}
+              alt={t('alt-image:programming-students-attending')}
+              width={3480}
+              height={2688}
+              objectFit="cover"
+              layout="responsive"
+            />
+          </div>
         </Cell>
       </Row>
       <Row type="half">
