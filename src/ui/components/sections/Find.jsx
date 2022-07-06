@@ -41,6 +41,7 @@ const Find = ({ isBlack, isFluor }) => {
               height={2320}
               objectFit="cover"
               layout="responsive"
+              loading="eager"
             />
           </div>
         </Cell>

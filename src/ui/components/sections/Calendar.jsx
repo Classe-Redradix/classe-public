@@ -34,6 +34,7 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
               height={2688}
               objectFit="cover"
               layout="responsive"
+              loading="eager"
             />
           </div>
         </Cell>

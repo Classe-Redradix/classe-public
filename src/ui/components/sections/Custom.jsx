@@ -40,6 +40,7 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
               height={2688}
               objectFit="cover"
               layout="responsive"
+              loading="eager"
             />
           </div>
         </Cell>

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import PropTypes from 'prop-types'
 import useTranslations from '../../../hooks/useTranslations'
 import SectionWrapper from '../wrappers/SectionWrapper'
@@ -48,6 +49,17 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
             alt={t('alt-image:hands-keyboard-mouse')}
             loading="lazy"
           />
+          <div className="imageWrapper">
+            <Image
+              src={image}
+              alt={t('alt-image:hands-keyboard-mouse')}
+              width={3456}
+              height={5184}
+              objectFit="cover"
+              layout="responsive"
+              loading="eager"
+            />
+          </div>
         </Cell>
       </Row>
     </SectionWrapper>

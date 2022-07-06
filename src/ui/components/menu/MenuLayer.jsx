@@ -94,6 +94,7 @@ const MenuLayer = ({
                     height={5184}
                     objectFit="cover"
                     layout="responsive"
+                    loading="eager"
                   />
                 </div>
               </Cell>

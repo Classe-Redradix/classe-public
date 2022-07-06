@@ -45,6 +45,7 @@ const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
                 height={2320}
                 objectFit="cover"
                 layout="responsive"
+                loading="eager"
               />
             </div>
 

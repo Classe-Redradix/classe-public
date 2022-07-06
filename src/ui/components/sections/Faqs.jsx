@@ -40,6 +40,7 @@ const Faqs = ({ list, isBlack, isFluor }) => {
               height={2448}
               objectFit="cover"
               layout="responsive"
+              loading="eager"
             />
           </div>
         </Cell>
