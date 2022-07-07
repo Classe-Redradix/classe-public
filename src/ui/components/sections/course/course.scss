@@ -43,7 +43,7 @@
   &-help {
     display: flex;
     align-items: baseline;
-    column-gap: 16px;
+    column-gap: 1rem;
   }
 
   &-description {
@@ -51,9 +51,9 @@
       margin-top: auto;
     }
     .p + .p {
-      margin-top: 16px;
+      margin-top: 1rem;
       @include mq(md) {
-        margin-top: 24px;
+        margin-top: rem(24px);
       }
     }
   }
@@ -62,7 +62,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 82px;
+    margin-top: rem(82px);
     @include mq(md) {
       margin-top: 3vh;
     }
@@ -108,8 +108,8 @@
   }
 
   @include mq(md) {
-    width: 342px;
-    min-width: 342px;
+    width: rem(342px);
+    min-width: rem(342px);
 
     #{$self}-cell {
       display: flex;
@@ -129,8 +129,8 @@
   height: 100%;
   padding: 0;
   @include mq(md) {
-    width: 342px;
-    min-width: 342px;
+    width: rem(342px);
+    min-width: rem(342px);
   }
   &-number {
     height: 60%;
@@ -178,14 +178,14 @@
 
   &-glypBottom {
     position: absolute;
-    bottom: 24px;
-    right: 48px;
+    bottom: rem(24px);
+    right: rem(48px);
   }
 
   &-glypTop {
     position: absolute;
-    top: 48px;
-    right: 48px;
+    top: rem(48px);
+    right: rem(48px);
   }
 
   &--empty {
@@ -205,15 +205,15 @@
 
   &--objectives {
     @include mq(md) {
-      width: 476px;
-      min-width: 476px;
+      width: rem(476px);
+      min-width: rem(476px);
     }
   }
 
   &--info {
     @include mq(md) {
-      width: 696px;
-      min-width: 696px;
+      width: rem(696px);
+      min-width: rem(696px);
 
       .line--inline {
         display: inline;
@@ -253,8 +253,8 @@
   height: 100%;
   padding: 0;
   @include mq(md) {
-    width: 342px;
-    min-width: 342px;
+    width: rem(342px);
+    min-width: rem(342px);
   }
   .cell {
     display: flex;
@@ -273,19 +273,19 @@
 .arrow {
   width: 20px;
   height: 0px;
-  border: 1px solid #fff;
+  border: 1px solid $white;
   position: relative;
   animation: arrow 1.5s infinite;
 
   &::before {
     content: '';
     display: block;
-    width: 15px;
-    height: 15px;
+    width: rem(15px);
+    height: rem(15px);
     top: 50%;
     right: -23%;
     border-style: solid;
-    border-color: #fff;
+    border-color: $white;
     border-width: 2px 2px 0 0;
     position: absolute;
     transform-origin: 100% 0%;
@@ -296,13 +296,13 @@
 
 @keyframes arrow {
   0% {
-    width: 20px;
+    width: rem(20px);
   }
 
   50% {
-    width: 25px;
+    width: rem(25px);
   }
   100% {
-    width: 20px;
+    width: rem(20px);
   }
 }
