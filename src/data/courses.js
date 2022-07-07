@@ -3,11 +3,11 @@ import imageCourseReact from '/public/images/curso-front.jpg'
 import imageCourseBack from '/public/images/curso-back.jpg'
 import imageCourseUIDeveloper from '/public/images/curso-maqueta.jpg'
 
-const PROGRAMACION = {
-  id: 'programacion',
+const DESARROLLO = {
+  id: 'desarrollo',
   isFeatured: false,
   isPublic: false,
-  href: '/cursos/programacion',
+  href: '/cursos/desarrollo',
   information: {
     title: 'course:js-title',
     start: '21.08.22',
@@ -23,7 +23,7 @@ const PROGRAMACION = {
     places: 15,
     practical: 80,
   },
-  dosier: '/cursos/programacion-javascript.pdf',
+  dosier: '/cursos/desarrollo-con-javascript.pdf',
   indexItems: [
     {
       number: '01',
@@ -227,6 +227,6 @@ const BACK_END = {
   },
 }
 
-const COURSES = [PROGRAMACION, UI_DEV, FRONT_END, BACK_END]
+const COURSES = [DESARROLLO, UI_DEV, FRONT_END, BACK_END]
 
 export default COURSES
