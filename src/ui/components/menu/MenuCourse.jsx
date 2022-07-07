@@ -96,7 +96,7 @@ const MenuCourse = ({ course, openContact, isCourseOpen }) => {
       <div className="courseSections" ref={container}>
         <CourseIntro
           dates={dates}
-          name={information.title}
+          name={information.titleModal}
           image={information.image}
           openContact={openContact}
           course={menuCourse}

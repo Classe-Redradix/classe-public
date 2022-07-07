@@ -3,13 +3,14 @@ import imageCourseReact from '/public/images/curso-front.jpg'
 import imageCourseBack from '/public/images/curso-back.jpg'
 import imageCourseUIDeveloper from '/public/images/curso-maqueta.jpg'
 
-const PROGRAMACION = {
-  id: 'programacion',
+const DESARROLLO = {
+  id: 'desarrollo',
   isFeatured: false,
   isPublic: false,
-  href: '/cursos/programacion',
+  href: '/cursos/desarrollo',
   information: {
     title: 'course:js-title',
+    titleModal: 'course:js-title-modal',
     start: '21.08.22',
     finish: '25.08.22',
     metaDescription: 'course:js-schema-description',
@@ -23,7 +24,7 @@ const PROGRAMACION = {
     places: 15,
     practical: 80,
   },
-  dosier: '/cursos/programacion-javascript.pdf',
+  dosier: '/cursos/desarrollo-con-javascript.pdf',
   indexItems: [
     {
       number: '01',
@@ -66,6 +67,7 @@ const UI_DEV = {
   href: '/cursos/maqueta',
   information: {
     title: 'course:ui-dev-title',
+    titleModal: 'course:ui-title-modal',
     start: '21.08.22',
     finish: '25.08.22',
     metaDescription: 'course:ui-dev-meta-description',
@@ -122,6 +124,7 @@ const FRONT_END = {
   href: '/cursos/front-end',
   information: {
     title: 'course:front-react-title',
+    titleModal: 'course:front-react-title-modal',
     start: '21.08.22',
     finish: '25.08.22',
     metaDescription: 'course:front-react-schema-description',
@@ -173,6 +176,7 @@ const BACK_END = {
   href: '/cursos/back-end',
   information: {
     title: 'course:back-node-title',
+    titleModal: 'course:back-node-title-modal',
     start: '21.08.22',
     finish: '25.08.22',
     metaDescription: 'course:back-node-schema-description',
@@ -227,6 +231,6 @@ const BACK_END = {
   },
 }
 
-const COURSES = [PROGRAMACION, UI_DEV, FRONT_END, BACK_END]
+const COURSES = [DESARROLLO, UI_DEV, FRONT_END, BACK_END]
 
 export default COURSES
