@@ -24,13 +24,7 @@ const Course = React.forwardRef(
         <SectionWrapper isBlack extraClass="courseIntro">
           <Row type="full" extraClass="courseIntro-name">
             <Cell isNegative>
-              <h1
-                className="courseIntro-nameText"
-                ref={ref}
-                // style={{
-                //   fontSize,
-                // }}
-              >
+              <h1 className="courseIntro-nameText" ref={ref}>
                 <TabIcon className="courseIntro-tab" aria-hidden="true" />
                 {formatMessage(name)}
               </h1>
@@ -85,6 +79,7 @@ const Course = React.forwardRef(
                     />
                   ) : null}
                   <span className="p uppercase">Scroll o drag</span>
+                  <span class="arrow"></span>
                 </div>
               </Cell>
             </Cell>
