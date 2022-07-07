@@ -13,7 +13,7 @@ const InfoHead = ({ title, description, url, children, noindexNofollow }) => {
         <meta name="robots" content="index, follow" />
       )}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
       <title>{title}</title>
       <meta name="description" content={description} />
