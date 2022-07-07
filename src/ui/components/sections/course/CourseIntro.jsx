@@ -79,6 +79,7 @@ const Course = React.forwardRef(
                     />
                   ) : null}
                   <span className="p uppercase">Scroll o drag</span>
+                  <span class="arrow"></span>
                 </div>
               </Cell>
             </Cell>
