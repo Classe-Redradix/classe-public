@@ -10,6 +10,7 @@ const DESARROLLO = {
   href: '/cursos/desarrollo',
   information: {
     title: 'course:js-title',
+    titleModal: 'course:js-title-modal',
     start: '21.08.22',
     finish: '25.08.22',
     metaDescription: 'course:js-schema-description',
@@ -66,6 +67,7 @@ const UI_DEV = {
   href: '/cursos/maqueta',
   information: {
     title: 'course:ui-dev-title',
+    titleModal: 'course:ui-title-modal',
     start: '21.08.22',
     finish: '25.08.22',
     metaDescription: 'course:ui-dev-meta-description',
@@ -122,6 +124,7 @@ const FRONT_END = {
   href: '/cursos/front-end',
   information: {
     title: 'course:front-react-title',
+    titleModal: 'course:front-react-title-modal',
     start: '21.08.22',
     finish: '25.08.22',
     metaDescription: 'course:front-react-schema-description',
@@ -173,6 +176,7 @@ const BACK_END = {
   href: '/cursos/back-end',
   information: {
     title: 'course:back-node-title',
+    titleModal: 'course:back-node-title-modal',
     start: '21.08.22',
     finish: '25.08.22',
     metaDescription: 'course:back-node-schema-description',
