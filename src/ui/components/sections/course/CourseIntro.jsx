@@ -78,8 +78,10 @@ const Course = React.forwardRef(
                       text={formatMessage('course:button')}
                     />
                   ) : null}
-                  <span className="p uppercase">Scroll o drag</span>
-                  <span class="arrow"></span>
+                  <div className="arrow-container">
+                    <span className="p uppercase">Scroll o drag</span>
+                    <span class="arrow-icon"></span>
+                  </div>
                 </div>
               </Cell>
             </Cell>

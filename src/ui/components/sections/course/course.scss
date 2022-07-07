@@ -61,6 +61,7 @@
   &-actions {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     margin-top: rem(82px);
     @include mq(md) {
@@ -69,14 +70,14 @@
   }
   &-data {
     @include mq(md) {
+      //TODO: Solution for the intro text not to be placed above the title, (not very conforming, check in the future).
       height: 70%;
+      overflow: hidden;
+
       &.row {
         margin-top: 0;
       }
-      :nth-child(2) {
-        display: flex;
-        flex-direction: column;
-      }
+
       .cell-description {
         flex-grow: 1;
       }
@@ -269,28 +270,36 @@
     height: calc(100% - 1px);
   }
 }
-
 .arrow {
-  width: 20px;
-  height: 0px;
-  border: 1px solid $white;
-  position: relative;
-  animation: arrow 1.5s infinite;
+  &-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    width: rem(150px);
+  }
+  &-icon {
+    width: 20px;
+    height: 0px;
+    border: 1px solid $white;
+    position: relative;
+    animation: arrow 1.5s infinite;
 
-  &::before {
-    content: '';
-    display: block;
-    width: rem(15px);
-    height: rem(15px);
-    top: 50%;
-    right: -23%;
-    border-style: solid;
-    border-color: $white;
-    border-width: 2px 2px 0 0;
-    position: absolute;
-    transform-origin: 100% 0%;
-    margin: 0;
-    transform: rotate(45deg);
+    &::before {
+      content: '';
+      display: block;
+      width: rem(15px);
+      height: rem(15px);
+      top: 50%;
+      right: -23%;
+      border-style: solid;
+      border-color: $white;
+      border-width: 2px 2px 0 0;
+      position: absolute;
+      transform-origin: 100% 0%;
+      margin: 0;
+      transform: rotate(45deg);
+    }
   }
 }
 
