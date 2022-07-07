@@ -6,27 +6,43 @@ import Row from '../row/Row'
 import Cell from '../cell/Cell'
 
 import generateImageCandidates from 'libs/generateImageCandidates'
-import image480 from '/public/images/contacto-classe-480.jpg'
-import image935 from '/public/images/contacto-classe-935.jpg'
-import image1254 from '/public/images/contacto-classe-1254.jpg'
-import image1485 from '/public/images/contacto-classe-1485.jpg'
-import image1707 from '/public/images/contacto-classe-1707.jpg'
-import image1951 from '/public/images/contacto-classe-1951.jpg'
-import image2486 from '/public/images/contacto-classe-2486.jpg'
-import image3480 from '/public/images/contacto-classe-3480.jpg'
+import image from '/public/images/contacto-classe.jpg'
+import image2048 from '/public/images/contacto-classe-2048.jpg'
+import image1920 from '/public/images/contacto-classe-1920.jpg'
+import image1200 from '/public/images/contacto-classe-1200.jpg'
+import image1080 from '/public/images/contacto-classe-1080.jpg'
+import image828 from '/public/images/contacto-classe-828.jpg'
+import image750 from '/public/images/contacto-classe-750.jpg'
+import image640 from '/public/images/contacto-classe-640.jpg'
 
 const imagesMetaData = [
   {
-    url: image480,
-    width: 480,
+    url: image2048,
+    width: 2048,
   },
   {
-    url: image935,
-    width: 935,
+    url: image1920,
+    width: 1920,
   },
   {
-    url: image1254,
-    width: 1254,
+    url: image1200,
+    width: 1200,
+  },
+  {
+    url: image1080,
+    width: 1080,
+  },
+  {
+    url: image828,
+    width: 828,
+  },
+  {
+    url: image750,
+    width: 750,
+  },
+  {
+    url: image640,
+    width: 640,
   },
 ]
 
@@ -55,24 +71,16 @@ const Find = ({ isBlack, isFluor }) => {
           </div>
         </Cell>
         <Cell isNegative={isBlack}>
-          <picture>
-            {/* <source
-              sizes="(max-width: 3480px) 100vw, 3480px"
-              srcSet="mdn-logo.svg"
-              type="image/avif"
-            /> */}
-
-            <img
-              className="bwfilter"
-              sizes="(max-width: 3480px) 100vw, 3480px"
-              srcSet={generateImageCandidates(imagesMetaData)}
-              src={image3480}
-              width={3480}
-              height={2320}
-              alt={t('alt-image:office-desks-computer-equipment')}
-              loading="lazy"
-            />
-          </picture>
+          <img
+            className="bwfilter"
+            sizes="(max-width: 3480px) 100vw, 3480px"
+            srcSet={generateImageCandidates(imagesMetaData)}
+            src={image}
+            width={3480}
+            height={2320}
+            alt={t('alt-image:office-desks-computer-equipment')}
+            loading="lazy"
+          />
         </Cell>
       </Row>
       <Row type="half">
