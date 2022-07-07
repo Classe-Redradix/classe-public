@@ -42,7 +42,7 @@ const Find = ({ isBlack, isFluor }) => {
             <img
               className="bwfilter"
               sizes="(max-width: 3480px) 100vw, 3480px"
-              srcset={`${image480} 480w,
+              srcSet={`${image480} 480w,
               ${image935} 935w,
               ${image1254} 1254w,
               ${image1485} 1485w,
