@@ -276,6 +276,52 @@ const REMOTE_ON_SITE_TRAINING_IMAGE = {
   ]),
 }
 
+import classeManifestMainImage from '/public/images/manifiesto-classe.jpg'
+import classeManifestImage2048 from '/public/images/manifiesto-classe-2048.jpg'
+import classeManifestImage1920 from '/public/images/manifiesto-classe-1920.jpg'
+import classeManifestImage1200 from '/public/images/manifiesto-classe-1200.jpg'
+import classeManifestImage1080 from '/public/images/manifiesto-classe-1080.jpg'
+import classeManifestImage828 from '/public/images/manifiesto-classe-828.jpg'
+import classeManifestImage750 from '/public/images/manifiesto-classe-750.jpg'
+import classeManifestImage640 from '/public/images/manifiesto-classe-640.jpg'
+const CLASSE_MANIFEST_IMAGE = {
+  mainImage: classeManifestMainImage,
+  alt: 'alt-image:two-web-programmers',
+  width: 3456,
+  height: 5184,
+  sizes: '(max-width: 3456px) 100vw, 3456px',
+  srcSet: useGenerateImageCandidates([
+    {
+      src: classeManifestImage2048,
+      width: 2048,
+    },
+    {
+      src: classeManifestImage1920,
+      width: 1920,
+    },
+    {
+      src: classeManifestImage1200,
+      width: 1200,
+    },
+    {
+      src: classeManifestImage1080,
+      width: 1080,
+    },
+    {
+      src: classeManifestImage828,
+      width: 828,
+    },
+    {
+      src: classeManifestImage750,
+      width: 750,
+    },
+    {
+      src: classeManifestImage640,
+      width: 640,
+    },
+  ]),
+}
+
 const IMAGES = {
   CONTACT_IMAGE,
   COURSES_IMAGE,
@@ -283,6 +329,7 @@ const IMAGES = {
   AGENDA_SLOT_IMAGE,
   PROFESSIONAL_TRAINING_IMAGE,
   REMOTE_ON_SITE_TRAINING_IMAGE,
+  CLASSE_MANIFEST_IMAGE,
 }
 
 export default IMAGES
