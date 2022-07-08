@@ -33,10 +33,14 @@ const Course = React.forwardRef(
           <Row type="half" extraClass="courseIntro-data">
             <Cell isNegative>
               <img
-                className="bwfilter"
-                src={image.source}
+                src={image.mainImage}
                 alt={formatMessage(image.alt)}
+                width={image.width}
+                height={image.height}
+                sizes={image.sizes}
+                srcSet={image.srcSet}
                 loading="lazy"
+                className="bwfilter"
               />
             </Cell>
 

@@ -1,7 +1,9 @@
-import imageCourseJS from '/public/images/curso-javascript.jpg'
-import imageCourseReact from '/public/images/curso-front.jpg'
-import imageCourseBack from '/public/images/curso-back.jpg'
-import imageCourseUIDeveloper from '/public/images/curso-maqueta.jpg'
+import IMAGES from './images'
+
+const javascriptCourseImage = IMAGES.JAVASCRIPT_COURSE_IMAGE
+const frontCourseImage = IMAGES.FRONT_COURSE_IMAGE
+const backCourseImage = IMAGES.BACK_COURSE_IMAGE
+const uiDevelopmentCourseImage = IMAGES.UI_DEVELOPMENT_COURSE_IMAGE
 
 const DESARROLLO = {
   id: 'desarrollo',
@@ -15,10 +17,7 @@ const DESARROLLO = {
     finish: '25.08.22',
     metaDescription: 'course:js-schema-description',
     description: 'course:js-description',
-    image: {
-      source: imageCourseJS,
-      alt: 'course:js-alt-image',
-    },
+    image: javascriptCourseImage,
     price: 600,
     hours: 30,
     places: 15,
@@ -72,10 +71,7 @@ const UI_DEV = {
     finish: '25.08.22',
     metaDescription: 'course:ui-dev-meta-description',
     description: 'course:ui-dev-description',
-    image: {
-      source: imageCourseUIDeveloper,
-      alt: 'course:ui-dev-alt-image',
-    },
+    image: uiDevelopmentCourseImage,
     price: 600,
     hours: 30,
     places: 15,
@@ -129,10 +125,7 @@ const FRONT_END = {
     finish: '25.08.22',
     metaDescription: 'course:front-react-schema-description',
     description: 'course:front-react-description',
-    image: {
-      source: imageCourseReact,
-      alt: 'course:front-react-alt-image',
-    },
+    image: frontCourseImage,
     price: 1200,
     hours: 30,
     places: 20,
@@ -181,10 +174,7 @@ const BACK_END = {
     finish: '25.08.22',
     metaDescription: 'course:back-node-schema-description',
     description: 'course:back-node-description',
-    image: {
-      source: imageCourseBack,
-      alt: 'course:back-node-alt-image',
-    },
+    image: backCourseImage,
     price: 600,
     hours: 30,
     places: 15,
