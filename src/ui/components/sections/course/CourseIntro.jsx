@@ -40,7 +40,7 @@ const Course = React.forwardRef(
                 sizes={image.sizes}
                 srcSet={useGenerateImageCandidates(image.srcSet)}
                 loading="lazy"
-                className="bwfilter"
+                className="image"
               />
             </Cell>
 

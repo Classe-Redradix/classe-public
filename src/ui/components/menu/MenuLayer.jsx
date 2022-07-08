@@ -99,7 +99,7 @@ const MenuLayer = ({
                   sizes={coursesImage.sizes}
                   srcSet={useGenerateImageCandidates(coursesImage.srcSet)}
                   loading="lazy"
-                  className="bwfilter"
+                  className="image"
                 />
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>

@@ -52,7 +52,7 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
             sizes={coursesImage.sizes}
             srcSet={useGenerateImageCandidates(coursesImage.srcSet)}
             loading="lazy"
-            className="bwfilter"
+            className="image"
           />
         </Cell>
       </Row>

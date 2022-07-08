@@ -35,7 +35,7 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
             sizes={agendaSlotImage.sizes}
             srcSet={useGenerateImageCandidates(agendaSlotImage.srcSet)}
             loading="lazy"
-            className="bwfilter"
+            className="image"
           />
         </Cell>
       </Row>

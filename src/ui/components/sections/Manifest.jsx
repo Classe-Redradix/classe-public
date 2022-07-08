@@ -38,7 +38,7 @@ const Manifest = ({ isBlack, isFluor }) => {
               sizes={classeManifestImage.sizes}
               srcSet={useGenerateImageCandidates(classeManifestImage.srcSet)}
               loading="lazy"
-              className="bwfilter"
+              className="image"
             />
           </Cell>
         </Cell>

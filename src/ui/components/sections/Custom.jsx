@@ -41,7 +41,7 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
             sizes={tailorMadeCoursesImage.sizes}
             srcSet={useGenerateImageCandidates(tailorMadeCoursesImage.srcSet)}
             loading="lazy"
-            className="bwfilter"
+            className="image"
           />
         </Cell>
       </Row>

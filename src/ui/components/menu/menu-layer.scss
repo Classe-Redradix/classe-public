@@ -13,7 +13,7 @@
   transition: opacity $fade-simple;
   pointer-events: none;
   z-index: $index-menu-layer;
-  .bwfilter {
+  .image {
     @include mq(xl) {
       max-height: calc(100vh - 290px);
     }

@@ -56,7 +56,7 @@ const CourseContact = ({ openContact }) => {
             sizes={contactImage.sizes}
             srcSet={useGenerateImageCandidates(contactImage.srcSet)}
             loading="lazy"
-            className="bwfilter"
+            className="image"
           />
         </Cell>
       </Row>

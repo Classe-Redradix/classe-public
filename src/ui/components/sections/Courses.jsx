@@ -48,7 +48,7 @@ const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
                 professionalTrainingImage.srcSet,
               )}
               loading="lazy"
-              className="bwfilter"
+              className="image"
             />
             <p className="p">{t('courses:description')}</p>
             <Button

@@ -43,7 +43,7 @@ const Faqs = ({ list, isBlack, isFluor }) => {
               remoteOnSiteTrainingImage.srcSet,
             )}
             loading="lazy"
-            className="bwfilter"
+            className="image"
           />
         </Cell>
         <Cell>
