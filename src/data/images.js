@@ -368,6 +368,52 @@ const JAVASCRIPT_COURSE_IMAGE = {
   ]),
 }
 
+import uiDevelopmentCourseMainImage from '/public/images/curso-maqueta.jpg'
+import uiDevelopmentCourseImage2048 from '/public/images/curso-maqueta-2048.jpg'
+import uiDevelopmentCourseImage1920 from '/public/images/curso-maqueta-1920.jpg'
+import uiDevelopmentCourseImage1200 from '/public/images/curso-maqueta-1200.jpg'
+import uiDevelopmentCourseImage1080 from '/public/images/curso-maqueta-1080.jpg'
+import uiDevelopmentCourseImage828 from '/public/images/curso-maqueta-828.jpg'
+import uiDevelopmentCourseImage750 from '/public/images/curso-maqueta-750.jpg'
+import uiDevelopmentCourseImage640 from '/public/images/curso-maqueta-640.jpg'
+const UI_DEVELOPMENT_COURSE_IMAGE = {
+  mainImage: uiDevelopmentCourseMainImage,
+  alt: 'course:js-alt-image',
+  width: 3480,
+  height: 2320,
+  sizes: '(max-width: 3480px) 100vw, 3480px',
+  srcSet: useGenerateImageCandidates([
+    {
+      src: uiDevelopmentCourseImage2048,
+      width: 2048,
+    },
+    {
+      src: uiDevelopmentCourseImage1920,
+      width: 1920,
+    },
+    {
+      src: uiDevelopmentCourseImage1200,
+      width: 1200,
+    },
+    {
+      src: uiDevelopmentCourseImage1080,
+      width: 1080,
+    },
+    {
+      src: uiDevelopmentCourseImage828,
+      width: 828,
+    },
+    {
+      src: uiDevelopmentCourseImage750,
+      width: 750,
+    },
+    {
+      src: uiDevelopmentCourseImage640,
+      width: 640,
+    },
+  ]),
+}
+
 const IMAGES = {
   CONTACT_IMAGE,
   COURSES_IMAGE,
@@ -377,6 +423,7 @@ const IMAGES = {
   REMOTE_ON_SITE_TRAINING_IMAGE,
   CLASSE_MANIFEST_IMAGE,
   JAVASCRIPT_COURSE_IMAGE,
+  UI_DEVELOPMENT_COURSE_IMAGE,
 }
 
 export default IMAGES
