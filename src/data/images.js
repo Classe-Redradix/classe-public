@@ -378,7 +378,7 @@ import uiDevelopmentCourseImage750 from '/public/images/curso-maqueta-750.jpg'
 import uiDevelopmentCourseImage640 from '/public/images/curso-maqueta-640.jpg'
 const UI_DEVELOPMENT_COURSE_IMAGE = {
   mainImage: uiDevelopmentCourseMainImage,
-  alt: 'course:js-alt-image',
+  alt: 'course:front-react-alt-image',
   width: 3480,
   height: 2320,
   sizes: '(max-width: 3480px) 100vw, 3480px',
@@ -414,6 +414,83 @@ const UI_DEVELOPMENT_COURSE_IMAGE = {
   ]),
 }
 
+import frontCourseMainImage from '/public/images/curso-front.jpg'
+import frontCourseImage2048 from '/public/images/curso-front-2048.jpg'
+import frontCourseImage1920 from '/public/images/curso-front-1920.jpg'
+import frontCourseImage1200 from '/public/images/curso-front-1200.jpg'
+import frontCourseImage1080 from '/public/images/curso-front-1080.jpg'
+import frontCourseImage828 from '/public/images/curso-front-828.jpg'
+import frontCourseImage750 from '/public/images/curso-front-750.jpg'
+import frontCourseImage640 from '/public/images/curso-front-640.jpg'
+const FRONT_COURSE_IMAGE = {
+  mainImage: frontCourseMainImage,
+  alt: 'course:js-alt-image',
+  width: 3480,
+  height: 2688,
+  sizes: '(max-width: 3480px) 100vw, 3480px',
+  srcSet: useGenerateImageCandidates([
+    {
+      src: frontCourseImage2048,
+      width: 2048,
+    },
+    {
+      src: frontCourseImage1920,
+      width: 1920,
+    },
+    {
+      src: frontCourseImage1200,
+      width: 1200,
+    },
+    {
+      src: frontCourseImage1080,
+      width: 1080,
+    },
+    {
+      src: frontCourseImage828,
+      width: 828,
+    },
+    {
+      src: frontCourseImage750,
+      width: 750,
+    },
+    {
+      src: frontCourseImage640,
+      width: 640,
+    },
+  ]),
+}
+
+import backCourseMainImage from '/public/images/curso-back.jpg'
+import backCourseImage1080 from '/public/images/curso-back-1080.jpg'
+import backCourseImage828 from '/public/images/curso-back-828.jpg'
+import backCourseImage750 from '/public/images/curso-back-750.jpg'
+import backCourseImage640 from '/public/images/curso-back-640.jpg'
+const BACK_COURSE_IMAGE = {
+  mainImage: backCourseMainImage,
+  alt: 'course:back-node-alt-image',
+  width: 1200,
+  height: 935,
+  sizes: '(max-width: 1200px) 100vw, 1200px',
+  srcSet: useGenerateImageCandidates([
+    {
+      src: backCourseImage1080,
+      width: 1080,
+    },
+    {
+      src: backCourseImage828,
+      width: 828,
+    },
+    {
+      src: backCourseImage750,
+      width: 750,
+    },
+    {
+      src: backCourseImage640,
+      width: 640,
+    },
+  ]),
+}
+
 const IMAGES = {
   CONTACT_IMAGE,
   COURSES_IMAGE,
@@ -424,6 +501,8 @@ const IMAGES = {
   CLASSE_MANIFEST_IMAGE,
   JAVASCRIPT_COURSE_IMAGE,
   UI_DEVELOPMENT_COURSE_IMAGE,
+  FRONT_COURSE_IMAGE,
+  BACK_COURSE_IMAGE,
 }
 
 export default IMAGES
