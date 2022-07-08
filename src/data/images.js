@@ -184,11 +184,58 @@ const AGENDA_SLOT_IMAGE = {
   ]),
 }
 
+import professionalTrainingMainImage from '/public/images/formacion-para-profesionales.jpg'
+import professionalTrainingImage2048 from '/public/images/formacion-para-profesionales-2048.jpg'
+import professionalTrainingImage1920 from '/public/images/formacion-para-profesionales-1920.jpg'
+import professionalTrainingImage1200 from '/public/images/formacion-para-profesionales-1200.jpg'
+import professionalTrainingImage1080 from '/public/images/formacion-para-profesionales-1080.jpg'
+import professionalTrainingImage828 from '/public/images/formacion-para-profesionales-828.jpg'
+import professionalTrainingImage750 from '/public/images/formacion-para-profesionales-750.jpg'
+import professionalTrainingImage640 from '/public/images/formacion-para-profesionales-640.jpg'
+const PROFESSIONAL_TRAINING_IMAGE = {
+  mainImage: professionalTrainingMainImage,
+  alt: 'alt-image:three-web-developers',
+  width: 3480,
+  height: 2320,
+  sizes: '(max-width: 3480px) 100vw, 3480px',
+  srcSet: useGenerateImageCandidates([
+    {
+      src: professionalTrainingImage2048,
+      width: 2048,
+    },
+    {
+      src: professionalTrainingImage1920,
+      width: 1920,
+    },
+    {
+      src: professionalTrainingImage1200,
+      width: 1200,
+    },
+    {
+      src: professionalTrainingImage1080,
+      width: 1080,
+    },
+    {
+      src: professionalTrainingImage828,
+      width: 828,
+    },
+    {
+      src: professionalTrainingImage750,
+      width: 750,
+    },
+    {
+      src: professionalTrainingImage640,
+      width: 640,
+    },
+  ]),
+}
+
 const IMAGES = {
   CONTACT_IMAGE,
   COURSES_IMAGE,
   TAILOR_MADE_COURSES_IMAGE,
   AGENDA_SLOT_IMAGE,
+  PROFESSIONAL_TRAINING_IMAGE,
 }
 
 export default IMAGES
