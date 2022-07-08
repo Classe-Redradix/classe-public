@@ -4,10 +4,12 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import FaqsContainer from '../faqs/FaqsContainer'
-import image from '/public/images/formacion-remoto-presencial.jpg'
+import { IMAGES } from '../../../data'
 
 const Faqs = ({ list, isBlack, isFluor }) => {
   const t = useTranslations()
+
+  const remoteOnSiteTrainingImage = IMAGES.REMOTE_ON_SITE_TRAINING_IMAGE
 
   return (
     <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="faqs">
@@ -32,10 +34,14 @@ const Faqs = ({ list, isBlack, isFluor }) => {
       <Row type="half">
         <Cell>
           <img
-            className="bwfilter"
-            src={image}
-            alt={t('alt-image:man-working-remotely')}
+            src={remoteOnSiteTrainingImage.mainImage}
+            alt={t(remoteOnSiteTrainingImage.alt)}
+            width={remoteOnSiteTrainingImage.width}
+            height={remoteOnSiteTrainingImage.height}
+            sizes={remoteOnSiteTrainingImage.sizes}
+            srcSet={remoteOnSiteTrainingImage.srcSet}
             loading="lazy"
+            className="bwfilter"
           />
         </Cell>
         <Cell>

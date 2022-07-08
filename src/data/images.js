@@ -230,12 +230,59 @@ const PROFESSIONAL_TRAINING_IMAGE = {
   ]),
 }
 
+import remoteOnSiteTrainingMainImage from '/public/images/formacion-remoto-presencial.jpg'
+import remoteOnSiteTrainingImage2048 from '/public/images/formacion-remoto-presencial-2048.jpg'
+import remoteOnSiteTrainingImage1920 from '/public/images/formacion-remoto-presencial-1920.jpg'
+import remoteOnSiteTrainingImage1200 from '/public/images/formacion-remoto-presencial-1200.jpg'
+import remoteOnSiteTrainingImage1080 from '/public/images/formacion-remoto-presencial-1080.jpg'
+import remoteOnSiteTrainingImage828 from '/public/images/formacion-remoto-presencial-828.jpg'
+import remoteOnSiteTrainingImage750 from '/public/images/formacion-remoto-presencial-750.jpg'
+import remoteOnSiteTrainingImage640 from '/public/images/formacion-remoto-presencial-640.jpg'
+const REMOTE_ON_SITE_TRAINING_IMAGE = {
+  mainImage: remoteOnSiteTrainingMainImage,
+  alt: 'alt-image:man-working-remotely',
+  width: 3264,
+  height: 2448,
+  sizes: '(max-width: 3264px) 100vw, 3264px',
+  srcSet: useGenerateImageCandidates([
+    {
+      src: remoteOnSiteTrainingImage2048,
+      width: 2048,
+    },
+    {
+      src: remoteOnSiteTrainingImage1920,
+      width: 1920,
+    },
+    {
+      src: remoteOnSiteTrainingImage1200,
+      width: 1200,
+    },
+    {
+      src: remoteOnSiteTrainingImage1080,
+      width: 1080,
+    },
+    {
+      src: remoteOnSiteTrainingImage828,
+      width: 828,
+    },
+    {
+      src: remoteOnSiteTrainingImage750,
+      width: 750,
+    },
+    {
+      src: remoteOnSiteTrainingImage640,
+      width: 640,
+    },
+  ]),
+}
+
 const IMAGES = {
   CONTACT_IMAGE,
   COURSES_IMAGE,
   TAILOR_MADE_COURSES_IMAGE,
   AGENDA_SLOT_IMAGE,
   PROFESSIONAL_TRAINING_IMAGE,
+  REMOTE_ON_SITE_TRAINING_IMAGE,
 }
 
 export default IMAGES
