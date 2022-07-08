@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { copyClasseEmailToClipboard } from '../../../business'
-import useTranslations from '../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
@@ -40,7 +40,7 @@ const Find = ({ isBlack, isFluor }) => {
             width={contactImage.width}
             height={contactImage.height}
             sizes={contactImage.sizes}
-            srcSet={contactImage.srcSet}
+            srcSet={useGenerateImageCandidates(contactImage.srcSet)}
             loading="lazy"
             className="bwfilter"
           />

@@ -3,7 +3,7 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Paragraphs from '../paragraphs/Paragraphs'
-import useTranslations from '../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
 import { IMAGES } from '../../../data'
 
 const Manifest = ({ isBlack, isFluor }) => {
@@ -36,7 +36,7 @@ const Manifest = ({ isBlack, isFluor }) => {
               width={classeManifestImage.width}
               height={classeManifestImage.height}
               sizes={classeManifestImage.sizes}
-              srcSet={classeManifestImage.srcSet}
+              srcSet={useGenerateImageCandidates(classeManifestImage.srcSet)}
               loading="lazy"
               className="bwfilter"
             />

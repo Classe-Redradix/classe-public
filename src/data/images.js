@@ -1,5 +1,3 @@
-import { useGenerateImageCandidates } from '../hooks'
-
 import contactMainImage from '/public/images/contacto-classe.jpg'
 import contactImage2048 from '/public/images/contacto-classe-2048.jpg'
 import contactImage1920 from '/public/images/contacto-classe-1920.jpg'
@@ -14,7 +12,7 @@ const CONTACT_IMAGE = {
   width: 3480,
   height: 2320,
   sizes: '(max-width: 3480px) 100vw, 3480px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: contactImage2048,
       width: 2048,
@@ -43,7 +41,7 @@ const CONTACT_IMAGE = {
       src: contactImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 import coursesMainImage from '/public/images/cursos.jpg'
@@ -60,7 +58,7 @@ const COURSES_IMAGE = {
   width: 3456,
   height: 5184,
   sizes: '(max-width: 3456px) 100vw, 3456px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: coursesImage2048,
       width: 2048,
@@ -89,7 +87,7 @@ const COURSES_IMAGE = {
       src: coursesImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 import tailorMadeCoursesMainImage from '/public/images/nuestros-cursos-a-tu-medida.jpg'
@@ -106,7 +104,7 @@ const TAILOR_MADE_COURSES_IMAGE = {
   width: 3480,
   height: 2688,
   sizes: '(max-width: 3480px) 100vw, 3480px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: tailorMadeCoursesImage2048,
       width: 2048,
@@ -135,7 +133,7 @@ const TAILOR_MADE_COURSES_IMAGE = {
       src: tailorMadeCoursesImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 import agendaSlotMainImage from '/public/images/haz-hueco-en-tu-agenda.jpg'
@@ -152,7 +150,7 @@ const AGENDA_SLOT_IMAGE = {
   width: 3480,
   height: 2688,
   sizes: '(max-width: 3480px) 100vw, 3480px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: agendaSlotImage2048,
       width: 2048,
@@ -181,7 +179,7 @@ const AGENDA_SLOT_IMAGE = {
       src: agendaSlotImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 import professionalTrainingMainImage from '/public/images/formacion-para-profesionales.jpg'
@@ -198,7 +196,7 @@ const PROFESSIONAL_TRAINING_IMAGE = {
   width: 3480,
   height: 2320,
   sizes: '(max-width: 3480px) 100vw, 3480px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: professionalTrainingImage2048,
       width: 2048,
@@ -227,7 +225,7 @@ const PROFESSIONAL_TRAINING_IMAGE = {
       src: professionalTrainingImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 import remoteOnSiteTrainingMainImage from '/public/images/formacion-remoto-presencial.jpg'
@@ -244,7 +242,7 @@ const REMOTE_ON_SITE_TRAINING_IMAGE = {
   width: 3264,
   height: 2448,
   sizes: '(max-width: 3264px) 100vw, 3264px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: remoteOnSiteTrainingImage2048,
       width: 2048,
@@ -273,7 +271,7 @@ const REMOTE_ON_SITE_TRAINING_IMAGE = {
       src: remoteOnSiteTrainingImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 import classeManifestMainImage from '/public/images/manifiesto-classe.jpg'
@@ -290,7 +288,7 @@ const CLASSE_MANIFEST_IMAGE = {
   width: 3456,
   height: 5184,
   sizes: '(max-width: 3456px) 100vw, 3456px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: classeManifestImage2048,
       width: 2048,
@@ -319,7 +317,7 @@ const CLASSE_MANIFEST_IMAGE = {
       src: classeManifestImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 import javascriptCourseMainImage from '/public/images/curso-javascript.jpg'
@@ -336,7 +334,7 @@ const JAVASCRIPT_COURSE_IMAGE = {
   width: 3456,
   height: 5184,
   sizes: '(max-width: 3456px) 100vw, 3456px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: javascriptCourseImage2048,
       width: 2048,
@@ -365,7 +363,7 @@ const JAVASCRIPT_COURSE_IMAGE = {
       src: javascriptCourseImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 import uiDevelopmentCourseMainImage from '/public/images/curso-maqueta.jpg'
@@ -382,7 +380,7 @@ const UI_DEVELOPMENT_COURSE_IMAGE = {
   width: 3480,
   height: 2320,
   sizes: '(max-width: 3480px) 100vw, 3480px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: uiDevelopmentCourseImage2048,
       width: 2048,
@@ -411,7 +409,7 @@ const UI_DEVELOPMENT_COURSE_IMAGE = {
       src: uiDevelopmentCourseImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 import frontCourseMainImage from '/public/images/curso-front.jpg'
@@ -428,7 +426,7 @@ const FRONT_COURSE_IMAGE = {
   width: 3480,
   height: 2688,
   sizes: '(max-width: 3480px) 100vw, 3480px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: frontCourseImage2048,
       width: 2048,
@@ -457,7 +455,7 @@ const FRONT_COURSE_IMAGE = {
       src: frontCourseImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 import backCourseMainImage from '/public/images/curso-back.jpg'
@@ -471,7 +469,7 @@ const BACK_COURSE_IMAGE = {
   width: 1200,
   height: 935,
   sizes: '(max-width: 1200px) 100vw, 1200px',
-  srcSet: useGenerateImageCandidates([
+  srcSet: [
     {
       src: backCourseImage1080,
       width: 1080,
@@ -488,7 +486,7 @@ const BACK_COURSE_IMAGE = {
       src: backCourseImage640,
       width: 640,
     },
-  ]),
+  ],
 }
 
 const IMAGES = {

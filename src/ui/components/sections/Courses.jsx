@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import useTranslations from '../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
@@ -44,7 +44,9 @@ const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
               width={professionalTrainingImage.width}
               height={professionalTrainingImage.height}
               sizes={professionalTrainingImage.sizes}
-              srcSet={professionalTrainingImage.srcSet}
+              srcSet={useGenerateImageCandidates(
+                professionalTrainingImage.srcSet,
+              )}
               loading="lazy"
               className="bwfilter"
             />

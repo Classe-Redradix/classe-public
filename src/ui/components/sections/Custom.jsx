@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import useTranslations from '../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
@@ -39,7 +39,7 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
             width={tailorMadeCoursesImage.width}
             height={tailorMadeCoursesImage.height}
             sizes={tailorMadeCoursesImage.sizes}
-            srcSet={tailorMadeCoursesImage.srcSet}
+            srcSet={useGenerateImageCandidates(tailorMadeCoursesImage.srcSet)}
             loading="lazy"
             className="bwfilter"
           />

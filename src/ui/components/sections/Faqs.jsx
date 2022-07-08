@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import useTranslations from '../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
@@ -39,7 +39,9 @@ const Faqs = ({ list, isBlack, isFluor }) => {
             width={remoteOnSiteTrainingImage.width}
             height={remoteOnSiteTrainingImage.height}
             sizes={remoteOnSiteTrainingImage.sizes}
-            srcSet={remoteOnSiteTrainingImage.srcSet}
+            srcSet={useGenerateImageCandidates(
+              remoteOnSiteTrainingImage.srcSet,
+            )}
             loading="lazy"
             className="bwfilter"
           />

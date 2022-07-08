@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import useTranslations from '../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
@@ -50,7 +50,7 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
             width={coursesImage.width}
             height={coursesImage.height}
             sizes={coursesImage.sizes}
-            srcSet={coursesImage.srcSet}
+            srcSet={useGenerateImageCandidates(coursesImage.srcSet)}
             loading="lazy"
             className="bwfilter"
           />

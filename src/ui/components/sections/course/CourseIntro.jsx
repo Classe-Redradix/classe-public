@@ -7,7 +7,7 @@ import Button from '../../button/Button'
 import Paragraphs from '../../paragraphs/Paragraphs'
 import TabIcon from './../../../../assets/icons/TabIcon'
 import DatePicker from '../../date-picker/DatePicker'
-import useTranslations from '../../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../../hooks'
 import useFitText from 'use-fit-text'
 import { DatesPropType } from './../../../sharedProptypes'
 
@@ -38,7 +38,7 @@ const Course = React.forwardRef(
                 width={image.width}
                 height={image.height}
                 sizes={image.sizes}
-                srcSet={image.srcSet}
+                srcSet={useGenerateImageCandidates(image.srcSet)}
                 loading="lazy"
                 className="bwfilter"
               />

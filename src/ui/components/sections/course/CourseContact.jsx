@@ -4,7 +4,7 @@ import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import Button from '../../button/Button'
-import useTranslations from '../../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../../hooks'
 import { IMAGES } from '../../../../data'
 import Glyph from '../../../../assets/icons/GlyphIcon'
 
@@ -54,7 +54,7 @@ const CourseContact = ({ openContact }) => {
             width={contactImage.width}
             height={contactImage.height}
             sizes={contactImage.sizes}
-            srcSet={contactImage.srcSet}
+            srcSet={useGenerateImageCandidates(contactImage.srcSet)}
             loading="lazy"
             className="bwfilter"
           />

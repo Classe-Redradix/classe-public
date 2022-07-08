@@ -4,8 +4,11 @@ import cx from 'classnames'
 
 import { MEDIA_QUERIES } from '../../../constants'
 
-import useWindowSize from '../../../hooks/useWindowSize'
-import useTranslations from '../../../hooks/useTranslations'
+import {
+  useWindowSize,
+  useTranslations,
+  useGenerateImageCandidates,
+} from '../../../hooks'
 
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
@@ -94,7 +97,7 @@ const MenuLayer = ({
                   width={coursesImage.width}
                   height={coursesImage.height}
                   sizes={coursesImage.sizes}
-                  srcSet={coursesImage.srcSet}
+                  srcSet={useGenerateImageCandidates(coursesImage.srcSet)}
                   loading="lazy"
                   className="bwfilter"
                 />

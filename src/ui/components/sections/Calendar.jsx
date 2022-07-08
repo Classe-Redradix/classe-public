@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import useTranslations from '../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
@@ -33,7 +33,7 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
             width={agendaSlotImage.width}
             height={agendaSlotImage.height}
             sizes={agendaSlotImage.sizes}
-            srcSet={agendaSlotImage.srcSet}
+            srcSet={useGenerateImageCandidates(agendaSlotImage.srcSet)}
             loading="lazy"
             className="bwfilter"
           />
