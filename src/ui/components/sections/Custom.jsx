@@ -5,11 +5,13 @@ import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
 import Paragraphs from '../paragraphs/Paragraphs'
-import image from '/public/images/nuestros-cursos-a-tu-medida.jpg'
+import { IMAGES } from '../../../data'
 import GlyphIcon from './../../../assets/icons/GlyphIcon'
 
 const Custom = ({ isBlack, isFluor, openCourses }) => {
   const t = useTranslations()
+
+  const tailorMadeCoursesImage = IMAGES.TAILOR_MADE_COURSES_IMAGE
 
   return (
     <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="custom">
@@ -32,10 +34,14 @@ const Custom = ({ isBlack, isFluor, openCourses }) => {
         </Cell>
         <Cell isNegative={isBlack}>
           <img
-            className="bwfilter"
-            src={image}
-            alt={t('alt-image:developers-working')}
+            src={tailorMadeCoursesImage.mainImage}
+            alt={t(tailorMadeCoursesImage.alt)}
+            width={tailorMadeCoursesImage.width}
+            height={tailorMadeCoursesImage.height}
+            sizes={tailorMadeCoursesImage.sizes}
+            srcSet={tailorMadeCoursesImage.srcSet}
             loading="lazy"
+            className="bwfilter"
           />
         </Cell>
       </Row>

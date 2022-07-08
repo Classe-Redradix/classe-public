@@ -92,6 +92,52 @@ const COURSES_IMAGE = {
   ]),
 }
 
-const IMAGES = { CONTACT_IMAGE, COURSES_IMAGE }
+import tailorMadeCoursesMainImage from '/public/images/nuestros-cursos-a-tu-medida.jpg'
+import tailorMadeCoursesImage2048 from '/public/images/nuestros-cursos-a-tu-medida-2048.jpg'
+import tailorMadeCoursesImage1920 from '/public/images/nuestros-cursos-a-tu-medida-1920.jpg'
+import tailorMadeCoursesImage1200 from '/public/images/nuestros-cursos-a-tu-medida-1200.jpg'
+import tailorMadeCoursesImage1080 from '/public/images/nuestros-cursos-a-tu-medida-1080.jpg'
+import tailorMadeCoursesImage828 from '/public/images/nuestros-cursos-a-tu-medida-828.jpg'
+import tailorMadeCoursesImage750 from '/public/images/nuestros-cursos-a-tu-medida-750.jpg'
+import tailorMadeCoursesImage640 from '/public/images/nuestros-cursos-a-tu-medida-640.jpg'
+const TAILOR_MADE_COURSES_IMAGE = {
+  mainImage: tailorMadeCoursesMainImage,
+  alt: 'alt-image:developers-working',
+  width: 3480,
+  height: 2688,
+  sizes: '(max-width: 3480px) 100vw, 3480px',
+  srcSet: useGenerateImageCandidates([
+    {
+      src: tailorMadeCoursesImage2048,
+      width: 2048,
+    },
+    {
+      src: tailorMadeCoursesImage1920,
+      width: 1920,
+    },
+    {
+      src: tailorMadeCoursesImage1200,
+      width: 1200,
+    },
+    {
+      src: tailorMadeCoursesImage1080,
+      width: 1080,
+    },
+    {
+      src: tailorMadeCoursesImage828,
+      width: 828,
+    },
+    {
+      src: tailorMadeCoursesImage750,
+      width: 750,
+    },
+    {
+      src: tailorMadeCoursesImage640,
+      width: 640,
+    },
+  ]),
+}
+
+const IMAGES = { CONTACT_IMAGE, COURSES_IMAGE, TAILOR_MADE_COURSES_IMAGE }
 
 export default IMAGES
