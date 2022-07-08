@@ -322,6 +322,52 @@ const CLASSE_MANIFEST_IMAGE = {
   ]),
 }
 
+import javascriptCourseMainImage from '/public/images/curso-javascript.jpg'
+import javascriptCourseImage2048 from '/public/images/curso-javascript-2048.jpg'
+import javascriptCourseImage1920 from '/public/images/curso-javascript-1920.jpg'
+import javascriptCourseImage1200 from '/public/images/curso-javascript-1200.jpg'
+import javascriptCourseImage1080 from '/public/images/curso-javascript-1080.jpg'
+import javascriptCourseImage828 from '/public/images/curso-javascript-828.jpg'
+import javascriptCourseImage750 from '/public/images/curso-javascript-750.jpg'
+import javascriptCourseImage640 from '/public/images/curso-javascript-640.jpg'
+const JAVASCRIPT_COURSE_IMAGE = {
+  mainImage: javascriptCourseMainImage,
+  alt: 'course:js-alt-image',
+  width: 3456,
+  height: 5184,
+  sizes: '(max-width: 3456px) 100vw, 3456px',
+  srcSet: useGenerateImageCandidates([
+    {
+      src: javascriptCourseImage2048,
+      width: 2048,
+    },
+    {
+      src: javascriptCourseImage1920,
+      width: 1920,
+    },
+    {
+      src: javascriptCourseImage1200,
+      width: 1200,
+    },
+    {
+      src: javascriptCourseImage1080,
+      width: 1080,
+    },
+    {
+      src: javascriptCourseImage828,
+      width: 828,
+    },
+    {
+      src: javascriptCourseImage750,
+      width: 750,
+    },
+    {
+      src: javascriptCourseImage640,
+      width: 640,
+    },
+  ]),
+}
+
 const IMAGES = {
   CONTACT_IMAGE,
   COURSES_IMAGE,
@@ -330,6 +376,7 @@ const IMAGES = {
   PROFESSIONAL_TRAINING_IMAGE,
   REMOTE_ON_SITE_TRAINING_IMAGE,
   CLASSE_MANIFEST_IMAGE,
+  JAVASCRIPT_COURSE_IMAGE,
 }
 
 export default IMAGES
