@@ -4,11 +4,13 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
-import image from '/public/images/cursos.jpg'
+import { IMAGES } from '../../../data'
 import { CoursePropType } from './../../sharedProptypes'
 
 const Featured = ({ isBlack, isFluor, course, openCourse }) => {
   const t = useTranslations()
+
+  const coursesImage = IMAGES.COURSES_IMAGE
 
   return (
     <SectionWrapper
@@ -43,10 +45,14 @@ const Featured = ({ isBlack, isFluor, course, openCourse }) => {
         </Cell>
         <Cell>
           <img
-            className="bwfilter"
-            src={image}
-            alt={t('alt-image:hands-keyboard-mouse')}
+            src={coursesImage.mainImage}
+            alt={t(coursesImage.alt)}
+            width={coursesImage.width}
+            height={coursesImage.height}
+            sizes={coursesImage.sizes}
+            srcSet={coursesImage.srcSet}
             loading="lazy"
+            className="bwfilter"
           />
         </Cell>
       </Row>

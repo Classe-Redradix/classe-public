@@ -8,7 +8,6 @@ import contactImage1080 from '/public/images/contacto-classe-1080.jpg'
 import contactImage828 from '/public/images/contacto-classe-828.jpg'
 import contactImage750 from '/public/images/contacto-classe-750.jpg'
 import contactImage640 from '/public/images/contacto-classe-640.jpg'
-
 const CONTACT_IMAGE = {
   mainImage: contactMainImage,
   alt: 'alt-image:office-desks-computer-equipment',
@@ -47,6 +46,52 @@ const CONTACT_IMAGE = {
   ]),
 }
 
-const IMAGES = { CONTACT_IMAGE }
+import coursesMainImage from '/public/images/cursos.jpg'
+import coursesImage2048 from '/public/images/cursos-2048.jpg'
+import coursesImage1920 from '/public/images/cursos-1920.jpg'
+import coursesImage1200 from '/public/images/cursos-1200.jpg'
+import coursesImage1080 from '/public/images/cursos-1080.jpg'
+import coursesImage828 from '/public/images/cursos-828.jpg'
+import coursesImage750 from '/public/images/cursos-750.jpg'
+import coursesImage640 from '/public/images/cursos-640.jpg'
+const COURSES_IMAGE = {
+  mainImage: coursesMainImage,
+  alt: 'alt-image:hands-keyboard-mouse',
+  width: 3456,
+  height: 5184,
+  sizes: '(max-width: 3456px) 100vw, 3456px',
+  srcSet: useGenerateImageCandidates([
+    {
+      src: coursesImage2048,
+      width: 2048,
+    },
+    {
+      src: coursesImage1920,
+      width: 1920,
+    },
+    {
+      src: coursesImage1200,
+      width: 1200,
+    },
+    {
+      src: coursesImage1080,
+      width: 1080,
+    },
+    {
+      src: coursesImage828,
+      width: 828,
+    },
+    {
+      src: coursesImage750,
+      width: 750,
+    },
+    {
+      src: coursesImage640,
+      width: 640,
+    },
+  ]),
+}
+
+const IMAGES = { CONTACT_IMAGE, COURSES_IMAGE }
 
 export default IMAGES

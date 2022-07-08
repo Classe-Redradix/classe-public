@@ -11,6 +11,7 @@ import GlyphIcon from './../../../assets/icons/Glyph2Icon'
 
 const Find = ({ isBlack, isFluor }) => {
   const t = useTranslations()
+
   const contactImage = IMAGES.CONTACT_IMAGE
 
   return (
