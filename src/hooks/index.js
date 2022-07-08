@@ -5,6 +5,7 @@ import useContactForm from './useContactForm'
 import useCoursechema from './useCourseSchema'
 import useDetectMobile from './useDetectMobile'
 import useEducationalEventchema from './useEducationalEventSchema'
+import useGenerateImageCandidates from './useGenerateImageCandidates'
 import useInput from './useInput'
 import useKonami from './useKonami'
 import useMenu from './useMenu'
@@ -24,6 +25,7 @@ export {
   useCoursechema,
   useDetectMobile,
   useEducationalEventchema,
+  useGenerateImageCandidates,
   useInput,
   useKonami,
   useMenu,
