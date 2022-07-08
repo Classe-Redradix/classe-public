@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
