@@ -138,6 +138,57 @@ const TAILOR_MADE_COURSES_IMAGE = {
   ]),
 }
 
-const IMAGES = { CONTACT_IMAGE, COURSES_IMAGE, TAILOR_MADE_COURSES_IMAGE }
+import agendaSlotMainImage from '/public/images/haz-hueco-en-tu-agenda.jpg'
+import agendaSlotImage2048 from '/public/images/haz-hueco-en-tu-agenda-2048.jpg'
+import agendaSlotImage1920 from '/public/images/haz-hueco-en-tu-agenda-1920.jpg'
+import agendaSlotImage1200 from '/public/images/haz-hueco-en-tu-agenda-1200.jpg'
+import agendaSlotImage1080 from '/public/images/haz-hueco-en-tu-agenda-1080.jpg'
+import agendaSlotImage828 from '/public/images/haz-hueco-en-tu-agenda-828.jpg'
+import agendaSlotImage750 from '/public/images/haz-hueco-en-tu-agenda-750.jpg'
+import agendaSlotImage640 from '/public/images/haz-hueco-en-tu-agenda-640.jpg'
+const AGENDA_SLOT_IMAGE = {
+  mainImage: agendaSlotMainImage,
+  alt: 'alt-image:programming-students-attending',
+  width: 3480,
+  height: 2688,
+  sizes: '(max-width: 3480px) 100vw, 3480px',
+  srcSet: useGenerateImageCandidates([
+    {
+      src: agendaSlotImage2048,
+      width: 2048,
+    },
+    {
+      src: agendaSlotImage1920,
+      width: 1920,
+    },
+    {
+      src: agendaSlotImage1200,
+      width: 1200,
+    },
+    {
+      src: agendaSlotImage1080,
+      width: 1080,
+    },
+    {
+      src: agendaSlotImage828,
+      width: 828,
+    },
+    {
+      src: agendaSlotImage750,
+      width: 750,
+    },
+    {
+      src: agendaSlotImage640,
+      width: 640,
+    },
+  ]),
+}
+
+const IMAGES = {
+  CONTACT_IMAGE,
+  COURSES_IMAGE,
+  TAILOR_MADE_COURSES_IMAGE,
+  AGENDA_SLOT_IMAGE,
+}
 
 export default IMAGES
