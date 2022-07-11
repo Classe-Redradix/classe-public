@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
@@ -7,7 +7,7 @@ import Button from '../../button/Button'
 import Paragraphs from '../../paragraphs/Paragraphs'
 import TabIcon from './../../../../assets/icons/TabIcon'
 import DatePicker from '../../date-picker/DatePicker'
-import useTranslations from '../../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../../hooks'
 import useFitText from 'use-fit-text'
 import { DatesPropType } from './../../../sharedProptypes'
 
@@ -17,25 +17,55 @@ const Course = React.forwardRef(
     refCourseIntro,
   ) => {
     const formatMessage = useTranslations()
-    const onFinish = useCallback(fontSize => {}, [])
-    const { fontSize, ref } = useFitText({ maxFontSize: 5000, onFinish })
+
+    const marquee = (selector, speed) => {
+      const clone = selector.innerHTML
+      const firstElement = selector.children[0]
+      let i = 0
+      selector.insertAdjacentHTML('beforeend', clone)
+      selector.insertAdjacentHTML('beforeend', clone)
+      selector.insertAdjacentHTML('beforeend', clone)
+      const interval = setInterval(() => {
+        firstElement.style.marginLeft = `-${i}px`
+        i = i + speed
+        if (i > firstElement.clientWidth + 60) {
+          i = 0
+        }
+      }, 0)
+      return interval
+    }
+    const refTitle = useRef(null)
+    const refTitleWrapper = useRef(null)
+
+    useEffect(() => {
+      const interval = marquee(refTitleWrapper.current, 0.3)
+      return () => clearInterval(interval)
+    }, [])
+
     return (
       <div ref={refCourseIntro}>
         <SectionWrapper isBlack extraClass="courseIntro">
           <Row type="full" extraClass="courseIntro-name">
             <Cell isNegative>
-              <h1 className="courseIntro-nameText" ref={ref}>
-                <TabIcon className="courseIntro-tab" aria-hidden="true" />
-                {formatMessage(name)}
-              </h1>
+              <div className="courseIntro-name-wrapper" ref={refTitleWrapper}>
+                <h1 className="courseIntro-nameText" ref={refTitle}>
+                  <TabIcon className="courseIntro-tab" aria-hidden="true" />
+                  {formatMessage(name)}
+                </h1>
+              </div>
             </Cell>
           </Row>
           <Row type="half" extraClass="courseIntro-data">
             <Cell isNegative>
               <img
-                className="bwfilter"
-                src={image.source}
+                src={image.mainImage}
                 alt={formatMessage(image.alt)}
+                width={image.width}
+                height={image.height}
+                sizes={image.sizes}
+                srcSet={useGenerateImageCandidates(image.srcSet)}
+                loading="lazy"
+                className="image"
               />
             </Cell>
 
@@ -80,7 +110,7 @@ const Course = React.forwardRef(
                   ) : null}
                   <div className="arrow-container">
                     <span className="p uppercase">Scroll o drag</span>
-                    <span class="arrow-icon"></span>
+                    <span className="arrow-icon"></span>
                   </div>
                 </div>
               </Cell>

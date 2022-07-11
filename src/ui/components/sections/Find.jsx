@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types'
 import { copyClasseEmailToClipboard } from '../../../business'
-import useTranslations from '../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
-import image from '/public/images/contacto-classe.jpg'
+
+import { IMAGES } from '../../../data'
+
 import GlyphIcon from './../../../assets/icons/Glyph2Icon'
 
 const Find = ({ isBlack, isFluor }) => {
   const t = useTranslations()
+
+  const contactImage = IMAGES.CONTACT_IMAGE
 
   return (
     <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="find">
@@ -31,9 +35,14 @@ const Find = ({ isBlack, isFluor }) => {
         </Cell>
         <Cell isNegative={isBlack}>
           <img
-            className="bwfilter"
-            src={image}
-            alt={t('alt-image:office-desks-computer-equipment')}
+            src={contactImage.mainImage}
+            alt={t(contactImage.alt)}
+            width={contactImage.width}
+            height={contactImage.height}
+            sizes={contactImage.sizes}
+            srcSet={useGenerateImageCandidates(contactImage.srcSet)}
+            loading="lazy"
+            className="image"
           />
         </Cell>
       </Row>

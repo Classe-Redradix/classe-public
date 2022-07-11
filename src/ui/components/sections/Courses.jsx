@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types'
-import useTranslations from '../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Button from '../button/Button'
-import image from '/public/images/formacion-para-profesionales.jpg'
+import { IMAGES } from '../../../data'
 import TabIcon from './../../../assets/icons/TabIcon'
 import { CoursePropType } from '../../sharedProptypes'
 
 const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
   const t = useTranslations()
+
+  const professionalTrainingImage = IMAGES.PROFESSIONAL_TRAINING_IMAGE
 
   const handleClick = (e, course) => {
     e.preventDefault()
@@ -37,9 +39,16 @@ const Courses = ({ courses, isBlack, isFluor, openCourse, openContact }) => {
           </Cell>
           <Cell isNegative={isBlack}>
             <img
-              className="bwfilter"
-              src={image}
-              alt={t('alt-image:three-web-developers')}
+              src={professionalTrainingImage.mainImage}
+              alt={t(professionalTrainingImage.alt)}
+              width={professionalTrainingImage.width}
+              height={professionalTrainingImage.height}
+              sizes={professionalTrainingImage.sizes}
+              srcSet={useGenerateImageCandidates(
+                professionalTrainingImage.srcSet,
+              )}
+              loading="lazy"
+              className="image"
             />
             <p className="p">{t('courses:description')}</p>
             <Button

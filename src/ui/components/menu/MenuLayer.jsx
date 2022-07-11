@@ -4,8 +4,11 @@ import cx from 'classnames'
 
 import { MEDIA_QUERIES } from '../../../constants'
 
-import useWindowSize from '../../../hooks/useWindowSize'
-import useTranslations from '../../../hooks/useTranslations'
+import {
+  useWindowSize,
+  useTranslations,
+  useGenerateImageCandidates,
+} from '../../../hooks'
 
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
@@ -13,7 +16,8 @@ import CoursesList from './CoursesList'
 import MenuContact from './MenuContact'
 import MenuCourse from './MenuCourse'
 import { CoursePropType } from '../../sharedProptypes'
-import image from '/public/images/cursos.jpg'
+
+import { IMAGES } from '../../../data'
 
 const MenuLayer = ({
   course,
@@ -51,6 +55,8 @@ const MenuLayer = ({
 
   const hasHomeTitle = !areCoursesOpen && !isCourseOpen && !isContactOpen
 
+  const coursesImage = IMAGES.COURSES_IMAGE
+
   return (
     <div className={classes}>
       {hasHomeTitle ? <h1 className="sr-only">{t('home:title')}</h1> : null}
@@ -86,9 +92,14 @@ const MenuLayer = ({
             <Row type="quarter" extraClass="menuLayer-courses">
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>
                 <img
-                  className="bwfilter"
-                  src={image}
-                  alt={t('alt-image:hands-keyboard-mouse')}
+                  src={coursesImage.mainImage}
+                  alt={t(coursesImage.alt)}
+                  width={coursesImage.width}
+                  height={coursesImage.height}
+                  sizes={coursesImage.sizes}
+                  srcSet={useGenerateImageCandidates(coursesImage.srcSet)}
+                  loading="lazy"
+                  className="image"
                 />
               </Cell>
               <Cell hasLinesHidden={linesHidden} isAnimated isNegative>

@@ -3,11 +3,13 @@ import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Paragraphs from '../paragraphs/Paragraphs'
-import useTranslations from '../../../hooks/useTranslations'
-import image from '/public/images/manifiesto-classe.jpg'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
+import { IMAGES } from '../../../data'
 
 const Manifest = ({ isBlack, isFluor }) => {
   const t = useTranslations()
+
+  const classeManifestImage = IMAGES.CLASSE_MANIFEST_IMAGE
 
   return (
     <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="manifest">
@@ -29,9 +31,14 @@ const Manifest = ({ isBlack, isFluor }) => {
           </Cell>
           <Cell isNegative={isBlack} extraClass={'manifest-imgCel'}>
             <img
-              className="bwfilter"
-              src={image}
-              alt={t('alt-image:two-web-programmers')}
+              src={classeManifestImage.mainImage}
+              alt={t(classeManifestImage.alt)}
+              width={classeManifestImage.width}
+              height={classeManifestImage.height}
+              sizes={classeManifestImage.sizes}
+              srcSet={useGenerateImageCandidates(classeManifestImage.srcSet)}
+              loading="lazy"
+              className="image"
             />
           </Cell>
         </Cell>

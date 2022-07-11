@@ -4,12 +4,14 @@ import SectionWrapper from '../../wrappers/SectionWrapper'
 import Row from '../../row/Row'
 import Cell from '../../cell/Cell'
 import Button from '../../button/Button'
-import useTranslations from '../../../../hooks/useTranslations'
-import image from '/public/images/contacto-classe.jpg'
+import { useTranslations, useGenerateImageCandidates } from '../../../../hooks'
+import { IMAGES } from '../../../../data'
 import Glyph from '../../../../assets/icons/GlyphIcon'
 
 const CourseContact = ({ openContact }) => {
   const t = useTranslations()
+
+  const contactImage = IMAGES.CONTACT_IMAGE
 
   return (
     <SectionWrapper isBlack extraClass="courseSection courseSection--contact">
@@ -47,11 +49,16 @@ const CourseContact = ({ openContact }) => {
         </Cell>
         <Cell isNegative>
           <img
-            className="bwfilter"
-            src={image}
-            alt={t('alt-image:office-desks-computer-equipment')}
+            src={contactImage.mainImage}
+            alt={t(contactImage.alt)}
+            width={contactImage.width}
+            height={contactImage.height}
+            sizes={contactImage.sizes}
+            srcSet={useGenerateImageCandidates(contactImage.srcSet)}
+            loading="lazy"
+            className="image"
           />
-        </Cell>{' '}
+        </Cell>
       </Row>
     </SectionWrapper>
   )

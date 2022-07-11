@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types'
-import useTranslations from '../../../hooks/useTranslations'
+import { useTranslations, useGenerateImageCandidates } from '../../../hooks'
 import SectionWrapper from '../wrappers/SectionWrapper'
 import Row from '../row/Row'
 import Cell from '../cell/Cell'
 import Paragraphs from '../paragraphs/Paragraphs'
 import DatePicker from '../date-picker/DatePicker'
-import image from '/public/images/haz-hueco-en-tu-agenda.jpg'
+import { IMAGES } from '../../../data'
 import Button from '../button/Button'
 
 const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
   const formatMessage = useTranslations()
+
+  const agendaSlotImage = IMAGES.AGENDA_SLOT_IMAGE
 
   return (
     <SectionWrapper isBlack={isBlack} isFluor={isFluor} extraClass="calendar">
@@ -26,9 +28,14 @@ const Calendar = ({ dates, isBlack, isFluor, openContact }) => {
         </Cell>
         <Cell>
           <img
-            className="bwfilter"
-            src={image}
-            alt={formatMessage('alt-image:programming-students-attending')}
+            src={agendaSlotImage.mainImage}
+            alt={formatMessage(agendaSlotImage.alt)}
+            width={agendaSlotImage.width}
+            height={agendaSlotImage.height}
+            sizes={agendaSlotImage.sizes}
+            srcSet={useGenerateImageCandidates(agendaSlotImage.srcSet)}
+            loading="lazy"
+            className="image"
           />
         </Cell>
       </Row>

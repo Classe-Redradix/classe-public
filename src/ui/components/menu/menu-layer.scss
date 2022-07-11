@@ -13,7 +13,7 @@
   transition: opacity $fade-simple;
   pointer-events: none;
   z-index: $index-menu-layer;
-  .bwfilter {
+  .image {
     @include mq(xl) {
       max-height: calc(100vh - 290px);
     }
@@ -99,21 +99,26 @@
     text-transform: uppercase;
   }
 
-  &-courses.row {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-
-    .cell:first-child {
-      display: none;
-
-      & + .cell {
-        margin-top: 0;
-      }
+  &-courses {
+    .image {
+      max-height: calc(100vh - 240px);
     }
-
-    .cell:last-child {
+    &.row {
       flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      .cell:first-child {
+        display: none;
+
+        & + .cell {
+          margin-top: 0;
+        }
+      }
+
+      .cell:last-child {
+        flex: 1;
+      }
     }
   }
 
