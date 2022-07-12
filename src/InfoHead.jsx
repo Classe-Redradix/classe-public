@@ -20,12 +20,7 @@ const InfoHead = ({ title, description, url, children, noindexNofollow }) => {
 
       <link rel="canonical" href={url} />
 
-      <link rel="icon" href="/favicon-512.png" sizes="512x512" />
-      <link rel="icon" href="/favicon-192.png" sizes="192x192" />
-      <link rel="icon" href="/favicon-144.png" sizes="144x144" />
-      <link rel="icon" href="/favicon-96.png" sizes="96x96" />
-      <link rel="icon" href="/favicon-72.png" sizes="72x72" />
-      <link rel="icon" href="/favicon-48.png" sizes="48x48" />
+      <link rel="icon" href="favicon.svg" />
 
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
