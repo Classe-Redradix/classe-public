@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .favicon-background {
+        fill: #000;
+      }
+      .favicon-isotype {
+        fill: #eaeaea;
+      }
+      @media (prefers-color-scheme: dark) {
+        .favicon-bg {
+          fill: #eaeaea;
+        }
+        .favicon-isotype {
+          fill: #000;
+        }
+      }
+    </style>
+  </defs>
+  <rect width="512" height="512" class="favicon-background" />
+  <path
+    class="favicon-isotype"
+    d="M142.24,432.17l.39-1.17C80.36,322.32,77.31,192.21,143,81l-.39-1.17H114.11c-76,105.15-71,245.58,0,352.34Zm209.15-62.5V338H210V247.41h127V215.77H210v-87.9H351.39V96.23H174.82V369.67Zm46.5,62.5c71-106.73,76-247.23,0-352.34H369.37L369,81c65.7,111.19,62.65,241.32.39,350l.38,1.17Z"
+  />
+</svg>
